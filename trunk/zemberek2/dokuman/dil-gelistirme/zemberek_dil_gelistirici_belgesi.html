@@ -1,0 +1,1773 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  <title>zemberek dil gelistirici dokumani</title>
+</head>
+
+
+<body>
+
+
+
+
+
+
+<span style="font-weight: bold;">Zemberek Turk Dili gelistirici belgesi</span><br>
+
+
+
+
+
+
+<br>
+
+Zemberek kutuphanesi, uzerinde farkli Turk dillerinin calisabilmesine
+uygun bir yapida gelistirilmistir. Bu belgede yeni bir Turk dili icin
+yazim denetimi, oneri sistemi ve ascii donusturme islemlerinin cekirdek
+kutuphane uzerinden nasil gerceklestirilebilecegi basitce anlatilmaya
+calisilacaktir. Gecekleme tam olarak yapilmayip sadece yol gosterme
+amaciyla temel sinifi olusumlari ve bilgiler eklenecektir.&nbsp;
+Dil&nbsp; olarak Turkiye Turkcesi'ne en cok benzeyen Azerbaycan
+Turkcesi (ya da Azerice) secilmistir. Azerbaycan Turkcesine iliskin
+temel bilgilere <a href="http://tr.wikipedia.org/wiki/Azerice">http://tr.wikipedia.org/wiki/Azerice</a> adresinden erisebilirsiniz. <br>
+
+
+
+
+
+
+<br>
+
+
+
+
+
+
+<span style="font-weight: bold;">Proje dizin yapisi hakkinda genel bilgi.<br>
+
+
+
+
+
+
+<br>
+
+
+
+
+
+
+</span>Bir dili gerceklemeye baslamadan once proje dizin yapisini
+tanimakta fayda var. Asagidaki ekran goruntusunde genel dizin yapisi
+gosterilmistir. Dizin isimlerinin bir kisminda genel Java yazilim
+gelistirme aliskanliklari goz onunde bulunduruldugundan ingilizce
+kisaltmalar kullanilmistir.&nbsp;Temel dizinler ve anlamlari sunlardir:
+<br>
+
+
+
+
+
+
+1- <span style="font-weight: bold;">src</span>: &nbsp;Yazilim icindeki
+tum kaynak kodlar bu dizin altinda bulunur. Bu dizin altinda mavi ile
+isaretli dizinler su kaynak kodlari tasir. Cekirdek icerisinde
+ana&nbsp; zemberek kutuphane kaynak kodu yer alir. tr, tm ve yeni
+olusturdugumuz az dizinlerinde sirasiyla Turkce, turkmence ve Azerice
+Turk dillerine ozgu kaynak kodlar yer alir. demo dizininde ise
+islemlerin ust seviye testi icin basit bir arayuz
+kodu&nbsp;bulunmaktadir.<br>
+
+
+
+
+
+
+2- <span style="font-weight: bold;">kaynaklar</span>: farkli dillere
+iliskin bilgi dosyalari bu dizinde yer alir. az/bilgi dizini altinda
+Azerice kelime kokleri ve ek bilgilerini tasiyan xml dosyasi yer alacak.<br>
+
+
+
+
+
+
+3- <span style="font-weight: bold;">lib</span>: burada gelistirme
+aninda kullanilabilecek bazi dis kutuphaneler yer alir. Su an temel
+islemler icin calisma aninda hic bir dis kutuphaneye ihtiyac
+duyulmamaktadir.<br>
+
+
+
+
+
+
+4- <span style="font-weight: bold;">test</span>: Burada ise test
+siniflari yer almaktadir. Dile gore yeni bir dizin altinda testler yer
+alacaktir. genellikle yazilan her sinifi icin bir de test sinifinin
+yazilmasi iyi bir yazilim gelistirme aliskanligi &nbsp;olarak bilinir.<br>
+
+
+
+
+
+
+&nbsp;&nbsp;&nbsp; <br>
+
+
+
+
+
+
+<br>
+
+
+
+
+
+
+<div style="text-align: center;"><img style="width: 252px; height: 347px;" alt="dizin" src="proje_dizin_1.png"><br>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+<br>
+
+
+
+
+
+
+<span style="font-weight: bold;">Paket yapisi </span><br>
+
+
+
+
+
+
+Proje paket yapisi konusunda farkli yollar izlenebilir. Cekirdek kutuphane paket yapisi&nbsp;<span style="font-weight: bold;">net.zemberek</span> adi ile baslamaktadir. Yani cekirdek kutuphane siniflari <span style="font-weight: bold;">net.zemberek.yapi.Kelime</span> , <span style="font-weight: bold;">net.zemberek.islemler.Heceleyici</span>
+gibi&nbsp;isimlere sahiptir. Dile ozel siniflarin paket yapisi
+konusunda bir sinirlandirma yapilmamistir. Yani Azerice'ye iliskin
+siniflar gelistirme isini yapanlarin istegine gore farkli bir paket
+yapisina sahip olabilir. Ancak benzerligi korumak icin bu belgede&nbsp;
+<span style="font-weight: bold;">net.zemberek.az </span>ana paket yapisini kullanilmasi yeglendi. Temel paket dizin yapisi asagidaki sekildedir:<br>
+
+
+
+
+
+
+<br>
+
+
+
+
+
+
+<div style="text-align: center;"><img style="width: 210px; height: 288px;" alt="paket yapisi" src="paket_yapisi_1.png"><br>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+<br>
+
+
+
+
+
+
+istenilirse takip edilecek baska bir paket yaklasimi da cekirdek ile
+ayni yapiyi kullanmaktir. Yani az dizini altinda da cekirdek dizin
+yapisi aynen taklit edilir. Bu sayede&nbsp; ayni paketteki siniflarin
+birbirini gorme ozelliginden faydalanilmis olur. Bu yaklasimin goturusu
+ise azericeye ozel sinif isimlerinin cekirdekteki ayni paketteki sinif
+isimlerinde farkli olmasi gerekir. Bu ornekte bu nedenle onceki
+yaklasim tercih edildi. Tabiki tamamen ilgisiz "azeri.dil" gibi bir ana
+paket adi da kullanilabilirdi. Sonucta azerica icin src dizini altinda <span style="font-weight: bold;">az/net/zemberek/az</span> ve onun altinda <span style="font-weight: bold;">islemler</span>, <span style="font-weight: bold;">yapi/ek</span> ve <span style="font-weight: bold;">yapi/kok</span> dizinleri olusturuldu. ileride bu dizinlere&nbsp;dile ozel siniflar yerlestirilecek.&nbsp;<br>
+
+
+
+
+
+
+<br>
+
+
+
+
+
+
+<span style="font-weight: bold;">Alfabe</span><br>
+Turk dilleri dunya uzerinde genellikle uc ana grupta alfabe
+kullanmakta. Turkiye, Turkmen, Azeri, Ozbek, Tatar Turkceleri Latin,
+Kazak, Kirgiz, Baskirt ve Cavus Turkceleri Kril, Uygurca ise Arap
+alfabesi kullaniyor. Latin alfabesi &nbsp;gercekleme ve gelistirici
+katilimi acisindan kolayliklar sagladigindan baslangicta bu alfabe
+yapisini kullanan dillerin gerceklenecegini umuyoruz. Kril alfabesinde
+de&nbsp;tipki latin lafabesi gibi her sese karsilik bir simge karsilik
+dustugunden uygulamada ciddi sorunlar cikacagini sanmiyoruz. Latin
+alfabesi
+kullanan turk dilleri de kendi iclerinde farkliliklar tasimaktadir. Bu
+nedenle her dile ozgi harf bilgilerinin tasindigi bir dosya <span style="font-weight: bold;">harf_[iso dil kodu].txt</span>
+formatinda ilgili kaynaklar/[iso dil kodu]/bilgi diizni altinda yer
+almaz zorundadir. Azerice icin Tipik bir harf bilgi dosyasi <span style="font-weight: bold;">harf_az.txt</span>&nbsp;asagidaki gibi olabilir:<br>
+<br>
+
+
+
+
+
+
+<table style="text-align: left; width: 100px;" border="1" cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td><span style="font-family: monospace;">harfler=a,b,c,&ccedil;,d,e,&#601;,f,g,&#287;,h,x,&#305;,i,j,k,q,l,m,n,o,&ouml;,p,r,s,&#351;,t,u,&uuml;,v,y,z,&acirc;,&icirc;,&ucirc;,w,.,-,',"</span><br style="font-family: monospace;">
+      <span style="font-family: monospace;">sesli=a,e,&#601;,&#305;,i,o,&ouml;,u,&uuml;</span><br style="font-family: monospace;">
+      <span style="font-family: monospace;">ince-sesli=e,&#601;,i,&ouml;,&uuml;</span><br style="font-family: monospace;">
+      <span style="font-family: monospace;">duz-sesli=a,e,&#601;,&#305;,i</span><br style="font-family: monospace;">
+      <span style="font-family: monospace;">yuvarlak-sesli=o,&ouml;,u,&uuml;</span><br style="font-family: monospace;">
+      <span style="font-family: monospace;">sert=f,s,t,k,&ccedil;,&#351;,h,p</span><br style="font-family: monospace;">
+      <span style="font-family: monospace;">ascii-disi=&ccedil;,&#601;,&#287;,&#305;,&ouml;,&#351;,&uuml;</span><br style="font-family: monospace;">
+      <span style="font-family: monospace;">ascii-turkce=c-&ccedil;,g-&#287;,i-&#305;,I-&#304;,e-&#399;,o-&ouml;,s-&#351;,u-&uuml;,&acirc;-a,&icirc;-i,&ucirc;-&uuml;</span><br style="font-family: monospace;">
+      <span style="font-family: monospace;">yumusama-donusum=&ccedil;-c,g-&#287;,k-&#287;,p-b,t-d</span><br style="font-family: monospace;">
+      <span style="font-family: monospace;">ayiklama=.,-,',"</span><br style="font-family: monospace;">
+      <span style="font-family: monospace;">ayiklama-donusum=&acirc;-a,&icirc;-i,&ucirc;-&uuml;</span></td>
+    </tr>
+  </tbody>
+</table>
+<br>
+Azeri alfabesinde su farkli karakterler yer alir: &#399;&#601;, &Ccedil;&ccedil;,&nbsp;&#286;&#287;,&nbsp;&#305;, &#304;, &Ouml;&ouml;, &#350;&#351;, &Uuml;&uuml; <br>
+Bu karakterlerin char karsiliklarina istenirse&nbsp;Alfabe sinifindan
+Alfabe.CHAR_ii , Alfabe.CHAR_ee seklinde erismek mumkundur. Eger
+ekleyeceginiz turk dili icerisnde yeni ingilizce tus takimi disi
+karakterler yer aliyorsa bunlari benzer sekilde Alfabe sinifina ya da
+ayri bir sinifa ekleyebilirisniz.&nbsp;
+Karakterlerin unicode karsiliklari internetteki cesitli tablolardan
+elde edilebilir (<a href="http://unicode.coeurlumiere.com/">http://unicode.coeurlumiere.com/</a> gibi). <br>
+<br>
+Zemberek icerisinde harflere sadece char degil ozellikle cozumleme gibi
+islemler sirasinda TurkceHarf nesnesi olarak erisilir. TurkceHarf
+nesnesinden biraz bahsetmekte yarar var. Zemberek
+icerisindeki en alt seviye nesnelerden birisi TurkceHarf nesnesidir.
+Temelde amaci turkce harfe iliskin ince, kalin, dar , yuvarlak, sesli,
+sert &nbsp;gibi cesitli bilgileri&nbsp; uzerinde tasimaktir. TurkceHarf
+nesnesi ile calismak turkceye ozgu islemeler sirasinda kolaylik
+saglamaktadir. Normalde harflere ozel bilgiler&nbsp;Alfabe sinifi
+icerisindeki ozel tablolar uzerinden de saglanabilirsi ancak nesneye
+yonelik programamaya daha elverisli oldugunu dusundugumuzden harflere
+ozellikleri baglamayi baslangicta daha uygun bulduk.&nbsp;<br>
+
+
+
+
+
+
+<br>
+
+
+
+
+
+
+<span style="font-weight: bold;">Kokler</span><br>
+
+
+
+
+
+
+<br>
+
+
+
+
+
+
+Zemberek kok listesi tabanli bir yapiya sahiptir. Yani kelime cozumleme
+isleminin basari ile tamamlanabilmesi icin dildeki kelime koklerinin
+biliniyor olmasi gerekir. Bu nedenle her dil icin kok bilgisinin
+olusturulmasi gerekir. Kok bilgisinin girilmesi icin cok basit bir duz
+yazi dosya yapisi kullanilmaktadir. Bunun nedeni bu dosya uzerinde el
+ile oynama yapmanin kolay olmasidir. Ileride iliskisel ya da nesne veri
+tabani uzerinden gelistirilen bir yapi kullanilmasi dusunulebilir.<br>
+
+
+
+
+
+
+<br>
+
+
+
+
+
+
+Azerice kokleri <span style="font-weight: bold;">kaynaklar/az/bilgi</span> dizininde <span style="font-weight: bold;">kokler.txt</span>dosyasinda
+tanimlayalim. Kok dosya kodlamasi olarak utf-8 kullanilmasi gerekir,
+aksi halde farkli isletim sistemi - IDE kombinasyonlarinda
+problemler ortaya cikabilir. Dosyanin icerisindeki koklerin
+tnaimlanmasinda uyulmasi gereken kurallar:<br>
+
+
+
+
+
+
+- Her kok tek satirda yazilir.<br>
+
+
+
+
+
+
+- Her kokun bir tipi olmasi gerekir (isim, fiil, zamir, sayi vs..). Tip
+bilgisi kok iceriginin yanina yazilir. Tip belirtme kelimesinin nasil
+olacagi gene dil gelistiricisi tarafindan belirlenir. TurkiyeTurkcesi
+icin "IS, FI, ZA, ZAMAN, SA..." gibi kelimeleri kullanilmistir. <br>
+
+
+
+
+
+
+- Belirtilen&nbsp; kok icin bir ya da daha fazla ozel durum olabilir.
+bu ozel durumlari gene belirtici bir kelime ile tip bilgisinden sonra
+girilmesi gerekir. Ozel durum belirten simgenin ne oldugu da dil
+gelistiricisi tarafindan bleirlenir. (Turkiye Turkcesi icin YUM, DUS..
+vs. )<br>
+
+
+
+
+
+
+- islenmesi istenmeyen satirlarin basina # isareti koyulur.<br>
+
+
+
+
+
+
+<br>
+
+
+
+
+
+
+Asagida ornek bazi kokler gosterilmistir. <br>
+
+
+
+
+
+
+<br>
+
+
+
+
+
+
+<table style="text-align: left; width: 344px; height: 369px;" border="1" cellpadding="2" cellspacing="2">
+
+
+
+
+
+
+  <tbody>
+
+
+
+
+
+
+    <tr>
+
+
+
+
+
+
+      <td>su AD<br>
+
+
+
+
+
+
+sa&#287;l&#305;q AD YUM<br>
+
+
+
+
+
+
+al EY<br>
+
+
+
+
+
+
+gel EY<br>
+
+
+
+
+
+
+tuz AD<br>
+
+
+
+
+
+
+#biber -&gt; istiot<br>
+
+
+
+
+
+
+istiot AD<br>
+
+
+
+
+
+
+et AD<br>
+
+
+
+
+
+
+bal&#305;g AD<br>
+
+
+
+
+
+
+meyve AD<br>
+
+
+
+
+
+
+bir RA<br>
+
+
+
+
+
+
+iki RA<br>
+
+
+
+
+
+
+&uuml;&ccedil; RA<br>
+
+
+
+
+
+
+d&ouml;rd RA<br>
+
+
+
+
+
+
+d&uuml;nen ZAMAN<br>
+
+
+
+
+
+
+sabah ZAMAN<br>
+
+
+
+
+
+
+ah&#351;am ZAMAN</td>
+
+
+
+
+
+
+    </tr>
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  </tbody>
+</table>
+
+
+
+
+
+
+<br>
+
+
+
+
+
+
+Bu sekilde tum kokler tanimlanir. Goruldugu gibi Turkiye Turkcesinden
+farkli olarak kok tiplerini tanimlamada "AD, EY, RA, ZAMAN" secildi.
+Elbette bunlarin yerine gercek azerice kelime kisaltmalari da
+koyulabilir. Kok tiplerini tanimlarken&nbsp; sifat tipi yerine
+baslangicta isim kullanilabilir. &nbsp;<br>
+
+
+
+
+
+
+goruldugu gibi yapilan is bir Map nesnesi olusturulup icerisine kok
+dosyasinda kullanilan kok tip adlarinin "KelimeTipi" sinifidaki asil
+dil bilgisi esleniklerine karislik dustugu belirleniyor. Bu
+sinif&nbsp;duz yazi kok dosyasinin okunmasi sirasinda kullanilacak.<br>
+
+
+
+
+
+
+<br>
+
+
+
+
+
+
+Kok listesinde alfabetik siraya uyulmasi sonradan ekleme ve cikarma
+yapacaklar icin faydali olacaktir. Istenilirse fiiller icin koklere
+mastar eki eklenebilir, ancak bu durumda bu ekin okuma sirasinda
+temizlenmesi gerekir (ornek kodu <span style="font-weight: bold;">TurkceKokOzelDurumBilgisi </span>sinifindaki <span style="font-weight: bold;">kokIcerikBelirle</span> metodunda&nbsp;gorebilirsiniz.). &nbsp;Koklerin okunmasi ve kok ozel durumlarina birazdan devam edecegiz. <br>
+
+
+
+
+
+
+<br>
+
+
+
+
+
+
+<span style="font-weight: bold;">Ekler</span><br>
+
+
+
+
+
+
+Farkli Turk dillerinin kutuphane uzerinden gerceklenmesindeki en
+zorlayici yerlerden birisi ek bilgilerinin girilmesidir. Ekler ozel
+yapidaki bir xml dosyasinda tanimlanir. <span style="font-weight: bold;">kaynaklar/az/bilgi</span> dizininde <span style="font-weight: bold;">ek_az.xml</span> dosyasini uretelim. Dosya iki ana kisimdan olusur. ek kume tanimlamasi ve ek tanimlamasi. <br>
+
+
+
+
+
+<br>
+
+
+
+
+
+<table style="text-align: left; width: 100px;" border="1" cellpadding="2" cellspacing="2">
+
+
+
+
+
+  <tbody>
+
+
+
+
+
+    <tr>
+
+
+
+
+
+      <td>
+      
+      
+      
+      
+      
+      <pre style="border: 0.01mm solid rgb(0, 0, 0); padding: 4px; line-height: 100%; font-family: monospace; background-color: rgb(0, 0, 0);"><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">&lt;?</span><span style="color: rgb(0, 204, 155); background-color: rgb(0, 0, 0); font-weight: bold;">xml</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(0, 204, 155); background-color: rgb(0, 0, 0); font-weight: bold;">version=</span><span style="color: rgb(245, 222, 179); background-color: rgb(0, 0, 0); font-weight: bold;">"1.0"</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(0, 204, 155); background-color: rgb(0, 0, 0); font-weight: bold;">encoding=</span><span style="color: rgb(245, 222, 179); background-color: rgb(0, 0, 0); font-weight: bold;">"UTF-8"</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">?&gt;<br><br></span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&lt;</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0); font-weight: bold;">ek-bilgisi</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&gt;<br><br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">    </span><span style="color: rgb(94, 189, 119); background-color: rgb(0, 0, 0); font-style: italic;">&lt;!-- ek kumeleri --&gt;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">    </span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&lt;</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0); font-weight: bold;">ek-kumeleri</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&gt;<br><br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">        </span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&lt;</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0); font-weight: bold;">ek-kumesi</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0); font-weight: bold;">..."/&gt;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">        </span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&lt;</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0); font-weight: bold;">ek-kumesi</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0); font-weight: bold;">..."/&gt;<br><br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">        </span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0); font-weight: bold;">....<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">        <br>    </span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&lt;/</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0); font-weight: bold;">ek-kumeleri</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&gt;<br><br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">    </span><span style="color: rgb(94, 189, 119); background-color: rgb(0, 0, 0); font-style: italic;">&lt;!-- ekler --&gt;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">    </span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&lt;</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0); font-weight: bold;">ekler</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&gt;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">        </span><span style="color: rgb(94, 189, 119); background-color: rgb(0, 0, 0); font-style: italic;"><br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">        </span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&lt;</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0); font-weight: bold;">ek</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0); font-weight: bold;">....</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0); font-weight: bold;">/&gt;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">        </span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&lt;</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0); font-weight: bold;">ek</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0); font-weight: bold;">....</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0); font-weight: bold;">/&gt;<br><br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">        </span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0); font-weight: bold;">....</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">        <br> <br>    </span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&lt;/</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0); font-weight: bold;">ekler</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&gt;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">    <br></span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&lt;/</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0); font-weight: bold;">ek-bilgisi</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&gt;</span></pre>
+
+
+
+
+
+      </td>
+
+
+
+
+
+    </tr>
+
+
+
+
+
+  
+  
+  
+  
+  
+  </tbody>
+</table>
+
+
+
+
+
+<br>
+
+
+
+
+
+Xml etiket (tag) ve ozellik (attribute) isimlerinin Turkiye Turkcesindekilerle ayni olmasi gerekir.&nbsp;<br>
+
+
+
+
+
+Ek kumeleri ek tanimlamalarinda kolaylik saglamasi amaciyla kullanilir.
+Asil onemli olan kisim ek tanimlamasi oldugundan o kisma agirlik
+verilecektir. &nbsp;Ekler kendi icinde farkli alanlara sahiptir. En
+basit anlamd bir ek tanimlamasi asagidaki gibi olabilir.<br>
+
+
+
+
+
+<br>
+
+
+
+
+
+<table style="text-align: left; width: 100px;" border="1" cellpadding="2" cellspacing="2">
+
+
+
+
+
+  <tbody>
+
+
+
+
+
+    <tr>
+
+
+
+
+
+      <td>
+      
+      
+      
+      
+      
+      <pre style="border: 0.01mm solid rgb(0, 0, 0); padding: 4px; line-height: 100%; font-family: monospace; background-color: rgb(0, 0, 0);"><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">        </span><span style="color: rgb(94, 189, 119); background-color: rgb(0, 0, 0); font-style: italic;">&lt;!-- isim cogul eki _ler. "q&#305;z_lar.." --&gt;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">        </span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&lt;</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0); font-weight: bold;">ek</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(0, 204, 155); background-color: rgb(0, 0, 0); font-weight: bold;">ad=</span><span style="color: rgb(245, 222, 179); background-color: rgb(0, 0, 0); font-weight: bold;">"AD_COGUL_LER"</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(0, 204, 155); background-color: rgb(0, 0, 0); font-weight: bold;">uretim=</span><span style="color: rgb(245, 222, 179); background-color: rgb(0, 0, 0); font-weight: bold;">"l+(A)+r"</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&gt;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">        </span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&lt;/</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0); font-weight: bold;">ek</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&gt;</span></pre>
+
+
+
+
+
+      </td>
+
+
+
+
+
+    </tr>
+
+
+
+
+
+  
+  
+  
+  
+  
+  </tbody>
+</table>
+
+
+
+
+
+<br>
+
+
+
+
+
+ek icerisindeki "ad" ve "uretim" mecburi alanlardir. Ek adini
+kullanirken dile ozel isimler kullanilabilir. Nitekim Turkmencede ayni
+ek icin "AT_KOPLUK_LER" adi tercih edilmistir. Bununla birlikte su tur
+bir isimlendirme onerilir: "kok tipi + ek adi + ekin kullanilisi" ekin
+kullanilisi Turkiye turkcesi icin isimlerde "sey" kokune eklenilmesi
+ile olusan halidir. <br>
+
+
+
+
+
+Ikinci onemli ozellik ise "uretim" bilgisidir. "l+(A)+r" ile belirtilen
+uretim bilgisi bir ekin nasil uretilecegini ifade eder. uretim
+kurallari gene dilden dile farkliliklar gosterebilir, ancak cozgu zaman
+Turk dillerinde benzer kurallar mevcut oldugundan genellikle buyuk
+degisiklikler yapmak gerekmemektedir. Turkiye turkcesi icin ek uretim
+kurallari su sekildedir:<br>
+
+
+
+
+
+<br>
+
+
+
+
+
+<table style="text-align: left; width: 622px; height: 196px;" border="1" cellpadding="2" cellspacing="2">
+
+
+
+
+
+  <tbody>
+
+
+
+
+
+    <tr>
+
+
+
+
+
+      <td>+ : her bir uretim bilesinin arasinda yer alir. ekleme ifade eder.&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; <br>
+
+
+
+
+
+(A):son seslinin ince_kalin olmasina gore a ya da e harfi uretilir.<br>
+
+
+
+
+
+(I):son seslinin durumuna gore i,&#305;,u ya da&nbsp;&uuml; uretilir.<br>
+
+
+
+
+
+?x: son harf sesli ise x harfi (ya da kural ise ilgili harfler) eklenir.<br>
+
+
+
+
+
+^x: son harf sert ise gore x harfinin sert hali kullanilir.<br>
+
+
+
+
+
+kucuk harfler: dogrudan uretime eklenir.<br>
+
+
+
+
+
+buyuk harfler: turkceye ozel karakterlerin benzerleri. G yumusak g gibi. dogrudan eklenir.</td>
+
+
+
+
+
+    </tr>
+
+
+
+
+
+  
+  
+  
+  
+  
+  </tbody>
+</table>
+
+
+
+
+
+<br>
+
+
+
+
+
+Ornegin "?y+(A)" ek uretim kelimesi bu ekin sesli ile biten bir
+kelimeye eklendiginde "y" harfi ile baslayacagi ve sonraki ek harfinin
+kelimenin son seslisi ince ise "e" degil ise "a" olacagi anlamina
+gelir. Bu ek {e,a,ye,ya} seklinde olusabilir. <br>
+
+
+
+
+
+<br>
+
+
+
+
+
+
+Azerice icin ise bu kurallarda cok kucuk bir kac degisiklik gerektigini
+fazredelim. Ornegin son kurali isletmeyelim, yani dogrudan Azeri
+alfabesi karakterlerini ek dosyasinda kullanalim (ek dosyasi utf-8
+oldugundan bu bir soruna yol acmaz.). &nbsp;Bu konuya daha sonra tekrar
+donecegiz, <br>
+
+
+
+
+
+<br>
+
+
+
+
+
+Simdi bir kac tane daha ek olusturalim (turkce ek dosyasindan kopyalayip) <br>
+
+
+
+
+
+<br>
+
+
+
+
+
+<table style="text-align: left; width: 100px;" border="1" cellpadding="2" cellspacing="2">
+
+
+
+
+
+  <tbody>
+
+
+
+
+
+    <tr>
+
+
+
+
+
+      <td>
+      
+      
+      
+      
+      
+      <pre style="border: 0.01mm solid rgb(0, 0, 0); padding: 4px; line-height: 100%; font-family: monospace; background-color: rgb(0, 0, 0);"><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">        </span><span style="color: rgb(94, 189, 119); background-color: rgb(0, 0, 0); font-style: italic;">&lt;!-- ad cogul eki _ler. "q&yacute;z_lar.." --&gt;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">        </span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&lt;</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0); font-weight: bold;">ek</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(0, 204, 155); background-color: rgb(0, 0, 0); font-weight: bold;">ad=</span><span style="color: rgb(245, 222, 179); background-color: rgb(0, 0, 0); font-weight: bold;">"AD_COGUL_LER"</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(0, 204, 155); background-color: rgb(0, 0, 0); font-weight: bold;">uretim=</span><span style="color: rgb(245, 222, 179); background-color: rgb(0, 0, 0); font-weight: bold;">"l+(A)+r"</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&gt;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">            </span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&lt;</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0); font-weight: bold;">ardisil-ekler</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&gt;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">                </span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&lt;</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0); font-weight: bold;">aek</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&gt;</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0); font-weight: bold;">AD_YONELME_E</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&lt;/</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0); font-weight: bold;">aek</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&gt;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">                </span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&lt;</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0); font-weight: bold;">aek</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&gt;</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0); font-weight: bold;">AD_KALMA_DE</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&lt;/</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0); font-weight: bold;">aek</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&gt;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">            </span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&lt;/</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0); font-weight: bold;">ardisil-ekler</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&gt;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">        </span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&lt;/</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0); font-weight: bold;">ek</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&gt;<br><br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">        </span><span style="color: rgb(94, 189, 119); background-color: rgb(0, 0, 0); font-style: italic;">&lt;!-- cegiz: "kedi_ceGiz --&gt;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">        </span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&lt;</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0); font-weight: bold;">ek</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(0, 204, 155); background-color: rgb(0, 0, 0); font-weight: bold;">ad=</span><span style="color: rgb(245, 222, 179); background-color: rgb(0, 0, 0); font-weight: bold;">"AD_KUCULTME_CEGIZ"</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(0, 204, 155); background-color: rgb(0, 0, 0); font-weight: bold;">uretim=</span><span style="color: rgb(245, 222, 179); background-color: rgb(0, 0, 0); font-weight: bold;">"c+(A)+&#287;+(I)+z"</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&gt;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">            </span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&lt;</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0); font-weight: bold;">ardisil-ekler</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&gt;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">                </span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&lt;</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0); font-weight: bold;">aek</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&gt;</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0); font-weight: bold;">AD_COGUL_LER</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&lt;/</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0); font-weight: bold;">aek</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&gt;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">                </span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&lt;</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0); font-weight: bold;">aek</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&gt;</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0); font-weight: bold;">AD_YONELME_E</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&lt;/</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0); font-weight: bold;">aek</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&gt;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">                </span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&lt;</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0); font-weight: bold;">aek</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&gt;</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0); font-weight: bold;">AD_KALMA_DE</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&lt;/</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0); font-weight: bold;">aek</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&gt;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">            </span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&lt;/</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0); font-weight: bold;">ardisil-ekler</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&gt;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">        </span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&lt;/</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0); font-weight: bold;">ek</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&gt;<br><br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">        </span><span style="color: rgb(94, 189, 119); background-color: rgb(0, 0, 0); font-style: italic;">&lt;!-- isim yonelme : "kedi_ye bak"  --&gt;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">        </span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&lt;</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0); font-weight: bold;">ek</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(0, 204, 155); background-color: rgb(0, 0, 0); font-weight: bold;">ad=</span><span style="color: rgb(245, 222, 179); background-color: rgb(0, 0, 0); font-weight: bold;">"AD_YONELME_E"</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(0, 204, 155); background-color: rgb(0, 0, 0); font-weight: bold;">uretim=</span><span style="color: rgb(245, 222, 179); background-color: rgb(0, 0, 0); font-weight: bold;">"?y+(A)"</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">/&gt;<br><br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">        </span><span style="color: rgb(94, 189, 119); background-color: rgb(0, 0, 0); font-style: italic;">&lt;!-- isim kalma : "ev_de yemek var."  --&gt;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">        </span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&lt;</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0); font-weight: bold;">ek</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(0, 204, 155); background-color: rgb(0, 0, 0); font-weight: bold;">ad=</span><span style="color: rgb(245, 222, 179); background-color: rgb(0, 0, 0); font-weight: bold;">"AD_KALMA_DE"</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(0, 204, 155); background-color: rgb(0, 0, 0); font-weight: bold;">uretim=</span><span style="color: rgb(245, 222, 179); background-color: rgb(0, 0, 0); font-weight: bold;">"^d+(A)"</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">/&gt;</span></pre>
+
+
+
+
+
+      </td>
+
+
+
+
+
+    </tr>
+
+
+
+
+
+  
+  
+  
+  
+  
+  </tbody>
+</table>
+
+
+
+
+
+<br>
+
+
+
+
+
+Bu defa sisteme uc yeni ek ekledik ve bir degisiklik yapip cogul eki
+icine &lt;ardisil-ek&gt; bilgisi eklendi. Ardisil ek bilgisi kelime
+cozumlemenin temelini olusturur. Yani her ek kendi icinde kendinden
+sonra gelebilecek eklerin bir listesini tasir. <br>
+
+
+
+
+
+<br>
+
+
+
+
+
+Ardisil ekler uc sekilde belirlenebilir. <br>
+
+
+
+
+
+- &lt;aek&gt; etiketi icinde tek ek adi yazilarak<br>
+
+
+
+
+
+- ek kumesleri olusturulursa &lt;kume&gt; etiketi icinde ek kume adi yazilarak<br>
+
+
+
+
+
+- dogrudan baska bir ekin tum ardisil ekleri "kopya-ek" ozelligine
+kopyalanacak ekin adi eklenerek. Asagida tum sekilleri gosteren bir
+ornek verilmistir.<br>
+
+
+
+
+
+<br>
+
+
+
+
+
+<table style="text-align: left; width: 100px;" border="1" cellpadding="2" cellspacing="2">
+
+
+
+
+
+  <tbody>
+
+
+
+
+
+    <tr>
+
+
+
+
+
+      <td>
+      
+      
+      
+      
+      
+      <pre style="border: 0.01mm solid rgb(0, 0, 0); padding: 4px; line-height: 100%; font-family: monospace; background-color: rgb(0, 0, 0);"><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">        </span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&lt;</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0); font-weight: bold;">ek</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(0, 204, 155); background-color: rgb(0, 0, 0); font-weight: bold;">ad=</span><span style="color: rgb(245, 222, 179); background-color: rgb(0, 0, 0); font-weight: bold;">"AD_TEST_EK"</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(0, 204, 155); background-color: rgb(0, 0, 0); font-weight: bold;">uretim=</span><span style="color: rgb(245, 222, 179); background-color: rgb(0, 0, 0); font-weight: bold;">"l+(A)+r"</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&gt;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">            </span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&lt;</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0); font-weight: bold;">ardisil-ekler</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">  </span><span style="color: rgb(0, 204, 155); background-color: rgb(0, 0, 0); font-weight: bold;">kopya-ek=</span><span style="color: rgb(245, 222, 179); background-color: rgb(0, 0, 0); font-weight: bold;">"ISIM_ANDIRMA_IMSI"</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);"> &gt;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">                </span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&lt;</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0); font-weight: bold;">kume</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&gt;</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0); font-weight: bold;">AD_SAHIPLIK</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&lt;/</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0); font-weight: bold;">kume</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&gt;</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">                <br>                </span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&lt;</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0); font-weight: bold;">aek</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&gt;</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0); font-weight: bold;">AD_YONELME_E</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&lt;/</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0); font-weight: bold;">aek</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&gt;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">                </span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&lt;</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0); font-weight: bold;">aek</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&gt;</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0); font-weight: bold;">AD_KALMA_DE</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&lt;/</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0); font-weight: bold;">aek</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&gt;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">            </span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&lt;/</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0); font-weight: bold;">ardisil-ekler</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&gt;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">        </span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&lt;/</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0); font-weight: bold;">ek</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&gt;</span></pre>
+
+
+
+
+
+      </td>
+
+
+
+
+
+    </tr>
+
+
+
+
+
+  
+  
+  
+  
+  
+  </tbody>
+</table>
+
+
+
+
+
+<br>
+
+
+
+
+
+su anda sadece tek ek ardisil ek belirleme ozelligini kullaniyoruz. <br>
+
+
+
+
+<br>
+
+
+
+
+Baslangic ekleri: zemberek icerisinde tanimlanmasi gereken bir ek turu
+baslangic ekleri. Bu ekler belli bir kok tipinden sonra gelebilecek
+ekler icin baslangic noktasi temsil ediyorular. TurkiyeTurkcesi ek
+belirtme dosyasinda her bir (cogu demek daha dogru) kok tipi icin bir
+de baslangic eki tanimlanmistir. Bu ekin ardisil ekleri yalin bir koke
+eklenebilecek ekleri temsil eder. Biz de azeri ek tanimlama dosyasina
+bu ekin bir benzerini, ama farkli bir ad ile olusturalim..<br>
+
+
+
+
+<br>
+
+
+
+
+<table style="text-align: left; width: 100px;" border="1" cellpadding="2" cellspacing="2">
+
+
+
+
+  <tbody>
+
+
+
+
+    <tr>
+
+
+
+
+      <td>
+      
+      
+      
+      
+      <pre style="border: 0.01mm solid rgb(0, 0, 0); padding: 4px; line-height: 100%; font-family: monospace; background-color: rgb(0, 0, 0);"><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">        </span><span style="color: rgb(94, 189, 119); background-color: rgb(0, 0, 0); font-style: italic;">&lt;!-- ad baslangic. --&gt;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">        </span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&lt;</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0); font-weight: bold;">ek</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(0, 204, 155); background-color: rgb(0, 0, 0); font-weight: bold;">ad=</span><span style="color: rgb(245, 222, 179); background-color: rgb(0, 0, 0); font-weight: bold;">"AD_BASLANGIC_BOS"</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(0, 204, 155); background-color: rgb(0, 0, 0); font-weight: bold;">uretim=</span><span style="color: rgb(245, 222, 179); background-color: rgb(0, 0, 0); font-weight: bold;">""</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&gt;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">            </span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&lt;</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0); font-weight: bold;">ardisil-ekler</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&gt;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">                </span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&lt;</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0); font-weight: bold;">aek</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&gt;</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0); font-weight: bold;">AD_COGUL_LER</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&lt;/</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0); font-weight: bold;">aek</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&gt;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">                </span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&lt;</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0); font-weight: bold;">aek</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&gt;</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0); font-weight: bold;">AD_YONELME_E</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&lt;/</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0); font-weight: bold;">aek</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&gt;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">                </span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&lt;</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0); font-weight: bold;">aek</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&gt;</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0); font-weight: bold;">AD_KALMA_DE</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&lt;/</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0); font-weight: bold;">aek</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&gt;</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">                <br>                </span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&lt;</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0); font-weight: bold;">aek</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&gt;</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0); font-weight: bold;">AD_KUCULTME_CEGIZ</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&lt;/</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0); font-weight: bold;">aek</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&gt;</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">                <br>            </span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&lt;/</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0); font-weight: bold;">ardisil-ekler</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&gt;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">        </span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&lt;/</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0); font-weight: bold;">ek</span><span style="color: rgb(204, 255, 51); background-color: rgb(0, 0, 0);">&gt;</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">   </span></pre>
+
+
+
+
+      </td>
+
+
+
+
+    </tr>
+
+
+
+
+  
+  
+  
+  
+  </tbody>
+</table>
+
+
+
+
+<br>
+
+
+
+Bu sekilde en temel ek bilgisi dosyasini uretmis olduk. Simdilik sadece
+bes tane ek var ve ozel durumlar henuz sistemde yer almiyor. Bu ekler
+sistem tarafindan okunduktan sonra cesitli islemlerden gecirilirler.
+Ornegin ek uretim&nbsp;kural kelimeleri cekirdekteki EkKuralCozumleyici
+icerisinde cozumlenip kurallar EkUretimBileseni listesi haline
+getirilir. EkUretimBileseni nesnesi icerisinde bir adet TurkceHarf ve
+EkUretimKurali enum degeri tasir. <br>
+
+
+
+<br>
+
+
+
+<table style="text-align: left; width: 100px;" border="1" cellpadding="2" cellspacing="2">
+
+
+
+  <tbody>
+
+
+
+    <tr>
+
+
+
+      <td>
+      
+      
+      
+      <pre style="border: 0.01mm solid rgb(0, 0, 0); padding: 4px; line-height: 100%; font-family: monospace; background-color: rgb(0, 0, 0);"><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0); font-style: italic;">/**<br> * uretim bilesen sinifi, uretim kural kelimesindeki bilesenleri temsil eder.<br> * degistirilemez, thread safe.<br> *<br> */<br></span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">public</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">class</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(204, 153, 255); background-color: rgb(0, 0, 0);">EkUretimBileseni </span><span style="color: rgb(128, 128, 128); background-color: rgb(0, 0, 0);">{<br><br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">    </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">private</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">final</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(204, 153, 255); background-color: rgb(0, 0, 0);">EkUretimKurali </span><span style="color: rgb(255, 204, 102); background-color: rgb(0, 0, 0); font-weight: bold;">kural;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">    </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">private</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">final</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(204, 153, 255); background-color: rgb(0, 0, 0);">TurkceHarf </span><span style="color: rgb(255, 204, 102); background-color: rgb(0, 0, 0); font-weight: bold;">harf;<br><br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"></span><span style="color: rgb(128, 128, 128); background-color: rgb(0, 0, 0);">.....</span></pre>
+
+
+
+      </td>
+
+
+
+    </tr>
+
+
+
+  
+  
+  
+  </tbody>
+</table>
+
+
+
+<br>
+
+
+
+EkUretimKurali bir enumerasyon yapisidir, yani icerisinde sabit degerler
+tasir. Su anda icerisinde Turk Dilleri icinde olabilecek cesitli
+kirallar mevcuttur. Gerekirse yenilerinin ihtiyaca gore eklenmesi
+mumkundur.<br>
+
+
+
+<br>
+
+
+
+<table style="text-align: left; width: 100px;" border="1" cellpadding="2" cellspacing="2">
+
+
+
+  <tbody>
+
+
+
+    <tr>
+
+
+
+      <td>
+      
+      
+      
+      <pre style="border: 0.01mm solid rgb(0, 0, 0); padding: 4px; line-height: 100%; font-family: monospace; background-color: rgb(0, 0, 0);"><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0); font-style: italic;">/**<br> * Turk dilleri icin uretim kurallarini belirler. Bazi kurallar sadece belli dillerde<br> * kullanilir.<br> */<br></span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">public</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">enum</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(204, 153, 255); background-color: rgb(0, 0, 0);">EkUretimKurali </span><span style="color: rgb(128, 128, 128); background-color: rgb(0, 0, 0);">{<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">        </span><span style="color: rgb(153, 255, 0); background-color: rgb(0, 0, 0); font-weight: bold; font-style: italic;">SESLI_AE,<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">        </span><span style="color: rgb(153, 255, 0); background-color: rgb(0, 0, 0); font-weight: bold; font-style: italic;">SESLI_AA,<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">        </span><span style="color: rgb(153, 255, 0); background-color: rgb(0, 0, 0); font-weight: bold; font-style: italic;">SESLI_IU,<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">        </span><span style="color: rgb(153, 255, 0); background-color: rgb(0, 0, 0); font-weight: bold; font-style: italic;">SESSIZ_Y,<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">        </span><span style="color: rgb(153, 255, 0); background-color: rgb(0, 0, 0); font-weight: bold; font-style: italic;">SERTLESTIR,<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">        </span><span style="color: rgb(153, 255, 0); background-color: rgb(0, 0, 0); font-weight: bold; font-style: italic;">KAYNASTIR,<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">        </span><span style="color: rgb(153, 255, 0); background-color: rgb(0, 0, 0); font-weight: bold; font-style: italic;">HARF<br></span><span style="color: rgb(128, 128, 128); background-color: rgb(0, 0, 0);">}</span></pre>
+
+
+
+      </td>
+
+
+
+    </tr>
+
+
+
+  
+  
+  
+  </tbody>
+</table>
+
+
+
+<br>
+
+
+
+Bu kurallarin nasil isletilecegi ise gene dil gelistiricisi tarafindan
+belirlenir. Bu konuyu anlamak icin Ek uretim islemini gozden gecirelim.
+<br>
+
+
+
+
+
+<br>
+
+
+
+
+<span style="font-weight: bold;">Ek uretici&nbsp;</span><br>
+
+
+
+
+<br>
+
+
+
+
+Her dil icin&nbsp;ek
+uretimi farkli bir yapida olaiblir. Bu nedenle EkUretici
+arayuzune sahip bir sinifa ihtiyacimiz var. Bu arayuzun yapisi
+asagidaki gibidir.<br>
+
+
+
+
+<br>
+
+
+
+<table style="text-align: left; width: 100px;" border="1" cellpadding="2" cellspacing="2">
+
+
+
+  <tbody>
+
+
+
+    <tr>
+
+
+
+      <td>
+      
+      
+      
+      <pre style="border: 0.01mm solid rgb(0, 0, 0); padding: 4px; line-height: 100%; font-family: monospace; background-color: rgb(0, 0, 0);"><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">public</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">interface</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(204, 153, 255); background-color: rgb(0, 0, 0); font-style: italic;">EkUretici </span><span style="color: rgb(128, 128, 128); background-color: rgb(0, 0, 0);">{<br><br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">    </span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0); font-style: italic;">/**<br>     * Kelime Cozumleme islemi icin ek uretimi.<br>     * </span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0); font-weight: bold; font-style: italic;">@param</span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0); font-style: italic;"> </span><span style="color: rgb(255, 204, 153); background-color: rgb(0, 0, 0); font-style: italic;">ulanacak<br>     </span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0); font-style: italic;">* </span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0); font-weight: bold; font-style: italic;">@param</span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0); font-style: italic;"> </span><span style="color: rgb(255, 204, 153); background-color: rgb(0, 0, 0); font-style: italic;">giris<br>     </span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0); font-style: italic;">* </span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0); font-weight: bold; font-style: italic;">@param</span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0); font-style: italic;"> </span><span style="color: rgb(255, 204, 153); background-color: rgb(0, 0, 0); font-style: italic;">bilesenler<br>     </span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0); font-style: italic;">* </span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0); font-weight: bold; font-style: italic;">@return</span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0); font-style: italic;"> uretilen ek, HarfDizisi cinsinden.<br>     */<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">    </span><span style="color: rgb(204, 153, 255); background-color: rgb(0, 0, 0);">HarfDizisi </span><span style="color: rgb(102, 255, 0); background-color: rgb(0, 0, 0);">cozumlemeIcinEkUret(</span><span style="color: rgb(204, 153, 255); background-color: rgb(0, 0, 0);">HarfDizisi </span><span style="color: rgb(255, 204, 153); background-color: rgb(0, 0, 0);">ulanacak,<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">                                   </span><span style="color: rgb(204, 153, 255); background-color: rgb(0, 0, 0);">HarfDizisi </span><span style="color: rgb(255, 204, 153); background-color: rgb(0, 0, 0);">giris,<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">                                   </span><span style="color: rgb(204, 153, 255); background-color: rgb(0, 0, 0); font-style: italic;">List&lt;</span><span style="color: rgb(204, 153, 255); background-color: rgb(0, 0, 0);">EkUretimBileseni&gt;</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(255, 204, 153); background-color: rgb(0, 0, 0);">bilesenler)</span><span style="color: rgb(128, 128, 128); background-color: rgb(0, 0, 0);">;<br><br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">    </span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0); font-style: italic;">/**<br>     * Kelime uretimi icin ek uretimi.<br>     * </span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0); font-weight: bold; font-style: italic;">@param</span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0); font-style: italic;"> </span><span style="color: rgb(255, 204, 153); background-color: rgb(0, 0, 0); font-style: italic;">ulanacak<br>     </span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0); font-style: italic;">* </span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0); font-weight: bold; font-style: italic;">@param</span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0); font-style: italic;"> </span><span style="color: rgb(255, 204, 153); background-color: rgb(0, 0, 0); font-style: italic;">sonrakiEk<br>     </span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0); font-style: italic;">* </span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0); font-weight: bold; font-style: italic;">@param</span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0); font-style: italic;"> </span><span style="color: rgb(255, 204, 153); background-color: rgb(0, 0, 0); font-style: italic;">bilesenler<br>     </span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0); font-style: italic;">* </span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0); font-weight: bold; font-style: italic;">@return</span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0); font-style: italic;"> uretilen ek, HarfDizisi cinsinden.<br>     */<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">    </span><span style="color: rgb(204, 153, 255); background-color: rgb(0, 0, 0);">HarfDizisi </span><span style="color: rgb(102, 255, 0); background-color: rgb(0, 0, 0);">olusumIcinEkUret(</span><span style="color: rgb(204, 153, 255); background-color: rgb(0, 0, 0);">HarfDizisi </span><span style="color: rgb(255, 204, 153); background-color: rgb(0, 0, 0);">ulanacak,<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">                                </span><span style="color: rgb(204, 153, 255); background-color: rgb(0, 0, 0);">Ek </span><span style="color: rgb(255, 204, 153); background-color: rgb(0, 0, 0);">sonrakiEk,<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">                                </span><span style="color: rgb(204, 153, 255); background-color: rgb(0, 0, 0); font-style: italic;">List&lt;</span><span style="color: rgb(204, 153, 255); background-color: rgb(0, 0, 0);">EkUretimBileseni&gt;</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(255, 204, 153); background-color: rgb(0, 0, 0);">bilesenler)</span><span style="color: rgb(128, 128, 128); background-color: rgb(0, 0, 0);">;<br><br>}</span></pre>
+
+
+
+      </td>
+
+
+
+    </tr>
+
+
+
+  
+  
+  
+  </tbody>
+</table>
+
+
+
+<span style="font-weight: bold;"><br>
+
+
+
+EkUreticiAz</span> sinifini <span style="font-weight: bold;">net.zemberek.az.yapi.ek</span> paketinde olusturalim. simdilik icindeki metodlar bos. Bu sinif icinde azerice bir ekin nasil uretilecegini yazmamiz gerekiyor.<br>
+
+
+
+<br>
+
+
+
+<table style="text-align: left; width: 100px;" border="1" cellpadding="2" cellspacing="2">
+
+
+
+  <tbody>
+
+
+
+    <tr>
+
+
+
+      <td>
+      
+      
+      
+      <pre style="border: 0.01mm solid rgb(0, 0, 0); padding: 4px; line-height: 100%; font-family: monospace; background-color: rgb(0, 0, 0);"><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">public</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">class</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(204, 153, 255); background-color: rgb(0, 0, 0);">EkUreticiAz </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">implements</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(204, 153, 255); background-color: rgb(0, 0, 0); font-style: italic;">EkUretici </span><span style="color: rgb(128, 128, 128); background-color: rgb(0, 0, 0);">{<br><br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">    </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">public</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(204, 153, 255); background-color: rgb(0, 0, 0);">HarfDizisi </span><span style="color: rgb(102, 255, 0); background-color: rgb(0, 0, 0);">cozumlemeIcinEkUret(</span><span style="color: rgb(204, 153, 255); background-color: rgb(0, 0, 0);">HarfDizisi </span><span style="color: rgb(255, 204, 153); background-color: rgb(0, 0, 0);">ulanacak,</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> <br>                                          </span><span style="color: rgb(204, 153, 255); background-color: rgb(0, 0, 0);">HarfDizisi </span><span style="color: rgb(255, 204, 153); background-color: rgb(0, 0, 0);">giris,</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> <br>                                          </span><span style="color: rgb(204, 153, 255); background-color: rgb(0, 0, 0); font-style: italic;">List&lt;</span><span style="color: rgb(204, 153, 255); background-color: rgb(0, 0, 0);">EkUretimBileseni&gt;</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(255, 204, 153); background-color: rgb(0, 0, 0);">bilesenler)</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(128, 128, 128); background-color: rgb(0, 0, 0);">{<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">        </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">return</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">null</span><span style="color: rgb(128, 128, 128); background-color: rgb(0, 0, 0);">;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">    </span><span style="color: rgb(128, 128, 128); background-color: rgb(0, 0, 0);">}<br><br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">    </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">public</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(204, 153, 255); background-color: rgb(0, 0, 0);">HarfDizisi </span><span style="color: rgb(102, 255, 0); background-color: rgb(0, 0, 0);">olusumIcinEkUret(</span><span style="color: rgb(204, 153, 255); background-color: rgb(0, 0, 0);">HarfDizisi </span><span style="color: rgb(255, 204, 153); background-color: rgb(0, 0, 0);">ulanacak,</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> <br>                                       </span><span style="color: rgb(204, 153, 255); background-color: rgb(0, 0, 0);">Ek </span><span style="color: rgb(255, 204, 153); background-color: rgb(0, 0, 0);">sonrakiEk,</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> <br>                                       </span><span style="color: rgb(204, 153, 255); background-color: rgb(0, 0, 0); font-style: italic;">List&lt;</span><span style="color: rgb(204, 153, 255); background-color: rgb(0, 0, 0);">EkUretimBileseni&gt;</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(255, 204, 153); background-color: rgb(0, 0, 0);">bilesenler)</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(128, 128, 128); background-color: rgb(0, 0, 0);">{<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">        </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">return</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">null</span><span style="color: rgb(128, 128, 128); background-color: rgb(0, 0, 0);">;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">    </span><span style="color: rgb(128, 128, 128); background-color: rgb(0, 0, 0);">}<br></span></pre>
+
+
+
+      </td>
+
+
+
+    </tr>
+
+
+
+  
+  
+  
+  </tbody>
+</table>
+
+
+
+<br>
+
+
+
+cozumleme icin uret metodunu asagidaki sekilde tanimladim.<br>
+
+
+
+<table style="text-align: left; width: 100px;" border="1" cellpadding="2" cellspacing="2">
+
+
+
+  <tbody>
+
+
+
+    <tr>
+
+
+
+      <td>
+      
+      
+      
+      <pre style="border: 0.01mm solid rgb(0, 0, 0); padding: 4px; line-height: 100%; font-family: monospace; background-color: rgb(0, 0, 0);"><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">    </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">public</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(204, 153, 255); background-color: rgb(0, 0, 0);">HarfDizisi </span><span style="color: rgb(102, 255, 0); background-color: rgb(0, 0, 0);">cozumlemeIcinEkUret(</span><span style="color: rgb(204, 153, 255); background-color: rgb(0, 0, 0);">HarfDizisi </span><span style="color: rgb(255, 204, 153); background-color: rgb(0, 0, 0);">ulanacak,</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> <br>                                          </span><span style="color: rgb(204, 153, 255); background-color: rgb(0, 0, 0);">HarfDizisi </span><span style="color: rgb(255, 204, 153); background-color: rgb(0, 0, 0);">giris,</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> <br>                                          </span><span style="color: rgb(204, 153, 255); background-color: rgb(0, 0, 0); font-style: italic;">List&lt;</span><span style="color: rgb(204, 153, 255); background-color: rgb(0, 0, 0);">EkUretimBileseni&gt;</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(255, 204, 153); background-color: rgb(0, 0, 0);">bilesenler)</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(128, 128, 128); background-color: rgb(0, 0, 0);">{<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">        </span><span style="color: rgb(204, 153, 255); background-color: rgb(0, 0, 0);">HarfDizisi </span><span style="color: rgb(255, 204, 102); background-color: rgb(0, 0, 0);">sonuc </span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0);">=</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">new</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(204, 153, 255); background-color: rgb(0, 0, 0); font-weight: bold;">HarfDizisi(</span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0);">)</span><span style="color: rgb(128, 128, 128); background-color: rgb(0, 0, 0);">;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">        </span><span style="color: rgb(204, 153, 255); background-color: rgb(0, 0, 0);">TurkceHarf </span><span style="color: rgb(255, 204, 153); background-color: rgb(0, 0, 0); font-style: italic;">sonSesli </span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0);">=</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(255, 204, 153); background-color: rgb(0, 0, 0);">ulanacak.</span><span style="color: rgb(153, 255, 102); background-color: rgb(0, 0, 0);">sonSesli(</span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0);">)</span><span style="color: rgb(128, 128, 128); background-color: rgb(0, 0, 0);">;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">        </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">for</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0);">(</span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">int</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(255, 204, 153); background-color: rgb(0, 0, 0); font-style: italic;">i </span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0);">=</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(255, 153, 51); background-color: rgb(0, 0, 0);">0</span><span style="color: rgb(128, 128, 128); background-color: rgb(0, 0, 0);">;</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(255, 204, 153); background-color: rgb(0, 0, 0); font-style: italic;">i </span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0);">&lt;</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(255, 204, 153); background-color: rgb(0, 0, 0);">bilesenler.</span><span style="color: rgb(153, 255, 102); background-color: rgb(0, 0, 0);">size(</span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0);">)</span><span style="color: rgb(128, 128, 128); background-color: rgb(0, 0, 0);">;</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(255, 204, 153); background-color: rgb(0, 0, 0); font-style: italic;">i++</span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0);">)</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(128, 128, 128); background-color: rgb(0, 0, 0);">{<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">            </span><span style="color: rgb(204, 153, 255); background-color: rgb(0, 0, 0);">EkUretimBileseni </span><span style="color: rgb(255, 204, 102); background-color: rgb(0, 0, 0);">ekUretimBileseni </span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0);">=</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(255, 204, 153); background-color: rgb(0, 0, 0);">bilesenler.</span><span style="color: rgb(153, 255, 102); background-color: rgb(0, 0, 0);">get(</span><span style="color: rgb(255, 204, 153); background-color: rgb(0, 0, 0); font-style: italic;">i)</span><span style="color: rgb(128, 128, 128); background-color: rgb(0, 0, 0);">;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">            </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">final</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(204, 153, 255); background-color: rgb(0, 0, 0);">TurkceHarf </span><span style="color: rgb(255, 204, 102); background-color: rgb(0, 0, 0);">harf </span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0);">=</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(255, 204, 102); background-color: rgb(0, 0, 0);">ekUretimBileseni.</span><span style="color: rgb(153, 255, 102); background-color: rgb(0, 0, 0);">harf(</span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0);">)</span><span style="color: rgb(128, 128, 128); background-color: rgb(0, 0, 0);">;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">            </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">switch</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0);">(</span><span style="color: rgb(255, 204, 102); background-color: rgb(0, 0, 0);">ekUretimBileseni.</span><span style="color: rgb(153, 255, 102); background-color: rgb(0, 0, 0);">kural(</span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0);">))</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(128, 128, 128); background-color: rgb(0, 0, 0);">{<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">                </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">case</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(153, 255, 0); background-color: rgb(0, 0, 0); font-weight: bold; font-style: italic;">HARF:<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">                    </span><span style="color: rgb(255, 204, 102); background-color: rgb(0, 0, 0);">sonuc.</span><span style="color: rgb(153, 255, 102); background-color: rgb(0, 0, 0);">ekle(</span><span style="color: rgb(255, 204, 102); background-color: rgb(0, 0, 0);">harf)</span><span style="color: rgb(128, 128, 128); background-color: rgb(0, 0, 0);">;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">                    </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">break</span><span style="color: rgb(128, 128, 128); background-color: rgb(0, 0, 0);">;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">                </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">case</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(153, 255, 0); background-color: rgb(0, 0, 0); font-weight: bold; font-style: italic;">KAYNASTIR:<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">                    </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">if</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0);">(</span><span style="color: rgb(255, 204, 153); background-color: rgb(0, 0, 0);">ulanacak.</span><span style="color: rgb(153, 255, 102); background-color: rgb(0, 0, 0);">sonHarf(</span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0);">)</span><span style="color: rgb(153, 255, 153); background-color: rgb(0, 0, 0);">.</span><span style="color: rgb(153, 255, 102); background-color: rgb(0, 0, 0);">sesliMi(</span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0);">))<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">                        </span><span style="color: rgb(255, 204, 102); background-color: rgb(0, 0, 0);">sonuc.</span><span style="color: rgb(153, 255, 102); background-color: rgb(0, 0, 0);">ekle(</span><span style="color: rgb(255, 204, 102); background-color: rgb(0, 0, 0);">harf)</span><span style="color: rgb(128, 128, 128); background-color: rgb(0, 0, 0);">;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">                    </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">break</span><span style="color: rgb(128, 128, 128); background-color: rgb(0, 0, 0);">;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">                </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">case</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(153, 255, 0); background-color: rgb(0, 0, 0); font-weight: bold; font-style: italic;">SERTLESTIR:<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">                    </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">if</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0);">(</span><span style="color: rgb(255, 204, 153); background-color: rgb(0, 0, 0);">ulanacak.</span><span style="color: rgb(153, 255, 102); background-color: rgb(0, 0, 0);">sonHarf(</span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0);">)</span><span style="color: rgb(153, 255, 153); background-color: rgb(0, 0, 0);">.</span><span style="color: rgb(153, 255, 102); background-color: rgb(0, 0, 0);">sertMi(</span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0);">))<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">                        </span><span style="color: rgb(255, 204, 102); background-color: rgb(0, 0, 0);">sonuc.</span><span style="color: rgb(153, 255, 102); background-color: rgb(0, 0, 0);">ekle(</span><span style="color: rgb(255, 204, 102); background-color: rgb(0, 0, 0);">harf.</span><span style="color: rgb(153, 255, 102); background-color: rgb(0, 0, 0);">sertDonusum(</span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0);">))</span><span style="color: rgb(128, 128, 128); background-color: rgb(0, 0, 0);">;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">                    </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">else<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">                        </span><span style="color: rgb(255, 204, 102); background-color: rgb(0, 0, 0);">sonuc.</span><span style="color: rgb(153, 255, 102); background-color: rgb(0, 0, 0);">ekle(</span><span style="color: rgb(255, 204, 102); background-color: rgb(0, 0, 0);">harf)</span><span style="color: rgb(128, 128, 128); background-color: rgb(0, 0, 0);">;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">                    </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">break</span><span style="color: rgb(128, 128, 128); background-color: rgb(0, 0, 0);">;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">                </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">case</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(153, 255, 0); background-color: rgb(0, 0, 0); font-weight: bold; font-style: italic;">SESLI_AE:<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">                    </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">if</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0);">(</span><span style="color: rgb(255, 204, 153); background-color: rgb(0, 0, 0); font-style: italic;">i </span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0);">==</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(255, 153, 51); background-color: rgb(0, 0, 0);">0</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0);">&amp;&amp;</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(255, 204, 153); background-color: rgb(0, 0, 0);">ulanacak.</span><span style="color: rgb(153, 255, 102); background-color: rgb(0, 0, 0);">sonHarf(</span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0);">)</span><span style="color: rgb(153, 255, 153); background-color: rgb(0, 0, 0);">.</span><span style="color: rgb(153, 255, 102); background-color: rgb(0, 0, 0);">sesliMi(</span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0);">))<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">                        </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">break</span><span style="color: rgb(128, 128, 128); background-color: rgb(0, 0, 0);">;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">                    </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">else</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(128, 128, 128); background-color: rgb(0, 0, 0);">{<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">                        </span><span style="color: rgb(255, 204, 153); background-color: rgb(0, 0, 0); font-style: italic;">sonSesli </span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0);">=</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(204, 153, 255); background-color: rgb(0, 0, 0);">AzericeSesliUretici.</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0); font-style: italic;">sesliBelirleAE</span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0); font-style: italic;">(</span><span style="color: rgb(255, 204, 153); background-color: rgb(0, 0, 0); font-style: italic;">sonSesli)</span><span style="color: rgb(128, 128, 128); background-color: rgb(0, 0, 0);">;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">                        </span><span style="color: rgb(255, 204, 102); background-color: rgb(0, 0, 0);">sonuc.</span><span style="color: rgb(153, 255, 102); background-color: rgb(0, 0, 0);">ekle(</span><span style="color: rgb(255, 204, 153); background-color: rgb(0, 0, 0); font-style: italic;">sonSesli)</span><span style="color: rgb(128, 128, 128); background-color: rgb(0, 0, 0);">;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">                    </span><span style="color: rgb(128, 128, 128); background-color: rgb(0, 0, 0);">}<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">                    </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">break</span><span style="color: rgb(128, 128, 128); background-color: rgb(0, 0, 0);">;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">                </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">case</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(153, 255, 0); background-color: rgb(0, 0, 0); font-weight: bold; font-style: italic;">SESLI_IU:<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">                    </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">if</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0);">(</span><span style="color: rgb(255, 204, 153); background-color: rgb(0, 0, 0); font-style: italic;">i </span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0);">==</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(255, 153, 51); background-color: rgb(0, 0, 0);">0</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0);">&amp;&amp;</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(255, 204, 153); background-color: rgb(0, 0, 0);">ulanacak.</span><span style="color: rgb(153, 255, 102); background-color: rgb(0, 0, 0);">sonHarf(</span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0);">)</span><span style="color: rgb(153, 255, 153); background-color: rgb(0, 0, 0);">.</span><span style="color: rgb(153, 255, 102); background-color: rgb(0, 0, 0);">sesliMi(</span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0);">))<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">                        </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">break</span><span style="color: rgb(128, 128, 128); background-color: rgb(0, 0, 0);">;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">                    </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">else</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(128, 128, 128); background-color: rgb(0, 0, 0);">{<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">                        </span><span style="color: rgb(255, 204, 153); background-color: rgb(0, 0, 0); font-style: italic;">sonSesli </span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0);">=</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(204, 153, 255); background-color: rgb(0, 0, 0);">AzericeSesliUretici.</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0); font-style: italic;">sesliBelirleIU</span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0); font-style: italic;">(</span><span style="color: rgb(255, 204, 153); background-color: rgb(0, 0, 0); font-style: italic;">sonSesli)</span><span style="color: rgb(128, 128, 128); background-color: rgb(0, 0, 0);">;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">                        </span><span style="color: rgb(255, 204, 102); background-color: rgb(0, 0, 0);">sonuc.</span><span style="color: rgb(153, 255, 102); background-color: rgb(0, 0, 0);">ekle(</span><span style="color: rgb(255, 204, 153); background-color: rgb(0, 0, 0); font-style: italic;">sonSesli)</span><span style="color: rgb(128, 128, 128); background-color: rgb(0, 0, 0);">;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">                    </span><span style="color: rgb(128, 128, 128); background-color: rgb(0, 0, 0);">}<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">                    </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">break</span><span style="color: rgb(128, 128, 128); background-color: rgb(0, 0, 0);">;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">            </span><span style="color: rgb(128, 128, 128); background-color: rgb(0, 0, 0);">}<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">        </span><span style="color: rgb(128, 128, 128); background-color: rgb(0, 0, 0);">}<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">        </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">return</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(255, 204, 102); background-color: rgb(0, 0, 0);">sonuc;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">    </span><span style="color: rgb(128, 128, 128); background-color: rgb(0, 0, 0);">}</span></pre>
+
+
+
+      </td>
+
+
+
+    </tr>
+
+
+
+  
+  
+  
+  </tbody>
+</table>
+
+
+
+<br>
+
+
+
+
+
+
+koda biraz goz gezdirilirse ne yaptigini anlamak cok zor degil. Bu
+metot kelime cozumleme islemi sirasinda kullanilir. &nbsp;Temelde
+elimizde ekin ulancagi kelime (ulanacak), cozumleme yapidigina gore
+cozumlesi yapilan kelime (giris), ve ekin uretim bilesenleri listesi
+(bilesenler) mevcut. Gercek bir ornek vermek gerekirse, "meyvelere"
+kelimesi giris, cozumleme sirasinda elimizdeki kelime "meyve" ve cogul
+eki uretimi icin gerekli uretim bilesenleri ({HARF,l}, {SESLI_AE},
+{HARF,r}) metod icerisinde elimizde hazir vaziyette. Once ulancak
+kelimenin son seslisi bulunuyor ('meyve' icin 'e'). Daha sonra sirasi
+ile uretim bilesenleri taraniyor. bilesn icindeki kurala gore yapilamsi
+gerken islem belirleniyor. ornegin ilk kural 'HARF'. bu durumda sonuc
+ek olusumuna ilgili harf yani 'l' dogrudan ekleniyor. ikinci kural
+'SESLI_AE' bu durumda <span style="font-weight: bold;">AzericeSesliUretici</span> adindaki bir sinifin <span style="font-weight: bold;">sesliBelirleAE</span>
+metodu cagriliyor. Bu sinif&nbsp;Turk dillerindeki sesli uretim
+kurallarini uygulamada yardimci olmak amaciyla uretilmistir. Bu sinifi
+yazmadan once <span style="font-weight: bold;">AzericeAlfabe</span> sinifina kucuk bir ekleme yapiyoruz. <span style="font-weight: bold;">TurkceHarf</span> cinsinden sesli harflere kolay erisim saglamak amaciyla sesli harflerin <span style="font-weight: bold;">TurkceHarf</span> karsiliklarini alfabe tanimlamasindan hemen once sabit olarak ekliyoruz. Sadece kucuk harfleri tanimlamak yeterli. <br>
+
+
+
+<br>
+
+
+
+<table style="text-align: left; width: 100px;" border="1" cellpadding="2" cellspacing="2">
+
+
+
+  <tbody>
+
+
+
+    <tr>
+
+
+
+      <td>
+      
+      
+      
+      <pre style="border: 0.01mm solid rgb(0, 0, 0); padding: 4px; line-height: 100%; font-family: monospace; background-color: rgb(0, 0, 0);"><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">    </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">public</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">static</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">final</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(204, 153, 255); background-color: rgb(0, 0, 0);">TurkceHarf </span><span style="color: rgb(153, 255, 0); background-color: rgb(0, 0, 0); font-weight: bold; font-style: italic;">HARF_a </span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0);">=</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(153, 255, 0); background-color: rgb(0, 0, 0); font-weight: bold; font-style: italic;">harfler.</span><span style="color: rgb(153, 255, 102); background-color: rgb(0, 0, 0);">get(</span><span style="color: rgb(255, 153, 0); background-color: rgb(0, 0, 0); font-weight: bold;">'a'</span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0);">)</span><span style="color: rgb(128, 128, 128); background-color: rgb(0, 0, 0);">;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">    </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">public</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">static</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">final</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(204, 153, 255); background-color: rgb(0, 0, 0);">TurkceHarf </span><span style="color: rgb(153, 255, 0); background-color: rgb(0, 0, 0); font-weight: bold; font-style: italic;">HARF_ee </span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0);">=</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(153, 255, 0); background-color: rgb(0, 0, 0); font-weight: bold; font-style: italic;">harfler.</span><span style="color: rgb(153, 255, 102); background-color: rgb(0, 0, 0);">get(</span><span style="color: rgb(153, 255, 0); background-color: rgb(0, 0, 0); font-weight: bold; font-style: italic;">CHAR_ee)</span><span style="color: rgb(128, 128, 128); background-color: rgb(0, 0, 0);">;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">    </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">public</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">static</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">final</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(204, 153, 255); background-color: rgb(0, 0, 0);">TurkceHarf </span><span style="color: rgb(153, 255, 0); background-color: rgb(0, 0, 0); font-weight: bold; font-style: italic;">HARF_e </span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0);">=</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(153, 255, 0); background-color: rgb(0, 0, 0); font-weight: bold; font-style: italic;">harfler.</span><span style="color: rgb(153, 255, 102); background-color: rgb(0, 0, 0);">get(</span><span style="color: rgb(255, 153, 0); background-color: rgb(0, 0, 0); font-weight: bold;">'e'</span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0);">)</span><span style="color: rgb(128, 128, 128); background-color: rgb(0, 0, 0);">;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">    </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">public</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">static</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">final</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(204, 153, 255); background-color: rgb(0, 0, 0);">TurkceHarf </span><span style="color: rgb(153, 255, 0); background-color: rgb(0, 0, 0); font-weight: bold; font-style: italic;">HARF_i </span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0);">=</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(153, 255, 0); background-color: rgb(0, 0, 0); font-weight: bold; font-style: italic;">harfler.</span><span style="color: rgb(153, 255, 102); background-color: rgb(0, 0, 0);">get(</span><span style="color: rgb(255, 153, 0); background-color: rgb(0, 0, 0); font-weight: bold;">'i'</span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0);">)</span><span style="color: rgb(128, 128, 128); background-color: rgb(0, 0, 0);">;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">    </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">public</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">static</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">final</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(204, 153, 255); background-color: rgb(0, 0, 0);">TurkceHarf </span><span style="color: rgb(153, 255, 0); background-color: rgb(0, 0, 0); font-weight: bold; font-style: italic;">HARF_ii </span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0);">=</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(153, 255, 0); background-color: rgb(0, 0, 0); font-weight: bold; font-style: italic;">harfler.</span><span style="color: rgb(153, 255, 102); background-color: rgb(0, 0, 0);">get(</span><span style="color: rgb(153, 255, 0); background-color: rgb(0, 0, 0); font-weight: bold; font-style: italic;">CHAR_ii)</span><span style="color: rgb(128, 128, 128); background-color: rgb(0, 0, 0);">;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">    </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">public</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">static</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">final</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(204, 153, 255); background-color: rgb(0, 0, 0);">TurkceHarf </span><span style="color: rgb(153, 255, 0); background-color: rgb(0, 0, 0); font-weight: bold; font-style: italic;">HARF_o </span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0);">=</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(153, 255, 0); background-color: rgb(0, 0, 0); font-weight: bold; font-style: italic;">harfler.</span><span style="color: rgb(153, 255, 102); background-color: rgb(0, 0, 0);">get(</span><span style="color: rgb(255, 153, 0); background-color: rgb(0, 0, 0); font-weight: bold;">'o'</span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0);">)</span><span style="color: rgb(128, 128, 128); background-color: rgb(0, 0, 0);">;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">    </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">public</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">static</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">final</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(204, 153, 255); background-color: rgb(0, 0, 0);">TurkceHarf </span><span style="color: rgb(153, 255, 0); background-color: rgb(0, 0, 0); font-weight: bold; font-style: italic;">HARF_oo </span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0);">=</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(153, 255, 0); background-color: rgb(0, 0, 0); font-weight: bold; font-style: italic;">harfler.</span><span style="color: rgb(153, 255, 102); background-color: rgb(0, 0, 0);">get(</span><span style="color: rgb(153, 255, 0); background-color: rgb(0, 0, 0); font-weight: bold; font-style: italic;">CHAR_oo)</span><span style="color: rgb(128, 128, 128); background-color: rgb(0, 0, 0);">;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">    </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">public</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">static</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">final</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(204, 153, 255); background-color: rgb(0, 0, 0);">TurkceHarf </span><span style="color: rgb(153, 255, 0); background-color: rgb(0, 0, 0); font-weight: bold; font-style: italic;">HARF_u </span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0);">=</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(153, 255, 0); background-color: rgb(0, 0, 0); font-weight: bold; font-style: italic;">harfler.</span><span style="color: rgb(153, 255, 102); background-color: rgb(0, 0, 0);">get(</span><span style="color: rgb(255, 153, 0); background-color: rgb(0, 0, 0); font-weight: bold;">'u'</span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0);">)</span><span style="color: rgb(128, 128, 128); background-color: rgb(0, 0, 0);">;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">    </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">public</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">static</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">final</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(204, 153, 255); background-color: rgb(0, 0, 0);">TurkceHarf </span><span style="color: rgb(153, 255, 0); background-color: rgb(0, 0, 0); font-weight: bold; font-style: italic;">HARF_uu </span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0);">=</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(153, 255, 0); background-color: rgb(0, 0, 0); font-weight: bold; font-style: italic;">harfler.</span><span style="color: rgb(153, 255, 102); background-color: rgb(0, 0, 0);">get(</span><span style="color: rgb(153, 255, 0); background-color: rgb(0, 0, 0); font-weight: bold; font-style: italic;">CHAR_uu)</span><span style="color: rgb(128, 128, 128); background-color: rgb(0, 0, 0);">;</span></pre>
+
+
+
+      </td>
+
+
+
+    </tr>
+
+
+
+  
+  
+  
+  </tbody>
+</table>
+
+
+
+<br>
+
+
+
+Simdi AzericeSesliUretici yardimci sinifini yazalim. (Azerice
+bilmedigimden kurallari yanlis yazmis olabilirim.). Bu kurallar dil
+bilgisinin genel ek sesli harf uretimi konusu ile iliskili ve istisnai
+durumlari burada <span style="text-decoration: underline;">belirtmemek</span> gerekiyor. <br>
+
+
+
+<br>
+
+
+
+<table style="text-align: left; width: 100px;" border="1" cellpadding="2" cellspacing="2">
+
+
+
+  <tbody>
+
+
+
+    <tr>
+
+
+
+      <td>
+      
+      
+      
+      <pre style="border: 0.01mm solid rgb(0, 0, 0); padding: 4px; line-height: 100%; font-family: monospace; background-color: rgb(0, 0, 0);"><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">public</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">class</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(204, 153, 255); background-color: rgb(0, 0, 0);">AzericeSesliUretici </span><span style="color: rgb(128, 128, 128); background-color: rgb(0, 0, 0);">{<br><br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">    </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">public</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">static</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(204, 153, 255); background-color: rgb(0, 0, 0);">TurkceHarf </span><span style="color: rgb(102, 255, 0); background-color: rgb(0, 0, 0);">sesliBelirleAE(</span><span style="color: rgb(204, 153, 255); background-color: rgb(0, 0, 0);">TurkceHarf </span><span style="color: rgb(255, 204, 153); background-color: rgb(0, 0, 0);">sonSesli)</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(128, 128, 128); background-color: rgb(0, 0, 0);">{<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">        </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">if</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0);">(</span><span style="color: rgb(255, 204, 153); background-color: rgb(0, 0, 0);">sonSesli </span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0);">==</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(204, 153, 255); background-color: rgb(0, 0, 0);">AzericeAlfabe.</span><span style="color: rgb(153, 255, 0); background-color: rgb(0, 0, 0); font-weight: bold; font-style: italic;">HARF_ee)<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">            </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">return</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(204, 153, 255); background-color: rgb(0, 0, 0);">AzericeAlfabe.</span><span style="color: rgb(153, 255, 0); background-color: rgb(0, 0, 0); font-weight: bold; font-style: italic;">HARF_ee;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">        </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">if</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0);">(</span><span style="color: rgb(255, 204, 153); background-color: rgb(0, 0, 0);">sonSesli.</span><span style="color: rgb(153, 255, 102); background-color: rgb(0, 0, 0);">inceSesliMi(</span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0);">))<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">            </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">return</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(204, 153, 255); background-color: rgb(0, 0, 0);">AzericeAlfabe.</span><span style="color: rgb(153, 255, 0); background-color: rgb(0, 0, 0); font-weight: bold; font-style: italic;">HARF_e;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">        </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">return</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(204, 153, 255); background-color: rgb(0, 0, 0);">AzericeAlfabe.</span><span style="color: rgb(153, 255, 0); background-color: rgb(0, 0, 0); font-weight: bold; font-style: italic;">HARF_a;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">    </span><span style="color: rgb(128, 128, 128); background-color: rgb(0, 0, 0);">}<br><br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">    </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">public</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">static</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(204, 153, 255); background-color: rgb(0, 0, 0);">TurkceHarf </span><span style="color: rgb(102, 255, 0); background-color: rgb(0, 0, 0);">sesliBelirleIU(</span><span style="color: rgb(204, 153, 255); background-color: rgb(0, 0, 0);">TurkceHarf </span><span style="color: rgb(255, 204, 153); background-color: rgb(0, 0, 0);">sonSesli)</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(128, 128, 128); background-color: rgb(0, 0, 0);">{<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">        </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">if</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0);">(</span><span style="color: rgb(255, 204, 153); background-color: rgb(0, 0, 0);">sonSesli.</span><span style="color: rgb(153, 255, 102); background-color: rgb(0, 0, 0);">inceSesliMi(</span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0);">)</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0);">&amp;&amp;</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(255, 204, 153); background-color: rgb(0, 0, 0);">sonSesli.</span><span style="color: rgb(153, 255, 102); background-color: rgb(0, 0, 0);">duzSesliMi(</span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0);">))<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">            </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">return</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(204, 153, 255); background-color: rgb(0, 0, 0);">AzericeAlfabe.</span><span style="color: rgb(153, 255, 0); background-color: rgb(0, 0, 0); font-weight: bold; font-style: italic;">HARF_i;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">        </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">if</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0);">(!</span><span style="color: rgb(255, 204, 153); background-color: rgb(0, 0, 0);">sonSesli.</span><span style="color: rgb(153, 255, 102); background-color: rgb(0, 0, 0);">inceSesliMi(</span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0);">)</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0);">&amp;&amp;</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(255, 204, 153); background-color: rgb(0, 0, 0);">sonSesli.</span><span style="color: rgb(153, 255, 102); background-color: rgb(0, 0, 0);">duzSesliMi(</span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0);">))<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">            </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">return</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(204, 153, 255); background-color: rgb(0, 0, 0);">AzericeAlfabe.</span><span style="color: rgb(153, 255, 0); background-color: rgb(0, 0, 0); font-weight: bold; font-style: italic;">HARF_ii;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">        </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">if</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0);">(!</span><span style="color: rgb(255, 204, 153); background-color: rgb(0, 0, 0);">sonSesli.</span><span style="color: rgb(153, 255, 102); background-color: rgb(0, 0, 0);">inceSesliMi(</span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0);">)</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0);">&amp;&amp;</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(255, 204, 153); background-color: rgb(0, 0, 0);">sonSesli.</span><span style="color: rgb(153, 255, 102); background-color: rgb(0, 0, 0);">yuvarlakSesliMi(</span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0);">))<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">            </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">return</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(204, 153, 255); background-color: rgb(0, 0, 0);">AzericeAlfabe.</span><span style="color: rgb(153, 255, 0); background-color: rgb(0, 0, 0); font-weight: bold; font-style: italic;">HARF_u;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">        </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">if</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0);">(</span><span style="color: rgb(255, 204, 153); background-color: rgb(0, 0, 0);">sonSesli.</span><span style="color: rgb(153, 255, 102); background-color: rgb(0, 0, 0);">inceSesliMi(</span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0);">)</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0);">&amp;&amp;</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(255, 204, 153); background-color: rgb(0, 0, 0);">sonSesli.</span><span style="color: rgb(153, 255, 102); background-color: rgb(0, 0, 0);">yuvarlakSesliMi(</span><span style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0);">))<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">            </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">return</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(204, 153, 255); background-color: rgb(0, 0, 0);">AzericeAlfabe.</span><span style="color: rgb(153, 255, 0); background-color: rgb(0, 0, 0); font-weight: bold; font-style: italic;">HARF_uu;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">        </span><span style="color: rgb(51, 255, 153); background-color: rgb(0, 0, 0); font-weight: bold;">return</span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);"> </span><span style="color: rgb(204, 153, 255); background-color: rgb(0, 0, 0);">AzericeAlfabe.</span><span style="color: rgb(153, 255, 0); background-color: rgb(0, 0, 0); font-weight: bold; font-style: italic;">HARF_YOK;<br></span><span style="color: rgb(252, 236, 220); background-color: rgb(0, 0, 0);">    </span><span style="color: rgb(128, 128, 128); background-color: rgb(0, 0, 0);">}<br>}</span></pre>
+
+
+
+      </td>
+
+
+
+    </tr>
+
+
+
+  
+  
+  
+  </tbody>
+</table>
+
+
+
+<br>
+
+
+
+Ek uretim kurallarini bu sekilde tamamlamis olduk. <br>
+
+
+
+<br style="font-weight: bold;">
+
+
+
+
+
+
+<span style="font-weight: bold;">Kok ozel durumlari</span><br>
+
+
+
+
+
+
+<br>
+
+
+
+
+
+
+Yukaridaki kok listesinde tanimlanan bir kok "sa&#287;l&#305;q AD YUM" idi.
+Burada belirtilen YUM, bu kokun yumusama ozel durumuna sahip oldugunu
+gosteriyor. Yani "sa&#287;l&#305;q" kokunden sonra sesli ile baslayan bir ek
+geldiginde sonraki q harfi yumusak g harfine donusur. "sa&#287;l&#305;&#287;a"
+seklinde. Normalde bu ozelligin calisma aninnda tespiti mumkun olsa
+bile, Istisnalari olabileceginden duz yazi kokler uzerinde
+belirtilmesinde bir mahsur yoktur. Kok ozel durumlarinin islendigi
+sinifin adina AzericeKokOzelDurumlari adini verelim. Bu sinif
+KokOzelDurumlari ayayuzunu kullanir (Interface)<br>
+
+
+
+
+
+
+<br>
+
+
+
+
+
+
+<br>
+
+
+
+
+
+
+<br>
+
+
+
+
+
+
+<span style="font-weight: bold;"></span><br>
+
+
+
+
+
+
+<span style="font-weight: bold;">Ek Ozel Durumlari </span><br>
+
+
+
+
+
+
+<br>
+
+
+
+
+
+
+<br>
+
+
+
+
+
+
+<br>
+
+
+
+
+
+
+<br>
+
+
+
+
+
+
+<br>
+
+
+
+
+
+
+<br>
+
+
+
+
+
+
+<br>
+
+
+
+
+
+
+<br>
+
+
+
+
+
+
+<br>
+
+
+
+
+
+
+<br>
+
+
+
+
+
+
+<br>
+
+
+
+
+
+
+<br>
+
+
+
+
+
+
+<br>
+
+
+
+
+
+
+<br>
+
+
+
+
+
+
+<br>
+
+
+
+
+
+
+<br>
+
+
+
+
+
+
+<br>
+
+
+
+
+
+
+</body>
+</html>

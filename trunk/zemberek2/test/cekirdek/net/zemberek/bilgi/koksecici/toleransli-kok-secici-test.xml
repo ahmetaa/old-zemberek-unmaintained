@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testKumesi>
+
+    <uye>
+        <giris>ixterler</giris>
+        <sonuclar>
+            <sonuc>iste</sonuc>
+            <sonuc>de</sonuc>
+        </sonuclar>
+    </uye>
+
+    <uye>
+        <giris>ulda</giris>
+        <sonuclar>
+            <sonuc>al</sonuc>
+            <sonuc>al</sonuc>
+            <sonuc>el</sonuc>
+        </sonuclar>
+    </uye>
+
+    <uye>
+        <giris>dvulcu</giris>
+        <sonuclar>
+            <sonuc>davul</sonuc>
+            <sonuc>de</sonuc>
+        </sonuclar>
+    </uye>
+
+    <uye>
+        <giris>sasndalyeci</giris>
+        <sonuclar>
+            <sonuc>sandalye</sonuc>
+        </sonuclar>
+    </uye>
+
+    <uye>
+        <giris>yzdu</giris>
+        <sonuclar>
+            <sonuc>yüz</sonuc>
+            <sonuc>yüz</sonuc>
+            <sonuc>yüz</sonuc>
+            <sonuc>yoz</sonuc>
+            <sonuc>yaz</sonuc>
+        </sonuclar>
+    </uye>
+
+    <uye>
+        <giris>trup</giris>
+        <sonuclar>
+            <sonuc>turp</sonuc>
+            <sonuc>tur</sonuc>
+        </sonuclar>
+    </uye>
+</testKumesi>
