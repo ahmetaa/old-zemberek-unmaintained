@@ -1,0 +1,12 @@
+yemek FI DE_YE
+demek FI DE_YE
+cenk IS YUM_NK
+ayýrmak FI DUS_FI
+okumak FI
+kitap IS YUM
+red IS CIFT
+ben ZA BEN_SEN
+sen ZA BEN_SEN
+minik IS KUCULTME YUM
+küçük IS KUCULTME YUM
+nakit IS YUM DUS

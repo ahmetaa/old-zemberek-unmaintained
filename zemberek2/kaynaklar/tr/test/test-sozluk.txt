@@ -1,0 +1,39 @@
+#-------------------------
+# TEST SOZLUGU
+#-------------------------
+#v0.1
+Ankara OZ
+devirmek FI DUS_FI
+devir IS DUS
+su IS FARKLI_KAYNASTIRMA
+armut IS YUM
+turp IS YUM
+tur IS
+gelmek FI GEN
+ben ZA TEKIL_KISI_BOZULMASI
+demek FI FIIL_KOK_BOZULMASI
+al IS
+almak FI GEN
+yüz IS
+yüz SA
+yaz IS
+yoz IS
+yüzmek FI
+yaramak FI
+yara IS
+el IS
+ela IS
+elma IS
+elmas IS
+kitap IS YUM
+sandalye IS
+davul IS
+varil IS
+sefil IS
+istemek FI
+yapmak FI
+bahsetmek FI GEN YUM
+deniz OZ
+deniz IS
+kara IS
+karalamak FI
