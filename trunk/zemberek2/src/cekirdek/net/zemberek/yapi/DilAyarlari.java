@@ -32,7 +32,7 @@ public interface DilAyarlari {
      * edilecegi bir Map icerisinde belirtilir.
      * @return kisaAd-tip ikililerini tasiyan Map
      */
-    Map<String, KelimeTipi> kelimeTipiAdlari();
+    Map<String, KelimeTipi> kokTipiAdlari();
 
     EkUretici ekUretici(Alfabe alfabe);
 

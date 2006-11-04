@@ -22,7 +22,7 @@ public class TestOzelDurumCozumleme extends TemelTest {
                 "kaynaklar/tr/test/ozeldurum-sozlugu.txt",
                 dilBilgisi.kokOzelDurumlari(),
                 alfabe,
-                dilAyarlari.kelimeTipiAdlari());
+                dilAyarlari.kokTipiAdlari());
         Sozluk sozluk = new AgacSozluk(kokOkuyucu, alfabe, dilBilgisi.kokOzelDurumlari());
         //Normal denetleyici-cozumleyici olusumu
         KokBulucu kokBulucu = sozluk.getKokBulucuFactory().getKesinKokBulucu();

@@ -1,62 +1,50 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
-<dil-bilgisi>
+<ek-bilgisi>
 
-    <harf-bilgisi>
-        <harfler>a,ə,b,c,ç,d,e,f,g,ğ,h,x,ı,i,j,k,q,l,m,n,o,ö,p,r,s,ş,t,u,ü,v,y,z</harfler>
-        <sesli>a,ə,e,ı,i,o,ö,u,ü</sesli>
-        <duz-sesli>a,ə,e,ı,i</duz-sesli>
-        <yuvarlak-sesli>o,ö,u,ü</yuvarlak-sesli>
-        <sert>f,s,t,ç,ş,h,p</sert>
-        <ascii-disi>ə,ç,ğ,ı,ö,ş,ü</ascii-disi>
-        <ascii-donusum>e-ə,c-ç,g-ğ,i-ı,I-İ,o-ö,s-ş,u-ü</ascii-donusum>
-        <donusum></donusum>
-        <yumusama>c-ç,g-ğ,k-ğ,p-b,d-t</yumusama>
-    </harf-bilgisi>
+    <!-- ek kumeleri -->
+    <ek-kumeleri>
+        <ek-kumesi ad="ISIM_HAL">
+            <ek>AD_YONELME_E</ek>
+            <ek>AD_KALMA_DE</ek>
+        </ek-kumesi>
+    </ek-kumeleri>
 
-    <ek-bilgisi>
+    <!-- ekler -->
+    <ekler>
 
-        <!-- ek kumeleri -->
-        <ek-kumeleri>
+        <!-- ad yalin. -->
+        <ek ad="AD_KOK" uretim="">
+            <ardisil-ekler>
+                <aek>AD_COGUL_LER</aek>
+                <aek>AD_YONELME_E</aek>
+                <aek>AD_KALMA_DE</aek>
+                <aek>AD_KUCULTME_CEGIZ</aek>
+            </ardisil-ekler>
+        </ek>
 
-        </ek-kumeleri>
+        <!-- ad cogul eki _ler. "qýz_lar.." -->
+        <ek ad="AD_COGUL_LER" uretim="lAr">
+            <ardisil-ekler>
+                <aek>AD_YONELME_E</aek>
+                <aek>AD_KALMA_DE</aek>
+            </ardisil-ekler>
+        </ek>
 
-        <!-- ekler -->
-        <ekler>
+        <!-- cegiz: "kedi_ceGiz -->
+        <ek ad="AD_KUCULTME_CEGIZ" uretim="cAğIz">
+            <ardisil-ekler>
+                <aek>AD_COGUL_LER</aek>
+                <aek>AD_YONELME_E</aek>
+                <aek>AD_KALMA_DE</aek>
+            </ardisil-ekler>
+        </ek>
 
-            <!-- ad yalin. -->
-            <ek ad="AD_YALIN_BOS" uretim="">
-                <ardisil-ekler>
-                    <aek>AD_COGUL_LER</aek>
-                    <aek>AD_YONELME_E</aek>
-                    <aek>AD_KALMA_DE</aek>
-                    <aek>AD_KUCULTME_CEGIZ</aek>
-                </ardisil-ekler>
-            </ek>
+        <!-- ad yonelme : "kedi_ye bak"  -->
+        <ek ad="AD_YONELME_E" uretim="+yA"/>
 
-            <!-- ad cogul eki _ler. "qýz_lar.." -->
-            <ek ad="AD_COGUL_LER" uretim="l+(A)+r">
-                <ardisil-ekler>
-                    <aek>AD_YONELME_E</aek>
-                    <aek>AD_KALMA_DE</aek>
-                </ardisil-ekler>
-            </ek>
+        <!-- ad kalma : "ev_de yemek var."  -->
+        <ek ad="AD_KALMA_DE" uretim=">dA"/>
 
-            <!-- cegiz: "kedi_ceGiz -->
-            <ek ad="AD_KUCULTME_CEGIZ" uretim="c+(A)+ğ+(I)+z">
-                <ardisil-ekler>
-                    <aek>AD_COGUL_LER</aek>
-                    <aek>AD_YONELME_E</aek>
-                    <aek>AD_KALMA_DE</aek>
-                </ardisil-ekler>
-            </ek>
+    </ekler>
 
-            <!-- ad yonelme : "kedi_ye bak"  -->
-            <ek ad="AD_YONELME_E" uretim="?y+(A)"/>
-
-            <!-- ad kalma : "ev_de yemek var."  -->
-            <ek ad="AD_KALMA_DE" uretim="^d+(A)"/>
-
-        </ekler>
-
-    </ek-bilgisi>
-</dil-bilgisi>
+</ek-bilgisi>

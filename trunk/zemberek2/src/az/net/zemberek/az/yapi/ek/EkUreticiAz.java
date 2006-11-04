@@ -1,6 +1,7 @@
 package net.zemberek.az.yapi.ek;
 
 import net.zemberek.az.yapi.AzericeSesliUretici;
+import net.zemberek.yapi.Alfabe;
 import net.zemberek.yapi.HarfDizisi;
 import net.zemberek.yapi.TurkceHarf;
 import net.zemberek.yapi.ek.Ek;
@@ -8,16 +9,17 @@ import net.zemberek.yapi.ek.EkUretici;
 import net.zemberek.yapi.ek.EkUretimBileseni;
 
 import java.util.List;
-import java.util.logging.Logger;
 
 
 public class EkUreticiAz implements EkUretici {
 
-    private static Logger log = Logger.getLogger(EkUreticiAz.class.getName());
+    private AzericeSesliUretici sesliUretici;
 
-    public HarfDizisi cozumlemeIcinEkUret(HarfDizisi ulanacak,
-                                          HarfDizisi giris,
-                                          List<EkUretimBileseni> bilesenler) {
+    public EkUreticiAz(Alfabe alfabe) {
+        this.sesliUretici = new AzericeSesliUretici(alfabe);
+    }
+
+    public HarfDizisi cozumlemeIcinEkUret(HarfDizisi ulanacak, HarfDizisi giris, List<EkUretimBileseni> bilesenler) {
         HarfDizisi sonuc = new HarfDizisi();
         TurkceHarf sonSesli = ulanacak.sonSesli();
         for (int i = 0; i < bilesenler.size(); i++) {
@@ -41,7 +43,7 @@ public class EkUreticiAz implements EkUretici {
                     if (i == 0 && ulanacak.sonHarf().sesliMi())
                         break;
                     else {
-                        sonSesli = AzericeSesliUretici.sesliBelirleAE(sonSesli);
+                        sonSesli = sesliUretici.sesliBelirleAE(sonSesli);
                         sonuc.ekle(sonSesli);
                     }
                     break;
@@ -49,7 +51,7 @@ public class EkUreticiAz implements EkUretici {
                     if (i == 0 && ulanacak.sonHarf().sesliMi())
                         break;
                     else {
-                        sonSesli = AzericeSesliUretici.sesliBelirleIU(sonSesli);
+                        sonSesli = sesliUretici.sesliBelirleIU(sonSesli);
                         sonuc.ekle(sonSesli);
                     }
                     break;

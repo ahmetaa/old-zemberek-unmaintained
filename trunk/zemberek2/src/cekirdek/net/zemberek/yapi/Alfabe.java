@@ -49,7 +49,7 @@ public class Alfabe {
     public static final TurkceHarf HARF_YOK = new TurkceHarf('#', 0);
 
     public static final char ALFABE_DISI_KARAKTER = '#';
-    protected static final int TURKISH_CHAR_MAP_SIZE = 500;
+    protected static final int TURKISH_CHAR_MAP_SIZE = 610;
     protected static final int TURKISH_HARF_MAP_SIZE = 50;
     protected char temizlemeDizisi[] = new char[TURKISH_CHAR_MAP_SIZE];
     protected char asciifierDizisi[] = new char[TURKISH_CHAR_MAP_SIZE];

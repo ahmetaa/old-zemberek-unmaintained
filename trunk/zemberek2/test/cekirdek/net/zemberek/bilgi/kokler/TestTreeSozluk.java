@@ -28,7 +28,7 @@ public class TestTreeSozluk extends TemelTest {
                 dosya,
                 dilBilgisi.kokOzelDurumlari(),
                 alfabe,
-                dilAyarlari.kelimeTipiAdlari());
+                dilAyarlari.kokTipiAdlari());
     }
 
     public void testHatasizlik_binary() throws IOException {
