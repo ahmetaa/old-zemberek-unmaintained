@@ -32,7 +32,7 @@ public class TestHizliWordTreeKokSecici extends TemelTest {
                 "kaynaklar/tr/test/test-kokler.txt",
                 dilBilgisi.kokOzelDurumlari(),
                 alfabe,
-                dilAyarlari.kelimeTipiAdlari());
+                dilAyarlari.kokTipiAdlari());
         sozluk = new AgacSozluk(okuyucu, alfabe, dilBilgisi.kokOzelDurumlari());
         System.out.println("Okuyucu Initialization s�resi: " + TimeTracker.getElapsedTimeString("x"));
     }

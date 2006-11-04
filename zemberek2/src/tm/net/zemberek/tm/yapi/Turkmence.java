@@ -2,12 +2,13 @@ package net.zemberek.tm.yapi;
 
 import net.zemberek.tm.islemler.TurkmenceCozumlemeYardimcisi;
 import net.zemberek.tm.yapi.ek.EkUreticiTm;
-import net.zemberek.tm.yapi.ek.TurkmenceEkAdlari;
 import net.zemberek.tm.yapi.ek.TurkmenceEkOzelDurumUretici;
+import static net.zemberek.tm.yapi.ek.TurkmenceEkAdlari.*;
 import net.zemberek.tm.yapi.kok.TurkmenceKokOzelDurumBilgisi;
 import net.zemberek.yapi.Alfabe;
 import net.zemberek.yapi.DilAyarlari;
 import net.zemberek.yapi.KelimeTipi;
+import static net.zemberek.yapi.KelimeTipi.*;
 import net.zemberek.yapi.ek.EkOzelDurumUretici;
 import net.zemberek.yapi.ek.EkUretici;
 import net.zemberek.yapi.ek.TemelEkYonetici;
@@ -51,35 +52,35 @@ public class Turkmence implements DilAyarlari {
         return new String[]{"kaynaklar/tm/bilgi/kokler.txt"};
     }
 
-    public Map<String, KelimeTipi> kelimeTipiAdlari() {
+    public Map<String, KelimeTipi> kokTipiAdlari() {
         Map kokTipAdlari = new HashMap();
-        kokTipAdlari.put("AT", KelimeTipi.ISIM);
-        kokTipAdlari.put("ISH", KelimeTipi.FIIL);
-        kokTipAdlari.put("SI", KelimeTipi.SIFAT);
-        kokTipAdlari.put("SA", KelimeTipi.SAYI);
-        kokTipAdlari.put("YA", KelimeTipi.YANKI);
-        kokTipAdlari.put("ZA", KelimeTipi.ZAMIR);
-        kokTipAdlari.put("SO", KelimeTipi.SORU);
-        kokTipAdlari.put("IM", KelimeTipi.IMEK);
-        kokTipAdlari.put("ZAMAN", KelimeTipi.ZAMAN);
-        kokTipAdlari.put("HATALI", KelimeTipi.HATALI);
-        kokTipAdlari.put("EDAT", KelimeTipi.EDAT);
-        kokTipAdlari.put("BAGLAC", KelimeTipi.BAGLAC);
-        kokTipAdlari.put("OZ", KelimeTipi.OZEL);
-        kokTipAdlari.put("UN", KelimeTipi.UNLEM);
-        kokTipAdlari.put("KI", KelimeTipi.KISALTMA);
+        kokTipAdlari.put("AT", ISIM);
+        kokTipAdlari.put("ISH", FIIL);
+        kokTipAdlari.put("SI", SIFAT);
+        kokTipAdlari.put("SA", SAYI);
+        kokTipAdlari.put("YA", YANKI);
+        kokTipAdlari.put("ZA", ZAMIR);
+        kokTipAdlari.put("SO", SORU);
+        kokTipAdlari.put("IM", IMEK);
+        kokTipAdlari.put("ZAMAN", ZAMAN);
+        kokTipAdlari.put("HATALI", HATALI);
+        kokTipAdlari.put("EDAT", EDAT);
+        kokTipAdlari.put("BAGLAC", BAGLAC);
+        kokTipAdlari.put("OZ", OZEL);
+        kokTipAdlari.put("UN", UNLEM);
+        kokTipAdlari.put("KI", KISALTMA);
         return kokTipAdlari;
     }
 
     public Map<KelimeTipi, String> baslangiEkAdlari() {
         Map<KelimeTipi, String> baslangicEkAdlari = new EnumMap(KelimeTipi.class);
-        baslangicEkAdlari.put(KelimeTipi.ISIM, TurkmenceEkAdlari.AT_SADA_BOS);
-        baslangicEkAdlari.put(KelimeTipi.SIFAT, TurkmenceEkAdlari.AT_SADA_BOS);
-        baslangicEkAdlari.put(KelimeTipi.FIIL, TurkmenceEkAdlari.ISLIK_SADA_BOS);
-        baslangicEkAdlari.put(KelimeTipi.ZAMAN, TurkmenceEkAdlari.ZAMAN_SADA_BOS);
-        baslangicEkAdlari.put(KelimeTipi.ZAMIR, TurkmenceEkAdlari.CALISMA_SADA_BOS);
-        baslangicEkAdlari.put(KelimeTipi.SAYI, TurkmenceEkAdlari.SAN_SADA_BOS);
-        baslangicEkAdlari.put(KelimeTipi.OZEL, TurkmenceEkAdlari.HASAT_SADA_BOS);
+        baslangicEkAdlari.put(ISIM, AT_SADA_BOS);
+        baslangicEkAdlari.put(SIFAT, AT_SADA_BOS);
+        baslangicEkAdlari.put(FIIL, ISLIK_SADA_BOS);
+        baslangicEkAdlari.put(ZAMAN, ZAMAN_SADA_BOS);
+        baslangicEkAdlari.put(ZAMIR, CALISMA_SADA_BOS);
+        baslangicEkAdlari.put(SAYI, SAN_SADA_BOS);
+        baslangicEkAdlari.put(OZEL, HASAT_SADA_BOS);
         return baslangicEkAdlari;
     }
 

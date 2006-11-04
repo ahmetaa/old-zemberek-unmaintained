@@ -22,7 +22,7 @@ public class TestDuzMetinSozlukYazici extends TemelTest {
                 "kaynaklar/tr/test/test-kokler.txt",
                 dilBilgisi.kokOzelDurumlari(),
                 dilBilgisi.alfabe(),
-                dilAyarlari.kelimeTipiAdlari());
+                dilAyarlari.kokTipiAdlari());
         List list = kokOkuyucu.hepsiniOku();
         System.out.println(" Sure: " + TimeTracker.stopClock("x"));
 
@@ -35,7 +35,7 @@ public class TestDuzMetinSozlukYazici extends TemelTest {
                 "kaynaklar/temp/test-duzyazi-kokler.txt",
                 dilBilgisi.kokOzelDurumlari(),
                 dilBilgisi.alfabe(),
-                dilAyarlari.kelimeTipiAdlari());
+                dilAyarlari.kokTipiAdlari());
         List newList = okuyucu.hepsiniOku();
 
         assertEquals(list.size(), newList.size());

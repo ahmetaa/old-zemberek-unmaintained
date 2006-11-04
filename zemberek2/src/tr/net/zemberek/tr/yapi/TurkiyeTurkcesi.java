@@ -1,22 +1,22 @@
 package net.zemberek.tr.yapi;
 
 import net.zemberek.tr.islemler.TurkceCozumlemeYardimcisi;
-import net.zemberek.tr.yapi.ek.TurkceEkAdlari;
 import net.zemberek.tr.yapi.ek.EkUreticiTr;
+import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.*;
 import net.zemberek.tr.yapi.ek.TurkceEkOzelDurumUretici;
 import net.zemberek.tr.yapi.kok.TurkceKokOzelDurumBilgisi;
 import net.zemberek.yapi.Alfabe;
 import net.zemberek.yapi.DilAyarlari;
 import net.zemberek.yapi.KelimeTipi;
-import net.zemberek.demo.TurkDiliTuru;
-import net.zemberek.yapi.ek.EkUretici;
+import static net.zemberek.yapi.KelimeTipi.*;
 import net.zemberek.yapi.ek.EkOzelDurumUretici;
+import net.zemberek.yapi.ek.EkUretici;
 import net.zemberek.yapi.ek.TemelEkYonetici;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.EnumMap;
+import java.util.HashMap;
 import java.util.Locale;
+import java.util.Map;
 
 /**
  * User: ahmet
@@ -64,42 +64,42 @@ public class TurkiyeTurkcesi implements DilAyarlari {
                 "kaynaklar/tr/bilgi/kisi-adlari.txt"};
     }
 
-    public Map<String, KelimeTipi> kelimeTipiAdlari() {
+    public Map<String, KelimeTipi> kokTipiAdlari() {
         Map<String, KelimeTipi> tipMap = new HashMap();
-        tipMap.put("IS", KelimeTipi.ISIM);
-        tipMap.put("FI", KelimeTipi.FIIL);
-        tipMap.put("SI", KelimeTipi.SIFAT);
-        tipMap.put("SA", KelimeTipi.SAYI);
-        tipMap.put("YA", KelimeTipi.YANKI);
-        tipMap.put("ZA", KelimeTipi.ZAMIR);
-        tipMap.put("SO", KelimeTipi.SORU);
-        tipMap.put("IM", KelimeTipi.IMEK);
-        tipMap.put("ZAMAN", KelimeTipi.ZAMAN);
-        tipMap.put("HATALI", KelimeTipi.HATALI);
-        tipMap.put("EDAT", KelimeTipi.EDAT);
-        tipMap.put("BAGLAC", KelimeTipi.BAGLAC);
-        tipMap.put("OZ", KelimeTipi.OZEL);
-        tipMap.put("UN", KelimeTipi.UNLEM);
-        tipMap.put("KI", KelimeTipi.KISALTMA);
+        tipMap.put("IS", ISIM);
+        tipMap.put("FI", FIIL);
+        tipMap.put("SI", SIFAT);
+        tipMap.put("SA", SAYI);
+        tipMap.put("YA", YANKI);
+        tipMap.put("ZA", ZAMIR);
+        tipMap.put("SO", SORU);
+        tipMap.put("IM", IMEK);
+        tipMap.put("ZAMAN", ZAMAN);
+        tipMap.put("HATALI", HATALI);
+        tipMap.put("EDAT", EDAT);
+        tipMap.put("BAGLAC", BAGLAC);
+        tipMap.put("OZ", OZEL);
+        tipMap.put("UN", UNLEM);
+        tipMap.put("KI", KISALTMA);
         return tipMap;
     }
 
     public Map<KelimeTipi, String> baslangiEkAdlari() {
         Map<KelimeTipi, String> baslangicEkAdlari = new EnumMap(KelimeTipi.class);
-        baslangicEkAdlari.put(KelimeTipi.ISIM, TurkceEkAdlari.ISIM_KOK);
-        baslangicEkAdlari.put(KelimeTipi.SIFAT, TurkceEkAdlari.ISIM_KOK);
-        baslangicEkAdlari.put(KelimeTipi.FIIL, TurkceEkAdlari.FIIL_KOK);
-        baslangicEkAdlari.put(KelimeTipi.ZAMAN, TurkceEkAdlari.ZAMAN_KOK);
-        baslangicEkAdlari.put(KelimeTipi.ZAMIR, TurkceEkAdlari.ZAMIR_KOK);
-        baslangicEkAdlari.put(KelimeTipi.SAYI, TurkceEkAdlari.SAYI_KOK);
-        baslangicEkAdlari.put(KelimeTipi.SORU, TurkceEkAdlari.SORU_KOK);
-        baslangicEkAdlari.put(KelimeTipi.UNLEM, TurkceEkAdlari.UNLEM_KOK);
-        baslangicEkAdlari.put(KelimeTipi.EDAT, TurkceEkAdlari.EDAT_KOK);
-        baslangicEkAdlari.put(KelimeTipi.BAGLAC, TurkceEkAdlari.BAGLAC_KOK);
-        baslangicEkAdlari.put(KelimeTipi.OZEL, TurkceEkAdlari.OZEL_KOK);
-        baslangicEkAdlari.put(KelimeTipi.IMEK, TurkceEkAdlari.IMEK_KOK);
-        baslangicEkAdlari.put(KelimeTipi.YANKI, TurkceEkAdlari.YANKI_KOK);
-        baslangicEkAdlari.put(KelimeTipi.KISALTMA, TurkceEkAdlari.ISIM_KOK);
+        baslangicEkAdlari.put(ISIM, ISIM_KOK);
+        baslangicEkAdlari.put(SIFAT, ISIM_KOK);
+        baslangicEkAdlari.put(FIIL, FIIL_KOK);
+        baslangicEkAdlari.put(ZAMAN, ZAMAN_KOK);
+        baslangicEkAdlari.put(ZAMIR, ZAMIR_KOK);
+        baslangicEkAdlari.put(SAYI, SAYI_KOK);
+        baslangicEkAdlari.put(SORU, SORU_KOK);
+        baslangicEkAdlari.put(UNLEM, UNLEM_KOK);
+        baslangicEkAdlari.put(EDAT, EDAT_KOK);
+        baslangicEkAdlari.put(BAGLAC, BAGLAC_KOK);
+        baslangicEkAdlari.put(OZEL, OZEL_KOK);
+        baslangicEkAdlari.put(IMEK, IMEK_KOK);
+        baslangicEkAdlari.put(YANKI, YANKI_KOK);
+        baslangicEkAdlari.put(KISALTMA, ISIM_KOK);
         return baslangicEkAdlari;
     }
 

@@ -258,7 +258,7 @@ public class TurkceDilBilgisi implements DilBilgisi {
                     dosyaAdi,
                     ozelDurumBilgisi,
                     alfabe,
-                    dilAyarlari.kelimeTipiAdlari());
+                    dilAyarlari.kokTipiAdlari());
             List list = okuyucu.hepsiniOku();
             logger.info("Okunan kok sayisi: " + list.size());
             tumKokler.addAll(list);

@@ -9,11 +9,10 @@ import net.zemberek.yapi.DilAyarlari;
  */
 public enum TurkDiliTuru {
 
-
     TURKIYE("net.zemberek.tr.yapi.TurkiyeTurkcesi"),
-    TURKMEN("net.zemberek.tm.yapi.Turkmence");
+    TURKMEN("net.zemberek.tm.yapi.Turkmence"),
+    AZERI("net.zemberek.az.yapi.Azerice");
 
-    //AZERI("az");
     //KAZAK("kk"),
     //OZBEK("uz"),
     //TATAR("tt"),
