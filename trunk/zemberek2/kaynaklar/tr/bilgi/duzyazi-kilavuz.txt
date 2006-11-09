@@ -11160,6 +11160,7 @@ ecza IS
 #eczacılık,-ğı
 #ecza dolabı
 eczahane IS
+eczane IS
 #eczalı
 #eczalı pamuk,-ğu
 #eczasız
