@@ -7,7 +7,7 @@ package net.zemberek.araclar;
 import java.text.DecimalFormat;
 
 /**
- * Bazi basit  yuzde hesaplamalarında kullannilan fonksiyonlar. 
+ * Bazi basit  yuzde hesaplamalarï¿½nda kullannilan fonksiyonlar. 
  * TODO: istatistik paketine alinmasi dusunulebilir.
  * @author MDA
  */
@@ -17,11 +17,11 @@ public class IstatistikAraclari {
     public static DecimalFormat df2 = new DecimalFormat("#0.00000");
 
     /**
-     * Verilen girişin toplamın yüzde kaçını oluşturduğunu döndürür.
+     * Verilen girisin toplamÄ±n yÃ¼zde kaÃ§Ä±nÄ± oluÅŸturduÄŸunu dÃ¶ndÃ¼rÃ¼r.
      * @param input
      * @param total
-     * @return input, toplamin %kacini olusturuyor sa o değer.
-     * Eğer total 0 ise -1 
+     * @return input, toplamin %kaci ise.
+     * EÄŸer total 0 ise -1 
      * 
      */
     public static double yuzdeHesapla(long input, long total) {
@@ -30,9 +30,9 @@ public class IstatistikAraclari {
     }
 
     /**
-     * yuzde hesaplamasının aynısı, sadece formatlı String olarak döndürür.
-     * @param input
-     * @param total
+     * Yuzde hesaplamasÄ±nÄ±n aynÄ±sÄ±, sadece formatlÄ± String olarak dÃ¶ndÃ¼rÃ¼r.
+     * @param input : giriÅŸ 
+     * @param total : toplam
      * @return
      */
     public static String yuzdeHesaplaStr(long input, long total) {
@@ -41,8 +41,7 @@ public class IstatistikAraclari {
     }
 
     /**
-     * Gene yuzde hesabı. ama bu sefer virgülden sonra 5 basamak hassasiyet
-     * TODO: ismi hatalı aslında. Onbinde-bir hassasiyetle yüzde hesapla gibi bir şey olmalıydı.
+     * Gene yuzde hesabÄ±. ama bu sefer virgÃ¼lden sonra 5 basamak hassasiyet
      * @return
      */
     public static String onbindeHesaplaStr(long input, long total) {

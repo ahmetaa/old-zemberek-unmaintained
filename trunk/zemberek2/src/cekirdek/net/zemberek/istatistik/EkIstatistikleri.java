@@ -19,7 +19,7 @@ public class EkIstatistikleri implements Istatistik {
 
     public void istatistikGuncelle(Kelime kelime) {
         List ekler = kelime.ekler();
-        // kelime sonu için bir null ek ekliyoruz.
+        // kelime sonu iÃ§in bir null ek ekliyoruz.
         ekler.add(TemelEkYonetici.BOS_EK);
         for (int i = 0; i < ekler.size() - 1; i++) {
             Ek ek = (Ek) ekler.get(i);

@@ -45,6 +45,7 @@ agreement, obtained from http://www.opensource.org/licenses/UoI-NCSA.php]*/
 package net.zemberek.araclar;
 
 /**
+ * 
  * Winkler's reweighting scheme for distance metrics.  In the
  * literature, this was applied to the Jaro metric ('An Application of
  * the Fellegi-Sunter Model of Record Linkage to the 1990
@@ -54,11 +55,11 @@ package net.zemberek.araclar;
 public class JaroWinkler {
 
     /**
-     * Verilen iki String'in benzerlik oranını Jaro-Winkler algortiması kullanarak hesaplar.
-     * Oluşan sonuç 0-1 arasındadır, 1'e yaklaştıkça benzerlik artar, aynı stringler için "1" dir
+     * Verilen iki String'in benzerlik oranÄ±nÄ± Jaro-Winkler algortimasÄ± kullanarak hesaplar.
+     * OluÅŸan sonuÃ§ 0-1 arasÄ±ndadÄ±r, 1'e yaklaÅŸtÄ±kÃ§a benzerlik artar, aynÄ± stringler iÃ§in "1" dir
      * @param source
      * @param target
-     * @return Stringlerin benzerlik oranı. stringler aynı ise 1
+     * @return Stringlerin benzerlik oranÄ±. stringler aynÄ± ise 1
      */
     public double benzerlikOrani(String source, String target) {
         double dist = jaroBenzerlikOrani(source, target);

@@ -10,24 +10,9 @@ import java.util.Collection;
 import java.util.List;
 
 /**
- * Birden fazla sozlukle calisabilmek icin Sozluk arayuzu. Kaynak sözlükteki kısaltmaların
- * anlamları:
- * <pre>
- * #       : Yorum. Bu satırlar okuyucular ihmal edilir.
- * IS      : İsim
- * FI      : Fiil
- * SI      : Sıfat
- * SA      : Sayı
- * OZ      : Özel isim
- * ZA      : Zamir
- * YUM     : Yumuşama. Örnek: kitap – kitabı (kitapı değil)
- * DUS     : Harf Düşmesi nutuk – nutka (nutuka değil)
- * TERS    : Ters dönüşüm saat – saate (saata değil)
- * YAL     : Kelime sadece yalın olarak kullanılır
- * GEN     : Geniş zaman istisnası
- * </pre>
+ * Birden fazla sozlukle calisabilmek icin Sozluk arayuzu. 
  *
- * @author MDA & GBA
+ * @author MDA
  */
 public interface Sozluk {
     /**
@@ -57,10 +42,10 @@ public interface Sozluk {
     public void ekle(Kok kok);
 
     /**
-     * Bu metod kökseçici fabrikası elde etmek için kullanılır. Gerçekleyen sözlük sınıfları bu
-     * metodda kendi Kök Seçici fabrikası gerçeklemelerinin bir instancesini geri döndürmelidirler.
+     * Bu metod kÃ¶kbulucu fabrikasÄ± elde etmek iÃ§in kullanÄ±lÄ±r. GerÃ§ekleyen sÃ¶zlÃ¼k sÄ±nÄ±flarÄ± bu
+     * metodda kendi KÃ¶k bulucu fabrikasÄ± gerÃ§eklemelerinin bir instancesini geri dÃ¶ndÃ¼rmelidirler.
      *
-     * @return Sözlük
+     * @return SÃ¶zlÃ¼k
      * @see AgacSozluk
      */
     public KokBulucuUretici getKokBulucuFactory();

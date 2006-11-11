@@ -26,7 +26,7 @@ public class BinaryIstatistikOkuyucu implements IstatistikOkuyucu {
     public KokIstatistikBilgisi oku(Sozluk sozluk) throws IOException {
         try {
             while (true) {
-                // önce kök boyunu oku
+                // Ã–nce kÃ¶k boyunu oku
                 int len = reader.read();
                 if (len == -1) {
                     //System.out.println("EOF. ending.");
@@ -39,13 +39,13 @@ public class BinaryIstatistikOkuyucu implements IstatistikOkuyucu {
                 Collection<Kok> col = sozluk.kokBul(kokStr);
                 if (col == null) {
                     //System.out.println("Isatistik bilgisi verilen kok sozlukte yok? Kok: " + kokStr);
-                    // frekansý da oku.
+                    // frekansÄ± da oku.
                     reader.read();
-                    // sonraki koke geç.
+                    // sonraki koke geÃ§.
                     continue;
                 }
                 int frekans = reader.read();
-                // Simdilik tüm es seslilere ayni frekansi veriyoruz.
+                // Simdilik tï¿½m es seslilere ayni frekansi veriyoruz.
                 for (Kok kok: col) {
                     kok.setFrekans(frekans);
                 }

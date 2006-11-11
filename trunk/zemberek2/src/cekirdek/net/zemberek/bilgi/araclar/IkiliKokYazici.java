@@ -1,11 +1,15 @@
 package net.zemberek.bilgi.araclar;
 
-import net.zemberek.yapi.Kok;
-import net.zemberek.yapi.kok.KokOzelDurumu;
-
-import java.io.*;
+import java.io.BufferedOutputStream;
+import java.io.DataOutputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.Iterator;
 import java.util.List;
+
+import net.zemberek.yapi.Kok;
+import net.zemberek.yapi.kok.KokOzelDurumu;
 
 /**
  * User: ahmet
@@ -23,17 +27,17 @@ public class IkiliKokYazici implements KokYazici {
     public void yaz(List kokler) throws IOException {
         for (Iterator it = kokler.iterator(); it.hasNext();) {
             Kok kok = (Kok) it.next();
-            // Kök içerigi
+            // KÃ¶k iÃ§erigi
             dos.writeUTF(kok.icerik());
 
             // asil icerik ozel karakterler barindiran koklerde olur. yoksa bos string yaz.
             if (kok.asil() != null) {
-                // Kök asil içerigi
+                // KÃ¶k asil iÃ§erigi
                 dos.writeUTF(kok.asil());
             } else
                 dos.writeUTF("");
 
-            // Kök tipi
+            // KÃ¶k tipi
             dos.write(kok.tip().getIndeks());
 
             dos.writeChar(kok.getKisaltmaSonSeslisi());

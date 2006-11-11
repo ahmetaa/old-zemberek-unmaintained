@@ -11,19 +11,7 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- * Aşağıdaki kod parçası bir binary szölüğü okur ve düzyazı sözlük olarak yazar.
- * <pre>
- * ...
- * KokOkuyucu okuyucu = new BinarySozlukOkuyucu();
- * KokYazici yazici = new DuzmetinSpzlukYazici();
- * okuyucu.initialize(“duzyazisozluk.txt”);
- * yazici.initialize(“binarysozluk.bin”);
- * List list = okuyucu.hepsiniOku();
- * yazici.ekle(list);
- * yazici.kapat();
- * ...
- * </pre>
- *
+ * Verilen bir sÃ¶zlÃ¼ÄŸÃ¼n dÃ¼zyazÄ± olarak yazÄ±lmasÄ±nÄ± saÄŸlar.
  * @author MDA
  */
 public class DuzYaziKokYazici implements KokYazici {

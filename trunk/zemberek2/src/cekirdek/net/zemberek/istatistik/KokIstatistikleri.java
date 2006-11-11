@@ -49,7 +49,7 @@ public class KokIstatistikleri implements Istatistik {
     private int[] kontrolDizisi = new int[]{2, 5, 10, 20, 50, 100, 250, 500, 750, 1000, 1500, 2000, 3000, 5000, 7500, 10000, 15000, 20000};
     private long[] araToplamlar = new long[kontrolDizisi.length];
     private int araToplamSayaci = 0;
-    // bu dizi en çok kullanýlan n kok'un tum metnin yuzde kacini kapsadigini 
+    // bu dizi en Kok kullanÄ±lan n kok'un tum metnin yuzde kacini kapsadigini 
     // incelemek icin kullanilan ornekleme araliklarini tutar.
 
     private int[] toplamEkUzunlukSayilari = new int[GenelKokIstatistikBilgisi.TABLO_MAX_EK_SAYISI];
@@ -79,11 +79,11 @@ public class KokIstatistikleri implements Istatistik {
         } else if (kokBilgisi.getKok().tip() == KelimeTipi.SIFAT) {
             toplamSifatSayisi++;
             toplamSifatKelimeUzunlugu += giris.icerik().length();
-            // Diger Sýfat istatistikleri
+            // Diger SÄ±fat istatistikleri
         } else if (kokBilgisi.getKok().tip() == KelimeTipi.SAYI) {
             toplamSayiSayisi++;
             toplamSayiKelimeUzunlugu += giris.icerik().length();
-            // Diger Sýfat istatistikleri
+            // Diger SÄ±fat istatistikleri
         }
         kokBilgisi.guncelle(giris);
     }
@@ -93,7 +93,7 @@ public class KokIstatistikleri implements Istatistik {
         kokListesi = new ArrayList();
         araToplamSayaci = 0;
 
-        // Kokleri bir listeye doldur (sýralamak için)
+        // Kokleri bir listeye doldur (sï¿½ralamak iï¿½in)
         for (Iterator it = kokler.values().iterator(); it.hasNext();) {
             GenelKokIstatistikBilgisi kokBilgisi = (GenelKokIstatistikBilgisi) it.next();
             toplamKelime += kokBilgisi.getKullanimSayisi();
@@ -107,7 +107,7 @@ public class KokIstatistikleri implements Istatistik {
             }
             if (kokBilgisi.getKok().tip() == KelimeTipi.SIFAT) {
                 toplamSifatKokSayisi++;
-                // Diger Sýfat istatistikleri
+                // Diger Sï¿½fat istatistikleri
             }
             kokListesi.add(kokBilgisi);
         }
