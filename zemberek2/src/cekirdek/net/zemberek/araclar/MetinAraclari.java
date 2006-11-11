@@ -6,7 +6,7 @@ package net.zemberek.araclar;
 import java.util.logging.Logger;
 
 /**
- * Genel metin araçları. String benzerliği, Q klavye mesafesi gibi fonksiyonları barındırır
+ * Genel metin araÃ§larÄ±. String benzerliÄŸi, Q klavye mesafesi gibi fonksiyonlarÄ± barÄ±ndÄ±rÄ±r.
  * @author MDA
  */
 public class MetinAraclari {
@@ -15,7 +15,7 @@ public class MetinAraclari {
     private static JaroWinkler jaroWinkler = new JaroWinkler();
 
     /**
-     * Verilen iki karakterin arasındakli klavye mesafesini döndürür (Q). 
+     * Verilen iki karakterin arasÄ±ndakli klavye mesafesini dÃ¶ndÃ¼rÃ¼r (Q). 
      * @param c1
      * @param c2
      * @return tuslar arasi mesafe
@@ -25,7 +25,7 @@ public class MetinAraclari {
     }
 
     /**
-     * Degistirilmis Levenshtein Edit Dist. algoritması. transpozisyonları da 1 düzeltme mesafesi
+     * Degistirilmis Levenshtein Edit Dist. algoritmasÄ±. transpozisyonlarÄ± da 1 dÃ¼zeltme mesafesi
      * olarak hesaplar.
      *
      * @param source
@@ -39,7 +39,7 @@ public class MetinAraclari {
     }
 
     /**
-     * Degistirilmis Levenshtein Edit Dist. algoritması. transpozisyonları da 1 düzeltme mesafesi
+     * Degistirilmis Levenshtein Edit Dist. algoritmasÄ±. transpozisyonlarÄ± da 1 dÃ¼zeltme mesafesi
      * olarak hesaplar. Uzaklik limit degerden buyuk olursa islem kesilir. (Alphan)
      *
      * @param source
@@ -136,8 +136,8 @@ public class MetinAraclari {
     }
 
     /**
-     * Degistirilmis Levenshtein Edit Dist. algoritması. transpozisyonları da 1
-     * düzeltme mesafesi olarak hesaplar.
+     * Degistirilmis Levenshtein Edit Dist. algoritmasÄ±. transpozisyonlarÄ± da 1
+     * dÃ¼zeltme mesafesi olarak hesaplar.
      *
      * @param source
      * @param target
@@ -149,8 +149,8 @@ public class MetinAraclari {
 
 
     /**
-     * verilen s1 stringinin verilen distance düzeltme mesafesi çerçevesinde
-     * s2 stringinin alt stringi olup olmadığını döndürür. Örneğin:
+     * Verilen s1 stringinin verilen distance dÃ¼zeltme mesafesi Ã§erÃ§evesinde
+     * s2 stringinin alt stringi olup olmadÄ±ÄŸÄ±nÄ± dÃ¶ndÃ¼rÃ¼rr. Ã–rneÄŸin:
      * <pre>
      * isInSubStringLevenshteinDistance("elma","ekmalar",1) -> true
      * isInSubStringLevenshteinDistance("elma","emalar",1) -> true
@@ -158,8 +158,8 @@ public class MetinAraclari {
      * </pre>
      *
      * @param s1       :
-     * @param s2       : s1'i distance düzeltme mesafesi içinde kapsayı kapsamadığı araştırılan String
-     * @param distance : düzeltme mesafesi
+     * @param s2       : s1'i distance dÃ¼zeltme mesafesi iÃ§inde kapsayÄ±p kapsamadÄ±ÄŸÄ± araÅŸtÄ±rÄ±lan String
+     * @param distance : dÃ¼zeltme mesafesi
      * @return eger istenilen mesafede is true.
      */
     public static boolean isInSubstringEditDistance(String s1, String s2, int distance) {

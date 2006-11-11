@@ -9,10 +9,10 @@ import java.io.*;
 
 /**
  * TurkishTokenStream
- * Verilen bir doayadan veya herhangi bir stream'dan Türkce kelimeleri
- * sirayla almak için kullanilir. Ýki constructor'u vardýr, istenirse verilen bir
- * dosyayi istenirse de herhangi bir inputstream'ý isleyebilir.
- * Biraz optimizasyona ihtiyaci var ,ama corpus.txt deki tüm kelimeleri tek tek
+ * Verilen bir doayadan veya herhangi bir stream'dan TÃ¼rkce kelimeleri
+ * sirayla almak iÃ§in kullanilir. Ä°ki constructor'u vardÄ±r, istenirse verilen bir
+ * dosyayi istenirse de herhangi bir inputstream'Ä± isleyebilir.
+ * Biraz optimizasyona ihtiyaci var ,ama corpus.txt deki tÃ¼m kelimeleri tek tek
  * nextWord() ile cekmek yaklasik 0.8 saniye aldi. (Athlon 900)
  *
  * @author MDA & GBA
@@ -24,10 +24,10 @@ public class TurkishTokenStream {
     int index = 0;
 
     /**
-     * Dosyadan kelime okuyan TurkishTokenStream oluþturur
+     * Dosyadan kelime okuyan TurkishTokenStream oluÅŸturur
      *
      * @param fileName
-     * @param encoding: default için null verin
+     * @param encoding: default iÃ§in null verin
      */
     public TurkishTokenStream(String fileName, String encoding) {
         try {
@@ -39,10 +39,10 @@ public class TurkishTokenStream {
     }
 
     /**
-     * Herhangibir input Streaminden'den kelime okuyan TurkishTokenStream oluþturur.
+     * Herhangibir input Streaminden'den kelime okuyan TurkishTokenStream oluÅŸturur.
      *
      * @param is
-     * @param encoding : default için null verin
+     * @param encoding : default iÃ§in null verin
      */
     public TurkishTokenStream(InputStream is, String encoding) {
         setupReader(is, encoding);
@@ -64,20 +64,19 @@ public class TurkishTokenStream {
 
     /**
      * Metindeki veya stream'deki bir sonraki kelimeyi getirir
-     * - Büyük harfleri küçültür
-     * - Noktalama iþaretlerini yutar.
+     * - BÃ¼yÃ¼k harfleri kÃ¼Ã§Ã¼ltÃ¼r
+     * - Noktalama iÅŸaretlerini yutar.
      *
-     * @return Sonraki kelime, eðer kelime kalmamýþsa null
+     * @return Sonraki kelime, eÄŸer kelime kalmamÄ±ÅŸsa null
      */
     public String nextWord() {
         char ch;
         int readChar;
         boolean kelimeBasladi = false;
         int kelimeIndex = 0;
-        int harf = 0;
         boolean hypen = false;
         try {
-            // TODO: bir char buffer'e toptan okuyup islemek hýz kazandirir mi?
+            // TODO: bir char buffer'e toptan okuyup islemek hÄ±z kazandirir mi?
             while ((readChar = bis.read()) != -1) {
                 ch = (char) readChar;
                 if (statistics != null) {
@@ -96,7 +95,7 @@ public class TurkishTokenStream {
                         case 'I':
                             ch = '\u0131';
                             break; // dotless small i
-                            // Buraya sapkalý a vs. gibi karakter donusumlari de eklenebilir.
+                            // Buraya sapkalÄ± a vs. gibi karakter donusumlari de eklenebilir.
                         default  :
                             ch = Character.toLowerCase(ch);
                     }
@@ -130,7 +129,7 @@ public class TurkishTokenStream {
 
             }
             
-            // Tüm karakterler bitti, son kalan kelime varsa onu da getir.
+            // TÃ¼m karakterler bitti, son kalan kelime varsa onu da getir.
             if (kelimeBasladi) {
                 return new String(kelimeBuffer, 0, kelimeIndex);
             }
@@ -145,20 +144,16 @@ public class TurkishTokenStream {
     private char[] cumleBuffer = new char[MAX_CUMLE_BOY];
 
     /**
-     * Metindeki veya stream'deki bir sonraki kelimeyi getirir
-     * - Büyük harfleri küçültür
-     * - Noktalama iþaretlerini yutar.
-     *
-     * @return Sonraki kelime, eðer kelime kalmamýþsa null
+     * Metindeki veya stream'deki bir sonraki cÃ¼mleyi getirir
+     * @return Sonraki cÃ¼mle, eÄŸer kalmamÄ±ÅŸsa null
      */
     public String nextSentence() {
         char ch;
         int readChar;
         boolean cumleBasladi = false;
         int cumleIndex = 0;
-        int harf = 0;
         try {
-            // TODO: bir char buffer'e toptan okuyup islemek hýz kazandirir mi? (sanmam)
+            // TODO: bir char buffer'e toptan okuyup islemek hÄ±z kazandirir mi? (sanmam)
             while ((readChar = bis.read()) != -1) {
                 ch = (char) readChar;
 
@@ -169,7 +164,7 @@ public class TurkishTokenStream {
                         case 'I':
                             ch = '\u0131';
                             break; // dotless small i
-                            // Buraya sapkalý a vs. gibi karakter donusumlari de eklenebilir.
+                            // Buraya sapkalÄ± a vs. gibi karakter donusumlari de eklenebilir.
                         default  :
                             ch = Character.toLowerCase(ch);
                     }
@@ -197,7 +192,7 @@ public class TurkishTokenStream {
 
             }
             
-            // Tüm karakterler bitti, son kalan kelime varsa onu da getir.
+            // TÃ¼m karakterler bitti, son kalan kelime varsa onu da getir.
             if (cumleBasladi) {
                 return new String(kelimeBuffer, 0, cumleIndex);
             }
@@ -213,7 +208,7 @@ public class TurkishTokenStream {
             case 'I':
                 ch = '\u0131';
                 break; // dotless small i
-                // Buraya sapkalý a vs. gibi karakter donusumlari de eklenebilir.
+                // Buraya sapkalÄ± a vs. gibi karakter donusumlari de eklenebilir.
             default  :
                 ch = Character.toLowerCase(chIn);
         }
@@ -225,18 +220,11 @@ public class TurkishTokenStream {
                 ch == ':' ||
                 ch == '!' ||
                 ch == '?'
-        /*ch == Character.LINE_SEPARATOR ||
-        ch == Character.PARAGRAPH_SEPARATOR*/
         )
             return true;
         return false;
     }
     
-//    public void nextSentence(){
-//        Locale currentLocale = new Locale("tr","Tr");
-//        BreakIterator sentenceIterator = BreakIterator.getSentenceInstance(currentLocale);
-//    }
-
     public void setStatistics(Istatistikler statistics) {
         this.statistics = statistics;
     }

@@ -1,15 +1,14 @@
 package net.zemberek.islemler;
 
-import net.zemberek.TemelTest;
-import net.zemberek.erisim.Zemberek;
-import net.zemberek.istatistik.BasitKokIstatistikBilgisi;
-import net.zemberek.tr.yapi.TurkiyeTurkcesi;
-import net.zemberek.yapi.Kelime;
-import net.zemberek.yapi.Kok;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
+import net.zemberek.TemelTest;
+import net.zemberek.erisim.Zemberek;
+import net.zemberek.tr.yapi.TurkiyeTurkcesi;
+import net.zemberek.yapi.Kelime;
+import net.zemberek.yapi.Kok;
 
 /**
  * User: ahmet

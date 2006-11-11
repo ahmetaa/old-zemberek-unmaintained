@@ -12,8 +12,8 @@ public class SonHarfYumusamaOzelDurumu extends EkOzelDurumu {
 
     public HarfDizisi cozumlemeIcinUret(Kelime kelime, HarfDizisi giris, HarfDizisiKiyaslayici kiyaslayici) {
         HarfDizisi ek = ekUretici.cozumlemeIcinEkUret(kelime.icerik(), giris, uretimBilesenleri);
-        // XXXX gibi türkçe harf taþýmayan stringler için koruma.
-        // TODO: Daha doðru bir yöntem bulunmalý.
+        // XXXX gibi TÃ¼rkÃ§e harf taÅŸÄ±mayan stringler iÃ§in koruma.
+        // TODO: Daha doÄŸru bir yÃ¶ntem bulunmalÄ±.
         if(ek == null){
             return null;
         }

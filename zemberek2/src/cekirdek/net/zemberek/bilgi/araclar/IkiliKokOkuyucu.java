@@ -1,15 +1,18 @@
 package net.zemberek.bilgi.araclar;
 
-import net.zemberek.bilgi.KaynakYukleyici;
-import net.zemberek.istatistik.BasitKokIstatistikBilgisi;
-import net.zemberek.yapi.KelimeTipi;
-import net.zemberek.yapi.Kok;
-import net.zemberek.yapi.kok.KokOzelDurumu;
-import net.zemberek.yapi.kok.KokOzelDurumBilgisi;
-
-import java.io.*;
+import java.io.BufferedInputStream;
+import java.io.DataInputStream;
+import java.io.EOFException;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
+
+import net.zemberek.bilgi.KaynakYukleyici;
+import net.zemberek.yapi.KelimeTipi;
+import net.zemberek.yapi.Kok;
+import net.zemberek.yapi.kok.KokOzelDurumBilgisi;
+import net.zemberek.yapi.kok.KokOzelDurumu;
 
 /**
  * User: ahmet
@@ -32,10 +35,10 @@ public class IkiliKokOkuyucu implements KokOkuyucu {
     }
 
     /**
-     * Sözlükteki Tüm kökleri okur ve bir ArrayList olarak döndürür.
+     * SÃ¶zlÃ¼kteki TÃ¼m kÃ¶kleri okur ve bir ArrayList olarak dÃ¶ndÃ¼rÃ¼r.
      */
-    public List hepsiniOku() throws IOException {
-        ArrayList list = new ArrayList();
+    public List<Kok> hepsiniOku() throws IOException {
+        ArrayList<Kok> list = new ArrayList<Kok>();
         Kok kok = null;
         while ((kok = oku()) != null) {
             list.add(kok);
@@ -45,9 +48,9 @@ public class IkiliKokOkuyucu implements KokOkuyucu {
     }
 
     /**
-     * Ýkili (Binary) sözlükten bir kök okur. Çaðrýldýkça bir sonraki kökü alýr.
+     * Ä°kili (Binary) sÃ¶zlÃ¼kten bir kÃ¶k okur. Ã§aÄŸrÄ±ldÄ±kÃ§a bir sonraki kÃ¶kÃ¼ alÄ±r.
      *
-     * @return bir sonraki kök. Eðer okunacak kök kalmamýþsa null
+     * @return bir sonraki kÃ¶k. EÄŸer okunacak kÃ¶k kalmamÄ±ÅŸsa null
      */
     public Kok oku() throws IOException {
 
@@ -70,7 +73,7 @@ public class IkiliKokOkuyucu implements KokOkuyucu {
 
         kok.setKisaltmaSonSeslisi(dis.readChar());
 
-        // Özel durum sayýsýný (1 byte) ve ozel durumlari oku.
+        // Ã–zel durum sayÄ±sÄ±nÄ± (1 byte) ve ozel durumlari oku.
         int ozelDurumSayisi = dis.read();
         for (int i = 0; i < ozelDurumSayisi; i++) {
             int ozelDurum = dis.read();

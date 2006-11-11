@@ -31,20 +31,21 @@ public class OneriUretici {
     }
 
     /**
-     * Verilen kelime için öneri üretir.
-     * Yapılan öneriler şu şekildedir:
-     * - Kökte 1, ekte 1 mesafeye kadar olmak üzere Levenshtein düzeltme mesafesine uyan tüm öneriler
-     * - Deasciifier'den dönüş değeri olarak gelen öneriler
-     * - Kelimenin ayrık iki kelimeden oluşması durumu için öneriler
+     * Verilen kelime iÃ§in Ã¶neri Ã¼retir.
+     * YapÄ±lan Ã¶neriler ÅŸu ÅŸekildedir:
+     * - KÃ¶kte 1, ekte 1 mesafeye kadar olmak Ã¼zere Levenshtein dÃ¼zeltme mesafesine uyan tÃ¼m Ã¶neriler
+     * - Deasciifier'den dÃ¶nÃ¼ÅŸ deÄŸeri olarak gelen Ã¶neriler
+     * - Kelimenin ayrÄ±k iki kelimeden oluÅŸmasÄ± durumu iÃ§in Ã¶neriler
      *
-     * @param kelime : Öneri yaılması istenen giriş kelimesi
-     * @return String[] olarak öneriler
-     *         Eğer öneri yoksa sifir uzunluklu dizi.
+     * @param kelime : Ã–neri yapÄ±lmasÄ± istenen giriÅŸ kelimesi
+     * @return String[] olarak Ã¶neriler
+     *         EÄŸer Ã¶neri yoksa sifir uzunluklu dizi.
      */
     public String[] oner(String kelime) {
-        // Once hatalı kelime için tek kelimelik önerileri bulmaya çalış
+        // Once hatalÄ± kelime iÃ§in tek kelimelik Ã¶nerileri bulmaya Ã§alÄ±ÅŸ
         Kelime[] oneriler = toleransliCozumleyici.cozumle(kelime);
-        //Deasciifierden bir şey var mı?
+        
+        //Deasciifierden bir ÅŸey var mÄ±?
         Kelime[] asciiTurkceOneriler = new Kelime[0];
         if (ayarlar.oneriDeasciifierKullan())
             asciiTurkceOneriler = asciiToleransliCozumleyici.cozumle(kelime);
@@ -90,21 +91,22 @@ public class OneriUretici {
             return new String[0];
         }
 
-        // Onerileri puanlandırmak için bir listeye koy
+        // Onerileri puanlandÄ±rmak iÃ§in bir listeye koy
         ArrayList<Kelime> oneriList = new ArrayList<Kelime>();
         oneriList.addAll(Arrays.asList(oneriler));
         oneriList.addAll(Arrays.asList(asciiTurkceOneriler));
 
+        // Frekansa gÃ¶re sÄ±rala
         Collections.sort(oneriList, new KelimeKokFrekansKiyaslayici());
 
-        // Dönüş listesi string olacak, Yeni bir liste oluştur. 
-        ArrayList<String> sonucListesi = new ArrayList();
+        // DÃ¶nÃ¼ÅŸ listesi string olacak, Yeni bir liste oluÅŸtur. 
+        ArrayList<String> sonucListesi = new ArrayList<String>();
         for (Kelime anOneriList : oneriList) {
             sonucListesi.add(anOneriList.icerik().toString());
         }
 
-        //çift sonuçlari liste sirasini bozmadan iptal et.
-        ArrayList<String> rafineListe = new ArrayList();
+        //Ã‡ift sonuÃ§larÄ± liste sirasÄ±nÄ± bozmadan iptal et.
+        ArrayList<String> rafineListe = new ArrayList<String>();
         for (String aday : sonucListesi) {
             boolean aynisiVar = false;
             for (String aRafineListe : rafineListe) {
@@ -117,7 +119,8 @@ public class OneriUretici {
                 rafineListe.add(aday);
             }
         }
-
+        	
+        // Son olarak yer kalmÄ±ÅŸsa ayrÄ± yazÄ±lÄ±m Ã¶nerilerini ekle
         for (String oneri : ayriYazimOnerileri) {
             if (rafineListe.size() < ayarlar.getOneriMax())
                 rafineListe.add(oneri);

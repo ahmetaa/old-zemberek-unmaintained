@@ -10,7 +10,7 @@ import java.util.List;
  */
 public interface KokOkuyucu {
 
-    List hepsiniOku() throws IOException;
+    List<Kok> hepsiniOku() throws IOException;
 
     Kok oku() throws IOException;
 

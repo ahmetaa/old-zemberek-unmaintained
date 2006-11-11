@@ -1,12 +1,12 @@
 package net.zemberek.islemler;
 
-import net.zemberek.yapi.Alfabe;
-import net.zemberek.yapi.HarfDizisi;
-import net.zemberek.yapi.HeceBulucu;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
+import net.zemberek.yapi.Alfabe;
+import net.zemberek.yapi.HarfDizisi;
+import net.zemberek.yapi.HeceBulucu;
 
 /**
  * Heceleyici
@@ -66,12 +66,12 @@ public class Heceleyici {
     }
 
     /**
-     * Verilen kelime için sonHeceHarfSayisi indekslerini bir dizi içinde döndürür
+     * Verilen kelime iÃ§in sonHeceHarfSayisi indekslerini bir dizi iÃ§inde dÃ¶ndÃ¼rÃ¼r
      *
      * @param giris : Hece indeksleri belirlenecek
      * @return Hece indekslerini tutan bir int[]
-     *         Örnek: "merhaba" kelimesi için 0,3,5
-     *         "türklerin" kelimesi için 0,4,6
+     *         Ã–rnek: "merhaba" kelimesi iÃ§in 0,3,5
+     *         "tÃ¼rklerin" kelimesi iÃ§in 0,4,6
      */
     public int[] heceIndeksleriniBul(String giris) {
         giris = alfabe.ayikla(giris);
