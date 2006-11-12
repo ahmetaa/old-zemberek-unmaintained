@@ -162,7 +162,7 @@
 
 
     <!-- ======================================================= -->
-    <!-- bilgi dosyalari icinde jar ile dagitim olusturur.       -->
+    <!-- bilgi dosyalari icinde jar ile dagitim olusturur..      -->
     <!-- ======================================================= -->
     <target name="dist" depends="jar-tum">
 
