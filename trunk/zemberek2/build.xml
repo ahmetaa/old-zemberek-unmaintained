@@ -134,7 +134,7 @@
 
 
     <!-- ======================================================= -->
-    <!-- Turkmence demo icin jar.      -->
+    <!-- Tum dilleri iceren jar     -->
     <!-- ======================================================= -->
     <target name="jar-tum" depends="temizle, derle-cekirdek">
         <copy todir="${build.tum}">
