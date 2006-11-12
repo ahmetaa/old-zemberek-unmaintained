@@ -94,7 +94,7 @@ public class IstatistikXMLIsleyici {
                     }
 
                 } else if (event == XmlPullParser.TEXT) {
-                    // text bu durumda iþimize yaramýyor.
+                    // text bu durumda iÅŸimize yaramÄ±yor.
                 } else if (event == XmlPullParser.END_DOCUMENT) {
                     break;
                 } // end else if
@@ -189,7 +189,7 @@ public class IstatistikXMLIsleyici {
         toplayici.metinIsle("kaynaklar/tr/metinler/Arthur C_ Clarke - 2062 - Bir Uzay Efsanesi - 3.txt");
         toplayici.metinIsle("kaynaklar/tr/metinler/Arthur C_ Clarke - Rama Yle Bulu_ma.txt");
         toplayici.metinIsle("kaynaklar/tr/metinler/ahmet-hamdi-tanpinar-huzur.txt");
-        toplayici.metinIsle("kaynaklar/tr/metinler/Ahmet Altan - Ysyan Günlerinde A_k.txt");
+        toplayici.metinIsle("kaynaklar/tr/metinler/Ahmet Altan - Ysyan Gï¿½nlerinde A_k.txt");
         toplayici.metinIsle("kaynaklar/tr/metinler/bedwyr.txt");
         toplayici.metinIsle("kaynaklar/tr/metinler/Buzyeli Vadisi 2 - Gumus Damarlari.txt");
         toplayici.metinIsle("kaynaklar/tr/metinler/Cengiz Aytmatov - Beyaz Gemi.txt");
@@ -198,7 +198,7 @@ public class IstatistikXMLIsleyici {
         toplayici.metinIsle("kaynaklar/tr/metinler/CENGYZ AYTMATOV-TOPRAK.txt");
         toplayici.metinIsle("kaynaklar/tr/metinler/Ahmet Altan - Aldatmak.txt");
         toplayici.metinIsle("kaynaklar/tr/metinler/Ahmet Altan - Kirar Gogsune Bastirirken.txt");
-        toplayici.metinIsle("kaynaklar/tr/metinler/Ahmet Altan - Kylyç Yarasy Gibi.txt");
+        toplayici.metinIsle("kaynaklar/tr/metinler/Ahmet Altan - Kylyï¿½ Yarasy Gibi.txt");
         toplayici.metinIsle("kaynaklar/tr/metinler/Ahmet Altan - Sudaki Yz.txt");
 
 
@@ -223,7 +223,7 @@ public class IstatistikXMLIsleyici {
 //        System.out.println("Parsing Complete. " + TimeTracker.getElapsedTimeString("parse"));
 //        TimeTracker.stopClock("parse");
 
-//        System.out.println("Cepteki toplam kelime sayýsý: " + parserx.getKelimeCebi().size());
+//        System.out.println("Cepteki toplam kelime sayï¿½sï¿½: " + parserx.getKelimeCebi().size());
         System.out.println("Complete.");*/
     }
 }

@@ -31,7 +31,7 @@ public class TurkmenceEkAdlari {
     public static final String AT_DUSUM_I = "AT_DUSUM_I";
     public static final String AT_DUSUM_IN = "AT_DUSUM_IN";
     //public static final String AT_TAMLAMA_I = "AT_TAMLAMA_I";    TEKRER BAKILJAK
-    //public static final String AT_SYPATYASAYIJI_LIK = "AT_SYPATYASAYIJI_LIK"; kullanýlmýyor
+    //public static final String AT_SYPATYASAYIJI_LIK = "AT_SYPATYASAYIJI_LIK"; kullanÄ±lmÄ±yor
     public static final String AT_YALAK_CE = "AT_YALAK_CE";
     public static final String AT_SYPATYASAYIJI_IMSI = "AT_SYPATYASAYIJI_IMSI";
     public static final String AT_SYPATYASAYIJI_SI = "AT_SYPATYASAYIJI_SI";

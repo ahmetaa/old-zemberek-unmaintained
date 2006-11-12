@@ -39,7 +39,7 @@ public class BinaryIstatistikYazici extends TemelIstatistikYazici implements Ist
                 writer.write(kok.icerik().length());
                 // kok'u yaz.
                 writer.write(kok.icerik());
-                // Frekans (Bir milyon ile çarp)
+                // Frekans (Bir milyon ile Ã§arp)
                 System.out.println("Kok:" + kok.icerik() + ", indeks:"+ kok.getIndeks()+ ", Frekans: " + bilgi.getKullanimFrekansi());
                 writer.write(bilgi.getKullanimFrekansi());
             }
