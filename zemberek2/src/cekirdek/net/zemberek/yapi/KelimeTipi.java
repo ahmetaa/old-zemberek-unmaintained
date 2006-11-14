@@ -25,10 +25,13 @@ public enum KelimeTipi {
     KISALTMA,
     HATALI;
 
+    // Hızlı look-up için tiplerin indeksini bir dizide tutalım
+    private static KelimeTipi[] degerler = KelimeTipi.values();
+    
     public static KelimeTipi getTip(int indeks) {
-        if(indeks<0 || indeks>=KelimeTipi.values().length)
+        if(indeks<0 || indeks>=degerler.length)
           throw new ArrayIndexOutOfBoundsException("Girilen degerde indeksli KelimeTipi yok!");
-        return KelimeTipi.values()[indeks];
+        return degerler[indeks];
     }
 
     public int getIndeks() {
