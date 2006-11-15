@@ -52,4 +52,8 @@ public abstract class EkOzelDurumu {
     public void setUretimBilesenleri(List<EkUretimBileseni> uretimBilesenleri) {
         this.uretimBilesenleri = uretimBilesenleri;
     }
+
+    public List<EkUretimBileseni> uretimBilesenleri() {
+        return uretimBilesenleri;
+    }
 }

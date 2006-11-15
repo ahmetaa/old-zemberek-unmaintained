@@ -111,10 +111,15 @@ public class XmlEkOkuyucu {
             ek.setEkKuralCozumleyici(ekUretici);
             List<EkUretimBileseni> bilesenler = ekUretimKelimesiCozumle(uretimKurali.getValue());
             ek.setUretimBilesenleri(bilesenler);
-            ek.setOzelDurumlar(ozelDurumlariOku(ekElement));
+            List<EkOzelDurumu> ozelDurumlar = ozelDurumlariOku(ekElement);
+            ek.setOzelDurumlar(ozelDurumlar);
+
             ekOzellikleriBelirle(ek, ekElement);
             xmlDisiEkOzellikleriBelirle(ek, bilesenler);
-
+            ek.baslangicHarfleriEkle(ekUretici.olasiBaslangicHarfleri(bilesenler));
+            for (EkOzelDurumu oz : ozelDurumlar) {
+                ek.baslangicHarfleriEkle(ekUretici.olasiBaslangicHarfleri(oz.uretimBilesenleri()));
+            }
         }
         log.fine("ek olusumu sonlandi.");
     }
@@ -126,13 +131,13 @@ public class XmlEkOkuyucu {
      * @param ekElement
      */
     private void ekOzellikleriBelirle(Ek ek, Element ekElement) {
-      List<Element> ozellikler = XmlYardimcisi.elemanlar(ekElement, "ozellik");
+        List<Element> ozellikler = XmlYardimcisi.elemanlar(ekElement, "ozellik");
         for (Element element : ozellikler) {
-           String ozellik = element.getTextContent().trim();
-           if(ozellik.equals("HAL"))
-              ek.setHalEki(true);
-           else if(ozellik.equals("IYELIK"))
-              ek.setIyelikEki(true);
+            String ozellik = element.getTextContent().trim();
+            if (ozellik.equals("HAL"))
+                ek.setHalEki(true);
+            else if (ozellik.equals("IYELIK"))
+                ek.setIyelikEki(true);
         }
     }
 

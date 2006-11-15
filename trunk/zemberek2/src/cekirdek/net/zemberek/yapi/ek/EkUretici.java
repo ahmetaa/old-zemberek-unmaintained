@@ -1,8 +1,10 @@
 package net.zemberek.yapi.ek;
 
 import net.zemberek.yapi.HarfDizisi;
+import net.zemberek.yapi.TurkceHarf;
 
 import java.util.List;
+import java.util.Set;
 
 /**
  * ek uretim kuralinin islenmesinde kullanilan sinif icin ortak arayuz.
@@ -33,5 +35,7 @@ public interface EkUretici {
     HarfDizisi olusumIcinEkUret(HarfDizisi ulanacak,
                                 Ek sonrakiEk,
                                 List<EkUretimBileseni> bilesenler);
+
+    Set<TurkceHarf> olasiBaslangicHarfleri(List<EkUretimBileseni> bilesenler);
 
 }

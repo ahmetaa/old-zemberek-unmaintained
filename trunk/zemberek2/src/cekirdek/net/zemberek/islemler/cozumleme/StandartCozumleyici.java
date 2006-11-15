@@ -118,6 +118,7 @@ public class StandartCozumleyici implements KelimeCozumleyici {
         Ek bulunanEk = kelime.sonEk();
         int ardisilEkSirasi = 0;
         List<Kelime> uygunSonuclar = Collections.emptyList();
+        TurkceHarf ilkEkHarfi= giris.harf(kelime.icerik().length());
         while (true) {
             //bulunan son ekten sonra gelebilecek eklerden siradakini al.
             Ek incelenenEk = bulunanEk.getArdisilEk(ardisilEkSirasi++);
@@ -133,31 +134,35 @@ public class StandartCozumleyici implements KelimeCozumleyici {
                 kelime = yiginKelime.getKelime();
                 bulunanEk = kelime.sonEk();
                 ardisilEkSirasi = yiginKelime.getEkSirasi();
+                ilkEkHarfi= giris.harf(kelime.icerik().length());
                 continue;
             }
 
-            if (kelime.ekler().size() == 1 && kelime.kok().ozelDurumVarmi()) {
+            if (kelime.gercekEkYok() && kelime.kok().ozelDurumVarmi()) {
                 if (!ozelDurumUygula(kelime, giris, incelenenEk)) {
                     continue;
-                }
+                } else
+                   ilkEkHarfi = giris.harf(kelime.icerik().length());
             }
 
-            HarfDizisi olusanEk = incelenenEk.cozumlemeIcinUret(kelime, giris, harfDizisiKiyaslayici);
-            if (olusanEk == null || olusanEk.length() == 0) {
+            if(!incelenenEk.ilkHarfDenetle(ilkEkHarfi))
+               continue;
+            
+            HarfDizisi olusanEkIcerigi = incelenenEk.cozumlemeIcinUret(kelime, giris, harfDizisiKiyaslayici);
+            if (olusanEkIcerigi == null || olusanEkIcerigi.length() == 0) {
                 continue;
             }
 
-            //if (log.isLoggable(Level.FINER)) log.finest("Olusan Ek:" + olusanEk);
-
             if (harfDizisiKiyaslayici.aradanKiyasla(giris,
-                    olusanEk,
+                    olusanEkIcerigi,
                     kelime.icerik().length())) {
                 // ek dongusu testi
                 //if (kelime.ekDongusuVarmi(incelenenEk)) continue;
                 kelimeYigini.koy(kelime.clone(), ardisilEkSirasi);
                 ardisilEkSirasi = 0;
-                kelime.ekler().add(incelenenEk);
-                kelime.icerik().ekle(olusanEk);
+                kelime.ekEkle(incelenenEk);
+                kelime.icerikEkle(olusanEkIcerigi);
+                ilkEkHarfi = giris.harf(kelime.icerik().length());
                 if (log.isLoggable(Level.FINE)) log.fine("ekleme sonrasi olusan kelime: " + kelime.icerik());
 
                 bulunanEk = incelenenEk;

@@ -162,6 +162,28 @@
 
 
     <!-- ======================================================= -->
+    <!-- Tum dilleri iceren jar     -->
+    <!-- ======================================================= -->
+    <target name="jar-minimal" depends="temizle, derle-cekirdek">
+        <fail unless="dil" message="bu ant gorevi icin 'dil' parametresi gerekli. tr,tm gibi."/>
+        <copy todir="${build.tum}">
+            <fileset dir="${build.cekirdek}"/>
+        </copy>
+
+        <antcall target="dil-ekle">
+            <param name="dil" value="${dil}"/>
+        </antcall>
+
+        <jar jarfile="${build.dir}/zemberek-${surum}-${dil}.jar"
+             basedir="${build.tum}">
+            <exclude name="net/zemberek/istatistik"/>
+            <exclude name="net/zemberek/demo"/>
+            <exclude name="kaynaklar/tr/bilgi/kelime_cebi_${dil}.txt/"/>
+        </jar>
+        <echo message="jar /dagitim dizininde olusturuldu."/>
+    </target>
+
+    <!-- ======================================================= -->
     <!-- bilgi dosyalari icinde jar ile dagitim olusturur....    -->
     <!-- ======================================================= -->
     <target name="dist" depends="jar-tum">

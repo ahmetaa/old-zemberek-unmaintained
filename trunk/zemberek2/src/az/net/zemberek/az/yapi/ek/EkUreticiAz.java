@@ -9,7 +9,7 @@ import net.zemberek.yapi.ek.EkUretici;
 import net.zemberek.yapi.ek.EkUretimBileseni;
 
 import java.util.List;
-
+import java.util.Set;
 
 public class EkUreticiAz implements EkUretici {
 
@@ -63,6 +63,10 @@ public class EkUreticiAz implements EkUretici {
     public HarfDizisi olusumIcinEkUret(HarfDizisi ulanacak, Ek sonrakiEk, List<EkUretimBileseni> bilesenler) {
         //TODO: gecici olarak bu sekilde
         return cozumlemeIcinEkUret(ulanacak, null, bilesenler);
+    }
+
+    public Set<TurkceHarf> olasiBaslangicHarfleri(List<EkUretimBileseni> bilesenler) {
+        return null;
     }
 
 }

@@ -11,12 +11,12 @@ import net.zemberek.yapi.TurkceHarf;
  */
 public class TurkceSesliUretici implements SesliUretici {
 
-    private final TurkceHarf HARF_a;
-    private final TurkceHarf HARF_e;
-    private final TurkceHarf HARF_i;
-    private final TurkceHarf HARF_ii;
-    private final TurkceHarf HARF_u;
-    private final TurkceHarf HARF_uu;
+    public final TurkceHarf HARF_a;
+    public final TurkceHarf HARF_e;
+    public final TurkceHarf HARF_i;
+    public final TurkceHarf HARF_ii;
+    public final TurkceHarf HARF_u;
+    public final TurkceHarf HARF_uu;
 
     public TurkceSesliUretici(Alfabe alfabe) {
         HARF_a = alfabe.harf('a');

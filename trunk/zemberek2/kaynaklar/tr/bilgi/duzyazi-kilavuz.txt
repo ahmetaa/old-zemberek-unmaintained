@@ -20792,7 +20792,7 @@ iptidaî SI
 #iptidaî mektep,-bi
 iptilâ IS
 iptizal IS TERS
-ipuc IS YUM IS_TAM
+ipuç IS YUM IS_TAM
 irade IS
 #irade beyanı
 #iradeci

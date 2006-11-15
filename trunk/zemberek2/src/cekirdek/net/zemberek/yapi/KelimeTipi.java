@@ -30,7 +30,7 @@ public enum KelimeTipi {
     
     public static KelimeTipi getTip(int indeks) {
         if(indeks<0 || indeks>=degerler.length)
-          throw new ArrayIndexOutOfBoundsException("Girilen degerde indeksli KelimeTipi yok!");
+          throw new ArrayIndexOutOfBoundsException("Girilen degerde indeksli KelimeTipi yok!:"+indeks);
         return degerler[indeks];
     }
 

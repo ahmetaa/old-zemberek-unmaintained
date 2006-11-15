@@ -3,9 +3,9 @@ package net.zemberek.yapi.ek;
 import net.zemberek.islemler.cozumleme.HarfDizisiKiyaslayici;
 import net.zemberek.yapi.HarfDizisi;
 import net.zemberek.yapi.Kelime;
+import net.zemberek.yapi.TurkceHarf;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 import java.io.Serializable;
 
 /**
@@ -34,12 +34,22 @@ public class Ek implements Serializable {
     //bu eke iliskin ozel durumlar.
     private List<EkOzelDurumu> ozelDurumlar = new ArrayList<EkOzelDurumu>(1);
 
-    private boolean sonEkOlamaz=false;
+    private boolean sonEkOlamaz = false;
 
-    private boolean halEki=false;
+    private boolean halEki = false;
 
-    private boolean iyelikEki =false;
+    private boolean iyelikEki = false;
 
+    private Set<TurkceHarf> baslangicHarfleri;
+
+
+    public void baslangicHarfleriEkle(Set<TurkceHarf> harfler) {
+        if(harfler==null)
+          return;        
+        if(baslangicHarfleri==null)
+          baslangicHarfleri = new HashSet<TurkceHarf>();
+        this.baslangicHarfleri.addAll(harfler);
+    }
 
     public void setHalEki(boolean halEki) {
         this.halEki = halEki;
@@ -157,6 +167,10 @@ public class Ek implements Serializable {
 
     public void setSonEkOlamaz(boolean sonEkOlamaz) {
         this.sonEkOlamaz = sonEkOlamaz;
+    }
+
+    public boolean ilkHarfDenetle(TurkceHarf ilkHarf) {
+        return baslangicHarfleri == null || baslangicHarfleri.contains(ilkHarf);
     }
 
 }
