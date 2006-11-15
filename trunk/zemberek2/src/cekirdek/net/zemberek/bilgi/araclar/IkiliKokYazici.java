@@ -1,15 +1,10 @@
 package net.zemberek.bilgi.araclar;
 
-import java.io.BufferedOutputStream;
-import java.io.DataOutputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.util.Iterator;
-import java.util.List;
-
 import net.zemberek.yapi.Kok;
 import net.zemberek.yapi.kok.KokOzelDurumu;
+
+import java.io.*;
+import java.util.List;
 
 /**
  * User: ahmet
@@ -24,9 +19,9 @@ public class IkiliKokYazici implements KokYazici {
         dos = new DataOutputStream(new BufferedOutputStream(fos));
     }
 
-    public void yaz(List kokler) throws IOException {
-        for (Iterator it = kokler.iterator(); it.hasNext();) {
-            Kok kok = (Kok) it.next();
+    public void yaz(List<Kok> kokler) throws IOException {
+
+        for (Kok kok : kokler) {
             // Kök içerigi
             dos.writeUTF(kok.icerik());
 

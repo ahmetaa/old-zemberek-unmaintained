@@ -5,7 +5,7 @@ import net.zemberek.araclar.turkce.YaziBirimi;
 import net.zemberek.araclar.turkce.YaziBirimiTipi;
 import net.zemberek.araclar.turkce.YaziIsleyici;
 import net.zemberek.erisim.Zemberek;
-import net.zemberek.islemler.IslemTipi;
+import net.zemberek.demo.IslemTipi;
 import net.zemberek.islemler.TurkceYaziTesti;
 import net.zemberek.yapi.DilBilgisi;
 import net.zemberek.yapi.Kelime;

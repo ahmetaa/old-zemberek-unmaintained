@@ -57,7 +57,7 @@ public class DuzYaziKokOkuyucu implements KokOkuyucu {
 
     public List<Kok> hepsiniOku() throws IOException {
         ArrayList<Kok> list = new ArrayList<Kok>();
-        Kok kok = null;
+        Kok kok;
         while ((kok = oku()) != null) {
             list.add(kok);
         }

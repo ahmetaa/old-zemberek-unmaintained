@@ -1,6 +1,6 @@
 /**
  */
-package net.zemberek.islemler;
+package net.zemberek.demo;
 
 public class IslemTipi {
     public static final IslemTipi YAZI_DENETLE = new IslemTipi("YAZI_DENETLE");

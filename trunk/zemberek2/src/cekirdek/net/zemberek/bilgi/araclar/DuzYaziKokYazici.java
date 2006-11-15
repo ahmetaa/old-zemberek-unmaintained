@@ -24,14 +24,13 @@ public class DuzYaziKokYazici implements KokYazici {
     }
 
 
-    public void yaz(List kelimeler) throws IOException {
+    public void yaz(List<Kok> kokler) throws IOException {
         writer.write("#-------------------------\n");
         writer.write("# TSPELL DUZ METIN SOZLUK \n");
         writer.write("#-------------------------\n");
         writer.write("#v0.1\n");
-        for (Iterator it = kelimeler.iterator(); it.hasNext();) {
-            Kok kelime = (Kok) it.next();
-            writer.write(getDuzMetinSozlukForm(kelime));
+        for (Kok kok : kokler) {
+            writer.write(getDuzMetinSozlukForm(kok));
             writer.newLine();
         }
         writer.close();
