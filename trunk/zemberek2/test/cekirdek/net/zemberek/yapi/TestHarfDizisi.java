@@ -15,7 +15,7 @@ public class TestHarfDizisi extends TemelTest {
 
     public void setUp() throws IOException {
         super.setUp();
-        str = new String("kalem");
+        str = "kalem";
         dizi1 = new HarfDizisi(str, alfabe);
     }
 
@@ -109,7 +109,7 @@ public class TestHarfDizisi extends TemelTest {
         assertEquals(kelime.ilkSesli(0), alfabe.harf('a'));
         assertEquals(kelime.ilkSesli(1), alfabe.harf('a'));
         assertEquals(kelime.ilkSesli(3), alfabe.harf('e'));
-        assertEquals(kelime.ilkSesli(6), Alfabe.HARF_YOK);
+        assertEquals(kelime.ilkSesli(6), Alfabe.TANIMSIZ_HARF);
     }
 
     public void testSonHarfYumusat() {
@@ -181,7 +181,7 @@ public class TestHarfDizisi extends TemelTest {
         TurkceHarf[] harfler = {TurkceAlfabe.HARF_i, TurkceAlfabe.HARF_ii,
                                 TurkceAlfabe.HARF_u, TurkceAlfabe.HARF_i,
                                 TurkceAlfabe.HARF_u, TurkceAlfabe.HARF_u,
-                                TurkceAlfabe.HARF_YOK, TurkceAlfabe.HARF_u};
+                                TurkceAlfabe.TANIMSIZ_HARF, TurkceAlfabe.HARF_u};
         for (int i = 0; i < girisler.length; i++)
         {
             HarfDizisi dizi = new HarfDizisi(girisler[i]);

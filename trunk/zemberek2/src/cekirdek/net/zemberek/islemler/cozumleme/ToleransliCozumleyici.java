@@ -51,7 +51,6 @@ public class ToleransliCozumleyici implements KelimeCozumleyici {
             HarfDizisi kokDizi = new HarfDizisi(kok.icerik(), alfabe);
             if (icerikDegisti) {
                 girisDizi = new HarfDizisi(strIslenmis, alfabe);
-                icerikDegisti = false;
             }
             //int kokHatasi=MetinAraclari.editDistance(kok.icerik(), strGiris.substring(0,kok.icerik().length()));
             int kokHatasi = 0;
@@ -165,7 +164,7 @@ public class ToleransliCozumleyici implements KelimeCozumleyici {
                 }
 /*
                         TurkceHarf ekIlkHarf = giris.harf(kelime.icerik().length());
-                        if (ekIlkHarf == TurkceAlfabe.HARF_YOK)
+                        if (ekIlkHarf == TurkceAlfabe.TANIMSIZ_HARF)
                             return false;*/
 
             }

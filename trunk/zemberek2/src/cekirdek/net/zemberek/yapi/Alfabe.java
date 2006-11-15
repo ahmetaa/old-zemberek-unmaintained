@@ -46,7 +46,7 @@ public class Alfabe {
     public static final char CHAR_SAPKALI_U = '\u00db'; // sapkali buyuk U
     public static final char CHAR_SAPKALI_u = '\u00fb'; // sapkali kucuk u
 
-    public static final TurkceHarf HARF_YOK = new TurkceHarf('#', 0);
+    public static final TurkceHarf TANIMSIZ_HARF = new TurkceHarf('#', 0);
 
     public static final char ALFABE_DISI_KARAKTER = '#';
     protected static final int TURKISH_CHAR_MAP_SIZE = 610;
@@ -88,10 +88,10 @@ public class Alfabe {
      * Bu sekilde harfin Turkce'ye has ozelliklerine erisilebilir. sesli, sert vs.
      *
      * @param harf
-     * @return char harfin turkeceHarf karsiligi. Eger yoksa HARF_YOK doner.
+     * @return char harfin turkeceHarf karsiligi. Eger yoksa TANIMSIZ_HARF doner.
      */
     public TurkceHarf harf(char harf) {
-        if (harf > TURKISH_CHAR_MAP_SIZE) return HARF_YOK;
+        if (harf > TURKISH_CHAR_MAP_SIZE) return TANIMSIZ_HARF;
         return turkceHarfDizisi[harf];
     }
 
@@ -132,19 +132,19 @@ public class Alfabe {
     public TurkceHarf buyukHarf(TurkceHarf harf) {
         final TurkceHarf buyuk = buyukHarflerDizi[harf.alfabetikSira() - 1];
         if (buyuk != null) return buyuk;
-        return HARF_YOK;
+        return TANIMSIZ_HARF;
     }
 
     public TurkceHarf buyukHarf(char c) {
         final TurkceHarf buyuk = buyukHarflerDizi[harf(c).alfabetikSira() - 1];
         if (buyuk != null) return buyuk;
-        return HARF_YOK;
+        return TANIMSIZ_HARF;
     }
 
     public TurkceHarf kucukHarf(TurkceHarf harf) {
         final TurkceHarf kucuk = kucukHarflerDizi[harf.alfabetikSira() - 1];
         if (kucuk != null) return kucuk;
-        return HARF_YOK;
+        return TANIMSIZ_HARF;
     }
 
     public boolean asciiToleransliKiyasla(char harf1, char harf2) {
@@ -172,7 +172,7 @@ public class Alfabe {
     /**
      * bu degerler alfabe bilgisinin dosyadan okunmasi sirasinda kullanilir.
      */
-    private Locale locale;
+    protected Locale locale;
     private final Pattern virgulReg = Pattern.compile("[,]");
     private final Pattern tireReg = Pattern.compile("[-]");
 
@@ -332,7 +332,7 @@ public class Alfabe {
      * @param tum
      * @return virgul ile ayrilmis karater dizisi.
      */
-    private char[] harfAyristir(String tum) {
+    protected char[] harfAyristir(String tum) {
         tum = tum.replaceAll("[ \t]", "");
         String[] charStrDizi = virgulReg.split(tum, -1);
         char[] cDizi = new char[charStrDizi.length];
@@ -349,7 +349,7 @@ public class Alfabe {
      *
      * @return TurkceHarf cifti tasiyan HarfCifti listesi
      */
-    private List<HarfCifti> harfCiftiAyristir(String tum) {
+    protected List<HarfCifti> harfCiftiAyristir(String tum) {
         tum = tum.replaceAll("[ \t]", "");
         String[] charStrDizi = virgulReg.split(tum, -1);
         List<HarfCifti> ciftler = new ArrayList(charStrDizi.length);
@@ -366,7 +366,7 @@ public class Alfabe {
         return ciftler;
     }
 
-    private class HarfCifti {
+    protected class HarfCifti {
 
         final char h1;
         final char h2;

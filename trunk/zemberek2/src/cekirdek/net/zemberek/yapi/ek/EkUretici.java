@@ -36,6 +36,12 @@ public interface EkUretici {
                                 Ek sonrakiEk,
                                 List<EkUretimBileseni> bilesenler);
 
+    /**
+     * Ek iblesenlerini kullarak bir kin hangi harflerle baslayacagini kestirip sonuclari
+     * bir set icerisinde dondurur.
+     * @param bilesenler
+     * @return olasi baslangic harfleri bir Set icerisinde.
+     */
     Set<TurkceHarf> olasiBaslangicHarfleri(List<EkUretimBileseni> bilesenler);
 
 }

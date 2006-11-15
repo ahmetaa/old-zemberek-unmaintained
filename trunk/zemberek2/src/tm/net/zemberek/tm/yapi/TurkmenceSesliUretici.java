@@ -44,7 +44,7 @@ public class TurkmenceSesliUretici implements SesliUretici {
             return HARP_u;
         if (sonSesli.inceSesliMi() && sonSesli.yuvarlakSesliMi())
             return HARP_uu;
-        return Alfabe.HARF_YOK;
+        return Alfabe.TANIMSIZ_HARF;
     }
 
     public TurkceHarf sesliBelirleAE(HarfDizisi dizi) {

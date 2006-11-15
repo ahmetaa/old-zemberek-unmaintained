@@ -16,7 +16,7 @@ public class AsciiDonusturucu {
         char[] chars = giris.toCharArray();
         for (int i = 0; i < chars.length; i++) {
             TurkceHarf harf = alfabe.harf(chars[i]);
-            if (harf != null && harf != Alfabe.HARF_YOK)
+            if (harf != null && harf != Alfabe.TANIMSIZ_HARF)
                 if (harf.asciiDonusum() != null)
                     chars[i] = harf.asciiDonusum().charDeger();
         }
