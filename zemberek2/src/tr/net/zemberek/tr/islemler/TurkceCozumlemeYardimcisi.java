@@ -97,9 +97,7 @@ public class TurkceCozumlemeYardimcisi implements CozumlemeYardimcisi {
                 Ek ek = (Ek) ekler.get(1);
                 if (ek.iyelikEkiMi() || ek.halEkiMi()) {
                     int kesmePozisyonu = kelime.kok().icerik().length();
-                    if (kesmePozisyonu <= giris.length() && giris.charAt(kesmePozisyonu) == '\'')
-                        return true;
-                    return false;
+                    return kesmePozisyonu <= giris.length() && giris.charAt(kesmePozisyonu) == '\'';
                 }
             }
         }
@@ -141,8 +139,7 @@ public class TurkceCozumlemeYardimcisi implements CozumlemeYardimcisi {
     }
 
     public boolean cepteAra(String str) {
-        if(cep!=null)
-          return cep.kontrol(str);
-        else return false;
+        return false;
+       // return cep != null && cep.kontrol(str);
     }
 }

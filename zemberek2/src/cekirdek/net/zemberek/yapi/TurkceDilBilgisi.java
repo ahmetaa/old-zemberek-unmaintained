@@ -2,6 +2,7 @@ package net.zemberek.yapi;
 
 import net.zemberek.araclar.Kayitci;
 import net.zemberek.bilgi.KaynakYukleyici;
+import net.zemberek.bilgi.ZemberekAyarlari;
 import net.zemberek.bilgi.araclar.DuzYaziKokOkuyucu;
 import net.zemberek.bilgi.araclar.IkiliKokOkuyucu;
 import net.zemberek.bilgi.araclar.IkiliKokYazici;
@@ -57,6 +58,8 @@ public class TurkceDilBilgisi implements DilBilgisi {
     private final String cepDosyaAdi;
     private final String kokIstatistikDosyaAdi;
 
+    private boolean cepKullan=true;
+
     /**
      * istenilen dilayarlari nesnesine gore cesitli parametreleri (bilgi dizin adi, kaynak dosyalarin locale
      * uyumlu adlari gibi) olusturur. bilgi dosyalari
@@ -75,6 +78,11 @@ public class TurkceDilBilgisi implements DilBilgisi {
         kokDosyaAdi = dosyaAdiUret("kokler", "bin");
         cepDosyaAdi = dosyaAdiUret("kelime_cebi", "txt");
         kokIstatistikDosyaAdi = dosyaAdiUret("kok_istatistik", "bin");
+    }
+
+    public TurkceDilBilgisi(DilAyarlari dilAyarlari, ZemberekAyarlari zemberekAyarlari) {
+        this(dilAyarlari);
+        this.cepKullan = zemberekAyarlari.cepKullan();
     }
 
     /**
@@ -156,7 +164,6 @@ public class TurkceDilBilgisi implements DilBilgisi {
                     System.exit(-1);
                 }
             }
-            alfabe();
             kokOzelDurumlari();
             logger.fine("Ikili okuyucu uretiliyor:");
             try {
@@ -175,7 +182,6 @@ public class TurkceDilBilgisi implements DilBilgisi {
         if (ozelDurumBilgisi != null) {
             return ozelDurumBilgisi;
         } else {
-            alfabe();
             ekler();
             try {
                 Class clazz = dilAyarlari.kokOzelDurumBilgisiSinifi();
@@ -190,6 +196,11 @@ public class TurkceDilBilgisi implements DilBilgisi {
     }
 
     public DenetlemeCebi cep() {
+        if(!cepKullan) {
+            logger.info("cep kullanilmayacak.");
+            return null;
+        }
+
         if (cep != null) {
             return cep;
         } else {

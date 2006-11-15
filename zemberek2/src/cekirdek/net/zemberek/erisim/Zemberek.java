@@ -16,11 +16,12 @@ import java.util.*;
 import java.util.logging.Logger;
 
 /**
- * This is a facade for accessing the high level functions of the Zemberek library. 
+ * <b>EN:</b>This is a facade for accessing the high level functions of the Zemberek library.
+ * This class should be creatd only once per language.
  *
- * Zemberek projesine ust seviye erisim icin kullanilan sinif.
+ * <b>TR:</b>Zemberek projesine ust seviye erisim icin kullanilan sinif.
  * Ilk olsum sirasinda kokler okuma ve agac olusumu nedeniyle belli bir miktar gecikme
- * yasanabilir.
+ * yasanabilir. Bu sinifin her dil icin sadece bir defa olusturulmasi onerilir.
  */
 public class Zemberek {
 
@@ -36,9 +37,13 @@ public class Zemberek {
     private ZemberekAyarlari ayarlar;
     private DilBilgisi dilBilgisi;
 
+    /**
+     * Default constructor.
+     * @param dilayarlari
+     */
     public Zemberek(DilAyarlari dilayarlari) {
-        this.dilBilgisi = new TurkceDilBilgisi(dilayarlari);
-        ayarlar = new ZemberekAyarlari(dilayarlari);
+        ayarlar = new ZemberekAyarlari(dilayarlari.locale().getLanguage());
+        this.dilBilgisi = new TurkceDilBilgisi(dilayarlari, ayarlar);
         initialize();
     }
 

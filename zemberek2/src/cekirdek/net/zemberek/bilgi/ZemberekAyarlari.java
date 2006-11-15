@@ -1,7 +1,6 @@
 package net.zemberek.bilgi;
 
 import net.zemberek.araclar.Kayitci;
-import net.zemberek.yapi.DilAyarlari;
 
 import java.io.File;
 import java.io.IOException;
@@ -23,21 +22,23 @@ public final class ZemberekAyarlari {
     private boolean oneriKokFrekansKullan = true;
     private boolean disKaynakErisimi = false;
     private boolean oneriBilesikKelimeKullan = true;
+    private boolean cepKullan = true;
+    private String kayitSeviyesi = "WARNING";
 
     private URI bilgiEk;
     private URI bilgiKokler;
     private URI bilgiAlfabe;
     private URI bilgiDizini;
     private URI bilgiCep;
+    
 
     /**
      * classpath kokunden zemberek_'locale_str'.properties dosyasina erismeye calisir.
      * Bu dosyanin normalde projede yer almis olmasi gerekir. Eger bulunamazsa sistem
      * varsayilan degerleri kullanir.
-     * @param dil
+     * @param dilKisaAdi kisa ad (tr,az vs)
      */
-    public ZemberekAyarlari(DilAyarlari dil) {
-        String dilKisaAdi = dil.locale().getLanguage();
+    public ZemberekAyarlari(String dilKisaAdi) {
         try {
             konfigurasyon = new KaynakYukleyici().konfigurasyonYukle("zemberek_" + dilKisaAdi + ".properties");
         } catch (IOException e) {
@@ -64,6 +65,9 @@ public final class ZemberekAyarlari {
             oneriBilesikKelimeKullan = boolOku(ayarlar, "oneri.bilesikKelimeKullan");
             oneriMax = Integer.parseInt(ayarlar.getProperty("oneri.max"));
             disKaynakErisimi = boolOku(ayarlar, "bilgi.disKaynakErisimi");
+            cepKullan = boolOku(ayarlar, "denetleme.cepKullan");
+            kayitSeviyesi = ayarlar.getProperty("genel.kayitSeviyesi");
+            Kayitci.genelKayitSeviyesiAyarla(kayitSeviyesi);
             if (disKaynakErisimi) {
                 File dizin = new File(ayarlar.getProperty("bilgi.dizin"));
                 bilgiDizini = dizin.toURI();
@@ -125,5 +129,14 @@ public final class ZemberekAyarlari {
 
     public boolean disKaynakErisimi() {
         return disKaynakErisimi;
+    }
+
+    public boolean cepKullan() {
+        return cepKullan;
+    }
+
+
+    public String kayitSeviyesi() {
+        return kayitSeviyesi;
     }
 }

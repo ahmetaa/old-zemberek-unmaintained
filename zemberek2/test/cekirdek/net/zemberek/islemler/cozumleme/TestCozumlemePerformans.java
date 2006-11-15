@@ -56,7 +56,7 @@ public class TestCozumlemePerformans extends TestKelimeCozumleyici {
         //ist.xmlDosyaCozumle("kaynaklar/kb/stats.jar");
         //HashMap cep = ist.getKelimeCebi();
         //System.out.println("Cep Boyu: " + cep.size());
-        for(int j=0; j<10; j++) {
+        for(int j=0; j<3; j++) {
         TimeTracker.startClock("x");
         int dogrular = 0, yanlislar = 0;
         for (int i = 0; i < kelimeler.size(); i++) {

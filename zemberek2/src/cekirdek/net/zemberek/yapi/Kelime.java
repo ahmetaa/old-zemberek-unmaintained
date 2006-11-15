@@ -91,4 +91,16 @@ public class Kelime implements Cloneable {
                 " Ekler:" + ekStr;
     }
 
+    public void icerikEkle(HarfDizisi eklenecek) {
+        icerik.ekle(eklenecek);
+    }
+
+    /**
+     * Kelime icerisinde sadece kok ya da kok tipini belirten baslangic eki var ise bu metod
+     * true dondurur. Eger baska bir ek eklenmis ise true doner.
+     * @return
+     */
+    public boolean gercekEkYok() {
+        return ekler.size()<2;
+    }
 }

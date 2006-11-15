@@ -47,7 +47,7 @@ public class ToleransliCozumleyici implements KelimeCozumleyici {
         HarfDizisi girisDizi = new HarfDizisi(strIslenmis, alfabe);
         boolean icerikDegisti = false;
         for (int i = kokler.size() - 1; i >= 0; i--) {
-            Kok kok = (Kok) kokler.get(i);
+            Kok kok = kokler.get(i);
             HarfDizisi kokDizi = new HarfDizisi(kok.icerik(), alfabe);
             if (icerikDegisti) {
                 girisDizi = new HarfDizisi(strIslenmis, alfabe);

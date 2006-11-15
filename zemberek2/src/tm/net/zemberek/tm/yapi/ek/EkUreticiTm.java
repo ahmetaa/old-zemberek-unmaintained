@@ -9,6 +9,7 @@ import net.zemberek.yapi.ek.EkUretici;
 import net.zemberek.yapi.ek.EkUretimBileseni;
 
 import java.util.List;
+import java.util.Set;
 import java.util.logging.Logger;
 
 public class EkUreticiTm implements EkUretici {
@@ -92,4 +93,10 @@ public class EkUreticiTm implements EkUretici {
         //TODO: gecici olarak bu sekilde
         return cozumlemeIcinEkUret(ulanacak, null, bilesenler);
     }
+
+    public Set<TurkceHarf> olasiBaslangicHarfleri(List<EkUretimBileseni> bilesenler) {
+        return null;
+    }
+
+
 }
