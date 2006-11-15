@@ -85,7 +85,7 @@ public class AsciiKokBulucu implements KokBulucu {
        // Uygun tüm alt dallarda yürü
        for (KokDugumu altDugum : dugum.altDugumDizisiGetir()) {
            if (altDugum != null) {
-               if (agac.getAlfabe().asciiToleransliKiyasla(altDugum.getHarf(), giris.charAt(seviye)));
+               if (agac.getAlfabe().asciiToleransliKiyasla(altDugum.getHarf(), giris.charAt(seviye)))
                    this.walk(altDugum, tester);
            }
        }
