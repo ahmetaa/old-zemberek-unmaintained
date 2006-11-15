@@ -38,6 +38,6 @@ public class AzericeSesliUretici {
             return HARF_u;
         if (sonSesli.inceSesliMi() && sonSesli.yuvarlakSesliMi())
             return HARF_uu;
-        return Alfabe.HARF_YOK;
+        return Alfabe.TANIMSIZ_HARF;
     }
 }

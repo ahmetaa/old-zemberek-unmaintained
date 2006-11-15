@@ -43,11 +43,15 @@ public class Ek implements Serializable {
     private Set<TurkceHarf> baslangicHarfleri;
 
 
+    /**
+     * ilk harfler kumesine gelen kumeyi ekler.
+     * @param harfler
+     */
     public void baslangicHarfleriEkle(Set<TurkceHarf> harfler) {
         if(harfler==null)
           return;        
         if(baslangicHarfleri==null)
-          baslangicHarfleri = new HashSet<TurkceHarf>();
+          baslangicHarfleri = new HashSet<TurkceHarf>(5);
         this.baslangicHarfleri.addAll(harfler);
     }
 
@@ -106,9 +110,8 @@ public class Ek implements Serializable {
 
         final Ek ek = (Ek) o;
 
-        if (ad != null ? !ad.equals(ek.ad) : ek.ad != null) return false;
+        return !(ad != null ? !ad.equals(ek.ad) : ek.ad != null);
 
-        return true;
     }
 
     public int hashCode() {
@@ -169,6 +172,12 @@ public class Ek implements Serializable {
         this.sonEkOlamaz = sonEkOlamaz;
     }
 
+    /**
+     * Eger baslangic harfleri kumsei var ise gelen harfin bu kumede olup olmadigina bakar.
+     * @param ilkHarf
+     * @return eger kume tanimlanmamis ise bu ek icin ilk harf denetimi yapilmiyor demektir, true doner.
+     *   eger kume mevcut ise (null disi) ve harf kumede mevcutsa true doner. aksi halde false.
+     */
     public boolean ilkHarfDenetle(TurkceHarf ilkHarf) {
         return baslangicHarfleri == null || baslangicHarfleri.contains(ilkHarf);
     }

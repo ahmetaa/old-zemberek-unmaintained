@@ -341,7 +341,7 @@ public class XmlEkOkuyucu {
                         throw new IllegalArgumentException(p + " kuralindan sonra sesli uretim kurali gelemez:" + h);
                     return new EkUretimBileseni(kuralTablosu.get(p), alfabe.harf(h));
                 } else if (sesliKurallari.contains(p)) {
-                    return new EkUretimBileseni(kuralTablosu.get(p), Alfabe.HARF_YOK);
+                    return new EkUretimBileseni(kuralTablosu.get(p), Alfabe.TANIMSIZ_HARF);
                 } else if (alfabe.harf(p) != null && Character.isLowerCase(p)) {
                     return new EkUretimBileseni(UretimKurali.HARF, alfabe.harf(p));
                 } else {

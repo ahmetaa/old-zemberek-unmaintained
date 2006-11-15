@@ -32,7 +32,7 @@ public class HarfDizisi implements CharSequence {
      * 'kapasite' boyutlu 'TurkceHarf' dizisine sahip nesne olusturur. daha sonra
      * girisi String'i icindeki karakterleri TurkceHarf seklinde TurkceHarf dizisine aktarir.
      * Eger String boyu kapasiteden buyukse kapasite'yi boy'a esitler.
-     * Eger String icindeki karakter Alfabe'de yar almiyorsa "HARF_YOK" harfi olarak eklenir.
+     * Eger String icindeki karakter Alfabe'de yar almiyorsa "TANIMSIZ_HARF" harfi olarak eklenir.
      *
      * @param str ornek alincak String
      * @param kapasite baslangic olusan TurkceHarf[] boyu
@@ -95,27 +95,27 @@ public class HarfDizisi implements CharSequence {
     /**
      * Dizinin son harfini dondurur.
      *
-     * @return varsa son harf, Yoksa HARF_YOK.
+     * @return varsa son harf, Yoksa TANIMSIZ_HARF.
      */
     public final TurkceHarf sonHarf() {
         if (boy > 0)
             return dizi[boy - 1];
         else
-            return Alfabe.HARF_YOK;
+            return Alfabe.TANIMSIZ_HARF;
     }
 
     /**
      * dizideki son sesliyi dondurur. eger dizi boyu 0 ise ya da sesli harf yoksa
-     * HARF_YOK doner.
+     * TANIMSIZ_HARF doner.
      *
-     * @return varsa son sesli yoksa HARF_YOK
+     * @return varsa son sesli yoksa TANIMSIZ_HARF
      */
     public final TurkceHarf sonSesli() {
         for (int i = boy - 1; i >= 0; i--) {
             if (dizi[i].sesliMi())
                 return dizi[i];
         }
-        return Alfabe.HARF_YOK;
+        return Alfabe.TANIMSIZ_HARF;
     }
 
     /**
@@ -221,28 +221,28 @@ public class HarfDizisi implements CharSequence {
      * harf(1) e dondurur.
      *
      * @param i istenilen pozisyondaki harf.
-     * @return girilen pozisyondaki harf, yoksa HARF_YOK
+     * @return girilen pozisyondaki harf, yoksa TANIMSIZ_HARF
      */
     public final TurkceHarf harf(int i) {
         if (i < 0)
-            return Alfabe.HARF_YOK;
+            return Alfabe.TANIMSIZ_HARF;
         if (i < boy)
             return dizi[i];
-        return Alfabe.HARF_YOK;
+        return Alfabe.TANIMSIZ_HARF;
     }
 
     /**
-     * ilk sesliyi dondurur. eger sesli yoksa HARF_YOK doner. aramaya belirtilen indeksten baslar.
+     * ilk sesliyi dondurur. eger sesli yoksa TANIMSIZ_HARF doner. aramaya belirtilen indeksten baslar.
      *
      * @param basla baslangic indeksi.
-     * @return varsa ilk sesli, yoksa HARF_YOK
+     * @return varsa ilk sesli, yoksa TANIMSIZ_HARF
      */
     public TurkceHarf ilkSesli(int basla) {
         for (int i = basla; i < boy; i++) {
             if (dizi[i].sesliMi())
                 return dizi[i];
         }
-        return Alfabe.HARF_YOK;
+        return Alfabe.TANIMSIZ_HARF;
     }
 
     /**
@@ -400,12 +400,12 @@ public class HarfDizisi implements CharSequence {
     }
 
     /**
-     * ilk harfi dondurur. eger harf yoksa HARF_YOK doner.
+     * ilk harfi dondurur. eger harf yoksa TANIMSIZ_HARF doner.
      *
      * @return ilk TurkceHarf.
      */
     public final TurkceHarf ilkHarf() {
-        if (boy == 0) return Alfabe.HARF_YOK;
+        if (boy == 0) return Alfabe.TANIMSIZ_HARF;
         else
             return dizi[0];
     }
