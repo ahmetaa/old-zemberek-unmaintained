@@ -32,7 +32,7 @@ public class Heceleyici {
     public String[] hecele(String giris) {
         giris = alfabe.ayikla(giris);
         HarfDizisi kelime = new HarfDizisi(giris, alfabe);
-        List list = new ArrayList();
+        List<String> list = new ArrayList();
         while (kelime.length() > 0) {
             int index = heceBulucu.sonHeceHarfSayisi(kelime);
             if (index < 0) {
@@ -44,7 +44,7 @@ public class Heceleyici {
             kelime.kirp(basla);
         }
         Collections.reverse(list);
-        return (String[]) list.toArray(new String[list.size()]);
+        return list.toArray(new String[list.size()]);
     }
 
     /**

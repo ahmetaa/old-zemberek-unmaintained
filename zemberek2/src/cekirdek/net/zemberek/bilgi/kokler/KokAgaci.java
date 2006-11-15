@@ -5,6 +5,7 @@ package net.zemberek.bilgi.kokler;
 
 import net.zemberek.yapi.Alfabe;
 import net.zemberek.yapi.Kok;
+import net.zemberek.araclar.Kayitci;
 
 import java.util.List;
 import java.util.logging.Level;
@@ -31,7 +32,7 @@ import java.util.logging.Logger;
  * @author MDA
  */
 public class KokAgaci {
-    private static Logger log = Logger.getLogger("KokAgaci.class");
+    private static Logger log = Kayitci.kayitciUret(KokAgaci.class);
     private KokDugumu baslangicDugumu = null;
     private int nodeCount = 0;
     private Alfabe alfabe;

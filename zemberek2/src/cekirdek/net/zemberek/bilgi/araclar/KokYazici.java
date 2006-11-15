@@ -3,6 +3,8 @@
  */
 package net.zemberek.bilgi.araclar;
 
+import net.zemberek.yapi.Kok;
+
 import java.io.IOException;
 import java.util.List;
 
@@ -11,6 +13,6 @@ import java.util.List;
  */
 public interface KokYazici {
 
-    void yaz(List kokler) throws IOException;
+    void yaz(List<Kok> kokler) throws IOException;
 
 }
