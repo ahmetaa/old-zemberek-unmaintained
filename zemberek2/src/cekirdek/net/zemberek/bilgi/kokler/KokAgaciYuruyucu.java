@@ -33,7 +33,7 @@ public class KokAgaciYuruyucu {
     /**
      *
      * @param sozluk Taranacak sozluk
-     * @param set Yurume s�ras�nda bulunan d���mler toplanmak istiyorsa buraya bir set g�nderilir.
+     * @param set Yurume sırasında bulunan düğümler toplanmak istiyorsa buraya bir set gönderilir.
      * istenmiyorsa null verilir.
      */
     public KokAgaciYuruyucu(Sozluk sozluk, Set<Kok> set)

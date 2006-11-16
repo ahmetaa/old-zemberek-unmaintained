@@ -10,7 +10,7 @@ import net.zemberek.yapi.Kok;
 /**
  * Bu seçici Deasciifier için kullanılır. Verilen kelime için ağaçta ilerlerken
  * Türkçedeki karşılıkları birden fazla olabilecek harfler için (u-ü i-ı o-ö vs.)
- * alternatif dallarda da ilerlenerek yol �zerinde rastlanan tüm kökler toplanır.
+ * alternatif dallarda da ilerlenerek yol Üzerinde rastlanan tüm kökler toplanır.
  *
  * @author MDA
  */
@@ -45,7 +45,7 @@ public class AsciiKokBulucu implements KokBulucu {
      * @param aday
      * @param giris
      * @return aday ve giris degerlerinin ascii karsiliklari aynıysa true, 
-     * 	       değilse false. �rne�in
+     * 	       değilse false. Örneğin:
      * <pre>
      * asciiTolaransliKarsilastir("siraci", "şıracı") --> true 
      * </pre>

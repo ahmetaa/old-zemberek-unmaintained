@@ -31,11 +31,11 @@ public class TimeTracker {
      */
     public static void startClock(String name) {
         if (users.size() > MAX_TIMETRACKER_USERS) {
-            System.out.println("Max Saat izleyici say�s� a��ld�. (" + MAX_TIMETRACKER_USERS + ")");
+            System.err.println("Max Saat izleyici sayısı aşıldı. (" + MAX_TIMETRACKER_USERS + ")");
             return;
         }
         if (users.get(name) != null) {
-            System.out.println(name + " isminde bir zaman izleyici zaten var.");
+            System.err.println(name + " isminde bir zaman izleyici zaten var.");
             return;
         }
         TimerElement timer = new TimerElement(name);
@@ -47,7 +47,7 @@ public class TimeTracker {
      * geçtiğini milisaniye cinsinden döndürür.
      *
      * @param name : saatin adı
-     * @return :Bir �nceki tick'ten bu yana geçen süre (milisaniye cinsinden)
+     * @return :Bir önceki tick'ten bu yana geçen süre (milisaniye cinsinden)
      */
     public static long getElapsedTime(String name) {
         TimerElement timer = (TimerElement) users.get(name);
@@ -58,11 +58,11 @@ public class TimeTracker {
     }
 
     /**
-     * ismi verilen saatin en son kontrolünden bu yana ne kadar zaman ge�ti�ini
+     * ismi verilen saatin en son kontrolünden bu yana ne kadar zaman geçtiğini
      * milisaniye cinsinden döndürür.
      *
      * @param name :  saatin adı
-     * @return :Bir �nceki tick'ten bu yana geçen süre (milisaniye cinsinden)
+     * @return :Bir önceki tick'ten bu yana geçen süre (milisaniye cinsinden)
      */
     public static long getTimeDelta(String name) {
         TimerElement timer = (TimerElement) users.get(name);
@@ -78,7 +78,7 @@ public class TimeTracker {
      * virgülden sonra 3 basamaklı saniyeyi ifade eden String cinsinden döndürür.
      *
      * @param name : saatin adı
-     * @return : Bir �nceki tick'ten bu yana ge�en s�re (Binde bir hassasiyetli saniye cinsinden cinsinden)
+     * @return : Bir önceki tick'ten bu yana geçen süre (Binde bir hassasiyetli saniye cinsinden cinsinden)
      */
     public static String getElapsedTimeString(String name) {
         TimerElement timer = (TimerElement) users.get(name);
@@ -90,12 +90,12 @@ public class TimeTracker {
 
     /**
      * @param name : saatin adı
-     * @return : Bir �nceki tick'ten bu yana geçen süre (milisaniye cinsinden)
+     * @return : Bir önceki tick'ten bu yana geçen süre (milisaniye cinsinden)
      */
     public static String getElapsedTimeStringAsMillis(String name) {
         TimerElement timer = (TimerElement) users.get(name);
         if (timer == null)
-            return "Ge�ersiz Kronometre: " + name;
+            return "Geçersiz Kronometre: " + name;
         timer.refresh();
         return "Delta: " + timer.getDiff() + "ms. Elapsed: " + timer.getElapsedTime() + "ms.";
     }
@@ -118,7 +118,7 @@ public class TimeTracker {
 
     /**
      * Saati durdurur ve başlangıçtan bu yana geçen süreyi saniye ve ms 
-     * cinsinden döndürür. Ayrıca saati listeden siler ��kar�r.
+     * cinsinden döndürür. Ayrıca saati listeden siler. 
      *
      * @param name Saat ismi
      * @return başlangıçtan bu yana geçen süre

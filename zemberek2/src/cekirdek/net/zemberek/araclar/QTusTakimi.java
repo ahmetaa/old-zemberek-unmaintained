@@ -28,15 +28,15 @@ public class QTusTakimi {
     }
     
     /**
-     * Verilen iki karakter aras�ndaki klavye mesafesini getirir.      
-     * Mesafenin �l��m�nde �imdilik sadece karakterlerin koordinatları arasındaki mesafe 
-     * sqrt((y2-y1)^2 + (x2-x1)^2))*10 �eklinde hesaplanıyor. Yani a-s arasındaki mesafe 
+     * Verilen iki karakter arasındaki klavye mesafesini getirir.      
+     * Mesafenin ölçümünde sadece karakterlerin koordinatları arasındaki mesafe 
+     * sqrt((y2-y1)^2 + (x2-x1)^2))*10 şeklinde hesaplanıyor. Yani a-s arasındaki mesafe 
      * 10 iken s-q arasındaki mesafe 14, a-e arasında ise 22 olur. Karakterlerin 
      * klavyedeki yerleri arasındaki  mesafe arttıkça rakam büyür.
      * 
      * @param c1 birinci karakter
      * @param c2 ikinci karakter
-     * @return  Q Klavye �zerinde verilen karakterler arasındaki fiziksel mesafenin 10 katı.
+     * @return  Q Klavye üzerinde verilen karakterler arasındaki fiziksel mesafenin 10 katı.
      * Eğer karakterlerden herhangi biri klavye haritasında yoksa -1 döner.
      *  
      */
