@@ -7,9 +7,10 @@ import java.util.List;
 
 public class Kelime implements Cloneable {
 
-    private HarfDizisi icerik;
+    private static final HarfDizisi BOS_ICERIK = new HarfDizisi(0);
+    private HarfDizisi icerik=BOS_ICERIK;
     private Kok kok;
-    private List<Ek> ekler = new ArrayList<Ek>();
+    private List<Ek> ekler = new ArrayList<Ek>(3);
     private KelimeTipi tip;
 
     public Kelime() {
@@ -64,12 +65,28 @@ public class Kelime implements Cloneable {
         this.icerik = icerik;
     }
 
+    public int ekSayisi() {
+        return ekler.size();
+    }
+
+    public TurkceHarf sonHarf() {
+        return icerik.sonHarf();
+    }
+
     public HarfDizisi icerik() {
         return icerik;
     }
 
+    public int boy() {
+        return icerik.length();
+    }
+
     public Ek sonEk() {
         return ekler.get(ekler.size() - 1);
+    }
+
+    public String icerikStr() {
+        return icerik.toString();
     }
 
     public void ekEkle(Ek ek) {

@@ -17,7 +17,7 @@ public class SonHarfYumusamaOzelDurumu extends EkOzelDurumu {
         if(ek == null){
             return null;
         }
-        int harfPozisyonu = kelime.icerik().length() + ek.length();
+        int harfPozisyonu = kelime.boy() + ek.length();
         if (giris.harf(harfPozisyonu).sesliMi())
             return ek;
         return null;

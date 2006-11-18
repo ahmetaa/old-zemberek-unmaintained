@@ -58,10 +58,10 @@ public class KokAgaciYuruyucu {
         if (dugum != null){
             dugumSayisi++;
             if(dugum.getKok() != null){
-            	if (dugum.getKelime() != null && 
+/*            	if (dugum.getKelime() != null &&
             			!dugum.getKelime().equals(dugum.getKok().icerik())){
             		System.out.println("!!!!! " + dugum.getKelime() + " - " + dugum.getKok().icerik());
-            	}
+            	}*/
                 kokTasiyanDugumSayisi++;
                 if(set != null){
                     set.add(dugum.getKok());

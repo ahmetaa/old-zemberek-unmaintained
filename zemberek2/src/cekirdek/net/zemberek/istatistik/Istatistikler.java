@@ -55,11 +55,11 @@ public class Istatistikler {
     }
     
     public void kelimeIstatistikGuncelle(Kelime kelime){
-    	kelimeIstatistikleri.isle(kelime.icerik().toString());
+    	kelimeIstatistikleri.isle(kelime.icerikStr());
     }
     
     public void ikiliIstatistikGuncelle(Kok kok, Kelime kelime){
-        ikiliIstatistikleri.sonucGuncelle(kelime.icerik().toString());
+        ikiliIstatistikleri.sonucGuncelle(kelime.icerikStr());
     }
 
     public void karakterIstatistikGuncelle(Kok kok) {
@@ -136,7 +136,7 @@ public class Istatistikler {
             for(int i=0; i<giris.length()-2; i++){
             	ikiliHarfIstatistikleri.isle(giris.substring(i,i+2));
             }
-            ikiliIstatistikleri.sonucGuncelle(kelime.icerik().toString());
+            ikiliIstatistikleri.sonucGuncelle(kelime.icerikStr());
             kokIkiliIstatistikleri.sonucGuncelle(kelime.kok().icerik());
         }
 	}

@@ -93,12 +93,12 @@ public class KelimeUretici {
             //TODO: asagidaki bolum dil ozel. muhtemelen olusumIcinURet metodu duzletilirse gerek kalmaz.
             // ek son harf yumusatmayi kendimiz hallediyoruz (eger yalin ek ise bu islemi pas geciyoruz.)
             if (i > 1) {
-                if (kelime.icerik().sonHarf().sertMi() && ekOlusumu.ilkHarf().sesliMi())
+                if (kelime.sonHarf().sertMi() && ekOlusumu.ilkHarf().sesliMi())
                     kelime.icerik().sonHarfYumusat();
             }
 
             //eki kelimeye ve ek olusumlarina ekle.
-            kelime.icerik().ekle(ekOlusumu);
+            kelime.icerikEkle(ekOlusumu);
             if (ekOlusumu.length() > 0)
                 ure.olusumlar.add(ekOlusumu.toString());
             kelime.ekler().add(ek);
@@ -106,7 +106,7 @@ public class KelimeUretici {
 
         //son duzeltmeleri uygula.
         yardimci.kelimeBicimlendir(kelime);
-        ure.olusum = kelime.icerik().toString();
+        ure.olusum = kelime.icerikStr();
         return ure;
     }
 

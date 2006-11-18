@@ -63,7 +63,7 @@ public class TestHataToleransliKokSecici extends TestCase {
         System.out.println("Sozluk Initialization süresi: " + TimeTracker.getElapsedTimeString("x"));
         bulucu = sozluk.getKokBulucuFactory().getToleransliKokBulucu();
         List list = bulucu.getAdayKokler("ixtersen");
-        //System.out.println("Walk Count : " + bulucu.getWalkCount());
+        //System.out.println("Walk Count : " + bulucu.getYurumeSayisi());
         //System.out.println("Distance Calculation Count : " + bulucu.getDistanceCalculationCount());
         System.out.println("Tamamlanma süresi: " + TimeTracker.stopClock("x"));
         TestUtils.printList(list);

@@ -204,7 +204,7 @@ public class Zemberek {
         // cift olusumlari temizle.
         Set<String> olusumlar = new HashSet(kelimeler.length);
         for (Kelime kelime : kelimeler) {
-            String olusum = kelime.icerik().toString();
+            String olusum = kelime.icerikStr();
             if (!olusumlar.contains(olusum))
                 olusumlar.add(olusum);
         }

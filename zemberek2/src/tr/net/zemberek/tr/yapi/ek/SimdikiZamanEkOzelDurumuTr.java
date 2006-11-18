@@ -33,7 +33,7 @@ public class SimdikiZamanEkOzelDurumuTr extends EkOzelDurumu {
         TurkceHarf ekHarfi = sesliUretci.sesliBelirleIU(kelime.icerik());
         HarfDizisi olusum = new HarfDizisi("yor", alfabe);
         olusum.ekle(0, ekHarfi);
-        int harfPozisyonu = kelime.icerik().length() + ek.length();
+        int harfPozisyonu = kelime.boy() + ek.length();
         if (kiyaslayici.aradanKiyasla(giris, olusum, harfPozisyonu))
             return ek;
         return null;

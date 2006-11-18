@@ -72,11 +72,11 @@ public class AgacSozluk implements Sozluk {
      * taşıyan bir List<Kok>, aranan kök yoksa null;
      */
     public List<Kok> kokBul(String str) {
-        return agac.find(str);
+        return agac.bul(str);
     }
 
     public Kok kokBul(String str, KelimeTipi tip) {
-        List<Kok> kokler = agac.find(str);
+        List<Kok> kokler = agac.bul(str);
         for (Kok kok : kokler) {
             if(kok.tip()==tip) return kok;
         }

@@ -4,7 +4,6 @@ import net.zemberek.islemler.cozumleme.HarfDizisiKiyaslayici;
 import net.zemberek.yapi.HarfDizisi;
 import net.zemberek.yapi.Kelime;
 
-import java.io.Serializable;
 import java.util.Collections;
 import java.util.List;
 import java.util.Set;

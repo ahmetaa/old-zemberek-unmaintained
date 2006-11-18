@@ -9,10 +9,6 @@ public class BasitKelimeYigini {
 
     private LinkedList<YiginKelime> yigin = new LinkedList<YiginKelime>();
 
-    public void push(YiginKelime kel) {
-        yigin.addFirst(kel);
-    }
-
     public YiginKelime al() {
         return yigin.removeFirst();
     }
@@ -21,12 +17,12 @@ public class BasitKelimeYigini {
         return yigin.isEmpty();
     }
 
-    public void clear() {
+    public void temizle() {
         yigin.clear();
     }
 
     public void koy(Kelime kelime, int ardisilEkSirasi) {
-        push(new YiginKelime(kelime, ardisilEkSirasi));
+        yigin.addFirst(new YiginKelime(kelime, ardisilEkSirasi));
     }
 
     public static final class YiginKelime {
@@ -48,7 +44,7 @@ public class BasitKelimeYigini {
         }
 
         public String toString() {
-            return " olusan: " + kelime.icerik().toString()
+            return " olusan: " + kelime.icerikStr()
                     + " sonEk: " + kelime.sonEk().toString()
                     + " ekSira: " + ekSirasi;
         }

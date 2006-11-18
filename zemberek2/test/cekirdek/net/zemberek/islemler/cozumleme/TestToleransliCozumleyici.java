@@ -53,7 +53,7 @@ public class TestToleransliCozumleyici extends TemelTest {
             for (int j = 0; j < sonuclar.size(); j++) {
                 Kelime kelime = (Kelime) sonuclar.get(j);
                 System.out.println("Sonuc " + j + " = " + kelime);
-                assertTrue(uye.sonuclar.contains(kelime.icerik().toString()));
+                assertTrue(uye.sonuclar.contains(kelime.icerikStr()));
             }
         }
     }

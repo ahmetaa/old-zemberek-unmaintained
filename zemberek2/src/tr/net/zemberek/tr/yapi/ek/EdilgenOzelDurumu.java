@@ -28,7 +28,7 @@ public class EdilgenOzelDurumu extends EkOzelDurumu {
     }
 
     public HarfDizisi cozumlemeIcinUret(Kelime kelime, HarfDizisi giris, HarfDizisiKiyaslayici kiyaslayici) {
-        TurkceHarf son = kelime.icerik().sonHarf();
+        TurkceHarf son = kelime.sonHarf();
         if(son.sesliMi())
           return new HarfDizisi(0);
         HarfDizisi sonuc = new HarfDizisi();

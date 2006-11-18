@@ -214,7 +214,7 @@ public class KokAgaci {
      * @param str
      * @return Aranan kök ve eş seslilerini taşıyan liste, bulunamazsa null.
      */
-    public List<Kok> find(String str) {
+    public List<Kok> bul(String str) {
         char[] girisChars = str.toCharArray();
         int girisIndex = 0;
         // Basit bir tree traverse algoritması ile kelime bulunur.
