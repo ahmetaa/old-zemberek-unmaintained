@@ -51,7 +51,7 @@ public class GenelKokIstatistikBilgisi implements KokIstatistikBilgisi {
     public void guncelle(Kelime kelime) {
         //ekDizileri.put(kelime, kelime.ekler());
         kullanimSayisi++;
-        toplamUzunluk += kelime.icerik().length();
+        toplamUzunluk += kelime.boy();
         ortalamaKelimeUzunlugu = (double) toplamUzunluk / kullanimSayisi;
         // Ek frekans listelerini g�ncelle. Sadece belli say�daki ekler i�in yap�yoruz
         ekZincirleriniGuncelle(kelime.ekler());

@@ -26,11 +26,11 @@ public class TestCozumlemeYardimcisi extends TemelTest {
         //cozumleme sirasinda "tdk" "tdke" haline donusur.
         Kelime kelime = new Kelime(kok, hd("tdkeye"));
         yardimci.kelimeBicimlendir(kelime);
-        assertEquals(kelime.icerik().toString(), "TDK'ye");
+        assertEquals(kelime.icerikStr(), "TDK'ye");
 
         kelime.setIcerik(hd("tdk"));
         yardimci.kelimeBicimlendir(kelime);
-        assertEquals(kelime.icerik().toString(), "TDK");
+        assertEquals(kelime.icerikStr(), "TDK");
 
         kok.setAsil("Prof.");
         kok.setIcerik("prof");
@@ -39,7 +39,7 @@ public class TestCozumlemeYardimcisi extends TemelTest {
 
         kelime.setIcerik(hd("prof" + alfabe + "bler"));
         yardimci.kelimeBicimlendir(kelime);
-        assertEquals(kelime.icerik().toString(), "Prof.ler");
+        assertEquals(kelime.icerikStr(), "Prof.ler");
 
     }
 }

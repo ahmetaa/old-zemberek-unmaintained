@@ -27,7 +27,7 @@ public class MeEkOzelDurumu extends EkOzelDurumu {
         HarfDizisi olusum = new HarfDizisi("m", alfabe);
         olusum.ekle(1, ekHarfi);
 
-        int harfPozisyonu = kelime.icerik().length() + ek.length();
+        int harfPozisyonu = kelime.boy() + ek.length();
         if (kiyaslayici.aradanKiyasla(giris, olusum, harfPozisyonu - 2))
             return ek;
         return null;

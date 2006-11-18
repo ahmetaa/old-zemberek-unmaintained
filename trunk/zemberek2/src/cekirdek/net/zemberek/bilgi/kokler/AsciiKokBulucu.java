@@ -27,7 +27,7 @@ public class AsciiKokBulucu implements KokBulucu {
         this.agac = agac;
     }
 
-    public int getWalkCount() {
+    public int getYurumeSayisi() {
         return walkCount;
     }
 
@@ -35,7 +35,7 @@ public class AsciiKokBulucu implements KokBulucu {
         this.giris = giris;
         asciiGiris = agac.getAlfabe().asciifyString(giris);
         adaylar = new ArrayList<Kok>(4);
-        walk(agac.getKokDugumu(), "");
+        yuru(agac.getKokDugumu(), "");
         return adaylar;
     }
 
@@ -63,7 +63,7 @@ public class AsciiKokBulucu implements KokBulucu {
      * @param dugum  : başlangıç düğümü
      * @param olusan : Yürüme sırasında oluşan kelime (düğümlerin karakter değerlerinden)
      */
-    public void walk(KokDugumu dugum, String olusan) {
+    public void yuru(KokDugumu dugum, String olusan) {
         String tester = (olusan + dugum.getHarf()).trim();
         walkCount++;
         if (dugum.getKok() != null) {
@@ -86,7 +86,7 @@ public class AsciiKokBulucu implements KokBulucu {
        for (KokDugumu altDugum : dugum.altDugumDizisiGetir()) {
            if (altDugum != null) {
                if (agac.getAlfabe().asciiToleransliKiyasla(altDugum.getHarf(), giris.charAt(seviye)))
-                   this.walk(altDugum, tester);
+                   this.yuru(altDugum, tester);
            }
        }
     }

@@ -195,7 +195,7 @@ public class TestIsimEkleri extends BaseTestEkler {
         ek.ekOlustur(kelime);
         kelime.ekEkle(ek);
         String sonuc = "kediydim";
-        assertEquals(sonuc, kelime.icerik().toString());
+        assertEquals(sonuc, kelime.icerikStr());
         assertTrue(ek.ilkHarfUygunmu(TurkceAlfabe.HARF_m));
     }
 
@@ -213,7 +213,7 @@ public class TestIsimEkleri extends BaseTestEkler {
         ek.ekOlustur(kelime);
         kelime.ekEkle(ek);
         String sonuc = "kediydin";
-        assertEquals(sonuc, kelime.icerik().toString());
+        assertEquals(sonuc, kelime.icerikStr());
         assertTrue(ek.ilkHarfUygunmu(TurkceAlfabe.HARF_n));
     }
 
@@ -231,7 +231,7 @@ public class TestIsimEkleri extends BaseTestEkler {
         ek.ekOlustur(kelime);
         kelime.ekEkle(ek);
         String sonuc = "kediydik";
-        assertEquals(sonuc, kelime.icerik().toString());
+        assertEquals(sonuc, kelime.icerikStr());
         assertTrue(ek.ilkHarfUygunmu(TurkceAlfabe.HARF_k));
     }
 
@@ -249,7 +249,7 @@ public class TestIsimEkleri extends BaseTestEkler {
         ek.ekOlustur(kelime);
         kelime.ekEkle(ek);
         String sonuc = "kediydiniz";
-        assertEquals(sonuc, kelime.icerik().toString());
+        assertEquals(sonuc, kelime.icerikStr());
         assertTrue(ek.ilkHarfUygunmu(TurkceAlfabe.HARF_n));
     }
 
@@ -267,7 +267,7 @@ public class TestIsimEkleri extends BaseTestEkler {
         ek.ekOlustur(kelime);
         kelime.ekEkle(ek);
         String sonuc = "kediydiler";
-        assertEquals(sonuc, kelime.icerik().toString());
+        assertEquals(sonuc, kelime.icerikStr());
         assertTrue(ek.ilkHarfUygunmu(TurkceAlfabe.HARF_l));
     }
 

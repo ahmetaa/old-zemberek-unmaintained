@@ -183,16 +183,6 @@ public class KaynakYukleyici {
         return props;
     }
 
-    public BufferedReader getReader(URI uri) throws IOException {
-        return getReader(uri.toURL().getPath());
-    }
-
-    public InputStream getFileStream(URI uri) throws IOException {
-        InputStream is = getStream(uri.toURL().getPath());
-        log.info("Dis kaynak stream erisimi:" + uri);
-        return is;
-    }
-
     public Properties konfigurasyonYukle(String dosya) throws IOException {
         Properties props = new Properties();
         props.load(getStream(dosya));

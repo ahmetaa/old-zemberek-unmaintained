@@ -84,7 +84,7 @@ public class ToleransliCozumleyici implements KelimeCozumleyici {
         List<Kelime> uygunSonuclar = new ArrayList();
 
         //analiz kelimesini kokler kokunden olustur.
-        kelimeYigini.clear();
+        kelimeYigini.temizle();
         Ek bulunanEk = kelime.sonEk();
 
         int ardisilEkSirasi = 0;
@@ -146,14 +146,14 @@ public class ToleransliCozumleyici implements KelimeCozumleyici {
                 ardisilEkSirasi = 0;
                 // ek ekleneceginde yumusama yapilip yapilmayacagi belirleniyor.. aci
                 if (olusanEk.harf(0).sesliMi()
-                        && kelime.icerik().sonHarf().sertMi()
+                        && kelime.sonHarf().sertMi()
                         && kelime.ekler().size() > 1
                         && olusanEk.ilkHarf().sertDonusum()!=null) {
                     kelime.icerik().sonHarfYumusat();
                 }
-                kelime.icerik().ekle(olusanEk);
-                kelime.ekler().add(incelenenEk);
-                olusumStr = kelime.icerik().toString();
+                kelime.icerikEkle(olusanEk);
+                kelime.ekEkle(incelenenEk);
+                olusumStr = kelime.icerikStr();
                 if (log.isLoggable(Level.FINEST)) log.finest("ekleme sonrasi olusan kelime: " + kelime.icerik());
 
                 bulunanEk = incelenenEk;
@@ -163,7 +163,7 @@ public class ToleransliCozumleyici implements KelimeCozumleyici {
                     if (log.isLoggable(Level.FINER)) log.finer("uygun kelime:" + kelime.icerik());
                 }
 /*
-                        TurkceHarf ekIlkHarf = giris.harf(kelime.icerik().length());
+                        TurkceHarf ekIlkHarf = giris.harf(kelime.boy());
                         if (ekIlkHarf == TurkceAlfabe.TANIMSIZ_HARF)
                             return false;*/
 

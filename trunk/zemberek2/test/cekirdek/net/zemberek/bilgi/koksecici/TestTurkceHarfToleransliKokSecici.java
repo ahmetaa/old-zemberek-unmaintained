@@ -49,7 +49,7 @@ public class TestTurkceHarfToleransliKokSecici extends TestCase {
 //        System.out.println("Islem tamam: " + TimeTracker.getElapsedTimeString("x")  
 //                + " Saniyede : " + TimeTracker.getItemsPerSecond("x",testSayisi) + " islem.");
 //        System.out.println("Tamamlanma süresi: "  + TimeTracker.stopClock("x"));
-//        //System.out.println("Walk Count : " + bulucu.getWalkCount());
+//        //System.out.println("Walk Count : " + bulucu.getYurumeSayisi());
 //        TestUtils.printList(list);
     }
 

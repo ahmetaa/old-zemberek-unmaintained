@@ -58,11 +58,11 @@ public class ToleransliKokBulucu implements KokBulucu {
     private List<Kok> benzerKokleriBul(String giris) {
         this.giris = giris;
         adaylar = new ArrayList<Kok>();
-        walk(agac.getKokDugumu(), "");
+        yuru(agac.getKokDugumu(), "");
         return adaylar;
     }
 
-    private void walk(KokDugumu dugum, String olusan) {
+    private void yuru(KokDugumu dugum, String olusan) {
         String tester = olusan;
         tester += dugum.getHarf();
         if (dugum.getKok() != null) {
@@ -83,7 +83,7 @@ public class ToleransliKokBulucu implements KokBulucu {
 
         for (KokDugumu altDugum : dugum.altDugumDizisiGetir()) {
             if (altDugum != null) {
-                this.walk(altDugum, tester);
+                this.yuru(altDugum, tester);
             }
         }
     }
