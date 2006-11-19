@@ -91,7 +91,7 @@
         <delete>
             <fileset dir="${kaynaklar.dir}/">
                 <include name="**/*.bin"/>
-                <exclude name="**/stats.bin"/>
+                <exclude name="**/**istatistik**"/>
             </fileset>
         </delete>
         <echo message="All clean"/>
@@ -174,11 +174,11 @@
             <param name="dil" value="${dil}"/>
         </antcall>
 
-        <jar jarfile="${build.dir}/zemberek-${surum}-${dil}.jar"
+        <jar jarfile="${build.dir}/zemberek2-${dil}.jar"
              basedir="${build.tum}">
-            <exclude name="net/zemberek/istatistik"/>
-            <exclude name="net/zemberek/demo"/>
-            <exclude name="kaynaklar/tr/bilgi/kelime_cebi_${dil}.txt/"/>
+            <exclude name="**/istatistik/**"/>
+            <exclude name="**/demo/**"/>
+            <exclude name="**/kelime_cebi_${dil}.txt"/>
         </jar>
         <echo message="jar /dagitim dizininde olusturuldu."/>
     </target>

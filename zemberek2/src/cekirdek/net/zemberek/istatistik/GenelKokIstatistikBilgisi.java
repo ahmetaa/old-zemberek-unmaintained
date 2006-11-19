@@ -12,23 +12,23 @@ import java.util.*;
 
 /**
  * @author MDA 
- * TODO: Az kullan�lacak istatistikleri farkl� bir s�n�fa al (footprint)
+ * TODO: Az kullanılacak istatistikleri farklı bir sınıfa al 
  */
 public class GenelKokIstatistikBilgisi implements KokIstatistikBilgisi {
-    // Kullan�m frekans�
+    // Kullanım frekansı
     private Kok kok = null;
     private long kullanimSayisi = 1;
-    protected int kullanimFrekansi = 1; // Ger�ek kullan�m frekans� * 1000000 
+    protected int kullanimFrekansi = 1;  
     private int yalinHal = 0;
     private double ortalamaKelimeUzunlugu = 0;
     private long toplamUzunluk = 0;
     private int ortalamaEkSayisi = 0;
     private ArrayList ekListesi = null;
 
-    //Ek istatistikleri, bu kelime k�k� i�in kullan�lan ek zincirlerinden
-    //en s�k kullan�lan "n" adedini tutar. Her bir zincir bir Ek dizisi ve kullan�m frekans�
-    // bilgilerini ta��r.
-    // zincir bilgileri i�in max ek zinciri uzunlugu
+    //Ek istatistikleri, bu kelime kökü için kullanılan ek zincirlerinden
+    //en sık kullanılan "n" adedini tutar. Her bir zincir bir Ek dizisi ve kullanım frekansı
+    // bilgilerini taşır.
+    // zincir bilgileri için max ek zinciri uzunlugu
     public static final int TABLO_MAX_EK_ZINCIR_BOYU = 12;
     // ek sayilari icin max ek zincir boyu
     public static final int TABLO_MAX_EK_SAYISI = 15;
@@ -44,7 +44,7 @@ public class GenelKokIstatistikBilgisi implements KokIstatistikBilgisi {
     }
 
     /**
-     * Guncelle metodu, kelimenin ��z�mleme işleminden sonra �a�r�l�r.
+     * Guncelle metodu, kelimenin çözümleme işleminden sonra çağrılır.
      *
      * @param kelime
      */
@@ -53,7 +53,7 @@ public class GenelKokIstatistikBilgisi implements KokIstatistikBilgisi {
         kullanimSayisi++;
         toplamUzunluk += kelime.boy();
         ortalamaKelimeUzunlugu = (double) toplamUzunluk / kullanimSayisi;
-        // Ek frekans listelerini g�ncelle. Sadece belli say�daki ekler i�in yap�yoruz
+        // Ek frekans listelerini güncelle. Sadece belli sayıdaki ekler için yapıyoruz
         ekZincirleriniGuncelle(kelime.ekler());
     }
 

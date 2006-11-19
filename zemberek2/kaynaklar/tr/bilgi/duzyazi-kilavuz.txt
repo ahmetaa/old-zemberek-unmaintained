@@ -49205,6 +49205,7 @@ varoluşçu IS
 varoş IS
 varsağı IS
 varsayım IS
+varsaymak FI
 #varsayımlı
 #varsayımsal
 varsıl IS

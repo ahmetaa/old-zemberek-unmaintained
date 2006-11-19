@@ -11,15 +11,13 @@ import java.util.ArrayList;
 
 public class BinaryIstatistikYazici extends TemelIstatistikYazici implements IstatistikYazici {
 
-    public static final int ISTATISTIGI_TUTLACAK_KOK_SAYISI=12000;
+    public static final int ISTATISTIGI_TUTLACAK_KOK_SAYISI = 20000;
+    DataOutputStream dos ;
     public void initialize(String fileName) {
         try {
             outputFile = new FileOutputStream(fileName);
-            OutputStreamWriter outputStream = new OutputStreamWriter(outputFile, "UTF-8");
-            writer = new BufferedWriter(outputStream);
+            dos = new DataOutputStream(outputFile);
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
     }
@@ -30,21 +28,23 @@ public class BinaryIstatistikYazici extends TemelIstatistikYazici implements Ist
         ArrayList list = kokIst.getKokListesi();
         try {
             int sinir = ISTATISTIGI_TUTLACAK_KOK_SAYISI;
-            if(list.size()<ISTATISTIGI_TUTLACAK_KOK_SAYISI)
-              sinir = list.size();
+            if (list.size() < ISTATISTIGI_TUTLACAK_KOK_SAYISI)
+				sinir = list.size();
             for (int i = 0; i < sinir; i++) {
                 GenelKokIstatistikBilgisi bilgi = (GenelKokIstatistikBilgisi) list.get(i);
                 Kok kok = bilgi.getKok();
-                // boy yaz
-                writer.write(kok.icerik().length());
+                if(kok == null){
+                	System.out.println("Kok null?? " + i);
+                	break;
+                }
                 // kok'u yaz.
-                writer.write(kok.icerik());
-                // Frekans (Bir milyon ile çarp)
+                dos.writeUTF(kok.icerik());
+                // Frekans
                 System.out.println("Kok:" + kok.icerik() + ", indeks:"+ kok.getIndeks()+ ", Frekans: " + bilgi.getKullanimFrekansi());
-                writer.write(bilgi.getKullanimFrekansi());
+                dos.writeInt(bilgi.getKullanimFrekansi());
             }
             System.out.println("Istatistigi yazilan kok sayisi: " + sinir);
-            writer.close();
+            dos.close();
         } catch (IOException e) {
             e.printStackTrace();
         }

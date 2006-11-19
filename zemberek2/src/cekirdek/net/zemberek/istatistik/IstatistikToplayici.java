@@ -4,6 +4,9 @@
 package net.zemberek.istatistik;
 
 
+import java.io.File;
+import java.io.FileFilter;
+
 import net.zemberek.araclar.TimeTracker;
 import net.zemberek.araclar.turkce.TurkceMetinOkuyucu;
 import net.zemberek.erisim.Zemberek;
@@ -13,12 +16,9 @@ import net.zemberek.yapi.DilBilgisi;
 import net.zemberek.yapi.Kelime;
 import net.zemberek.yapi.TurkceDilBilgisi;
 
-import java.io.File;
-import java.io.FileFilter;
-
 
 /**
- * @author MDA & GBA
+ * @author MDA
  */
 public class IstatistikToplayici {
 
@@ -41,7 +41,7 @@ public class IstatistikToplayici {
             try {
             	// Ekrana ilerleme durumunu yaz.
             	if (i>0 && i % 500 == 0) {
-            		System.out.print(".");
+            		//System.out.print(".");
             		if (i % 20000 == 0) System.out.println( i );
             	}
                 Kelime[] kelimeler = cozumleyici.cozumle(tumKelimeler[i]);
@@ -83,6 +83,9 @@ public class IstatistikToplayici {
         istatistikler.sonlandir();
 //        KonsolRaporlayici konsolRaporlayici = new KonsolRaporlayici(istatistikler);
 //        konsolRaporlayici.raporla(System.out, "UTF-8");
+        BinaryIstatistikYazici y = new BinaryIstatistikYazici();
+        y.initialize("kaynaklar/tr/bilgi/kok_istatistik_tr.bin");
+        y.yaz(istatistikler);
         istatistikler.setLimit(5000, 5000, 20000);
         DosyaRaporlayici dr = new DosyaRaporlayici(istatistikler, "istatistik.txt");
         dr.raporla();
@@ -99,7 +102,8 @@ public class IstatistikToplayici {
     	IstatistikToplayici top = new IstatistikToplayici(zemberek.cozumleyici(),
     			new Istatistikler(turkce));
     	TimeTracker.startClock("i");
-    	top.metinIsle("C:/docs/ebook/books/yonetim_mizah_kitap.txt");
+    	//top.metinIsle("/home/mdakin/books/yonetim_mizah_kitap.txt");
+    	top.klasorIsle("/home/mdakin/books/secme");
     	top.sonlandir();
     	System.out.println("Saniyede islenen ortalama kelime sayisi: " + TimeTracker.getItemsPerSecond("i", top.toplamKelime));
     	System.out.println("Toplam sure: " + TimeTracker.stopClock("i"));
