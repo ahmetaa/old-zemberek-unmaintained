@@ -354,7 +354,7 @@ public class Alfabe {
         String[] charStrDizi = virgulReg.split(tum);
         List<HarfCifti> ciftler = new ArrayList(charStrDizi.length);
         for (String s : charStrDizi) {
-            String[] cift = tireReg.split(s, -1);
+            String[] cift = tireReg.split(s);
             if (cift.length != 2)
                 logger.warning(tum + "ayristirilirken harf cifti  bekleniyordu. " + s + " uygun degil.");
             if (cift[0].length() != 1 || cift[1].length() != 1)
