@@ -44,39 +44,36 @@ public class DemoYonetici {
     }
 
     public String islemUygula(String islemTipi, String giris) {
-        if (islemTipi.equals(IslemTipi.YAZI_DENETLE.toString()))
-            return yaziDenetle(giris);
-        if (islemTipi.equals(IslemTipi.YAZI_COZUMLE.toString()))
-            return yaziCozumle(giris);
-        if (islemTipi.equals(IslemTipi.ASCII_TURKCE.toString()))
-            return asciiToTurkce(giris);
-        if (islemTipi.equals(IslemTipi.TURKCE_ASCII.toString()))
-            return turkceToAscii(giris);
-        if (islemTipi.equals(IslemTipi.HECELE.toString()))
-            return hecele(giris);
-        if (islemTipi.equals(IslemTipi.ONER.toString()))
-            return oner(giris);
-        if (islemTipi.equals(IslemTipi.TEMIZLE.toString()))
-            return temizle(giris);
-        return "";
+
+        IslemTipi islem = null;
+        try {
+            islem = IslemTipi.valueOf(islemTipi);
+            return islemUygula(islem, giris);
+        } catch (IllegalArgumentException e) {
+            logger.severe("istenilen islem:" + islemTipi + " mevcut degil");
+            return "";
+        }
     }
 
     public String islemUygula(IslemTipi islemTipi, String giris) {
-        if (islemTipi == IslemTipi.YAZI_DENETLE)
-            return yaziDenetle(giris);
-        if (islemTipi == IslemTipi.YAZI_COZUMLE)
-            return yaziCozumle(giris);
-        if (islemTipi == IslemTipi.ASCII_TURKCE)
-            return asciiToTurkce(giris);
-        if (islemTipi == IslemTipi.TURKCE_ASCII)
-            return turkceToAscii(giris);
-        if (islemTipi == IslemTipi.HECELE)
-            return hecele(giris);
-        if (islemTipi == IslemTipi.ONER)
-            return oner(giris);
-        if (islemTipi == IslemTipi.TEMIZLE)
-            return temizle(giris);
-        return "";
+        switch (islemTipi) {
+            case YAZI_DENETLE:
+                return yaziDenetle(giris);
+            case YAZI_COZUMLE:
+                return yaziCozumle(giris);
+            case ASCII_TURKCE:
+                return asciiToTurkce(giris);
+            case TURKCE_ASCII:
+                return turkceToAscii(giris);
+            case HECELE:
+                return hecele(giris);
+            case ONER:
+                return oner(giris);
+            case TEMIZLE:
+                return temizle(giris);
+            default:
+                return "";
+        }
     }
 
     public String yaziDenetle(String giris) {
