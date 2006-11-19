@@ -317,7 +317,7 @@ public class Alfabe {
         }
     }
 
-    private String ozellik(Map<String, String> harfOzellikleri, String anahtar) {
+    protected String ozellik(Map<String, String> harfOzellikleri, String anahtar) {
         if (harfOzellikleri.containsKey(anahtar))
             return harfOzellikleri.get(anahtar);
         else {
@@ -334,7 +334,7 @@ public class Alfabe {
      */
     protected char[] harfAyristir(String tum) {
         tum = tum.replaceAll("[ \t]", "");
-        String[] charStrDizi = virgulReg.split(tum, -1);
+        String[] charStrDizi = virgulReg.split(tum);
         char[] cDizi = new char[charStrDizi.length];
         for (int i = 0; i < charStrDizi.length; i++) {
             if (charStrDizi[i].length() != 1)
@@ -351,7 +351,7 @@ public class Alfabe {
      */
     protected List<HarfCifti> harfCiftiAyristir(String tum) {
         tum = tum.replaceAll("[ \t]", "");
-        String[] charStrDizi = virgulReg.split(tum, -1);
+        String[] charStrDizi = virgulReg.split(tum);
         List<HarfCifti> ciftler = new ArrayList(charStrDizi.length);
         for (String s : charStrDizi) {
             String[] cift = tireReg.split(s, -1);
