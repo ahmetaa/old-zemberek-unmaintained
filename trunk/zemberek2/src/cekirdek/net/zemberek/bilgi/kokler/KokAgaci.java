@@ -76,8 +76,8 @@ public class KokAgaci {
         /**
          * Ağaç üzerinde ilerlerken kelimemizin sonuna kadar gitmişiz.
          * kelimemizi bu düğüme ekleriz.
-         * �rne�in
-         * i-s-t-->istim �eklindeki dala "is" kelimesini eklemek gibi.
+         * Örneğin
+         * i-s-t-->istim şeklindeki dala "is" kelimesini eklemek gibi.
          * i-s-t-->istim
          *   |-->is
          *

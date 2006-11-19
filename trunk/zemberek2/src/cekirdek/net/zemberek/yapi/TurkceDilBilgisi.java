@@ -284,7 +284,7 @@ public class TurkceDilBilgisi implements DilBilgisi {
             istatistikOkuyucu.initialize(kokIstatistikDosyaAdi);
             istatistikOkuyucu.oku(sozluk);
         } else {
-            logger.info("istatistik dosyasina erisilemedi, kok dosyasi istatistik bilgisi icermeyecek.");
+            logger.warning("istatistik dosyasina erisilemedi, kok dosyasi istatistik bilgisi icermeyecek." + kokIstatistikDosyaAdi);
         }
         // kokleri ikili olarak kaydet.
         IkiliKokYazici ozelYazici = new IkiliKokYazici(kokDosyaAdi);

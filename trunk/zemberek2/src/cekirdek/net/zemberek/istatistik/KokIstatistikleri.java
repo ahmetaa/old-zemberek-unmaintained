@@ -4,20 +4,22 @@
  */
 package net.zemberek.istatistik;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.Iterator;
+
 import net.zemberek.araclar.IstatistikAraclari;
-import net.zemberek.islemler.cozumleme.KelimeCozumleyici;
 import net.zemberek.yapi.Kelime;
 import net.zemberek.yapi.KelimeTipi;
 import net.zemberek.yapi.Kok;
-
-import java.util.*;
 
 /**
  * @author MDA
  */
 public class KokIstatistikleri implements Istatistik {
     private static HashMap kokler = new HashMap(100);
-    private static KelimeCozumleyici cozumleyici = null;
     private long toplamKelime = 0;
 
     private long toplamIsimKokSayisi = 0;
@@ -93,7 +95,7 @@ public class KokIstatistikleri implements Istatistik {
         kokListesi = new ArrayList();
         araToplamSayaci = 0;
 
-        // Kokleri bir listeye doldur (s�ralamak i�in)
+        // Kokleri bir listeye doldur (sIralamak iÇin)
         for (Iterator it = kokler.values().iterator(); it.hasNext();) {
             GenelKokIstatistikBilgisi kokBilgisi = (GenelKokIstatistikBilgisi) it.next();
             toplamKelime += kokBilgisi.getKullanimSayisi();

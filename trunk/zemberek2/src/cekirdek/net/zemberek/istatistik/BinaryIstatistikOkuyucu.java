@@ -4,55 +4,51 @@
  */
 package net.zemberek.istatistik;
 
-import net.zemberek.bilgi.KaynakYukleyici;
-import net.zemberek.bilgi.kokler.Sozluk;
-import net.zemberek.yapi.Kok;
-
-import java.io.BufferedReader;
+import java.io.DataInputStream;
+import java.io.EOFException;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Collection;
 
-public class BinaryIstatistikOkuyucu implements IstatistikOkuyucu {
+import net.zemberek.bilgi.kokler.Sozluk;
+import net.zemberek.yapi.Kok;
+
+public class BinaryIstatistikOkuyucu {
 
     protected FileInputStream is = null;
 
-    protected BufferedReader reader = null;
+    DataInputStream dis;
 
     public void initialize(String fileName) throws IOException {
-        reader = new KaynakYukleyici("UTF-8").getReader(fileName);
+        //reader = new KaynakYukleyici("UTF-8").getReader(fileName);
+    	dis = new DataInputStream(new FileInputStream(fileName));
     }
 
-    public KokIstatistikBilgisi oku(Sozluk sozluk) throws IOException {
+    public void oku(Sozluk sozluk) throws IOException {
+    	int sayac = 0;
         try {
             while (true) {
-                // Önce kök boyunu oku
-                int len = reader.read();
-                if (len == -1) {
-                    //System.out.println("EOF. ending.");
-                    reader.close();
-                    return null;
-                }
-                char[] buf = new char[len];
-                reader.read(buf);
-                String kokStr = new String(buf);
+                String kokStr = dis.readUTF();
+                int frekans = dis.readInt();
+                //System.out.println("Kok : " + kokStr + " Freq : " + frekans);
                 Collection<Kok> col = sozluk.kokBul(kokStr);
                 if (col == null) {
-                    //System.out.println("Isatistik bilgisi verilen kok sozlukte yok? Kok: " + kokStr);
-                    // frekansı da oku.
-                    reader.read();
-                    // sonraki koke geç.
-                    continue;
+                	// sonraki koke geç.
+                	continue;
                 }
-                int frekans = reader.read();
-                // Simdilik t�m es seslilere ayni frekansi veriyoruz.
+                sayac++;
+                // Simdilik tÜm es seslilere ayni frekansi veriyoruz.
                 for (Kok kok: col) {
                     kok.setFrekans(frekans);
                 }
             }
-        } finally {
-            if (reader != null)
-                reader.close();
+        }
+       catch(EOFException e){
+            	System.out.println("Bitti. Frekansı yazılan kök sayısı: " + sayac);
+            }
+       finally {
+            if (dis != null)
+                dis.close();
         }
     }
 
