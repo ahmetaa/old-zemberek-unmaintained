@@ -18,8 +18,8 @@ public class TurkceHeceBulucu implements HeceBulucu {
 
     public TurkceHeceBulucu(Alfabe alfabe) {
         // bu dizi bazi ozel hecelerin hesaplanmasinda kullanilir.
-        // kalp, fark, ebeveyn, kask, cenk, rapt gibi.
-        char[] ikinciKarakterler = {'l', 'r', 'y', 'p', 'n', 's'};
+        // kalp, fark, ebeveyn, kask, cenk, rapt, zamk gibi.
+        char[] ikinciKarakterler = {'l', 'r', 'y', 'p', 'n', 's', 'm'};
         for (char c : ikinciKarakterler) {
             harfSet.add(alfabe.harf(c));
         }
@@ -41,26 +41,26 @@ public class TurkceHeceBulucu implements HeceBulucu {
      */
     public int sonHeceHarfSayisi(HarfDizisi kelime) {
 
-        int sira = kelime.length() - 1;
-        TurkceHarf harf = kelime.harf(sira);
-        TurkceHarf oncekiHarf = kelime.harf(sira - 1);
+        final int boy = kelime.length();
+        TurkceHarf harf = kelime.harf(boy - 1);
+        TurkceHarf oncekiHarf = kelime.harf(boy - 2);
 
-        if (kelime.length() == 0)
+        if (boy == 0)
             return -1;
 
         if (harf.sesliMi()) {
             //kelime sadece sesli.
-            if (kelime.length() == 1)
+            if (boy == 1)
                 return 1;
             //onceki harf sesli kelime="saa" ise son ek "a"
             if (oncekiHarf.sesliMi())
                 return 1;
             //onceki harf sessiz ise ve kelime sadece 2 harf ise hece tum kelime. "ya"
-            if (kelime.length() == 2)
+            if (boy == 2)
                 return 2;
 
-            TurkceHarf ikiOncekiHarf = kelime.harf(sira - 2);
-            if (!ikiOncekiHarf.sesliMi() && kelime.length() == 3) {
+            TurkceHarf ikiOncekiHarf = kelime.harf(boy - 3);
+            if (!ikiOncekiHarf.sesliMi() && boy == 3) {
                 //harf dizilim denetimi gerekebilir. (tr,kr,st)
                 return 3;
             }
@@ -68,27 +68,27 @@ public class TurkceHeceBulucu implements HeceBulucu {
         } else {
 
             // tek sessiz ile hece olmaz.
-            if (kelime.length() == 1)
+            if (boy == 1)
                 return -1;
 
-            TurkceHarf ikiOncekiHarf = kelime.harf(sira - 2);
+            TurkceHarf ikiOncekiHarf = kelime.harf(boy - 3);
             if (oncekiHarf.sesliMi()) {
 
                 //kelime iki harfli (el, al) ya da iki onceki harf sesli (saat)
-                if (kelime.length() == 2 || ikiOncekiHarf.sesliMi())
+                if (boy == 2 || ikiOncekiHarf.sesliMi())
                     return 2;
 
-                TurkceHarf ucOncekiHarf = kelime.harf(sira - 3);
+                TurkceHarf ucOncekiHarf = kelime.harf(boy - 4);
                 // kelime uc harfli (kal, sel) ya da uc onceki harf sesli (kanat),
-                if (kelime.length() == 3 || ucOncekiHarf.sesliMi())
+                if (boy == 3 || ucOncekiHarf.sesliMi())
                     return 3;
 
                 //kelime dort harfli ise yukaridaki kurallari gecmesi nedeniyle hecelenemez.
                 // ornegin tren kelimesini hecelenemez sayiyoruz.
-                if (kelime.length() == 4)
+                if (boy == 4)
                     return -1;
 
-                TurkceHarf dortOncekiHarf = kelime.harf(sira - 4);
+                TurkceHarf dortOncekiHarf = kelime.harf(boy - 5);
                 if (!dortOncekiHarf.sesliMi())
                     return 3;
                 return 3;
@@ -97,10 +97,10 @@ public class TurkceHeceBulucu implements HeceBulucu {
                 // sadece bazi sessizler icin bu tur hece olusumuna izin veriliyor.
                 if (harfSet.contains(oncekiHarf)) {
 
-                    if (kelime.length() == 2 || !ikiOncekiHarf.sesliMi())
+                    if (boy == 2 || !ikiOncekiHarf.sesliMi())
                         return -1;
-                    TurkceHarf ucOncekiHarf = kelime.harf(sira - 3);
-                    if (kelime.length() > 3 && !ucOncekiHarf.sesliMi())
+                    TurkceHarf ucOncekiHarf = kelime.harf(boy - 4);
+                    if (boy > 3 && !ucOncekiHarf.sesliMi())
                         return 4;
                     return 3;
                 }

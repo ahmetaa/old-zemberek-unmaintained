@@ -45,7 +45,7 @@ public class DemoYonetici {
 
     public String islemUygula(String islemTipi, String giris) {
 
-        IslemTipi islem = null;
+        IslemTipi islem;
         try {
             islem = IslemTipi.valueOf(islemTipi);
             return islemUygula(islem, giris);
