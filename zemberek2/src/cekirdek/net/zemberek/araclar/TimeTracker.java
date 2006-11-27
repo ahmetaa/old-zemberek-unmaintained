@@ -23,6 +23,7 @@ import java.util.HashMap;
  */
 public class TimeTracker {
     public static int MAX_TIMETRACKER_USERS = 500;
+    public static final long BOLUCU=1000000000l;
     private static HashMap<String, TimerElement> users = new HashMap<String, TimerElement>();
 
     /**
@@ -50,7 +51,7 @@ public class TimeTracker {
      * @return :Bir önceki tick'ten bu yana geçen süre (milisaniye cinsinden)
      */
     public static long getElapsedTime(String name) {
-        TimerElement timer = (TimerElement) users.get(name);
+        TimerElement timer = users.get(name);
         if (timer == null)
             return -1;
         timer.refresh();
@@ -65,7 +66,7 @@ public class TimeTracker {
      * @return :Bir önceki tick'ten bu yana geçen süre (milisaniye cinsinden)
      */
     public static long getTimeDelta(String name) {
-        TimerElement timer = (TimerElement) users.get(name);
+        TimerElement timer = users.get(name);
         if (timer == null)
             return -1;
         timer.refresh();
@@ -81,11 +82,11 @@ public class TimeTracker {
      * @return : Bir önceki tick'ten bu yana geçen süre (Binde bir hassasiyetli saniye cinsinden cinsinden)
      */
     public static String getElapsedTimeString(String name) {
-        TimerElement timer = (TimerElement) users.get(name);
+        TimerElement timer = users.get(name);
         if (timer == null)
             return "Geçersiz Kronometre: " + name;
         timer.refresh();
-        return "Delta: " + (float) timer.getDiff() / 1000 + " s. Elapsed: " + (float) timer.getElapsedTime() / 1000 + " s.";
+        return "Delta: " + (double) timer.getDiff() / BOLUCU + " s. Elapsed: " + (double) timer.getElapsedTime() / BOLUCU + " s.";
     }
 
     /**
@@ -93,7 +94,7 @@ public class TimeTracker {
      * @return : Bir önceki tick'ten bu yana geçen süre (milisaniye cinsinden)
      */
     public static String getElapsedTimeStringAsMillis(String name) {
-        TimerElement timer = (TimerElement) users.get(name);
+        TimerElement timer =users.get(name);
         if (timer == null)
             return "Geçersiz Kronometre: " + name;
         timer.refresh();
@@ -106,13 +107,13 @@ public class TimeTracker {
      * @return : baslangictan bu yana islenen saniyedeki eleman sayisi
      */
     public static long getItemsPerSecond(String name, long itemCount) {
-        TimerElement timer = (TimerElement) users.get(name);
+        TimerElement timer = users.get(name);
         if (timer == null)
             return -1;
         timer.refresh();
         long items = 0;
         if (timer.getElapsedTime() > 0)
-            items = (1000 * itemCount) / timer.getElapsedTime();
+            items = (BOLUCU * itemCount) / timer.getElapsedTime();
         return items;
     }
 
@@ -124,12 +125,12 @@ public class TimeTracker {
      * @return başlangıçtan bu yana geçen süre
      */
     public static String stopClock(String name) {
-        TimerElement timer = (TimerElement) users.get(name);
+        TimerElement timer = users.get(name);
         if (timer == null)
             return name + " : Geçersiz Kronometre";
         timer.refresh();
         users.remove(name);
-        return "" + (float) timer.elapsedTime / 1000 + "sn." 
+        return "" + (float) timer.elapsedTime / BOLUCU + "sn."
                + "(" + timer.elapsedTime + " ms.)";
     }
 }
@@ -149,15 +150,15 @@ class TimerElement {
     long diff = 0;
 
     public TimerElement(String name) {
-        creationTime = System.currentTimeMillis();
+        creationTime = System.nanoTime();
         startTime = creationTime;
         lastTime = creationTime;
         this.name = name;
     }
 
     public void refresh() {
-        diff = System.currentTimeMillis() - lastTime;
-        lastTime = System.currentTimeMillis();
+        diff = System.nanoTime() - lastTime;
+        lastTime = System.nanoTime();
         elapsedTime = lastTime - startTime;
     }
 
