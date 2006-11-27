@@ -54,7 +54,7 @@ public class IkiliKokOkuyucu implements KokOkuyucu {
      */
     public Kok oku() throws IOException {
 
-        String icerik = null;
+        String icerik;
         //kok icerigini oku. eger dosya sonuna gelinmisse (EOFException) null dondur.
         try {
             icerik = dis.readUTF();

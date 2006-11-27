@@ -2,6 +2,7 @@ package net.zemberek.islemler.cozumleme;
 
 import net.zemberek.TemelTest;
 import net.zemberek.TestUtils;
+import net.zemberek.islemler.Heceleyici;
 
 import java.io.IOException;
 import java.util.List;
@@ -13,6 +14,7 @@ import java.util.List;
 public class TestKelimeCozumleyici extends TemelTest {
 
     static KelimeCozumleyici cozumleyici;
+    static Heceleyici heceleyici;
 
     public void setUp() throws IOException {
         super.setUp();
@@ -22,6 +24,7 @@ public class TestKelimeCozumleyici extends TemelTest {
                 this.alfabe,
                 dilBilgisi.ekler(),
                 dilBilgisi.cozumlemeYardimcisi());
+        heceleyici = new Heceleyici(alfabe, dilBilgisi.heceBulucu());
     }
 
     /**
