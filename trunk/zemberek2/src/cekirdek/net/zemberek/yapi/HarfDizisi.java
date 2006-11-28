@@ -76,7 +76,7 @@ public class HarfDizisi implements CharSequence {
     /**
      * gelen TurkceHarf dizisini icerige kopyalar.
      *
-     * @param dizi kopyalancak TurkceHarf dizisi.
+     * @param inpDizi kopyalancak TurkceHarf dizisi.
      */
     private HarfDizisi(TurkceHarf[] inpDizi) {
         boy = inpDizi.length;
