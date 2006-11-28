@@ -78,10 +78,10 @@ public class HarfDizisi implements CharSequence {
      *
      * @param dizi kopyalancak TurkceHarf dizisi.
      */
-    private HarfDizisi(TurkceHarf[] dizi) {
-        boy = dizi.length;
+    private HarfDizisi(TurkceHarf[] inpDizi) {
+        boy = inpDizi.length;
         dizi = new TurkceHarf[boy];
-        System.arraycopy(dizi, 0, dizi, 0, boy);
+        System.arraycopy(inpDizi, 0, dizi, 0, boy);
     }
 
     /**
