@@ -12,23 +12,26 @@ public class TusTakimi {
         {'1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '*', '-'},
         {'q', 'w', 'e', 'r', 't', 'y', 'u', '\u0131', 'o', 'p', '\u011f', '\u00fc'},
         {'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', '\u015f', 'i', ','},
-        {'<', 'z', 'x', 'c', 'v', 'b', 'n', 'm', '\u00f6', '\u00e7', '.', '.'}};
+        {'z', 'x', 'c', 'v', 'b', 'n', 'm', '\u00f6', '\u00e7', '.', '.','.'}};
     
     // Standart Türkçe F Klavye haritası.
     public static char[][] fKlavyeHaritasi = new char[][]{
         {'1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '*', '-'},
         {'f', 'g', '\u011f', '\u0131', 'o', 'd', 'r', 'n', 'h', 'p', 'q', 'w'},
-        {'u', 'i', 'e', 'a', '\u00fc', 't', 'k', 'm', 'l', 'y','\u015f', 'x', ','},
-        {'<', 'j', '\u00f6', 'v', 'c', '\u00e7', 'z', 's', 'b', '.', ','}};    
+        {'u', 'i', 'e', 'a', '\u00fc', 't', 'k', 'm', 'l', 'y','\u015f', 'x'},
+        {'j', '\u00f6', 'v', 'c', '\u00e7', 'z', 's', 'b', '.', ','}};
     
-    private static HashMap<Character, KarakterKoordinati> koordinatlar = new HashMap<Character, KarakterKoordinati>();
+    private char[][] klavyeHaritasi = null;
+    private HashMap<Character, KarakterKoordinati> koordinatlar = new HashMap<Character, KarakterKoordinati>();
+    
     private static TusTakimi q = new TusTakimi(qKlavyeHaritasi);
     private static TusTakimi f = new TusTakimi(fKlavyeHaritasi);
     
     public TusTakimi(char[][] klavyeHaritasi){
-        for(int i=0; i<qKlavyeHaritasi.length; i++){
-            for(int j=0; j<qKlavyeHaritasi[0].length; j++){
-                char c = qKlavyeHaritasi[i][j];
+    	this.klavyeHaritasi = klavyeHaritasi;
+        for(int i=0; i<klavyeHaritasi.length; i++){
+            for(int j=0; j<klavyeHaritasi[i].length; j++){
+                char c = klavyeHaritasi[i][j];
                 koordinatlar.put(new Character(c), new KarakterKoordinati(c,i,j));
             }
         }
@@ -40,6 +43,14 @@ public class TusTakimi {
     
     public static TusTakimi trF(){
     	return f;
+    }
+    
+    public KarakterKoordinati koordinat(char c){
+    	return koordinatlar.get(c);
+    }
+    
+    public KarakterKoordinati koordinat(int i, int j){
+    	return koordinatlar.get(klavyeHaritasi[i][j]);
     }
     
     
@@ -67,7 +78,11 @@ public class TusTakimi {
         return normalizeMesafe;
     }
     
-    private class KarakterKoordinati{
+    public String toStirng(){
+    	return koordinatlar.toString();
+    }
+    
+    public class KarakterKoordinati{
         char c;
         int x, y;
         
@@ -75,6 +90,10 @@ public class TusTakimi {
             this.c = c;
             this.x = x;
             this.y = y;
+        }
+        
+        public String toString(){
+        	return "(" + x + "," + y + ") " + c; 
         }
     }
 }
