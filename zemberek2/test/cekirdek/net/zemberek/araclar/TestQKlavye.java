@@ -4,31 +4,33 @@
  */
 package net.zemberek.araclar;
 
+import net.zemberek.araclar.TusTakimi;
 import junit.framework.TestCase;
 
 public class TestQKlavye extends TestCase {
     public void testQKlavye(){
         int mesafe = 0;
         int mesafe2 = 0;
-        mesafe = QTusTakimi.mesafeHesapla('a','a');
-        assertEquals(" Aynı karakterin mesafesi sıfır olmalıydı.", 0, mesafe);
+        
+        mesafe = TusTakimi.trQ().mesafeHesapla('a','a');
+        assertEquals(" AynÄ± karakterin mesafesi sÄ±fÄ±r olmalÄ±ydÄ±.", 0, mesafe);
 
-        mesafe = QTusTakimi.mesafeHesapla('a','%');
-        assertEquals(" Tanımsız karakter -1 döndürmeliydi.", -1, mesafe);
+        mesafe = TusTakimi.trQ().mesafeHesapla('a','%');
+        assertEquals(" TanÄ±msÄ±z karakter -1 dÃ¶ndÃ¼rmeliydi.", -1, mesafe);
 
-        mesafe = QTusTakimi.mesafeHesapla('a','s');
-        mesafe2 = QTusTakimi.mesafeHesapla('a','e');
+        mesafe = TusTakimi.trQ().mesafeHesapla('a','s');
+        mesafe2 = TusTakimi.trQ().mesafeHesapla('a','e');
         System.out.println("a-s: " + mesafe + " a-e: " + mesafe2);
-        assertTrue("a'nın s ye mesafesi e'ye olan mesafesinden az olmalıydı.", mesafe < mesafe2);
+        assertTrue("a'nÄ±n s ye mesafesi e'ye olan mesafesinden az olmalÄ±ydÄ±.", mesafe < mesafe2);
 
-        mesafe = QTusTakimi.mesafeHesapla('s','q');
-        mesafe2 = QTusTakimi.mesafeHesapla('s','e');
+        mesafe = TusTakimi.trQ().mesafeHesapla('s','q');
+        mesafe2 = TusTakimi.trQ().mesafeHesapla('s','e');
         System.out.println("s-q: " + mesafe + " s-e: " + mesafe2);
-        assertTrue("s'nın q ye mesafesi ile e'ye olan mesafesi aynı olmalıydı.", mesafe == mesafe2);
+        assertTrue("s'nin q ya mesafesi ile e'ye olan mesafesi aynÄ± olmalÄ±ydÄ±.", mesafe == mesafe2);
 
-        mesafe = QTusTakimi.mesafeHesapla('s','q');
-        mesafe2 = QTusTakimi.mesafeHesapla('s','a');
+        mesafe = TusTakimi.trQ().mesafeHesapla('s','q');
+        mesafe2 = TusTakimi.trQ().mesafeHesapla('s','a');
         System.out.println("s-q: " + mesafe + " s-a: " + mesafe2);
-        assertTrue("s'nın q ye mesafesi ile a'ye olan mesafesinden fazla olmalıydı.", mesafe > mesafe2);
+        assertTrue("s'nin q ya mesafesi ile a'ya olan mesafesinden fazla olmalÄ±ydÄ±.", mesafe > mesafe2);
     }
 }

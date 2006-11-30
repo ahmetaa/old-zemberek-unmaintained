@@ -6,7 +6,7 @@ package net.zemberek.araclar;
 
 import java.util.HashMap;
 
-public class QTusTakimi {
+public class TusTakimi {
     // Standart Türkçe Q Klavye haritası.
     public static char[][] qKlavyeHaritasi = new char[][]{
         {'1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '*', '-'},
@@ -14,18 +14,34 @@ public class QTusTakimi {
         {'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', '\u015f', 'i', ','},
         {'<', 'z', 'x', 'c', 'v', 'b', 'n', 'm', '\u00f6', '\u00e7', '.', '.'}};
     
-    private static HashMap koordinatlar = new HashMap();
-    static QTusTakimi instance = new QTusTakimi();
-    static{
+    // Standart Türkçe F Klavye haritası.
+    public static char[][] fKlavyeHaritasi = new char[][]{
+        {'1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '*', '-'},
+        {'f', 'g', '\u011f', '\u0131', 'o', 'd', 'r', 'n', 'h', 'p', 'q', 'w'},
+        {'u', 'i', 'e', 'a', '\u00fc', 't', 'k', 'm', 'l', 'y','\u015f', 'x', ','},
+        {'<', 'j', '\u00f6', 'v', 'c', '\u00e7', 'z', 's', 'b', '.', ','}};    
+    
+    private static HashMap<Character, KarakterKoordinati> koordinatlar = new HashMap<Character, KarakterKoordinati>();
+    private static TusTakimi q = new TusTakimi(qKlavyeHaritasi);
+    private static TusTakimi f = new TusTakimi(fKlavyeHaritasi);
+    
+    public TusTakimi(char[][] klavyeHaritasi){
         for(int i=0; i<qKlavyeHaritasi.length; i++){
             for(int j=0; j<qKlavyeHaritasi[0].length; j++){
                 char c = qKlavyeHaritasi[i][j];
-                koordinatlar.put(new Character(c),
-                        instance.new KarakterKoordinati(c,i,j)
-                        );
+                koordinatlar.put(new Character(c), new KarakterKoordinati(c,i,j));
             }
         }
     }
+    
+    public static TusTakimi trQ(){
+    	return q;
+    }
+    
+    public static TusTakimi trF(){
+    	return f;
+    }
+    
     
     /**
      * Verilen iki karakter arasındaki klavye mesafesini getirir.      
@@ -40,7 +56,7 @@ public class QTusTakimi {
      * Eğer karakterlerden herhangi biri klavye haritasında yoksa -1 döner.
      *  
      */
-    public static int mesafeHesapla(char c1, char c2){
+    public int mesafeHesapla(char c1, char c2){
         KarakterKoordinati k1 = (KarakterKoordinati)koordinatlar.get(new Character(c1));
         KarakterKoordinati k2 = (KarakterKoordinati)koordinatlar.get(new Character(c2));
         if(k1 == null || k2 == null){
