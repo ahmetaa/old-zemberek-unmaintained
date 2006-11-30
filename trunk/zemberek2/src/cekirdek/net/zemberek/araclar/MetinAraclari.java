@@ -15,16 +15,6 @@ public class MetinAraclari {
     private static JaroWinkler jaroWinkler = new JaroWinkler();
 
     /**
-     * Verilen iki karakterin arasındakli klavye mesafesini döndürür (Q). 
-     * @param c1
-     * @param c2
-     * @return tuslar arasi mesafe
-     */
-    public static int klavyeMesafesi(char c1, char c2){
-        return QTusTakimi.mesafeHesapla(c1, c2);
-    }
-
-    /**
      * Degistirilmis Levenshtein Edit Dist. algoritması. transpozisyonları da 1 düzeltme mesafesi
      * olarak hesaplar.
      *
