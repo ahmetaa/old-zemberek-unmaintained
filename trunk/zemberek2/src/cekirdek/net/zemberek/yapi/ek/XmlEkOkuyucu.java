@@ -290,9 +290,9 @@ public class XmlEkOkuyucu {
     }
 
     private final Set<Character> sesliKurallari =
-            new HashSet<Character>(Arrays.asList(new Character[]{'A', 'I', 'E', 'Y'}));
+            new HashSet<Character>(Arrays.asList('A', 'I', 'E', 'Y'));
     private final Set<Character> harfKurallari =
-            new HashSet<Character>(Arrays.asList(new Character[]{'+', '>'}));
+            new HashSet<Character>(Arrays.asList('+', '>'));
 
     private List<EkUretimBileseni> ekUretimKelimesiCozumle(String uretimKelimesi) {
         if (uretimKelimesi == null || uretimKelimesi.length() == 0)
@@ -305,7 +305,7 @@ public class XmlEkOkuyucu {
     }
 
     /**
-     * Basit bir tokenizer. Iterable yapidadir, yani kural kelimesine gore
+     * Basit bir tokenizer. Iterable yapidadir, kural kelimesine gore
      * her iterasyonda eger varsa yeni bir EkUretimBileseni uretir.
      */
     class EkKuralCozumleyici implements Iterable<EkUretimBileseni> {
