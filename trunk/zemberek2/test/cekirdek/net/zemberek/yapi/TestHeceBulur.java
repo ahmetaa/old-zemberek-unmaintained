@@ -2,6 +2,9 @@ package net.zemberek.yapi;
 
 import net.zemberek.TemelTest;
 import net.zemberek.tr.yapi.TurkceHeceBulucu;
+import static org.junit.Assert.assertEquals;
+import org.junit.Test;
+
 
 /**
  * User: ahmet
@@ -9,6 +12,7 @@ import net.zemberek.tr.yapi.TurkceHeceBulucu;
  */
 public class TestHeceBulur extends TemelTest {
 
+    @Test
     public void testSonHece() {
         HeceBulucu heceBulur = new TurkceHeceBulucu(alfabe);
         String[] strs = {"turk", "ara", "sarta", "siir", "siiir", "kanat", "kanaat",

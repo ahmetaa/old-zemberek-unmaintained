@@ -1,12 +1,14 @@
 package net.zemberek.araclar.turkce;
 
-import junit.framework.TestCase;
+import static org.junit.Assert.assertEquals;
+import org.junit.Test;
 
 import java.util.List;
 
 /**
  */
-public class TestExtractor extends TestCase {
+public class TestExtractor  {
+    @Test
     public void testAnalizDizisiOlustur() {
         String giris = "Merhaba, ben Ahmet!.  Nasilsiniz? ";
         String[] parcalar = {"Merhaba",

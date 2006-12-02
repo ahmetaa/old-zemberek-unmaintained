@@ -1,21 +1,26 @@
 package net.zemberek.yapi.alfabe;
 
-import junit.framework.TestCase;
 import net.zemberek.yapi.Alfabe;
 import net.zemberek.yapi.TurkceHarf;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import org.junit.Before;
+import org.junit.Test;
 
 import java.io.IOException;
 
-public class TestAlfabe extends TestCase {
+public class TestAlfabe {
 
     private Alfabe alfabe;
 
-    public void setUp() throws IOException {
+    @Before
+    public void once() throws IOException {
         alfabe = new Alfabe(
                 "kaynaklar/tr/bilgi/harf_tr.txt",
                 "tr");
     }
 
+    @Test
     public void testHarfErisim() {
         TurkceHarf harf = new TurkceHarf('a', 1);
         harf.setSesli(true);
@@ -26,11 +31,13 @@ public class TestAlfabe extends TestCase {
 
     }
 
+    @Test
     public void testAyikla() {
         String kel = "a'ghh-";
         assertEquals(alfabe.ayikla(kel), "aghh");
     }
 
+    @Test
     public void testTurkceMi() {
         String kel = "wws$$dgsdashj";
         assertTrue(!alfabe.cozumlemeyeUygunMu(kel));
@@ -38,6 +45,7 @@ public class TestAlfabe extends TestCase {
         assertTrue(alfabe.cozumlemeyeUygunMu(kel));
     }
 
+    @Test
     public void testLowerUpperCase() {
         TurkceHarf ii = alfabe.harf(Alfabe.CHAR_ii);
         TurkceHarf harfI = alfabe.buyukHarf(ii);

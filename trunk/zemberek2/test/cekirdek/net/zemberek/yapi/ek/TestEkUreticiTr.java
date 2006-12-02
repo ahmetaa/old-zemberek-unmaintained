@@ -1,9 +1,9 @@
 package net.zemberek.yapi.ek;
 
-import junit.framework.TestCase;
+import net.zemberek.TemelTest;
 import net.zemberek.bilgi.KaynakYukleyici;
 import net.zemberek.tr.yapi.ek.EkUreticiTr;
-import net.zemberek.TemelTest;
+import org.junit.Test;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -16,7 +16,7 @@ import java.util.Arrays;
  */
 public class TestEkUreticiTr extends TemelTest {
 
-
+@Test
     public void testUretici() throws IOException {
         EkUretici uretici = new EkUreticiTr(alfabe);
 

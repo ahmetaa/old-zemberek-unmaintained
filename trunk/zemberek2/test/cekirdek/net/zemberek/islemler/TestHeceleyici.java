@@ -5,8 +5,12 @@ import net.zemberek.tr.yapi.TurkceHeceBulucu;
 import net.zemberek.yapi.Alfabe;
 import net.zemberek.yapi.HarfDizisi;
 import net.zemberek.yapi.HeceBulucu;
+import static org.junit.Assert.*;
+import org.junit.Before;
+import org.junit.Test;
 
 import java.io.IOException;
+import java.util.Arrays;
 
 /**
  */
@@ -14,11 +18,13 @@ public class TestHeceleyici extends TemelTest {
 
     Heceleyici heceleyici;
 
-    public void setUp() throws IOException {
-        super.setUp();
+    @Before
+    public void once() throws IOException {
+        super.once();
         heceleyici = new Heceleyici(dilBilgisi.alfabe(), dilBilgisi.heceBulucu());
     }
 
+    @Test
     public void testHeceleyici() {
         String kelime = "kanaat";
         String[] beklenen = {"ka", "na", "at"};
@@ -39,13 +45,15 @@ public class TestHeceleyici extends TemelTest {
         }
     }
 
+    @Test
     public void testHecelenemez() {
         String[] strs = {"tr", "r", "rty", "artpya", "kitttr", "kertreryt"};
-        for (int i = 0; i < strs.length; i++)
-            assertTrue(heceleyici.hecele(strs[i]).length == 0);
+        for (String str : strs)
+            assertTrue(heceleyici.hecele(str).length == 0);
 
     }
 
+    @Test
     public void testSonHece() {
         HeceBulucu heceBulur = new TurkceHeceBulucu(alfabe);
         String[] strs = {"turk", "ara", "sarta", "siir", "siiir", "kanat", "kanaat",
@@ -61,6 +69,7 @@ public class TestHeceleyici extends TemelTest {
         }
     }
 
+    @Test
     public void testHecelenebilirmi() {
         String strs[] = {"NATO", "merhabalar", "kimyev" + Alfabe.CHAR_SAPKALI_i, "BORA"};
         for (String s : strs)
@@ -72,54 +81,48 @@ public class TestHeceleyici extends TemelTest {
 
     }
 
+    @Test
     public void testHeceIndeks1() {
         String kelime = "merhaba";
-        int[] sonuc = heceleyici.heceIndeksleriniBul(kelime);
-        for (int i = 0; i < sonuc.length; i++) {
-            System.out.println(sonuc[i]);
-        }
-        assertNotNull(sonuc);
-        assertEquals(3, sonuc.length);
-        assertEquals(3, sonuc[1]);
-        assertEquals(5, sonuc[2]);
+        int[] sonuclar = heceleyici.heceIndeksleriniBul(kelime);
+        Arrays.toString(sonuclar);
+        assertNotNull(sonuclar);
+        assertEquals(3, sonuclar.length);
+        assertEquals(3, sonuclar[1]);
+        assertEquals(5, sonuclar[2]);
     }
 
+    @Test
     public void testHeceIndeks2() {
         String kelime = "türklerin";
-        int[] sonuc = heceleyici.heceIndeksleriniBul(kelime);
-        for (int i = 0; i < sonuc.length; i++) {
-            System.out.println(sonuc[i]);
-        }
-        assertNotNull(sonuc);
-        assertEquals(3, sonuc.length);
-        assertEquals(4, sonuc[1]);
-        assertEquals(6, sonuc[2]);
+        int[] sonuclar = heceleyici.heceIndeksleriniBul(kelime);
+        Arrays.toString(sonuclar);
+        assertNotNull(sonuclar);
+        assertEquals(3, sonuclar.length);
+        assertEquals(4, sonuclar[1]);
+        assertEquals(6, sonuclar[2]);
     }
 
     public void testHeceIndeks3() {
         String kelime = "türkülerin";
-        int[] sonuc = heceleyici.heceIndeksleriniBul(kelime);
-        for (int i = 0; i < sonuc.length; i++) {
-            System.out.println(sonuc[i]);
-        }
-        assertNotNull(sonuc);
-        assertEquals(4, sonuc.length);
-        assertEquals(3, sonuc[1]);
-        assertEquals(5, sonuc[2]);
-        assertEquals(7, sonuc[3]);
+        int[] sonuclar = heceleyici.heceIndeksleriniBul(kelime);
+        Arrays.toString(sonuclar);
+        assertNotNull(sonuclar);
+        assertEquals(4, sonuclar.length);
+        assertEquals(3, sonuclar[1]);
+        assertEquals(5, sonuclar[2]);
+        assertEquals(7, sonuclar[3]);
     }
 
     public void testHeceIndeks4() {
         String kelime = "psikoloji";
-        int[] sonuc = heceleyici.heceIndeksleriniBul(kelime);
-        for (int i = 0; i < sonuc.length; i++) {
-            System.out.println(sonuc[i]);
-        }
-        assertNotNull(sonuc);
-        assertEquals(4, sonuc.length);
-        assertEquals(3, sonuc[1]);
-        assertEquals(5, sonuc[2]);
-        assertEquals(7, sonuc[3]);
+        int[] sonuclar = heceleyici.heceIndeksleriniBul(kelime);
+        Arrays.toString(sonuclar);
+        assertNotNull(sonuclar);
+        assertEquals(4, sonuclar.length);
+        assertEquals(3, sonuclar[1]);
+        assertEquals(5, sonuclar[2]);
+        assertEquals(7, sonuclar[3]);
     }
 
 }

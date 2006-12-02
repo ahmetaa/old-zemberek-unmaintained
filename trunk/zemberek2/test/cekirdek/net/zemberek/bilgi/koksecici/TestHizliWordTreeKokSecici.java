@@ -3,16 +3,18 @@
  */
 package net.zemberek.bilgi.koksecici;
 
-import net.zemberek.TestUtils;
 import net.zemberek.TemelTest;
+import net.zemberek.TestUtils;
 import net.zemberek.araclar.TimeTracker;
 import net.zemberek.bilgi.araclar.DuzYaziKokOkuyucu;
 import net.zemberek.bilgi.araclar.IkiliKokOkuyucu;
 import net.zemberek.bilgi.araclar.KokOkuyucu;
+import net.zemberek.bilgi.kokler.AgacSozluk;
 import net.zemberek.bilgi.kokler.KesinKokBulucu;
 import net.zemberek.bilgi.kokler.KokBulucu;
 import net.zemberek.bilgi.kokler.ToleransliKokBulucu;
-import net.zemberek.bilgi.kokler.AgacSozluk;
+import org.junit.Before;
+import org.junit.Test;
 
 import java.io.IOException;
 import java.util.List;
@@ -26,7 +28,8 @@ public class TestHizliWordTreeKokSecici extends TemelTest {
     String[] kelimeler;
     KokOkuyucu okuyucu;
 
-    public void setUp() throws IOException {
+    @Before
+    public void once() throws IOException {
         TimeTracker.startClock("x");
         okuyucu = new DuzYaziKokOkuyucu(
                 "kaynaklar/tr/test/test-kokler.txt",
@@ -37,6 +40,7 @@ public class TestHizliWordTreeKokSecici extends TemelTest {
         System.out.println("Okuyucu Initialization s�resi: " + TimeTracker.getElapsedTimeString("x"));
     }
 
+    @Test
     public void testWordTreeKokSecici() {
         bulucu = new KesinKokBulucu(sozluk.getAgac());
         System.out.println("Agac:" + sozluk.getAgac().getKokDugumu().getStringRep(2));
@@ -45,6 +49,7 @@ public class TestHizliWordTreeKokSecici extends TemelTest {
         System.out.println("Tamamlanma s�resi: " + TimeTracker.stopClock("x"));
     }
 
+    @Test
     public void testToleransliKokBulBasit() {
         bulucu = new ToleransliKokBulucu(sozluk.getAgac(), 1);
         System.out.println("Agac:" + sozluk.getAgac().getKokDugumu().getStringRep(2));
@@ -53,6 +58,7 @@ public class TestHizliWordTreeKokSecici extends TemelTest {
         System.out.println("Tamamlanma s�resi: " + TimeTracker.stopClock("x"));
     }
 
+    @Test
     public void testKokSeciciTumSozluk() throws IOException {
         okuyucu = new IkiliKokOkuyucu("kaynaklar/tr/bilgi/binary-kokler.bin",dilBilgisi.kokOzelDurumlari());
         sozluk = new AgacSozluk(okuyucu, alfabe, dilBilgisi.kokOzelDurumlari());

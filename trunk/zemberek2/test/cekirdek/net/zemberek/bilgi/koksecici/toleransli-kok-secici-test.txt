@@ -1,0 +1,5 @@
+ixterler:iste,de
+ulda:al,al,el
+dvulcu:davul,de
+sasndalyeci:sandalye
+trup:turp,tur

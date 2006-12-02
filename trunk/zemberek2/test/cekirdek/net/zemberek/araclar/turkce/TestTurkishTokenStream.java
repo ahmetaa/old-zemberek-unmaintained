@@ -3,7 +3,9 @@
  */
 package net.zemberek.araclar.turkce;
 
-import junit.framework.TestCase;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import org.junit.Test;
 
 import java.io.ByteArrayInputStream;
 import java.util.ArrayList;
@@ -11,8 +13,9 @@ import java.util.ArrayList;
 /**
  * @author MDA & GBA
  */
-public class TestTurkishTokenStream extends TestCase {
+public class TestTurkishTokenStream {
 
+    @Test
     public void testNextWord() {
         String input = "Ahmet Mehmet Betul Madeline";
         ArrayList list = new ArrayList();
@@ -27,6 +30,7 @@ public class TestTurkishTokenStream extends TestCase {
         assertTrue(((String) list.get(0)).equals("ahmet"));
     }
 
+    @Test
     public void testNextSentence() {
         ArrayList list = new ArrayList();
         TurkishTokenStream tstream;
@@ -36,11 +40,10 @@ public class TestTurkishTokenStream extends TestCase {
             list.add(s);
         }
         assertEquals(5, list.size());
-        for (int i = 0; i < list.size(); i++) {
-            System.out.println(list.get(i));
-        }
+        System.out.println("list = " + list);
     }
 
+    @Test
     public void testNextWordKomplex() {
         ArrayList list = new ArrayList();
         TurkishTokenStream tstream;
@@ -50,9 +53,7 @@ public class TestTurkishTokenStream extends TestCase {
             list.add(s);
         }
         assertEquals(7, list.size());
-        for (int i = 0; i < list.size(); i++) {
-            System.out.println(list.get(i));
-        }
+        System.out.println("list = " + list);
         assertTrue("kelime" + list.get(0), list.get(6).equals(list.get(0)));
     }
 

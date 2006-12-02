@@ -8,10 +8,7 @@ import net.zemberek.bilgi.KaynakYukleyici;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 /**
  * @author MDA & GBA
@@ -56,60 +53,6 @@ public class TestUtils {
         }
     }
 
-    /**
-     * Diziler ayný mý kontrolü
-     *
-     * @param a
-     * @param b
-     */
-    public static void assertArraysEqual(byte[] a, byte[] b) {
-        if (a.length != b.length) {
-            throw new AssertionFailedError("Diziler eþit deðil ");
-        }
-
-        for (int i = 0; i < a.length; i++) {
-            if (a[i] != b[i]) {
-                throw new AssertionFailedError("Diziler eþit deðil");
-            }
-        }
-    }
-
-    /**
-     * char dizileri için eþitlik kontrolü.
-     *
-     * @param a
-     * @param b
-     */
-    public static void assertArraysEqual(char[] a, char[] b) {
-        if (a.length != b.length) {
-            throw new AssertionFailedError("Diziler eþit deðil ");
-        }
-
-        for (int i = 0; i < a.length; i++) {
-            if (a[i] != b[i]) {
-                throw new AssertionFailedError("Diziler eþit deðil");
-            }
-        }
-    }
-
-    /**
-     * char dizileri için eþitlik kontrolü.
-     *
-     * @param a
-     * @param b
-     */
-    public static void assertArraysEqual(Object[] a, Object[] b) {
-        if (a.length != b.length) {
-            throw new AssertionFailedError("Diziler eþit deðil ");
-        }
-
-        for (int i = 0; i < a.length; i++) {
-            if (!a[i].equals(b[i])) {
-                throw new AssertionFailedError("Diziler eþit deðil");
-            }
-        }
-    }
-
     public static void printList(List list) {
         System.out.println("Liste boyu: " + list.size());
         for (Object obj : list) {
@@ -117,15 +60,14 @@ public class TestUtils {
         }
     }
 
-    public static void printArray(Object[] array) {
-        System.out.println("Liste boyu: " + array.length);
-        for (Object obj : array) {
-            System.out.println(obj.toString());
-        }
+
+    public static <T> Set<T> makeSet(T... elements) {
+        return new HashSet(Arrays.asList(elements));
     }
 
     /**
      * basit satir okuyucu.
+     *
      * @param dosya
      * @return
      * @throws IOException
@@ -140,5 +82,24 @@ public class TestUtils {
         }
         reader.close();
         return satirlar;
+    }
+
+    public static List<TestGirdisi> girdileriOku(String dosya) throws IOException {
+
+        List<String> satirlar = satirlariOku(dosya);
+        List<TestGirdisi> sonuc= new ArrayList();
+        for (String s : satirlar) {
+                int esitlik = s.indexOf(':');
+                if (esitlik == -1)
+                    throw new IllegalArgumentException("Satirda ':' simgesi bekleniyordu: " + s);
+                String key = s.substring(0, esitlik).trim();
+                String[] deger;
+                if (s.length() > esitlik - 1)
+                    deger = s.substring(esitlik + 1).trim().split(",");
+                else
+                    deger = new String[0];
+            sonuc.add(new TestGirdisi(key, deger));
+        }
+        return sonuc;
     }
 }

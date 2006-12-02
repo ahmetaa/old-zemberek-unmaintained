@@ -1,10 +1,8 @@
 package net.zemberek.araclar.turkce;
 
-import junit.framework.TestCase;
-
 /**
  */
-public class TestTurkceMetinOkuyucu extends TestCase {
+public class TestTurkceMetinOkuyucu {
     TurkceMetinOkuyucu mo = new TurkceMetinOkuyucu();
 
 

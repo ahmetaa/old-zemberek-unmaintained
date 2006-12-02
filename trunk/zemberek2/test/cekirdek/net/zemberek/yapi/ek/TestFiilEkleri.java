@@ -1,111 +1,124 @@
 package net.zemberek.yapi.ek;
 
 import net.zemberek.tr.yapi.ek.TurkceEkAdlari;
+import org.junit.Test;
 
 /**
  */
 public class TestFiilEkleri extends BaseTestEkler {
 
-    private Ek getEk(String ad) {
+    private Ek ek(String ad) {
         return  dilBilgisi.ekler().ek(ad);
     }
 
-
+    @Test
     public void testFiilCesine() {
-        Ek ek = getEk(TurkceEkAdlari.FIIL_GIBI_CESINE);
+        Ek ek = ek(TurkceEkAdlari.FIIL_GIBI_CESINE);
         String[] strs = {"gelir", "okuyacak", "yazar", "yer"};
         String[] gercekEkler = {"cesine", "cas\u0131na", "cas\u0131na", "cesine"};
         olusanEkKontrol(strs, gercekEkler, ek);
     }
 
+    @Test
     public void testFiilDik() {
-        Ek ek = getEk(TurkceEkAdlari.FIIL_BELIRTME_DIK);
+        Ek ek = ek(TurkceEkAdlari.FIIL_BELIRTME_DIK);
         String[] strs = {"gel", "oku", "sek", "ye"};
         String[] gercekEkler = {"dik", "duk", "tik", "dik"};
         olusanEkKontrol(strs, gercekEkler, ek);
     }
 
 
+    @Test
     public void testFiilDikce() {
-        Ek ek = getEk(TurkceEkAdlari.FIIL_DEVAMLILIK_DIKCE);
+        Ek ek = ek(TurkceEkAdlari.FIIL_DEVAMLILIK_DIKCE);
         String[] strs = {"gel", "oku", "sek", "ye"};
         String[] gercekEkler = {"dik\u00e7e", "duk\u00e7a", "tik\u00e7e", "dik\u00e7e"};
         olusanEkKontrol(strs, gercekEkler, ek);
     }
 
+    @Test
     public void testFiilDiliGecmisZaman() {
-        Ek ek = getEk(TurkceEkAdlari.FIIL_GECMISZAMAN_DI);
+        Ek ek = ek(TurkceEkAdlari.FIIL_GECMISZAMAN_DI);
         String[] strs = {"gel", "oku", "sek", "ye"};
         String[] gercekEkler = {"di", "du", "ti", "di"};
         olusanEkKontrol(strs, gercekEkler, ek);
     }
 
+    @Test
     public void testFiilDonusumEn() {
-        Ek ek = getEk(TurkceEkAdlari.FIIL_DONUSUM_EN);
+        Ek ek = ek(TurkceEkAdlari.FIIL_DONUSUM_EN);
         String[] strs = {"gel", "oku", "sek", "ye"};
         String[] gercekEkler = {"en", "yan", "en", "yen"};
         olusanEkKontrol(strs, gercekEkler, ek);
     }
 
+    @Test
     public void testFiilEdilgen() {
-        Ek ek = getEk(TurkceEkAdlari.FIIL_EDILGEN_IL);
+        Ek ek = ek(TurkceEkAdlari.FIIL_EDILGEN_IL);
         String[] strs = {"gel", "sek"};
         String[] gercekEkler = {"in", "il"};
         olusanEkKontrol(strs, gercekEkler, ek);
     }
 
+    @Test
     public void testFiilEli() {
-        Ek ek = getEk(TurkceEkAdlari.FIIL_BERI_ELI);
+        Ek ek = ek(TurkceEkAdlari.FIIL_BERI_ELI);
         String[] strs = {"gel", "oku", "sek", "ye"};
         String[] gercekEkler = {"eli", "yal\u0131", "eli", "yeli"};
         olusanEkKontrol(strs, gercekEkler, ek);
     }
 
+    @Test
     public void testFiilEmirO() {
-        Ek ek = getEk(TurkceEkAdlari.FIIL_EMIR_O_SIN);
+        Ek ek = ek(TurkceEkAdlari.FIIL_EMIR_O_SIN);
         String[] strs = {"gel", "oku", "sek", "ye"};
         String[] gercekEkler = {"sin", "sun", "sin", "sin"};
         olusanEkKontrol(strs, gercekEkler, ek);
     }
 
+    @Test
     public void testFiilEmirOnlar() {
-        Ek ek = getEk(TurkceEkAdlari.FIIL_EMIR_ONLAR_SINLER);
+        Ek ek = ek(TurkceEkAdlari.FIIL_EMIR_ONLAR_SINLER);
         String[] strs = {"gel", "oku", "sek", "ye"};
         String[] gercekEkler = {"sinler", "sunlar", "sinler", "sinler"};
         olusanEkKontrol(strs, gercekEkler, ek);
     }
 
+    @Test
     public void testFiilEmirSiz() {
-        Ek ek = getEk(TurkceEkAdlari.FIIL_EMIR_SIZ_IN);
+        Ek ek = ek(TurkceEkAdlari.FIIL_EMIR_SIZ_IN);
         String[] strs = {"gel", "oku", "sek", "ye"};
         String[] gercekEkler = {"in", "yun", "in", "yin"};
         olusanEkKontrol(strs, gercekEkler, ek);
     }
 
+    @Test
     public void testFiilEmirSizResmi() {
-        Ek ek = getEk(TurkceEkAdlari.FIIL_EMIR_SIZRESMI_INIZ);
+        Ek ek = ek(TurkceEkAdlari.FIIL_EMIR_SIZRESMI_INIZ);
         String[] strs = {"gel", "oku", "sek", "ye"};
         String[] gercekEkler = {"iniz", "yunuz", "iniz", "yiniz"};
         olusanEkKontrol(strs, gercekEkler, ek);
     }
 
+    @Test
     public void testFiilErek() {
-        Ek ek = getEk(TurkceEkAdlari.FIIL_SUREKLILIK_EREK);
+        Ek ek = ek(TurkceEkAdlari.FIIL_SUREKLILIK_EREK);
         String[] strs = {"gel", "oku", "bak", "eri"};
         String[] gercekEkler = {"erek", "yarak", "arak", "yerek"}; //lutfen gulmeyin..
         olusanEkKontrol(strs, gercekEkler, ek);
     }
 
-
+    @Test
     public void testFiilEttirgenTekrar() {
-        Ek ek = getEk(TurkceEkAdlari.FIIL_ETTIRGEN_TEKRAR_T);
+        Ek ek = ek(TurkceEkAdlari.FIIL_ETTIRGEN_TEKRAR_T);
         String[] strs = {"gerdir", "bakt\u0131r", "erittir"};
         String[] gercekEkler = {"t", "t", "t"};
         olusanEkKontrol(strs, gercekEkler, ek);
     }
 
+    @Test
     public void testFiilGelecekZaman() {
-        Ek ek = getEk(TurkceEkAdlari.FIIL_GELECEKZAMAN_ECEK);
+        Ek ek = ek(TurkceEkAdlari.FIIL_GELECEKZAMAN_ECEK);
         String[] strs = {"ger", "bak", "oku"};
         String[] gercekEkler = {"ecek", "acak", "yacak"};
         olusanEkKontrol(strs, gercekEkler, ek);
@@ -124,36 +137,41 @@ public class TestFiilEkleri extends BaseTestEkler {
         assertEquals(ek.icerik().toString(), "ir");*/
     }
 
+    @Test
     public void testFiilIci() {
-        Ek ek = getEk(TurkceEkAdlari.FIIL_TANIMLAMA_ICI);
+        Ek ek = ek(TurkceEkAdlari.FIIL_TANIMLAMA_ICI);
         String[] strs = {"ger", "bak", "oku"};
         String[] gercekEkler = {"ici", "\u0131c\u0131", "yucu"};
         olusanEkKontrol(strs, gercekEkler, ek);
     }
 
+    @Test
     public void testFiilIm() {
-        Ek ek = getEk(TurkceEkAdlari.FIIL_DONUSUM_IM);
+        Ek ek = ek(TurkceEkAdlari.FIIL_DONUSUM_IM);
         String[] strs = {"ger", "bak", "oku"};
         String[] gercekEkler = {"im", "\u0131m", "num"};
         olusanEkKontrol(strs, gercekEkler, ek);
     }
 
+    @Test
     public void testFiilInce() {
-        Ek ek = getEk(TurkceEkAdlari.FIIL_ZAMAN_INCE);
+        Ek ek = ek(TurkceEkAdlari.FIIL_ZAMAN_INCE);
         String[] strs = {"ger", "bak", "oku"};
         String[] gercekEkler = {"ince", "\u0131nca", "yunca"};
         olusanEkKontrol(strs, gercekEkler, ek);
     }
 
+    @Test
     public void testFiilIp() {
-        Ek ek = getEk(TurkceEkAdlari.FIIL_IMSI_IP);
+        Ek ek = ek(TurkceEkAdlari.FIIL_IMSI_IP);
         String[] strs = {"ger", "bak", "oku"};
         String[] gercekEkler = {"ip", "\u0131p", "yup"};
         olusanEkKontrol(strs, gercekEkler, ek);
     }
 
+    @Test
     public void testFiilIs() {
-        Ek ek = getEk(TurkceEkAdlari.FIIL_DONUSUM_IS);
+        Ek ek = ek(TurkceEkAdlari.FIIL_DONUSUM_IS);
         String[] strs = {"ger", "bak", "oku"};
         String[] gercekEkler = {"i\u015f", "\u0131\u015f", "yu\u015f"};
         olusanEkKontrol(strs, gercekEkler, ek);

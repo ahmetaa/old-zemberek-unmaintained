@@ -5,7 +5,6 @@ package net.zemberek.bilgi.koksecici;
 
 import junit.framework.TestCase;
 
-
 import java.io.IOException;
 
 /**

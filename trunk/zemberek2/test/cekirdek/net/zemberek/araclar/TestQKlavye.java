@@ -4,10 +4,13 @@
  */
 package net.zemberek.araclar;
 
-import net.zemberek.araclar.TusTakimi;
-import junit.framework.TestCase;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import org.junit.Test;
 
-public class TestQKlavye extends TestCase {
+public class TestQKlavye {
+
+    @Test
     public void testQKlavye(){
         int mesafe = 0;
         int mesafe2 = 0;

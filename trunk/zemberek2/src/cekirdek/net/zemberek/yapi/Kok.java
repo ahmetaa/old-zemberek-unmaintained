@@ -61,6 +61,7 @@ public class Kok {
             if (ozelDurumIceriyormu(ozelDurum.tip()))
                 return;
             KokOzelDurumu[] yeni = new KokOzelDurumu[ozelDurumlar.length + 1];
+            //burada elle dizi kopyalama yapiyoruz, cunku genellikle ozel durum sayisi 1
             for (int i = 0; i < ozelDurumlar.length; i++) {
                 yeni[i] = ozelDurumlar[i];
             }

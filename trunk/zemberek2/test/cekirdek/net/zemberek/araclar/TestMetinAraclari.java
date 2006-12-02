@@ -3,8 +3,9 @@
  */
 package net.zemberek.araclar;
 
-import junit.framework.TestCase;
 import net.zemberek.araclar.turkce.YaziIsleyici;
+import static org.junit.Assert.*;
+import org.junit.Test;
 
 import java.io.IOException;
 import java.util.List;
@@ -12,10 +13,13 @@ import java.util.List;
 /**
  * @author MDA & GBA
  */
-public class TestMetinAraclari extends TestCase {
+public class TestMetinAraclari {
+
     public void testInjectError() {
 
     }
+
+    @Test
     public void testEditDistance() {
         assertEquals(0, MetinAraclari.editDistance("elma", "elma"));
         assertEquals(1, MetinAraclari.editDistance("elma", "elmax"));
@@ -37,6 +41,7 @@ public class TestMetinAraclari extends TestCase {
         assertEquals(1, MetinAraclari.editDistance("varil", "avril"));
     }
 
+    @Test
     public void testInModifiedLevenshteinDistance() {
         assertTrue(MetinAraclari.inEditDistance("elma", "elma", 1));
         assertTrue(MetinAraclari.inEditDistance("elma", "ekma", 1));
@@ -51,6 +56,7 @@ public class TestMetinAraclari extends TestCase {
         assertTrue(MetinAraclari.inEditDistance("armutlar", "armutlr", 1));
     }
 
+    @Test
     public void testIsInSubStringEditDistance() {
         assertTrue(MetinAraclari.isInSubstringEditDistance("elma", "elma", 1));
         assertTrue(MetinAraclari.isInSubstringEditDistance("elma", "elmalar", 1));
@@ -59,6 +65,7 @@ public class TestMetinAraclari extends TestCase {
         assertTrue(MetinAraclari.isInSubstringEditDistance("sefil", "sfil", 1));
     }
 
+    @Test
     public void testJaroWinklerBenzerlik()
     {
         assertTrue(MetinAraclari.sozcukBenzerlikOrani("elma","elm")>0.9d);
@@ -67,17 +74,17 @@ public class TestMetinAraclari extends TestCase {
         assertTrue(MetinAraclari.sozcukBenzerlikOrani("elma","elmar")>0.9d);
     }
 
+    @Test
     public void benzerlikPerformans() throws IOException {
 
         int count = 0;
         String s = YaziIsleyici.yaziOkuyucu("kaynaklar/metinler/commodore.txt");
         long start = System.currentTimeMillis();
-        List kelimeler = YaziIsleyici.kelimeAyikla(s);
-        for (int i = 0; i < kelimeler.size(); i++) {
-            String s1 = (String) kelimeler.get(i);
+        List<String> kelimeler = YaziIsleyici.kelimeAyikla(s);
+        for (String kelime : kelimeler) {
             for (int j = 0; j < 100; j++) {
-                String s2 = (String) kelimeler.get(j);
-                MetinAraclari.sozcukBenzerlikOrani(s1, s2);
+                String s2 = kelimeler.get(j);
+                MetinAraclari.sozcukBenzerlikOrani(kelime, s2);
                 count++;
             }
         }

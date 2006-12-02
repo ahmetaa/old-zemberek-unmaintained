@@ -5,6 +5,8 @@ import net.zemberek.araclar.TimeTracker;
 import net.zemberek.bilgi.araclar.DuzYaziKokOkuyucu;
 import net.zemberek.bilgi.araclar.KokOkuyucu;
 import net.zemberek.yapi.Kok;
+import static org.junit.Assert.*;
+import org.junit.Test;
 
 import java.io.IOException;
 import java.util.Collection;
@@ -17,8 +19,8 @@ public class TestTreeSozluk extends TemelTest {
     KokOkuyucu okuyucu;
     Sozluk sozluk = null;
 
-    public void setUp() throws IOException {
-        super.setUp();
+    public void once() throws IOException {
+        super.once();
         okuyucu= getOkuyucu("kaynaklar/tr/test/test-sozluk.txt");
         sozluk = new AgacSozluk(okuyucu, alfabe, dilBilgisi.kokOzelDurumlari());
     }
@@ -31,6 +33,7 @@ public class TestTreeSozluk extends TemelTest {
                 dilAyarlari.kokTipiAdlari());
     }
 
+    @Test
     public void testHatasizlik_binary() throws IOException {
         TimeTracker.startClock("x");
         KokOkuyucu okuyucu1 = getOkuyucu("kaynaklar/tr/bilgi/binary-kokler.bin");
@@ -38,22 +41,21 @@ public class TestTreeSozluk extends TemelTest {
         System.out.println("Time: " + TimeTracker.getElapsedTimeString("x"));
         TimeTracker.stopClock("x");
         KokOkuyucu okuyucu2 = getOkuyucu("kaynaklar/tr/bilgi/binary-kokler.bin");
-        List list = okuyucu2.hepsiniOku();
-        for (int i = 0; i < list.size(); i++) {
-            Kok kok = (Kok) list.get(i);
+        List<Kok> list = okuyucu2.hepsiniOku();
+        for (Kok kok : list) {
             if (testSozluk.kokBul(kok.icerik()) == null) {
                 fail("Kelime aðaçta bulunamadý: " + kok.icerik());
             }
         }
     }
 
+    @Test
     public void testHatasizlik_() throws IOException {
         KokOkuyucu okuyucu1 = getOkuyucu("kaynaklar/tr/test/agactest-1.txt");
         AgacSozluk testSozluk = new AgacSozluk(okuyucu1, alfabe, dilBilgisi.kokOzelDurumlari());
         KokOkuyucu okuyucu2 = getOkuyucu("kaynaklar/tr/test/agactest-1.txt");
-        List list = okuyucu2.hepsiniOku();
-        for (int i = 0; i < list.size(); i++) {
-            Kok kok = (Kok) list.get(i);
+        List<Kok> list = okuyucu2.hepsiniOku();
+        for (Kok kok : list) {         
             if (testSozluk.kokBul(kok.icerik()) == null) {
                 fail("Kelime aðaçta bulunamadý: " + kok.icerik());
             }
@@ -62,13 +64,13 @@ public class TestTreeSozluk extends TemelTest {
         assertEquals(2, kokler.size());
     }
 
+    @Test
     public void testHatasizlik() throws IOException {
         KokOkuyucu okuyucu1 = getOkuyucu("kaynaklar/tr/bilgi/duzyazi-kilavuz.txt");
         AgacSozluk testSozluk = new AgacSozluk(okuyucu1, alfabe, dilBilgisi.kokOzelDurumlari());
         KokOkuyucu okuyucu2 = getOkuyucu("kaynaklar/tr/bilgi/duzyazi-kilavuz.txt");
-        List list = okuyucu2.hepsiniOku();
-        for (int i = 0; i < list.size(); i++) {
-            Kok kok = (Kok) list.get(i);
+        List<Kok> list = okuyucu2.hepsiniOku();
+        for (Kok kok : list) {
             if (testSozluk.kokBul(kok.icerik()) == null) {
                 fail("Kelime aðaçta bulunamadý: " + kok.icerik());
             }
@@ -77,6 +79,7 @@ public class TestTreeSozluk extends TemelTest {
         assertEquals(2, kokler.size());
     }
 
+    @Test
     public void testKokler() {
         Collection list = sozluk.kokBul("armut");
         System.out.println("list:" + list);
@@ -91,6 +94,7 @@ public class TestTreeSozluk extends TemelTest {
         assertEquals(kok.icerik(), "armut");
     }
 
+    @Test
     public void testEsSesliKokBul() {
         Collection kokler = sozluk.kokBul("devir");
         assertTrue(kokler.size() == 2);
@@ -98,6 +102,7 @@ public class TestTreeSozluk extends TemelTest {
         assertTrue(kokler.size() == 2);
     }
 
+    @Test
     public void testKokBul() {
         Collection kokler = sozluk.kokBul("bahset");
         assertTrue(kokler.size() == 1);
