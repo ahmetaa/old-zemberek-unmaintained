@@ -1,21 +1,26 @@
 package net.zemberek.islemler;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
 import net.zemberek.TemelTest;
 import net.zemberek.erisim.Zemberek;
 import net.zemberek.tr.yapi.TurkiyeTurkcesi;
 import net.zemberek.yapi.Kelime;
 import net.zemberek.yapi.Kok;
+import static org.junit.Assert.assertTrue;
+import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * User: ahmet
  * Date: Dec 10, 2005
  */
 public class TestKelimeKokFrekansKiyaslayici extends TemelTest {
+
     Zemberek zembrek = new Zemberek(new TurkiyeTurkcesi());
+
+    @Test
     public void testKiyaslayici()
     {
         Kok kok1 = new Kok("alo");

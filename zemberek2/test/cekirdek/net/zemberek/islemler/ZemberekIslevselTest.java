@@ -7,6 +7,8 @@ import net.zemberek.tr.yapi.TurkiyeTurkcesi;
 import net.zemberek.tr.yapi.kok.TurkceKokOzelDurumTipleri;
 import net.zemberek.yapi.KelimeTipi;
 import net.zemberek.yapi.Kok;
+import static org.junit.Assert.*;
+import org.junit.Test;
 
 /**
  * User: ahmet
@@ -16,6 +18,7 @@ public class ZemberekIslevselTest extends TemelTest {
 
     Zemberek zemberek = new Zemberek(new TurkiyeTurkcesi());
 
+    @Test
     public void testAsciidenDonusturucuSiralama() {
         //asciiden donustur.
         String giris = "cok";
@@ -27,6 +30,7 @@ public class ZemberekIslevselTest extends TemelTest {
         assertEquals(sonuclar[1], "\u00e7\u00f6k");
     }
 
+    @Test
     public void tesAsciiDonucturucu() {
         String giris = "Ibrik";
         String[] sonuclar = zemberek.asciidenTurkceye(giris);
@@ -38,6 +42,7 @@ public class ZemberekIslevselTest extends TemelTest {
         assertEquals(sonuclar[0], "\u0131rmak");
     }
 
+    @Test
     public void testKokEkle()
     {
         assertFalse(zemberek.kelimeDenetle("zembenklik"));

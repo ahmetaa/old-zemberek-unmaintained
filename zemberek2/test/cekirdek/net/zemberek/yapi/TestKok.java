@@ -3,6 +3,10 @@ package net.zemberek.yapi;
 import net.zemberek.TemelTest;
 import static net.zemberek.tr.yapi.kok.TurkceKokOzelDurumTipleri.*;
 import net.zemberek.yapi.kok.KokOzelDurumBilgisi;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import org.junit.Before;
+import org.junit.Test;
 
 /**
  */
@@ -11,13 +15,13 @@ public class TestKok extends TemelTest {
 
     KokOzelDurumBilgisi koz;
 
-    public void setUp() {
+    @Before
+    public void once() {
         koz = dilBilgisi.kokOzelDurumlari();
     }
 
+    @Test
     public void testDegismisIcerikOlustur() {
-
-
         Kok kok = new Kok("ara", KelimeTipi.FIIL);
         ozelDurumTest(kok, "ar");
         assertTrue(kok.ozelDurumIceriyormu(SIMDIKI_ZAMAN));
@@ -52,6 +56,7 @@ public class TestKok extends TemelTest {
         ozelDurumTest(kok, "yi");
     }
 
+    @Test
     private void ozelDurumTest(Kok kok, String beklenen) {
         String[] results = koz.ozelDurumUygula(kok);
         assertTrue(results.length > 0);
@@ -59,6 +64,7 @@ public class TestKok extends TemelTest {
         assertEquals(sonuc, beklenen);
     }
 
+    @Test
     public void testEqual() {
         Kok kok1 = new Kok("kitap", KelimeTipi.ISIM);
         Kok kok2 = new Kok("kitap", KelimeTipi.ISIM);

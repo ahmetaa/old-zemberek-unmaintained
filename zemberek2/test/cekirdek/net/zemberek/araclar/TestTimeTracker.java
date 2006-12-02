@@ -3,13 +3,15 @@
  */
 package net.zemberek.araclar;
 
-import junit.framework.TestCase;
+import static org.junit.Assert.assertTrue;
+import org.junit.Test;
 
 /**
  * @author MDA & GBA
  */
-public class TestTimeTracker extends TestCase {
+public class TestTimeTracker {
 
+    @Test
     public void testStartClock() {
         TimeTracker.startClock("x");
         sleepMe(300);
@@ -18,6 +20,7 @@ public class TestTimeTracker extends TestCase {
         System.out.println(TimeTracker.stopClock("x"));
     }
 
+    @Test
     public void testDelta() {
         TimeTracker.startClock("x");
         sleepMe(300);
@@ -30,7 +33,6 @@ public class TestTimeTracker extends TestCase {
         assertTrue(delta >= 300 && delta < 400);
         System.out.println(TimeTracker.stopClock("x"));
     }
-
 
     private void sleepMe(long time) {
         try {

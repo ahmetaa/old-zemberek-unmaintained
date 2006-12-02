@@ -1,11 +1,14 @@
 package net.zemberek.islemler;
 
 import net.zemberek.TemelTest;
+import static org.junit.Assert.assertEquals;
+import org.junit.Test;
 
 /**
  */
 public class TestTurkcedenDonusturucu extends TemelTest {
 
+    @Test
     public void testToAscii() {
         AsciiDonusturucu donusturucu = new AsciiDonusturucu(alfabe);
         String turkce = "abci\u00e7\u011f\u0131\u00f6\u015f\u00fc";

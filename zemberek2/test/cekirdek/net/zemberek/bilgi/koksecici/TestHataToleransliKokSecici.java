@@ -3,25 +3,20 @@
  */
 package net.zemberek.bilgi.koksecici;
 
-import com.thoughtworks.xstream.XStream;
-import junit.framework.TestCase;
-import net.zemberek.araclar.turkce.YaziIsleyici;
 import net.zemberek.bilgi.araclar.KokOkuyucu;
 import net.zemberek.bilgi.kokler.KokBulucu;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @author MDA & GBA
  */
-public class TestHataToleransliKokSecici extends TestCase {
+public class TestHataToleransliKokSecici {
 
     static KokOkuyucu okuyucu;
     static KokBulucu bulucu = null;
 
-//    public void setUp()
+//    public void once()
 //    {
 //        okuyucu.initialize("kaynaklar/test/test-kokler.txt");
 //        bulucu.initialize(new MapSozluk(okuyucu));
@@ -72,19 +67,5 @@ public class TestHataToleransliKokSecici extends TestCase {
         cozumleyici.cozumle("tes");*/
     }
 
-    private void parse() throws IOException {
-        String xmlStr = YaziIsleyici.yaziOkuyucu(getClass().getResource("/org/tspell/kokler/koksecici/toleransli-kok-bulucu-test.xml").getPath());
-        XStream xstream = new XStream();
-        xstream.alias("testKumesi", java.util.ArrayList.class);
-        xstream.alias("uye", Uye.class);
-        xstream.alias("sonuclar", java.util.ArrayList.class);
-        xstream.alias("sonuc", String.class);
-        List testKumesi = (List) xstream.fromXML(xmlStr);
-    }
-
-    class Uye {
-        public String giris;
-        public List sonuclar = new ArrayList();
-    }
 }
 

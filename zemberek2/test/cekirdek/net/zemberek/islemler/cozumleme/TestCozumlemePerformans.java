@@ -1,11 +1,11 @@
 package net.zemberek.islemler.cozumleme;
 
-import java.io.IOException;
-import java.util.List;
-
 import net.zemberek.araclar.IstatistikAraclari;
 import net.zemberek.araclar.TimeTracker;
 import net.zemberek.araclar.turkce.YaziIsleyici;
+
+import java.io.IOException;
+import java.util.List;
 
 /**
  */
@@ -18,7 +18,7 @@ public class TestCozumlemePerformans extends TestKelimeCozumleyici {
         //List kelimeler = YaziIsleyici.analizIcinKelimeAyikla(YaziIsleyici.yaziOkuyucu("kaynaklar/metinler/Ahmet_Hamdi_Tanpinar_Huzur.txt"));
         //List kelimeler = YaziIsleyici.analizIcinKelimeAyikla(YaziIsleyici.yaziOkuyucu("kaynaklar/metinler/Oscar_Wilde_Oykuler1.txt"));
         //List kelimeler = YaziIsleyici.analizIcinKelimeAyikla(YaziIsleyici.yaziOkuyucu("kaynaklar/metinler/Frank_Herbert_Dune1.txt"));
-        List kelimeler = YaziIsleyici.analizIcinKelimeAyikla(YaziIsleyici.yaziOkuyucu("kaynaklar/tr/metinler/BuzyeliVadisi2.txt"));
+        List kelimeler = YaziIsleyici.analizIcinKelimeAyikla(YaziIsleyici.yaziOkuyucu("kaynaklar/tr/metinler/ButunKelimeler.txt"));
         //List kelimeler = YaziIsleyici.analizIcinKelimeAyikla(YaziIsleyici.yaziOkuyucu("kaynaklar/metinler/commodore.txt"));
         //List kelimeler = YaziIsleyici.kelimeAyikla(YaziIsleyici.yaziOkuyucu("kaynaklar/metinler/corpus.txt"));
         int vuru = 0;
@@ -26,7 +26,7 @@ public class TestCozumlemePerformans extends TestKelimeCozumleyici {
         //ist.xmlDosyaCozumle("kaynaklar/kb/stats.jar");
         //HashMap cep = ist.getKelimeCebi();
         //System.out.println("Cep Boyu: " + cep.size());
-        for(int j=0; j<6; j++) {
+        for(int j=0; j<3; j++) {
         TimeTracker.startClock("x");
         int dogrular = 0, yanlislar = 0;
         for (int i = 0; i < kelimeler.size(); i++) {
@@ -36,11 +36,12 @@ public class TestCozumlemePerformans extends TestKelimeCozumleyici {
                vuru++;
                dogrular++;
             } else*/
-            if (heceleyici.hecelenebilirmi(kelime)) {
+            if (heceleyici.hecele(kelime).length>0) {
+              //  if(cozumleyici.denetle(kelime))
                // System.out.println(Arrays.toString(heceleyici.hecele(kelime)));
-                dogrular++;
+                  dogrular++;
             } else {
-                //System.out.println(kelimeler.get(i));
+                System.out.println(kelime);
                 yanlislar++;
             }
         }

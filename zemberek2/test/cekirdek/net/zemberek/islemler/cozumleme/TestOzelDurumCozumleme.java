@@ -4,9 +4,11 @@ import net.zemberek.TemelTest;
 import net.zemberek.araclar.turkce.TurkceMetinOkuyucu;
 import net.zemberek.bilgi.araclar.DuzYaziKokOkuyucu;
 import net.zemberek.bilgi.araclar.KokOkuyucu;
+import net.zemberek.bilgi.kokler.AgacSozluk;
 import net.zemberek.bilgi.kokler.KokBulucu;
 import net.zemberek.bilgi.kokler.Sozluk;
-import net.zemberek.bilgi.kokler.AgacSozluk;
+import static org.junit.Assert.assertTrue;
+import org.junit.Before;
 
 import java.io.IOException;
 
@@ -16,8 +18,9 @@ public class TestOzelDurumCozumleme extends TemelTest {
 
     protected KelimeCozumleyici cozumleyici;
 
-    public void setUp() throws IOException {
-        super.setUp();
+    @Before
+    public void once() throws IOException {
+        super.once();
         KokOkuyucu kokOkuyucu = new DuzYaziKokOkuyucu(
                 "kaynaklar/tr/test/ozeldurum-sozlugu.txt",
                 dilBilgisi.kokOzelDurumlari(),

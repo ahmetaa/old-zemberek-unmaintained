@@ -1,8 +1,8 @@
 package net.zemberek;
 
-import junit.framework.TestCase;
 import net.zemberek.tr.yapi.TurkiyeTurkcesi;
 import net.zemberek.yapi.*;
+import org.junit.Before;
 
 import java.io.IOException;
 
@@ -10,14 +10,14 @@ import java.io.IOException;
  * User: ahmet
  * Date: Sep 23, 2006
  */
-public class TemelTest extends TestCase {
+public class TemelTest {
 
     protected DilBilgisi dilBilgisi;
     protected DilAyarlari dilAyarlari;
     protected Alfabe alfabe;
 
-
-    public void setUp() throws IOException {
+    @Before
+    public void once() throws IOException {
         dilAyarlari = new TurkiyeTurkcesi();
         dilBilgisi = new TurkceDilBilgisi(dilAyarlari);
         alfabe = dilBilgisi.alfabe();

@@ -7,6 +7,9 @@ import net.zemberek.TemelTest;
 import net.zemberek.araclar.TimeTracker;
 import net.zemberek.yapi.Kok;
 import net.zemberek.yapi.kok.KokOzelDurumu;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import org.junit.Test;
 
 import java.io.IOException;
 import java.util.List;
@@ -15,6 +18,8 @@ import java.util.List;
  * @author MDA & GBA
  */
 public class TestDuzMetinSozlukYazici extends TemelTest {
+
+    @Test
     public void testYazici() throws IOException {
         // Once Testsozlugunu okuyoruz
         TimeTracker.startClock("x");

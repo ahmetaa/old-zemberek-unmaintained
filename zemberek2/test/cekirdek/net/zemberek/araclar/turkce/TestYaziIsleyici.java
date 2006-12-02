@@ -1,13 +1,15 @@
 package net.zemberek.araclar.turkce;
 
-import junit.framework.TestCase;
+import static org.junit.Assert.assertEquals;
+import org.junit.Test;
 
 import java.util.List;
 
 /**
  */
-public class TestYaziIsleyici extends TestCase {
+public class TestYaziIsleyici {
 
+    @Test
     public void testAnalizDizisiOlustur() {
         String giris = "Merhaba, ben Ahmet!.  Nasilsiniz? ";
         String[] parcalar = {"Merhaba",
@@ -38,6 +40,7 @@ public class TestYaziIsleyici extends TestCase {
         }
     }
 
+    @Test
     public void testKelimeAyikla() {
         String giris = "Merhaba, ben Ahmet!.  Nasilsiniz? ";
         String[] parcalar = {"Merhaba",
@@ -56,6 +59,7 @@ public class TestYaziIsleyici extends TestCase {
 
     }
 
+    @Test
     public void testAnalizIcinKelimeAyikla() {
         String giris = "Merhaba, ben Ahmet!.  Nasilsiniz? ";
         String[] parcalar = {"ben"
@@ -72,6 +76,7 @@ public class TestYaziIsleyici extends TestCase {
 
     }
 
+    @Test
     public void testCumleAyikla() {
         String giris = "Merhaba, ben Ahmet!. Nasilsiniz?";
         String[] cumle = {"Merhaba, ben Ahmet!.",

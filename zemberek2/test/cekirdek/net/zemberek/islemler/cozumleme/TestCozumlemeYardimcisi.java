@@ -1,20 +1,22 @@
 package net.zemberek.islemler.cozumleme;
 
-import net.zemberek.tr.yapi.kok.TurkceKokOzelDurumTipleri;
+import net.zemberek.TemelTest;
 import net.zemberek.tr.islemler.TurkceCozumlemeYardimcisi;
+import net.zemberek.tr.yapi.kok.TurkceKokOzelDurumTipleri;
 import net.zemberek.yapi.Kelime;
 import net.zemberek.yapi.KelimeTipi;
 import net.zemberek.yapi.Kok;
-import net.zemberek.TemelTest;
+import static org.junit.Assert.assertEquals;
+import org.junit.Test;
 
 
 /**
  * User: ahmet
  * Date: Oct 29, 2005
  */
-public class TestCozumlemeYardimcisi extends TemelTest {
+public class TestCozumlemeYardimcisi extends TemelTest{
 
-
+    @Test
     public void testKelimeBicimlendir() {
         CozumlemeYardimcisi yardimci = new TurkceCozumlemeYardimcisi(
                 alfabe,

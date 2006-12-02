@@ -5,6 +5,8 @@ import net.zemberek.islemler.cozumleme.KesinHDKiyaslayici;
 import net.zemberek.yapi.Kelime;
 import net.zemberek.yapi.KelimeTipi;
 import net.zemberek.yapi.Kok;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 /**
  * User: aakin
@@ -13,10 +15,6 @@ import net.zemberek.yapi.Kok;
 public class BaseTestEkler extends TemelTest {
 
     protected Kelime[] kelimeler;
-
-    public BaseTestEkler() {
-        super();
-    }
 
     protected void olusanEkKontrol(String[] strs, String[] gercek, Ek ek) {
         String[] olusanEkler;
