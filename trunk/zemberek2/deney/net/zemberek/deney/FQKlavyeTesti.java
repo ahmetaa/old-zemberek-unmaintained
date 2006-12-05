@@ -50,11 +50,6 @@ public class FQKlavyeTesti {
 	enum El {SOL, SAG};
 	
 	public static DecimalFormat df2 = new DecimalFormat("#0.00000");
-//	static String ikililer = "la ar er le bi in nd an ka de ın ma ya il al da ra rd en di me ay ri ol yo el ad ak li or ba iy am " 
-//		              + "sa ta rı ir ed ge re te un as nl ek kl on si et sı nı ld aş ke ti ha ni ey lı em";
-//
-//	static String ikililerBitisik = "laarerlebiinndankadeınmayailaldarardendimeayriolyoeladakliorbaiyam " 
-//        + "satarıiredgereteunasnlekklonsietsınıldaşketihanieylıem";
 	
 	Yazici qKlavyeYazan;
 	Yazici fKlavyeYazan;
@@ -62,6 +57,10 @@ public class FQKlavyeTesti {
 	HashMap <String, Ikili> ikililer = new HashMap<String, Ikili>();
 	long toplamKullanim = 0;
 
+	/**
+	 * En çok kullanılan ikilileri yükle. ikililer.txt dosyasından.
+	 *
+	 */
 	public void ikilileriYukle(){
 		try {
 			BufferedReader reader = new BufferedReader(new FileReader("ikililer.txt"));
@@ -147,9 +146,7 @@ public class FQKlavyeTesti {
 //		for(String s : kelimeler){
 //			test.yaz(s);
 //		}
-//	    test.yaz(ikililerBitisik);
 		test.test();
-		//test.sonuc();
 	}
 	
 	class Ikili implements Comparable<Ikili>{
