@@ -11,7 +11,7 @@ public class TusTakimi {
     public static char[][] qKlavyeHaritasi = new char[][]{
         {'1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '*', '-'},
         {'q', 'w', 'e', 'r', 't', 'y', 'u', '\u0131', 'o', 'p', '\u011f', '\u00fc'},
-        {'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', '\u015f', 'i', ','},
+        {'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', '\u015f', 'i', ',', '#'},
         {'z', 'x', 'c', 'v', 'b', 'n', 'm', '\u00f6', '\u00e7', '.', '.','.'}};
     
     // Standart Türkçe F Klavye haritası.
@@ -96,4 +96,9 @@ public class TusTakimi {
         	return "(" + x + "," + y + ") " + c; 
         }
     }
+
+	public char karakter(int i, int j) {
+		// TODO Auto-generated method stub
+		return klavyeHaritasi[i][j];
+	}
 }
