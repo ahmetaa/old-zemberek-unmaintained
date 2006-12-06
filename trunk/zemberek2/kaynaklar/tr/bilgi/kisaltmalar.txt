@@ -24,10 +24,14 @@ Akad. KI SON:i
 AKDTYK KI SON
 #Atatürk Kültür, Dil ve Tarih Yüksek Kurumu
 AKM KI SON
+#Adalet ve Kalkınma Partisi
+AKP KI
 #Atatürk Kültür Merkezi
 Alb. KI SON:a*
 #Albay
 Alm. KI
+#Anavatan PArtisi
+ANAP KI
 #Almanca
 anat. KI SON:i
 #Anatomi
@@ -94,6 +98,8 @@ BCG KI SON
 Bçvş. KI SON:u*
 #Başçavuş
 BDT KI SON
+#Bankacılık Denetleme ...
+BDDK KI
 #Bağımsız Devletler Topluluğu
 B.E. KI
 #Büyük Elçi
@@ -142,6 +148,8 @@ CD KI
 Cerm. KI SON:e
 #Cermence
 CIA KI
+#Cumhuriyet Halk Partisi
+CHP KI
 #Central Intelligence Agency (ABD Merkezî Haber Alma Teşkilâtı)
 cm KI SON:e
 #Santimetre
@@ -365,6 +373,8 @@ IPI KI
 IRO KI
 #International Refugee Organization (Uluslar Arası Mülteci Teşkilâtı )
 is. KI SON:i*
+#İstanbul Menkul Kıymetler Borsası
+IMKB KI
 #İsim
 İSKİ KI
 #İstanbul Su ve Kanalizasyon İdaresi
@@ -470,6 +480,8 @@ mec. KI SON:a*
 MESAM KI
 #(Türkiye) Müzik Eserleri Sahipleri Meslek Birliği
 MGK KI SON
+#Milliyetçi Halk Partisi
+MHP KI
 #Millî Güvenlik Kurulu
 mim. KI SON:ı*
 #Mimarlık
