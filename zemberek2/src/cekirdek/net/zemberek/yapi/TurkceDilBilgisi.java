@@ -219,16 +219,24 @@ public class TurkceDilBilgisi implements DilBilgisi {
             return heceleyici;
         } else {
             alfabe();
+            Class clazz = dilAyarlari.heceBulucuSinifi();
             try {
-                Class clazz = dilAyarlari.heceBulucuSinifi();
                 Constructor c = clazz.getConstructor(Alfabe.class);
                 heceleyici = (HeceBulucu) c.newInstance(alfabe);
             } catch (Exception e) {
-                logger.warning("heceleyici nesnesi uretilemiyor. heceleme islemi basarisiz olacak.");
+                try {
+                    Constructor c = clazz.getConstructor();
+                    heceleyici = (HeceBulucu) c.newInstance();
+                } catch (Exception e2) {
+                    logger.warning("heceleyici nesnesi uretilemiyor. heceleme islemi basarisiz olacak.");
+                }
             }
         }
         return heceleyici;
     }
+
+
+
 
     public CozumlemeYardimcisi cozumlemeYardimcisi() {
         if (yardimci != null) {

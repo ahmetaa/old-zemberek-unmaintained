@@ -56,18 +56,12 @@ public final class TurkceHarf implements Cloneable {
     }
 
     public TurkceHarf clone() {
-        TurkceHarf kopya = new TurkceHarf(charDeger, alfabetikSira);
-        kopya.sert = sert;
-        kopya.sesli = sesli;
-        kopya.inceSesli = inceSesli;
-        kopya.buyukHarf = buyukHarf;
-        kopya.asciiDisi = asciiDisi;
-        kopya.duzSesli = duzSesli;
-        kopya.yumusama = yumusama;
-        kopya.sertDonusum = sertDonusum;
-        kopya.turkceDonusum = turkceDonusum;
-        kopya.asciiDonusum = asciiDonusum;
-        return kopya;
+        try {
+            return (TurkceHarf)super.clone();
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace(); 
+        }
+        return null;
     }
 
     public char charDeger() {

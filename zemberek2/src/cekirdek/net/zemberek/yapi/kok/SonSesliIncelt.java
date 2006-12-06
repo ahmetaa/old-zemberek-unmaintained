@@ -2,6 +2,7 @@ package net.zemberek.yapi.kok;
 
 import net.zemberek.yapi.Alfabe;
 import net.zemberek.yapi.HarfDizisi;
+import net.zemberek.yapi.TurkceHarf;
 
 /**
  * Bu islem sadece saat-ler turu ozel durumlarda kullanilir.
@@ -22,7 +23,8 @@ public class SonSesliIncelt implements HarfDizisiIslemi {
      */
     public void uygula(HarfDizisi dizi) {
         for (int i = dizi.length() - 1; i >= 0; i--) {
-            if (!dizi.harf(i).inceSesliMi())
+            final TurkceHarf h = dizi.harf(i);
+            if (h.sesliMi() && !h.inceSesliMi())
                 dizi.harfDegistir(i, alfabe.kalinSesliIncelt(dizi.harf(i)));
         }
     }
