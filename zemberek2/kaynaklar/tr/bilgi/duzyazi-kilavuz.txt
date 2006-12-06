@@ -1759,6 +1759,7 @@ avokado IS
 avrat IS YUM
 avret IS
 Avro OZ
+avrovil IS
 avuç IS YUM
 avuçlamak FI
 avukat IS
@@ -9253,7 +9254,7 @@ dış IS
 #dış alım
 #dış alımcı
 #dış alımcılık,-ğı
-dışarı IS DUS_SON
+#dışarı IS DUS_SON  TDK dışardan hatalı diyor.
 dışarı IS
 #dışarılı
 dışarısı IS
@@ -12044,6 +12045,7 @@ enfeksiyon IS
 enfes SI
 enfiye IS
 enflâsyon IS
+enflâsyonist IS
 enflüanza IS
 enformasyon IS
 enfraruj IS
@@ -13818,6 +13820,9 @@ final IS TERS
 finalist IS
 finalizm IS
 #finanse etmek
+finans IS
+finanse IS YAL
+finansal IS YAL
 finansman IS
 fincan IS
 #fincan böreği
@@ -19160,7 +19165,7 @@ Isfahan OZ
 ıskarta IS
 ıskat IS
 #ıskatçı
-ıskonto IS
+#ıskonto IS  --> iskonto olmuş
 #ıskonto etmek
 #ıskontolu
 #ıskontosuz
@@ -19418,7 +19423,7 @@ içecek IS YUM
 İçel OZ
 # ! asagidaki kok gecici olarak koyuldu.
 içeri IS
-içeri IS DUS_SON
+# içeri IS DUS_SON #TDK hatalı diyor
 içerik IS YUM
 #içerikli
 #içerisi
@@ -20933,6 +20938,7 @@ iskete IS
 #İskitler
 İskoç OZ
 İskoçça OZ
+iskonto IS
 iskorbüt IS
 iskorçina IS
 iskorpit IS
@@ -28204,6 +28210,7 @@ kutuplanmak FI
 kutur IS DUS
 kuvars IS
 kuvarsit IS
+Kuveyt OZ
 kuvöz IS
 kuvve IS
 kuvvet IS
@@ -30289,6 +30296,7 @@ meccanî IS
 mecelle IS
 mecidit IS
 mecidiye IS
+Mecidiyeköy OZ
 Mecitözü OZ KAYNASTIRMA_N
 meclis IS
 #meclis araştırması
@@ -30331,6 +30339,7 @@ medlûl IS TERS
 medrese IS
 #medreseli
 medüz IS
+medya IS
 medyum IS
 #medyumluk,-ğu
 medyun IS
@@ -39593,7 +39602,7 @@ seçim IS
 #seçim yapmak
 #seçim yasağı
 #seçiş
-#seçki
+seçki IS
 seçkin IS
 #seçkinler
 #seçkinleşme
@@ -42442,6 +42451,7 @@ sümbül IS
 sümbülî IS
 sümbülteber IS
 sümek IS
+sümen IS
 #sümkürme
 sümkürmek FI
 #sümmettedarik
@@ -45834,6 +45844,7 @@ temren IS
 temrin IS
 temriye IS
 temsil IS
+temsilen IS YAL
 #temsilci
 #temsilcilik,-ği
 #temsil etmek
@@ -48982,7 +48993,7 @@ uzviyet IS
 #üzengilenmek
 #üzengi taşı
 üzere IS
-üzeri IS DUS_SON
+#üzeri IS DUS_SON
 üzeri IS
 #üzerinde
 #üzerine
@@ -49320,7 +49331,7 @@ vazo IS
 #vazolunmak
 ve IS YAL
 veba IS
-vebal IS
+vebal IS TERS
 #vebalı
 #ve başkaları
 #ve benzerleri
@@ -52292,7 +52303,8 @@ yuhalamak FI
 #yuhalanma
 #yuhalanmak
 yukaç IS YUM
-yukarı IS DUS_SON
+yukarı IS
+#yukarı IS DUS_SON
 yukarı IS
 #yukarıda
 #yukarıdan

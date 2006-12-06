@@ -10,7 +10,7 @@ ascii-disi=ç,ğ,ı,ö,ş,ü,Ç,İ,Ğ,Ö,Ş,Ü
 turkce-ascii=ç-c,Ç-C,ğ-g,Ğ-G,ı-i,İ-I,ö-o,Ö-O,ş-s,Ş-S,ü-u,Ü-U,â-a,î-i,û-u
 yumusama-donusum=ç-c,g-ğ,k-ğ,p-b,t-d
 ayiklama=.,-,',"
-ayiklama-donusum=â-a,î-i,û-ü
+ayiklama-donusum=â-a,î-i,û-u
 
 # secimlik ozellikler:
 
