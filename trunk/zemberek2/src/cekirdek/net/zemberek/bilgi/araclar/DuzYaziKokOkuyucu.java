@@ -39,7 +39,7 @@ public class DuzYaziKokOkuyucu implements KokOkuyucu {
     private KokOzelDurumBilgisi ozelDurumlar;
     protected BufferedReader reader;
     private static final Pattern AYIRICI_PATTERN = Pattern.compile("[ ]+");
-    private Map kokTipAdlari = new HashMap();
+    private Map<String, KelimeTipi> kokTipAdlari = new HashMap();
 
     // Eger farkli turk dillerine ait kok dosyalarinda farkli turden tip adlari 
     // kullanildiysa bu isimleri KelimeITplerine esleyen bir Map olusturulup bu
@@ -86,7 +86,7 @@ public class DuzYaziKokOkuyucu implements KokOkuyucu {
 
             // kelime tipini belirle. ilk parca mutlaka kok tipini belirler
             if (kokTipAdlari.containsKey(tokens[1])) {
-                KelimeTipi tip = (KelimeTipi) kokTipAdlari.get(tokens[1]);
+                KelimeTipi tip = kokTipAdlari.get(tokens[1]);
                 kok.setTip(tip);                
                 ozelDurumlar.kokIcerikIsle(kok, tip, icerik);
 
