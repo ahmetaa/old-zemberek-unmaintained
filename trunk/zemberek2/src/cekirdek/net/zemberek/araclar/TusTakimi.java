@@ -32,7 +32,7 @@ public class TusTakimi {
         for(int i=0; i<klavyeHaritasi.length; i++){
             for(int j=0; j<klavyeHaritasi[i].length; j++){
                 char c = klavyeHaritasi[i][j];
-                koordinatlar.put(new Character(c), new KarakterKoordinati(c,i,j));
+                koordinatlar.put(c, new KarakterKoordinati(c,i,j));
             }
         }
     }
@@ -68,8 +68,8 @@ public class TusTakimi {
      *  
      */
     public int mesafeHesapla(char c1, char c2){
-        KarakterKoordinati k1 = (KarakterKoordinati)koordinatlar.get(new Character(c1));
-        KarakterKoordinati k2 = (KarakterKoordinati)koordinatlar.get(new Character(c2));
+        KarakterKoordinati k1 = koordinatlar.get(new Character(c1));
+        KarakterKoordinati k2 = koordinatlar.get(new Character(c2));
         if(k1 == null || k2 == null){
             return -1;
         }

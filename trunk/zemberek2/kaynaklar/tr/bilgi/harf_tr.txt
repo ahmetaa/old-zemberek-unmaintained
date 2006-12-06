@@ -23,4 +23,4 @@ ascii-turkce=c-ç,g-ğ,i-ı,I-İ,o-ö,s-ş,u-ü,a-â,C-Ç,G-Ğ,O-Ö,S-Ş,U-Ü
 
 # incelebilen kalin sesliler. bu sesliler kalin orjinallerinin aynisidir ancak kalin degil incedir.
 # sadece bir ozel durum icin kullanilir (saat->saatler orenginde oldugu gibi. ikinci a harfi ince).
-ozel-ince-sesli=a,ı,u
+ozel-ince-sesli=a,ı,u,o
