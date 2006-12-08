@@ -9,12 +9,10 @@ import net.zemberek.araclar.TimeTracker;
 import net.zemberek.bilgi.araclar.DuzYaziKokOkuyucu;
 import net.zemberek.bilgi.araclar.IkiliKokOkuyucu;
 import net.zemberek.bilgi.araclar.KokOkuyucu;
-import net.zemberek.bilgi.kokler.AgacSozluk;
-import net.zemberek.bilgi.kokler.KesinKokBulucu;
-import net.zemberek.bilgi.kokler.KokBulucu;
-import net.zemberek.bilgi.kokler.ToleransliKokBulucu;
+import net.zemberek.bilgi.kokler.*;
 import org.junit.Before;
 import org.junit.Test;
+import static org.junit.Assert.assertTrue;
 
 import java.io.IOException;
 import java.util.List;
@@ -22,22 +20,16 @@ import java.util.List;
 /**
  * @author MDA & GBA
  */
-public class TestHizliWordTreeKokSecici extends TemelTest {
-    AgacSozluk sozluk = null;
+public class TestKesinKokBulucu extends TemelTest {
+    Sozluk sozluk = null;
     KokBulucu bulucu;
     String[] kelimeler;
     KokOkuyucu okuyucu;
 
     @Before
     public void once() throws IOException {
-        TimeTracker.startClock("x");
-        okuyucu = new DuzYaziKokOkuyucu(
-                "kaynaklar/tr/test/test-kokler.txt",
-                dilBilgisi.kokOzelDurumlari(),
-                alfabe,
-                dilAyarlari.kokTipiAdlari());
-        sozluk = new AgacSozluk(okuyucu, alfabe, dilBilgisi.kokOzelDurumlari());
-        System.out.println("Okuyucu Initialization s�resi: " + TimeTracker.getElapsedTimeString("x"));
+        super.once();
+        sozluk = sozlukUret("kaynaklar/tr/test/test-sozluk.txt");
     }
 
     @Test
@@ -60,12 +52,33 @@ public class TestHizliWordTreeKokSecici extends TemelTest {
 
     @Test
     public void testKokSeciciTumSozluk() throws IOException {
-        okuyucu = new IkiliKokOkuyucu("kaynaklar/tr/bilgi/binary-kokler.bin",dilBilgisi.kokOzelDurumlari());
+        okuyucu = new IkiliKokOkuyucu("kaynaklar/tr/bilgi/binary-kokler.bin", dilBilgisi.kokOzelDurumlari());
         sozluk = new AgacSozluk(okuyucu, alfabe, dilBilgisi.kokOzelDurumlari());
         bulucu = new KesinKokBulucu(sozluk.getAgac());
         List list = bulucu.getAdayKokler("etkiler");
         System.out.println(list);
-
     }
+
+
+    @Test
+    public void ozelKokAgacTest() throws IOException {
+        sozluk=sozlukUret("kaynaklar/tr/test/agac-kokler-2.txt");
+        bulucu = new KesinKokBulucu(sozluk.getAgac());
+        assertTrue("tek sonuc bekleniyordu", bulucu.getAdayKokler("atoller").size()==1);
+    }
+
+    private Sozluk sozlukUret(String duzyaziDosya) throws IOException {
+        okuyucu = new DuzYaziKokOkuyucu(
+                duzyaziDosya,
+                dilBilgisi.kokOzelDurumlari(),
+                alfabe,
+                dilAyarlari.kokTipiAdlari());
+        Sozluk s = new AgacSozluk(okuyucu, alfabe, dilBilgisi.kokOzelDurumlari());
+        return s;
+    }
+
+
+
+
 
 }

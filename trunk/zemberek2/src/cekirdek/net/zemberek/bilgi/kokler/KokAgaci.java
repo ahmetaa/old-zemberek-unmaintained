@@ -171,7 +171,6 @@ public class KokAgaci {
             // Uzun olan dugumun (yeni gelen) eklenmesi, es anlamlilari kotar
             newNode.addNode(new KokDugumu(hd[idx], icerik, kok));
             oncekiDugum.temizle();
-            return;
         }
 
         /**
@@ -204,7 +203,6 @@ public class KokAgaci {
             newNode.kopyala(oncekiDugum);
             // Es seslileri tasi.
             oncekiDugum.temizle();
-            return;
         }
     }
 

@@ -17,6 +17,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
+import java.util.HashSet;
 
 /**
  */
@@ -25,24 +26,22 @@ public class TestToleransliCozumleyici extends TemelTest {
     static KelimeCozumleyici cozumleyici;
     static KokOkuyucu kokOkuyucu;
     static KokBulucu kokBulucu = null;
-    private List testKumesi = new ArrayList();
 
     @Before
     public void once() throws IOException {
         super.once();
         KokOkuyucu kokOkuyucu = new DuzYaziKokOkuyucu(
-                "kaynaklar/tr/test/test-kokler.txt",
+                "kaynaklar/tr/test/test-sozluk.txt",
                 dilBilgisi.kokOzelDurumlari(),
                 alfabe,
                 dilAyarlari.kokTipiAdlari());
         Sozluk sozluk = new AgacSozluk(kokOkuyucu, alfabe, dilBilgisi.kokOzelDurumlari());
         //Normal denetleyici-cozumleyici olusumu
         KokBulucu kokBulucu = sozluk.getKokBulucuFactory().getToleransliKokBulucu(1);
-        cozumleyici = new StandartCozumleyici(
+        cozumleyici = new ToleransliCozumleyici(
                 kokBulucu,
-                new KesinHDKiyaslayici(),
-                this.alfabe,
                 dilBilgisi.ekler(),
+                alfabe,
                 dilBilgisi.cozumlemeYardimcisi());
 
     }
@@ -52,9 +51,11 @@ public class TestToleransliCozumleyici extends TemelTest {
         List<TestGirdisi> l = TestUtils.girdileriOku("kaynaklar/tr/test/toleransli-cozumleme-test.txt");
         for (TestGirdisi girdi : l) {
             System.out.println("giris:" + girdi.anahtar);
-            Set<String> beklenenler = TestUtils.makeSet(girdi.degerler);
-            for (Kelime kelime : cozumleyici.cozumle(girdi.anahtar))
-                assertTrue(beklenenler.contains(kelime.icerikStr()));
+            Set<String> cozumler = new HashSet<String>();
+            for (Kelime kel : cozumleyici.cozumle(girdi.anahtar))
+                cozumler.add(kel.icerik().toString());
+            for (String beklenen : girdi.degerler)
+                assertTrue("bulunamayan kelime:" + beklenen, cozumler.contains(beklenen));
         }
     }
 
