@@ -84,7 +84,8 @@ public class TurkceKokOzelDurumBilgisi extends TemelKokOzelDurumBilgisi implemen
                 OZEL_IC_KARAKTER,
                 ZAMIR_IM,
                 ZAMIR_IN,
-                KISALTMA_SON_SESLI,KISALTMA_SON_SESSIZ);
+                KISALTMA_SON_SESLI,
+                KISALTMA_SON_SESSIZ);
     }
 
     public TurkceKokOzelDurumBilgisi(EkYonetici ekler, Alfabe alfabe) {
@@ -108,12 +109,18 @@ public class TurkceKokOzelDurumBilgisi extends TemelKokOzelDurumBilgisi implemen
             eskiSonsesliInce = hdizi.sonSesli().inceSesliMi();
 
         boolean yapiBozucuOzelDurumvar = false;
+
+        //ters sesli ozel durumu yapi bozucu ama sadece seslinin son halini degistirdiginden
+        //islemeye gerek yok.
+        if(kok.ozelDurumDizisi().length==1 && kok.ozelDurumIceriyormu(TERS_SESLI_EK))
+          return new String[0];
+
         // kok uzerindeki ozel durumlar basta sona taranip ozel durum koke uygulaniyor.
         for (KokOzelDurumu ozelDurum : kok.ozelDurumDizisi()) {
             // kucultme ozel durumunda problem var, cunku kok'te hem kucultme hem yumusama uygulaniyor.
             if (ozelDurum == null) {
-                System.out.println("kok = " + kok);
-                System.exit(-1);
+                logger.warning("null ozle durum!. Kok:" + kok);
+                return new String[0];
             }
             if (!ozelDurum.equals(ozelDurum(KUCULTME)))
                 ozelDurum.uygula(hdizi);
