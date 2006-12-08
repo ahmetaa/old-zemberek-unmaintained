@@ -14,17 +14,6 @@ import java.util.Set;
  */
 public class TurkceHeceBulucu implements HeceBulucu {
 
-    private Set<TurkceHarf> harfSet = new HashSet();
-
-    public TurkceHeceBulucu(Alfabe alfabe) {
-        // bu dizi bazi ozel hecelerin hesaplanmasinda kullanilir.
-        // kalp, fark, ebeveyn, kask, cenk, rapt, zamk gibi.
-        char[] ikinciKarakterler = {'l', 'r', 'y', 'p', 'n', 's', 'm'};
-        for (char c : ikinciKarakterler) {
-            harfSet.add(alfabe.harf(c));
-        }
-    }
-
     /**
      * Giren harf dizisinin sonunda mantikli olarak yer alan hecenin harf
      * sayisini dondurur.
@@ -60,8 +49,9 @@ public class TurkceHeceBulucu implements HeceBulucu {
                 return 2;
 
             TurkceHarf ikiOncekiHarf = kelime.harf(boy - 3);
+
+            //ste-tos-kop -> ste
             if (!ikiOncekiHarf.sesliMi() && boy == 3) {
-                //harf dizilim denetimi gerekebilir. (tr,kr,st)
                 return 3;
             }
             return 2;
@@ -83,8 +73,8 @@ public class TurkceHeceBulucu implements HeceBulucu {
                 if (boy == 3 || ucOncekiHarf.sesliMi())
                     return 3;
 
-                //kelime dort harfli ise yukaridaki kurallari gecmesi nedeniyle hecelenemez.
-                // ornegin tren kelimesini hecelenemez sayiyoruz.
+                //kelime dort harfli ise yukaridaki kurallari gecmesi nedeniyle hecelenemez sayiyoruz.
+                // tren, strateji, krank, angstrom gibi kelimeler henuz hecelenmiyor. 
                 if (boy == 4)
                     return -1;
 
@@ -92,20 +82,18 @@ public class TurkceHeceBulucu implements HeceBulucu {
                 if (!dortOncekiHarf.sesliMi())
                     return 3;
                 return 3;
-            } else {
-                // burada "tu[n]c", "ka[l]p", "ebeve[y]n" turu kelimelerdeki son hece denetimi yapiliyor
-                // sadece bazi sessizler icin bu tur hece olusumuna izin veriliyor.
-                if (harfSet.contains(oncekiHarf)) {
 
-                    if (boy == 2 || !ikiOncekiHarf.sesliMi())
-                        return -1;
-                    TurkceHarf ucOncekiHarf = kelime.harf(boy - 4);
-                    if (boy > 3 && !ucOncekiHarf.sesliMi())
-                        return 4;
-                    return 3;
-                }
+            } else  {
+
+                if (boy == 2 || !ikiOncekiHarf.sesliMi())
+                    return -1;
+                TurkceHarf ucOncekiHarf = kelime.harf(boy - 4);
+                if (boy > 3 && !ucOncekiHarf.sesliMi())
+                    return 4;
+                return 3;
             }
+
         }
-        return -1;
+        //return -1;
     }
 }

@@ -26,7 +26,7 @@ public class EkUreticiTr implements EkUretici {
     }
 
     public HarfDizisi cozumlemeIcinEkUret(HarfDizisi ulanacak, HarfDizisi giris, List<EkUretimBileseni> bilesenler) {
-        HarfDizisi sonuc = new HarfDizisi();
+        HarfDizisi sonuc = new HarfDizisi(4);
         TurkceHarf sonSesli = ulanacak.sonSesli();
         for (int i = 0; i < bilesenler.size(); i++) {
             EkUretimBileseni ekUretimBileseni = bilesenler.get(i);
