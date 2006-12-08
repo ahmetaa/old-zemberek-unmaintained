@@ -110,7 +110,7 @@ public class TurkceKokOzelDurumBilgisi extends TemelKokOzelDurumBilgisi implemen
 
         boolean yapiBozucuOzelDurumvar = false;
 
-        //ters sesli ozel durumu yapi bozucu ama sadece seslinin son halini degistirdiginden
+        //ters sesli ozel durumu yapi bozucu ama sadece seslinin tipini degistirdiginden
         //islemeye gerek yok.
         if(kok.ozelDurumDizisi().length==1 && kok.ozelDurumIceriyormu(TERS_SESLI_EK))
           return new String[0];

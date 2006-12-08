@@ -6,7 +6,7 @@ import net.zemberek.bilgi.kokler.KokBulucu;
 import net.zemberek.bilgi.kokler.Sozluk;
 import net.zemberek.islemler.cozumleme.KesinHDKiyaslayici;
 import net.zemberek.islemler.cozumleme.StandartCozumleyici;
-import net.zemberek.tr.yapi.ek.TurkceEkAdlari;
+import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.*;
 import net.zemberek.yapi.Kelime;
 import net.zemberek.yapi.Kok;
 import net.zemberek.yapi.ek.Ek;
@@ -15,9 +15,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 
 /**
  */
@@ -47,18 +45,18 @@ public class TestKelimeUretici extends TemelTest {
         Collection set = kokler.kokBul("armut");
         Kok kok = (Kok) set.iterator().next();
         List ekler = new ArrayList();
-        ekler.add(ek(TurkceEkAdlari.ISIM_KOK));
-        ekler.add(ek(TurkceEkAdlari.ISIM_SAHIPLIK_BIZ_IMIZ));
-        ekler.add(ek(TurkceEkAdlari.ISIM_TANIMLAMA_DIR));
+        ekler.add(ek(ISIM_KOK));
+        ekler.add(ek(ISIM_SAHIPLIK_BIZ_IMIZ));
+        ekler.add(ek(ISIM_TANIMLAMA_DIR));
         assertEquals("armudumuzdur", kelimeUretici.kelimeUret(kok, ekler));
 
         set = kokler.kokBul("sabret");
         kok = (Kok) set.iterator().next();
         ekler = new ArrayList();
-        ekler.add(ek(TurkceEkAdlari.FIIL_KOK));
-        ekler.add(ek(TurkceEkAdlari.FIIL_YETENEK_EBIL));
-        ekler.add(ek(TurkceEkAdlari.FIIL_GELECEKZAMAN_ECEK));
-        ekler.add(ek(TurkceEkAdlari.FIIL_KISI_BIZ));
+        ekler.add(ek(FIIL_KOK));
+        ekler.add(ek(FIIL_YETENEK_EBIL));
+        ekler.add(ek(FIIL_GELECEKZAMAN_ECEK));
+        ekler.add(ek(FIIL_KISI_BIZ));
         assertEquals("sabredebilece\u011fiz", kelimeUretici.kelimeUret(kok, ekler));
     }
 
@@ -73,9 +71,9 @@ public class TestKelimeUretici extends TemelTest {
             List ekler = new ArrayList();
             // aslinda kelime ureticiye ilk ek olan yalin eklerin gonderilmemesi daha iyi olurdu..
             // ama simdilik boyle.
-            ekler.add(ek(TurkceEkAdlari.ISIM_KOK));
-            ekler.add(ek(TurkceEkAdlari.ISIM_SAHIPLIK_BIZ_IMIZ));
-            ekler.add(ek(TurkceEkAdlari.ISIM_TANIMLAMA_DIR));
+            ekler.add(ek(ISIM_KOK));
+            ekler.add(ek(ISIM_SAHIPLIK_BIZ_IMIZ));
+            ekler.add(ek(ISIM_TANIMLAMA_DIR));
             String sonuc = kelimeUretici.kelimeUret(kok, ekler);
             System.out.println(sonuc);
         } else
@@ -98,4 +96,20 @@ public class TestKelimeUretici extends TemelTest {
             }
         }
     }
+
+    @Test
+    public void testEkAyristirma() {
+        List l1 = Arrays.asList("kedi", "le", "r", "im");
+        List l2 = Arrays.asList("kedi", "ler", "im");
+        
+        Kelime[] cozumler = cozumleyici.cozumle("kedilerim");
+        for (Kelime kel : cozumler) {
+            if(kel.ekSayisi()==4)
+              assertEquals(l1 , kelimeUretici.ayristir(kel));
+            else
+              assertEquals(l2 , kelimeUretici.ayristir(kel));
+        }
+    }
+
+
 }
