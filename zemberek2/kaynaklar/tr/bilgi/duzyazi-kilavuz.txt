@@ -709,6 +709,8 @@ alışkın IS
 alışmak FI
 alıştırma IS
 alıştırmak FI
+#TDK bitişik diyor
+alışveriş IS
 Aliağa OZ
 âli SI
 âlicenap IS YUM
@@ -14334,6 +14336,7 @@ gala IS
 galâksi IS
 galalit IS
 galat IS
+Galatasaray OZ
 galatıhis IS CIFT
 galatımeşhur IS YAL
 galebe IS YAL
@@ -18616,6 +18619,7 @@ Hollânda OZ
 holmiyum IS
 holosen IS
 holotüritler IS
+Holywood OZ
 homojen IS
 #homojenlik,-ği
 homolog IS YUM
@@ -20473,6 +20477,7 @@ incir IS
 #incir kuşu
 #incirlik,-ği
 İncirliova OZ
+İncirlik OZ
 #incirsi meyve
 #inci taşı
 #incitici
@@ -26787,6 +26792,7 @@ kopçalamak FI
 #kopçalı
 #kopçasız
 kopek IS YUM
+Kopenak OZ
 kopil IS
 kopkoyu SI
 #kopma
@@ -36337,6 +36343,7 @@ penisilin IS
 pens IS
 pense IS
 pentan IS
+Pentagon OZ
 pentatlon IS
 penuar IS
 penye IS
@@ -37146,6 +37153,7 @@ pötikare IS
 prafa IS
 #pragmacı
 #pragmacılık,-ğı
+pragmatik IS YUM
 pragmatist IS
 pragmatizm IS
 pranga IS
@@ -39071,7 +39079,7 @@ saplamak FI
 #saplanış
 #saplanma
 #saplanmak
-#saplantı
+saplantı IS
 #saplantılı
 #saplayış
 #saplı
@@ -53439,3 +53447,4 @@ zürra IS TIRE
 zürriyet IS
 züyuf IS
 #züyuf akçe
+Washington OZ
