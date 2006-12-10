@@ -76,13 +76,11 @@ public class TurkishTokenStream {
         int kelimeIndex = 0;
         boolean hypen = false;
         try {
-            // TODO: bir char buffer'e toptan okuyup islemek hız kazandirir mi?
             while ((readChar = bis.read()) != -1) {
                 ch = (char) readChar;
                 if (statistics != null) {
                     statistics.processChar(ch);
                 }
-                //System.out.println("Char: "+ ch);
                 if (ch == '-') {
                     hypen = true;
                     continue;
@@ -90,19 +88,10 @@ public class TurkishTokenStream {
                 if (Character.isLetter(ch)) {
                     kelimeBasladi = true;
                     hypen = false;
-                    //cumleBasladi = true;
-                    switch (ch) {
-                        case 'I':
-                            ch = '\u0131';
-                            break; // dotless small i
-                            // Buraya sapkalı a vs. gibi karakter donusumlari de eklenebilir.
-                        default  :
-                            ch = Character.toLowerCase(ch);
-                    }
                     if (kelimeIndex < MAX_KELIME_BOY)
                         kelimeBuffer[kelimeIndex++] = ch;
                     else
-                        System.out.println("Lagim tasti " + ch);
+                        System.out.println("maksimum kelime boyu aşıldı. " + ch);
                     continue;
                 }
 
@@ -116,17 +105,6 @@ public class TurkishTokenStream {
                     kelimeIndex = 0;
                     continue;
                 } 
-                
-                // harfimiz bir cumle sinirlayici
-                if (isSentenceDelimiter(ch)) {
-                    /* if (cumleBasladi)
-                     {
-                         // kelimeyi cumleye ekle.
-                         cumleTamamlandi = true;
-                     }
-                     continue;*/
-                }
-
             }
             
             // Tüm karakterler bitti, son kalan kelime varsa onu da getir.
@@ -160,14 +138,14 @@ public class TurkishTokenStream {
                 //System.out.println("Char: "+ ch);
                 if (Character.isLetter(ch)) {
                     cumleBasladi = true;
-                    switch (ch) {
-                        case 'I':
-                            ch = '\u0131';
-                            break; // dotless small i
-                            // Buraya sapkalı a vs. gibi karakter donusumlari de eklenebilir.
-                        default  :
-                            ch = Character.toLowerCase(ch);
-                    }
+//                    switch (ch) {
+//                        case 'I':
+//                            ch = '\u0131';
+//                            break; // dotless small i
+//                            // Buraya sapkalı a vs. gibi karakter donusumlari de eklenebilir.
+//                        default  :
+//                            ch = Character.toLowerCase(ch);
+//                    }
                     if (cumleIndex < MAX_CUMLE_BOY)
                         cumleBuffer[cumleIndex++] = ch;
                     else
