@@ -85,7 +85,7 @@ public class TurkishTokenStream {
                     hypen = true;
                     continue;
                 }
-                if (Character.isLetter(ch)) {
+                if (Character.isLetter(ch) || (kelimeBasladi == true & ( ch == '\'' || ch == '-')) ) {
                     kelimeBasladi = true;
                     hypen = false;
                     if (kelimeIndex < MAX_KELIME_BOY)
@@ -136,7 +136,7 @@ public class TurkishTokenStream {
                 ch = (char) readChar;
 
                 //System.out.println("Char: "+ ch);
-                if (Character.isLetter(ch)) {
+                if (Character.isLetter(ch) || ch == '\'' || ch == '-' ) {
                     cumleBasladi = true;
 //                    switch (ch) {
 //                        case 'I':
