@@ -714,6 +714,9 @@
                 <on-ek>IMEK_SART_SE</on-ek>
                 <on-ek>IMEK_HIKAYE_DI</on-ek>
             </ozel-durum>
+            <ardisil-ekler>
+                <aek>ISIM_TANIMLAMA_DIR</aek>
+            </ardisil-ekler>
         </ek>
 
         <!-- isim KISI sen _sin : "ne tuhaf adam_sin"  -->
@@ -723,6 +726,9 @@
                 <on-ek>IMEK_SART_SE</on-ek>
                 <on-ek>IMEK_HIKAYE_DI</on-ek>
             </ozel-durum>
+            <ardisil-ekler>
+                <aek>ISIM_TANIMLAMA_DIR</aek>
+            </ardisil-ekler>
         </ek>
 
         <!-- isim KISI sen _sin : "ne tuhaf adam_sin"  -->
@@ -735,6 +741,9 @@
                 <on-ek>IMEK_SART_SE</on-ek>
                 <on-ek>IMEK_HIKAYE_DI</on-ek>
             </ozel-durum>
+            <ardisil-ekler>
+                <aek>ISIM_TANIMLAMA_DIR</aek>
+            </ardisil-ekler>
         </ek>
 
         <!-- isim KISI siz _siniz : "ne tuhaf adam_siniz"  -->
@@ -744,6 +753,9 @@
                 <on-ek>IMEK_SART_SE</on-ek>
                 <on-ek>IMEK_HIKAYE_DI</on-ek>
             </ozel-durum>
+            <ardisil-ekler>
+                <aek>ISIM_TANIMLAMA_DIR</aek>
+            </ardisil-ekler>
         </ek>
 
         <!-- isim KISI onlar _lar : "ne tuhaf adam_lar"  -->
@@ -845,6 +857,7 @@
                 <aek>ISIM_DURUM_LIK</aek>
                 <aek>ISIM_BULUNMA_LI</aek>
                 <aek>ISIM_BIRLIKTELIK_LE</aek>
+                <aek>ISIM_DONUSUM_LES</aek>
             </ardisil-ekler>
             <oncelikli-ekler>
                 <oek>ISIM_KISI_ONLAR_LER</oek>
@@ -863,7 +876,6 @@
                 <oek>ISIM_TAMLAMA_I</oek>
             </oncelikli-ekler>
         </ek>
-
 
         <ek ad="FIIL_DONUSUM_IK" uretim="+yIk">
             <ozel-durum ad="SON_HARF_YUMUSAMA" uretim="+yIğ"/>
@@ -1335,6 +1347,8 @@
             <ardisil-ekler>
                 <aek>YANKI_DONUSUM_TI</aek>
                 <aek>YANKI_DONUSUM_DA</aek>
+                <kume>IMEK_ZAMAN</kume>
+                <kume>ISIM_KISI</kume>
             </ardisil-ekler>
         </ek>
 
@@ -1494,6 +1508,9 @@
         <!-- isim imek "ise" _se : "tukenmez kalem_se kullanma." -->
         <ek ad="IMEK_SART_SE" uretim="+ysA">
             <ozellik>HAL</ozellik>
+            <ozel-durum ad="ON_EK" uretim="se">
+                <on-ek>IMEK_KOK</on-ek>
+            </ozel-durum>            
             <ardisil-ekler>
                 <kume>ISIM_KISI</kume>
             </ardisil-ekler>

@@ -9391,7 +9391,7 @@ dikey IS
 dikgen IS
 #dikici
 #dikicilik,-ği
-dikili IS
+dikili SI
 Dikili OZ
 #dikiliş
 #dikili taş
@@ -11448,7 +11448,7 @@ ekenek IS YUM
 #ek fiil
 #ek görev
 #ekici
-#ekili
+ekili SI
 #ekilme
 #ekilmek
 ekim IS
@@ -50953,7 +50953,7 @@ yatı IS
 #yatık
 #yatık doğru
 #yatık yazı
-yatılı IS
+yatılı SI
 #yatılma
 #yatılmak
 #yatım
