@@ -14,7 +14,7 @@ public class TestHeceBulur extends TemelTest {
 
     @Test
     public void testSonHece() {
-        HeceBulucu heceBulur = new TurkceHeceBulucu(alfabe);
+        HeceBulucu heceBulur = new TurkceHeceBulucu();
         String[] strs = {"turk", "ara", "sarta", "siir", "siiir", "kanat", "kanaat",
                 "yaptirt", "artti", "arttir", "arttirt", "sirret", "siirt", "teleskop"};
         int[] sonuclar = {4, 2, 2, 2, 2, 3, 2,
