@@ -22,7 +22,6 @@ public class EkUreticiTr implements EkUretici {
     public final TurkceHarf HARF_ii;
     public final TurkceHarf HARF_u;
     public final TurkceHarf HARF_uu;
-    public final TurkceHarf HARF_y;
 
     public EkUreticiTr(Alfabe alfabe) {
         this.sesliUretici = new TurkceSesliUretici(alfabe);
@@ -32,7 +31,6 @@ public class EkUreticiTr implements EkUretici {
         HARF_ii = alfabe.harf(Alfabe.CHAR_ii);
         HARF_u = alfabe.harf('u');
         HARF_uu = alfabe.harf(Alfabe.CHAR_uu);
-        HARF_y = alfabe.harf('y');
     }
 
     public HarfDizisi cozumlemeIcinEkUret(HarfDizisi ulanacak, HarfDizisi giris, List<EkUretimBileseni> bilesenler) {
@@ -92,8 +90,6 @@ public class EkUreticiTr implements EkUretici {
                     return kume;
                 case KAYNASTIR:
                     kume.add(harf);
-                    //TODO: su ozel durumunu cozmek icin gecici olarak duzeltmek icin 'y' harfini ekliyoruz
-                    kume.add(HARF_y);
                     break;
                 case SERTLESTIR:
                     kume.add(harf);

@@ -7,6 +7,8 @@ import net.zemberek.araclar.turkce.YaziIsleyici;
 import java.io.IOException;
 import java.util.List;
 
+import org.junit.Test;
+
 /**
  */
 public class TestCozumlemePerformans extends TestKelimeCozumleyici {
@@ -14,6 +16,7 @@ public class TestCozumlemePerformans extends TestKelimeCozumleyici {
     public void testPerformans() {
     }
 
+    @Test
     public void testPerformans2() throws IOException {
         //List kelimeler = YaziIsleyici.analizIcinKelimeAyikla(YaziIsleyici.yaziOkuyucu("kaynaklar/metinler/Ahmet_Hamdi_Tanpinar_Huzur.txt"));
         //List kelimeler = YaziIsleyici.analizIcinKelimeAyikla(YaziIsleyici.yaziOkuyucu("kaynaklar/metinler/Oscar_Wilde_Oykuler1.txt"));
@@ -36,12 +39,12 @@ public class TestCozumlemePerformans extends TestKelimeCozumleyici {
                vuru++;
                dogrular++;
             } else*/
-            if (heceleyici.hecele(kelime).length>0) {
+            if (cozumleyici.denetle(kelime)) {
               //  if(cozumleyici.denetle(kelime))
                // System.out.println(Arrays.toString(heceleyici.hecele(kelime)));
                   dogrular++;
             } else {
-                System.out.println(kelime);
+                //System.out.println(kelime);
                 yanlislar++;
             }
         }

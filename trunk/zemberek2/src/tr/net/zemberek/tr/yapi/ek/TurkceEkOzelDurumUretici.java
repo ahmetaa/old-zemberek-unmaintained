@@ -24,7 +24,7 @@ public class TurkceEkOzelDurumUretici extends TemelEkOzelDurumUretici {
         EDILGEN,
         GENIS_ZAMAN,
         SIMDIKI_ZAMAN,
-        ZAMAN_KI;
+        SU;
 
         public String ad() {
             return name();
@@ -50,8 +50,9 @@ public class TurkceEkOzelDurumUretici extends TemelEkOzelDurumUretici {
                 return new GenisZamanEkOzelDurumuTr();
             case SIMDIKI_ZAMAN:
                 return new SimdikiZamanEkOzelDurumuTr(alfabe);
-            case ZAMAN_KI:
-                return new ZamanKiOzelDurumu();
+            case SU:
+                return new SuOzelDurumu();
+
         }
         return oz;
     }

@@ -57,15 +57,6 @@ public enum TurkceKokOzelDurumTipleri implements KokOzelDurumTipi {
             ISIM_CIKMA_DEN,
             ISIM_COGUL_LER),
 
-    SU_OZEL_DURUMU("FARKLI_KAYNASTIRMA",
-            ISIM_SAHIPLIK_BEN_IM,
-            ISIM_SAHIPLIK_SEN_IN,
-            ISIM_SAHIPLIK_O_I,
-            ISIM_SAHIPLIK_BIZ_IMIZ,
-            ISIM_SAHIPLIK_SIZ_INIZ,
-            ISIM_TAMLAMA_I,
-            ISIM_TAMLAMA_IN),
-
     ZAMIR_SESLI_OZEL("ZAMIR_SESLI_OZEL",
             ISIM_YONELME_E,
             ISIM_KALMA_DE,
@@ -116,7 +107,8 @@ public enum TurkceKokOzelDurumTipleri implements KokOzelDurumTipi {
     ZAMIR_IM("ZAMIR_IM"),
     ZAMIR_IN("ZAMIR_IN"),
     KISALTMA_SON_SESLI("SON"),
-    KISALTMA_SON_SESSIZ("SON_N");
+    KISALTMA_SON_SESSIZ("SON_N"),
+    SU_OZEL_DURUMU("FARKLI_KAYNASTIRMA");
 
     private String kisaAd;
     private String[] ekAdlari = new String[0];
