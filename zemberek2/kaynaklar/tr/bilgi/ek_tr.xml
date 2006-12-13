@@ -418,6 +418,7 @@
         <!-- isim tamlama _in: "kedi_nin kuyrugu"  !! bu ekin sahiplik eki ile karismis olma durumu var -->
 
         <ek ad="ISIM_TAMLAMA_IN" uretim="+nIn">
+            <ozel-durum ad="SU" uretim="yun"/>
             <ozellik>IYELIK</ozellik>
             <ardisil-ekler>
                 <kume>IMEK_ZAMAN</kume>
@@ -432,6 +433,7 @@
 
         <!-- isim tamlama _i: "Van kedi_si"  -->
         <ek ad="ISIM_TAMLAMA_I" uretim="+sI">
+            <ozel-durum ad="SU" uretim="yu"/>
             <ozellik>IYELIK</ozellik>
             <ardisil-ekler>
                 <kume>ISIM_KISI</kume>
@@ -556,6 +558,7 @@
 
         <!-- isim sahiplik ben _im : "kedi_m margarita deli etti beni."  -->
         <ek ad="ISIM_SAHIPLIK_BEN_IM" uretim="Im">
+            <ozel-durum ad="SU" uretim="yum"/>
             <ozellik>IYELIK</ozellik>
             <ardisil-ekler>
                 <kume>ISIM_HAL</kume>
@@ -568,8 +571,9 @@
             </ardisil-ekler>
         </ek>
 
-        <!-- isim sahiplik sen _in : "evi_n guzelmis.."  -->
+        <!-- isim sahiplik sen _in : "ev-in guzelmis.."  -->
         <ek ad="ISIM_SAHIPLIK_SEN_IN" uretim="In">
+            <ozel-durum ad="SU" uretim="yun"/>
             <ozellik>IYELIK</ozellik>
             <ardisil-ekler>
                 <kume>ISIM_HAL</kume>
@@ -590,6 +594,7 @@
 
         <!-- isim sahiplik biz _imiz : "ev_i guzelmis.."  -->
         <ek ad="ISIM_SAHIPLIK_O_I" uretim="+sI">
+            <ozel-durum ad="SU" uretim="yu"/>            
             <ozellik>IYELIK</ozellik>
             <ardisil-ekler>
                 <kume>ISIM_HAL</kume>
@@ -606,6 +611,7 @@
 
         <!-- isim sahiplik biz _imiz : "ev_imiz perisan.."  -->
         <ek ad="ISIM_SAHIPLIK_BIZ_IMIZ" uretim="ImIz">
+            <ozel-durum ad="SU" uretim="yumuz"/>               
             <ozellik>IYELIK</ozellik>
             <ardisil-ekler>
                 <kume>ISIM_HAL</kume>

@@ -65,15 +65,13 @@ public class TurkceKokOzelDurumBilgisi extends TemelKokOzelDurumBilgisi implemen
                 secimlik(true).
                 yapiBozucu(true));
 
-        HarfDizisi y = new HarfDizisi("y", alfabe);
-        ekle(uretici(SU_OZEL_DURUMU, new Ulama(y)).yapiBozucu(true));
-
         HarfDizisi n = new HarfDizisi("n", alfabe);
         ekle(uretici(ZAMIR_SESLI_OZEL, new Ulama(n)).yapiBozucu(true));
 
         ekle(uretici(ISIM_TAMLAMASI, new BosHarfDizisiIslemi()).ekKisitlayici(true));
 
-        bosOzelDurumEkle(YALIN,
+        bosOzelDurumEkle(
+                YALIN,
                 EK_OZEL_DURUMU,
                 GENIS_ZAMAN,
                 FIIL_GECISSIZ,
@@ -85,7 +83,8 @@ public class TurkceKokOzelDurumBilgisi extends TemelKokOzelDurumBilgisi implemen
                 ZAMIR_IM,
                 ZAMIR_IN,
                 KISALTMA_SON_SESLI,
-                KISALTMA_SON_SESSIZ);
+                KISALTMA_SON_SESSIZ,
+                SU_OZEL_DURUMU);
     }
 
     public TurkceKokOzelDurumBilgisi(EkYonetici ekler, Alfabe alfabe) {
@@ -112,8 +111,8 @@ public class TurkceKokOzelDurumBilgisi extends TemelKokOzelDurumBilgisi implemen
 
         //ters sesli ozel durumu yapi bozucu ama sadece seslinin tipini degistirdiginden
         //islemeye gerek yok.
-        if(kok.ozelDurumDizisi().length==1 && kok.ozelDurumIceriyormu(TERS_SESLI_EK))
-          return new String[0];
+        if (kok.ozelDurumDizisi().length == 1 && kok.ozelDurumIceriyormu(TERS_SESLI_EK))
+            return new String[0];
 
         // kok uzerindeki ozel durumlar basta sona taranip ozel durum koke uygulaniyor.
         for (KokOzelDurumu ozelDurum : kok.ozelDurumDizisi()) {
