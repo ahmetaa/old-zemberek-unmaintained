@@ -65,8 +65,8 @@ public class TurkceKokOzelDurumBilgisi extends TemelKokOzelDurumBilgisi implemen
                 secimlik(true).
                 yapiBozucu(true));
 
-        HarfDizisi yu = new HarfDizisi("yu", alfabe);
-        ekle(uretici(SU_OZEL_DURUMU, new Ulama(yu)).yapiBozucu(true));
+        HarfDizisi y = new HarfDizisi("y", alfabe);
+        ekle(uretici(SU_OZEL_DURUMU, new Ulama(y)).yapiBozucu(true));
 
         HarfDizisi n = new HarfDizisi("n", alfabe);
         ekle(uretici(ZAMIR_SESLI_OZEL, new Ulama(n)).yapiBozucu(true));
