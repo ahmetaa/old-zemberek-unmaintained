@@ -11,18 +11,28 @@ import net.zemberek.yapi.ek.EkUretimBileseni;
 import java.util.List;
 import java.util.Set;
 import java.util.HashSet;
-import java.util.logging.Logger;
 
 
 public class EkUreticiTr implements EkUretici {
 
-    private static Logger logger = Logger.getLogger(EkUreticiTr.class.getName());
     private TurkceSesliUretici sesliUretici;
-    private Alfabe alfabe;
+    public final TurkceHarf HARF_a;
+    public final TurkceHarf HARF_e;
+    public final TurkceHarf HARF_i;
+    public final TurkceHarf HARF_ii;
+    public final TurkceHarf HARF_u;
+    public final TurkceHarf HARF_uu;
+    public final TurkceHarf HARF_y;
 
     public EkUreticiTr(Alfabe alfabe) {
         this.sesliUretici = new TurkceSesliUretici(alfabe);
-        this.alfabe = alfabe;
+        HARF_a = alfabe.harf('a');
+        HARF_e = alfabe.harf('e');
+        HARF_i = alfabe.harf('i');
+        HARF_ii = alfabe.harf(Alfabe.CHAR_ii);
+        HARF_u = alfabe.harf('u');
+        HARF_uu = alfabe.harf(Alfabe.CHAR_uu);
+        HARF_y = alfabe.harf('y');
     }
 
     public HarfDizisi cozumlemeIcinEkUret(HarfDizisi ulanacak, HarfDizisi giris, List<EkUretimBileseni> bilesenler) {
@@ -75,27 +85,30 @@ public class EkUreticiTr implements EkUretici {
         Set<TurkceHarf> kume = new HashSet(4);
         for (int i=0; i< bilesenler.size(); i++) {
             EkUretimBileseni bilesen = bilesenler.get(i);
+            final TurkceHarf harf = bilesen.harf();
             switch (bilesen.kural()) {
                 case HARF:
-                    kume.add(bilesen.harf());
+                    kume.add(harf);
                     return kume;
                 case KAYNASTIR:
-                    kume.add(bilesen.harf());
+                    kume.add(harf);
+                    //TODO: su ozel durumunu cozmek icin gecici olarak duzeltmek icin 'y' harfini ekliyoruz
+                    kume.add(HARF_y);
                     break;
                 case SERTLESTIR:
-                    kume.add(bilesen.harf());
-                    kume.add(bilesen.harf().sertDonusum());
+                    kume.add(harf);
+                    kume.add(harf.sertDonusum());
                     return kume;
                 case SESLI_AE:
-                      kume.add(alfabe.harf('a'));
-                      kume.add(alfabe.harf('e'));
+                      kume.add(HARF_a);
+                      kume.add(HARF_e);
                       if(i>0)
                         return kume;
                 case SESLI_IU:
-                      kume.add(alfabe.harf('i'));
-                      kume.add(alfabe.harf('u'));
-                      kume.add(alfabe.harf(Alfabe.CHAR_ii));
-                      kume.add(alfabe.harf(Alfabe.CHAR_uu));
+                      kume.add(HARF_i);
+                      kume.add(HARF_u);
+                      kume.add(HARF_ii);
+                      kume.add(HARF_uu);
                       if(i>0)
                         return kume;                    
             }

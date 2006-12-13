@@ -62,7 +62,9 @@ public enum TurkceKokOzelDurumTipleri implements KokOzelDurumTipi {
             ISIM_SAHIPLIK_SEN_IN,
             ISIM_SAHIPLIK_O_I,
             ISIM_SAHIPLIK_BIZ_IMIZ,
-            ISIM_SAHIPLIK_SIZ_INIZ),
+            ISIM_SAHIPLIK_SIZ_INIZ,
+            ISIM_TAMLAMA_I,
+            ISIM_TAMLAMA_IN),
 
     ZAMIR_SESLI_OZEL("ZAMIR_SESLI_OZEL",
             ISIM_YONELME_E,
