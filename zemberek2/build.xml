@@ -43,6 +43,7 @@
         <mkdir dir="${build.cekirdek}"/>
         <javac srcdir="${src.cekirdek}"
                destdir="${build.cekirdek}"
+               encoding="utf-8"
                classpathref="classpath.build"
                debug="true"
                source="1.5"
@@ -51,6 +52,7 @@
         <javac srcdir="${src.demo}"
                destdir="${build.cekirdek}"
                classpathref="classpath.build"
+               encoding="utf-8"
                source="1.5"
                target="1.5">
         </javac>
@@ -69,6 +71,7 @@
                destdir="${build.dir}/${dil}"
                classpath="${build.cekirdek}"
                debug="true"
+               encoding="utf-8"                
                source="1.5"
                target="1.5">
         </javac>
