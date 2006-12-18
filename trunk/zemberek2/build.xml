@@ -165,7 +165,7 @@
 
 
     <!-- ======================================================= -->
-    <!-- Tum dilleri iceren jar     -->
+    <!-- Verilen dili iceren jar     -->
     <!-- ======================================================= -->
     <target name="jar-minimal" depends="temizle, derle-cekirdek">
         <fail unless="dil" message="bu ant gorevi icin 'dil' parametresi gerekli. tr,tm gibi."/>
@@ -189,6 +189,8 @@
     <!-- ======================================================= -->
     <!-- bilgi dosyalari icinde jar ile dagitim olusturur....    -->
     <!-- ======================================================= -->
+    
+    <!-- tüm diller için -->    
     <target name="dist" depends="jar-tum">
 
         <mkdir dir="${dist.dir}"/>
@@ -210,6 +212,48 @@
              excludes="**/*.zip"/>
 
         <echo message="Dagitim dosyalari /dagitim dizininde olusturuldu."/>
+    </target>
+    
+    <!-- verilen dil için -->
+    <target name="dist-minimal">
+
+        <antcall target="jar-minimal">
+            <param name="dil" value="${dil}"/>
+        </antcall>
+        
+        <mkdir dir="${dist.dir}"/>
+        <mkdir dir="${dist.dir}/docs/java-docs"/>
+
+        <copy todir="${dist.dir}/lisanslar">
+            <fileset dir="${licences.dir}">
+            </fileset>
+        </copy>
+        <copy todir="${dist.dir}">
+            <fileset file="okubeni.txt"/>
+            <fileset file="surumler.txt"/>
+            <fileset file="${build.dir}/zemberek2-${dil}.jar"/>
+        </copy>
+        <!-- ayni isim ile zip dosya olustur. -->
+        <zip destfile="${dist.dir}/zemberek-${surum}.zip"
+             basedir="${dist.dir}"
+             update="true"
+             excludes="**/*.zip"/>
+
+        <echo message="Dagitim dosyalari /dagitim dizininde olusturuldu."/>
+    </target>
+    
+    <!-- Türkçe için -->
+    <target name="dist-minimal-tr">
+    	<antcall target="dist-minimal">
+            <param name="dil" value="tr"/>
+        </antcall>
+    </target>
+    
+    <!-- Türkmence için -->
+    <target name="dist-minimal-tm">
+    	<antcall target="dist-minimal">
+            <param name="dil" value="tm"/>
+        </antcall>
     </target>
 
     <!-- ======================================================= -->
