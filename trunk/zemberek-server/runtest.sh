@@ -1,0 +1,1 @@
+java -cp ./zemberek_server-0.6.jar net.zemberekserver.client.TestClient
