@@ -33,7 +33,7 @@
         <mkdir dir="${build.java}"/>
         <javac srcdir="${src.java}"
             destdir="${build.java}"
-            classpathref="classpath.build"/>
+            classpathref="classpath.build" encoding="utf-8"/>
         <copy todir="${build.java}">
             <fileset dir="${src.java}">
                 <exclude name="**/*.java"/>
@@ -43,7 +43,7 @@
         <mkdir dir="${build.test}"/>
         <javac srcdir="${src.test}"
             destdir="${build.test}"
-            debug="true">
+            debug="true" encoding="utf-8">
             <classpath>
                 <path refid="classpath.build"/>
                 <pathelement path="${build.java}"/>
