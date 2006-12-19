@@ -36,8 +36,8 @@ public class ZemberekDbus implements IZemberek {
 		try {
 			DBusConnection conn = DBusConnection.getConnection(DBusConnection.SYSTEM);
 			//DBusConnection conn = DBusConnection.getConnection(DBusConnection.SESSION);
-			conn.requestBusName("net.zemberek.erisim.dbus");
-			conn.exportObject("/net/zemberek/erisim/dbus/Zemberek",new ZemberekDbus(zemberek));
+			conn.requestBusName("net.zemberekserver.dbus");
+			conn.exportObject("/net/zemberekserver/dbus/Zemberek",new ZemberekDbus(zemberek));
 			System.out.println("Zemberek DBus arayüzü başlatıldı");
 		} catch (DBusException e) {
 			e.printStackTrace();
