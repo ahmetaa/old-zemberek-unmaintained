@@ -71,7 +71,7 @@ public class BinaryIstatistikOkuyucu {
             }
         }
        catch(EOFException e){
-            	System.out.println("Bitti. Frekansı yazılan kök sayısı: " + sayac);
+            	System.out.println("Bitti. Frekansi yazilan kök sayisi: " + sayac);
             }
        finally {
             if (dis != null)

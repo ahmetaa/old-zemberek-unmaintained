@@ -121,7 +121,7 @@ public class KaynakYukleyici {
     private InputStream utf8BomDenetle(InputStream is) throws IOException {
         if (is == null)
             throw new IOException("inputStream is null. throwing exception");
-        if (encoding != null && !encoding.equals("UTF-8"))
+        if (encoding != null && !encoding.equalsIgnoreCase("UTF-8"))
             return is;
         PushbackInputStream pis = new PushbackInputStream(is, bomBytes.length);
         byte[] okunanBom = new byte[bomBytes.length];

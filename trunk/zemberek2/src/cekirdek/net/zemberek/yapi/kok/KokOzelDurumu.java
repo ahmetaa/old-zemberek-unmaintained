@@ -93,6 +93,11 @@ public class KokOzelDurumu {
      */
     private boolean herZamanOlusur = false;
 
+    /**
+     * Eger kok ozel durumu bilgisi otomatik olarak belirleniyorsa true.
+     */
+    private boolean otomatikBelirlenir = false;
+
 
     /**
      * bu sinif KokOzelDurumu uretimi icin kullanilir. Bu sinif sayesinde
@@ -108,6 +113,7 @@ public class KokOzelDurumu {
         private HarfDizisiIslemi islem;
         private KokOzelDurumTipi tip;
         private boolean herZamanOlusur = false;
+        private boolean otomatikBelirlenir = false;
 
         public Uretici(KokOzelDurumTipi tip, HarfDizisiIslemi islem) {
             this.tip = tip;
@@ -150,6 +156,11 @@ public class KokOzelDurumu {
             return this;
         }
 
+        public Uretici otomatikBelirlenir(boolean otomatikBelilenir) {
+            this.otomatikBelirlenir = otomatikBelilenir;
+            return this;
+        }
+
         public KokOzelDurumu uret() {
             return new KokOzelDurumu(this);
         }
@@ -169,6 +180,7 @@ public class KokOzelDurumu {
         this.tip = uretici.tip;
         this.islem = uretici.islem;
         this.herZamanOlusur=uretici.herZamanOlusur;
+        this.otomatikBelirlenir=uretici.otomatikBelirlenir;
     }
 
     public boolean yapiBozucumu() {
@@ -187,6 +199,9 @@ public class KokOzelDurumu {
         return gelebilecekEkler;
     }
 
+    public boolean otomatikbelilenir() {
+        return otomatikBelirlenir;
+    }
 
     public boolean ekKisitlayiciMi() {
         return ekKisitlayici;

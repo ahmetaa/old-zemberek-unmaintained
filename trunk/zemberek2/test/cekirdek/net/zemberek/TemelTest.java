@@ -39,6 +39,9 @@ import java.io.IOException;
  */
 public class TemelTest {
 
+    public static final String TEMP_DIR = "kaynaklar/temp/";
+    public static final String TR_TEST_TEXT = "kaynaklar/tr/test/";
+
     protected DilBilgisi dilBilgisi;
     protected DilAyarlari dilAyarlari;
     protected Alfabe alfabe;
