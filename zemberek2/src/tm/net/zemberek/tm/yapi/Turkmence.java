@@ -1,5 +1,6 @@
 /*
  *  ***** BEGIN LICENSE BLOCK *****
+ *
  *  Version: MPL 1.1
  *
  *  The contents of this file are subject to the Mozilla Public License Version
@@ -12,10 +13,10 @@
  *  for the specific language governing rights and limitations under the
  *  License.
  *
- *  The Original Code is Zemberek Doðal Dil Ýþleme Kütüphanesi.
+ *  The Original Code is Zemberek Do?al Dil ??leme Kütüphanesi.
  *
  *  The Initial Developer of the Original Code is
- *  Ahmet A. Akýn, Mehmet D. Akýn, Guychmyrat Amanmyradov.
+ *  Ahmet A. Ak?n, Mehmet D. Ak?n, Guychmyrat Amanmyradov.
  *  Portions created by the Initial Developer are Copyright (C) 2006
  *  the Initial Developer. All Rights Reserved.
  *
