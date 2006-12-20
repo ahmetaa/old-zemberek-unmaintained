@@ -1,3 +1,27 @@
+/*
+ *  ***** BEGIN LICENSE BLOCK *****
+ *  Version: MPL 1.1
+ *
+ *  The contents of this file are subject to the Mozilla Public License Version
+ *  1.1 (the "License"); you may not use this file except in compliance with
+ *  the License. You may obtain a copy of the License at
+ *  http://www.mozilla.org/MPL/
+ *
+ *  Software distributed under the License is distributed on an "AS IS" basis,
+ *  WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ *  for the specific language governing rights and limitations under the
+ *  License.
+ *
+ *  The Original Code is Zemberek Doðal Dil Ýþleme Kütüphanesi.
+ *
+ *  The Initial Developer of the Original Code is
+ *  Ahmet A. Akýn, Mehmet D. Akýn.
+ *  Portions created by the Initial Developer are Copyright (C) 2006
+ *  the Initial Developer. All Rights Reserved.
+ *
+ *  ***** END LICENSE BLOCK *****
+ */
+
 package net.zemberek.islemler.cozumleme;
 
 import net.zemberek.araclar.IstatistikAraclari;
@@ -18,10 +42,12 @@ public class TestCozumlemePerformans extends TestKelimeCozumleyici {
 
     @Test
     public void testPerformans2() throws IOException {
+        System.in.read();
+        
         //List kelimeler = YaziIsleyici.analizIcinKelimeAyikla(YaziIsleyici.yaziOkuyucu("kaynaklar/metinler/Ahmet_Hamdi_Tanpinar_Huzur.txt"));
         //List kelimeler = YaziIsleyici.analizIcinKelimeAyikla(YaziIsleyici.yaziOkuyucu("kaynaklar/metinler/Oscar_Wilde_Oykuler1.txt"));
         //List kelimeler = YaziIsleyici.analizIcinKelimeAyikla(YaziIsleyici.yaziOkuyucu("kaynaklar/metinler/Frank_Herbert_Dune1.txt"));
-        List kelimeler = YaziIsleyici.analizIcinKelimeAyikla(YaziIsleyici.yaziOkuyucu("kaynaklar/tr/metinler/ButunKelimeler.txt"));
+        List kelimeler = YaziIsleyici.analizIcinKelimeAyikla(YaziIsleyici.yaziOkuyucu("kaynaklar/tr/metinler/BuzyeliVadisi2.txt"));
         //List kelimeler = YaziIsleyici.analizIcinKelimeAyikla(YaziIsleyici.yaziOkuyucu("kaynaklar/metinler/commodore.txt"));
         //List kelimeler = YaziIsleyici.kelimeAyikla(YaziIsleyici.yaziOkuyucu("kaynaklar/metinler/corpus.txt"));
         int vuru = 0;
@@ -39,7 +65,7 @@ public class TestCozumlemePerformans extends TestKelimeCozumleyici {
                vuru++;
                dogrular++;
             } else*/
-            if (cozumleyici.denetle(kelime)) {
+            if (heceleyici.hecele(kelime).length>0) {
               //  if(cozumleyici.denetle(kelime))
                // System.out.println(Arrays.toString(heceleyici.hecele(kelime)));
                   dogrular++;
@@ -48,10 +74,9 @@ public class TestCozumlemePerformans extends TestKelimeCozumleyici {
                 yanlislar++;
             }
         }
-        System.out.println(kelimeler.size() + " kelimelik metin iï¿½in Saniyede : " + TimeTracker.getItemsPerSecond("x", kelimeler.size()));
+        System.out.println(kelimeler.size() + " kelimelik metin icin Saniyede : " + TimeTracker.getItemsPerSecond("x", kelimeler.size()));
         System.out.println("Dogru kelime sayisi: " + dogrular + " Yanlis Kelime Sayisi: " + yanlislar);
-        System.out.println("Toplam sï¿½re: " + TimeTracker.stopClock("x"));
-        System.out.println("Vuru sayï¿½sï¿½: " + vuru + " Vuru oranï¿½: " + IstatistikAraclari.yuzdeHesapla(vuru, dogrular));
+        System.out.println("Toplam sure: " + TimeTracker.stopClock("x"));
         }
     }
 }
