@@ -13,10 +13,10 @@
  *  for the specific language governing rights and limitations under the
  *  License.
  *
- *  The Original Code is Zemberek Doğal Dil İşleme Kütüphanesi.
+ *  The Original Code is "Zemberek Dogal Dil Isleme Kutuphanesi"
  *
  *  The Initial Developer of the Original Code is
- *  Ahmet A. Akın, Mehmet D. Akın, Guychmyrat Amanmyradov.
+ *  Ahmet A. Akin, Mehmet D. Akin, Guychmyrat Amanmyradov.
  *  Portions created by the Initial Developer are Copyright (C) 2006
  *  the Initial Developer. All Rights Reserved.
  *
