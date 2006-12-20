@@ -102,7 +102,7 @@ public class TestHeceleyici extends TemelTest {
         for (String s : strs)
             assertTrue("hecelenemedi:" + s, heceleyici.hecelenebilirmi(s));
 
-        String ss[] = {"IBM", "lycos", "AwAtt", ".", "-"};
+        String ss[] = { "lycos", "AwAtrt", ".", "-"};
         for (String s : ss)
             assertFalse("hecelendi:" + s, heceleyici.hecelenebilirmi(s));
 
