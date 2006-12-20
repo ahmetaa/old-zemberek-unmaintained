@@ -31,6 +31,7 @@ import net.zemberek.TemelTest;
 import net.zemberek.araclar.TimeTracker;
 import net.zemberek.bilgi.araclar.DuzYaziKokOkuyucu;
 import net.zemberek.bilgi.araclar.KokOkuyucu;
+import net.zemberek.bilgi.araclar.IkiliKokOkuyucu;
 import net.zemberek.yapi.Kok;
 import static org.junit.Assert.*;
 import org.junit.Test;
@@ -48,41 +49,48 @@ public class TestTreeSozluk extends TemelTest {
 
     public void once() throws IOException {
         super.once();
-        okuyucu= getOkuyucu("kaynaklar/tr/test/test-sozluk.txt");
+        okuyucu = getDuzyaziOkuyucu("kaynaklar/tr/test/test-sozluk.txt");
         sozluk = new AgacSozluk(okuyucu, alfabe, dilBilgisi.kokOzelDurumlari());
     }
 
-    private KokOkuyucu getOkuyucu(String dosya) throws IOException {
-        return  new DuzYaziKokOkuyucu(
+    private KokOkuyucu getDuzyaziOkuyucu(String dosya) throws IOException {
+        return new DuzYaziKokOkuyucu(
                 dosya,
                 dilBilgisi.kokOzelDurumlari(),
                 alfabe,
                 dilAyarlari.kokTipiAdlari());
     }
 
+    private KokOkuyucu getIkiliOkuyucu(String dosya) throws IOException {
+        return new IkiliKokOkuyucu(
+                dosya,
+                dilBilgisi.kokOzelDurumlari());
+    }
+
     @Test
     public void testHatasizlik_binary() throws IOException {
         TimeTracker.startClock("x");
-        KokOkuyucu okuyucu1 = getOkuyucu("kaynaklar/tr/bilgi/binary-kokler.bin");
-        AgacSozluk testSozluk = new AgacSozluk(okuyucu1, alfabe,  dilBilgisi.kokOzelDurumlari());
+        KokOkuyucu okuyucu1 = getIkiliOkuyucu("kaynaklar/tr/bilgi/kokler_tr.bin");
+        AgacSozluk testSozluk = new AgacSozluk(okuyucu1, alfabe, dilBilgisi.kokOzelDurumlari());
         System.out.println("Time: " + TimeTracker.getElapsedTimeString("x"));
         TimeTracker.stopClock("x");
-        KokOkuyucu okuyucu2 = getOkuyucu("kaynaklar/tr/bilgi/binary-kokler.bin");
+        KokOkuyucu okuyucu2 = getIkiliOkuyucu("kaynaklar/tr/bilgi/kokler_tr.bin");
         List<Kok> list = okuyucu2.hepsiniOku();
         for (Kok kok : list) {
             if (testSozluk.kokBul(kok.icerik()) == null) {
                 fail("Kelime aðaçta bulunamadý: " + kok.icerik());
+                return;
             }
         }
     }
 
     @Test
     public void testHatasizlik_() throws IOException {
-        KokOkuyucu okuyucu1 = getOkuyucu("kaynaklar/tr/test/agactest-1.txt");
+        KokOkuyucu okuyucu1 = getDuzyaziOkuyucu("kaynaklar/tr/test/agactest-1.txt");
         AgacSozluk testSozluk = new AgacSozluk(okuyucu1, alfabe, dilBilgisi.kokOzelDurumlari());
-        KokOkuyucu okuyucu2 = getOkuyucu("kaynaklar/tr/test/agactest-1.txt");
+        KokOkuyucu okuyucu2 = getDuzyaziOkuyucu("kaynaklar/tr/test/agactest-1.txt");
         List<Kok> list = okuyucu2.hepsiniOku();
-        for (Kok kok : list) {         
+        for (Kok kok : list) {
             if (testSozluk.kokBul(kok.icerik()) == null) {
                 fail("Kelime aðaçta bulunamadý: " + kok.icerik());
             }
@@ -93,9 +101,9 @@ public class TestTreeSozluk extends TemelTest {
 
     @Test
     public void testHatasizlik() throws IOException {
-        KokOkuyucu okuyucu1 = getOkuyucu("kaynaklar/tr/bilgi/duzyazi-kilavuz.txt");
+        KokOkuyucu okuyucu1 = getDuzyaziOkuyucu("kaynaklar/tr/bilgi/duzyazi-kilavuz.txt");
         AgacSozluk testSozluk = new AgacSozluk(okuyucu1, alfabe, dilBilgisi.kokOzelDurumlari());
-        KokOkuyucu okuyucu2 = getOkuyucu("kaynaklar/tr/bilgi/duzyazi-kilavuz.txt");
+        KokOkuyucu okuyucu2 = getDuzyaziOkuyucu("kaynaklar/tr/bilgi/duzyazi-kilavuz.txt");
         List<Kok> list = okuyucu2.hepsiniOku();
         for (Kok kok : list) {
             if (testSozluk.kokBul(kok.icerik()) == null) {
@@ -138,11 +146,11 @@ public class TestTreeSozluk extends TemelTest {
 
         KokBulucu kb = sozluk.getKokBulucuFactory().getKesinKokBulucu();
         List<Kok> adaylar = kb.getAdayKokler("bahsetmek");
-        assertTrue(adaylar.size()==1);
+        assertTrue(adaylar.size() == 1);
         assertEquals(adaylar.get(0).icerik(), "bahset");
 
         adaylar = kb.getAdayKokler("bahseden");
-        assertTrue(adaylar.size()==1);
+        assertTrue(adaylar.size() == 1);
         assertEquals(adaylar.get(0).icerik(), "bahset");
 
     }

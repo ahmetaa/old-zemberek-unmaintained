@@ -1,4 +1,4 @@
-#-------------------------
+ï»¿#-------------------------
 # TEST SOZLUGU
 #-------------------------
 #v0.1
@@ -14,11 +14,11 @@ ben ZA TEKIL_KISI_BOZULMASI
 demek FI FIIL_KOK_BOZULMASI
 al IS
 almak FI GEN
-yüz IS
-yüz SA
+yÃ¼z IS
+yÃ¼z SA
 yaz IS
 yoz IS
-yüzmek FI
+yÃ¼zmek FI
 yaramak FI
 yara IS
 el IS

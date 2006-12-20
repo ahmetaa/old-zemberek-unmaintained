@@ -86,7 +86,9 @@ public class TurkceKokOzelDurumBilgisi extends TemelKokOzelDurumBilgisi implemen
                 yapiBozucu(true).
                 herZamanOlusur(true));
 
-        ekle(uretici(SIMDIKI_ZAMAN, new SonHarfDusmesi()).yapiBozucu(true));
+        ekle(uretici(SIMDIKI_ZAMAN, new SonHarfDusmesi())
+                .yapiBozucu(true)
+                .otomatikBelirlenir(true));
 
         ekle(uretici(ISIM_SON_SESLI_DUSMESI, new SonHarfDusmesi()).
                 secimlik(true).

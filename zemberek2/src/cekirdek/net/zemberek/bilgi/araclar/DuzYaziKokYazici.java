@@ -31,29 +31,37 @@
 package net.zemberek.bilgi.araclar;
 
 import net.zemberek.yapi.Kok;
+import net.zemberek.yapi.KelimeTipi;
 import net.zemberek.yapi.kok.KokOzelDurumu;
 
 import java.io.*;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
+import java.util.HashMap;
 
 /**
  * Verilen bir sözlüğün düzyazı olarak yazılmasını sağlar.
+ *
  * @author MDA
  */
 public class DuzYaziKokYazici implements KokYazici {
 
     BufferedWriter writer;
+    private Map<KelimeTipi, String> tipAdlari = new HashMap();
 
-    public DuzYaziKokYazici(String dosyaAdi) throws FileNotFoundException {
+    public DuzYaziKokYazici(String dosyaAdi, Map<String, KelimeTipi> kokAdTipMap) throws IOException {
+        for (Map.Entry<String, KelimeTipi> entry : kokAdTipMap.entrySet()) {
+            tipAdlari.put(entry.getValue(), entry.getKey());
+        }
         FileOutputStream fos = new FileOutputStream(dosyaAdi);
-        writer = new BufferedWriter(new OutputStreamWriter(fos));
+        writer = new BufferedWriter(new OutputStreamWriter(fos, "UTF-8"));
     }
 
 
     public void yaz(List<Kok> kokler) throws IOException {
         writer.write("#-------------------------\n");
-        writer.write("# TSPELL DUZ METIN SOZLUK \n");
+        writer.write("# ZEMBEREK DUZ YAZI SOZLUK \n");
         writer.write("#-------------------------\n");
         writer.write("#v0.1\n");
         for (Kok kok : kokler) {
@@ -70,24 +78,30 @@ public class DuzYaziKokYazici implements KokYazici {
         if (kok.asil() != null)
             icerik = kok.asil();
 
-        StringBuilder res = new StringBuilder(icerik);
-        res.append(" ");
+        StringBuilder res = new StringBuilder(icerik).append(" ");
+
         // Tipi ekleyelim.
         if (kok.tip() == null) {
             System.out.println("tipsiz kok:" + kok);
             return res.toString();
         }
 
-        res.append(kok.tip().toString());
-        res.append(" ");
-        res.append(getOzellikString(kok.ozelDurumDizisi()));
+        if (!tipAdlari.containsKey(kok.tip())) {
+            System.out.println("tip icin dile ozel kisa ad bulunamadi.:" + kok.tip().name());
+            return "#" + kok.icerik();
+        }
+
+        res.append(tipAdlari.get(kok.tip()))
+                .append(" ")
+                .append(getOzellikString(kok.ozelDurumDizisi()));
         return res.toString();
     }
 
     private String getOzellikString(KokOzelDurumu[] ozelDurumlar) {
         String oz = "";
         for (KokOzelDurumu ozelDurum : ozelDurumlar) {
-            oz = oz + ozelDurum.kisaAd() + " ";
+            if (!ozelDurum.otomatikbelilenir())
+                oz = oz + ozelDurum.kisaAd() + " ";
         }
         return oz;
     }

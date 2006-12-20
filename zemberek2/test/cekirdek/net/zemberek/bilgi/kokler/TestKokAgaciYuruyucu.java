@@ -62,7 +62,7 @@ public class TestKokAgaciYuruyucu extends TemelTest {
         TimeTracker.stopClock("x");
         Runtime.getRuntime().gc();
         try {
-            Thread.sleep(25000);
+            Thread.sleep(250);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
