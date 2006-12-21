@@ -46,9 +46,9 @@ public class TestKokAgaciYuruyucu extends TemelTest {
         System.out.println("Sozluk Yuklendi: " + TimeTracker.getElapsedTimeString("x"));
         yuruyucu.walk(dilBilgisi.kokler().getAgac().getKokDugumu(), "");
         System.out.println("Agacta Yurundu: " + TimeTracker.getElapsedTimeString("x"));
-        System.out.println("Toplam d�g�m sayisi:" + yuruyucu.dugumSayisi);
+        System.out.println("Toplam dugum sayisi:" + yuruyucu.dugumSayisi);
         System.out.println("Kok tasiyan dugum sayisi:" + yuruyucu.kokTasiyanDugumSayisi);
-        System.out.println("Es Sesli Tasiyan d�g�m sayisi:" + yuruyucu.esSesliTasiyanDugumSayisi);
+        System.out.println("Es Sesli Tasiyan dugum sayisi:" + yuruyucu.esSesliTasiyanDugumSayisi);
         System.out.println("Alt dugumu olan dugum sayisi:" + (yuruyucu.dugumSayisi - yuruyucu.ucDugumSayisi));
         System.out.println("Alt dugumu olmayan dugum sayisi:" + yuruyucu.ucDugumSayisi);
         int araToplam = 0;

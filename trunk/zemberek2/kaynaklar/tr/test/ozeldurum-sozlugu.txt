@@ -1,12 +1,12 @@
-yemek FI DE_YE
-demek FI DE_YE
+ï»¿yemek FI FIIL_KOK_BOZULMASI
+demek FI FIIL_KOK_BOZULMASI
 cenk IS YUM_NK
-ayýrmak FI DUS_FI
+ayÄ±rmak FI DUS_FI
 okumak FI
 kitap IS YUM
 red IS CIFT
-ben ZA BEN_SEN
-sen ZA BEN_SEN
+ben ZA TEKIL_KISI_BOZULMASI
+sen ZA TEKIL_KISI_BOZULMASI
 minik IS KUCULTME YUM
-küçük IS KUCULTME YUM
+kÃ¼Ã§Ã¼k IS KUCULTME YUM
 nakit IS YUM DUS

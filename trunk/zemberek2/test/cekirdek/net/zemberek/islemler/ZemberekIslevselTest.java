@@ -62,7 +62,7 @@ public class ZemberekIslevselTest extends TemelTest {
         String giris = "Ibrik";
         String[] sonuclar = zemberek.asciidenTurkceye(giris);
         assertTrue(sonuclar.length == 1);
-        assertEquals(sonuclar.length, "ibrik");
+        assertEquals(sonuclar[0], "ibrik");
         giris = "Irmak";
         sonuclar = zemberek.asciidenTurkceye(giris);
         assertTrue(sonuclar.length == 1);

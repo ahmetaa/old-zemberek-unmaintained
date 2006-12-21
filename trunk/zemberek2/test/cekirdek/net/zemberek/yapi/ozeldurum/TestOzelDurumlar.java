@@ -35,6 +35,7 @@ import net.zemberek.yapi.kok.KokOzelDurumBilgisi;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import org.junit.Before;
+import org.junit.Test;
 
 import java.io.IOException;
 
@@ -50,28 +51,28 @@ public class TestOzelDurumlar extends TemelTest {
         koz = dilBilgisi.kokOzelDurumlari();
     }
 
-    @Before
+    @Test
     public void testYumusama() {
         HarfDizisi dizi = hd("kitap");
         dilBilgisi.kokOzelDurumlari().ozelDurum("YUM").uygula(dizi);
         assertEquals("kitab", dizi.toString());
     }
 
-    @Before
+    @Test
     public void testCiftleme() {
         HarfDizisi dizi =hd("hat");
          dilBilgisi.kokOzelDurumlari().ozelDurum("CIFT").uygula(dizi);
         assertEquals("hatt", dizi.toString());
     }
 
-    @Before
+    @Test
     public void testAraSesliDusmesi() {
         HarfDizisi dizi = hd("burun");
          dilBilgisi.kokOzelDurumlari().ozelDurum("DUS").uygula(dizi);
         assertEquals("burn", dizi.toString());
     }
 
-    @Before
+    @Test
     public void testKokDegisimleri() {
         Kok kok= new Kok("bahset", KelimeTipi.FIIL);
         kok.ozelDurumEkle(koz.ozelDurum("GEN"));

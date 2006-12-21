@@ -27,15 +27,13 @@
 
 package net.zemberek.islemler.cozumleme;
 
-import junit.framework.TestCase;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
 /**
  */
-public class AbstractCozumlemeTest extends TestCase {
+public class AbstractCozumlemeTest {
     protected static String readXMLFile(String fileName) throws IOException {
         StringBuffer sb = new StringBuffer();
         BufferedReader in =

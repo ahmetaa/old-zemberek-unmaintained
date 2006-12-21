@@ -35,6 +35,7 @@ import java.io.IOException;
 import java.util.List;
 
 import org.junit.Test;
+import org.junit.Ignore;
 
 /**
  */
@@ -43,6 +44,7 @@ public class TestCozumlemePerformans extends TestKelimeCozumleyici {
     public void testPerformans() {
     }
 
+    @Ignore("Performans")
     @Test
     public void testPerformans2() throws IOException {
         System.in.read();

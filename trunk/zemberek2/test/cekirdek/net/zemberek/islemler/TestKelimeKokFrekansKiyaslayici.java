@@ -45,8 +45,6 @@ import java.util.List;
  */
 public class TestKelimeKokFrekansKiyaslayici extends TemelTest {
 
-    Zemberek zembrek = new Zemberek(new TurkiyeTurkcesi());
-
     @Test
     public void testKiyaslayici()
     {

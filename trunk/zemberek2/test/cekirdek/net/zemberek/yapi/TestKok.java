@@ -35,6 +35,8 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.io.IOException;
+
 /**
  */
 public class TestKok extends TemelTest {
@@ -43,15 +45,17 @@ public class TestKok extends TemelTest {
     KokOzelDurumBilgisi koz;
 
     @Before
-    public void once() {
+    public void once() throws IOException {
+        super.once();
         koz = dilBilgisi.kokOzelDurumlari();
     }
 
     @Test
     public void testDegismisIcerikOlustur() {
         Kok kok = new Kok("ara", KelimeTipi.FIIL);
+        kok.ozelDurumEkle(koz.ozelDurum(SIMDIKI_ZAMAN));
         ozelDurumTest(kok, "ar");
-        assertTrue(kok.ozelDurumIceriyormu(SIMDIKI_ZAMAN));
+
         kok = new Kok("kitap", KelimeTipi.ISIM);
         kok.ozelDurumEkle(koz.ozelDurum(SESSIZ_YUMUSAMASI));
         ozelDurumTest(kok, "kitab");
@@ -83,7 +87,6 @@ public class TestKok extends TemelTest {
         ozelDurumTest(kok, "yi");
     }
 
-    @Test
     private void ozelDurumTest(Kok kok, String beklenen) {
         String[] results = koz.ozelDurumUygula(kok);
         assertTrue(results.length > 0);
@@ -97,7 +100,7 @@ public class TestKok extends TemelTest {
         Kok kok2 = new Kok("kitap", KelimeTipi.ISIM);
         Kok kok3 = new Kok("kitab", KelimeTipi.ISIM);
         assertTrue(kok1.equals(kok2));
-        assertTrue(kok1.equals(kok3) == false);
+        assertTrue(!kok1.equals(kok3));
     }
 
     public void testilkEkBelirle() {
