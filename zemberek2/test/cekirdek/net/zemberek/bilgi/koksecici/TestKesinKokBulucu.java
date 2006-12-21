@@ -39,6 +39,7 @@ import net.zemberek.bilgi.araclar.KokOkuyucu;
 import net.zemberek.bilgi.kokler.*;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.Ignore;
 import static org.junit.Assert.assertTrue;
 
 import java.io.IOException;
@@ -59,6 +60,7 @@ public class TestKesinKokBulucu extends TemelTest {
         sozluk = sozlukUret("kaynaklar/tr/test/test-sozluk.txt");
     }
 
+    @Ignore("Bilgi gosterimi amacli test.")
     @Test
     public void testWordTreeKokSecici() {
         bulucu = new KesinKokBulucu(sozluk.getAgac());
@@ -79,7 +81,7 @@ public class TestKesinKokBulucu extends TemelTest {
 
     @Test
     public void testKokSeciciTumSozluk() throws IOException {
-        okuyucu = new IkiliKokOkuyucu("kaynaklar/tr/bilgi/binary-kokler.bin", dilBilgisi.kokOzelDurumlari());
+        okuyucu = new IkiliKokOkuyucu("kaynaklar/tr/bilgi/kokler_tr.bin", dilBilgisi.kokOzelDurumlari());
         sozluk = new AgacSozluk(okuyucu, alfabe, dilBilgisi.kokOzelDurumlari());
         bulucu = new KesinKokBulucu(sozluk.getAgac());
         List list = bulucu.getAdayKokler("etkiler");

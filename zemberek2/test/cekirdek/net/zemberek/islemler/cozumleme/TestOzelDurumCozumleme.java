@@ -28,6 +28,7 @@
 package net.zemberek.islemler.cozumleme;
 
 import net.zemberek.TemelTest;
+import net.zemberek.TestUtils;
 import net.zemberek.araclar.turkce.TurkceMetinOkuyucu;
 import net.zemberek.bilgi.araclar.DuzYaziKokOkuyucu;
 import net.zemberek.bilgi.araclar.KokOkuyucu;
@@ -36,8 +37,10 @@ import net.zemberek.bilgi.kokler.KokBulucu;
 import net.zemberek.bilgi.kokler.Sozluk;
 import static org.junit.Assert.assertTrue;
 import org.junit.Before;
+import org.junit.Test;
 
 import java.io.IOException;
+import java.util.List;
 
 /**
  */
@@ -64,19 +67,19 @@ public class TestOzelDurumCozumleme extends TemelTest {
                 dilBilgisi.cozumlemeYardimcisi());
     }
 
-    public void testCozumleDogrular() {
-        TurkceMetinOkuyucu tmo = new TurkceMetinOkuyucu();
-        String dogrular[] = tmo.MetinOku("kaynaklar/tr/test/ozeldurum-hepsi-dogru.txt");
-        for (int i = 0; i < dogrular.length; i++) {
-            assertTrue("cozumleme hatasi:" + dogrular[i], cozumleyici.denetle(dogrular[i]));
+    @Test
+    public void testCozumleDogrular() throws IOException {
+        List<String> dogrular = TestUtils.satirlariOku("kaynaklar/tr/test/ozeldurum-hepsi-dogru.txt");
+        for (String s: dogrular){
+            assertTrue("cozumleme hatasi:" + s, cozumleyici.denetle(s));
         }
     }
 
-    public void testCozumleYanlislar() {
-        TurkceMetinOkuyucu tmo = new TurkceMetinOkuyucu();
-        String yanlislar[] = tmo.MetinOku("kaynaklar/tr/test/ozeldurum-hepsi-yanlis.txt");
-        for (String aYanlislar : yanlislar) {
-            assertTrue("cozumleme hatasi:" + aYanlislar, !cozumleyici.denetle(aYanlislar));
+    @Test
+    public void testCozumleYanlislar() throws IOException {
+        List<String> yanlislar = TestUtils.satirlariOku("kaynaklar/tr/test/ozeldurum-hepsi-yanlis.txt");
+        for (String s : yanlislar) {
+            assertTrue("cozumleme hatasi:" + s, !cozumleyici.denetle(s));
         }
     }
 }

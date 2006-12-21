@@ -50,7 +50,6 @@ import java.util.HashMap;
  */
 public class TimeTracker {
     public static int MAX_TIMETRACKER_USERS = 500;
-    public static final long BOLUCU=1000000000l;
     private static HashMap<String, TimerElement> users = new HashMap<String, TimerElement>();
 
     /**
@@ -113,7 +112,7 @@ public class TimeTracker {
         if (timer == null)
             return "Geçersiz Kronometre: " + name;
         timer.refresh();
-        return "Delta: " + (double) timer.getDiff() / BOLUCU + " s. Elapsed: " + (double) timer.getElapsedTime() / BOLUCU + " s.";
+        return "Delta: " + (double) timer.getDiff()  + " s. Elapsed: " + (double) timer.getElapsedTime() + " s.";
     }
 
     /**
@@ -140,7 +139,7 @@ public class TimeTracker {
         timer.refresh();
         long items = 0;
         if (timer.getElapsedTime() > 0)
-            items = (BOLUCU * itemCount) / timer.getElapsedTime();
+            items = (itemCount) / timer.getElapsedTime();
         return items;
     }
 
@@ -157,7 +156,7 @@ public class TimeTracker {
             return name + " : Geçersiz Kronometre";
         timer.refresh();
         users.remove(name);
-        return "" + (float) timer.elapsedTime / BOLUCU + "sn."
+        return "" + (float) timer.elapsedTime + "sn."
                + "(" + timer.elapsedTime + " ms.)";
     }
 }
@@ -176,16 +175,20 @@ class TimerElement {
     long elapsedTime = 0;
     long diff = 0;
 
+    private static long getMilis() {
+       return System.nanoTime()/ 1000000l;
+    }
+
     public TimerElement(String name) {
-        creationTime = System.nanoTime();
+        creationTime = getMilis();
         startTime = creationTime;
         lastTime = creationTime;
         this.name = name;
     }
 
     public void refresh() {
-        diff = System.nanoTime() - lastTime;
-        lastTime = System.nanoTime();
+        diff =getMilis() - lastTime;
+        lastTime = getMilis();
         elapsedTime = lastTime - startTime;
     }
 

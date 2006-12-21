@@ -33,6 +33,7 @@ import net.zemberek.tr.yapi.kok.TurkceKokOzelDurumTipleri;
 import net.zemberek.yapi.Kelime;
 import net.zemberek.yapi.KelimeTipi;
 import net.zemberek.yapi.Kok;
+import net.zemberek.yapi.Alfabe;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
@@ -41,7 +42,7 @@ import org.junit.Test;
  * User: ahmet
  * Date: Oct 29, 2005
  */
-public class TestCozumlemeYardimcisi extends TemelTest{
+public class TestCozumlemeYardimcisi extends TemelTest {
 
     @Test
     public void testKelimeBicimlendir() {
@@ -66,7 +67,7 @@ public class TestCozumlemeYardimcisi extends TemelTest{
         kok.ozelDurumCikar(TurkceKokOzelDurumTipleri.KISALTMA_SON_SESLI);
         kok.ozelDurumEkle(dilBilgisi.kokOzelDurumlari().ozelDurum(TurkceKokOzelDurumTipleri.KISALTMA_SON_SESSIZ));
 
-        kelime.setIcerik(hd("prof" + alfabe + "bler"));
+        kelime.setIcerik(hd("prof" + Alfabe.CHAR_oo + "bler"));
         yardimci.kelimeBicimlendir(kelime);
         assertEquals(kelime.icerikStr(), "Prof.ler");
 

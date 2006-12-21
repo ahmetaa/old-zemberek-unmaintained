@@ -1,5 +1,0 @@
-#### ek olusum kelimesi ile olusabilecek olusumlari icerir. ####
-l+(A)+r:lar ler
-?y+^d+(I):dü ydý dý du ydu tu ydi tý tü di ydü ti
-(I)+y+o+r:yor üyor ýyor uyor iyor
-^d+(A):de te da ta

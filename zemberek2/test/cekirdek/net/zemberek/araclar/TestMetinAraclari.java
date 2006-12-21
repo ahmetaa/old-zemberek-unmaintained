@@ -33,6 +33,7 @@ package net.zemberek.araclar;
 import net.zemberek.araclar.turkce.YaziIsleyici;
 import static org.junit.Assert.*;
 import org.junit.Test;
+import org.junit.Ignore;
 
 import java.io.IOException;
 import java.util.List;
@@ -42,9 +43,6 @@ import java.util.List;
  */
 public class TestMetinAraclari {
 
-    public void testInjectError() {
-
-    }
 
     @Test
     public void testEditDistance() {
@@ -101,11 +99,14 @@ public class TestMetinAraclari {
         assertTrue(MetinAraclari.sozcukBenzerlikOrani("elma","elmar")>0.9d);
     }
 
+
+
+    @Ignore("Performans")
     @Test
     public void benzerlikPerformans() throws IOException {
 
         int count = 0;
-        String s = YaziIsleyici.yaziOkuyucu("kaynaklar/metinler/commodore.txt");
+        String s = YaziIsleyici.yaziOkuyucu("kaynaklar/tr/metinler/commodore.txt");
         long start = System.currentTimeMillis();
         List<String> kelimeler = YaziIsleyici.kelimeAyikla(s);
         for (String kelime : kelimeler) {

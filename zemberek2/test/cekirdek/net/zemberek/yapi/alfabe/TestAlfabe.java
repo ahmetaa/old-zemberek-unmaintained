@@ -76,10 +76,10 @@ public class TestAlfabe {
     public void testLowerUpperCase() {
         TurkceHarf ii = alfabe.harf(Alfabe.CHAR_ii);
         TurkceHarf harfI = alfabe.buyukHarf(ii);
-        assertEquals(harfI.charDeger(), Alfabe.CHAR_II);
+        assertEquals(harfI.charDeger(), 'I');
         TurkceHarf i = alfabe.harf('i');
         TurkceHarf harfBuyuki = alfabe.buyukHarf(i);
-        assertEquals(harfBuyuki.charDeger(), 'I');
+        assertEquals(harfBuyuki.charDeger(), Alfabe.CHAR_II);
     }
 
 }
