@@ -50,7 +50,7 @@ public class TestTurkceHarfToleransliKokSecici extends TestCase {
 //        okuyucu.initialize("kaynaklar/test/tree_test_sozluk.txt");
         AgacSozluk sozluk = new AgacSozluk(okuyucu, TurkceAlfabe.ref(), TurkceKokOzelDurumlari.ref());
         System.out.println("Sözlük initialization süresi: " + TimeTracker.getElapsedTimeString("x"));
-        KokBulucu bulucu = sozluk.getKokBulucuFactory().getAsciiKokBulucu();
+        KokAdayiBulucu bulucu = sozluk.getKokBulucuFactory().getAsciiKokBulucu();
         List list = null;
         list = bulucu.getAdayKokler("goruyor");
         System.out.println("Islem tamam: " + TimeTracker.getElapsedTimeString("x"));
@@ -66,7 +66,7 @@ public class TestTurkceHarfToleransliKokSecici extends TestCase {
 ////        okuyucu.initialize("kaynaklar/test/tree_test_sozluk.txt");
 //        AgacSozluk kokler = new AgacSozluk(okuyucu);
 //        System.out.println("Sozluk Initialization süresi: " + TimeTracker.getElapsedTimeString("x"));
-//        KokBulucu bulucu = kokler.getKokBulucuFactory().getAsciiKokBulucu();
+//        KokAdayiBulucu bulucu = kokler.getKokBulucuFactory().getAsciiKokBulucu();
 //        List list  =null;
 //        int testSayisi = 10000;
 //        for(int i=0; i< testSayisi ; i++){

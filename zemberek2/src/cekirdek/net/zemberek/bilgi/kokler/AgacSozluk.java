@@ -147,7 +147,7 @@ public class AgacSozluk implements Sozluk {
      * Kök seçiciler, sözlükten alınan bir fabrika ile elde edilirler.
      * Örneğin:
      * <pre>
-     * KokBulucu kokSecici = kokler.getKokBulucuFactory().getKesinKokBulucu();
+     * KokAdayiBulucu kokSecici = kokler.getKokBulucuFactory().getKesinKokBulucu();
      * </pre>
      */
     public KokBulucuUretici getKokBulucuFactory() {
@@ -167,16 +167,16 @@ public class AgacSozluk implements Sozluk {
             this.agac = agac;
         }
 
-        public KokBulucu getKesinKokBulucu() {
-            return new KesinKokBulucu(this.agac);
+        public KokAdayiBulucu getKesinKokBulucu() {
+            return new KesinKokAdayiBulucu(this.agac);
         }
 
-        public KokBulucu getToleransliKokBulucu(int tolerans) {
-            return new ToleransliKokBulucu(this.agac, tolerans);
+        public KokAdayiBulucu getToleransliKokBulucu(int tolerans) {
+            return new ToleransliKokAdayiBulucu(this.agac, tolerans);
         }
 
-        public KokBulucu getAsciiKokBulucu() {
-            return new AsciiKokBulucu(this.agac);
+        public KokAdayiBulucu getAsciiKokBulucu() {
+            return new AsciiKokAdayiBulucu(this.agac);
         }
     }
 }

@@ -32,7 +32,6 @@ import java.io.IOException;
 
 public class DilBilgisiUretici {
 
-
     public static final String TR_SINIF = "net.zemberek.tr.yapi.TurkiyeTurkcesi";
     public static final String TM_SINIF = "net.zemberek.tm.yapi.Turkmence";
 

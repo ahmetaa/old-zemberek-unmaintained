@@ -103,15 +103,17 @@ public class TestKok extends TemelTest {
         assertTrue(!kok1.equals(kok3));
     }
 
-    public void testilkEkBelirle() {
-/*        Kok kok = new Kok("kedi", KelimeTipi.ISIM);
-        assertEquals(TurkceEkYonetici.ref().ilkEkBelirle(), Ekler.ISIM_YALIN);
-        kok.setOzelDurumlar(new HashSet());
-        kok.ozelDurumlar().add(TurkceKokOzelDurumlari.YALIN);
-        assertEquals(kok.ilkEkBelirle(), Ekler.GENEL_YALIN);
-        kok = new Kok("almak", KelimeTipi.FIIL);
-        assertEquals(kok.ilkEkBelirle(), Ekler.FIIL_YALIN);
-        kok = new Kok("on", KelimeTipi.SAYI);
-        assertEquals(kok.ilkEkBelirle(), Ekler.SAYI_YALIN);*/
+    @Test
+    public void asilIcerikUret() {
+        Kok k1 = new Kok("ahmet", KelimeTipi.OZEL);
+        assertEquals(k1.asilIcerikUret(alfabe), "Ahmet");
+
+        Kok k2 = new Kok("ahmet", KelimeTipi.ISIM);
+        assertEquals(k2.asilIcerikUret(alfabe), "ahmet");
+
+        Kok k3 = new Kok("blah", KelimeTipi.KISALTMA);
+        k3.setAsil("BLAH.");
+        assertEquals(k3.asilIcerikUret(alfabe), "BLAH.");
     }
+
 }

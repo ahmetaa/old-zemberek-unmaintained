@@ -40,7 +40,7 @@ import net.zemberek.yapi.Kok;
  *
  * @author MDA
  */
-public interface KokBulucu {
+public interface KokAdayiBulucu {
     /**
      * @param giris: Uzerinde aday kok aramasi yapilacak giris kelimesi.
      * @return Aday kok dizisi

@@ -60,7 +60,7 @@ import net.zemberek.yapi.Kok;
  * ilerlenir. bu sırada "el, ela, elma" kökleri toplanır.
  *  @author MDA
  */
-public class ToleransliKokBulucu implements KokBulucu {
+public class ToleransliKokAdayiBulucu implements KokAdayiBulucu {
 
     private KokAgaci agac = null;
     private int tolerans = 0;
@@ -70,7 +70,7 @@ public class ToleransliKokBulucu implements KokBulucu {
         return distanceCalculationCount;
     }
 
-    public ToleransliKokBulucu(KokAgaci agac, int tolerans) {
+    public ToleransliKokAdayiBulucu(KokAgaci agac, int tolerans) {
         this.agac = agac;
         this.tolerans = tolerans;
     }

@@ -80,6 +80,22 @@ public class TestUtils {
         }
     }
 
+    public static boolean assertObjectArrayContentsEqual(Object[] d1, Object[] d2) {
+        if (d1.length != d2.length) {
+            throw new AssertionFailedError("Collectionlar eþit deðil");
+        }
+        for (Object o1 : d1) {
+            boolean found = false;
+            for (Object o2 : d2) {
+                if (o1.equals(o2))
+                    found = true;
+            }
+            if (!found)
+                return false;
+        }
+        return true;
+    }
+
     public static void printList(List list) {
         System.out.println("Liste boyu: " + list.size());
         for (Object obj : list) {
@@ -114,20 +130,20 @@ public class TestUtils {
     public static List<TestGirdisi> girdileriOku(String dosya) throws IOException {
 
         List<String> satirlar = satirlariOku(dosya);
-        List<TestGirdisi> sonuc= new ArrayList();
+        List<TestGirdisi> sonuc = new ArrayList();
         for (String s : satirlar) {
-                int esitlik = s.indexOf(':');
-                if (esitlik == -1)
-                    throw new IllegalArgumentException("Satirda ':' simgesi bekleniyordu: " + s);
-                String key = s.substring(0, esitlik).trim();
-                String[] deger;
-                if (s.length() > esitlik - 1)
-                    deger = s.substring(esitlik + 1).trim().split(",");
-                else
-                    deger = new String[0];
+            int esitlik = s.indexOf(':');
+            if (esitlik == -1)
+                throw new IllegalArgumentException("Satirda ':' simgesi bekleniyordu: " + s);
+            String key = s.substring(0, esitlik).trim();
+            String[] deger;
+            if (s.length() > esitlik - 1)
+                deger = s.substring(esitlik + 1).trim().split(",");
+            else
+                deger = new String[0];
             sonuc.add(new TestGirdisi(key, deger));
         }
         return sonuc;
-    }    
+    }
 
 }

@@ -50,7 +50,7 @@ import java.util.List;
  */
 public class TestKesinKokBulucu extends TemelTest {
     Sozluk sozluk = null;
-    KokBulucu bulucu;
+    KokAdayiBulucu bulucu;
     String[] kelimeler;
     KokOkuyucu okuyucu;
 
@@ -63,7 +63,7 @@ public class TestKesinKokBulucu extends TemelTest {
     @Ignore("Bilgi gosterimi amacli test.")
     @Test
     public void testWordTreeKokSecici() {
-        bulucu = new KesinKokBulucu(sozluk.getAgac());
+        bulucu = new KesinKokAdayiBulucu(sozluk.getAgac());
         System.out.println("Agac:" + sozluk.getAgac().getKokDugumu().getStringRep(2));
         List list = bulucu.getAdayKokler("karalar");
         TestUtils.printList(list);
@@ -72,7 +72,7 @@ public class TestKesinKokBulucu extends TemelTest {
 
     @Test
     public void testToleransliKokBulBasit() {
-        bulucu = new ToleransliKokBulucu(sozluk.getAgac(), 1);
+        bulucu = new ToleransliKokAdayiBulucu(sozluk.getAgac(), 1);
         System.out.println("Agac:" + sozluk.getAgac().getKokDugumu().getStringRep(2));
         List list = bulucu.getAdayKokler("deniz");
         TestUtils.printList(list);
@@ -83,7 +83,7 @@ public class TestKesinKokBulucu extends TemelTest {
     public void testKokSeciciTumSozluk() throws IOException {
         okuyucu = new IkiliKokOkuyucu("kaynaklar/tr/bilgi/kokler_tr.bin", dilBilgisi.kokOzelDurumlari());
         sozluk = new AgacSozluk(okuyucu, alfabe, dilBilgisi.kokOzelDurumlari());
-        bulucu = new KesinKokBulucu(sozluk.getAgac());
+        bulucu = new KesinKokAdayiBulucu(sozluk.getAgac());
         List list = bulucu.getAdayKokler("etkiler");
         System.out.println(list);
     }
@@ -92,7 +92,7 @@ public class TestKesinKokBulucu extends TemelTest {
     @Test
     public void ozelKokAgacTest() throws IOException {
         sozluk=sozlukUret("kaynaklar/tr/test/agac-kokler-2.txt");
-        bulucu = new KesinKokBulucu(sozluk.getAgac());
+        bulucu = new KesinKokAdayiBulucu(sozluk.getAgac());
         assertTrue("tek sonuc bekleniyordu", bulucu.getAdayKokler("atoller").size()==1);
     }
 

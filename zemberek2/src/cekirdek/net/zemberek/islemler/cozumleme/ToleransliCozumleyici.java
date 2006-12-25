@@ -28,7 +28,7 @@
 package net.zemberek.islemler.cozumleme;
 
 import net.zemberek.araclar.MetinAraclari;
-import net.zemberek.bilgi.kokler.KokBulucu;
+import net.zemberek.bilgi.kokler.KokAdayiBulucu;
 import net.zemberek.yapi.*;
 import net.zemberek.yapi.ek.Ek;
 import net.zemberek.yapi.ek.EkYonetici;
@@ -44,12 +44,12 @@ public class ToleransliCozumleyici implements KelimeCozumleyici {
 
     public static final int TOLERANS = 1;
     private static Logger log = Logger.getLogger("ToleransliCozumleyici.class");
-    private KokBulucu kokBulucu;
+    private KokAdayiBulucu kokBulucu;
     private EkYonetici ekYonetici;
     private Alfabe alfabe;
     private CozumlemeYardimcisi yardimci;
 
-    public ToleransliCozumleyici(KokBulucu kokBulucu,
+    public ToleransliCozumleyici(KokAdayiBulucu kokBulucu,
                                  EkYonetici yonetici,
                                  Alfabe alfabe,
                                  CozumlemeYardimcisi yardimci) {

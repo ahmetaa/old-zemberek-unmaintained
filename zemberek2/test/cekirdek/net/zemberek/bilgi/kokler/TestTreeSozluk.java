@@ -144,7 +144,7 @@ public class TestTreeSozluk extends TemelTest {
         kokler = sozluk.kokBul("bahsed");
         assertTrue(kokler.size() == 1);
 
-        KokBulucu kb = sozluk.getKokBulucuFactory().getKesinKokBulucu();
+        KokAdayiBulucu kb = sozluk.getKokBulucuFactory().getKesinKokBulucu();
         List<Kok> adaylar = kb.getAdayKokler("bahsetmek");
         assertTrue(adaylar.size() == 1);
         assertEquals(adaylar.get(0).icerik(), "bahset");

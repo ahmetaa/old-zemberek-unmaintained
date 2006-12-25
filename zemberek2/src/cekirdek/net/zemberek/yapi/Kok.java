@@ -153,6 +153,30 @@ public class Kok {
         return false;
     }
 
+    /**
+     * kokun gercek icerigini dondurur. "icerik" parametresinde kokun genellikle
+     * donusturulmus hali (kucuk harf ve noktalama isaretlerinden arinmis hali)
+     * bulundugundan eger varsa kok icerisindeki "asil" hali, eger ozel ad ise bas harfi
+     * buyuk yapilarak, degilse icerik aynen dondurulur.
+     *
+     * @param alfabe
+     * @return
+     */
+    public String asilIcerikUret(Alfabe alfabe) {
+
+        if (asil != null)
+            return asil;
+        if (icerik == null || icerik.length() == 0)
+            return "";
+        if (tip == KelimeTipi.OZEL) {
+            if (icerik.length() > 1)
+                return icerik.substring(0, 1).toUpperCase(alfabe.locale) + icerik.substring(1);
+            else
+                return icerik.toUpperCase(alfabe.locale);
+        } else return icerik;
+    }
+
+
     public final KelimeTipi tip() {
         return tip;
     }

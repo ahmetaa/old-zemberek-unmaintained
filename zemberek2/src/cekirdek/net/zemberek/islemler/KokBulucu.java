@@ -16,7 +16,7 @@
  *  The Original Code is "Zemberek Dogal Dil Isleme Kutuphanesi"
  *
  *  The Initial Developer of the Original Code is
- *  Ahmet A. Akin, Mehmet D. Akin.
+ *  Ahmet A. Akin
  *  Portions created by the Initial Developer are Copyright (C) 2006
  *  the Initial Developer. All Rights Reserved.
  *
@@ -25,19 +25,16 @@
  *  ***** END LICENSE BLOCK *****
  */
 
-/*
- * Created on 16.Kas.2004
- *
- */
-package net.zemberek.bilgi.kokler;
+package net.zemberek.islemler;
+
+import net.zemberek.yapi.Kok;
 
 /**
- * @author MDA
+ * Kok bulma arayuzu (stemmer)
  */
-public interface KokBulucuUretici {
-    public KokAdayiBulucu getKesinKokBulucu();
+public interface KokBulucu {
 
-    public KokAdayiBulucu getToleransliKokBulucu(int tolerans);
+    Kok[] kokBul(String giris);
 
-    public KokAdayiBulucu getAsciiKokBulucu();
+    String[] stringKokBul(String giris);
 }
