@@ -75,7 +75,7 @@ public interface Sozluk {
      * @return Sözlük
      * @see AgacSozluk
      */
-    public KokBulucuUretici getKokBulucuFactory();
+    public KokAdayiBulucuUretici getKokBulucuFactory();
 
     public KokAgaci getAgac();
 }
