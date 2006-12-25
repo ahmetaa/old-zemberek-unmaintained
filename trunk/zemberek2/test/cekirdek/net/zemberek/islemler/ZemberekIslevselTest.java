@@ -28,14 +28,17 @@
 package net.zemberek.islemler;
 
 import net.zemberek.TemelTest;
+import net.zemberek.TestUtils;
 import net.zemberek.bilgi.kokler.Sozluk;
 import net.zemberek.erisim.Zemberek;
-import net.zemberek.tr.yapi.TurkiyeTurkcesi;
 import net.zemberek.tr.yapi.kok.TurkceKokOzelDurumTipleri;
 import net.zemberek.yapi.KelimeTipi;
 import net.zemberek.yapi.Kok;
 import static org.junit.Assert.*;
+import org.junit.Before;
 import org.junit.Test;
+
+import java.io.IOException;
 
 /**
  * User: ahmet
@@ -43,7 +46,13 @@ import org.junit.Test;
  */
 public class ZemberekIslevselTest extends TemelTest {
 
-    Zemberek zemberek = new Zemberek(new TurkiyeTurkcesi());
+    Zemberek zemberek;
+
+    @Before
+    public void once() throws IOException {
+        super.once();
+        zemberek = new Zemberek(dilAyarlari);
+    }
 
     @Test
     public void testAsciidenDonusturucuSiralama() {
@@ -70,8 +79,7 @@ public class ZemberekIslevselTest extends TemelTest {
     }
 
     @Test
-    public void testKokEkle()
-    {
+    public void testKokEkle() {
         assertFalse(zemberek.kelimeDenetle("zembenklik"));
         Sozluk kokler = zemberek.dilBilgisi().kokler();
         Kok kok = new Kok("zembenk", KelimeTipi.ISIM);
@@ -80,5 +88,18 @@ public class ZemberekIslevselTest extends TemelTest {
         assertTrue(zemberek.kelimeDenetle("zembenklik"));
         assertTrue(zemberek.kelimeDenetle("zembenge"));
     }
+
+    @Test
+    public void stringKokBul(){
+        KokBulucu kb = zemberek.kokBulucu();
+        String [] beklenen = {"elma", "elmas"};
+        String [] hesaplanan = kb.stringKokBul("elmas\u0131");
+        TestUtils.assertObjectArrayContentsEqual(beklenen, hesaplanan);
+       
+        beklenen = new String[] {"kul", "Kulu"};
+        hesaplanan = kb.stringKokBul("Kulu");
+        TestUtils.assertObjectArrayContentsEqual(beklenen, hesaplanan);
+    }
+
 
 }

@@ -70,5 +70,4 @@ public interface EkUretici {
      * @return olasi baslangic harfleri bir Set icerisinde.
      */
     Set<TurkceHarf> olasiBaslangicHarfleri(List<EkUretimBileseni> bilesenler);
-
 }

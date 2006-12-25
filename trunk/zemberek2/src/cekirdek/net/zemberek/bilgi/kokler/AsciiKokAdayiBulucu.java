@@ -41,16 +41,16 @@ import net.zemberek.yapi.Kok;
  *
  * @author MDA
  */
-public class AsciiKokBulucu implements KokBulucu {
+public class AsciiKokAdayiBulucu implements KokAdayiBulucu {
 
-    private static Logger log = Logger.getLogger(AsciiKokBulucu.class.getName());
+    private static Logger log = Logger.getLogger(AsciiKokAdayiBulucu.class.getName());
     KokAgaci agac = null;
     private int walkCount = 0;
     private String giris;
     private String asciiGiris;
     private List<Kok> adaylar = null;
 
-    public AsciiKokBulucu(KokAgaci agac) {
+    public AsciiKokAdayiBulucu(KokAgaci agac) {
         this.agac = agac;
     }
 

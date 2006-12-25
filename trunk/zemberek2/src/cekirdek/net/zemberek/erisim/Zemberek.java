@@ -30,7 +30,7 @@ package net.zemberek.erisim;
 import net.zemberek.araclar.Kayitci;
 import net.zemberek.bilgi.KaynakYukleyici;
 import net.zemberek.bilgi.ZemberekAyarlari;
-import net.zemberek.bilgi.kokler.KokBulucu;
+import net.zemberek.bilgi.kokler.KokAdayiBulucu;
 import net.zemberek.bilgi.kokler.Sozluk;
 import net.zemberek.islemler.*;
 import net.zemberek.islemler.cozumleme.*;
@@ -45,7 +45,7 @@ import java.util.logging.Logger;
 /**
  * <b>EN:</b>This is a facade for accessing the high level functions of the Zemberek library.
  * This class should be creatd only once per language.
- *
+ * <p/>
  * <b>TR:</b>Zemberek projesine ust seviye erisim icin kullanilan sinif.
  * Ilk olsum sirasinda kokler okuma ve agac olusumu nedeniyle belli bir miktar gecikme
  * yasanabilir. Bu sinifin her dil icin sadece bir defa olusturulmasi onerilir.
@@ -66,6 +66,7 @@ public class Zemberek {
 
     /**
      * Default constructor.
+     *
      * @param dilayarlari
      */
     public Zemberek(DilAyarlari dilayarlari) {
@@ -91,7 +92,7 @@ public class Zemberek {
         //Sozluk hazirla.
         Sozluk kokler = dilBilgisi.kokler();
         //Normal denetleyici-cozumleyici olusumu
-        KokBulucu kokBulucu = kokler.getKokBulucuFactory().getKesinKokBulucu();
+        KokAdayiBulucu kokBulucu = kokler.getKokBulucuFactory().getKesinKokBulucu();
         cozumleyici = new StandartCozumleyici(
                 kokBulucu,
                 new KesinHDKiyaslayici(),
@@ -100,7 +101,7 @@ public class Zemberek {
                 dilBilgisi.cozumlemeYardimcisi());
 
         // ASCII-Turkce donusturucu icin tukce toleransli cozumleyici olusumu.
-        KokBulucu turkceToleransliKokBulucu = kokler.getKokBulucuFactory().getAsciiKokBulucu();
+        KokAdayiBulucu turkceToleransliKokBulucu = kokler.getKokBulucuFactory().getAsciiKokBulucu();
         asciiToleransliCozumleyici = new StandartCozumleyici(
                 turkceToleransliKokBulucu,
                 new AsciiToleransliHDKiyaslayici(),
@@ -108,7 +109,7 @@ public class Zemberek {
                 dilBilgisi.ekler(),
                 dilBilgisi.cozumlemeYardimcisi());
 
-        KokBulucu toleransliBulucu = kokler.getKokBulucuFactory().getToleransliKokBulucu(1);
+        KokAdayiBulucu toleransliBulucu = kokler.getKokBulucuFactory().getToleransliKokBulucu(1);
         ToleransliCozumleyici toleransliCozumleyici = new ToleransliCozumleyici(
                 toleransliBulucu,
                 dilBilgisi.ekler(),
@@ -149,6 +150,7 @@ public class Zemberek {
 
     /**
      * Accessor for the word suggestion producer.
+     *
      * @return oneri uretici.
      */
     public OneriUretici oneriUretici() {
@@ -158,7 +160,7 @@ public class Zemberek {
     /**
      * Accessor for the syllable extractor.
      *
-     * @return  heceleyici
+     * @return heceleyici
      */
     public Heceleyici heceleyici() {
         return heceleyici;
@@ -166,10 +168,10 @@ public class Zemberek {
 
     /**
      * performs spell checking
-     *
+     * <p/>
      * girisin imla denetimini yapar.
      *
-     * @param giris giris kelimesi 
+     * @param giris giris kelimesi
      * @return EN: true:spell checking successfull, false otherwise.
      *         TR: true:imla denetimi basarili. false: Denetim basarisiz.
      */
@@ -181,8 +183,8 @@ public class Zemberek {
      * performs morphological parsing of the word. Returns the possible solutions as an Kelime array.
      * Kelime object contains the root and a suffix list. kok() method can be used for accessing the
      * root. ekler() can be used for accessing the Ek object List.
-     *
-     *
+     * <p/>
+     * <p/>
      * giris kelimesinin olasi tum (kok+ekler) cozumlemelerini dondurur.
      *
      * @param giris giris kelimesi
@@ -218,7 +220,7 @@ public class Zemberek {
     /**
      * Brings the most probable tukish equivalents of a string that uses ascii look alikes of
      * those characters.
-     *
+     * <p/>
      * asciiCozumle ile benzer bir yapidadir. Farki String[] dizisi donmesi ve
      * donus degerlerinin tekil olmasidir, yani ayni kelime tekrari olmaz.
      *
@@ -229,7 +231,7 @@ public class Zemberek {
     public String[] asciidenTurkceye(String giris) {
         Kelime[] kelimeler = asciiCozumle(giris);
         // cift olusumlari temizle.
-        Set<String> olusumlar = new HashSet(kelimeler.length);
+        List<String> olusumlar = new ArrayList(kelimeler.length);
         for (Kelime kelime : kelimeler) {
             String olusum = kelime.icerikStr();
             if (!olusumlar.contains(olusum))
@@ -271,7 +273,6 @@ public class Zemberek {
      * Ornegin "kedim", "yedi" .. gibi.
      *
      * @param giris giris kelimesi
-     *
      * @return String sinifi cinsinden dizi. Eger dizinin boyu 0 ise kelime cozumlenemedi demektir.
      * @see net.zemberek.yapi.Kelime
      */
@@ -330,9 +331,8 @@ public class Zemberek {
     /**
      * Istenilen kok ve ek listesi ile kelime uretir.
      *
-     * @param kok kok nesnesi
+     * @param kok   kok nesnesi
      * @param ekler ek listesi
-     *
      * @return String olarak uretilen kelime.
      */
     public String kelimeUret(Kok kok, List ekler) {
@@ -346,7 +346,6 @@ public class Zemberek {
      * sonucta olusan diziler bir Listeye eklenir.
      *
      * @param kelime giris kelimesi
-     *
      * @return Kok ve ek olusumlarini ifade eden String dizilerini tasiyan List.
      *         List<List<String>>
      *         Eger kelime ayristirilamiyorsa sifir uzunluklu String dizisi tasiyan tek elemanli
@@ -369,4 +368,13 @@ public class Zemberek {
     public ZemberekAyarlari ayarlar() {
         return ayarlar;
     }
+
+    /**
+     * kok bulucu mekanizmayi dondurur.
+     * @return
+     */
+    public KokBulucu kokBulucu() {
+        return new KelimeTabanliKokBulucu(cozumleyici, dilBilgisi.alfabe());
+    }
+
 }

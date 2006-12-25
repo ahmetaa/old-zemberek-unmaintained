@@ -29,7 +29,7 @@ package net.zemberek.islemler;
 
 import net.zemberek.TemelTest;
 import net.zemberek.TestUtils;
-import net.zemberek.bilgi.kokler.KokBulucu;
+import net.zemberek.bilgi.kokler.KokAdayiBulucu;
 import net.zemberek.bilgi.kokler.Sozluk;
 import net.zemberek.islemler.cozumleme.KesinHDKiyaslayici;
 import net.zemberek.islemler.cozumleme.StandartCozumleyici;
@@ -58,7 +58,7 @@ public class TestKelimeUretici extends TemelTest {
         super.once();
         kelimeUretici = new KelimeUretici(alfabe, dilBilgisi.cozumlemeYardimcisi());
         //Normal denetleyici-cozumleyici olusumu
-        KokBulucu kokBulucu = dilBilgisi.kokler().getKokBulucuFactory().getKesinKokBulucu();
+        KokAdayiBulucu kokBulucu = dilBilgisi.kokler().getKokBulucuFactory().getKesinKokBulucu();
         cozumleyici = new StandartCozumleyici(kokBulucu, new KesinHDKiyaslayici(), alfabe, dilBilgisi.ekler(), dilBilgisi.cozumlemeYardimcisi());
         kokler = dilBilgisi.kokler();
     }

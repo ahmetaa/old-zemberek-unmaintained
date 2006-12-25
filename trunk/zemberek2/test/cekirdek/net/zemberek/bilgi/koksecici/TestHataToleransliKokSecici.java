@@ -31,7 +31,7 @@
 package net.zemberek.bilgi.koksecici;
 
 import net.zemberek.bilgi.araclar.KokOkuyucu;
-import net.zemberek.bilgi.kokler.KokBulucu;
+import net.zemberek.bilgi.kokler.KokAdayiBulucu;
 
 import java.io.IOException;
 
@@ -41,7 +41,7 @@ import java.io.IOException;
 public class TestHataToleransliKokSecici {
 
     static KokOkuyucu okuyucu;
-    static KokBulucu bulucu = null;
+    static KokAdayiBulucu bulucu = null;
 
 //    public void once()
 //    {

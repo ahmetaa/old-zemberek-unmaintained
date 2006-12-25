@@ -46,10 +46,10 @@ import net.zemberek.yapi.Kok;
  *
  * @author MDA
  */
-public class KesinKokBulucu implements KokBulucu {
+public class KesinKokAdayiBulucu implements KokAdayiBulucu {
     KokAgaci agac = null;
 
-    public KesinKokBulucu(KokAgaci agac) {
+    public KesinKokAdayiBulucu(KokAgaci agac) {
         this.agac = agac;
     }
 

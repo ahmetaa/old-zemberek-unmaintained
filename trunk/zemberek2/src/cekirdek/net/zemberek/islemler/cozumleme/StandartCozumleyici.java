@@ -27,7 +27,7 @@
 
 package net.zemberek.islemler.cozumleme;
 
-import net.zemberek.bilgi.kokler.KokBulucu;
+import net.zemberek.bilgi.kokler.KokAdayiBulucu;
 import net.zemberek.yapi.*;
 import net.zemberek.yapi.ek.Ek;
 import net.zemberek.yapi.ek.EkYonetici;
@@ -45,13 +45,13 @@ import java.util.logging.Logger;
 public class StandartCozumleyici implements KelimeCozumleyici {
 
     private static Logger log = Logger.getLogger(StandartCozumleyici.class.getName());
-    private final KokBulucu kokBulucu;
+    private final KokAdayiBulucu kokBulucu;
     private final HarfDizisiKiyaslayici harfDizisiKiyaslayici;
     private EkYonetici ekYonetici;
     private Alfabe alfabe;
     private CozumlemeYardimcisi yardimci;
 
-    public StandartCozumleyici(KokBulucu kokBulucu,
+    public StandartCozumleyici(KokAdayiBulucu kokBulucu,
                                HarfDizisiKiyaslayici kiyaslayci,
                                Alfabe alfabe,
                                EkYonetici ekYonetici,

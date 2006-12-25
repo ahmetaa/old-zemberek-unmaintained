@@ -29,11 +29,10 @@ package net.zemberek.islemler.cozumleme;
 
 import net.zemberek.TemelTest;
 import net.zemberek.TestUtils;
-import net.zemberek.araclar.turkce.TurkceMetinOkuyucu;
 import net.zemberek.bilgi.araclar.DuzYaziKokOkuyucu;
 import net.zemberek.bilgi.araclar.KokOkuyucu;
 import net.zemberek.bilgi.kokler.AgacSozluk;
-import net.zemberek.bilgi.kokler.KokBulucu;
+import net.zemberek.bilgi.kokler.KokAdayiBulucu;
 import net.zemberek.bilgi.kokler.Sozluk;
 import static org.junit.Assert.assertTrue;
 import org.junit.Before;
@@ -58,7 +57,7 @@ public class TestOzelDurumCozumleme extends TemelTest {
                 dilAyarlari.kokTipiAdlari());
         Sozluk sozluk = new AgacSozluk(kokOkuyucu, alfabe, dilBilgisi.kokOzelDurumlari());
         //Normal denetleyici-cozumleyici olusumu
-        KokBulucu kokBulucu = sozluk.getKokBulucuFactory().getKesinKokBulucu();
+        KokAdayiBulucu kokBulucu = sozluk.getKokBulucuFactory().getKesinKokBulucu();
         cozumleyici = new StandartCozumleyici(
                 kokBulucu,
                 new KesinHDKiyaslayici(),
