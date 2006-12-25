@@ -54,7 +54,7 @@ import net.zemberek.yapi.kok.KokOzelDurumBilgisi;
 public class AgacSozluk implements Sozluk {
 
     private KokAgaci agac = null;
-    private AgacKokBulucuUretici agacKokBulucuFactory = null;
+    private AgacKokAdayiBulucuUretici kokAdayiBulucuFactory = null;
     private KokOzelDurumBilgisi ozelDurumlar;
     private int indeks = 0;
 
@@ -72,7 +72,7 @@ public class AgacSozluk implements Sozluk {
         while ((kok = okuyucu.oku()) != null) {
             ekle(kok);
         }
-        agacKokBulucuFactory = new AgacKokBulucuUretici(this.agac);
+        kokAdayiBulucuFactory = new AgacKokAdayiBulucuUretici(this.agac);
     }
 
     /**
@@ -88,7 +88,7 @@ public class AgacSozluk implements Sozluk {
         for(Kok kok : kokler){
             ekle(kok);
         }
-        agacKokBulucuFactory = new AgacKokBulucuUretici(this.agac);
+        kokAdayiBulucuFactory = new AgacKokAdayiBulucuUretici(this.agac);
     }
 
     /**
@@ -150,8 +150,8 @@ public class AgacSozluk implements Sozluk {
      * KokAdayiBulucu kokSecici = kokler.getKokBulucuFactory().getKesinKokBulucu();
      * </pre>
      */
-    public KokBulucuUretici getKokBulucuFactory() {
-        return agacKokBulucuFactory;
+    public KokAdayiBulucuUretici getKokBulucuFactory() {
+        return kokAdayiBulucuFactory;
     }
 
     /**
@@ -159,11 +159,11 @@ public class AgacSozluk implements Sozluk {
      *
      * @author MDA
      */
-    class AgacKokBulucuUretici implements KokBulucuUretici {
+    class AgacKokAdayiBulucuUretici implements KokAdayiBulucuUretici {
 
         KokAgaci agac = null;
 
-        public AgacKokBulucuUretici(KokAgaci agac) {
+        public AgacKokAdayiBulucuUretici(KokAgaci agac) {
             this.agac = agac;
         }
 
