@@ -1,34 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!--
-  ~  ***** BEGIN LICENSE BLOCK *****
-  ~
-  ~  Version: MPL 1.1
-  ~
-  ~  The contents of this file are subject to the Mozilla Public License Version
-  ~  1.1 (the "License"); you may not use this file except in compliance with
-  ~  the License. You may obtain a copy of the License at
-  ~  http://www.mozilla.org/MPL/
-  ~
-  ~  Software distributed under the License is distributed on an "AS IS" basis,
-  ~  WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
-  ~  for the specific language governing rights and limitations under the
-  ~  License.
-  ~
-  ~  The Original Code is "Zemberek Dogal Dil Isleme Kutuphanesi".
-  ~
-  ~  The Initial Developer of the Original Code is
-  ~  Ahmet A. Akin, Mehmet D. Akin.
-  ~  Portions created by the Initial Developer are Copyright (C) 2006
-  ~  the Initial Developer. All Rights Reserved.
-  ~
-  ~  Contributor(s):  
-  ~   Serkan Kaba
-  ~   Ozgur Yilmazel
-  ~   Guychmyrat Amanmyradov
-  ~
-  ~  ***** END LICENSE BLOCK *****
-  -->
+~  ***** BEGIN LICENSE BLOCK *****
+~
+~  Version: MPL 1.1
+~
+~  The contents of this file are subject to the Mozilla Public License Version
+~  1.1 (the "License"); you may not use this file except in compliance with
+~  the License. You may obtain a copy of the License at
+~  http://www.mozilla.org/MPL/
+~
+~  Software distributed under the License is distributed on an "AS IS" basis,
+~  WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+~  for the specific language governing rights and limitations under the
+~  License.
+~
+~  The Original Code is "Zemberek Dogal Dil Isleme Kutuphanesi".
+~
+~  The Initial Developer of the Original Code is
+~  Ahmet A. Akin, Mehmet D. Akin.
+~  Portions created by the Initial Developer are Copyright (C) 2006
+~  the Initial Developer. All Rights Reserved.
+~
+~  Contributor(s):
+~   Serkan Kaba
+~   Ozgur Yilmazel
+~   Guychmyrat Amanmyradov
+~
+~  ***** END LICENSE BLOCK *****
+-->
+<project name="zemberek2" default="dist" basedir=".">
 
-<project name="zemberek" default="dist">
+    <!--Netbeans ile calisiyorsaniz asagidaki satiri gecerli hale getirmelisiniz.-->
+    <!--<import file="nbproject/build-impl.xml"/>-->
+
 
     <!-- build.properties dosyasini oku.-->
     <property file="build.properties"/>
@@ -55,7 +59,7 @@
     <!-- distribution -->
     <property name="dist.dir" location="dagitim"/>
     <property name="lib.runtime" location="lib/dagitim"/>
-    <property name="licences.dir" location="lisanslar"/>
+    <property name="licences.dir" location="dokuman/lisanslar"/>
 
 
     <!--    show the library files for classpath information and a complete build(tests etc).-->
@@ -191,7 +195,6 @@
         </copy>
     </target>
 
-
     <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
     <!--                     JAR GOREVLERI                               -->
     <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
@@ -265,7 +268,7 @@
     </target>
 
     <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-    <!--       Turkmence iicn jar uretir                                 -->
+    <!--       Turkmence icin jar uretir                                 -->
     <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
     <target name="jar-tm">
         <antcall target="jar-dil">
@@ -375,26 +378,6 @@
     </target>
 
     <!-- ======================================================= -->
-    <!-- olusan jar build.properties icindeki zemberek_ooo_dir ile belirtilen zemberek ooo -->
-    <!-- projesine kopyalanir. -->
-    <!-- ======================================================= -->
-    <target name="ooo" depends="dist">
-        <copy todir="${zemberek_ooo_dir}/lib" overwrite="true">
-            <fileset file="${dist.dir}/zemberek-${surum}.jar"/>
-        </copy>
-    </target>
-
-    <!-- =======================================================
-         olusan jar build.properties icindeki zemberek_web_dir ile belirtilen zemberek_web
-         projesine kopyalanir.
-         ======================================================= -->
-    <target name="web" depends="dist">
-        <copy todir="${zemberek_web_dir}/lib/dagitim" overwrite="true">
-            <fileset file="${dist.dir}/zemberek-${surum}.jar"/>
-        </copy>
-    </target>
-
-    <!-- ======================================================= -->
     <!-- Create Javadocs for all classes                         -->
     <!-- ======================================================= -->
     <target name="javadocs" description="Build HTML documentation for these classes">
@@ -419,7 +402,7 @@
     </target>
 
     <!--    test  islemleri   -->
-    <target name="test" depends="derle-cekirdek, config" description="Run unit tests">
+    <target name="unit-test" depends="derle-cekirdek" description="Run unit tests">
 
         <mkdir dir="${build.test}"/>
         <javac srcdir="${test.cekirdek}"
