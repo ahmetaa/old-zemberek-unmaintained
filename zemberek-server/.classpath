@@ -3,13 +3,14 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="test"/>
 	<classpathentry kind="var" path="JRE_LIB" sourcepath="JRE_SRC"/>
-	<classpathentry kind="lib" path="lib/netty2.jar"/>
 	<classpathentry kind="lib" path="lib/zemberek2-tr.jar"/>
 	<classpathentry kind="lib" path="lib/dbus.jar">
 		<attributes>
-			<!--<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="lib"/>-->
 			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="/home/firari/Desktop/zemberek-server/lib"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="lib/mina-core-1.1pre.jar"/>
+	<classpathentry kind="lib" path="lib/slf4j-api-1.1.0.jar"/>
+	<classpathentry kind="lib" path="lib/slf4j-nop-1.1.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
