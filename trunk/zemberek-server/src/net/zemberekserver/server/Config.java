@@ -3,27 +3,29 @@ package net.zemberekserver.server;
 import java.io.FileInputStream;
 import java.util.Properties;
 
+
 /**
- * Sistemde ortak kullanılan nesnelerin referanslarını tutmak için kullanılır.
+ * 
  * Genel konfigurasyon bilgileri de burada tutulur.
  */
 
 public class Config {
-    public static String confFile = "config/conf.ini";; 
-    public static String logFile = null; 
+    public static int serverPort;
+    public static boolean useDbus;
+    public static boolean useSockets;
+    public static boolean allowRemote;
+    public static String busName;
     
-    public static int serverPort = 10444;
     private static Properties properties = null;
 
-    public static void readConfFile(String confFile) {
-        FileInputStream fileStream;
+    static {
         try {
-            fileStream = new FileInputStream(confFile);
-            System.out.println(confFile + " isimli konfigürasyon dosyasi okundu.");
             properties = new Properties();
-            properties.load(fileStream);
-            serverPort = getPropertyValue("SERVER_PORT", serverPort);
-            fileStream.close();
+            properties.load(new FileInputStream("config/conf.ini"));
+            serverPort = getPropertyValue("PORT_NUMBER", Defaults.PORT_NUMBER);
+            useDbus = getPropertyValue("USE_DBUS", Defaults.USE_DBUS);
+            useSockets = getPropertyValue("USE_SOCKETS", Defaults.USE_SOCKETS);
+            busName = getPropertyValue("BUS_NAME", Defaults.BUS_NAME);
         }
         catch (Exception e) {
             e.printStackTrace();
