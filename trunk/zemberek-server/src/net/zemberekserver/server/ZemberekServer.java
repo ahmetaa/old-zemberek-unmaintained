@@ -22,8 +22,7 @@ public class ZemberekServer {
 	}
 	
 	public void initDBusServer(){
-		zemberekDbus = new ZemberekDbus();
-		zemberekDbus.start(zemberek, Config.busName);
+		ZemberekDbus.start(zemberek, Config.busName);
 	}
 	
 	public void shutdown(){

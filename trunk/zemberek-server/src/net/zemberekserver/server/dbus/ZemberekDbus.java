@@ -16,20 +16,20 @@ import org.freedesktop.dbus.DBusException;
 
 public class ZemberekDbus implements ZemberekDbusInterface {
 	
-	private static Zemberek zemberek;
+	private Zemberek zemberek;
 	
-	public ZemberekDbus() {
+	public ZemberekDbus(Zemberek zemberek) {
+		this.zemberek=zemberek;
 	}
 	
 	public boolean isRemote() {	return false; }
 	
-	public void start(Zemberek zemberek, String busName) {
+	public static void start(Zemberek zemberek, String busName) {
 		try {
-			ZemberekDbus.zemberek = zemberek;
 			//DBusConnection conn = DBusConnection.getConnection(DBusConnection.SYSTEM);
 			DBusConnection conn = DBusConnection.getConnection(DBusConnection.SESSION);
 			conn.requestBusName(busName);
-			conn.exportObject("/net/zemberekserver/server/dbus/ZemberekDbus" , new ZemberekDbus());
+			conn.exportObject("/net/zemberekserver/server/dbus/ZemberekDbus" , new ZemberekDbus(zemberek));
 			System.out.println("Zemberek DBus arayüzü başlatıldı. busName: " + busName);
 		} catch (DBusException e) {
 			e.printStackTrace();
