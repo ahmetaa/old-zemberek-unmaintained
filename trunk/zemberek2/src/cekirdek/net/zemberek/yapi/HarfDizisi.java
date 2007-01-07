@@ -242,6 +242,12 @@ public class HarfDizisi implements CharSequence {
         return this;
     }
 
+    public HarfDizisi araDizi(int bas, int son) {
+        if (son < bas) return null;
+        TurkceHarf[] yeniHarfler = new TurkceHarf[son - bas];
+        System.arraycopy(dizi, bas, yeniHarfler, 0, son - bas);
+        return new HarfDizisi(yeniHarfler);
+    }
 
     /**
      * verilen pozisyondaki harfi dondurur. icerigi "kedi" olan HarfDizisi icin
@@ -504,10 +510,7 @@ public class HarfDizisi implements CharSequence {
     }
 
     public CharSequence subSequence(int start, int end) {
-        if (end < start) return null;
-        TurkceHarf[] yeniHarfler = new TurkceHarf[end - start];
-        System.arraycopy(dizi, start, yeniHarfler, 0, end - start);
-        return new HarfDizisi(yeniHarfler);
+        return araDizi(start, end);
     }
 
 }

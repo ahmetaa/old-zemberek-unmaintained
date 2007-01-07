@@ -85,7 +85,7 @@ public class TurkceDilBilgisi implements DilBilgisi {
     private final String cepDosyaAdi;
     private final String kokIstatistikDosyaAdi;
 
-    private boolean cepKullan=true;
+    private boolean cepKullan = true;
 
     /**
      * istenilen dilayarlari nesnesine gore cesitli parametreleri (bilgi dizin adi, kaynak dosyalarin locale
@@ -97,9 +97,8 @@ public class TurkceDilBilgisi implements DilBilgisi {
     public TurkceDilBilgisi(DilAyarlari dilAyarlari) {
 
         this.dilAyarlari = dilAyarlari;
-        this.dilAdi=dilAyarlari.ad();
-        char c = File.separatorChar;
-        bilgiDizini = "kaynaklar" + c + dilAyarlari.locale().getLanguage() + c + "bilgi" + c;
+        this.dilAdi = dilAyarlari.ad();
+        bilgiDizini = "kaynaklar/" + dilAyarlari.locale().getLanguage() + "/bilgi/";
         alfabeDosyaAdi = dosyaAdiUret("harf", "txt");
         ekDosyaAdi = dosyaAdiUret("ek", "xml");
         kokDosyaAdi = dosyaAdiUret("kokler", "bin");
@@ -188,7 +187,7 @@ public class TurkceDilBilgisi implements DilBilgisi {
                 } catch (IOException e) {
                     e.printStackTrace();
                     logger.severe("kok bilgilerine erisim saglanamadigindan uygulama calismaya devam edemez.");
-                    System.exit(-1);
+                    return null;
                 }
             }
             kokOzelDurumlari();
@@ -223,7 +222,7 @@ public class TurkceDilBilgisi implements DilBilgisi {
     }
 
     public DenetlemeCebi cep() {
-        if(!cepKullan) {
+        if (!cepKullan) {
             logger.info("cep kullanilmayacak.");
             return null;
         }
@@ -261,8 +260,6 @@ public class TurkceDilBilgisi implements DilBilgisi {
         }
         return heceleyici;
     }
-
-
 
 
     public CozumlemeYardimcisi cozumlemeYardimcisi() {
@@ -342,6 +339,7 @@ public class TurkceDilBilgisi implements DilBilgisi {
             c = Class.forName(dilAyarSinifi);
         }
         new TurkceDilBilgisi((DilAyarlari) c.newInstance()).ikiliKokDosyasiUret();
+
     }
 
 }

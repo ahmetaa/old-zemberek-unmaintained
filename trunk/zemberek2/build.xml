@@ -43,7 +43,6 @@
     <property name="src.tm" location="src/tm"/>
     <property name="src.demo" location="src/demo"/>
     <property name="test.cekirdek" location="test/cekirdek"/>
-    <property name="src.config" location="kaynaklar/ayarlar"/>
     <property name="kaynaklar.dir" location="kaynaklar"/>
 
     <!-- derleme icin kullanilan dizinler -->
@@ -79,7 +78,7 @@
         <mkdir dir="${build.cekirdek}"/>
         <javac srcdir="${src.cekirdek}"
                destdir="${build.cekirdek}"
-               encoding="utf-8"
+               encoding="utf-8"               
                classpathref="classpath.build"
                debug="true"
                source="1.5"
@@ -205,6 +204,7 @@
     <target name="jar-tum" depends="temizle, derle-cekirdek, derle-demo">
         <copy todir="${build.tum}">
             <fileset dir="${build.cekirdek}"/>
+            <fileset dir="${build.demo}"/>
         </copy>
 
         <antcall target="dil-ekle">

@@ -101,5 +101,13 @@ public class ZemberekIslevselTest extends TemelTest {
         TestUtils.assertObjectArrayContentsEqual(beklenen, hesaplanan);
     }
 
+    @Test
+    public void heceleme() {
+        String[] kelimeler =  {"ara", "siir", "siirt", "kalem", "turk"};
+        for (String s : kelimeler) {
+           assertTrue(zemberek.hecele(s).length>0);
+        }
+    }
+
 
 }
