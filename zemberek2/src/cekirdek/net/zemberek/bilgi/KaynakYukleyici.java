@@ -145,7 +145,7 @@ public class KaynakYukleyici {
      * @throws IOException
      */
     public InputStream getStream(String kaynakAdi) throws IOException {
-        InputStream stream = null;
+        InputStream stream;
         try {
             // classpath icinden yuklemeye calis.
             stream = utf8BomDenetle(this.getClass().getResourceAsStream("/" + kaynakAdi));
