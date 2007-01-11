@@ -26,8 +26,8 @@ public class ZemberekDbus implements ZemberekDbusInterface {
 	
 	public static void start(Zemberek zemberek, String busName) {
 		try {
-			//DBusConnection conn = DBusConnection.getConnection(DBusConnection.SYSTEM);
-			DBusConnection conn = DBusConnection.getConnection(DBusConnection.SESSION);
+			DBusConnection conn = DBusConnection.getConnection(DBusConnection.SYSTEM);
+			//DBusConnection conn = DBusConnection.getConnection(DBusConnection.SESSION);
 			conn.requestBusName(busName);
 			conn.exportObject("/net/zemberekserver/server/dbus/ZemberekDbus" , new ZemberekDbus(zemberek));
 			System.out.println("Zemberek DBus arayüzü başlatıldı. busName: " + busName);
