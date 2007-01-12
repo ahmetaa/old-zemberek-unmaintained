@@ -13,7 +13,7 @@ import java.util.List;
 import net.zemberek.erisim.Zemberek;
 import net.zemberek.tr.yapi.TurkiyeTurkcesi;
 import org.freedesktop.dbus.DBusConnection;
-import org.freedesktop.dbus.DBusException;
+import org.freedesktop.dbus.exceptions.DBusException;
 
 public class ZemberekDbus implements IZemberek {
 	
