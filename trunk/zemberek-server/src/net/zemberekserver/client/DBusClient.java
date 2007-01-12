@@ -8,7 +8,7 @@
 package net.zemberekserver.client;
 
 import org.freedesktop.dbus.DBusConnection;
-import org.freedesktop.dbus.DBusException;
+import org.freedesktop.dbus.exceptions.DBusException;
 
 import net.zemberekserver.server.dbus.ZemberekDbusInterface;
 
