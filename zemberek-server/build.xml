@@ -108,7 +108,7 @@
             <manifest>
                 <attribute name="Built-By" value="zemberek team"/>
                 <attribute name="Main-Class"
-                    value="net.zemberekserver.server.Server"/>
+                    value="net.zemberekserver.server.ZemberekServer"/>
                 <attribute name="Class-Path"
                     value=". lib/netty2.jar lib/zemberek2-tr.jar lib/dbus.jar"/>
             </manifest>
