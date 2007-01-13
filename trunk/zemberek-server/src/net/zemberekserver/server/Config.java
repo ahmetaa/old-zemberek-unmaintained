@@ -21,7 +21,10 @@ public class Config {
     static {
         try {
             properties = new Properties();
-            properties.load(new FileInputStream("config/conf.ini"));
+            String confFile = System.getProperty("ConfigFile");
+            if(confFile== null)
+            	confFile=Defaults.CONFIG_FILE;
+            properties.load(new FileInputStream(confFile));
             serverPort = getPropertyValue("PORT_NUMBER", Defaults.PORT_NUMBER);
             useDbus = getPropertyValue("USE_DBUS", Defaults.USE_DBUS);
             useSockets = getPropertyValue("USE_SOCKETS", Defaults.USE_SOCKETS);
