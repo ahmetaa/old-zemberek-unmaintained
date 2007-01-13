@@ -10,14 +10,20 @@ package net.zemberekserver.client;
 import org.freedesktop.dbus.DBusConnection;
 import org.freedesktop.dbus.exceptions.DBusException;
 
+import net.zemberekserver.server.Config;
 import net.zemberekserver.server.dbus.ZemberekDbusInterface;
 
 import java.util.List;
 public class DBusClient {
 
 	public static void main(String[] args) throws DBusException {
-		DBusConnection conn = DBusConnection.getConnection(DBusConnection.SYSTEM);
-		//DBusConnection conn = DBusConnection.getConnection(DBusConnection.SESSION);
+		DBusConnection conn;
+		if (Config.useDbusSystemConnection){
+			 conn = DBusConnection.getConnection(DBusConnection.SYSTEM);
+		}
+		else {
+			conn = DBusConnection.getConnection(DBusConnection.SESSION);
+		}		
 		ZemberekDbusInterface zemberek = (ZemberekDbusInterface) conn.getRemoteObject("net.zemberekserver.server.dbus","/net/zemberekserver/server/dbus/ZemberekDbus",ZemberekDbusInterface.class);
 		long start = System.currentTimeMillis();
 		for(int i=0; i<10000; i++){

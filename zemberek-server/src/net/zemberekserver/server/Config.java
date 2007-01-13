@@ -15,20 +15,21 @@ public class Config {
     public static boolean useSockets;
     public static boolean allowRemote;
     public static String busName;
+    public static boolean useDbusSystemConnection;
+    
     
     private static Properties properties = null;
 
     static {
         try {
             properties = new Properties();
-            String confFile = System.getProperty("ConfigFile");
-            if(confFile== null)
-            	confFile=Defaults.CONFIG_FILE;
-            properties.load(new FileInputStream(confFile));
+            properties.load(new FileInputStream("config/conf.ini"));
             serverPort = getPropertyValue("PORT_NUMBER", Defaults.PORT_NUMBER);
             useDbus = getPropertyValue("USE_DBUS", Defaults.USE_DBUS);
             useSockets = getPropertyValue("USE_SOCKETS", Defaults.USE_SOCKETS);
             busName = getPropertyValue("BUS_NAME", Defaults.BUS_NAME);
+            allowRemote = getPropertyValue("ALLOW_REMOTE", Defaults.ALLOW_REMOTE);
+            useDbusSystemConnection = getPropertyValue("USE_DBUS_SYSTEM_CONNECTION", Defaults.USE_DBUS_SYSTEM_CONNECTION);
         }
         catch (Exception e) {
             e.printStackTrace();

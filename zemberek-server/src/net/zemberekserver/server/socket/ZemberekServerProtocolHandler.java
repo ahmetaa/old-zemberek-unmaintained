@@ -28,8 +28,7 @@ public class ZemberekServerProtocolHandler extends IoHandlerAdapter {
 		byte[] msg = (byte[])message;
 		String content = new String(msg, "UTF-8");
 //		System.out.println("Content: " + content);
-		byte[] response = processMessage(content);
-		session.write(response);
+		session.write(processMessage(content));
 	}
 
 	/**
@@ -42,25 +41,25 @@ public class ZemberekServerProtocolHandler extends IoHandlerAdapter {
 	 * @param mesaj
 	 * @return
 	 */
-	private synchronized byte[] processMessage(String mesaj) {
+	private synchronized String processMessage(String mesaj) {
         try{
             //System.out.println("Alinan mesaj: " + mesaj );
             String[] parcalar = mesaj.trim().split(" ");
             if (parcalar.length < 2) {
-            	return Message.encodeMessage("?");
+            	return "?";
             }
             if (parcalar[0].equals("*")) {
                 for (int i = 1; i < parcalar.length; i++) {
                     if (zemberek.kelimeDenetle(parcalar[i].trim())) {
-                        return Message.encodeMessage("*");
+                        return "*";
                     } else {
-                    	return Message.encodeMessage("#");
+                    	return "#";
                     }
                 }
             } else if (parcalar[0].equalsIgnoreCase("&")) {
                 String[] liste = zemberek.oner(parcalar[1].trim());
                 if (liste.length == 0) {
-                	return Message.encodeMessage("#");
+                	return "#";
                 }
                 else{
                     String cevap = "& (";
@@ -70,14 +69,14 @@ public class ZemberekServerProtocolHandler extends IoHandlerAdapter {
                             cevap += ",";
                     }
                     cevap += ")";
-                    return Message.encodeMessage(cevap);
+                    return cevap;
                 }
             }
             }catch(Exception e){
                 e.printStackTrace();
             }
             // anything else, return error
-            return Message.encodeMessage("?");
+            return "?";
 	}
 
 	public void sessionClosed(IoSession session) throws Exception {

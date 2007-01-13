@@ -10,6 +10,7 @@ package net.zemberekserver.server.dbus;
 import java.util.List;
 
 import net.zemberek.erisim.Zemberek;
+import net.zemberekserver.server.Config;
 
 import org.freedesktop.dbus.DBusConnection;
 import org.freedesktop.dbus.exceptions.DBusException;
@@ -26,8 +27,13 @@ public class ZemberekDbus implements ZemberekDbusInterface {
 	
 	public static void start(Zemberek zemberek, String busName) {
 		try {
-			DBusConnection conn = DBusConnection.getConnection(DBusConnection.SYSTEM);
-			//DBusConnection conn = DBusConnection.getConnection(DBusConnection.SESSION);
+			DBusConnection conn;
+			if (Config.useDbusSystemConnection){
+				 conn = DBusConnection.getConnection(DBusConnection.SYSTEM);
+			}
+			else {
+				conn = DBusConnection.getConnection(DBusConnection.SESSION);
+			}			
 			conn.requestBusName(busName);
 			conn.exportObject("/net/zemberekserver/server/dbus/ZemberekDbus" , new ZemberekDbus(zemberek));
 			System.out.println("Zemberek DBus arayüzü başlatıldı. busName: " + busName);
