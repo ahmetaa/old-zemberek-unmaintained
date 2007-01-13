@@ -6,7 +6,6 @@ import java.util.Random;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 import net.zemberekserver.server.Defaults;
-import net.zemberekserver.server.socket.Message;
 import net.zemberekserver.server.socket.ZemberekProtocolCodecFactory;
 
 import org.apache.mina.common.ConnectFuture;
@@ -130,7 +129,7 @@ class ClientProtocolHandler extends IoHandlerAdapter{
 		synchronized(this){
 			while(queue.isEmpty() == false){
 				currentMessage = queue.remove();
-				session.write(Message.encodeMessage(currentMessage.request));
+				session.write(currentMessage.request);
 				try {
 					this.wait();
 				} catch (InterruptedException e) {

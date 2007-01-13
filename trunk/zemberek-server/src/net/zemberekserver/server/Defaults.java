@@ -8,5 +8,5 @@ public class Defaults {
 	public static final boolean USE_SOCKETS = true;
 	public static final boolean USE_DBUS = true;
 	public static final boolean ALLOW_REMOTE = false;
-	public static final String CONFIG_FILE="config/conf.ini";
+	public static final boolean USE_DBUS_SYSTEM_CONNECTION = true;
 }
