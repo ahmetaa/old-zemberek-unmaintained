@@ -28,10 +28,7 @@
 package net.zemberek.islemler;
 
 import net.zemberek.TemelTest;
-import net.zemberek.tr.yapi.TurkceHeceBulucu;
 import net.zemberek.yapi.Alfabe;
-import net.zemberek.yapi.HarfDizisi;
-import net.zemberek.yapi.HeceBulucu;
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
@@ -43,19 +40,19 @@ import java.util.Arrays;
  */
 public class TestHeceleyici extends TemelTest {
 
-    Heceleyici heceleyici;
+    HeceIslemleri heceIslemleri;
 
     @Before
     public void once() throws IOException {
         super.once();
-        heceleyici = new Heceleyici(dilBilgisi.alfabe(), dilBilgisi.heceBulucu());
+        heceIslemleri = new HeceIslemleri(dilBilgisi.alfabe(), dilBilgisi.heceBulucu());
     }
 
     @Test
     public void testHeceleyici() {
         String kelime = "kanaat";
         String[] beklenen = {"ka", "na", "at"};
-        String[] sonuc = heceleyici.hecele(kelime);
+        String[] sonuc = heceIslemleri.hecele(kelime);
         assertTrue(sonuc.length == 3);
         for (int i = 0; i < sonuc.length; i++) {
             String s = sonuc[i];
@@ -64,7 +61,7 @@ public class TestHeceleyici extends TemelTest {
 
         kelime = "durttur";
         String[] beklenen2 = {"durt", "tur"};
-        String[] sonuc2 = heceleyici.hecele(kelime);
+        String[] sonuc2 = heceIslemleri.hecele(kelime);
         assertTrue(sonuc2.length == 2);
         for (int i = 0; i < sonuc2.length; i++) {
             String s = sonuc2[i];
@@ -76,42 +73,26 @@ public class TestHeceleyici extends TemelTest {
     public void testHecelenemez() {
         String[] strs = {"tr", "r", "rty", "artpya", "kitttr", "kertreryt"};
         for (String str : strs)
-            assertTrue(heceleyici.hecele(str).length == 0);
+            assertTrue(heceIslemleri.hecele(str).length == 0);
 
-    }
-
-    @Test
-    public void testSonHece() {
-        HeceBulucu heceBulur = new TurkceHeceBulucu();
-        String[] strs = {"turk", "ara", "sarta", "siir", "siiir", "kanat", "kanaat",
-                "yaptirt", "artti", "arttir", "arttirt", "sirret", "siirt", "teleskop"};
-        int[] sonuclar = {4, 2, 2, 2, 2, 3, 2,
-                4, 2, 3, 4, 3, 3, 3};
-        HarfDizisi[] girisler = new HarfDizisi[strs.length];
-        for (int i = 0; i < strs.length; i++)
-            girisler[i] = new HarfDizisi(strs[i], alfabe);
-        for (int i = 0; i < girisler.length; i++) {
-            HarfDizisi harfDizisi = girisler[i];
-            assertEquals(harfDizisi.toString(), heceBulur.sonHeceHarfSayisi(harfDizisi), sonuclar[i]);
-        }
     }
 
     @Test
     public void testHecelenebilirmi() {
         String strs[] = {"NATO", "merhabalar", "kimyev" + Alfabe.CHAR_SAPKALI_i, "BORA"};
         for (String s : strs)
-            assertTrue("hecelenemedi:" + s, heceleyici.hecelenebilirmi(s));
+            assertTrue("hecelenemedi:" + s, heceIslemleri.hecelenebilirmi(s));
 
         String ss[] = { "lycos", "AwAtrt", ".", "-"};
         for (String s : ss)
-            assertFalse("hecelendi:" + s, heceleyici.hecelenebilirmi(s));
+            assertFalse("hecelendi:" + s, heceIslemleri.hecelenebilirmi(s));
 
     }
 
     @Test
     public void testHeceIndeks1() {
         String kelime = "merhaba";
-        int[] sonuclar = heceleyici.heceIndeksleriniBul(kelime);
+        int[] sonuclar = heceIslemleri.heceIndeksleriniBul(kelime);
         Arrays.toString(sonuclar);
         assertNotNull(sonuclar);
         assertEquals(3, sonuclar.length);
@@ -122,7 +103,7 @@ public class TestHeceleyici extends TemelTest {
     @Test
     public void testHeceIndeks2() {
         String kelime = "türklerin";
-        int[] sonuclar = heceleyici.heceIndeksleriniBul(kelime);
+        int[] sonuclar = heceIslemleri.heceIndeksleriniBul(kelime);
         Arrays.toString(sonuclar);
         assertNotNull(sonuclar);
         assertEquals(3, sonuclar.length);
@@ -132,7 +113,7 @@ public class TestHeceleyici extends TemelTest {
 
     public void testHeceIndeks3() {
         String kelime = "türkülerin";
-        int[] sonuclar = heceleyici.heceIndeksleriniBul(kelime);
+        int[] sonuclar = heceIslemleri.heceIndeksleriniBul(kelime);
         Arrays.toString(sonuclar);
         assertNotNull(sonuclar);
         assertEquals(4, sonuclar.length);
@@ -143,7 +124,7 @@ public class TestHeceleyici extends TemelTest {
 
     public void testHeceIndeks4() {
         String kelime = "psikoloji";
-        int[] sonuclar = heceleyici.heceIndeksleriniBul(kelime);
+        int[] sonuclar = heceIslemleri.heceIndeksleriniBul(kelime);
         Arrays.toString(sonuclar);
         assertNotNull(sonuclar);
         assertEquals(4, sonuclar.length);

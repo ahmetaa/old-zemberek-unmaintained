@@ -16,7 +16,7 @@
  *  The Original Code is "Zemberek Dogal Dil Isleme Kutuphanesi"
  *
  *  The Initial Developer of the Original Code is
- *  Ahmet A. Akin, Mehmet D. Akin.
+ *  Ahmet A. Akin, Mehmet D. Akin, Guychmyrat Amanmyradov.
  *  Portions created by the Initial Developer are Copyright (C) 2006
  *  the Initial Developer. All Rights Reserved.
  *
@@ -25,23 +25,22 @@
  *  ***** END LICENSE BLOCK *****
  */
 
-package net.zemberek.az.yapi;
+package net.zemberek.tm.yapi;
 
-import net.zemberek.yapi.HeceBulucu;
-import net.zemberek.yapi.HarfDizisi;
 import net.zemberek.yapi.Alfabe;
+import net.zemberek.yapi.HarfDizisi;
+import net.zemberek.yapi.Heceleyici;
 
+import java.util.List;
+import java.util.Collections;
 
-public class AzericeHeceBulucu implements HeceBulucu {
+/**
+ * User: ahmet
+ * Date: Sep 22, 2006
+ */
+public class TurkmenceHeceleyici implements Heceleyici {
 
-    Alfabe alfabe;
-
-
-    public AzericeHeceBulucu(Alfabe alfabe) {
-        this.alfabe = alfabe;
-    }
-
-    public int sonHeceHarfSayisi(HarfDizisi dizi) {
-        return 0;
+    public List<String> hecele(HarfDizisi dizi) {
+        return Collections.emptyList();
     }
 }

@@ -27,19 +27,31 @@
 
 package net.zemberek.tr.yapi;
 
-import net.zemberek.yapi.Alfabe;
+import net.zemberek.yapi.Heceleyici;
 import net.zemberek.yapi.HarfDizisi;
-import net.zemberek.yapi.HeceBulucu;
 import net.zemberek.yapi.TurkceHarf;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Collections;
 
-/**
- * User: ahmet
- * Date: Sep 10, 2005
- */
-public class TurkceHeceBulucu implements HeceBulucu {
+public class TurkceHeceleyici implements Heceleyici {
+
+    public List<String> hecele(HarfDizisi kelime) {
+        List<String> list = new ArrayList();
+        while (kelime.length() > 0) {
+            int index = sonHeceHarfSayisi(kelime);
+            if (index < 0) {
+                list.clear();
+                return Collections.emptyList();
+            }
+            int basla = kelime.length() - index;
+            list.add(kelime.toString(basla));
+            kelime.kirp(basla);
+        }
+        Collections.reverse(list);
+        return list;
+    }
 
     /**
      * Giren harf dizisinin sonunda mantikli olarak yer alan hecenin harf
@@ -55,7 +67,7 @@ public class TurkceHeceBulucu implements HeceBulucu {
      *         durumlari kabul etmekte ama buna kisitlama getirilmesi iyi olur.
      *         sadece "tr", "st", "kr" gibi girislere izin verilmeli
      */
-    public int sonHeceHarfSayisi(HarfDizisi kelime) {
+    private int sonHeceHarfSayisi(HarfDizisi kelime) {
 
         final int boy = kelime.length();
         TurkceHarf harf = kelime.harf(boy - 1);
@@ -101,7 +113,7 @@ public class TurkceHeceBulucu implements HeceBulucu {
                     return 3;
 
                 //kelime dort harfli ise yukaridaki kurallari gecmesi nedeniyle hecelenemez sayiyoruz.
-                // tren, strateji, krank, angstrom gibi kelimeler henuz hecelenmiyor. 
+                // tren, strateji, krank, angstrom gibi kelimeler henuz hecelenmiyor.
                 if (boy == 4)
                     return -1;
 
@@ -110,7 +122,7 @@ public class TurkceHeceBulucu implements HeceBulucu {
                     return 3;
                 return 3;
 
-            } else  {
+            } else {
 
                 if (boy == 2 || !ikiOncekiHarf.sesliMi())
                     return -1;
@@ -122,4 +134,5 @@ public class TurkceHeceBulucu implements HeceBulucu {
 
         }
     }
+
 }

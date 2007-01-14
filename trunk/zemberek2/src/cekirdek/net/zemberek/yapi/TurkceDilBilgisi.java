@@ -73,7 +73,7 @@ public class TurkceDilBilgisi implements DilBilgisi {
     private CozumlemeYardimcisi yardimci;
     private EkYonetici ekYonetici;
     private KokOzelDurumBilgisi ozelDurumBilgisi;
-    private HeceBulucu heceleyici;
+    private Heceleyici heceleyici;
 
     private static Logger logger = Kayitci.kayitciUret(TurkceDilBilgisi.class);
 
@@ -240,19 +240,19 @@ public class TurkceDilBilgisi implements DilBilgisi {
         return cep;
     }
 
-    public HeceBulucu heceBulucu() {
+    public Heceleyici heceBulucu() {
         if (heceleyici != null) {
             return heceleyici;
         } else {
             alfabe();
-            Class clazz = dilAyarlari.heceBulucuSinifi();
+            Class clazz = dilAyarlari.heceleyiciSinifi();
             try {
                 Constructor c = clazz.getConstructor(Alfabe.class);
-                heceleyici = (HeceBulucu) c.newInstance(alfabe);
+                heceleyici = (Heceleyici) c.newInstance(alfabe);
             } catch (Exception e) {
                 try {
                     Constructor c = clazz.getConstructor();
-                    heceleyici = (HeceBulucu) c.newInstance();
+                    heceleyici = (Heceleyici) c.newInstance();
                 } catch (Exception e2) {
                     logger.warning("heceleyici nesnesi uretilemiyor. heceleme islemi basarisiz olacak.");
                 }

@@ -63,8 +63,8 @@ public class Turkmence implements DilAyarlari {
         return TemelEkYonetici.class;
     }
 
-    public Class heceBulucuSinifi() {
-        return TurkmenceHeceBulucu.class;
+    public Class heceleyiciSinifi() {
+        return TurkmenceHeceleyici.class;
     }
 
     public Class kokOzelDurumBilgisiSinifi() {

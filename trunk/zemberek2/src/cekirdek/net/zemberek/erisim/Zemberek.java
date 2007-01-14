@@ -60,7 +60,7 @@ public class Zemberek {
     private TurkceYaziTesti turkceTest;
     private OneriUretici oneriUretici;
     private AsciiDonusturucu asciiDonusturucu;
-    private Heceleyici heceleyici;
+    private HeceIslemleri heceIslemleri;
     private ZemberekAyarlari ayarlar;
     private DilBilgisi dilBilgisi;
 
@@ -126,7 +126,7 @@ public class Zemberek {
         turkceTest = new TurkceYaziTesti(cozumleyici, asciiToleransliCozumleyici);
 
         asciiDonusturucu = new AsciiDonusturucu(dilBilgisi.alfabe());
-        heceleyici = new Heceleyici(dilBilgisi.alfabe(), dilBilgisi.heceBulucu());
+        heceIslemleri = new HeceIslemleri(dilBilgisi.alfabe(), dilBilgisi.heceBulucu());
 
         kelimeUretici = new KelimeUretici(dilBilgisi.alfabe(), dilBilgisi.cozumlemeYardimcisi());
     }
@@ -160,10 +160,10 @@ public class Zemberek {
     /**
      * Accessor for the syllable extractor.
      *
-     * @return heceleyici
+     * @return heceIslemleri
      */
-    public Heceleyici heceleyici() {
-        return heceleyici;
+    public HeceIslemleri heceleyici() {
+        return heceIslemleri;
     }
 
     /**
@@ -258,7 +258,7 @@ public class Zemberek {
      * @return String dizisi. Eger dizi boyu 0 ise kelime hecelenememis demektir.
      */
     public String[] hecele(String giris) {
-        return heceleyici.hecele(giris);
+        return heceIslemleri.hecele(giris);
     }
 
     /**

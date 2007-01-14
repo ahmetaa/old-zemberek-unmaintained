@@ -30,7 +30,7 @@
  */
 package net.zemberek.istatistik;
 
-import net.zemberek.islemler.Heceleyici;
+import net.zemberek.islemler.HeceIslemleri;
 import net.zemberek.yapi.Kelime;
 import net.zemberek.yapi.Kok;
 import net.zemberek.yapi.DilBilgisi;
@@ -42,7 +42,7 @@ import java.util.List;
  * @author MDA
  */
 public class Istatistikler {
-	private Heceleyici heceleyici;
+	private HeceIslemleri heceIslemleri;
     private HeceIstatistikleri heceIstatistikleri = new HeceIstatistikleri();
     private KarakterIstatistikleri karakterIstatistikleri = new KarakterIstatistikleri();
     private KokIstatistikleri kokIstatistikleri = new KokIstatistikleri();
@@ -63,7 +63,7 @@ public class Istatistikler {
 	private int kelimeLimit = 0;
 
     public Istatistikler(DilBilgisi dil) {
-        this.heceleyici = new Heceleyici(dil.alfabe(), dil.heceBulucu());
+        this.heceIslemleri = new HeceIslemleri(dil.alfabe(), dil.heceBulucu());
     }
 
 
@@ -154,7 +154,7 @@ public class Istatistikler {
             Kelime kelime = kelimeler[0];
             kokIstatistikleri.sonucGuncelle(kelime.kok(), kelime);
             ekIstatistikleri.istatistikGuncelle(kelime);
-            String[] heceler = heceleyici.hecele(giris);
+            String[] heceler = heceIslemleri.hecele(giris);
             for (int j = 0; j < heceler.length; j++) {
                 heceIstatistikleri.guncelle(heceler[j]);
                 heceIkiliIstatistikleri.sonucGuncelle(heceler[j]);

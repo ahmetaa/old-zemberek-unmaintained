@@ -60,8 +60,8 @@ public class Azerice implements DilAyarlari {
         return TemelEkYonetici.class;
     }
 
-    public Class heceBulucuSinifi() {
-        return AzericeHeceBulucu.class;
+    public Class heceleyiciSinifi() {
+        return AzericeHeceleyici.class;
     }
 
     public Class kokOzelDurumBilgisiSinifi() {

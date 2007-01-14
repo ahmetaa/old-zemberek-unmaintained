@@ -68,7 +68,7 @@ public interface DilBilgisi {
      * eger varsa dile ozgu hece bulma nesnesi.
      * @return hecebulma nesnesi
      */
-    HeceBulucu heceBulucu();
+    Heceleyici heceBulucu();
 
     /**
      * dile ozgu cozumleme yardimcisi nesnesi. bu nesne cozumleme sirasinda kullanilan
