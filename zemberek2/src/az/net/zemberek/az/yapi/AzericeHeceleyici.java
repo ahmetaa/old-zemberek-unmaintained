@@ -25,22 +25,19 @@
  *  ***** END LICENSE BLOCK *****
  */
 
-package net.zemberek.yapi;
+package net.zemberek.az.yapi;
 
-/**
- * User: ahmet
- * Date: Sep 10, 2005
- */
-public interface HeceBulucu {
+import net.zemberek.yapi.Heceleyici;
+import net.zemberek.yapi.HarfDizisi;
+import net.zemberek.yapi.Alfabe;
 
-    /**
-     * Giren harf dizisinin sonunda mantikli olarak yer alan hecenin harf
-     * sayisini dondurur.
-     *
-     * @param dizi: harf dizisi.
-     * @return int, 1,2,3 ya da 4 donerse giris dizisinin dizinin sondan o
-     *         kadarharfi heceyi temsil eder -1 donerse hecenin bulunamadigi
-     *         anlamina gelir.
-     */
-     int sonHeceHarfSayisi(HarfDizisi dizi);
+import java.util.List;
+import java.util.Collections;
+
+
+public class AzericeHeceleyici implements Heceleyici {
+
+    public List<String> hecele(HarfDizisi dizi) {
+        return Collections.emptyList();
+    }
 }

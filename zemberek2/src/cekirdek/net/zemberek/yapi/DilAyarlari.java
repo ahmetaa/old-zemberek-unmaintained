@@ -46,7 +46,7 @@ public interface DilAyarlari {
 
     Class ekYoneticiSinifi();
 
-    Class heceBulucuSinifi();
+    Class heceleyiciSinifi();
 
     Class kokOzelDurumBilgisiSinifi();
 

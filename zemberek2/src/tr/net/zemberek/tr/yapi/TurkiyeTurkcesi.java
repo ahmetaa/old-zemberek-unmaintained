@@ -63,8 +63,8 @@ public class TurkiyeTurkcesi implements DilAyarlari {
         return TemelEkYonetici.class;
     }
 
-    public Class heceBulucuSinifi() {
-        return TurkceHeceBulucu.class;
+    public Class heceleyiciSinifi() {
+        return TurkceHeceleyici.class;
     }
 
     public Class kokOzelDurumBilgisiSinifi() {

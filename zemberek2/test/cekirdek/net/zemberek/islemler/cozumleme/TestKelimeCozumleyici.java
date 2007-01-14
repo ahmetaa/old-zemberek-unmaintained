@@ -29,7 +29,6 @@ package net.zemberek.islemler.cozumleme;
 
 import net.zemberek.TemelTest;
 import net.zemberek.TestUtils;
-import net.zemberek.islemler.Heceleyici;
 import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
@@ -44,7 +43,6 @@ import java.util.List;
 public class TestKelimeCozumleyici extends TemelTest {
 
     static KelimeCozumleyici cozumleyici;
-    static Heceleyici heceleyici;
 
     @Before
     public void once() throws IOException {
@@ -55,7 +53,6 @@ public class TestKelimeCozumleyici extends TemelTest {
                 this.alfabe,
                 dilBilgisi.ekler(),
                 dilBilgisi.cozumlemeYardimcisi());
-        heceleyici = new Heceleyici(alfabe, dilBilgisi.heceBulucu());
     }
 
     /**

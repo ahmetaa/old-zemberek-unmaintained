@@ -38,6 +38,8 @@
       <entry name="?*.html" />
       <entry name="?*.dtd" />
       <entry name="?*.tld" />
+      <entry name="?*.txt" />
+      <entry name="?*.bin" />
     </wildcardResourcePatterns>
   </component>
   <component name="DataSourceManagerImpl" />

@@ -176,7 +176,7 @@ class TimerElement {
     long diff = 0;
 
     private static long getMilis() {
-       return System.nanoTime()/ 1000000l;
+       return System.nanoTime()/ 1000000L;
     }
 
     public TimerElement(String name) {
