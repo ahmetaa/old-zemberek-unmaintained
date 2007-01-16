@@ -103,7 +103,8 @@
             <format property="release" pattern="-dMMMyy" locale="tr"/>
         </tstamp>
         <jar jarfile="${dist.dir}/${isim}-${surum}.jar"
-            basedir="${build.java}">
+            basedir="${build.java}"
+        	excludes="net/zemberekserver/server/dbus/ZemberekDbusInterface.class">
             <!-- executable jar icin gerekli class va paket bilgileri-->
             <manifest>
                 <attribute name="Built-By" value="zemberek team"/>
