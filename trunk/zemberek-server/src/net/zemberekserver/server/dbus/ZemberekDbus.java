@@ -10,6 +10,7 @@ package net.zemberekserver.server.dbus;
 import java.util.List;
 
 import net.zemberek.erisim.Zemberek;
+import net.zemberek.tr.yapi.TurkiyeTurkcesi;
 import net.zemberekserver.server.Config;
 
 import org.freedesktop.dbus.DBusConnection;
@@ -41,6 +42,10 @@ public class ZemberekDbus implements ZemberekDbusInterface {
 			e.printStackTrace();
 			System.err.println("Zemberek DBus arayüzü başlatılırken hata");
 		}
+	}
+	
+	public static void main(String[] args) {
+		start(new Zemberek(new TurkiyeTurkcesi()),Config.busName);
 	}
 
 	public String[] asciidenTurkceye(String giris) {
