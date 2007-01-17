@@ -1,0 +1,35 @@
+<!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN"
+         "http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
+        <node name="/net/zemberekserver/server/dbus/ZemberekDbus">
+          <interface name="net.zemberekserver.server.dbus.ZemberekDbusInterface">
+            <method name="asciidenTurkceye">
+              <arg name="giris" type="s" direction="in"/>
+              <arg type="as" direction="out"/>
+            </method>
+            <method name="asciiyeDonustur">
+              <arg name="giris" type="s" direction="in"/>
+              <arg type="s" direction="out"/>
+            </method>
+            <method name="hecele">
+              <arg name="giris" type="s" direction="in"/>
+              <arg type="as" direction="out"/>
+            </method>
+            <method name="kelimeAyristir">
+              <arg name="giris" type="s" direction="in"/>
+              <arg type="aas" direction="out"/>
+            </method>
+            <method name="kelimeDenetle">
+              <arg name="giris" type="s" direction="in"/>
+              <arg type="b" direction="out"/>
+            </method>
+            <method name="oner">
+              <arg name="giris" type="s" direction="in"/>
+              <arg type="as" direction="out"/>
+            </method>
+            <method name="temizle">
+              <arg name="giris" type="s" direction="in"/>
+              <arg type="s" direction="out"/>
+            </method>
+          </interface>
+          
+       </node>
