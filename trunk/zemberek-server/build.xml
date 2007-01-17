@@ -98,7 +98,7 @@
     	
     	<copy file="run.sh" todir="${dist.dir}" />
     	<copy file="runtest.sh" todir="${dist.dir}" />    	
-    	
+    	<copy file="zemberek-server.xml" todir="${dist.dir}" />
         <tstamp>
             <format property="release" pattern="-dMMMyy" locale="tr"/>
         </tstamp>
