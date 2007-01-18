@@ -345,7 +345,9 @@
                 version="true"
                 verbose="false"
                 use="true"
-                defaultexcludes="no"
+                encoding="utf8"
+        	    charset="utf8"
+        	    defaultexcludes="no"
                 windowtitle="Generated Documentation for Zemberek"
                 doctitle="Generated Documentation for Zemberek"
                 bottom="Copyright 2005 Zemberek Development Team. All Rights Reserved.">
