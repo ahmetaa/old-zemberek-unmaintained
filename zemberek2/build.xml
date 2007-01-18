@@ -57,6 +57,9 @@
     <property name="java.docs" location="build/java-docs"/>
     <!-- distribution -->
     <property name="dist.dir" location="dagitim"/>
+    <property name="jar.dir" location="${dist.dir}/jar"/>
+    <property name="doc.dir" location="dokuman"/>
+
     <property name="lib.runtime" location="lib/dagitim"/>
     <property name="licences.dir" location="dokuman/lisanslar"/>
 
@@ -76,9 +79,10 @@
     <!--  src/cekirdek dizinindeki siniflari derler. -->
     <target name="derle-cekirdek">
         <mkdir dir="${build.cekirdek}"/>
+        <mkdir dir="${jar.dir}"/>
         <javac srcdir="${src.cekirdek}"
                destdir="${build.cekirdek}"
-               encoding="utf-8"               
+               encoding="utf-8"
                classpathref="classpath.build"
                debug="true"
                source="1.5"
@@ -140,7 +144,6 @@
     <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
     <target name="temizle">
         <delete dir="${build.dir}"/>
-        <delete dir="${dist.dir}"/>
         <delete>
             <fileset dir="${kaynaklar.dir}/">
                 <include name="**/*.bin"/>
@@ -214,7 +217,7 @@
             <param name="dil" value="tm"/>
         </antcall>
 
-        <jar jarfile="${build.dir}/zemberek-${surum}.jar"
+        <jar jarfile="${jar.dir}/zemberek-tum-${surum}.jar"
              basedir="${build.tum}">
             <!-- calistirilabilir jar icin gerekli class va paket bilgileri-->
             <manifest>
@@ -223,7 +226,7 @@
                            value="net.zemberek.demo.DemoMain"/>
             </manifest>
         </jar>
-        <echo message="jar /dagitim dizininde olusturuldu."/>
+        <echo message="jar ${jar.dir} dizininde olusturuldu."/>
     </target>
 
     <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
@@ -234,16 +237,16 @@
             <fileset dir="${build.cekirdek}"/>
         </copy>
 
-        <jar jarfile="${build.dir}/zemberek-cekirdek-${surum}.jar"
+        <jar jarfile="${jar.dir}/zemberek-cekirdek-${surum}.jar"
              basedir="${build.tum}">
         </jar>
-        <echo message="cekirdek jar ${build.dir} dizininde olusturuldu."/>
+        <echo message="cekirdek jar ${jar.dir} dizininde olusturuldu."/>
     </target>
 
     <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
     <!--        dile ozel jar uretir. dil parametresi gerekir.           -->
     <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-    <target name="jar-dil" depends="temizle, derle-cekirdek">
+    <target name="jar-dil" depends="derle-cekirdek">
         <fail unless="dil" message="bu ant gorevi icin 'dil' parametresi gerekli. tr,tm gibi."/>
         <antcall target="dil-ekle">
             <param name="dil" value="${dil}"/>
@@ -252,10 +255,10 @@
         <copy todir="${build.dir}/${dil}/kaynaklar">
             <fileset dir="${build.tum}/kaynaklar"/>
         </copy>
-        <jar jarfile="${build.dir}/zemberek-${dil}-${surum}.jar"
+        <jar jarfile="${jar.dir}/zemberek-${dil}-${surum}.jar"
              basedir="${build.dir}/${dil}">
         </jar>
-        <echo message="zemberek-${dil} jar ${build.dir} dizininde olusturuldu."/>
+        <echo message="zemberek-${dil} jar ${jar.dir} dizininde olusturuldu."/>
     </target>
 
     <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
@@ -277,105 +280,52 @@
     </target>
 
     <!-- demo jar. sadece demo gui siniflari yer alir.   -->
-    <target name="jar-demo" depends="temizle, derle-demo">
-        <jar jarfile="${build.dir}/zemberek-demo-${surum}.jar"
+    <target name="jar-demo" depends="derle-demo">
+        <jar jarfile="${jar.dir}/zemberek-demo-${surum}.jar"
              basedir="${build.demo}">
         </jar>
-        <echo message="demo jar ${build.dir} dizininde olusturuldu."/>
+        <echo message="demo jar ${jar.dir} dizininde olusturuldu."/>
     </target>
 
-
-    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-    <!-- Verilen dili ve cekirdegi iceren jar uretir kelime cebi de yer almaz.     -->
-    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-    <target name="jar-minimal" depends="temizle, derle-cekirdek">
-        <fail unless="dil" message="bu ant gorevi icin 'dil' parametresi gerekli. tr,tm gibi."/>
-        <copy todir="${build.tum}">
-            <fileset dir="${build.cekirdek}"/>
-        </copy>
-
-        <antcall target="dil-ekle">
-            <param name="dil" value="${dil}"/>
-        </antcall>
-
-        <jar jarfile="${build.dir}/zemberek2-${dil}.jar"
-             basedir="${build.tum}">
-            <exclude name="**/istatistik/**"/>
-            <exclude name="**/demo/**"/>
-            <exclude name="**/kelime_cebi_${dil}.txt"/>
-        </jar>
-        <echo message="jar /dagitim dizininde olusturuldu."/>
-    </target>
 
     <!-- ======================================================= -->
-    <!-- bilgi dosyalari icinde jar ile dagitim olusturur....    -->
+    <!--                    dagitim olusturur....                -->
     <!-- ======================================================= -->
 
     <!-- tüm diller için -->
-    <target name="dist" depends="jar-tum">
+    <target name="dist">
+
+        <delete dir="${dist.dir}"/>
 
         <mkdir dir="${dist.dir}"/>
-        <mkdir dir="${dist.dir}/docs/java-docs"/>
+        <mkdir dir="${jar.dir}"/>
+        <mkdir dir="${dist.dir}/belgeler"/>
 
-        <copy todir="${dist.dir}/lisanslar">
-            <fileset dir="${licences.dir}">
-            </fileset>
-        </copy>
+        <antcall target="jar-tum"/>
+        <antcall target="jar-cekirdek"/>
+        <antcall target="jar-tr"/>
+        <antcall target="jar-tm"/>
+        <antcall target="jar-demo"/>
+
         <copy todir="${dist.dir}">
             <fileset file="okubeni.txt"/>
             <fileset file="surumler.txt"/>
-            <fileset file="${build.dir}/zemberek-${surum}.jar"/>
         </copy>
+
+        <copy todir="${dist.dir}/belgeler">
+            <fileset dir="${doc.dir}"/>
+        </copy>
+
         <!-- ayni isim ile zip dosya olustur. -->
         <zip destfile="${dist.dir}/zemberek-${surum}.zip"
              basedir="${dist.dir}"
              update="true"
-             excludes="**/*.zip"/>
+             excludes="**/*.zip"
+             />
 
-        <echo message="Dagitim dosyalari /dagitim dizininde olusturuldu."/>
+        <echo message="Dagitim dosyalari ${dist.dir} dizininde olusturuldu."/>
     </target>
 
-    <!-- verilen dil için -->
-    <target name="dist-minimal">
-
-        <antcall target="jar-minimal">
-            <param name="dil" value="${dil}"/>
-        </antcall>
-
-        <mkdir dir="${dist.dir}"/>
-        <mkdir dir="${dist.dir}/docs/java-docs"/>
-
-        <copy todir="${dist.dir}/lisanslar">
-            <fileset dir="${licences.dir}">
-            </fileset>
-        </copy>
-        <copy todir="${dist.dir}">
-            <fileset file="okubeni.txt"/>
-            <fileset file="surumler.txt"/>
-            <fileset file="${build.dir}/zemberek2-${dil}.jar"/>
-        </copy>
-        <!-- ayni isim ile zip dosya olustur. -->
-        <zip destfile="${dist.dir}/zemberek-${surum}.zip"
-             basedir="${dist.dir}"
-             update="true"
-             excludes="**/*.zip"/>
-
-        <echo message="Dagitim dosyalari /dagitim dizininde olusturuldu."/>
-    </target>
-
-    <!-- Türkçe için -->
-    <target name="dist-minimal-tr">
-        <antcall target="dist-minimal">
-            <param name="dil" value="tr"/>
-        </antcall>
-    </target>
-
-    <!-- Türkmence için -->
-    <target name="dist-minimal-tm">
-        <antcall target="dist-minimal">
-            <param name="dil" value="tm"/>
-        </antcall>
-    </target>
 
     <!-- ======================================================= -->
     <!-- Create Javadocs for all classes                         -->
