@@ -216,7 +216,7 @@
         <antcall target="dil-ekle">
             <param name="dil" value="tm"/>
         </antcall>
-
+        <mkdir dir="${jar.dir}"/>
         <jar jarfile="${jar.dir}/zemberek-tum-${surum}.jar"
              basedir="${build.tum}">
             <!-- calistirilabilir jar icin gerekli class va paket bilgileri-->
@@ -236,7 +236,7 @@
         <copy todir="${build.tum}">
             <fileset dir="${build.cekirdek}"/>
         </copy>
-
+        <mkdir dir="${jar.dir}"/>
         <jar jarfile="${jar.dir}/zemberek-cekirdek-${surum}.jar"
              basedir="${build.tum}">
         </jar>
@@ -248,6 +248,7 @@
     <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
     <target name="jar-dil" depends="derle-cekirdek">
         <fail unless="dil" message="bu ant gorevi icin 'dil' parametresi gerekli. tr,tm gibi."/>
+        <mkdir dir="${jar.dir}"/>
         <antcall target="dil-ekle">
             <param name="dil" value="${dil}"/>
         </antcall>
@@ -281,6 +282,7 @@
 
     <!-- demo jar. sadece demo gui siniflari yer alir.   -->
     <target name="jar-demo" depends="derle-demo">
+        <mkdir dir="${jar.dir}"/>        
         <jar jarfile="${jar.dir}/zemberek-demo-${surum}.jar"
              basedir="${build.demo}">
         </jar>
