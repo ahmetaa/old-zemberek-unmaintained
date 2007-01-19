@@ -127,7 +127,7 @@ class ClientProtocolHandler extends IoHandlerAdapter{
 
 	private void sendMessage() {
 		synchronized(this){
-			while(queue.isEmpty() == false){
+			while(!queue.isEmpty()){
 				currentMessage = queue.remove();
 				session.write(currentMessage.request);
 				try {
