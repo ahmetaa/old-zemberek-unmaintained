@@ -111,7 +111,7 @@
                 <attribute name="Main-Class"
                     value="net.zemberekserver.server.ZemberekServer"/>
                 <attribute name="Class-Path"
-                    value=". lib/netty2.jar lib/zemberek2-tr.jar lib/dbus.jar"/>
+                    value=". lib/mina-core-1.1pre.jar lib/zemberek-cekirdek-2.0.jar lib/zemberek-tr-2.0.jar lib/dbus.jar"/>
             </manifest>
         </jar>
         <jar jarfile="${dist.dir}/${isim}_dbus-${surum}.jar"
