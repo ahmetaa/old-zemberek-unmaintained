@@ -111,7 +111,7 @@
                 <attribute name="Main-Class"
                     value="net.zemberekserver.server.ZemberekServer"/>
                 <attribute name="Class-Path"
-                    value=". lib/mina-core-1.1pre.jar lib/slf4j-api-1.1.0.jar lib/slf4j-nop-1.1.0.jar lib/zemberek-cekirdek-2.0.jar lib/zemberek-tr-2.0.jar lib/dbus.jar lib/unix.jar lib/hexdump.jar"/>
+                    value=". lib/mina-core-1.1pre.jar lib/slf4j-api-1.1.0.jar lib/slf4j-nop-1.1.0.jar lib/zemberek-cekirdek-2.0.jar lib/zemberek-tr-2.0.jar lib/dbus.jar lib/unix.jar lib/hexdump.jar ${isim}_dbus-${surum}.jar"/>
             </manifest>
         </jar>
         <jar jarfile="${dist.dir}/${isim}_dbus-${surum}.jar"
