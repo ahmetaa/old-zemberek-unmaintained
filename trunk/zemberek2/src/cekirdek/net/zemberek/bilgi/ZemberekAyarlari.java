@@ -50,7 +50,6 @@ public final class ZemberekAyarlari {
     private boolean disKaynakErisimi = false;
     private boolean oneriBilesikKelimeKullan = true;
     private boolean cepKullan = true;
-    private String kayitSeviyesi = "WARNING";
 
     private URI bilgiEk;
     private URI bilgiKokler;
@@ -93,8 +92,6 @@ public final class ZemberekAyarlari {
             oneriMax = Integer.parseInt(ayarlar.getProperty("oneri.max"));
             disKaynakErisimi = boolOku(ayarlar, "bilgi.disKaynakErisimi");
             cepKullan = boolOku(ayarlar, "denetleme.cepKullan");
-            kayitSeviyesi = ayarlar.getProperty("genel.kayitSeviyesi");
-            Kayitci.genelKayitSeviyesiAyarla(kayitSeviyesi);
             if (disKaynakErisimi) {
                 File dizin = new File(ayarlar.getProperty("bilgi.dizin"));
                 bilgiDizini = dizin.toURI();
@@ -162,8 +159,4 @@ public final class ZemberekAyarlari {
         return cepKullan;
     }
 
-
-    public String kayitSeviyesi() {
-        return kayitSeviyesi;
-    }
 }
