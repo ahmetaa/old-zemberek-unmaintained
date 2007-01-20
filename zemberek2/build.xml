@@ -285,6 +285,11 @@
         <mkdir dir="${jar.dir}"/>        
         <jar jarfile="${jar.dir}/zemberek-demo-${surum}.jar"
              basedir="${build.demo}">
+             <manifest>
+                <attribute name="Built-By" value="Zemberek Team"/>
+                <attribute name="Main-Class"
+                           value="net.zemberek.demo.DemoMain"/>
+            </manifest>
         </jar>
         <echo message="demo jar ${jar.dir} dizininde olusturuldu."/>
     </target>
