@@ -157,7 +157,7 @@ public class KokDugumu {
      * @return düğüme bağlı kök ve eş seslilerin hepsini bir listeye 
      * koyarak geri döndürür.
      */
-    public final List<Kok> tumKokleriGetir() {
+    public List<Kok> tumKokleriGetir() {
         if (kok != null) {
             ArrayList<Kok> kokler = new ArrayList<Kok>();
             kokler.add(kok);
@@ -168,6 +168,28 @@ public class KokDugumu {
         }
         return null;
     }
+
+    /**
+     * @return düğüme bağlı tum köklerin icerigi "icerik" ile ayni olanlairni dondurur
+     * koyarak geri döndürür.
+     */
+    public List<Kok> tumKokleriGetir(String icerik) {
+        if (kok != null) {
+            ArrayList<Kok> kokler = new ArrayList<Kok>(2);
+            if(kok.icerik().equals(icerik))
+            kokler.add(kok);
+            if (esSesliler != null) {
+                for (Kok esKok : esSesliler) {
+                    if(esKok.icerik().equals(icerik))
+                       kokler.add(esKok);
+                }
+            }
+            return kokler;
+        }
+        return null;
+    }
+
+
 
     /**
      * Verilen collectiona düğüme bağlı tüm kökleri ekler. 
