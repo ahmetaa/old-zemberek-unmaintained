@@ -35,6 +35,7 @@ import net.zemberek.yapi.Kok;
 import net.zemberek.araclar.Kayitci;
 
 import java.util.List;
+import java.util.Collections;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -237,7 +238,7 @@ public class KokAgaci {
      * Aranan bir kök düğümünü bulur.
      *
      * @param str
-     * @return Aranan kök ve eş seslilerini taşıyan liste, bulunamazsa null.
+     * @return Aranan kök ve eş seslilerini taşıyan liste, bulunamazsa sifir uzunluklu liste.
      */
     public List<Kok> bul(String str) {
         char[] girisChars = str.toCharArray();
@@ -253,9 +254,9 @@ public class KokAgaci {
             node = node.altDugumGetir(girisChars[girisIndex++]);
         }
         if (node != null) {
-            return node.tumKokleriGetir();
+            return node.tumKokleriGetir(str);
         }
-        return null;
+        return Collections.emptyList();
     }
 
     public String toString() {
