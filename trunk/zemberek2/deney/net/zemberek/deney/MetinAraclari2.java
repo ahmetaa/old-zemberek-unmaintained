@@ -1,6 +1,10 @@
 package net.zemberek.deney;
 
+import net.zemberek.araclar.MetinAraclari;
+import net.zemberek.araclar.TimeTracker;
+
 public class MetinAraclari2 {
+	
     private static int duzeltmeMesafesi(String s, String t, int limit)
     {
         int n = s.length(); //length of s
@@ -36,103 +40,37 @@ public class MetinAraclari2 {
         // Step 7
         return d[n][m] > limit ? limit + 1 : d[n][m];
     }
+    
+  public static boolean duzeltmeMesafesiIcinde(String source, String target, int dist)
+  {
+      return (duzeltmeMesafesi(source, target, dist) <= dist);
+  }    
+    
+  public static boolean ParcasiDuzeltmeMesafesiIcinde(String s1, String s2, int distance)
+  {
+      if (s2.length() < (s1.length() - distance))
+          return false;
 
-//    /// <summary>
-//    /// Verilen s1 stringinin verilen distance duzeltme mesafesi cercevesinde 
-//    /// s2 stringinin alt stringi olup olmadigini dondurur. Ornegin:
-//    ///   isInSubStringLevenshteinDistance("elma","ekmalar",1) -> true
-//    ///   isInSubStringLevenshteinDistance("elma","emalar",1) -> true
-//    ///   isInSubStringLevenshteinDistance("elma","eksalar",1) -> false (substring min dist=2)
-//    /// </summary>
-//    /// <param name="s1"></param>
-//    /// <param name="s2">s1'i distance duzeltme mesafesi icinde kapsayıp kapsamadigi arastirilan String</param>
-//    /// <param name="distance">duzeltme mesafesi</param>
-//    /// <returns></returns>
-//    public static bool ParcasiDuzeltmeMesafesiIcinde(String s1, String s2, int distance)
-//    {
-//        if (s2.Length < (s1.Length - distance))
-//            return false;
-//
-//        if (s2.Length >= s1.Length)
-//        {
-//            String test = s2.Substring(0, s1.Length);
-//            if (DuzeltmeMesafesiIcinde(s1, test, distance)) return true;
-//            test = s2.Substring(0, s1.Length - 1);
-//            if (DuzeltmeMesafesiIcinde(s1, test, distance)) return true;
-//            if (s2.Length >= s1.Length + 1)
-//            {
-//                test = s2.Substring(0, s1.Length + 1);
-//                if (DuzeltmeMesafesiIcinde(s1, test, distance)) return true;
-//            }
-//        }
-//        else
-//        {
-//            if (DuzeltmeMesafesiIcinde(s1, s2, distance)) return true;
-//        }
-//        return false;
-//    }
-//    /// <summary>
-//    /// Degistirilmis Levenshtein Edit Dist. algoritması. transpozisyonları da 1 düzeltme mesafesi olarak hesaplar.
-//    /// </summary>
-//    /// <param name="source"></param>
-//    /// <param name="target"></param>
-//    /// <returns>eger istenilen mesafede ise true</returns>
-//    public static bool DuzeltmeMesafesiIcinde(string source, string target, int dist)
-//    {
-//        return (DuzeltmeMesafesi(source, target, dist) <= dist);
-//    }
-//  /// <summary>
-//    /// Degistirilmis Levenshtein Edit Distance Algoritmasi. 
-//    /// Transpozisyonları da 1 düzeltme mesafesi olarak hesapliyor.
-//    /// </summary>
-//    /// <param name="s">kaynak</param>
-//    /// <param name="t">hedef</param>
-//    /// <param name="limit">uzaklik</param>
-//    /// <returns></returns>
-//    private static int DuzeltmeMesafesi(string s, string t, int limit)
-//    {
-//        int n = s.Length; //length of s
-//        int m = t.Length; //length of t
-//        int[,] d = new int[n + 1, m + 1]; // matrix
-//        int cost; // cost
-//        // Step 1
-//        if (n == 0) return m;
-//        if (m == 0) return n;
-//        // Step 2
-//        for (int i = 0; i <= n; d[i, 0] = i++) ;
-//        for (int j = 0; j <= m; d[0, j] = j++) ;
-//        // Step 3
-//        for (int i = 1; i <= n; i++)
-//        {
-//            //Step 4
-//            for (int j = 1; j <= m; j++)
-//            {
-//                // Step 5
-//                cost = (t.Substring(j - 1, 1) == s.Substring(i - 1, 1) ? 0 : 1);
-//                // Step 6
-//                d[i, j] = System.Math.Min(System.Math.Min(d[i - 1, j] + 1, d[i, j - 1] + 1), d[i - 1, j - 1] + cost);
-//                // Step 6A
-//                d[i, j] = TranspozisyonlariKontrolEt(s, t, i, j, d);
-//            }
-//        }
-//        // Step 7
-//        return d[n, m] > limit ? limit + 1 : d[n, m];
-//    }
-//
-//    private static int TranspozisyonlariKontrolEt(string s, string t, int i, int j, int[,] d)
-//    {
-//        if (i > 1 && j > 1)
-//        {
-//            int trans = d[i - 2, j - 2] + 1;
-//            if (s[i - 2] != t[j - 1])
-//                trans++;
-//            if (s[i - 1] != t[j - 2])
-//                trans++;
-//            if (d[i, j] > trans) d[i, j] = trans;
-//        }
-//        return d[i, j];
-//    }    
-//    
+      if (s2.length() >= s1.length())
+      {
+          String test = s2.substring(0, s1.length());
+          if (duzeltmeMesafesiIcinde(s1, test, distance)) return true;
+          test = s2.substring(0, s1.length() - 1);
+          if (duzeltmeMesafesiIcinde(s1, test, distance)) return true;
+          if (s2.length() >= s1.length() + 1)
+          {
+              test = s2.substring(0, s1.length() + 1);
+              if (duzeltmeMesafesiIcinde(s1, test, distance)) return true;
+          }
+      }
+      else
+      {
+          if (duzeltmeMesafesiIcinde(s1, s2, distance)) return true;
+      }
+      return false;
+  }
+      
+  
 //    
 //    /// <summary>
 //    /// Degistirilmis Levenshtein Edit Dist. algoritması. transpozisyonları da 1 düzeltme mesafesi olarak hesaplar.
@@ -147,6 +85,36 @@ public class MetinAraclari2 {
     }    
     
     public static void main(String[] args) {
-    	System.out.println("Mesafe: " + duzeltmeMesafesi("elma", "emla"));
+    	boolean s = ParcasiDuzeltmeMesafesiIcinde("ebm", "elma", 1);
+    	if (s) System.out.println("ok"); 
+//    	int iter = 100000;
+//    	TimeTracker.startClock("l1");
+//    	for(int i=0; i<iter; i++){
+//    		MetinAraclari.editDistance("elma", "e");
+//    		MetinAraclari.editDistance("elma", "el");
+//    		MetinAraclari.editDistance("elma", "elm");
+//    		MetinAraclari.editDistance("elma", "elma");
+//    		MetinAraclari.editDistance("elma", "d");
+//    		MetinAraclari.editDistance("elma", "ed");
+//    		MetinAraclari.editDistance("elma", "exb");
+//    		MetinAraclari.editDistance("elma", "eplo");
+//    	}
+//    		
+//    	System.out.println(TimeTracker.getElapsedTimeString("l1") + " Saniyede: " + TimeTracker.getItemsPerSecond("l1", iter));
+//    	
+//    	TimeTracker.startClock("l2");
+//    	for(int i=0; i<iter; i++){
+//    		duzeltmeMesafesi("elma", "e");
+//    		duzeltmeMesafesi("elma", "el");
+//    		duzeltmeMesafesi("elma", "elm");
+//    		duzeltmeMesafesi("elma", "elma");
+//    		duzeltmeMesafesi("elma", "d");
+//    		duzeltmeMesafesi("elma", "ed");
+//    		duzeltmeMesafesi("elma", "exb");
+//    		duzeltmeMesafesi("elma", "eplo");
+//    	}
+//    	System.out.println(TimeTracker.getElapsedTimeString("l2") + " Saniyede: " + TimeTracker.getItemsPerSecond("l2", iter));
+    	
+    	
 	}
 }
