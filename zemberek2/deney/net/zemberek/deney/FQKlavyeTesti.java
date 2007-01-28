@@ -49,10 +49,26 @@ public class FQKlavyeTesti {
 	
 	enum El {SOL, SAG};
 	
+    // Degistirilmis Türkçe F Klavye haritası.
+    public static char[][] f2KlavyeHaritasi = new char[][]{
+        {'1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '*', '-'},
+        {'f', 'j', '\u011f', '\u0131', 'o', 'd', 'h', 'n', 'r', 'p', 'q', 'w'},
+        {'u', 'i', 'e', 'a', '\u00fc', 't', 'k', 'm', 'l', 'y','\u015f', 'x'},
+        {'g', '\u00f6', 'v', 'c', '\u00e7', 'z', 's', 'b', '.', ','}};	
+
+    // Degistirilmis Türkçe Q Klavye haritası.
+    public static char[][] q2KlavyeHaritasi = new char[][]{
+        {'1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '*', '-'},
+        {'q', 'w', 'f', 'j', 't', 'y', '\u00f6', '\u0131','\u015f', 'p', '\u011f', '\u00fc'},
+        {'a', 's', 'e', 'd', 'g', 'h', 'r', 'k', 'l',  'o', 'i', ',', '#'},
+        {'z', 'x', 'c', 'v', 'b', 'n', 'm', 'u' , '\u00e7', '.', '.','.'}};	
+
 	public static DecimalFormat df2 = new DecimalFormat("#0.00000");
 	
 	Yazici qKlavyeYazan;
 	Yazici fKlavyeYazan;
+	Yazici f2KlavyeYazan;
+	Yazici q2KlavyeYazan;
 
 	HashMap <String, Ikili> ikililer = new HashMap<String, Ikili>();
 	long toplamKullanim = 0;
@@ -90,6 +106,8 @@ public class FQKlavyeTesti {
 	public FQKlavyeTesti(){
 		qKlavyeYazan = new Yazici(TusTakimi.trQ());
 		fKlavyeYazan = new Yazici(TusTakimi.trF());
+		f2KlavyeYazan = new Yazici(new TusTakimi(f2KlavyeHaritasi));
+		q2KlavyeYazan = new Yazici(new TusTakimi(q2KlavyeHaritasi));
 		ikilileriYukle();
 	}
 	
@@ -107,25 +125,21 @@ public class FQKlavyeTesti {
 		return secilenler;
 	}
 	
-	public void test(){
-		System.out.println("Q test: ");
+	public void testYazici(Yazici yazici){
 		long toplam = 0;
-		List<Ikili> list = problemliIkililerinKullanimi(qKlavyeYazan.problemliIkililer());
+		List<Ikili> list = problemliIkililerinKullanimi(yazici.problemliIkililer());
 		for(Ikili i : list){
 			System.out.println( i );
 			toplam += i.kullanim;
 		}
-		System.out.println("Q toplam: " + toplam +  " %" + IstatistikAraclari.yuzdeHesaplaStr(toplam, toplamKullanim) +  "\n");
-		
-		toplam = 0;
-		System.out.println("F test: ");
-		list = problemliIkililerinKullanimi(fKlavyeYazan.problemliIkililer());
-		for(Ikili i : list){
-			System.out.println( i );
-			toplam += i.kullanim;
-		}
-		System.out.println("F toplam: " + toplam + " %" + IstatistikAraclari.yuzdeHesaplaStr(toplam, toplamKullanim));
-		
+		System.out.println("Toplam: " + toplam +  " %" + IstatistikAraclari.yuzdeHesaplaStr(toplam, toplamKullanim) +  "\n");
+	}
+	
+	public void test(){
+		testYazici(qKlavyeYazan);
+		testYazici(fKlavyeYazan);
+		testYazici(f2KlavyeYazan);		
+		testYazici(q2KlavyeYazan);		
 	}
 	
 	private void yaz(String str) {
@@ -153,6 +167,7 @@ public class FQKlavyeTesti {
 		String ikili;
 		int kullanim;
 		double oran;
+		double mesafeKatsayisi;
 		
 		public Ikili(String ikili, int kullanim){
 			this.ikili = ikili;

@@ -37,10 +37,10 @@ import java.util.HashMap;
  * <p/>
  * Kullanmak için timeTracker.startClock(isim) dedikten sonra
  * TimeTracker.stopClock(isim)'un döndürdüğü String'i geçen süreyi göstermek 
- * için kullanabilirsiniz. Stop'tan �nce ara adımları izlemek istiyorsanız 
+ * için kullanabilirsiniz. Stop'tan önce ara adımları izlemek istiyorsanız 
  * TimeTracker.getElapsedTimeString(isim) veya getElapsedTimeStringAsMillis
  * metodlarini kullanabilirsiniz. Start ile başlattığınız saatleri isiniz 
- * bittigindemutlaka stop ile durdurmanız gerekiyor, ��nk� ancak stop ile register
+ * bittigindemutlaka stop ile durdurmanız gerekiyor, çünkü ancak stop ile register
  * olmuş bir saat nesnesini unregistr edebilirsiniz.
  * <p/>
  * Olusan saatler globaldir, yani programin icinde istediginiz her yerde
@@ -96,7 +96,7 @@ public class TimeTracker {
         if (timer == null)
             return -1;
         timer.refresh();
-        return timer.getDiff();
+        return timer.getDiff()/1000L;
     }
 
     /**
@@ -112,7 +112,7 @@ public class TimeTracker {
         if (timer == null)
             return "Geçersiz Kronometre: " + name;
         timer.refresh();
-        return "Delta: " + (double) timer.getDiff()  + " s. Elapsed: " + (double) timer.getElapsedTime() + " s.";
+        return "Delta: " + (double) timer.getDiff()/1000000L  + " s. Elapsed: " + (double) timer.getElapsedTime()/1000000L + " s.";
     }
 
     /**
@@ -124,7 +124,7 @@ public class TimeTracker {
         if (timer == null)
             return "Geçersiz Kronometre: " + name;
         timer.refresh();
-        return "Delta: " + timer.getDiff() + "ms. Elapsed: " + timer.getElapsedTime() + "ms.";
+        return "Delta: " + timer.getDiff()/1000L + "ms. Elapsed: " + timer.getElapsedTime()/1000L + "ms.";
     }
 
     /**
@@ -139,7 +139,7 @@ public class TimeTracker {
         timer.refresh();
         long items = 0;
         if (timer.getElapsedTime() > 0)
-            items = (itemCount) / timer.getElapsedTime();
+            items = (itemCount)* 1000000L / timer.getElapsedTime();
         return items;
     }
 
