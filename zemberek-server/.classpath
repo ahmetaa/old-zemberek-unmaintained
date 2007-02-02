@@ -16,8 +16,7 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="lib/mina-core-1.1pre.jar"/>
-	<classpathentry kind="lib" path="lib/slf4j-api-1.1.0.jar"/>
-	<classpathentry kind="lib" path="lib/slf4j-nop-1.1.0.jar"/>
+	<classpathentry kind="lib" path="lib/slf4j-nop.jar"/>
 	<classpathentry kind="lib" path="lib/hexdump.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
