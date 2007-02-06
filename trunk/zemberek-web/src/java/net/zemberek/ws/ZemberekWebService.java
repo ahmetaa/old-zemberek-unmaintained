@@ -29,9 +29,11 @@ public class ZemberekWebService {
         zemberek=new Zemberek(new TurkiyeTurkcesi());
     }
     
+    /*
     public Kelime[] asciiCozumle(String giris) {
         return zemberek.asciiCozumle(giris);
     }
+    */
     
     public String[] asciidenTurkceye(String giris) {
         return zemberek.asciidenTurkceye(giris);
@@ -51,9 +53,11 @@ public class ZemberekWebService {
     }
     */
     
+    /*
     public Kelime[] kelimeCozumle(String giris) {
         return zemberek.kelimeCozumle(giris);
     }
+    */
     
     public boolean kelimeDenetle(String giris) {
         return zemberek.kelimeDenetle(giris);
