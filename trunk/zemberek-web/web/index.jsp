@@ -81,7 +81,7 @@
 
 <body>
 <big>Zemberek Demo</big>
-<small>(<a href="http://zemberek.dev.java.net">Zemberek Proje Sitesi</a>)</small>
+<small>(<a href="http://code.google.com/p/zemberek">Zemberek Proje Sitesi</a>)</small>
 <div id="menu">
     <ul id="nav">
         <li id="denetle"><a onclick="doRequest('zemberek.jsp', 'YAZI_DENETLE');">Denetle</a></li>
