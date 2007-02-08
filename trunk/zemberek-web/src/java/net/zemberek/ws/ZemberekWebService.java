@@ -29,11 +29,14 @@ public class ZemberekWebService {
         zemberek=new Zemberek(new TurkiyeTurkcesi());
     }
     
-    /*
-    public Kelime[] asciiCozumle(String giris) {
-        return zemberek.asciiCozumle(giris);
+    
+    public String[] asciiCozumle(String giris) {
+        Kelime cozumlemeler[] = zemberek.asciiCozumle(giris);
+        String cozumlemelerStr[] = new String[cozumlemeler.length];
+        for(int i=0;i<cozumlemeler.length;i++)
+            cozumlemelerStr[i]=kelimeToString(cozumlemeler[i]);
+        return cozumlemelerStr;
     }
-    */
     
     public String[] asciidenTurkceye(String giris) {
         return zemberek.asciidenTurkceye(giris);
@@ -51,13 +54,16 @@ public class ZemberekWebService {
     public HashSet<ArrayList<String>> kelimeAyristir(String giris) {
         return (HashSet<ArrayList<String>>) zemberek.kelimeAyristir(giris);
     }
-    */
+     */
     
-    /*
-    public Kelime[] kelimeCozumle(String giris) {
-        return zemberek.kelimeCozumle(giris);
+    
+    public String[] kelimeCozumle(String giris) {
+        Kelime cozumlemeler[] = zemberek.kelimeCozumle(giris);
+        String cozumlemelerStr[] = new String[cozumlemeler.length];
+        for(int i=0;i<cozumlemeler.length;i++)
+            cozumlemelerStr[i]=kelimeToString(cozumlemeler[i]);
+        return cozumlemelerStr;
     }
-    */
     
     public boolean kelimeDenetle(String giris) {
         return zemberek.kelimeDenetle(giris);
@@ -76,6 +82,13 @@ public class ZemberekWebService {
     public String kelimeUret(Kok giris, List ekler) {
         return zemberek.kelimeUret(giris,ekler);
     }
-    */
+     */
+    
+    private String kelimeToString(Kelime k) {
+        return
+                "[ Kok:" +k.kok().icerik()+
+                ", Tip:"+k.kok().tip()+
+                " | Ekler:"+k.ekZinciriStr()+"]";
+    }
     
 }
