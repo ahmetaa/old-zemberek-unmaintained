@@ -1,15 +1,33 @@
 /*
- * ZemberekWebService.java
+ *  ***** BEGIN LICENSE BLOCK *****
  *
- * Created on 04 Şubat 2007 Pazar, 10:45
+ *  Version: MPL 1.1
  *
- * To change this template, choose Tools | Template Manager
- * and open the template in the editor.
+ *  The contents of this file are subject to the Mozilla Public License Version
+ *  1.1 (the "License"); you may not use this file except in compliance with
+ *  the License. You may obtain a copy of the License at
+ *  http://www.mozilla.org/MPL/
+ *
+ *  Software distributed under the License is distributed on an "AS IS" basis,
+ *  WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ *  for the specific language governing rights and limitations under the
+ *  License.
+ *
+ *  The Original Code is "Zemberek Sunucu"
+ *
+ *  The Initial Developer of the Original Code is
+ *  Serkan Kaba.
+ *  Portions created by the Initial Developer are Copyright (C) 2006
+ *  the Initial Developer. All Rights Reserved.
+ *
+ *  Contributor(s):
+ *
+ *  ***** END LICENSE BLOCK *****
  */
 
 package net.zemberek.ws;
 
-import javax.jws.WebService;
+import javax.jws.*;
 import javax.xml.ws.Endpoint;
 import net.zemberek.erisim.Zemberek;
 import net.zemberek.tr.yapi.TurkiyeTurkcesi;
@@ -29,8 +47,8 @@ public class ZemberekWebService {
         zemberek=new Zemberek(new TurkiyeTurkcesi());
     }
     
-    
-    public String[] asciiCozumle(String giris) {
+    @WebMethod
+    public String[] asciiCozumle(@WebParam(name="giris") String giris) {
         Kelime cozumlemeler[] = zemberek.asciiCozumle(giris);
         String cozumlemelerStr[] = new String[cozumlemeler.length];
         for(int i=0;i<cozumlemeler.length;i++)
@@ -38,26 +56,29 @@ public class ZemberekWebService {
         return cozumlemelerStr;
     }
     
-    public String[] asciidenTurkceye(String giris) {
+    @WebMethod
+    public String[] asciidenTurkceye(@WebParam(name="giris") String giris) {
         return zemberek.asciidenTurkceye(giris);
     }
     
-    public String asciiyeDonustur(String giris) {
+    @WebMethod
+    public String asciiyeDonustur(@WebParam(name="giris") String giris) {
         return zemberek.asciiyeDonustur(giris);
     }
     
-    public String[] hecele(String giris) {
+    @WebMethod
+    public String[] hecele(@WebParam(name="giris") String giris) {
         return zemberek.hecele(giris);
     }
     
     /*
-    public HashSet<ArrayList<String>> kelimeAyristir(String giris) {
+    public HashSet<ArrayList<String>> kelimeAyristir(@WebParam(name="giris") String giris) {
         return (HashSet<ArrayList<String>>) zemberek.kelimeAyristir(giris);
     }
      */
     
-    
-    public String[] kelimeCozumle(String giris) {
+    @WebMethod
+    public String[] kelimeCozumle(@WebParam(name="giris") String giris) {
         Kelime cozumlemeler[] = zemberek.kelimeCozumle(giris);
         String cozumlemelerStr[] = new String[cozumlemeler.length];
         for(int i=0;i<cozumlemeler.length;i++)
@@ -65,16 +86,18 @@ public class ZemberekWebService {
         return cozumlemelerStr;
     }
     
-    public boolean kelimeDenetle(String giris) {
+    @WebMethod
+    public boolean kelimeDenetle(@WebParam(name="giris") String giris) {
         return zemberek.kelimeDenetle(giris);
     }
     
-    
-    public String[] oner(String giris) {
+    @WebMethod
+    public String[] oner(@WebParam(name="giris") String giris) {
         return zemberek.oner(giris);
     }
     
-    public String temizle(String giris) {
+    @WebMethod
+    public String temizle(@WebParam(name="giris") String giris) {
         return zemberek.temizle(giris);
     }
     

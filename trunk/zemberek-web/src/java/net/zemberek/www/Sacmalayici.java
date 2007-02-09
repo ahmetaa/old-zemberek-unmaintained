@@ -1,3 +1,31 @@
+/*
+ *  ***** BEGIN LICENSE BLOCK *****
+ *
+ *  Version: MPL 1.1
+ *
+ *  The contents of this file are subject to the Mozilla Public License Version
+ *  1.1 (the "License"); you may not use this file except in compliance with
+ *  the License. You may obtain a copy of the License at
+ *  http://www.mozilla.org/MPL/
+ *
+ *  Software distributed under the License is distributed on an "AS IS" basis,
+ *  WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ *  for the specific language governing rights and limitations under the
+ *  License.
+ *
+ *  The Original Code is "Zemberek Web"
+ *
+ *  The Initial Developer of the Original Code is
+ *  Ahmet A. Akin, Mehmet D. Akin.
+ *  Portions created by the Initial Developer are Copyright (C) 2006
+ *  the Initial Developer. All Rights Reserved.
+ *
+ *  Contributor(s):
+ *   Serkan Kaba
+ *
+ *  ***** END LICENSE BLOCK *****
+ */
+
 package net.zemberek.www;
 
 /**
@@ -97,7 +125,6 @@ public class Sacmalayici {
     
     public String rastgeleKelimeOlustur(Kok kok, int maxEkSayisi) {
         Kelime kelime = kelimeUret(kok);
-        //kelime.kuralBelirle(alfabe);
         ArrayList girisEkListesi = new ArrayList();
         girisEkListesi.add(kelime.sonEk());
         List rastgeleEkler = rastgeleEkListesiGetir(girisEkListesi, maxEkSayisi);
@@ -114,19 +141,19 @@ public class Sacmalayici {
         for (int i = 0; i < giris.length; i++) {
             if (i % 12 == 0) System.out.println("");
             Kelime[] cozumler = zemberek.kelimeCozumle(giris[i]);
-            // Çözümlenememiþse
+            // Çözümlenememişse
             if (cozumler.length == 0) {
                 System.out.print(giris[i] + " ");
                 continue;
             }
             Kok kok = cozumler[0].kok();
             Kok rastgeleKok = getRastgeleKok(kok.tip());
-            // Uygun rastgele kök seçilememiþse
+            // Uygun rastgele kök seçilememişse
             if (rastgeleKok == null) {
                 System.out.print(giris[i] + " ");
                 continue;
             }
-            // kökü deðiþtir ekleri sabit tut
+            // kökü değiştir ekleri sabit tut
             String zirva = kelimeUretici.kelimeUret(rastgeleKok, cozumler[0].ekler());
             System.out.print(zirva + " ");
         }
