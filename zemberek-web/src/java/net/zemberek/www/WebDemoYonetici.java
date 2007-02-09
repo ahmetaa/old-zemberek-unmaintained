@@ -1,17 +1,42 @@
+/*
+ *  ***** BEGIN LICENSE BLOCK *****
+ *
+ *  Version: MPL 1.1
+ *
+ *  The contents of this file are subject to the Mozilla Public License Version
+ *  1.1 (the "License"); you may not use this file except in compliance with
+ *  the License. You may obtain a copy of the License at
+ *  http://www.mozilla.org/MPL/
+ *
+ *  Software distributed under the License is distributed on an "AS IS" basis,
+ *  WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ *  for the specific language governing rights and limitations under the
+ *  License.
+ *
+ *  The Original Code is "Zemberek Web"
+ *
+ *  The Initial Developer of the Original Code is
+ *  Ahmet A. Akin, Mehmet D. Akin.
+ *  Portions created by the Initial Developer are Copyright (C) 2006
+ *  the Initial Developer. All Rights Reserved.
+ *
+ *  Contributor(s):
+ *   Serkan Kaba
+ *
+ *  ***** END LICENSE BLOCK *****
+ */
+
 package net.zemberek.www;
 
 import net.zemberek.araclar.turkce.YaziBirimi;
 import net.zemberek.araclar.turkce.YaziBirimiTipi;
 import net.zemberek.araclar.turkce.YaziIsleyici;
 import net.zemberek.erisim.Zemberek;
-//import net.zemberek.islemler.IslemTipi;
 import net.zemberek.islemler.TurkceYaziTesti;
 import net.zemberek.yapi.*;
 import net.zemberek.tr.yapi.TurkiyeTurkcesi;
 import java.util.*;
 
-/**
- */
 public final class WebDemoYonetici {
 
     TurkiyeTurkcesi dil = new TurkiyeTurkcesi();
@@ -54,26 +79,6 @@ public final class WebDemoYonetici {
         return "";
     }
        
-    /*
-    public String islemUygula(IslemTipi islemTipi, String giris) {
-        if (islemTipi == IslemTipi.YAZI_DENETLE)
-            return yaziDenetle(giris);
-        if (islemTipi == IslemTipi.YAZI_COZUMLE)
-            return yaziCozumle(giris);
-        if (islemTipi == IslemTipi.ASCII_TURKCE)
-            return asciiToTurkce(giris);
-        if (islemTipi == IslemTipi.TURKCE_ASCII)
-            return turkceToAscii(giris);
-        if (islemTipi == IslemTipi.HECELE)
-            return hecele(giris);
-        if (islemTipi == IslemTipi.ONER)
-            return oner(giris);
-        if (islemTipi == IslemTipi.TEMIZLE)
-            return temizle(giris);
-        return "";
-    }
-    */
-
     public String sacmala() {
         Sacmalayici r = new Sacmalayici();
         StringBuffer buffer = new StringBuffer();
@@ -132,12 +137,6 @@ public final class WebDemoYonetici {
         public int compare(Kelime o1, Kelime o2) {
             Kok k1 = o1.kok();
             Kok k2 = o2.kok();
-/*
-            if (k1.getIstatistikler() == null)
-                return 1;
-            if (k2.getIstatistikler() == null)
-                return -1;
- */
             return k1.getFrekans() - k2.getFrekans();
         }
     }
