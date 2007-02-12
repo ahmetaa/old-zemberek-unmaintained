@@ -51,8 +51,10 @@ import java.util.Map;
  */
 public class TurkiyeTurkcesi implements DilAyarlari {
 
+    public static final Locale LOCALE_TR = new Locale("tr");
+
     public Locale locale() {
-        return new Locale("tr");
+        return LOCALE_TR;
     }
 
     public Class alfabeSinifi() {
@@ -131,7 +133,7 @@ public class TurkiyeTurkcesi implements DilAyarlari {
     }
 
     public String ad() {
-        return "TURKIYE TURKCESI";
+        return "Turkiye Turkcesi";
     }
 
 }

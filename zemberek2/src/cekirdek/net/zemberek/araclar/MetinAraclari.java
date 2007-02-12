@@ -30,15 +30,12 @@
  */
 package net.zemberek.araclar;
 
-import java.util.logging.Logger;
-
 /**
  * Genel metin araçları. String benzerliği, Q klavye mesafesi gibi fonksiyonları barındırır.
  * @author MDA
  */
 public class MetinAraclari {
 
-    private static Logger log = Logger.getLogger("MetinAraclari.class");
     private static JaroWinkler jaroWinkler = new JaroWinkler();
 
     /**

@@ -1,10 +1,37 @@
+/*
+ *  ***** BEGIN LICENSE BLOCK *****
+ *
+ *  Version: MPL 1.1
+ *
+ *  The contents of this file are subject to the Mozilla Public License Version
+ *  1.1 (the "License"); you may not use this file except in compliance with
+ *  the License. You may obtain a copy of the License at
+ *  http://www.mozilla.org/MPL/
+ *
+ *  Software distributed under the License is distributed on an "AS IS" basis,
+ *  WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ *  for the specific language governing rights and limitations under the
+ *  License.
+ *
+ *  The Original Code is "Zemberek Dogal Dil Isleme Kutuphanesi"
+ *
+ *  The Initial Developer of the Original Code is
+ *  Ahmet A. Akin, Mehmet D. Akin.
+ *  Portions created by the Initial Developer are Copyright (C) 2006
+ *  the Initial Developer. All Rights Reserved.
+ *
+ *  Contributor(s):
+ *
+ *  ***** END LICENSE BLOCK *****
+ */
+
 package net.zemberek.deney;
 
 import net.zemberek.araclar.MetinAraclari;
 import net.zemberek.araclar.TimeTracker;
 
 public class MetinAraclari2 {
-	
+
     private static int duzeltmeMesafesi(String s, String t, int limit)
     {
         int n = s.length(); //length of s
@@ -34,18 +61,18 @@ public class MetinAraclari2 {
                     if (s.charAt(i-2) != t.charAt(j-1)) trans++;
                     if (s.charAt(i-1) != t.charAt(j-2)) trans++;
                     if (d[i][j] > trans) d[i][j] = trans;
-                }                
+                }
             }
         }
         // Step 7
         return d[n][m] > limit ? limit + 1 : d[n][m];
     }
-    
+
   public static boolean duzeltmeMesafesiIcinde(String source, String target, int dist)
   {
       return (duzeltmeMesafesi(source, target, dist) <= dist);
-  }    
-    
+  }
+
   public static boolean ParcasiDuzeltmeMesafesiIcinde(String s1, String s2, int distance)
   {
       if (s2.length() < (s1.length() - distance))
@@ -69,9 +96,9 @@ public class MetinAraclari2 {
       }
       return false;
   }
-      
-  
-//    
+
+
+//
 //    /// <summary>
 //    /// Degistirilmis Levenshtein Edit Dist. algoritması. transpozisyonları da 1 düzeltme mesafesi olarak hesaplar.
 //    /// </summary>
@@ -82,11 +109,11 @@ public class MetinAraclari2 {
     {
         int maxDif = Math.max(source.length(), target.length());
         return duzeltmeMesafesi(source, target, maxDif);
-    }    
-    
+    }
+
     public static void main(String[] args) {
     	boolean s = ParcasiDuzeltmeMesafesiIcinde("ebm", "elma", 1);
-    	if (s) System.out.println("ok"); 
+    	if (s) System.out.println("ok");
 //    	int iter = 100000;
 //    	TimeTracker.startClock("l1");
 //    	for(int i=0; i<iter; i++){
@@ -99,9 +126,9 @@ public class MetinAraclari2 {
 //    		MetinAraclari.editDistance("elma", "exb");
 //    		MetinAraclari.editDistance("elma", "eplo");
 //    	}
-//    		
+//
 //    	System.out.println(TimeTracker.getElapsedTimeString("l1") + " Saniyede: " + TimeTracker.getItemsPerSecond("l1", iter));
-//    	
+//
 //    	TimeTracker.startClock("l2");
 //    	for(int i=0; i<iter; i++){
 //    		duzeltmeMesafesi("elma", "e");
@@ -114,7 +141,7 @@ public class MetinAraclari2 {
 //    		duzeltmeMesafesi("elma", "eplo");
 //    	}
 //    	System.out.println(TimeTracker.getElapsedTimeString("l2") + " Saniyede: " + TimeTracker.getItemsPerSecond("l2", iter));
-    	
-    	
+
+
 	}
 }

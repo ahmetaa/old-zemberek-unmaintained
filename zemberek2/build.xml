@@ -30,8 +30,8 @@
 -->
 <project name="zemberek2" default="dist" basedir=".">
 
-    <!--Netbeans ile calisiyorsaniz asagidaki satiri gecerli hale getirmelisiniz.-->
-    <!--<import file="nbproject/build-impl.xml"/>-->
+    <!--Netbeans ile calisiyorsaniz asagidaki satiri (eger aktif degilse) gecerli hale getirmelisiniz.-->
+    <import file="nbproject/build-impl.xml"/>
 
 
     <!-- build.properties dosyasini oku.-->
@@ -280,6 +280,15 @@
         </antcall>
     </target>
 
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <!--       Azerice icin jar uretir                                 -->
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <target name="jar-az">
+        <antcall target="jar-dil">
+            <param name="dil" value="az"/>
+        </antcall>
+    </target>    
+
     <!-- demo jar. sadece demo gui siniflari yer alir.   -->
     <target name="jar-demo" depends="derle-demo">
         <mkdir dir="${jar.dir}"/>        
@@ -312,6 +321,7 @@
         <antcall target="jar-cekirdek"/>
         <antcall target="jar-tr"/>
         <antcall target="jar-tm"/>
+        <antcall target="jar-az"/>
         <antcall target="jar-demo"/>
 
         <copy todir="${dist.dir}">

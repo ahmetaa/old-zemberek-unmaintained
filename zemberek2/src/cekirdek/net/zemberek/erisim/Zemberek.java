@@ -281,27 +281,6 @@ public class Zemberek {
     }
 
     /**
-     * giris kelime ya da yazisi icindeki cesitli kodlama hatalarindan kaynkalanan
-     * bozulmalari onarir. Bu metod kelime ya da kelime dizisi icin calisir
-     * Bazi bozulmalar henuz duzeltilemiyor olabilir.
-     *
-     * @param giris giris kelimesi
-     * @return girisin temizlenmis hali.
-     */
-    public String temizle(String giris) {
-        if (temizleyici == null) {
-            temizleyici = new HataliKodlamaTemizleyici();
-            try {
-                temizleyici.initialize();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        if (temizleyici == null) return null;
-        return temizleyici.temizle(giris);
-    }
-
-    /**
      * Basit sekilde giris kelime ya da kelime dizisinin Zemberek olusturulrken kullanilan dil ile
      * benzerligi kestirir. Girilen kelime sayisinin azligi soznucun basarimini dusurur.
      * donus farkli seviyelerde olabilir.
@@ -319,8 +298,8 @@ public class Zemberek {
     }
 
     /**
-     * nesnenin olusumu sirasinda kullanilan DilBilgisi arabirimine sahip dili dondurur.
-     * Eger nesne hic parametre kullanilmadan olusturulmussa bir adet TurkiyeTurkcesi nesnesi doner.
+     * Zemberek olusumu sirasinda kullanilan DilBilgisi nesnesi doner. Bu nesne uzerinden
+     * dile ozel cesitli dil bilgisi islemlerine erisilebilir.
      *
      * @return bu nesneyi olustururken kullanilan DilBilgisi arayuzune sahip nesne.
      */
@@ -351,8 +330,8 @@ public class Zemberek {
      *         Eger kelime ayristirilamiyorsa sifir uzunluklu String dizisi tasiyan tek elemanli
      *         liste doner. .
      */
-    public List<List<String>> kelimeAyristir(String kelime) {
-        Set<List<String>> sonuclar = new HashSet();
+    public List<String[]> kelimeAyristir(String kelime) {
+        Set<String[]> sonuclar = new HashSet();
         Kelime[] cozumler = cozumleyici.cozumle(kelime);
         for (Kelime kel : cozumler) {
             sonuclar.add(kelimeUretici.ayristir(kel));

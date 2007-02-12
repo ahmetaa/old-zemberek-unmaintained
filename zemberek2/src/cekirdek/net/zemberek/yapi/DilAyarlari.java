@@ -34,7 +34,7 @@ import java.util.Map;
 import java.util.Locale;
 
 /**
- * Bir dilin gerceklenmesi sirasinda kullanilaca sinif ve cesitli bilgilere erisimi saglar.
+ * Bir dilin gerceklenmesi sirasinda kullanilacak sinif ve cesitli bilgilere erisimi saglar.
  * User: ahmet
  * Date: Sep 20, 2006
  */

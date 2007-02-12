@@ -61,9 +61,9 @@ public class ZemberekDeneme {
 
         //ayristirma
         out.println("\nayristirma sonuclari:");
-        List<List<String>> ayrisimlar = zemberek.kelimeAyristir(giris);
-        for (List<String> strings : ayrisimlar)
-            out.println(strings);
+        List<String[]> ayrisimlar = zemberek.kelimeAyristir(giris);
+        for (String[] strings : ayrisimlar)
+            out.println(Arrays.toString(strings));
 
         // kelime uretme.
         //kedi'yi koyun ile degistirelim.. koyun kokunu Kok kok = new Kok("koyun", KelimeTipi.ISIM);
