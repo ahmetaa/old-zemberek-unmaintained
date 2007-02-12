@@ -33,6 +33,7 @@ import java.util.logging.Level;
 import java.util.logging.Handler;
 
 /**
+ * Java kayit tutma sisemi icin yardimci metodlar.
  * User: ahmet
  * Date: Jan 17, 2006
  */

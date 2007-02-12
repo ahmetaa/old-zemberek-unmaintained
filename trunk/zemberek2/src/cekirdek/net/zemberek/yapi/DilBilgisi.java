@@ -33,7 +33,7 @@ import net.zemberek.yapi.ek.EkYonetici;
 import net.zemberek.yapi.kok.KokOzelDurumBilgisi;
 
 /**
- * Herhangi bir turkDili'nin asagidaki tum metodlari saglamasi gerekir.
+ * ir dile iliskin dil bilgisi bilesenlerine bu arayuz uzerinden erisilir.
  * User: ahmet
  * Date: Sep 6, 2005
  */

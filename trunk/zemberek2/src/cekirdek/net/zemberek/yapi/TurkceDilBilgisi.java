@@ -179,7 +179,7 @@ public class TurkceDilBilgisi implements DilBilgisi {
             return sozluk;
         } else {
             if (!new KaynakYukleyici().kaynakMevcutmu(kokDosyaAdi)) {
-                logger.info("binary kok dosyasi bulunamadi. proje icerisinden calisildigi varsayilarak \n" +
+                logger.warning("binary kok dosyasi bulunamadi. proje icerisinden calisildigi varsayilarak \n" +
                         "calisilan dizine goreceli olarak '" + kokDosyaAdi + "' dosyasi uretilmeye calisacak.\n" +
                         "eger duz yazki kok bilgilerine erisim saglanamazsa sistem kok bilgisine uretemeycektir. ");
                 try {

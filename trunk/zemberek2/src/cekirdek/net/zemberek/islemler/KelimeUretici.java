@@ -75,9 +75,9 @@ public class KelimeUretici {
      *         simdilik ozle adlarda bas harf kucuk olarak donuyor. Ayrica ozel yazimli koklerin orjinali
      *         degil ayiklanmis hali doner.
      */
-    public List<String> ayristir(Kelime kelime) {
+    public String[] ayristir(Kelime kelime) {
         UretimNesnesi ure = uretimNesnesiUret(kelime.kok(), kelime.ekler());
-        return ure.olusumlar;
+        return ure.olusumlar.toArray(new String[ure.olusumlar.size()]);
     }
 
 

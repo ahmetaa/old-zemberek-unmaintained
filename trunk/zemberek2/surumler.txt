@@ -1,5 +1,11 @@
 Surum Degisiklikler listesi
 
+Surum 2.0 (11 subat 2007)
+- Zemberek alt yapisi tamamen dilden bagimsiz hale getirildi. Kod buyuk oranda elden gecirildi.
+- xml ek tnaimlama sitemi degisti.
+- kok bulma metodu eklendi. (Stemmer)
+- Buyuk oranda calisan Turkmence ve test amacli Azerice dilleri eklendi.
+-----------------------------------------------
 Surum 0.6.4 (29 Ocak 2006), OpenOffice.org eklentisi 1.0-Beta3
 - Kok kullanim frekansi ile ilgili 0.6.3 surumundeki degisiklikteki bir hata duzeltildi. istatistik dosyasinin dagitim icinde yer almasi gerekmiyor.
 - Sayilar icin oneri sistemi kullanilmaya calisilirsa ortaya cikan bir NPE hatasi giderildi
