@@ -31,9 +31,9 @@ import javax.jws.*;
 import javax.xml.ws.Endpoint;
 import net.zemberek.erisim.Zemberek;
 import net.zemberek.tr.yapi.TurkiyeTurkcesi;
-import java.util.List;
+//import java.util.ArrayList;
 import net.zemberek.yapi.Kelime;
-import net.zemberek.yapi.Kok;
+//import net.zemberek.yapi.Kok;
 /**
  *
  * @author firari
@@ -72,8 +72,9 @@ public class ZemberekWebService {
     }
     
     /*
-    public HashSet<ArrayList<String>> kelimeAyristir(@WebParam(name="giris") String giris) {
-        return (HashSet<ArrayList<String>>) zemberek.kelimeAyristir(giris);
+    @WebMethod
+    public ArrayList<String[]> kelimeAyristir(@WebParam(name="giris") String giris) {
+        return new ArrayList(zemberek.kelimeAyristir(giris));
     }
      */
     
@@ -94,11 +95,6 @@ public class ZemberekWebService {
     @WebMethod
     public String[] oner(@WebParam(name="giris") String giris) {
         return zemberek.oner(giris);
-    }
-    
-    @WebMethod
-    public String temizle(@WebParam(name="giris") String giris) {
-        return zemberek.temizle(giris);
     }
     
     /*

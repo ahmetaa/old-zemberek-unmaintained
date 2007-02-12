@@ -72,8 +72,6 @@ public final class WebDemoYonetici {
             return hecele(giris);
         if (islemTipi.equals("ONER"))
             return oner(giris);
-        if (islemTipi.equals("TEMIZLE"))
-            return temizle(giris);
         if (islemTipi.equals("SACMALA"))
             return sacmala();
         return "";
@@ -232,11 +230,7 @@ public final class WebDemoYonetici {
         }
         return sonuc.toString();
     }
-
-    public String temizle(String giris) {
-        return zemberek.temizle(giris);
-    }
-
+    
     public String turkceTest(String giris) {
         int sonuc = zemberek.dilTesti(giris);
         if (sonuc == TurkceYaziTesti.HIC)
