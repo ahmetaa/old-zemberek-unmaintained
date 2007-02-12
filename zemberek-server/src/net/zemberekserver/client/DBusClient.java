@@ -59,8 +59,8 @@ public class DBusClient {
 			System.out.println(oneri);
 		}
 		
-		List<List<String>> ayristirmalar = zemberek.kelimeAyristir("alayım");
-		for(List<String> ayristirma: ayristirmalar) {
+		List<String[]> ayristirmalar = zemberek.kelimeAyristir("alayım");
+		for(String[] ayristirma: ayristirmalar) {
 			for(String parca: ayristirma) {
 				System.out.print(parca+" ");
 			}

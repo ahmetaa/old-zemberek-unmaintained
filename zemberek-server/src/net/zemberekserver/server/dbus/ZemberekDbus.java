@@ -81,7 +81,7 @@ public class ZemberekDbus implements ZemberekDbusInterface {
 		return zemberek.hecele(giris);
 	}
 
-	public List<List<String>> kelimeAyristir(String giris) {
+	public List<String[]> kelimeAyristir(String giris) {
 		return zemberek.kelimeAyristir(giris);
 	}
 
@@ -91,9 +91,5 @@ public class ZemberekDbus implements ZemberekDbusInterface {
 
 	public String[] oner(String giris) {
 		return zemberek.oner(giris);
-	}
-
-	public String temizle(String giris) {
-		return zemberek.temizle(giris);
 	}
 }
