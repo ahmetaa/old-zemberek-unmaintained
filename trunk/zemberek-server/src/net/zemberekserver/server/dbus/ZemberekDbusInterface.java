@@ -37,10 +37,9 @@ public interface ZemberekDbusInterface extends DBusInterface {
 	public String[] asciidenTurkceye(String giris);
 	public String asciiyeDonustur(String giris);
 	public String[] hecele(String giris);
-	public List<List<String>> kelimeAyristir(String giris);
+	public List<String[]> kelimeAyristir(String giris);
 	//public Kelime[] kelimeCozumle(String giris);
 	public boolean kelimeDenetle(String giris);
 	public String[] oner(String giris);
-	public String temizle(String giris);
 	//public String kelimeUret(Kok giris, List ekler);
 }
