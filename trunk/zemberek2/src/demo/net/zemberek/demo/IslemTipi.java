@@ -35,6 +35,5 @@ public enum IslemTipi {
     HECELE,
     ASCII_TURKCE,
     TURKCE_ASCII,
-    ONER,
-    TEMIZLE
+    ONER
 }

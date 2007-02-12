@@ -205,14 +205,6 @@ public class DemoPaneli {
         });
         centerPanel.add(btnOner);
 
-        JButton btnTemizle;
-        btnTemizle = SwingFactory.getRegularButton("Temizle");
-        btnTemizle.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent evt) {
-                cikisAlani.setYazi(dy.temizle(girisAlani.getYazi()));
-            }
-        });
-        centerPanel.add(btnTemizle);
         pt.add(centerPanel, BorderLayout.CENTER);
 
         return pt;

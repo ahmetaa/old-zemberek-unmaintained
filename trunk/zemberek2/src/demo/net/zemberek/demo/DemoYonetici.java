@@ -96,8 +96,6 @@ public class DemoYonetici {
                 return hecele(giris);
             case ONER:
                 return oner(giris);
-            case TEMIZLE:
-                return temizle(giris);
             default:
                 return "";
         }
@@ -228,10 +226,6 @@ public class DemoYonetici {
             sonuc.append(birim.icerik);
         }
         return sonuc.toString();
-    }
-
-    public String temizle(String giris) {
-        return zemberek.temizle(giris);
     }
 
     public String turkceTest(String giris) {
