@@ -321,7 +321,7 @@
         <antcall target="jar-cekirdek"/>
         <antcall target="jar-tr"/>
         <antcall target="jar-tm"/>
-        <antcall target="jar-az"/>
+        <!--<antcall target="jar-az"/> Azerice şimdilik kaldırıldı-->
         <antcall target="jar-demo"/>
 
         <copy todir="${dist.dir}">
