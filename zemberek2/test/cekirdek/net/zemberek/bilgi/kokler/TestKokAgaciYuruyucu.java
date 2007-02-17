@@ -40,11 +40,11 @@ public class TestKokAgaciYuruyucu extends TemelTest {
 
   public void testYuruyucu()
   {
-      KokAgaciYuruyucu yuruyucu = new KokAgaciYuruyucu(dilBilgisi.kokler(), null);
-
+	  AgacSozluk sozluk = (AgacSozluk)dilBilgisi.kokler();
+      KokAgaciYuruyucu yuruyucu = new KokAgaciYuruyucu(sozluk , null);
         TimeTracker.startClock("x");
         System.out.println("Sozluk Yuklendi: " + TimeTracker.getElapsedTimeString("x"));
-        yuruyucu.walk(dilBilgisi.kokler().getAgac().getKokDugumu(), "");
+        yuruyucu.walk(sozluk.getAgac().getKokDugumu(), "");
         System.out.println("Agacta Yurundu: " + TimeTracker.getElapsedTimeString("x"));
         System.out.println("Toplam dugum sayisi:" + yuruyucu.dugumSayisi);
         System.out.println("Kok tasiyan dugum sayisi:" + yuruyucu.kokTasiyanDugumSayisi);

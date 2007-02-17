@@ -32,6 +32,7 @@
 package net.zemberek.bilgi.kokler;
 
 import net.zemberek.araclar.IstatistikAraclari;
+import net.zemberek.araclar.TimeTracker;
 import net.zemberek.bilgi.araclar.IkiliKokOkuyucu;
 import net.zemberek.bilgi.araclar.KokOkuyucu;
 import net.zemberek.yapi.*;
@@ -48,7 +49,7 @@ import java.util.Set;
 public class KokAgaciYuruyucu {
     int walkCount = 0;
     int distanceCalculationCount = 0;
-    private Sozluk sozluk;
+    private AgacSozluk sozluk;
 
     int dugumSayisi = 0;
     int kokTasiyanDugumSayisi = 0;
@@ -63,7 +64,7 @@ public class KokAgaciYuruyucu {
      * @param set Yurume sırasında bulunan düğümler toplanmak istiyorsa buraya bir set gönderilir.
      * istenmiyorsa null verilir.
      */
-    public KokAgaciYuruyucu(Sozluk sozluk, Set<Kok> set)
+    public KokAgaciYuruyucu(AgacSozluk sozluk, Set<Kok> set)
     {
         this.sozluk =sozluk;
         this.set = set;
@@ -148,8 +149,13 @@ public class KokAgaciYuruyucu {
         Class c = Class.forName("net.zemberek.tr.yapi.TurkiyeTurkcesi");
         DilBilgisi dilBilgisi = new TurkceDilBilgisi((DilAyarlari) c.newInstance());
         Alfabe alfabe = dilBilgisi.alfabe();
-        KokOkuyucu okuyucu = new IkiliKokOkuyucu("kaynaklar/tr/bilgi/binary-sozluk.bin", dilBilgisi.kokOzelDurumlari());
-        AgacSozluk sozluk = new AgacSozluk(okuyucu, alfabe, dilBilgisi.kokOzelDurumlari());
+        AgacSozluk sozluk = null;
+        TimeTracker.startClock("a");
+        for(int i=0; i<10; i++){
+        	KokOkuyucu okuyucu = new IkiliKokOkuyucu("kaynaklar/tr/bilgi/kokler_tr.bin", dilBilgisi.kokOzelDurumlari());
+        	sozluk = new AgacSozluk(okuyucu, alfabe, dilBilgisi.kokOzelDurumlari());
+        	System.out.println(TimeTracker.getElapsedTimeString("a"));
+        }
     	KokAgaciYuruyucu yuruyucu = new KokAgaciYuruyucu(sozluk, new HashSet<Kok>());
     	yuruyucu.agaciTara();
     	System.out.println(yuruyucu);

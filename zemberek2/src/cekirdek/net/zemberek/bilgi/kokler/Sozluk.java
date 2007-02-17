@@ -77,6 +77,5 @@ public interface Sozluk {
      */
     public KokAdayiBulucuUretici getKokBulucuFactory();
 
-    public KokAgaci getAgac();
 }
 
