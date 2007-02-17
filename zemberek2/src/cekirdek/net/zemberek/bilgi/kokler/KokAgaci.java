@@ -90,45 +90,54 @@ public class KokAgaci {
      */
     public void ekle(String icerik, Kok kok) {
         //System.out.println("Kelime: " + icerik);
-        char[] hd = icerik.toCharArray();
+        char[] giris = icerik.toCharArray();
         KokDugumu node = baslangicDugumu;
         KokDugumu oncekiDugum = null;
         int idx = 0;
-        // null alt düğüm bulana dek veya kelimenin sonuna dek alt düğümlerde ilerle
-        while (idx < hd.length) {
+        // null alt düğüm bulana dek veya kelimenin sonuna gelene 
+        // dek kelimenin harflerini izleyerek alt düğümlerde ilerle
+        while (idx < giris.length) {
             oncekiDugum = node;
-            node = node.altDugumGetir(hd[idx]);
+            node = node.altDugumGetir(giris[idx]);
             if (node == null) break;
             idx++;
         }
         /**
-         * Ağaç üzerinde ilerlerken kelimemizin sonuna kadar gitmişiz.
-         * kelimemizi bu düğüme ekleriz.
-         * Örneğin
-         * i-s-t-->istim şeklindeki dala "is" kelimesini eklemek gibi.
+         * Ağaç üzerinde ilerlerken giriş kelimemizin sonuna kadar gitmişiz. 
+         * Yani ağacın sonuna (yapraklarına) ulaşmadan önce girişe erişmişiz.  
+         * 
+         * Aşağıdaki drumlar bu durum çerçevesinde çözülür:
+         * 
+         * (1)
+         * i-s-t-->istim şeklindeki dala "is" kelimesini eklemek.
          * i-s-t-->istim
          *   |-->is
          *
          * veya
-         *
+         * 
+         * (2) Geldiğimiz düğüme eklemek için yeni bir düğüm oluşturma zorunluluğu var.
          * i-s-->istim e is gelirse de
          * i-s-t-->istim
          *   |-->is
          *
-         * i-s-->is  e "is" gelirse
-         * i-s-->is(2) olmalı.
+         * (3) Eş seslilik durumu:
+         * 
+         * a-l-->al  a "al" gelirse
+         * a-l-->al(2) olur.
          *
          */
-        if (idx == hd.length) {
+        if (idx == giris.length) {
+        	// (1) durumu
             if (node.altDugumVarMi()) {
                 node.kokEkle(kok);
                 node.setKelime(icerik);
             }
-            // Eş sesli!
+            // Eş seslilik durumu.
             else if (node.getKelime().equals(icerik)) {
                 node.kokEkle(kok);
-                return;
-            } else if (node.getKok() != null) {
+            }
+            // (2) durumu
+            else if (node.getKok() != null) {
                 KokDugumu newNode = node.addNode(new KokDugumu(node.getKelime().charAt(idx)));
                 newNode.kopyala(node);
                 node.temizle();
@@ -141,49 +150,31 @@ public class KokAgaci {
         /**
          * Kaldığımız düğüme bağlı bir kök yoksa bu kök için bir düğüm oluşturup ekleriz.
          */
-        if (oncekiDugum.getKok() == null && idx < hd.length) {
-            oncekiDugum.addNode(new KokDugumu(hd[idx], icerik, kok));
+        if (oncekiDugum.getKok() == null || idx == oncekiDugum.getKelime().length()) {
+            oncekiDugum.addNode(new KokDugumu(giris[idx], icerik, kok));
             return;
         }
-
+        
         if (oncekiDugum.getKelime().equals(icerik)) {
             oncekiDugum.kokEkle(kok);
             return;
         }
 
         /**
-         * Düğümde duran "istimlak" ve gelen kök = "istimbot" için,
-         * i-s-t-i-m
-         * e kadar ilerler. daha sonra "istimlak" için "l" düğümünü oluşturup kökü bağlar
-         * i-s-t-i-m-l-->istimlak
-         * sonra da diğer düğüm için "b" düğümünü oluşturup gene "m" düğümüne bağlar
-         * i-s-t-i-m-l-->istimlak
-         *         |-b-->istimbot
+         * Düğümde duran "istimlak" ve gelen kök = "istim" için,
+         * i-s-istimlak
          *
-         * Eğer istimlak düğümü bağlanmışsa ve "istim" düğümü eklenmek üzere 
-         * elimize gelmişe
-         * i-s-t-i-m-l-->istimlak
-         * tan sonra istim, "m" düğümüne doğrudan bağlanır.
+         * Önce  i-s-t-i-m-l düğümleri oluşturulur ve istimlak en uca, istim de bir 
+         * gerisindeki m düğümüne bağlanır.
+         * 
          * i-s-t-i-m-l-->istimlak
          *         |-->istim
-         *
          */
         char[] nodeHd = ((String)oncekiDugum.getKelime()).toCharArray();
-        //char[] nodeChars = ((String) oncekiDugum.getKelime()).toCharArray();
         KokDugumu newNode = oncekiDugum;
 
-        if (idx == nodeHd.length) {
-            newNode.addNode(new KokDugumu(hd[idx], icerik, kok));
-            return;
-        }
-
-        if (oncekiDugum.getKelime().length() == idx) {
-            newNode.addNode(new KokDugumu(hd[idx], icerik, kok));
-            return;
-        }
-
-        if (nodeHd.length <= hd.length) {
-            while (idx < nodeHd.length && nodeHd[idx] == hd[idx]) {
+        if (nodeHd.length <= giris.length) {
+            while (idx < nodeHd.length && nodeHd[idx] == giris[idx]) {
                 newNode = newNode.addNode(new KokDugumu(nodeHd[idx]));
                 idx++;
             }
@@ -196,31 +187,31 @@ public class KokAgaci {
                 newNode.kopyala(oncekiDugum);
             }
 
-            // Uzun olan dugumun (yeni gelen) eklenmesi, es anlamlilari kotar
-            newNode.addNode(new KokDugumu(hd[idx], icerik, kok));
+            // Uzun olan dugumun (yeni gelen) eklenmesi
+            newNode.addNode(new KokDugumu(giris[idx], icerik, kok));
             oncekiDugum.temizle();
         }
 
         /**
+         * Eğer köke önce "istimlak" i-s ye bnğlanmışsa ve sonra "istifa" gelirse
+         * i-s-->istimlak
          *
-         * Eğer köke önce "istimlak" ve sonra "istifa" gelirse
-         * i-s-t-i-m-l-->istimlak
-         * daha sonra gene son ortak harf olan "i" ye "f" karakterli düğümü
-         * oluşturup istifayı bağlar
-         * istimlak ta "m" düğümüne bağlı kalır.
+         * t-i düğümleri oluşturulur, daha sonra istifa için f istimlak için de m
+         * oluşturulur ve düğümler uygun şekilde bağlanır.
+         * 
          * i-s-t-i-m-->istimlak
          *       |-f-->istifa
          *
          */
 
         else {
-            while (idx < hd.length && hd[idx] == nodeHd[idx]) {
-                newNode = newNode.addNode(new KokDugumu(hd[idx]));
+            while (idx < giris.length && giris[idx] == nodeHd[idx]) {
+                newNode = newNode.addNode(new KokDugumu(giris[idx]));
                 idx++;
             }
             // Kisa dugumun eklenmesi.
-            if (idx < hd.length) {
-                newNode.addNode(new KokDugumu(hd[idx], icerik, kok));
+            if (idx < giris.length) {
+                newNode.addNode(new KokDugumu(giris[idx], icerik, kok));
             } else {
                 newNode.kokEkle(kok);
                 newNode.setKelime(icerik);
