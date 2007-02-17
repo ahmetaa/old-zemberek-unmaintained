@@ -49,7 +49,7 @@ import java.util.List;
  * @author MDA & GBA
  */
 public class TestKesinKokBulucu extends TemelTest {
-    Sozluk sozluk = null;
+    AgacSozluk sozluk = null;
     KokAdayiBulucu bulucu;
     String[] kelimeler;
     KokOkuyucu okuyucu;
@@ -96,13 +96,13 @@ public class TestKesinKokBulucu extends TemelTest {
         assertTrue("tek sonuc bekleniyordu", bulucu.getAdayKokler("atoller").size()==1);
     }
 
-    private Sozluk sozlukUret(String duzyaziDosya) throws IOException {
+    private AgacSozluk sozlukUret(String duzyaziDosya) throws IOException {
         okuyucu = new DuzYaziKokOkuyucu(
                 duzyaziDosya,
                 dilBilgisi.kokOzelDurumlari(),
                 alfabe,
                 dilAyarlari.kokTipiAdlari());
-        Sozluk s = new AgacSozluk(okuyucu, alfabe, dilBilgisi.kokOzelDurumlari());
+        AgacSozluk s = new AgacSozluk(okuyucu, alfabe, dilBilgisi.kokOzelDurumlari());
         return s;
     }
 
