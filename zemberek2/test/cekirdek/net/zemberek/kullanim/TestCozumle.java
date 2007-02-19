@@ -49,7 +49,7 @@ public class TestCozumle {
     public static void cozumle(String str) {
         if (zemberek.kelimeDenetle(str) == true) {
             Kelime[] sonuc = zemberek.kelimeCozumle(str);
-            System.out.println("Oluþan çözümleme sayýsý: " + sonuc.length);
+            System.out.println("OluÅŸan Ã§Ã¶zÃ¼mleme sayÄ±sÄ±: " + sonuc.length);
             for (Kelime kelime: sonuc) {
                 Kok kok = kelime.kok();
                 System.out.println("Kok :" + kok.icerik() + " Tipi : " + kok.tip().toString());
@@ -64,7 +64,7 @@ public class TestCozumle {
             }
             System.out.println();
         } else {
-            System.out.println(str + " Türkçe deðil");
+            System.out.println(str + " TÃ¼rkÃ§e deÄŸil");
         }
     }
 
@@ -73,7 +73,7 @@ public class TestCozumle {
         cozumle("kedi");
         cozumle("kediciklerin");
         cozumle("getirttirebilirsiniz");
-        cozumle("Çekoslovakyal"+I+"la"+S+"t"+I+"rabileceklerimizdenseniz");
+        cozumle("Ã‡ekoslovakyal"+I+"la"+S+"t"+I+"rabileceklerimizdenseniz");
         cozumle("Mrhaba");
     }
 }

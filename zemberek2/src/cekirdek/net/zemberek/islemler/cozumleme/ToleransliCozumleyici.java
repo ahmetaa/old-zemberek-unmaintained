@@ -85,7 +85,7 @@ public class ToleransliCozumleyici implements KelimeCozumleyici {
             icerikDegisti = yardimci.kokGirisDegismiVarsaUygula(kok, kokDizi, girisDizi);
 
             if (log.isLoggable(Level.FINER)) log.finer("Aday:" + kok.icerik() + " tolerans:" + kokHatasi);
-            if (MetinAraclari.inEditDistance(kok.icerik(), strIslenmis, TOLERANS))
+            if (MetinAraclari.duzeltmeMesafesiIcinde(kok.icerik(), strIslenmis, TOLERANS))
                 cozumler.add(new Kelime(kok, alfabe));
             List sonuclar;
             if (TOLERANS > kokHatasi)
@@ -167,8 +167,8 @@ public class ToleransliCozumleyici implements KelimeCozumleyici {
             String olusumStr = olusum.toString();
             if (log.isLoggable(Level.FINEST)) log.finest("olusum:" + olusum);
 
-            if (MetinAraclari.isInSubstringEditDistance(olusumStr, girisDizi.toString(), tolerans) ||
-                    MetinAraclari.inEditDistance(olusumStr, girisDizi.toString(), tolerans)) {
+            if (MetinAraclari.duzeltmeMesafesiIcinde(olusumStr, girisDizi.toString(), tolerans) ||
+                    MetinAraclari.parcasiDuzeltmeMesafesiIcinde(olusumStr, girisDizi.toString(), tolerans)) {
                 kelimeYigini.koy(kelime.clone(), ardisilEkSirasi);
                 ardisilEkSirasi = 0;
                 // ek ekleneceginde yumusama yapilip yapilmayacagi belirleniyor.. aci
@@ -185,7 +185,7 @@ public class ToleransliCozumleyici implements KelimeCozumleyici {
 
                 bulunanEk = incelenenEk;
 
-                if (MetinAraclari.inEditDistance(olusumStr, girisDizi.toString(), tolerans)) {
+                if (MetinAraclari.duzeltmeMesafesiIcinde(olusumStr, girisDizi.toString(), tolerans)) {
                     uygunSonuclar.add(kelime.clone());
                     if (log.isLoggable(Level.FINER)) log.finer("uygun kelime:" + kelime.icerik());
                 }
@@ -205,7 +205,7 @@ public class ToleransliCozumleyici implements KelimeCozumleyici {
         //if (log.isTraceEnabled()) log.trace("Ozel durum sonrasi:" + testKokIcerigi + "  ek:" + ek.getIsim());
         if (testKokIcerigi == null)
             return false;
-        if (MetinAraclari.isInSubstringEditDistance(testKokIcerigi.toString(), girisDizi.toString(), tolerans)) {
+        if (MetinAraclari.parcasiDuzeltmeMesafesiIcinde(testKokIcerigi.toString(), girisDizi.toString(), tolerans)) {
             kelime.setIcerik(new HarfDizisi(testKokIcerigi));
             //if (log.isTraceEnabled()) log.trace("basari, kelime:" + kelime.icerik());
             return true;

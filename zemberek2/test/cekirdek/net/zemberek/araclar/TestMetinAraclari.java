@@ -39,55 +39,55 @@ import java.io.IOException;
 import java.util.List;
 
 /**
- * @author MDA & GBA
+ * @author MDA
  */
 public class TestMetinAraclari {
 
 
     @Test
     public void testEditDistance() {
-        assertEquals(0, MetinAraclari.editDistance("elma", "elma"));
-        assertEquals(1, MetinAraclari.editDistance("elma", "elmax"));
-        assertEquals(1, MetinAraclari.editDistance("elma", "lma"));
-        assertEquals(2, MetinAraclari.editDistance("elma", "ma"));
-        assertEquals(2, MetinAraclari.editDistance("elma", "frma"));
-        assertEquals(3, MetinAraclari.editDistance("elma", "a"));
-        assertEquals(3, MetinAraclari.editDistance("elma", "elmalar"));
-        assertEquals(4, MetinAraclari.editDistance("elma", "elmalara"));
-        assertEquals(4, MetinAraclari.editDistance("elma", "amel"));
-        assertEquals(5, MetinAraclari.editDistance("elma", "frtyu"));
+        assertEquals(0, MetinAraclari.duzeltmeMesafesi("elma", "elma"));
+        assertEquals(1, MetinAraclari.duzeltmeMesafesi("elma", "elmax"));
+        assertEquals(1, MetinAraclari.duzeltmeMesafesi("elma", "lma"));
+        assertEquals(2, MetinAraclari.duzeltmeMesafesi("elma", "ma"));
+        assertEquals(2, MetinAraclari.duzeltmeMesafesi("elma", "frma"));
+        assertEquals(3, MetinAraclari.duzeltmeMesafesi("elma", "a"));
+        assertEquals(3, MetinAraclari.duzeltmeMesafesi("elma", "elmalar"));
+        assertEquals(4, MetinAraclari.duzeltmeMesafesi("elma", "elmalara"));
+        assertEquals(4, MetinAraclari.duzeltmeMesafesi("elma", "amel"));
+        assertEquals(5, MetinAraclari.duzeltmeMesafesi("elma", "frtyu"));
         // ************ TRANSPOZISYON *********************
-        assertEquals(1, MetinAraclari.editDistance("elma", "emla"));
-        assertEquals(1, MetinAraclari.editDistance("elma", "elam"));
-        assertEquals(1, MetinAraclari.editDistance("elma", "lema"));
-        assertEquals(1, MetinAraclari.editDistance("varil", "varli"));
-        assertEquals(1, MetinAraclari.editDistance("varil", "vrail"));
-        assertEquals(1, MetinAraclari.editDistance("varil", "vairl"));
-        assertEquals(1, MetinAraclari.editDistance("varil", "avril"));
+        assertEquals(1, MetinAraclari.duzeltmeMesafesi("elma", "emla"));
+        assertEquals(1, MetinAraclari.duzeltmeMesafesi("elma", "elam"));
+        assertEquals(1, MetinAraclari.duzeltmeMesafesi("elma", "lema"));
+        assertEquals(1, MetinAraclari.duzeltmeMesafesi("varil", "varli"));
+        assertEquals(1, MetinAraclari.duzeltmeMesafesi("varil", "vrail"));
+        assertEquals(1, MetinAraclari.duzeltmeMesafesi("varil", "vairl"));
+        assertEquals(1, MetinAraclari.duzeltmeMesafesi("varil", "avril"));
     }
 
     @Test
     public void testInModifiedLevenshteinDistance() {
-        assertTrue(MetinAraclari.inEditDistance("elma", "elma", 1));
-        assertTrue(MetinAraclari.inEditDistance("elma", "ekma", 1));
-        assertTrue(MetinAraclari.inEditDistance("elma", "ema", 1));
-        assertTrue(MetinAraclari.inEditDistance("elma", "elmas", 1));
-        assertTrue(MetinAraclari.inEditDistance("elma", "lma", 1));
-        assertTrue(MetinAraclari.inEditDistance("elma", "emas", 2));
-        assertTrue(MetinAraclari.inEditDistance("elma", "el", 2));
-        assertFalse(MetinAraclari.inEditDistance("elma", "el", 1));
-        assertFalse(MetinAraclari.inEditDistance("elma", "eksa", 1));
-        assertFalse(MetinAraclari.inEditDistance("armutu", "armutlr", 1));
-        assertTrue(MetinAraclari.inEditDistance("armutlar", "armutlr", 1));
+        assertTrue(MetinAraclari.duzeltmeMesafesiIcinde("elma", "elma", 1));
+        assertTrue(MetinAraclari.duzeltmeMesafesiIcinde("elma", "ekma", 1));
+        assertTrue(MetinAraclari.duzeltmeMesafesiIcinde("elma", "ema", 1));
+        assertTrue(MetinAraclari.duzeltmeMesafesiIcinde("elma", "elmas", 1));
+        assertTrue(MetinAraclari.duzeltmeMesafesiIcinde("elma", "lma", 1));
+        assertTrue(MetinAraclari.duzeltmeMesafesiIcinde("elma", "emas", 2));
+        assertTrue(MetinAraclari.duzeltmeMesafesiIcinde("elma", "el", 2));
+        assertFalse(MetinAraclari.duzeltmeMesafesiIcinde("elma", "el", 1));
+        assertFalse(MetinAraclari.duzeltmeMesafesiIcinde("elma", "eksa", 1));
+        assertFalse(MetinAraclari.duzeltmeMesafesiIcinde("armutu", "armutlr", 1));
+        assertTrue(MetinAraclari.duzeltmeMesafesiIcinde("armutlar", "armutlr", 1));
     }
 
     @Test
     public void testIsInSubStringEditDistance() {
-        assertTrue(MetinAraclari.isInSubstringEditDistance("elma", "elma", 1));
-        assertTrue(MetinAraclari.isInSubstringEditDistance("elma", "elmalar", 1));
-        assertTrue(MetinAraclari.isInSubstringEditDistance("elma", "ekmalar", 1));
-        assertTrue(MetinAraclari.isInSubstringEditDistance("elma", "emaciklar", 1));
-        assertTrue(MetinAraclari.isInSubstringEditDistance("sefil", "sfil", 1));
+        assertTrue(MetinAraclari.parcasiDuzeltmeMesafesiIcinde("elma", "elma", 1));
+        assertTrue(MetinAraclari.parcasiDuzeltmeMesafesiIcinde("elma", "elmalar", 1));
+        assertTrue(MetinAraclari.parcasiDuzeltmeMesafesiIcinde("elma", "ekmalar", 1));
+        assertTrue(MetinAraclari.parcasiDuzeltmeMesafesiIcinde("elma", "emaciklar", 1));
+        assertTrue(MetinAraclari.parcasiDuzeltmeMesafesiIcinde("sefil", "sfil", 1));
     }
 
     @Test

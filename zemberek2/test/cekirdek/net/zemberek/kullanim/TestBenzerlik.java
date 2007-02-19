@@ -38,12 +38,12 @@ public class TestBenzerlik {
     public static DecimalFormat df = new DecimalFormat("#0.000");
 
     public static void levenshtein(String str1, String str2) {
-        System.out.println("Levenshtein düzeltme mesafesi (" + str1 + " ve " + str2 + ") = " +
-                MetinAraclari.editDistance(str1, str2));
+        System.out.println("Levenshtein dÃ¼zeltme mesafesi (" + str1 + " ve " + str2 + ") = " +
+                MetinAraclari.duzeltmeMesafesi(str1, str2));
     }
 
     public static void jaro(String str1, String str2) {
-        System.out.println("Jaro-Winkler benzerlik oraný (" + str1 + " ve " + str2 + ") = " +
+        System.out.println("Jaro-Winkler benzerlik oranÄ± (" + str1 + " ve " + str2 + ") = " +
                 df.format(jaro.benzerlikOrani(str1, str2)));
     }
 
