@@ -94,7 +94,7 @@ public class ToleransliKokAdayiBulucu implements KokAdayiBulucu {
         tester += dugum.getHarf();
         if (dugum.getKok() != null) {
             distanceCalculationCount++;
-            if (MetinAraclari.isInSubstringEditDistance((String) dugum.getKelime(), giris, tolerans)) {
+            if (MetinAraclari.parcasiDuzeltmeMesafesiIcinde((String) dugum.getKelime(), giris, tolerans)) {
             	// Aday kök bulundu
                 adaylar.add(dugum.getKok());
             } else {
@@ -102,7 +102,7 @@ public class ToleransliKokAdayiBulucu implements KokAdayiBulucu {
                 return;
             }
         } else {
-            if (!MetinAraclari.isInSubstringEditDistance(tester.trim(), giris, tolerans)) {
+            if (!MetinAraclari.parcasiDuzeltmeMesafesiIcinde(tester.trim(), giris, tolerans)) {
             	// Ara stringde mesafe sınırı aşıldı
                 return;
             }
