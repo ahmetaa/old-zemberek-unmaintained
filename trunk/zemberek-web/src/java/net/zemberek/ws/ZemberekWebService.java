@@ -13,7 +13,7 @@
  *  for the specific language governing rights and limitations under the
  *  License.
  *
- *  The Original Code is "Zemberek Sunucu"
+ *  The Original Code is "Zemberek Web"
  *
  *  The Initial Developer of the Original Code is
  *  Serkan Kaba.
