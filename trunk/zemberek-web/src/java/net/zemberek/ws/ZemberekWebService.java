@@ -50,10 +50,7 @@ public class ZemberekWebService {
     @WebMethod
     public String[] asciiCozumle(@WebParam(name="giris") String giris) {
         Kelime cozumlemeler[] = zemberek.asciiCozumle(giris);
-        String cozumlemelerStr[] = new String[cozumlemeler.length];
-        for(int i=0;i<cozumlemeler.length;i++)
-            cozumlemelerStr[i]=kelimeToString(cozumlemeler[i]);
-        return cozumlemelerStr;
+        return kelimeArraytoStringArray(cozumlemeler);
     }
     
     @WebMethod
@@ -81,10 +78,7 @@ public class ZemberekWebService {
     @WebMethod
     public String[] kelimeCozumle(@WebParam(name="giris") String giris) {
         Kelime cozumlemeler[] = zemberek.kelimeCozumle(giris);
-        String cozumlemelerStr[] = new String[cozumlemeler.length];
-        for(int i=0;i<cozumlemeler.length;i++)
-            cozumlemelerStr[i]=kelimeToString(cozumlemeler[i]);
-        return cozumlemelerStr;
+        return kelimeArraytoStringArray(cozumlemeler);
     }
     
     @WebMethod
@@ -110,4 +104,10 @@ public class ZemberekWebService {
                 " | Ekler:"+k.ekZinciriStr()+"]";
     }
     
+    private String[] kelimeArraytoStringArray(Kelime k[]) {
+        String kStr[] = new String[k.length];
+        for(int i=0;i<k.length;i++)
+            kStr[i]=kelimeToString(k[i]);
+        return kStr;
+    }
 }
