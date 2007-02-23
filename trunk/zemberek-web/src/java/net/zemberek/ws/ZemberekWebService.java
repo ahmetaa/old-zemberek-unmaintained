@@ -31,7 +31,7 @@ import javax.jws.*;
 import javax.xml.ws.Endpoint;
 import net.zemberek.erisim.Zemberek;
 import net.zemberek.tr.yapi.TurkiyeTurkcesi;
-//import java.util.ArrayList;
+import java.util.List;
 import net.zemberek.yapi.Kelime;
 //import net.zemberek.yapi.Kok;
 /**
@@ -68,12 +68,14 @@ public class ZemberekWebService {
         return zemberek.hecele(giris);
     }
     
-    /*
     @WebMethod
-    public ArrayList<String[]> kelimeAyristir(@WebParam(name="giris") String giris) {
-        return new ArrayList(zemberek.kelimeAyristir(giris));
+    public String[][] kelimeAyristir(@WebParam(name="giris") String giris) {
+        List<String[]> ayristirmalarList = zemberek.kelimeAyristir(giris);
+        String[][] ayristirmalarAry = new String[ayristirmalarList.size()][];
+        for(int i=0;i<ayristirmalarAry.length;i++)
+            ayristirmalarAry[i]=(String[])ayristirmalarList.get(i);
+        return ayristirmalarAry;
     }
-     */
     
     @WebMethod
     public String[] kelimeCozumle(@WebParam(name="giris") String giris) {
