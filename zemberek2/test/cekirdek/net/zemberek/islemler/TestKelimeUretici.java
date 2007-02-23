@@ -128,9 +128,8 @@ public class TestKelimeUretici extends TemelTest {
 
     @Test
     public void testEkAyristirma() {
-        List l1 = Arrays.asList("kedi", "le", "r", "im");
-        List l2 = Arrays.asList("kedi", "ler", "im");
-        
+    	String l1[] = { "kedi","le","r","im"};
+    	String l2[] = { "kedi","ler","im"};
         Kelime[] cozumler = cozumleyici.cozumle("kedilerim");
         for (Kelime kel : cozumler) {
             if(kel.ekSayisi()==4)
