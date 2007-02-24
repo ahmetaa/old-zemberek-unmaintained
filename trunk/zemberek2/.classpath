@@ -4,6 +4,7 @@
 	<classpathentry kind="src" path="src/tm"/>
 	<classpathentry kind="src" path="test/cekirdek"/>
 	<classpathentry kind="src" path="src/cekirdek"/>
+	<classpathentry kind="src" path="deney"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="lib/gelistirme/junit-4.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
