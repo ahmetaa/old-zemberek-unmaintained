@@ -1,5 +1,6 @@
 package net.zemberek.deney;
 
+import java.util.Arrays;
 import java.util.Hashtable;
 import java.util.List;
 import java.util.StringTokenizer;
@@ -43,16 +44,8 @@ public class ZemberekDenetlemeAdayi {
 		for(DenetlemeHatasi hata: hatalar) {
 			System.out.println("Hatalı kelime: "+hata.getHatalikelime());
 			System.out.println("Offset: "+ hata.getHataPozisyonu());
-			System.out.print("Öneriler: ");
-			diziYazdir(hata.getOneriler());
-			System.out.println();
+			System.out.println("Öneriler: "+Arrays.toString(hata.getOneriler()));
 			System.out.println("---------------------------");
 		}
 	}
-	
-	private static void diziYazdir(String[] array) {
-		for(String eleman: array)
-			System.out.print(eleman+" ");
-	}
-
 }
