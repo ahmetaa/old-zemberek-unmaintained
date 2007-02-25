@@ -287,7 +287,7 @@ public class XmlEkOkuyucu {
         for (int i = 0; i < bilesenler.size(); i++) {
             EkUretimBileseni uretimBileseni = bilesenler.get(i);
             TurkceHarf harf = uretimBileseni.harf();
-            if (i == 0 || (i == 1 && bilesenler.get(0).kural() == UretimKurali.KAYNASTIR)) {
+            if (i == 0 || (i == 1 && bilesenler.get(0).kural() == EkUretimKurali.KAYNASTIR)) {
 
                 if (harf.sesliMi())
                     ek.setSesliIleBaslayabilir(true);
@@ -305,15 +305,15 @@ public class XmlEkOkuyucu {
     }
 
     // ek uretim kural kelimesinde kullanilan parcalarin dilbilgisi kurali karsiliklarini tutan tablo.
-    private static final Map<Character, UretimKurali> kuralTablosu = new HashMap();
+    private static final Map<Character, EkUretimKurali> kuralTablosu = new HashMap();
 
     static {
-        kuralTablosu.put('A', UretimKurali.SESLI_AE);
-        kuralTablosu.put('I', UretimKurali.SESLI_IU);
-        kuralTablosu.put('E', UretimKurali.SESLI_AA);
-        kuralTablosu.put('Y', UretimKurali.SESSIZ_Y);
-        kuralTablosu.put('+', UretimKurali.KAYNASTIR);
-        kuralTablosu.put('>', UretimKurali.SERTLESTIR);
+        kuralTablosu.put('A', EkUretimKurali.SESLI_AE);
+        kuralTablosu.put('I', EkUretimKurali.SESLI_IU);
+        kuralTablosu.put('E', EkUretimKurali.SESLI_AA);
+        kuralTablosu.put('Y', EkUretimKurali.SESSIZ_Y);
+        kuralTablosu.put('+', EkUretimKurali.KAYNASTIR);
+        kuralTablosu.put('>', EkUretimKurali.SERTLESTIR);
     }
 
     private final Set<Character> sesliKurallari =
@@ -370,7 +370,7 @@ public class XmlEkOkuyucu {
                 } else if (sesliKurallari.contains(p)) {
                     return new EkUretimBileseni(kuralTablosu.get(p), Alfabe.TANIMSIZ_HARF);
                 } else if (alfabe.harf(p) != null && Character.isLowerCase(p)) {
-                    return new EkUretimBileseni(UretimKurali.HARF, alfabe.harf(p));
+                    return new EkUretimBileseni(EkUretimKurali.HARF, alfabe.harf(p));
                 } else {
                     throw new IllegalArgumentException(p + "  simgesi cozumlenemiyor.. kelime:" + uretimKelimesi);
                 }
