@@ -44,6 +44,7 @@ import static org.junit.Assert.assertTrue;
 
 import java.io.IOException;
 import java.util.List;
+import static java.lang.System.*;
 
 /**
  * @author MDA & GBA
@@ -64,19 +65,19 @@ public class TestKesinKokBulucu extends TemelTest {
     @Test
     public void testWordTreeKokSecici() {
         bulucu = new KesinKokAdayiBulucu(sozluk.getAgac());
-        System.out.println("Agac:" + sozluk.getAgac().getKokDugumu().getStringRep(2));
+        out.println("Agac:" + sozluk.getAgac().getKokDugumu().getStringRep(2));
         List list = bulucu.getAdayKokler("karalar");
         TestUtils.printList(list);
-        System.out.println("Tamamlanma s�resi: " + TimeTracker.stopClock("x"));
+        out.println("Tamamlanma s�resi: " + TimeTracker.stopClock("x"));
     }
 
     @Test
     public void testToleransliKokBulBasit() {
         bulucu = new ToleransliKokAdayiBulucu(sozluk.getAgac(), 1);
-        System.out.println("Agac:" + sozluk.getAgac().getKokDugumu().getStringRep(2));
+        out.println("Agac:" + sozluk.getAgac().getKokDugumu().getStringRep(2));
         List list = bulucu.getAdayKokler("deniz");
         TestUtils.printList(list);
-        System.out.println("Tamamlanma s�resi: " + TimeTracker.stopClock("x"));
+        out.println("Tamamlanma s�resi: " + TimeTracker.stopClock("x"));
     }
 
     @Test
@@ -85,7 +86,7 @@ public class TestKesinKokBulucu extends TemelTest {
         sozluk = new AgacSozluk(okuyucu, alfabe, dilBilgisi.kokOzelDurumlari());
         bulucu = new KesinKokAdayiBulucu(sozluk.getAgac());
         List list = bulucu.getAdayKokler("etkiler");
-        System.out.println(list);
+        out.println(list);
     }
 
 
