@@ -29,23 +29,21 @@ package net.zemberek.yapi.ek;
 
 import net.zemberek.yapi.TurkceHarf;
 
-import java.io.Serializable;
-
 /**
  * uretim bilesen sinifi, uretim kural kelimesindeki bilesenleri temsil eder.
  * degistirilemez, thread safe.
  */
 public class EkUretimBileseni {
 
-    private final UretimKurali kural;
+    private final EkUretimKurali kural;
     private final TurkceHarf harf;
 
-    public EkUretimBileseni(UretimKurali kural, TurkceHarf harf) {
+    public EkUretimBileseni(EkUretimKurali kural, TurkceHarf harf) {
         this.kural = kural;
         this.harf = harf;
     }
 
-    public UretimKurali kural() {
+    public EkUretimKurali kural() {
         return kural;
     }
 
