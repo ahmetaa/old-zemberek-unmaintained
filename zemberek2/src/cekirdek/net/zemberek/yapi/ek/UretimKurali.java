@@ -27,6 +27,10 @@
 
 package net.zemberek.yapi.ek;
 
+/**
+ * Turk dilleri icin cesitli uretim kurallarini belirler. Bazi kurallar sadece belli dillerde
+ * kullanilir.
+ */
 public enum UretimKurali {
 
     SESLI_AE,
