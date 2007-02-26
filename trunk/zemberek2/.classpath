@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src/tr"/>
+	<classpathentry kind="src" path="src/demo"/>
+	<classpathentry kind="src" path="src/az"/>
 	<classpathentry kind="src" path="src/tm"/>
 	<classpathentry kind="src" path="test/cekirdek"/>
 	<classpathentry kind="src" path="src/cekirdek"/>
