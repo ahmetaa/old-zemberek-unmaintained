@@ -18,6 +18,10 @@ public class ZemberekDenetlemeAdayi {
 		zemberek = new Zemberek(dilAyarlari);
 	}
 	
+	public ZemberekDenetlemeAdayi(String dilKodu) {
+		zemberek = ZemberekFactory.getZemberek(dilKodu);
+	}
+	
 	/* net.zemberek.erisim.Zemberek için aday metod */
 	public List<DenetlemeHatasi> metinDenetle(String text) {
 		Hashtable<String, Integer> sonPozisyonlar = new Hashtable<String, Integer>();
@@ -39,7 +43,8 @@ public class ZemberekDenetlemeAdayi {
 	}
 
 	public static void main(String[] args) {
-		ZemberekDenetlemeAdayi zemberek = new ZemberekDenetlemeAdayi(new TurkiyeTurkcesi());
+		//ZemberekDenetlemeAdayi zemberek = new ZemberekDenetlemeAdayi(new TurkiyeTurkcesi());
+		ZemberekDenetlemeAdayi zemberek = new ZemberekDenetlemeAdayi("tr");
 		List<DenetlemeHatasi> hatalar = zemberek.metinDenetle("yalnış yanlış doğru yanlız yalnız htalı hatalı değil");
 		for(DenetlemeHatasi hata: hatalar) {
 			System.out.println("Hatalı kelime: "+hata.getHatalikelime());
