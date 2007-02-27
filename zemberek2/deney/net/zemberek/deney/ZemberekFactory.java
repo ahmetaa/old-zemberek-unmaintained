@@ -6,7 +6,7 @@ import net.zemberek.erisim.Zemberek;
 import net.zemberek.tm.yapi.Turkmence;
 import net.zemberek.tr.yapi.TurkiyeTurkcesi;
 
-public class ZemberekFactory {
+public abstract class ZemberekFactory {
 
 	private static Hashtable<String, Zemberek> zemberekNesneleri;
 	static {
