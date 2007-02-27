@@ -4,10 +4,18 @@
         <listener-class>com.sun.xml.ws.transport.http.servlet.WSServletContextListener</listener-class>
     </listener>
     <servlet>
+        <servlet-name>GoogleSpell</servlet-name>
+        <servlet-class>net.zemberek.www.GoogleSpell</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>ZemberekWebService</servlet-name>
         <servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
         </servlet>
+    <servlet-mapping>
+        <servlet-name>GoogleSpell</servlet-name>
+        <url-pattern>/GoogleSpell</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ZemberekWebService</servlet-name>
         <url-pattern>/ZemberekWebService</url-pattern>
