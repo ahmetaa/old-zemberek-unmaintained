@@ -131,21 +131,15 @@
         <tstamp>
             <format property="release" pattern="-dMMMyy" locale="tr"/>
         </tstamp>
-        <jar jarfile="${dist.dir}/${isim}-${surum}.jar"
-            basedir="${build.java}"
-        	excludes="net/zemberekserver/server/dbus/ZemberekDbusInterface.class">
+        <jar jarfile="${dist.dir}/${isim}-${surum}.jar" basedir="${build.java}">
             <!-- executable jar icin gerekli class va paket bilgileri-->
             <manifest>
                 <attribute name="Built-By" value="zemberek team"/>
                 <attribute name="Main-Class"
                     value="net.zemberekserver.server.ZemberekServer"/>
                 <attribute name="Class-Path"
-                    value=". lib/mina-core-1.1pre.jar lib/slf4j-nop.jar lib/zemberek-cekirdek-2.0.jar lib/zemberek-tr-2.0.jar lib/dbus.jar lib/unix.jar  ${isim}_dbus-${surum}.jar"/>
+                    value=". lib/mina-core-1.1pre.jar lib/slf4j-nop.jar lib/zemberek-cekirdek-2.0.jar lib/zemberek-tr-2.0.jar lib/dbus.jar lib/unix.jar"/>
             </manifest>
-        </jar>
-        <jar jarfile="${dist.dir}/${isim}_dbus-${surum}.jar"
-        	basedir="${build.java}"
-        	includes="net/zemberekserver/server/dbus/ZemberekDbusInterface.class">
         </jar>
         <!-- create the zip file with the same naming scheme -->
         <zip destfile="${dist.dir}/${isim}-${surum}.zip"
