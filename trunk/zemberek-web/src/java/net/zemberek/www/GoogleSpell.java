@@ -33,13 +33,6 @@ public class GoogleSpell extends HttpServlet {
         
         PrintWriter out = response.getWriter();
         try {
-            /*
-            String lang=request.getParameter("lang");
-            if(lang == null)
-                System.out.println("lang == null");
-            
-            Zemberek zemberek = ZemberekFactory.getZemberek(lang);
-             */
             Zemberek zemberek = new Zemberek(new TurkiyeTurkcesi());
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder domparser = factory.newDocumentBuilder();
@@ -50,8 +43,6 @@ public class GoogleSpell extends HttpServlet {
             NamedNodeMap map = root.getAttributes();
             String textalreadyclipped = ((Attr)map.getNamedItem("textalreadyclipped")).getValue();
             String metin = root.getFirstChild().getTextContent();
-            //request.ge
-            System.out.println("Metin: "+metin);
             Hashtable<String, Integer> sonPozisyonlar = new Hashtable<String, Integer>();
             StringTokenizer tok = new StringTokenizer(metin, "!'#%&/()=?-_:.,;\"\r\n\t ");
             while (tok.hasMoreTokens()) {
@@ -72,7 +63,6 @@ public class GoogleSpell extends HttpServlet {
                     for(int i=0;i<oneriler.length-1;i++)
                         oneriStr+=(oneriler[i]+"\t");
                     oneriStr+=oneriler[oneriler.length-1];
-                    System.out.println("Hatalı: "+kelime+" Oneriler: "+oneriStr);
                     error.setTextContent(oneriStr);
                     result.appendChild(error);
                 }
@@ -88,8 +78,6 @@ public class GoogleSpell extends HttpServlet {
             format.setLineSeparator("\r\n");
             XMLSerializer serializer = new XMLSerializer(out,format);
             serializer.serialize(docOut);
-            XMLSerializer serializer2 = new XMLSerializer(System.out,format);
-            serializer2.serialize(docOut);
         } catch(Exception e) {
             out.println("<?xml version=\"1.0\" encoding=\"UTF-8\"?><spellresult error=\"1\"/>");
             e.printStackTrace();
