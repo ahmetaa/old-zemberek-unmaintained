@@ -21,6 +21,7 @@
  *  the Initial Developer. All Rights Reserved.
  *
  *  Contributor(s):
+ *   Serkan Kaba
  *
  *  ***** END LICENSE BLOCK *****
  */
@@ -102,7 +103,7 @@ public class TestHeceleyici extends TemelTest {
 
     @Test
     public void testHeceIndeks2() {
-        String kelime = "türklerin";
+        String kelime = "tÃ¼rklerin";
         int[] sonuclar = heceIslemleri.heceIndeksleriniBul(kelime);
         Arrays.toString(sonuclar);
         assertNotNull(sonuclar);
@@ -112,7 +113,7 @@ public class TestHeceleyici extends TemelTest {
     }
 
     public void testHeceIndeks3() {
-        String kelime = "türkülerin";
+        String kelime = "tï¿½rkï¿½lerin";
         int[] sonuclar = heceIslemleri.heceIndeksleriniBul(kelime);
         Arrays.toString(sonuclar);
         assertNotNull(sonuclar);

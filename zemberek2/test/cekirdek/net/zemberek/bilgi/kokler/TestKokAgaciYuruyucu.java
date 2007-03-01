@@ -21,11 +21,14 @@
  *  the Initial Developer. All Rights Reserved.
  *
  *  Contributor(s):
+ *   Serkan Kaba
  *
  *  ***** END LICENSE BLOCK *****
  */
 
 package net.zemberek.bilgi.kokler;
+
+import org.junit.Test;
 
 import net.zemberek.TemelTest;
 import net.zemberek.araclar.IstatistikAraclari;
@@ -37,7 +40,7 @@ import net.zemberek.araclar.TimeTracker;
  */
 public class TestKokAgaciYuruyucu extends TemelTest {
 
-
+  @Test
   public void testYuruyucu()
   {
 	  AgacSozluk sozluk = (AgacSozluk)dilBilgisi.kokler();
