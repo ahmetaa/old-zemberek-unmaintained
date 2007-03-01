@@ -21,6 +21,7 @@
  *  the Initial Developer. All Rights Reserved.
  *
  *  Contributor(s):
+ *   Serkan Kaba
  *
  *  ***** END LICENSE BLOCK *****
  */
@@ -54,7 +55,7 @@ public class TestTurkishTokenStream {
             list.add(s);
         }
         assertEquals(4, list.size());
-        assertTrue(((String) list.get(0)).equals("ahmet"));
+        assertTrue(((String) list.get(0)).equals("Ahmet"));
     }
 
     @Test
