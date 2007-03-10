@@ -56,7 +56,6 @@ public class Zemberek {
     private KelimeCozumleyici cozumleyici;
     private KelimeUretici kelimeUretici;
     private KelimeCozumleyici asciiToleransliCozumleyici;
-    private HataliKodlamaTemizleyici temizleyici;
     private TurkceYaziTesti turkceTest;
     private OneriUretici oneriUretici;
     private AsciiDonusturucu asciiDonusturucu;
@@ -255,7 +254,7 @@ public class Zemberek {
      *         TR:yazilan kelimenin olasi turkce karakter iceren halleri. String[] seklinde.
      */
     public String[] asciidenTurkceye(String giris) {
-        Kelime[] kelimeler = asciiCozumle(giris);
+        Kelime[] kelimeler = asciiCozumle(giris, CozumlemeStratejisi.TUM_KOKLER);
         // cift olusumlari temizle.
         List<String> olusumlar = new ArrayList(kelimeler.length);
         for (Kelime kelime : kelimeler) {
