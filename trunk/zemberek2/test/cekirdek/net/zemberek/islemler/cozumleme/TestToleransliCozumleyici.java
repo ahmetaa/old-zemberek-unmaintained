@@ -49,7 +49,7 @@ import java.util.HashSet;
  */
 public class TestToleransliCozumleyici extends TemelTest {
 
-    static KelimeCozumleyici cozumleyici;
+    static ToleransliCozumleyici cozumleyici;
     static KokOkuyucu kokOkuyucu;
     static KokAdayiBulucu kokBulucu = null;
 

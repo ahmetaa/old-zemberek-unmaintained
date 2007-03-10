@@ -180,7 +180,7 @@ public class Zemberek {
     }
 
     /**
-     * performs morphological parsing of the word. Returns the possible solutions as an Kelime array.
+     * performs morphological parsing of the word. Returns the possible solutions as a Kelime array.
      * Kelime object contains the root and a suffix list. kok() method can be used for accessing the
      * root. ekler() can be used for accessing the Ek object List.
      * <p/>
@@ -194,7 +194,27 @@ public class Zemberek {
      * @see net.zemberek.yapi.Kelime
      */
     public Kelime[] kelimeCozumle(String giris) {
-        return cozumleyici.cozumle(giris);
+        return cozumleyici.cozumle(giris, CozumlemeStratejisi.TUM_KOK_VE_EKLER);
+    }
+
+    /**
+     * performs morphological parsing of the word. Returns the possible solution(s) as a Kelime array.
+     * Kelime object contains the root and a suffix list. kok() method can be used for accessing the
+     * root. ekler() can be used for accessing the Ek object List.
+     * <p/>
+     * <p/>
+     * giris kelimesinin olasi tum (kok+ekler) cozumlemelerini dondurur.
+     *
+     * @param giris giris kelimesi
+     * @param strateji EN:defines the parsing strategy.
+     *                 TR:cozumleme stratejisini belirler.
+     * @return Kelime sinifi cinsinden dizi. Eger dizinin boyu 0 ise kelime cozumlenemedi demektir.
+     *         Kelime kokune erisim icin kok(), eklere erisim icin Ek cinsinden nesne listesi donduren
+     *         ekler() metodu kullanilir.
+     * @see net.zemberek.yapi.Kelime
+     */
+    public Kelime[] kelimeCozumle(String giris, CozumlemeStratejisi strateji) {
+        return cozumleyici.cozumle(giris, strateji);
     }
 
     /**
@@ -212,7 +232,13 @@ public class Zemberek {
      * @see net.zemberek.yapi.Kelime
      */
     public Kelime[] asciiCozumle(String giris) {
-        Kelime[] sonuclar = asciiToleransliCozumleyici.cozumle(giris);
+        Kelime[] sonuclar = asciiToleransliCozumleyici.cozumle(giris, CozumlemeStratejisi.TUM_KOK_VE_EKLER);
+        Arrays.sort(sonuclar, new KelimeKokFrekansKiyaslayici());
+        return sonuclar;
+    }
+
+    public Kelime[] asciiCozumle(String giris, CozumlemeStratejisi strateji) {
+        Kelime[] sonuclar = asciiToleransliCozumleyici.cozumle(giris, strateji);
         Arrays.sort(sonuclar, new KelimeKokFrekansKiyaslayici());
         return sonuclar;
     }
@@ -332,7 +358,7 @@ public class Zemberek {
      */
     public List<String[]> kelimeAyristir(String kelime) {
         Set<String[]> sonuclar = new HashSet();
-        Kelime[] cozumler = cozumleyici.cozumle(kelime);
+        Kelime[] cozumler = cozumleyici.cozumle(kelime, CozumlemeStratejisi.TUM_KOK_VE_EKLER);
         for (Kelime kel : cozumler) {
             sonuclar.add(kelimeUretici.ayristir(kel));
         }

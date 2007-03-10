@@ -28,6 +28,7 @@
 package net.zemberek.islemler;
 
 import net.zemberek.islemler.cozumleme.KelimeCozumleyici;
+import net.zemberek.islemler.cozumleme.CozumlemeStratejisi;
 import net.zemberek.yapi.Alfabe;
 import net.zemberek.yapi.Kok;
 import net.zemberek.yapi.Kelime;
@@ -70,7 +71,7 @@ public class KelimeTabanliKokBulucu implements KokBulucu {
     }
 
     private Kelime[] cozumleVeSirala(String giris) {
-        Kelime[] cozumler = cozumleyici.cozumle(giris);
+        Kelime[] cozumler = cozumleyici.cozumle(giris, CozumlemeStratejisi.TUM_KOKLER);
         Arrays.sort(cozumler, new KelimeKokFrekansKiyaslayici());
         return cozumler;
     }

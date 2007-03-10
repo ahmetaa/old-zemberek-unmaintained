@@ -40,7 +40,9 @@ import java.util.logging.Logger;
 
 /**
  */
-public class ToleransliCozumleyici implements KelimeCozumleyici {
+public class ToleransliCozumleyici {
+
+    public static final Kelime[] BOS_KELIME_DIZISI = new Kelime[0];    
 
     public static final int TOLERANS = 1;
     private static Logger log = Logger.getLogger("ToleransliCozumleyici.class");
@@ -57,10 +59,6 @@ public class ToleransliCozumleyici implements KelimeCozumleyici {
         this.ekYonetici = yonetici;
         this.alfabe = alfabe;
         this.yardimci = yardimci;
-    }
-
-    public boolean denetle(String strGiris) {
-        return false;
     }
 
     public Kelime[] cozumle(String strGiris) {

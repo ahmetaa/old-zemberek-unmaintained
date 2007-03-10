@@ -38,6 +38,7 @@ import net.zemberek.araclar.TimeTracker;
 import net.zemberek.araclar.turkce.TurkceMetinOkuyucu;
 import net.zemberek.erisim.Zemberek;
 import net.zemberek.islemler.cozumleme.KelimeCozumleyici;
+import net.zemberek.islemler.cozumleme.CozumlemeStratejisi;
 import net.zemberek.yapi.DilAyarlari;
 import net.zemberek.yapi.DilBilgisi;
 import net.zemberek.yapi.Kelime;
@@ -71,7 +72,7 @@ public class IstatistikToplayici {
             		//System.out.print(".");
             		if (i % 20000 == 0) System.out.println( i );
             	}
-                Kelime[] kelimeler = cozumleyici.cozumle(tumKelimeler[i]);
+                Kelime[] kelimeler = cozumleyici.cozumle(tumKelimeler[i], CozumlemeStratejisi.TUM_KOK_VE_EKLER);
                 if(kelimeler == null) continue;
                 toplamKelime++;
                 istatistikler.hepsiniGuncelle(tumKelimeler[i], kelimeler);
@@ -96,8 +97,7 @@ public class IstatistikToplayici {
         File dir = new File(yol);
         File[] dosyalar = dir.listFiles(new FileFilter() {
             public boolean accept(File pathname) {
-                if (pathname.getName().endsWith(".txt")) return true;
-                return false;
+                return pathname.getName().endsWith(".txt");
             }
         });
 
