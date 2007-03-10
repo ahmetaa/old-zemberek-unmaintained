@@ -44,6 +44,8 @@ import java.util.logging.Logger;
  */
 public class StandartCozumleyici implements KelimeCozumleyici {
 
+    public static final Kelime[] BOS_KELIME_DIZISI = new Kelime[0];    
+
     private static Logger log = Logger.getLogger(StandartCozumleyici.class.getName());
     private final KokAdayiBulucu kokBulucu;
     private final HarfDizisiKiyaslayici harfDizisiKiyaslayici;
@@ -65,11 +67,7 @@ public class StandartCozumleyici implements KelimeCozumleyici {
 
 
     public boolean denetle(String strGiris) {
-        return yardimci.cepteAra(strGiris) || (cozumle(strGiris, false).length == 1);
-    }
-
-    public Kelime[] cozumle(String strGiris) {
-        return cozumle(strGiris, true);
+        return yardimci.cepteAra(strGiris) || (cozumle(strGiris, CozumlemeStratejisi.TEK_KOK).length == 1);
     }
 
     /**
@@ -79,10 +77,11 @@ public class StandartCozumleyici implements KelimeCozumleyici {
      * dondurur.bu yontem hiz gerektiren denetleme islemi icin kullanilir.
      *
      * @param strGiris
-     * @param hepsiniCozumle
+     * @param strateji: cozumnleme isleminin ne zaman sona erecegi bu bilesenin degerine gore
+     * anlasilir.
      * @return tek ya da coklu kelime dizisi.
      */
-    public Kelime[] cozumle(String strGiris, boolean hepsiniCozumle) {
+    public Kelime[] cozumle(String strGiris, CozumlemeStratejisi strateji) {
 
         //on islemler
         String strIslenmis = alfabe.ayikla(strGiris);
@@ -111,17 +110,17 @@ public class StandartCozumleyici implements KelimeCozumleyici {
             if (harfDizisiKiyaslayici.kiyasla(kokDizi, girisDizi)) {
                 Kelime kelime = kelimeUret(kok, kokDizi);
                 if (yardimci.kelimeBicimiDenetle(kelime, strGiris)) {
-                    if (!hepsiniCozumle) {
+                    if (strateji==CozumlemeStratejisi.TEK_KOK) {
                         return new Kelime[] {kelime};
                     } else
                         cozumler.add(kelime);
                 }
             } else {
                 icerikDegisti = yardimci.kokGirisDegismiVarsaUygula(kok, kokDizi, girisDizi);
-                List<Kelime> sonuclar = coz(kok, kokDizi, girisDizi, hepsiniCozumle);
+                List<Kelime> sonuclar = coz(kok, kokDizi, girisDizi, strateji);
                 for (Kelime sonuc : sonuclar) {
                     if (yardimci.kelimeBicimiDenetle(sonuc, strGiris)) {
-                        if (!hepsiniCozumle) {
+                        if (strateji==CozumlemeStratejisi.TEK_KOK) {
                             return new Kelime[] {sonuc};
                         }
                         cozumler.add(sonuc);
@@ -138,7 +137,7 @@ public class StandartCozumleyici implements KelimeCozumleyici {
         return kelime;
     }
 
-    private List<Kelime> coz(Kok kok, HarfDizisi kokDizi, HarfDizisi giris, boolean tumunuCozumle) {
+    private List<Kelime> coz(Kok kok, HarfDizisi kokDizi, HarfDizisi giris, CozumlemeStratejisi strateji) {
 
         Kelime kelime = kelimeUret(kok, kokDizi);
         BasitKelimeYigini kelimeYigini = new BasitKelimeYigini();
@@ -195,7 +194,7 @@ public class StandartCozumleyici implements KelimeCozumleyici {
                 bulunanEk = incelenenEk;
 
                 if (harfDizisiKiyaslayici.kiyasla(kelime.icerik(), giris) && !incelenenEk.sonEkOlamazMi()) {
-                    if (!tumunuCozumle) {
+                    if (strateji!=CozumlemeStratejisi.TUM_KOK_VE_EKLER) {
                         uygunSonuclar = new ArrayList(1);
                         uygunSonuclar.add(kelime);
                         return uygunSonuclar;

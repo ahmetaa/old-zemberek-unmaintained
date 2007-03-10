@@ -27,15 +27,14 @@
 
 package net.zemberek.islemler.cozumleme;
 
-import net.zemberek.yapi.Kelime;
-
-import java.util.List;
-
 /**
+ * Bu enumerasyon sinifi cozumleme islemi stratejisini belirler.
  */
-public interface KelimeCozumleyici {
-
-    public Kelime[] cozumle(String strGiris, CozumlemeStratejisi strateji);
-
-    public boolean denetle(String strGiris);
+public enum CozumlemeStratejisi {
+    /** denetleme isleminde kullanilir. */
+    TEK_KOK,
+    /** kok bulma isleminde kullanilir. tum olasi kokler icin cozumleri bul. */
+    TUM_KOKLER,
+    /** butun olasi kokler ve her kok icin tum olasi ekler icin cozumleme yap. */
+    TUM_KOK_VE_EKLER
 }

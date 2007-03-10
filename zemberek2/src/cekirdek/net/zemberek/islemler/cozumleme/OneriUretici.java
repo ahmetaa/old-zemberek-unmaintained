@@ -75,7 +75,7 @@ public class OneriUretici {
         //Deasciifierden bir şey var mı?
         Kelime[] asciiTurkceOneriler = new Kelime[0];
         if (ayarlar.oneriDeasciifierKullan())
-            asciiTurkceOneriler = asciiToleransliCozumleyici.cozumle(kelime);
+            asciiTurkceOneriler = asciiToleransliCozumleyici.cozumle(kelime, CozumlemeStratejisi.TUM_KOKLER);
 
         Set<String> ayriYazimOnerileri = Collections.EMPTY_SET;
 
@@ -87,14 +87,14 @@ public class OneriUretici {
                 if (cozumleyici.denetle(s1) && cozumleyici.denetle(s2)) {
 
                     Set<String> set1 = new HashSet();
-                    Kelime[] kelimeler1 = cozumleyici.cozumle(s1);
+                    Kelime[] kelimeler1 = cozumleyici.cozumle(s1, CozumlemeStratejisi.TUM_KOKLER);
                     for (Kelime kelime1 : kelimeler1) {
                         yardimci.kelimeBicimlendir(kelime1);
                         set1.add(kelime1.icerik().toString());
                     }
 
                     Set<String> set2 = new HashSet();
-                    Kelime[] kelimeler2 = cozumleyici.cozumle(s2);
+                    Kelime[] kelimeler2 = cozumleyici.cozumle(s2, CozumlemeStratejisi.TUM_KOKLER);
                     for (Kelime kelime1 : kelimeler2) {
                         yardimci.kelimeBicimlendir(kelime1);
                         set2.add(kelime1.icerik().toString());
