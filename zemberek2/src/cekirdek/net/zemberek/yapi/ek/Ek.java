@@ -41,7 +41,7 @@ import java.io.Serializable;
  * User: aakin
  * Date: Feb 15, 2004
  */
-public class Ek implements Serializable {
+public class Ek {
 
     //bu ekten sonra elebilecek eklerin listesi.
     private List<Ek> ardisilEkler = new ArrayList<Ek>();

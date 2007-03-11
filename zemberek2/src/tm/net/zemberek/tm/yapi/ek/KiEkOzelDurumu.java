@@ -53,6 +53,7 @@ public class KiEkOzelDurumu extends EkOzelDurumu {
         return null;
     }
 
+    @Override
     public HarfDizisi olusumIcinUret(Kelime kelime, Ek sonrakiEk) {
         if (sonrakiEk.ad().equals(TurkmenceEkAdlari.AT_YERGORKEZYAN_KI))
             return ekUretici.olusumIcinEkUret(kelime.icerik(), sonrakiEk, uretimBilesenleri);

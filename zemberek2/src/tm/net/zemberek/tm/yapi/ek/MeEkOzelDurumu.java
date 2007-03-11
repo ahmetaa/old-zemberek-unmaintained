@@ -60,6 +60,7 @@ public class MeEkOzelDurumu extends EkOzelDurumu {
         return null;
     }
 
+    @Override
     public HarfDizisi olusumIcinUret(Kelime kelime, Ek sonrakiEk) {
         if ((sonrakiEk.ad().equals(TurkmenceEkAdlari.IMEK_ZAMAN_KEN)) ||
                 (sonrakiEk.ad().equals(TurkmenceEkAdlari.ISLIK_ISLEG_E)))

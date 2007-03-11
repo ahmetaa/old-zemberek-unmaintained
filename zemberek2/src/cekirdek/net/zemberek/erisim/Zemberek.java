@@ -62,6 +62,7 @@ public class Zemberek {
     private HeceIslemleri heceIslemleri;
     private ZemberekAyarlari ayarlar;
     private DilBilgisi dilBilgisi;
+    private DenetlemeCebi denetlemeCebi; 
 
     /**
      * Default constructor.
@@ -128,6 +129,8 @@ public class Zemberek {
         heceIslemleri = new HeceIslemleri(dilBilgisi.alfabe(), dilBilgisi.heceBulucu());
 
         kelimeUretici = new KelimeUretici(dilBilgisi.alfabe(), dilBilgisi.cozumlemeYardimcisi());
+
+        denetlemeCebi = dilBilgisi.denetlemeCebi();
     }
 
     /**
@@ -168,14 +171,16 @@ public class Zemberek {
     /**
      * performs spell checking
      * <p/>
-     * girisin imla denetimini yapar.
+     * girisin imla denetimini yapar. Eger varsa denetleme cebini kullanir.
      *
      * @param giris giris kelimesi
      * @return EN: true:spell checking successfull, false otherwise.
      *         TR: true:imla denetimi basarili. false: Denetim basarisiz.
      */
     public boolean kelimeDenetle(String giris) {
-        return cozumleyici.denetle(giris);
+        if(denetlemeCebi!=null)
+           return denetlemeCebi.kontrol(giris) || cozumleyici.cozumlenebilir(giris);
+        else return cozumleyici.cozumlenebilir(giris);
     }
 
     /**

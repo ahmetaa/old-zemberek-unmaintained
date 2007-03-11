@@ -43,14 +43,9 @@ import java.util.List;
 public class TurkceCozumlemeYardimcisi implements CozumlemeYardimcisi {
 
     private Alfabe alfabe;
-  //  private EkYonetici ekYonetici;
-    private DenetlemeCebi cep;
 
-
-    public TurkceCozumlemeYardimcisi(Alfabe alfabe,
-                                     DenetlemeCebi cep) {
+    public TurkceCozumlemeYardimcisi(Alfabe alfabe) {
         this.alfabe = alfabe;
-        this.cep = cep;
     }
 
     public void kelimeBicimlendir(Kelime kelime) {
@@ -163,9 +158,5 @@ public class TurkceCozumlemeYardimcisi implements CozumlemeYardimcisi {
             return true;
         }
         return false;
-    }
-
-    public boolean cepteAra(String str) {       
-        return cep != null && cep.kontrol(str);
     }
 }

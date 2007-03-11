@@ -57,6 +57,7 @@ public class GenisZamanEkOzelDurumuTr extends EkOzelDurumu {
             return null;
     }
 
+    @Override
     public HarfDizisi olusumIcinUret(Kelime kelime, Ek sonrakiEk) {
         return cozumlemeIcinUret(kelime, null, null);
     }

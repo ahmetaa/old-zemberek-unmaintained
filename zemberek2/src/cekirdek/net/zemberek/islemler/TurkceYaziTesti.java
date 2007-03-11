@@ -58,9 +58,9 @@ public class TurkceYaziTesti {
         for (int i = 0; i < analizDizisi.size(); i++) {
             YaziBirimi birim = (YaziBirimi) analizDizisi.get(i);
             if (birim.tip == YaziBirimiTipi.KELIME) {
-                if (cozumleyici.denetle(birim.icerik))
+                if (cozumleyici.cozumlenebilir(birim.icerik))
                     cozulenler++;
-                else if (asciiCozumleyici.denetle(birim.icerik))
+                else if (asciiCozumleyici.cozumlenebilir(birim.icerik))
                     asciiCozulenler++;
                 else
                     cozulemeyenler++;

@@ -84,7 +84,7 @@ public class OneriUretici {
             for (int i = 1; i < kelime.length(); i++) {
                 String s1 = kelime.substring(0, i);
                 String s2 = kelime.substring(i, kelime.length());
-                if (cozumleyici.denetle(s1) && cozumleyici.denetle(s2)) {
+                if (cozumleyici.cozumlenebilir(s1) && cozumleyici.cozumlenebilir(s2)) {
 
                     Set<String> set1 = new HashSet();
                     Kelime[] kelimeler1 = cozumleyici.cozumle(s1, CozumlemeStratejisi.TUM_KOKLER);

@@ -58,6 +58,7 @@ public class TurkceEkOzelDurumUretici extends TemelEkOzelDurumUretici {
         }
     }
 
+    @Override
     public EkOzelDurumu uret(String ad) {
         EkOzelDurumu oz = super.uret(ad);
         if (oz != null)

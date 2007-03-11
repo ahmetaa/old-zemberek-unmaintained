@@ -70,7 +70,7 @@ public class TestOzelDurumCozumleme extends TemelTest {
     public void testCozumleDogrular() throws IOException {
         List<String> dogrular = TestUtils.satirlariOku("kaynaklar/tr/test/ozeldurum-hepsi-dogru.txt");
         for (String s: dogrular){
-            assertTrue("cozumleme hatasi:" + s, cozumleyici.denetle(s));
+            assertTrue("cozumleme hatasi:" + s, cozumleyici.cozumlenebilir(s));
         }
     }
 
@@ -78,7 +78,7 @@ public class TestOzelDurumCozumleme extends TemelTest {
     public void testCozumleYanlislar() throws IOException {
         List<String> yanlislar = TestUtils.satirlariOku("kaynaklar/tr/test/ozeldurum-hepsi-yanlis.txt");
         for (String s : yanlislar) {
-            assertTrue("cozumleme hatasi:" + s, !cozumleyici.denetle(s));
+            assertTrue("cozumleme hatasi:" + s, !cozumleyici.cozumlenebilir(s));
         }
     }
 }

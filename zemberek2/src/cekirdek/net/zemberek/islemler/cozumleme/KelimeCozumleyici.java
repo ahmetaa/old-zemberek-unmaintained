@@ -37,5 +37,6 @@ public interface KelimeCozumleyici {
 
     public Kelime[] cozumle(String strGiris, CozumlemeStratejisi strateji);
 
-    public boolean denetle(String strGiris);
+    public boolean cozumlenebilir(String giris);
+
 }
