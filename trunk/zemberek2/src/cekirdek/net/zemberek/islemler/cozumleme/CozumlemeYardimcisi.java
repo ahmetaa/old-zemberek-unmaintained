@@ -67,11 +67,4 @@ public interface CozumlemeYardimcisi {
      */
     boolean kokGirisDegismiVarsaUygula(Kok kok, HarfDizisi kokDizi, HarfDizisi girisDizi);
 
-    /**
-     * Eger dil icin denetleme cebi olusturulmussa cepte arama islemi yapilir.
-     * @param str
-     * @return true eger String cepte yer aliyorsa.
-     */
-    boolean cepteAra(String str);
-
 }

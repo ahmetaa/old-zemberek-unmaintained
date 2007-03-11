@@ -221,9 +221,9 @@ public class TurkceDilBilgisi implements DilBilgisi {
         return ozelDurumBilgisi;
     }
 
-    public DenetlemeCebi cep() {
+    public DenetlemeCebi denetlemeCebi() {
         if (!cepKullan) {
-            logger.info("cep kullanilmayacak.");
+            logger.info("denetlemeCebi kullanilmayacak.");
             return null;
         }
 
@@ -233,7 +233,7 @@ public class TurkceDilBilgisi implements DilBilgisi {
             try {
                 cep = new BasitDenetlemeCebi(cepDosyaAdi);
             } catch (IOException e) {
-                logger.warning("cep dosyasina (" + cepDosyaAdi + ") erisilemiyor. sistem cep kullanmayacak.");
+                logger.warning("denetlemeCebi dosyasina (" + cepDosyaAdi + ") erisilemiyor. sistem denetlemeCebi kullanmayacak.");
                 cep = null;
             }
         }
@@ -267,13 +267,10 @@ public class TurkceDilBilgisi implements DilBilgisi {
             return yardimci;
         } else {
             alfabe();
-            cep();
             try {
                 Class clazz = dilAyarlari.cozumlemeYardimcisiSinifi();
-                Constructor c = clazz.getConstructor(
-                        Alfabe.class,
-                        DenetlemeCebi.class);
-                yardimci = (CozumlemeYardimcisi) c.newInstance(alfabe, cep);
+                Constructor c = clazz.getConstructor(Alfabe.class);
+                yardimci = (CozumlemeYardimcisi) c.newInstance(alfabe);
             } catch (Exception e) {
                 logger.severe("cozumleme yardimcisi nesnesi uretilemiyor.");
                 e.printStackTrace();

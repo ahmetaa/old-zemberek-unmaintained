@@ -64,11 +64,11 @@ public class TestKelimeCozumleyici extends TemelTest {
     public void testDenetleDogruYanlis() throws IOException {
         List<String> dogrular = TestUtils.satirlariOku("kaynaklar/tr/test/hepsi-dogru.txt");
         for (String s : dogrular) {
-            assertTrue("denetleme hatasi:" + s, cozumleyici.denetle(s));
+            assertTrue("denetleme hatasi:" + s, cozumleyici.cozumlenebilir(s));
         }
         List<String> yanlislar = TestUtils.satirlariOku("kaynaklar/tr/test/hepsi-yanlis.txt");
         for (String s : yanlislar) {
-            assertTrue("denetleme hatasi:" + s, !cozumleyici.denetle(s));
+            assertTrue("denetleme hatasi:" + s, !cozumleyici.cozumlenebilir(s));
         }
     }
 

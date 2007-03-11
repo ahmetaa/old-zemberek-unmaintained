@@ -78,6 +78,7 @@ public class EdilgenOzelDurumu extends EkOzelDurumu {
         return sonuc;
     }
 
+    @Override
     public HarfDizisi olusumIcinUret(Kelime kelime, Ek sonrakiEk){
        return cozumlemeIcinUret(kelime, null, null);
     }

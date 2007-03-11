@@ -55,8 +55,8 @@ public class TestCozumlemePerformans extends TestKelimeCozumleyici {
         int vuru = 0;
         //IstatistikXMLIsleyici ist = new IstatistikXMLIsleyici();
         //ist.xmlDosyaCozumle("kaynaklar/kb/stats.jar");
-        //HashMap cep = ist.getKelimeCebi();
-        //System.out.println("Cep Boyu: " + cep.size());
+        //HashMap denetlemeCebi = ist.getKelimeCebi();
+        //System.out.println("Cep Boyu: " + denetlemeCebi.size());
         for(int j=0; j<3; j++) {
         TimeTracker.startClock("x");
         int dogrular = 0, yanlislar = 0;
@@ -64,13 +64,13 @@ public class TestCozumlemePerformans extends TestKelimeCozumleyici {
         for (int i = 0; i < kelimeler.size(); i++) {
 
             String kelime = (String) kelimeler.get(i);
-/*            if(cep.containsKey(kelime))
+/*            if(denetlemeCebi.containsKey(kelime))
             {
                vuru++;
                dogrular++;
             } else*/
 
-            if(cozumleyici.denetle(kelime)) {
+            if(cozumleyici.cozumlenebilir(kelime)) {
                   //System.out.println(Arrays.toString(heceIslemleri.hecele(kelime)));
                   dogrular++;
             } else {

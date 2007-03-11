@@ -42,12 +42,9 @@ import net.zemberek.yapi.Kok;
 public class TurkmenceCozumlemeYardimcisi implements CozumlemeYardimcisi {
 
     private Alfabe alfabe;
-    private DenetlemeCebi cep;
 
-    public TurkmenceCozumlemeYardimcisi(Alfabe alfabe,
-                                        DenetlemeCebi cep) {
+    public TurkmenceCozumlemeYardimcisi(Alfabe alfabe) {
         this.alfabe = alfabe;
-        this.cep = cep;
     }
 
     public void kelimeBicimlendir(Kelime kelime) {
@@ -61,7 +58,4 @@ public class TurkmenceCozumlemeYardimcisi implements CozumlemeYardimcisi {
         return false;
     }
 
-    public boolean cepteAra(String str) {
-        return false;
-    }
 }

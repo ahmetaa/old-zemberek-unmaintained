@@ -47,8 +47,7 @@ public class TestCozumlemeYardimcisi extends TemelTest {
     @Test
     public void testKelimeBicimlendir() {
         CozumlemeYardimcisi yardimci = new TurkceCozumlemeYardimcisi(
-                alfabe,
-                null);
+                alfabe);
         Kok kok = new Kok("tdk", KelimeTipi.KISALTMA);
         kok.setAsil("TDK");
         kok.setKisaltmaSonSeslisi('e');

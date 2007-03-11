@@ -65,11 +65,6 @@ public class StandartCozumleyici implements KelimeCozumleyici {
         this.yardimci = yardimci;
     }
 
-
-    public boolean denetle(String strGiris) {
-        return yardimci.cepteAra(strGiris) || (cozumle(strGiris, CozumlemeStratejisi.TEK_KOK).length == 1);
-    }
-
     /**
      * eger hepsiniCozumle=true ise dogru olabilecek tum kok ve ek kombinasyonlarini
      * dondurur.
@@ -129,6 +124,10 @@ public class StandartCozumleyici implements KelimeCozumleyici {
             }
         }
         return cozumler.toArray(new Kelime[cozumler.size()]);
+    }
+
+    public boolean cozumlenebilir(String giris) {
+        return cozumle(giris, CozumlemeStratejisi.TEK_KOK).length == 1;
     }
 
     private Kelime kelimeUret(Kok kok, HarfDizisi dizi) {

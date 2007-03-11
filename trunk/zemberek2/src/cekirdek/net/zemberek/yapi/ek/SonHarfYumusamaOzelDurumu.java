@@ -50,6 +50,7 @@ public class SonHarfYumusamaOzelDurumu extends EkOzelDurumu {
         return null;
     }
 
+    @Override
     public HarfDizisi olusumIcinUret(Kelime kelime, Ek sonrakiEk){
         return null;
     }

@@ -29,6 +29,7 @@ package net.zemberek.yapi;
 
 import net.zemberek.bilgi.kokler.Sozluk;
 import net.zemberek.islemler.cozumleme.CozumlemeYardimcisi;
+import net.zemberek.islemler.DenetlemeCebi;
 import net.zemberek.yapi.ek.EkYonetici;
 import net.zemberek.yapi.kok.KokOzelDurumBilgisi;
 
@@ -72,9 +73,15 @@ public interface DilBilgisi {
 
     /**
      * dile ozgu cozumleme yardimcisi nesnesi. bu nesne cozumleme sirasinda kullanilan
-     * cesitli on ve art isleme, cep mekanizmalarini tasir.
+     * cesitli on ve art isleme, denetlemeCebi mekanizmalarini tasir.
      * @return cozumleme yardimcisi
      */
     CozumlemeYardimcisi cozumlemeYardimcisi();
+
+    /**
+     * Varsa Denetleme Cebi
+     * @return
+     */
+    DenetlemeCebi denetlemeCebi();
 
 }

@@ -40,11 +40,9 @@ import net.zemberek.yapi.*;
 public class AzericeCozumlemeYardimcisi implements CozumlemeYardimcisi {
 
     private Alfabe alfabe;
-    private DenetlemeCebi cep;
 
-    public AzericeCozumlemeYardimcisi(Alfabe alfabe, DenetlemeCebi cep) {
+    public AzericeCozumlemeYardimcisi(Alfabe alfabe) {
         this.alfabe = alfabe;
-        this.cep = cep;
     }
 
     public void kelimeBicimlendir(Kelime kelime) {
