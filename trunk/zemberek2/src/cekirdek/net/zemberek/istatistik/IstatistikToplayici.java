@@ -38,7 +38,7 @@ import net.zemberek.araclar.TimeTracker;
 import net.zemberek.araclar.turkce.TurkceMetinOkuyucu;
 import net.zemberek.erisim.Zemberek;
 import net.zemberek.islemler.cozumleme.KelimeCozumleyici;
-import net.zemberek.islemler.cozumleme.CozumlemeStratejisi;
+import net.zemberek.islemler.cozumleme.CozumlemeSeviyesi;
 import net.zemberek.yapi.DilAyarlari;
 import net.zemberek.yapi.DilBilgisi;
 import net.zemberek.yapi.Kelime;

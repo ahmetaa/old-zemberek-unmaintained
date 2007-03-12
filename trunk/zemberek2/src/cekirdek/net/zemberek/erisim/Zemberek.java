@@ -198,7 +198,7 @@ public class Zemberek {
      * @see net.zemberek.yapi.Kelime
      */
     public Kelime[] kelimeCozumle(String giris) {
-        return cozumleyici.cozumle(giris, CozumlemeStratejisi.TUM_KOK_VE_EKLER);
+        return cozumleyici.cozumle(giris, CozumlemeSeviyesi.TUM_KOK_VE_EKLER);
     }
 
     /**
@@ -217,7 +217,7 @@ public class Zemberek {
      *         ekler() metodu kullanilir.
      * @see net.zemberek.yapi.Kelime
      */
-    public Kelime[] kelimeCozumle(String giris, CozumlemeStratejisi strateji) {
+    public Kelime[] kelimeCozumle(String giris, CozumlemeSeviyesi strateji) {
         return cozumleyici.cozumle(giris, strateji);
     }
 
@@ -236,12 +236,12 @@ public class Zemberek {
      * @see net.zemberek.yapi.Kelime
      */
     public Kelime[] asciiCozumle(String giris) {
-        Kelime[] sonuclar = asciiToleransliCozumleyici.cozumle(giris, CozumlemeStratejisi.TUM_KOK_VE_EKLER);
+        Kelime[] sonuclar = asciiToleransliCozumleyici.cozumle(giris, CozumlemeSeviyesi.TUM_KOK_VE_EKLER);
         Arrays.sort(sonuclar, new KelimeKokFrekansKiyaslayici());
         return sonuclar;
     }
 
-    public Kelime[] asciiCozumle(String giris, CozumlemeStratejisi strateji) {
+    public Kelime[] asciiCozumle(String giris, CozumlemeSeviyesi strateji) {
         Kelime[] sonuclar = asciiToleransliCozumleyici.cozumle(giris, strateji);
         Arrays.sort(sonuclar, new KelimeKokFrekansKiyaslayici());
         return sonuclar;
@@ -259,7 +259,7 @@ public class Zemberek {
      *         TR:yazilan kelimenin olasi turkce karakter iceren halleri. String[] seklinde.
      */
     public String[] asciidenTurkceye(String giris) {
-        Kelime[] kelimeler = asciiCozumle(giris, CozumlemeStratejisi.TUM_KOKLER);
+        Kelime[] kelimeler = asciiCozumle(giris, CozumlemeSeviyesi.TUM_KOKLER);
         // cift olusumlari temizle.
         List<String> olusumlar = new ArrayList(kelimeler.length);
         for (Kelime kelime : kelimeler) {
@@ -362,7 +362,7 @@ public class Zemberek {
      */
     public List<String[]> kelimeAyristir(String kelime) {
         Set<String[]> sonuclar = new HashSet();
-        Kelime[] cozumler = cozumleyici.cozumle(kelime, CozumlemeStratejisi.TUM_KOK_VE_EKLER);
+        Kelime[] cozumler = cozumleyici.cozumle(kelime, CozumlemeSeviyesi.TUM_KOK_VE_EKLER);
         for (Kelime kel : cozumler) {
             sonuclar.add(kelimeUretici.ayristir(kel));
         }

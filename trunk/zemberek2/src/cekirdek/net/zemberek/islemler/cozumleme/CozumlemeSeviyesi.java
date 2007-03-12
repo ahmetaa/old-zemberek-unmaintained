@@ -30,7 +30,7 @@ package net.zemberek.islemler.cozumleme;
 /**
  * Bu enumerasyon sinifi cozumleme islemi stratejisini belirler.
  */
-public enum CozumlemeStratejisi {
+public enum CozumlemeSeviyesi {
     /** denetleme isleminde kullanilir. */
     TEK_KOK,
     /** kok bulma isleminde kullanilir. tum olasi kokler icin cozumleri bul. */
