@@ -30,8 +30,7 @@ package net.zemberek.deney;
 import java.util.Hashtable;
 
 import net.zemberek.erisim.Zemberek;
-import net.zemberek.tm.yapi.Turkmence;
-import net.zemberek.tr.yapi.TurkiyeTurkcesi;
+import net.zemberek.yapi.DilAyarlari;
 
 public abstract class ZemberekFactory {
 
@@ -51,12 +50,22 @@ public abstract class ZemberekFactory {
 	}
 
 	private static Zemberek _getZemberek(String dilKodu) {
-		if (dilKodu.equalsIgnoreCase("tr"))
-			return new Zemberek(new TurkiyeTurkcesi());
-		else if (dilKodu.equalsIgnoreCase("tm"))
-			return new Zemberek(new Turkmence());
-		else
-			throw new IllegalArgumentException("Geçersiz dil kodu");
+		try {
+			DilAyarlari dil = null;
+			if (dilKodu.equalsIgnoreCase("tr") || dilKodu.equalsIgnoreCase("tm")) {
+				if (dilKodu.equalsIgnoreCase("tr"))
+					dil = (DilAyarlari) Class.forName("net.zemberek.tr.yapi.TurkiyeTurkcesi").newInstance();
+				else if (dilKodu.equalsIgnoreCase("tm"))
+					dil = (DilAyarlari) Class.forName("net.zemberek.tm.yapi.Turkmence").newInstance();
+				if(dil !=null) return new Zemberek(dil);
+				return null;
+			}
+			else
+				throw new IllegalArgumentException("Geçersiz dil kodu");
+
+		} catch (Exception e) {
+			throw new RuntimeException("Belirtilen dil desteği bulunamadı");
+		}
 	}
 
 }
