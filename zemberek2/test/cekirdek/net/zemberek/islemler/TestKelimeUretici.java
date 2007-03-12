@@ -34,7 +34,7 @@ import net.zemberek.bilgi.kokler.KokAdayiBulucu;
 import net.zemberek.bilgi.kokler.Sozluk;
 import net.zemberek.islemler.cozumleme.KesinHDKiyaslayici;
 import net.zemberek.islemler.cozumleme.StandartCozumleyici;
-import net.zemberek.islemler.cozumleme.CozumlemeStratejisi;
+import net.zemberek.islemler.cozumleme.CozumlemeSeviyesi;
 import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.*;
 import net.zemberek.yapi.Kelime;
 import net.zemberek.yapi.Kok;
@@ -120,7 +120,7 @@ public class TestKelimeUretici extends TemelTest {
     public void testCozGeriOlustur() throws IOException {
         List<String> kelimeler = TestUtils.satirlariOku("kaynaklar/tr/test/hepsi-dogru.txt");
         for (String s : kelimeler) {
-            Kelime[] cozumler = cozumleyici.cozumle(s, CozumlemeStratejisi.TEK_KOK);
+            Kelime[] cozumler = cozumleyici.cozumle(s, CozumlemeSeviyesi.TEK_KOK);
             for (Kelime kelime : cozumler) {
                 String uretilen = kelimeUretici.kelimeUret(kelime.kok(), kelime.ekler());
                 assertEquals("cozumlenen:" + s + ", olusan:" + uretilen + " ile ayni degil", s, uretilen);
@@ -132,7 +132,7 @@ public class TestKelimeUretici extends TemelTest {
     public void testEkAyristirma() {
     	String l1[] = { "kedi","le","r","im"};
     	String l2[] = { "kedi","ler","im"};
-        Kelime[] cozumler = cozumleyici.cozumle("kedilerim",  CozumlemeStratejisi.TEK_KOK);
+        Kelime[] cozumler = cozumleyici.cozumle("kedilerim",  CozumlemeSeviyesi.TEK_KOK);
         for (Kelime kel : cozumler) {
             if(kel.ekSayisi()==4)
               assertEquals(l1 , kelimeUretici.ayristir(kel));

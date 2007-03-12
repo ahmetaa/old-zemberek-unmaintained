@@ -35,7 +35,7 @@ import java.util.List;
  */
 public interface KelimeCozumleyici {
 
-    public Kelime[] cozumle(String strGiris, CozumlemeStratejisi strateji);
+    public Kelime[] cozumle(String strGiris, CozumlemeSeviyesi strateji);
 
     public boolean cozumlenebilir(String giris);
 
