@@ -72,7 +72,7 @@ public class IstatistikToplayici {
             		//System.out.print(".");
             		if (i % 20000 == 0) System.out.println( i );
             	}
-                Kelime[] kelimeler = cozumleyici.cozumle(tumKelimeler[i], CozumlemeStratejisi.TUM_KOK_VE_EKLER);
+                Kelime[] kelimeler = cozumleyici.cozumle(tumKelimeler[i], CozumlemeSeviyesi.TUM_KOK_VE_EKLER);
                 if(kelimeler == null) continue;
                 toplamKelime++;
                 istatistikler.hepsiniGuncelle(tumKelimeler[i], kelimeler);

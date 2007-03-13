@@ -133,28 +133,18 @@ public class OneriUretici {
         }
 
         //Çift sonuçları liste sirasını bozmadan iptal et.
-        ArrayList<String> rafineListe = new ArrayList<String>();
-        for (String aday : sonucListesi) {
-            boolean aynisiVar = false;
-            for (String aRafineListe : rafineListe) {
-                if (aday.equals(aRafineListe)) {
-                    aynisiVar = true;
-                    break;
-                }
-            }
-            if (!aynisiVar && rafineListe.size() < ayarlar.getOneriMax()) {
-                rafineListe.add(aday);
-            }
-        }
+        List<String> tekilListe = new ArrayList(new LinkedHashSet<String>(sonucListesi));
+
         	
         // Son olarak yer kalmışsa ayrı yazılım önerilerini ekle
         for (String oneri : ayriYazimOnerileri) {
-            if (rafineListe.size() < ayarlar.getOneriMax())
-                rafineListe.add(oneri);
+            if (tekilListe.size() < ayarlar.getOneriMax())
+                tekilListe.add(oneri);
             else
                 break;
         }
 
-        return rafineListe.toArray(new String[rafineListe.size()]);
+        return tekilListe.toArray(new String[tekilListe.size()]);
+
     }
 }
