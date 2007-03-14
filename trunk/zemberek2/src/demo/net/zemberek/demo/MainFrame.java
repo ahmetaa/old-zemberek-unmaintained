@@ -33,7 +33,7 @@ import java.awt.*;
 /**
  */
 public class MainFrame extends JFrame {
-    private JComponent shownContent = null;
+    private JPanel shownContent = null;
 
     public MainFrame() {
         configureUI();

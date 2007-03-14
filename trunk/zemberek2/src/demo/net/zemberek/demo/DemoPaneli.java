@@ -42,7 +42,7 @@ public class DemoPaneli {
 
     private JPanel mainPanel;
     private GirisAlani girisAlani;
-    private net.zemberek.demo.CikisAlani cikisAlani = new CikisAlani();
+    private CikisAlani cikisAlani = new CikisAlani();
     private DemoYonetici dy;
     private File currentDir = null;
     public static final int MAX_LOAD_STRING_BOY = 32000;
