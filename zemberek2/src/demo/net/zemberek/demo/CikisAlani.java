@@ -55,7 +55,7 @@ public class CikisAlani {
         mainPanel = new JPanel();
         mainPanel.setLayout(new BorderLayout());
         mainPanel.add(makeInputPanel(), BorderLayout.CENTER);
-        mainPanel.setBorder(new TitledBorder(new LineBorder(Color.RED, 1), "\u00c7\u0131k\u0131\u015f alan\u0131"));
+        mainPanel.setBorder(new TitledBorder(new LineBorder(Color.red), "\u00c7\u0131k\u0131\u015f alan\u0131"));
     }
 
 

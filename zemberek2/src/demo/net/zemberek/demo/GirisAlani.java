@@ -62,7 +62,7 @@ public class GirisAlani {
     private void configure() {
         mainPanel = new JPanel();
         mainPanel.setLayout(new BorderLayout());
-        mainPanel.setBorder(new TitledBorder(new LineBorder(Color.RED, 1), "Giri\u015f alan\u0131"));
+        mainPanel.setBorder(new TitledBorder(new LineBorder(Color.red), "Giri\u015f alan\u0131"));
         ozelKarakterDugmeAlaniOlustur(ozelKarakterler);
         mainPanel.add(makeInputPanel(), BorderLayout.CENTER);
     }
