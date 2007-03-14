@@ -60,7 +60,7 @@ public class CikisAlani {
 
 
     public JPanel makeInputPanel() {
-        JPanel pq = new JPanel();
+        JPanel pq = new JPanel(new BorderLayout());
         outputArea = new JTextArea();
         outputArea.setBorder(new EmptyBorder(1, 3, 1, 3));
         outputArea.setLineWrap(true);
@@ -70,10 +70,7 @@ public class CikisAlani {
         JScrollPane ps = new JScrollPane();
         ps.getViewport().add(outputArea);
 
-        // grid layout puts the list box evenly.
-        pq.setLayout(new GridLayout());
-
-        pq.add(ps);
+        pq.add(ps,BorderLayout.CENTER);
         return pq;
     }
 }
