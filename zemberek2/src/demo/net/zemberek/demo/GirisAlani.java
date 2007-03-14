@@ -69,7 +69,7 @@ public class GirisAlani {
 
 
     private JPanel makeInputPanel() {
-        JPanel pq = new JPanel();
+        JPanel pq = new JPanel(new BorderLayout());
         inputArea = new JTextArea();
         inputArea.setBorder(new EmptyBorder(1, 3, 1, 3));
         inputArea.setLineWrap(true);
@@ -78,9 +78,7 @@ public class GirisAlani {
         JScrollPane ps = new JScrollPane();
         ps.getViewport().add(inputArea);
 
-        // grid layout puts the list box evenly.
-        pq.setLayout(new GridLayout());
-        pq.add(ps);
+        pq.add(ps,BorderLayout.CENTER);
         return pq;
     }
 
