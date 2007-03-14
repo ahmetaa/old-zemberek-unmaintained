@@ -241,8 +241,8 @@ public class Zemberek {
         return sonuclar;
     }
 
-    public Kelime[] asciiCozumle(String giris, CozumlemeSeviyesi strateji) {
-        Kelime[] sonuclar = asciiToleransliCozumleyici.cozumle(giris, strateji);
+    public Kelime[] asciiCozumle(String giris, CozumlemeSeviyesi seviye) {
+        Kelime[] sonuclar = asciiToleransliCozumleyici.cozumle(giris, seviye);
         Arrays.sort(sonuclar, new KelimeKokFrekansKiyaslayici());
         return sonuclar;
     }
