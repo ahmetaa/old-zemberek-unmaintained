@@ -72,11 +72,11 @@ public class StandartCozumleyici implements KelimeCozumleyici {
      * dondurur.bu yontem hiz gerektiren denetleme islemi icin kullanilir.
      *
      * @param strGiris
-     * @param strateji: cozumnleme isleminin ne zaman sona erecegi bu bilesenin degerine gore
+     * @param seviye: cozumnleme isleminin ne zaman sona erecegi bu bilesenin degerine gore
      * anlasilir.
      * @return tek ya da coklu kelime dizisi.
      */
-    public Kelime[] cozumle(String strGiris, CozumlemeSeviyesi strateji) {
+    public Kelime[] cozumle(String strGiris, CozumlemeSeviyesi seviye) {
 
         //on islemler
         String strIslenmis = alfabe.ayikla(strGiris);
@@ -105,17 +105,17 @@ public class StandartCozumleyici implements KelimeCozumleyici {
             if (harfDizisiKiyaslayici.kiyasla(kokDizi, girisDizi)) {
                 Kelime kelime = kelimeUret(kok, kokDizi);
                 if (yardimci.kelimeBicimiDenetle(kelime, strGiris)) {
-                    if (strateji== CozumlemeSeviyesi.TEK_KOK) {
+                    if (seviye== CozumlemeSeviyesi.TEK_KOK) {
                         return new Kelime[] {kelime};
                     } else
                         cozumler.add(kelime);
                 }
             } else {
                 icerikDegisti = yardimci.kokGirisDegismiVarsaUygula(kok, kokDizi, girisDizi);
-                List<Kelime> sonuclar = coz(kok, kokDizi, girisDizi, strateji);
+                List<Kelime> sonuclar = coz(kok, kokDizi, girisDizi, seviye);
                 for (Kelime sonuc : sonuclar) {
                     if (yardimci.kelimeBicimiDenetle(sonuc, strGiris)) {
-                        if (strateji== CozumlemeSeviyesi.TEK_KOK) {
+                        if (seviye== CozumlemeSeviyesi.TEK_KOK) {
                             return new Kelime[] {sonuc};
                         }
                         cozumler.add(sonuc);
@@ -136,7 +136,7 @@ public class StandartCozumleyici implements KelimeCozumleyici {
         return kelime;
     }
 
-    private List<Kelime> coz(Kok kok, HarfDizisi kokDizi, HarfDizisi giris, CozumlemeSeviyesi strateji) {
+    private List<Kelime> coz(Kok kok, HarfDizisi kokDizi, HarfDizisi giris, CozumlemeSeviyesi seviye) {
 
         Kelime kelime = kelimeUret(kok, kokDizi);
         BasitKelimeYigini kelimeYigini = new BasitKelimeYigini();
@@ -193,7 +193,7 @@ public class StandartCozumleyici implements KelimeCozumleyici {
                 bulunanEk = incelenenEk;
 
                 if (harfDizisiKiyaslayici.kiyasla(kelime.icerik(), giris) && !incelenenEk.sonEkOlamazMi()) {
-                    if (strateji!= CozumlemeSeviyesi.TUM_KOK_VE_EKLER) {
+                    if (seviye!= CozumlemeSeviyesi.TUM_KOK_VE_EKLER) {
                         uygunSonuclar = new ArrayList(1);
                         uygunSonuclar.add(kelime);
                         return uygunSonuclar;
