@@ -44,6 +44,7 @@ public class SwingFactory {
         return button;
     }
 
+    /*
     public static JButton getWrapButton(String lbl) {
         String html = "<html><center>";
         String newLbl = new String(html + lbl);
@@ -56,4 +57,5 @@ public class SwingFactory {
         regButton.setSize(sizex, sizey);
         return regButton;
     }
+    */
 }
