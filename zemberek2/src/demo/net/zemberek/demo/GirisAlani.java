@@ -90,7 +90,7 @@ public class GirisAlani {
           mainPanel.remove(buttonPanel);
 
         buttonPanel = new JPanel();
-        buttonPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
+        buttonPanel.setLayout(new FlowLayout(FlowLayout.LEFT,5,5));
         //makechars
         for (int i = 0; i < ozelKarakterler.length; i++) {
             JButton button = SwingFactory.getRegularButton(String.valueOf(ozelKarakterler[i]));
