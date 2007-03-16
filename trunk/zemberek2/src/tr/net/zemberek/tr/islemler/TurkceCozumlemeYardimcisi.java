@@ -27,7 +27,6 @@
 
 package net.zemberek.tr.islemler;
 
-import net.zemberek.islemler.DenetlemeCebi;
 import net.zemberek.islemler.cozumleme.CozumlemeYardimcisi;
 import net.zemberek.tr.yapi.kok.TurkceKokOzelDurumTipleri;
 import net.zemberek.yapi.*;

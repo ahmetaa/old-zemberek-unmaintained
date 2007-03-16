@@ -28,6 +28,7 @@
 package net.zemberek.deney.oneri;
 
 import net.zemberek.yapi.*;
+import static net.zemberek.yapi.KelimeTipi.*;
 import net.zemberek.islemler.cozumleme.KelimeCozumleyici;
 import net.zemberek.islemler.cozumleme.CozumlemeSeviyesi;
 import net.zemberek.islemler.cozumleme.StandartCozumleyici;
@@ -69,33 +70,33 @@ public class KokDonusturucu {
 
     public static void main(String[] args) {
 
-        DilBilgisi dilBilgisi = new TurkceDilBilgisi(new TurkiyeTurkcesi());
-        Sozluk kokler = dilBilgisi.kokler();
+        DilBilgisi db = new TurkceDilBilgisi(new TurkiyeTurkcesi());
+        Sozluk kokler = db.kokler();
 
         // yabanci kelimeler
         List<Kok> yabanciKokler = Arrays.asList(
-                new Kok("fixle", KelimeTipi.FIIL),
-                new Kok("show", KelimeTipi.ISIM),
-                new Kok("format", KelimeTipi.ISIM)
+                new Kok("fixle", FIIL),
+                new Kok("show", ISIM),
+                new Kok("format", ISIM)
         );
 
         // donusum tablosu
         Map<Kok, Kok> kokTablosu = new HashMap<Kok, Kok>();
-        kokTablosu.put(yabanciKokler.get(0), kokler.kokBul("sabitle", KelimeTipi.FIIL));
-        kokTablosu.put(yabanciKokler.get(1), kokler.kokBul("gösteri", KelimeTipi.ISIM));
-        kokTablosu.put(yabanciKokler.get(2), kokler.kokBul("biçem", KelimeTipi.ISIM));
+        kokTablosu.put(yabanciKokler.get(0), kokler.kokBul("sabitle", FIIL));
+        kokTablosu.put(yabanciKokler.get(1), kokler.kokBul("gösteri", ISIM));
+        kokTablosu.put(yabanciKokler.get(2), kokler.kokBul("biçem", ISIM));
 
         // yabanci cozumleyici
-        Sozluk yabanciSozluk = new AgacSozluk(yabanciKokler, dilBilgisi.alfabe(), dilBilgisi.kokOzelDurumlari());
+        Sozluk yabanciSozluk = new AgacSozluk(yabanciKokler, db.alfabe(), db.kokOzelDurumlari());
         KelimeCozumleyici cozumleyici = new StandartCozumleyici(
                 yabanciSozluk.getKokBulucuFactory().getKesinKokBulucu(),
                 new KesinHDKiyaslayici(),
-                dilBilgisi.alfabe(),
-                dilBilgisi.ekler(),
-                dilBilgisi.cozumlemeYardimcisi());
+                db.alfabe(),
+                db.ekler(),
+                db.cozumlemeYardimcisi());
 
         // kelime uretici
-        KelimeUretici kelimeUretici = new KelimeUretici(dilBilgisi.alfabe(), dilBilgisi.cozumlemeYardimcisi());
+        KelimeUretici kelimeUretici = new KelimeUretici(db.alfabe(), db.cozumlemeYardimcisi());
 
         // donusturucu
         KokDonusturucu donusturucu = new KokDonusturucu(cozumleyici, kelimeUretici, kokTablosu);
