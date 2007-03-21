@@ -25,63 +25,79 @@
  *  ***** END LICENSE BLOCK *****
  */
 
-package net.zemberek.az.yapi.ek;
+package net.zemberek.tt.yapi.ek;
 
-import net.zemberek.az.yapi.AzericeSesliUretici;
+import net.zemberek.tt.yapi.TatarcaSesliUretici;
 import net.zemberek.yapi.Alfabe;
 import net.zemberek.yapi.HarfDizisi;
 import net.zemberek.yapi.TurkceHarf;
 import net.zemberek.yapi.ek.Ek;
 import net.zemberek.yapi.ek.EkUretici;
 import net.zemberek.yapi.ek.EkUretimBileseni;
-import net.zemberek.yapi.ek.TemelEkUretimKurali;
 
 import java.util.List;
 import java.util.Set;
+import java.util.Collections;
 
-public class EkUreticiAz implements EkUretici {
+public class EkUreticiTt implements EkUretici {
 
-    private AzericeSesliUretici sesliUretici;
+    private TatarcaSesliUretici sesliUretici;
 
-    public EkUreticiAz(Alfabe alfabe) {
-        this.sesliUretici = new AzericeSesliUretici(alfabe);
+
+    private final TurkceHarf HARF_m;
+    private final TurkceHarf HARF_n;
+    private final TurkceHarf HARF_nn;
+
+    public EkUreticiTt(Alfabe alfabe) {
+        this.sesliUretici = new TatarcaSesliUretici(alfabe);
+        HARF_m = alfabe.harf('m');
+        HARF_n = alfabe.harf('m');
+        HARF_nn = alfabe.harf(Alfabe.CHAR_TT_n);
     }
 
-    public HarfDizisi cozumlemeIcinEkUret(HarfDizisi ulanacak,
-                                          HarfDizisi giris,
-                                          List<EkUretimBileseni> bilesenler) {
-        HarfDizisi sonuc = new HarfDizisi();
+    public HarfDizisi cozumlemeIcinEkUret(HarfDizisi ulanacak, HarfDizisi giris, List<EkUretimBileseni> bilesenler) {
+        HarfDizisi sonuc = new HarfDizisi(4);
         TurkceHarf sonSesli = ulanacak.sonSesli();
         for (int i = 0; i < bilesenler.size(); i++) {
-            EkUretimBileseni ekUretimBileseni = bilesenler.get(i);
+            EkUretimBileseni<TatarcaEkUretimKurali> ekUretimBileseni = bilesenler.get(i);
             final TurkceHarf harf = ekUretimBileseni.harf;
-            switch ((TemelEkUretimKurali)ekUretimBileseni.kural) {
+            final TurkceHarf sonHarf = ulanacak.sonHarf();
+            switch (ekUretimBileseni.kural) {
                 case HARF:
                     sonuc.ekle(harf);
                     break;
                 case KAYNASTIR:
-                    if (ulanacak.sonHarf().sesliMi())
+                    if (sonHarf.sesliMi())
                         sonuc.ekle(harf);
                     break;
                 case SERTLESTIR:
-                    if (ulanacak.sonHarf().sertMi())
+                    if (sonHarf.sertMi())
                         sonuc.ekle(harf.sertDonusum());
                     else
                         sonuc.ekle(harf);
                     break;
-                case SESLI_AE:
-                    if (i == 0 && ulanacak.sonHarf().sesliMi())
+                case N_DONUSUMU:
+                    if (sonHarf == HARF_m || sonHarf == HARF_n || sonHarf == HARF_nn)
+                        sonuc.ekle(HARF_n);
+                    else {
+                        if (harf.sertDonusum() == null)
+                            sonuc.ekle(harf);
+                        else
+                            sonuc.ekle(harf.sertDonusum());
+                    } break;
+                case SESLI_AA:
+                    if (i == 0 && sonHarf.sesliMi())
                         break;
                     else {
-                        sonSesli = sesliUretici.sesliBelirleAE(sonSesli);
+                        sonSesli = sesliUretici.sesliBelirleAA(sonSesli);
                         sonuc.ekle(sonSesli);
                     }
                     break;
-                case SESLI_IU:
-                    if (i == 0 && ulanacak.sonHarf().sesliMi())
+                case SESLI_EI:
+                    if (i == 0 && sonHarf.sesliMi())
                         break;
                     else {
-                        sonSesli = sesliUretici.sesliBelirleIU(sonSesli);
+                        sonSesli = sesliUretici.sesliBelirleEI(sonSesli);
                         sonuc.ekle(sonSesli);
                     }
                     break;
@@ -90,15 +106,11 @@ public class EkUreticiAz implements EkUretici {
         return sonuc;
     }
 
-    public HarfDizisi olusumIcinEkUret(HarfDizisi ulanacak,
-                                       Ek sonrakiEk,
-                                       List<EkUretimBileseni> bilesenler) {
-        //TODO: gecici olarak bu sekilde
-        return cozumlemeIcinEkUret(ulanacak, null, bilesenler);
+    public HarfDizisi olusumIcinEkUret(HarfDizisi ulanacak, Ek sonrakiEk, List<EkUretimBileseni> bilesenler) {
+        return null;
     }
 
     public Set<TurkceHarf> olasiBaslangicHarfleri(List<EkUretimBileseni> bilesenler) {
         return null;
     }
-
 }

@@ -1,0 +1,24 @@
+﻿# tum harfler. icerisinde kilavuz icerisind eyer alan yabanci icerikli kelimelerin
+# cozumlenebilmesi icin gerekli harfler ve simgeler de yer alir.
+harfler=a,ä,b,c,ç,d,e,f,g,ğ,h,ı,i,í,j,k,q,l,m,n,ñ,o,ö,p,r,s,ş,t,u,ü,v,w,x,y,z,á,â,é,ó,ú,.,-,',"
+sesli=a,ä,e,ı,i,o,ö,u,ü
+ince-sesli=e,ä,i,í,ö,ü
+duz-sesli=a,ä,e,ı,i,í
+yuvarlak-sesli=o,ö,u,ü
+sert=f,s,t,k,ç,ş,h,p
+ascii-disi=ç,ä,ı,í,ö,ş,ü,á,â,é,ó,ú,Á,Â,É,Ó,Ú,Ç,Ñ,Ğ,İ,Í,Ö,Ş,Ü
+turkce-ascii=ç-c,Ç-C,ğ-g,Ğ-G,ı-i,í-i,Í-I,İ-I,Ñ-N,ñ-n,ö-o,Ö-O,ş-s,Ş-S,ü-u,Ü-U,â-a,ó-o,ú-u,á-a,ä-a
+yumusama-donusum=ç-c,g-ğ,k-ğ,p-b,t-d
+ayiklama=.,-,',"
+ayiklama-donusum=â-a,á-a,é-e,ó-o,ú-u
+
+# secimlik ozellikler:
+
+# sert-donusum aslinda yumusama-donusumun tam tersi sayilir.
+# ama bazi durumlarda farkli bilgi icerebilir.
+sert-donusum=c-ç,ğ-k,b-p,d-t
+# ascii-turkce ozlelikleriinn tam tersi sayilir ama daha az bilgi iceriyor. sapkali harflerin donusumunde
+# cift olasilik olmasi nedeniyle.
+ascii-turkce=c-ç,g-ğ,i-ı,I-İ,o-ö,s-ş,u-ü,a-ä,C-Ç,G-Ğ,O-Ö,S-Ş,U-Ü
+# atarca locale bilgisi yetersiz oldugundna turkce locale bilgisi harf donusunlerinde kullanilacak.
+locale=tr

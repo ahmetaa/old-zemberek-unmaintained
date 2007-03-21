@@ -25,20 +25,17 @@
  *  ***** END LICENSE BLOCK *****
  */
 
-package net.zemberek.yapi.kok;
+package net.zemberek.yapi.ek;
 
-import net.zemberek.yapi.HarfDizisi;
+import java.util.Map;
+import java.util.Set;
 
-/**
- * Bir harf dizisi uzerinde yapilabilecek islemi ifade eder. Bu arayuz genellikle
- * kok yapisi uzerinde degisiklige neden olan ozel durumlarin tanimlanmasinda kullanilir.
- */
-public interface HarfDizisiIslemi {
+public interface EkKuralBilgisi {
+    Set<Character> sesliKuralKarakterleri();
 
-    /**
-     * dizi uzerinde degisiklik yapacak metod.
-     * @param dizi
-     */
-    void uygula(HarfDizisi dizi);
+    Set<Character> harfKuralKarakterleri();
 
+    Map<Character, EkUretimKurali> karakterKuralTablosu();
+
+    EkUretimKurali harfEklemeKurali();
 }

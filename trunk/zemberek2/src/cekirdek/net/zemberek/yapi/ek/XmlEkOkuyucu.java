@@ -30,7 +30,6 @@ package net.zemberek.yapi.ek;
 import net.zemberek.araclar.Kayitci;
 import net.zemberek.araclar.XmlYardimcisi;
 import net.zemberek.yapi.Alfabe;
-import net.zemberek.yapi.TurkceHarf;
 import org.w3c.dom.Attr;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -53,18 +52,20 @@ public class XmlEkOkuyucu {
 
     private final String xmlEkDosyasi;
     private final EkUretici ekUretici;
-    private final Alfabe alfabe;
 
     private final EkOzelDurumUretici ekOzelDurumUretici;
+    private final EkKuralKelimesiCozumleyici kuralKelimesiCozumleyici;
 
     public XmlEkOkuyucu(String xmlEkDosyasi,
                         EkUretici ekUretici,
                         EkOzelDurumUretici ekOzelDurumUretici,
-                        Alfabe alfabe) {
+                        EkKuralKelimesiCozumleyici kuralKelimesiCozumleyici
+    ) {
         this.xmlEkDosyasi = xmlEkDosyasi;
         this.ekUretici = ekUretici;
         this.ekOzelDurumUretici = ekOzelDurumUretici;
-        this.alfabe = alfabe;
+        this.kuralKelimesiCozumleyici = kuralKelimesiCozumleyici;
+
     }
 
     public Map<String, Ek> getEkler() {
@@ -94,7 +95,7 @@ public class XmlEkOkuyucu {
         for (Element ekElement : tumEkler) {
             String ekadi = ekElement.getAttribute("ad");
             if (ekler.containsKey(ekadi))
-                exit("Ek tekrari! " + ekadi);
+                throw new EkKonfigurasyonHatasi("Ek tekrari! " + ekadi);
             ekler.put(ekadi, new Ek(ekadi));
         }
     }
@@ -113,7 +114,7 @@ public class XmlEkOkuyucu {
             for (Element ekEl : xmlKumeEkleri) {
                 String ekAdi = ekEl.getTextContent();
                 Ek ek = this.ekler.get(ekAdi);
-                if (ek == null) exit("kume eki bulunamiyor!" + ekAdi);
+                if (ek == null) throw new EkKonfigurasyonHatasi("kume eki bulunamiyor!" + ekAdi);
                 kumeEkleri.add(ek);
             }
             ekKumeleri.put(kumeAdi, kumeEkleri);
@@ -122,6 +123,7 @@ public class XmlEkOkuyucu {
 
     /**
      * asil ek nesnelerinin olusturulma islemi burada olur.
+     *
      * @param eklerElement
      */
     private void ekleriOlustur(Element eklerElement) {
@@ -132,11 +134,11 @@ public class XmlEkOkuyucu {
             // uretim kuralini oku ve ekleri uret.
             Attr uretimKurali = ekElement.getAttributeNode("uretim");
             if (uretimKurali == null)
-                exit("ek uretim kural kelimesi yok!" + ekAdi);
+                throw new EkKonfigurasyonHatasi("ek uretim kural kelimesi yok!" + ekAdi);
 
             ek.setArdisilEkler(ardisilEkleriOlustur(ek, ekElement));
             ek.setEkKuralCozumleyici(ekUretici);
-            List<EkUretimBileseni> bilesenler = ekUretimKelimesiCozumle(uretimKurali.getValue());
+            List<EkUretimBileseni> bilesenler = kuralKelimesiCozumleyici.cozumle(uretimKurali.getValue());
             ek.setUretimBilesenleri(bilesenler);
             List<EkOzelDurumu> ozelDurumlar = ozelDurumlariOku(ekElement);
             ek.setOzelDurumlar(ozelDurumlar);
@@ -154,6 +156,7 @@ public class XmlEkOkuyucu {
     /**
      * HAL ve IYELIK eki ozellikleri burada belirlenir. ek iceriisne farkli ozellikler
      * eklenecekse burasi ona gore degistirilmeli.
+     *
      * @param ek
      * @param ekElement
      */
@@ -181,7 +184,7 @@ public class XmlEkOkuyucu {
 
             if (uretimKurali != null) {
                 oz.setEkKuralCozumleyici(ekUretici);
-                oz.setUretimBilesenleri(ekUretimKelimesiCozumle(uretimKurali.getValue()));
+                oz.setUretimBilesenleri(kuralKelimesiCozumleyici.cozumle(uretimKurali.getValue()));
             }
 
             List<Element> oneklerElements = XmlYardimcisi.elemanlar(element, "on-ek");
@@ -207,8 +210,8 @@ public class XmlEkOkuyucu {
      * Ayrica eger oncelikli ekler belirtilmis ise bu ekler ardisil ek listeisnin en basina koyulur.
      *
      * @param ekElement :  ek xml bileseni..
+     * @param anaEk     ardisil ekler eklenecek asil ek
      * @return Ek referans Listesi.
-     * @param anaEk ardisil ekler eklenecek asil ek
      */
     private List<Ek> ardisilEkleriOlustur(Ek anaEk, Element ekElement) {
 
@@ -221,7 +224,7 @@ public class XmlEkOkuyucu {
         for (Element element : tekArdisilEkler) {
             String ekAdi = element.getTextContent();
             Ek ek = this.ekler.get(ekAdi);
-            if (ek == null) exit(anaEk.ad() + " icin ardisil ek bulunamiyor! " + ekAdi);
+            if (ek == null) throw new EkKonfigurasyonHatasi(anaEk.ad() + " icin ardisil ek bulunamiyor! " + ekAdi);
             ardisilEkSet.add(ek);
         }
 
@@ -230,7 +233,7 @@ public class XmlEkOkuyucu {
         for (Element element : kumeEkler) {
             String kumeAdi = element.getTextContent();
             Set<Ek> kumeEkleri = ekKumeleri.get(kumeAdi);
-            if (kumeEkleri == null) exit("kume bulunamiyor..." + kumeAdi);
+            if (kumeEkleri == null) throw new EkKonfigurasyonHatasi("kume bulunamiyor..." + kumeAdi);
             ardisilEkSet.addAll(kumeEkleri);
         }
 
@@ -239,7 +242,7 @@ public class XmlEkOkuyucu {
         if (attr != null) {
             final String kopyaEkadi = attr.getValue();
             Ek ek = this.ekler.get(kopyaEkadi);
-            if (ek == null) exit(anaEk.ad() + " icin kopyalanacak ek bulunamiyor! " + kopyaEkadi);
+            if (ek == null) throw new EkKonfigurasyonHatasi(anaEk.ad() + " icin kopyalanacak ek bulunamiyor! " + kopyaEkadi);
             ardisilEkSet.addAll(ek.ardisilEkler());
         }
 
@@ -253,7 +256,7 @@ public class XmlEkOkuyucu {
             for (Element element : oncelikliEkler) {
                 String ekAdi = element.getTextContent();
                 Ek ek = this.ekler.get(ekAdi);
-                if (ek == null) exit(anaEk.ad() + " icin oncelikli ek bulunamiyor! " + ekAdi);
+                if (ek == null) throw new EkKonfigurasyonHatasi(anaEk.ad() + " icin oncelikli ek bulunamiyor! " + ekAdi);
                 if (ardisilEkSet.contains(ek)) {
                     ardisilEkler.add(ek);
                     ardisilEkSet.remove(ek);
@@ -266,17 +269,6 @@ public class XmlEkOkuyucu {
     }
 
     /**
-     * ciddi hata durumunda sistmein mesaj vererek yazilimdan cikmasi saglanir.
-     *
-     * @param mesaj
-     */
-    private void exit(String mesaj) {
-        log.severe("Ek dosyasi okuma sorunu:" + mesaj);
-        System.exit(1);
-    }
-
-
-    /**
      * bazi ek ozellikleri konfigurasyon dosyasinda yer almaz, ekler okunduktan sonra
      * bilesenlere gore otomatik olarak belirlenir.
      *
@@ -284,100 +276,13 @@ public class XmlEkOkuyucu {
      * @param bilesenler
      */
     public void xmlDisiEkOzellikleriBelirle(Ek ek, List<EkUretimBileseni> bilesenler) {
-        for (int i = 0; i < bilesenler.size(); i++) {
-            EkUretimBileseni uretimBileseni = bilesenler.get(i);
-            TurkceHarf harf = uretimBileseni.harf();
-            if (i == 0 || (i == 1 && bilesenler.get(0).kural() == EkUretimKurali.KAYNASTIR)) {
-
-                if (harf.sesliMi())
-                    ek.setSesliIleBaslayabilir(true);
-                switch (uretimBileseni.kural()) {
-                    case SESLI_AA:
-                    case SESLI_AE:
-                    case SESLI_IU:
-                        ek.setSesliIleBaslayabilir(true);
-                        break;
-                }
-            } else {
-                break;
-            }
+        for (EkUretimBileseni bilesen : bilesenler) {
+            if (bilesen.harf.sesliMi())
+                ek.setSesliIleBaslayabilir(true);
+            if (bilesen.harf != Alfabe.TANIMSIZ_HARF)
+                return;
         }
     }
 
-    // ek uretim kural kelimesinde kullanilan parcalarin dilbilgisi kurali karsiliklarini tutan tablo.
-    private static final Map<Character, EkUretimKurali> kuralTablosu = new HashMap();
 
-    static {
-        kuralTablosu.put('A', EkUretimKurali.SESLI_AE);
-        kuralTablosu.put('I', EkUretimKurali.SESLI_IU);
-        kuralTablosu.put('E', EkUretimKurali.SESLI_AA);
-        kuralTablosu.put('Y', EkUretimKurali.SESSIZ_Y);
-        kuralTablosu.put('+', EkUretimKurali.KAYNASTIR);
-        kuralTablosu.put('>', EkUretimKurali.SERTLESTIR);
-    }
-
-    private final Set<Character> sesliKurallari =
-            new HashSet<Character>(Arrays.asList('A', 'I', 'E', 'Y'));
-    private final Set<Character> harfKurallari =
-            new HashSet<Character>(Arrays.asList('+', '>'));
-
-    private List<EkUretimBileseni> ekUretimKelimesiCozumle(String uretimKelimesi) {
-        if (uretimKelimesi == null || uretimKelimesi.length() == 0)
-            return Collections.emptyList();
-        List<EkUretimBileseni> bilesenler = new ArrayList();
-        for (EkUretimBileseni bilesen : new EkKuralCozumleyici(uretimKelimesi)) {
-            bilesenler.add(bilesen);
-        }
-        return bilesenler;
-    }
-
-    /**
-     * Basit bir tokenizer. Iterable yapidadir, kural kelimesine gore
-     * her iterasyonda eger varsa yeni bir EkUretimBileseni uretir.
-     */
-    class EkKuralCozumleyici implements Iterable<EkUretimBileseni> {
-
-        private final String uretimKelimesi;
-        private int pointer;
-
-        public EkKuralCozumleyici(String uretimKelimesi) {
-            this.uretimKelimesi = uretimKelimesi.trim().replaceAll("[ ]", "");
-        }
-
-        public Iterator<EkUretimBileseni> iterator() {
-            return new BilesenIterator();
-        }
-
-        class BilesenIterator implements Iterator<EkUretimBileseni> {
-
-            public boolean hasNext() {
-                return uretimKelimesi != null && pointer < uretimKelimesi.length();
-            }
-
-            public EkUretimBileseni next() {
-                if (!hasNext()) {
-                    throw new NoSuchElementException("bilesen kalmadi!");
-                }
-                char p = uretimKelimesi.charAt(pointer++);
-                //ardisil harf ile iliskili kuralmi
-                if (harfKurallari.contains(p)) {
-                    if (pointer == uretimKelimesi.length())
-                        throw new IllegalArgumentException(p + " kuralindan sonra normal harf bekleniyordu!");
-                    char h = uretimKelimesi.charAt(pointer++);
-                    if (sesliKurallari.contains(h))
-                        throw new IllegalArgumentException(p + " kuralindan sonra sesli uretim kurali gelemez:" + h);
-                    return new EkUretimBileseni(kuralTablosu.get(p), alfabe.harf(h));
-                } else if (sesliKurallari.contains(p)) {
-                    return new EkUretimBileseni(kuralTablosu.get(p), Alfabe.TANIMSIZ_HARF);
-                } else if (alfabe.harf(p) != null && Character.isLowerCase(p)) {
-                    return new EkUretimBileseni(EkUretimKurali.HARF, alfabe.harf(p));
-                } else {
-                    throw new IllegalArgumentException(p + "  simgesi cozumlenemiyor.. kelime:" + uretimKelimesi);
-                }
-            }
-
-            public void remove() {
-            }
-        }
-    }
 }

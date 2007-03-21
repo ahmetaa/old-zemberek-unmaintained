@@ -73,6 +73,10 @@ public class Alfabe {
     public static final char CHAR_SAPKALI_U = '\u00db'; // sapkali buyuk U
     public static final char CHAR_SAPKALI_u = '\u00fb'; // sapkali kucuk u
 
+    // tatar ozel
+    public static final char CHAR_TT_n = '\u00f1'; // tildeli n
+    public static final char CHAR_TT_N = '\u00d1'; // tildeli N
+
     public static final TurkceHarf TANIMSIZ_HARF = new TurkceHarf('#', 0);
 
     public static final char ALFABE_DISI_KARAKTER = '#';
@@ -219,15 +223,25 @@ public class Alfabe {
     public static final String AYIKLAMA = "ayiklama";
     public static final String AYIKLAMA_DONUSUM = "ayiklama-donusum";
     public static final String OZEL_INCE_SESLI = "ozel-ince-sesli";
+    public static final String LOCALE = "locale";
 
     /**
-     * harf dosyasindan harf bilgilerini okur ve TurkceHarf, ve alfabe sinifi icin gerekli
+     * harf dosyasindan harf bilgilerini okur ve TurkceHarf, ve alfabe sinifi icin
      * gerekli harf iliskili veri yapilarinin olusturur.
      */
     private void harfBilgisiOlustur(Map<String, String> bilgi) {
 
+        // eger alfabe taniminda secimlik locale bilgisi yer aliyorsa bunu normal locale degerinin yerine kullan
+        Locale loc = this.locale;
+
+        if (bilgi.containsKey(LOCALE)) {
+            String lcl = ozellik(bilgi, LOCALE);
+            if (lcl != null && lcl.length() > 0)
+                loc = new Locale(lcl);
+        }
+
         String tumKucukler = ozellik(bilgi, HARFLER);
-        String tumBuyukler = tumKucukler.toUpperCase(locale);
+        String tumBuyukler = tumKucukler.toUpperCase(loc);
         char[] kucukler = harfAyristir(tumKucukler);
         char[] buyukler = harfAyristir(tumBuyukler);
 
@@ -258,7 +272,7 @@ public class Alfabe {
 
         for (char c : harfAyristir(ozellik(bilgi, SESLI))) {
             harf(c).setSesli(true);
-            buyukHarf(harfler.get(c)).setSesli(true);
+            buyukHarf(mapHarf(c)).setSesli(true);
         }
 
         for (char c : harfAyristir(ozellik(bilgi, INCE_SESLI))) {
@@ -318,14 +332,14 @@ public class Alfabe {
         List<HarfCifti> asciiDonusum = harfCiftiAyristir(ozellik(bilgi, TURKCE_ASCII));
         for (HarfCifti cift : asciiDonusum) {
             asciifierDizisi[cift.h1] = cift.h2;
-            harfler.get(cift.h1).setAsciiDonusum(harfler.get(cift.h2));
+            mapHarf(cift.h1).setAsciiDonusum(harfler.get(cift.h2));
         }
 
         // eger ascii-turkce donusum ikilileri harf dosyasinda belirtilimisse okunur.
         // yoksa turkce-ascii ikililerinin tersi kullanilarak harflerin turkceDonusum ozellikleri belirlenir.
         if (bilgi.containsKey(ASCII_TURKCE)) {
             for (HarfCifti cift : harfCiftiAyristir(ozellik(bilgi, ASCII_TURKCE)))
-                harfler.get(cift.h1).setTurkceDonusum(harfler.get(cift.h2));
+                mapHarf(cift.h1).setTurkceDonusum(harfler.get(cift.h2));
         } else {
             for (HarfCifti cift : asciiDonusum)
                 harf(cift.h2).setTurkceDonusum(harf(cift.h1));
@@ -351,6 +365,12 @@ public class Alfabe {
             logger.warning("harf ozelligi bulunamiyor: " + anahtar);
             return "";
         }
+    }
+
+    private TurkceHarf mapHarf(char c) {
+        if (!harfler.containsKey(c))
+            throw new RuntimeException(c + " icin Turkce Harf Bulunamiyor!");
+        else return harfler.get(c);
     }
 
     /**
