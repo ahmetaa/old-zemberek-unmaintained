@@ -38,11 +38,11 @@ public enum TurkDiliTuru {
 
     TURKIYE("net.zemberek.tr.yapi.TurkiyeTurkcesi"),
     TURKMEN("net.zemberek.tm.yapi.Turkmence"),
-    AZERI("net.zemberek.az.yapi.Azerice");
+    AZERI("net.zemberek.az.yapi.Azerice"),
+    TATAR("net.zemberek.tt.yapi.Tatarca");
 
     //KAZAK("kk"),
     //OZBEK("uz"),
-    //TATAR("tt"),
     //UYGUR("ug");
 
     TurkDiliTuru(String sinif) {

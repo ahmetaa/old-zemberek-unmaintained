@@ -25,20 +25,44 @@
  *  ***** END LICENSE BLOCK *****
  */
 
-package net.zemberek.yapi.kok;
+package net.zemberek.tt.yapi.kok;
 
-import net.zemberek.yapi.HarfDizisi;
+import net.zemberek.yapi.kok.KokOzelDurumTipi;
 
 /**
- * Bir harf dizisi uzerinde yapilabilecek islemi ifade eder. Bu arayuz genellikle
- * kok yapisi uzerinde degisiklige neden olan ozel durumlarin tanimlanmasinda kullanilir.
+ * Created by IntelliJ IDEA.
+ * User: ahmet
+ * Date: Mar 19, 2007
+ * Time: 10:19:26 PM
+ * To change this template use File | Settings | File Templates.
  */
-public interface HarfDizisiIslemi {
+public enum TatarcaKokOzelDurumTipleri implements KokOzelDurumTipi {
 
-    /**
-     * dizi uzerinde degisiklik yapacak metod.
-     * @param dizi
-     */
-    void uygula(HarfDizisi dizi);
+    SESSIZ_YUMUSAMASI("YUM");
 
+    private String kisaAd;
+    private String[] ekAdlari = new String[0];
+
+    TatarcaKokOzelDurumTipleri(String kisaAd, String... ekAdlari) {
+        this.kisaAd = kisaAd;
+        if (this.ekAdlari != null) {
+            this.ekAdlari = ekAdlari;
+        }
+    }
+
+    public String ad() {
+        return this.name();
+    }
+
+    public String kisaAd() {
+        return kisaAd;
+    }
+
+    public int indeks() {
+        return ordinal();
+    }
+
+    public String[] ekAdlari() {
+        return ekAdlari;
+    }
 }

@@ -29,6 +29,7 @@ package net.zemberek.yapi;
 
 import net.zemberek.yapi.ek.EkOzelDurumUretici;
 import net.zemberek.yapi.ek.EkUretici;
+import net.zemberek.yapi.ek.EkKuralBilgisi;
 
 import java.util.Map;
 import java.util.Locale;
@@ -53,6 +54,8 @@ public interface DilAyarlari {
     Class cozumlemeYardimcisiSinifi();
 
     String[] duzYaziKokDosyalari();
+
+    EkKuralBilgisi ekKuralBilgisi();
 
     /**
      * Duz yazi ile belirtilen kok dosyalarinda kokun tipinin hangi kelime ile ifade

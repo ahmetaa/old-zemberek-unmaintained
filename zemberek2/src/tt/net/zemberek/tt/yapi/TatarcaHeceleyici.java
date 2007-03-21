@@ -25,20 +25,23 @@
  *  ***** END LICENSE BLOCK *****
  */
 
-package net.zemberek.yapi.kok;
+package net.zemberek.tt.yapi;
 
+import net.zemberek.yapi.Heceleyici;
 import net.zemberek.yapi.HarfDizisi;
 
+import java.util.List;
+import java.util.Collections;
+
 /**
- * Bir harf dizisi uzerinde yapilabilecek islemi ifade eder. Bu arayuz genellikle
- * kok yapisi uzerinde degisiklige neden olan ozel durumlarin tanimlanmasinda kullanilir.
+ * Created by IntelliJ IDEA.
+ * User: ahmet
+ * Date: Mar 19, 2007
+ * Time: 10:10:39 PM
+ * To change this template use File | Settings | File Templates.
  */
-public interface HarfDizisiIslemi {
-
-    /**
-     * dizi uzerinde degisiklik yapacak metod.
-     * @param dizi
-     */
-    void uygula(HarfDizisi dizi);
-
+public class TatarcaHeceleyici implements Heceleyici{
+    public List<String> hecele(HarfDizisi dizi) {
+        return Collections.emptyList();
+    }
 }

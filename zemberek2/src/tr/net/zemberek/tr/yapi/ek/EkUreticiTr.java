@@ -34,6 +34,7 @@ import net.zemberek.yapi.TurkceHarf;
 import net.zemberek.yapi.ek.Ek;
 import net.zemberek.yapi.ek.EkUretici;
 import net.zemberek.yapi.ek.EkUretimBileseni;
+import net.zemberek.yapi.ek.TemelEkUretimKurali;
 
 import java.util.List;
 import java.util.Set;
@@ -64,9 +65,9 @@ public class EkUreticiTr implements EkUretici {
         HarfDizisi sonuc = new HarfDizisi(4);
         TurkceHarf sonSesli = ulanacak.sonSesli();
         for (int i = 0; i < bilesenler.size(); i++) {
-            EkUretimBileseni ekUretimBileseni = bilesenler.get(i);
-            final TurkceHarf harf = ekUretimBileseni.harf();
-            switch (ekUretimBileseni.kural()) {
+            EkUretimBileseni<TemelEkUretimKurali> ekUretimBileseni = bilesenler.get(i);
+            final TurkceHarf harf = ekUretimBileseni.harf;
+            switch (ekUretimBileseni.kural) {
                 case HARF:
                     sonuc.ekle(harf);
                     break;
@@ -109,9 +110,9 @@ public class EkUreticiTr implements EkUretici {
     public Set<TurkceHarf> olasiBaslangicHarfleri(List<EkUretimBileseni> bilesenler) {
         Set<TurkceHarf> kume = new HashSet(4);
         for (int i=0; i< bilesenler.size(); i++) {
-            EkUretimBileseni bilesen = bilesenler.get(i);
-            final TurkceHarf harf = bilesen.harf();
-            switch (bilesen.kural()) {
+            EkUretimBileseni<TemelEkUretimKurali> bilesen = bilesenler.get(i);
+            final TurkceHarf harf = bilesen.harf;
+            switch (bilesen.kural) {
                 case HARF:
                     kume.add(harf);
                     return kume;

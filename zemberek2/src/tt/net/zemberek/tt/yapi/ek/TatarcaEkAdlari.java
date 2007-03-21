@@ -25,20 +25,14 @@
  *  ***** END LICENSE BLOCK *****
  */
 
-package net.zemberek.yapi.kok;
+package net.zemberek.tt.yapi.ek;
 
-import net.zemberek.yapi.HarfDizisi;
-
-/**
- * Bir harf dizisi uzerinde yapilabilecek islemi ifade eder. Bu arayuz genellikle
- * kok yapisi uzerinde degisiklige neden olan ozel durumlarin tanimlanmasinda kullanilir.
- */
-public interface HarfDizisiIslemi {
-
-    /**
-     * dizi uzerinde degisiklik yapacak metod.
-     * @param dizi
-     */
-    void uygula(HarfDizisi dizi);
+public class TatarcaEkAdlari {
+    public static final String IS_KOK = "IS_KOK";
+    public static final String IS_COGUL_LAR = "IS_COGUL_LAR";
+    public static final String IS_UZAKLASMA_DAN = "IS_UZAKLASMA_DAN";
+    public static final String IS_BULUNMA_DA = "IS_BULUNMA_DA";
+    public static final String IS_YUKLEME_NE = "IS_YUKLEME_NE";
+    public static final String IS_YAKLASMA_GA = "IS_YAKLASMA_GA";
 
 }

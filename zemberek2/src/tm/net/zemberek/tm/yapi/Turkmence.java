@@ -36,9 +36,7 @@ import net.zemberek.yapi.Alfabe;
 import net.zemberek.yapi.DilAyarlari;
 import net.zemberek.yapi.KelimeTipi;
 import static net.zemberek.yapi.KelimeTipi.*;
-import net.zemberek.yapi.ek.EkOzelDurumUretici;
-import net.zemberek.yapi.ek.EkUretici;
-import net.zemberek.yapi.ek.TemelEkYonetici;
+import net.zemberek.yapi.ek.*;
 
 import java.util.EnumMap;
 import java.util.HashMap;
@@ -78,6 +76,10 @@ public class Turkmence implements DilAyarlari {
     public String[] duzYaziKokDosyalari() {
         return new String[]{"kaynaklar/tm/bilgi/kokler.txt"};
     }
+
+    public EkKuralBilgisi ekKuralBilgisi() {
+        return new TemelEkUretimKurali.TemelKuralBilgisi();
+    }    
 
     public Map<String, KelimeTipi> kokTipiAdlari() {
         Map kokTipAdlari = new HashMap();

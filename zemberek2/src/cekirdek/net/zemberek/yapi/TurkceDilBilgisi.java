@@ -40,9 +40,7 @@ import net.zemberek.islemler.BasitDenetlemeCebi;
 import net.zemberek.islemler.DenetlemeCebi;
 import net.zemberek.islemler.cozumleme.CozumlemeYardimcisi;
 import net.zemberek.istatistik.BinaryIstatistikOkuyucu;
-import net.zemberek.yapi.ek.EkOzelDurumUretici;
-import net.zemberek.yapi.ek.EkUretici;
-import net.zemberek.yapi.ek.EkYonetici;
+import net.zemberek.yapi.ek.*;
 import net.zemberek.yapi.kok.KokOzelDurumBilgisi;
 
 import java.io.File;
@@ -144,20 +142,18 @@ public class TurkceDilBilgisi implements DilBilgisi {
         } else {
             alfabe();
             try {
-                logger.fine("Ek yonetici uretiliyor:" + dilAdi);
-                Class clazz = dilAyarlari.ekYoneticiSinifi();
-                Constructor c = clazz.getConstructor(
-                        Alfabe.class,
-                        String.class,
-                        EkUretici.class,
-                        EkOzelDurumUretici.class,
-                        Map.class);
-                ekYonetici = (EkYonetici) c.newInstance(
-                        alfabe,
+                EkKuralKelimesiCozumleyici kuralCozumleyici = new EkKuralKelimesiCozumleyici(alfabe, dilAyarlari.ekKuralBilgisi());
+                XmlEkOkuyucu ekOkuyucu = new XmlEkOkuyucu(
                         ekDosyaAdi,
                         dilAyarlari.ekUretici(alfabe),
                         dilAyarlari.ekOzelDurumUretici(alfabe),
-                        dilAyarlari.baslangiEkAdlari());
+                        kuralCozumleyici);
+                logger.fine("Ek yonetici uretiliyor:" + dilAdi);
+                Class clazz = dilAyarlari.ekYoneticiSinifi();
+                Constructor c = clazz.getConstructor(
+                        Map.class,
+                        XmlEkOkuyucu.class);
+                ekYonetici = (EkYonetici) c.newInstance(dilAyarlari.baslangiEkAdlari(), ekOkuyucu);
             } catch (Exception e) {
                 logger.severe("ek yonetici sinif uretilemiyor.");
                 e.printStackTrace();

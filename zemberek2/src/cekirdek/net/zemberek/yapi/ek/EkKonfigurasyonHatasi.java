@@ -25,20 +25,11 @@
  *  ***** END LICENSE BLOCK *****
  */
 
-package net.zemberek.yapi.kok;
+package net.zemberek.yapi.ek;
 
-import net.zemberek.yapi.HarfDizisi;
+public class EkKonfigurasyonHatasi extends RuntimeException {
 
-/**
- * Bir harf dizisi uzerinde yapilabilecek islemi ifade eder. Bu arayuz genellikle
- * kok yapisi uzerinde degisiklige neden olan ozel durumlarin tanimlanmasinda kullanilir.
- */
-public interface HarfDizisiIslemi {
-
-    /**
-     * dizi uzerinde degisiklik yapacak metod.
-     * @param dizi
-     */
-    void uygula(HarfDizisi dizi);
-
+    public EkKonfigurasyonHatasi(String message) {
+        super(message);
+    }
 }

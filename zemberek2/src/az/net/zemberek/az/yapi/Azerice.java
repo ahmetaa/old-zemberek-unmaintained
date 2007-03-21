@@ -34,9 +34,8 @@ import net.zemberek.az.yapi.ek.AzericeEkOzelDurumUretici;
 import net.zemberek.az.yapi.kok.AzericeKokOzelDurumBilgisi;
 import net.zemberek.yapi.*;
 import static net.zemberek.yapi.KelimeTipi.*;
-import net.zemberek.yapi.ek.EkOzelDurumUretici;
-import net.zemberek.yapi.ek.EkUretici;
-import net.zemberek.yapi.ek.TemelEkYonetici;
+import net.zemberek.yapi.ek.*;
+
 import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.Locale;
@@ -82,6 +81,10 @@ public class Azerice implements DilAyarlari {
 
     public String[] duzYaziKokDosyalari() {
         return new String[]{"kaynaklar/az/bilgi/kokler.txt"};
+    }
+
+    public EkKuralBilgisi ekKuralBilgisi() {
+        return new TemelEkUretimKurali.TemelKuralBilgisi();
     }
 
     public Map<String, KelimeTipi> kokTipiAdlari() {

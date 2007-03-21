@@ -49,26 +49,15 @@ public class TemelEkYonetici implements EkYonetici {
 
     protected static Logger logger = Kayitci.kayitciUret(TemelEkYonetici.class);
 
-    protected Alfabe alfabe;
-
     public static final Ek BOS_EK = new Ek("BOS_EK");
     protected Map<String, Ek> ekler;
     protected Map<KelimeTipi, Ek> baslangicEkleri = new HashMap<KelimeTipi, Ek>();
 
 
-    public TemelEkYonetici(Alfabe alfabe,
-                           String dosya,
-                           EkUretici ekUretici,
-                           EkOzelDurumUretici ozelDurumUretici,
-                           Map<KelimeTipi, String> baslangicEkMap) throws IOException {
-        this.alfabe = alfabe;
-        long start = System.currentTimeMillis();
+    public TemelEkYonetici(Map<KelimeTipi, String> baslangicEkMap,
+                           XmlEkOkuyucu okuyucu) throws IOException {
 
-        XmlEkOkuyucu okuyucu = new XmlEkOkuyucu(
-                dosya,
-                ekUretici,
-                ozelDurumUretici,
-                alfabe);
+         long start = System.currentTimeMillis();
         okuyucu.xmlOku();
         ekler = okuyucu.getEkler();
         for (KelimeTipi tip : baslangicEkMap.keySet()) {
@@ -78,7 +67,7 @@ public class TemelEkYonetici implements EkYonetici {
             else
                 logger.warning(tip + " tipi icin baslangic eki " + baslangicEkMap.get(tip) + " bulunamiyor!");
         }
-        logger.info("ek okuma ve olusum suresii: " + (System.currentTimeMillis() - start) + "ms.");
+        logger.fine("ek okuma ve olusum suresii: " + (System.currentTimeMillis() - start) + "ms.");
     }
 
     /**

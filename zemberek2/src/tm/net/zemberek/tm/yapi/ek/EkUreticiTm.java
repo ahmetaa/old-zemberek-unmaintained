@@ -34,6 +34,7 @@ import net.zemberek.yapi.TurkceHarf;
 import net.zemberek.yapi.ek.Ek;
 import net.zemberek.yapi.ek.EkUretici;
 import net.zemberek.yapi.ek.EkUretimBileseni;
+import net.zemberek.yapi.ek.TemelEkUretimKurali;
 
 import java.util.List;
 import java.util.Set;
@@ -55,10 +56,10 @@ public class EkUreticiTm implements EkUretici {
     public HarfDizisi cozumlemeIcinEkUret(HarfDizisi ulanacak, HarfDizisi giris, List<EkUretimBileseni> bilesenler) {
         HarfDizisi sonuc = new HarfDizisi();
         for (int i = 0; i < bilesenler.size(); i++) {
-            EkUretimBileseni ekUretimBileseni = bilesenler.get(i);
-            TurkceHarf harf = ekUretimBileseni.harf();
+            EkUretimBileseni<TemelEkUretimKurali> ekUretimBileseni = bilesenler.get(i);
+            TurkceHarf harf = ekUretimBileseni.harf;
             final TurkceHarf sonSesli = ulanacak.sonSesli();
-            switch (ekUretimBileseni.kural()) {
+            switch (ekUretimBileseni.kural) {
                 case HARF:
                     sonuc.ekle(harf);
                     break;

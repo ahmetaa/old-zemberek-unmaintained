@@ -25,13 +25,14 @@
  *  ***** END LICENSE BLOCK *****
  */
 
-package net.zemberek.tr.yapi;
+package net.zemberek.tt.yapi;
 
-import net.zemberek.tr.islemler.TurkceCozumlemeYardimcisi;
-import net.zemberek.tr.yapi.ek.EkUreticiTr;
-import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.*;
-import net.zemberek.tr.yapi.ek.TurkceEkOzelDurumUretici;
-import net.zemberek.tr.yapi.kok.TurkceKokOzelDurumBilgisi;
+import net.zemberek.tt.islemler.TatarcaCozumlemeYardimcisi;
+import static net.zemberek.tt.yapi.ek.TatarcaEkAdlari.IS_KOK;
+import net.zemberek.tt.yapi.ek.TatarcaEkOzelDurumUretici;
+import net.zemberek.tt.yapi.ek.TatarcaEkUretimKurali;
+import net.zemberek.tt.yapi.ek.EkUreticiTt;
+import net.zemberek.tt.yapi.kok.TatarcaKokOzelDurumBilgisi;
 import net.zemberek.yapi.Alfabe;
 import net.zemberek.yapi.DilAyarlari;
 import net.zemberek.yapi.KelimeTipi;
@@ -43,16 +44,11 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
-/**
- * User: ahmet
- * Date: Sep 20, 2006
- */
-public class TurkiyeTurkcesi implements DilAyarlari {
 
-    public static final Locale LOCALE_TR = new Locale("tr");
+public class Tatarca implements DilAyarlari {
 
     public Locale locale() {
-        return LOCALE_TR;
+        return new Locale("tt");
     }
 
     public Class alfabeSinifi() {
@@ -64,38 +60,35 @@ public class TurkiyeTurkcesi implements DilAyarlari {
     }
 
     public Class heceleyiciSinifi() {
-        return TurkceHeceleyici.class;
+        return TatarcaHeceleyici.class;
     }
 
     public Class kokOzelDurumBilgisiSinifi() {
-        return TurkceKokOzelDurumBilgisi.class;
+        return TatarcaKokOzelDurumBilgisi.class;
     }
 
     public Class cozumlemeYardimcisiSinifi() {
-        return TurkceCozumlemeYardimcisi.class;
+        return TatarcaCozumlemeYardimcisi.class;
     }
 
     public EkUretici ekUretici(Alfabe alfabe) {
-        return new EkUreticiTr(alfabe);
+        return new EkUreticiTt(alfabe);
     }
 
     public EkOzelDurumUretici ekOzelDurumUretici(Alfabe alfabe) {
-        return new TurkceEkOzelDurumUretici(alfabe);
+        return new TatarcaEkOzelDurumUretici(alfabe);
     }
 
     public String[] duzYaziKokDosyalari() {
-        return new String[]{
-                "kaynaklar/tr/bilgi/duzyazi-kilavuz.txt",
-                "kaynaklar/tr/bilgi/kisaltmalar.txt",
-                "kaynaklar/tr/bilgi/bilisim.txt",
-                "kaynaklar/tr/bilgi/kisi-adlari.txt"};
+        return new String[]{"kaynaklar/tt/bilgi/kokler.txt"};
     }
 
     public EkKuralBilgisi ekKuralBilgisi() {
-        return new TemelEkUretimKurali.TemelKuralBilgisi();
+        return new TatarcaEkUretimKurali.KarakterBilgisi();
     }
 
     public Map<String, KelimeTipi> kokTipiAdlari() {
+        //TODO: burasi azericeye gore duzenlenmeli
         Map<String, KelimeTipi> tipMap = new HashMap();
         tipMap.put("IS", ISIM);
         tipMap.put("FI", FIIL);
@@ -117,25 +110,25 @@ public class TurkiyeTurkcesi implements DilAyarlari {
 
     public Map<KelimeTipi, String> baslangiEkAdlari() {
         Map<KelimeTipi, String> baslangicEkAdlari = new EnumMap(KelimeTipi.class);
-        baslangicEkAdlari.put(ISIM, ISIM_KOK);
-        baslangicEkAdlari.put(SIFAT, ISIM_KOK);
-        baslangicEkAdlari.put(FIIL, FIIL_KOK);
-        baslangicEkAdlari.put(ZAMAN, ZAMAN_KOK);
-        baslangicEkAdlari.put(ZAMIR, ZAMIR_KOK);
-        baslangicEkAdlari.put(SAYI, SAYI_KOK);
-        baslangicEkAdlari.put(SORU, SORU_KOK);
-        baslangicEkAdlari.put(UNLEM, UNLEM_KOK);
-        baslangicEkAdlari.put(EDAT, EDAT_KOK);
-        baslangicEkAdlari.put(BAGLAC, BAGLAC_KOK);
-        baslangicEkAdlari.put(OZEL, OZEL_KOK);
-        baslangicEkAdlari.put(IMEK, IMEK_KOK);
-        baslangicEkAdlari.put(YANKI, YANKI_KOK);
-        baslangicEkAdlari.put(KISALTMA, ISIM_KOK);
+        //TODO: Baslangic ekleri simidlik sadece ISIM_KOK baslangic ekini gosteriyor..
+        baslangicEkAdlari.put(ISIM, IS_KOK);
+        baslangicEkAdlari.put(SIFAT, IS_KOK);
+        baslangicEkAdlari.put(FIIL, IS_KOK);
+        baslangicEkAdlari.put(ZAMAN, IS_KOK);
+        baslangicEkAdlari.put(ZAMIR, IS_KOK);
+        baslangicEkAdlari.put(SAYI, IS_KOK);
+        baslangicEkAdlari.put(SORU, IS_KOK);
+        baslangicEkAdlari.put(UNLEM, IS_KOK);
+        baslangicEkAdlari.put(EDAT, IS_KOK);
+        baslangicEkAdlari.put(BAGLAC, IS_KOK);
+        baslangicEkAdlari.put(OZEL, IS_KOK);
+        baslangicEkAdlari.put(IMEK, IS_KOK);
+        baslangicEkAdlari.put(YANKI, IS_KOK);
+        baslangicEkAdlari.put(KISALTMA, IS_KOK);
         return baslangicEkAdlari;
     }
 
     public String ad() {
-        return "Turkiye Turkcesi";
+        return "TATARCA";
     }
-
 }
