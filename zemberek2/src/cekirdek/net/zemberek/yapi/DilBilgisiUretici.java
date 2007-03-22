@@ -34,7 +34,9 @@ public class DilBilgisiUretici {
 
     public static final String TR_SINIF = "net.zemberek.tr.yapi.TurkiyeTurkcesi";
     public static final String TM_SINIF = "net.zemberek.tm.yapi.Turkmence";
-
+    public static final String AZ_SINIF = "net.zemberek.az.yapi.Azerice";
+    public static final String TT_SINIF = "net.zemberek.tt.yapi.Tatarca";
+    
     public static void main(String[] args) throws IOException {
         if (args.length > 0) {
             String dilAdi = args[0].toLowerCase().trim();
@@ -54,6 +56,10 @@ public class DilBilgisiUretici {
             dilAyari = dilAyarUret(TR_SINIF);
         else if (dilAdi.equals("tm"))
             dilAyari = dilAyarUret(TM_SINIF);
+        else if(dilAdi.equals("az"))
+        	dilAyari=dilAyarUret(AZ_SINIF);
+        else if(dilAdi.equals("tt"))
+        	dilAyari=dilAyarUret(TT_SINIF);
         else {
             System.out.println("Dil sinifi bulunamiyor:" + dilAdi);
             System.exit(1);
