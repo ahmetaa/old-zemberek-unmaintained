@@ -51,7 +51,7 @@ public class EkUreticiTt implements EkUretici {
     public EkUreticiTt(Alfabe alfabe) {
         this.sesliUretici = new TatarcaSesliUretici(alfabe);
         HARF_m = alfabe.harf('m');
-        HARF_n = alfabe.harf('m');
+        HARF_n = alfabe.harf('n');
         HARF_nn = alfabe.harf(Alfabe.CHAR_TT_n);
     }
 
@@ -80,10 +80,10 @@ public class EkUreticiTt implements EkUretici {
                     if (sonHarf == HARF_m || sonHarf == HARF_n || sonHarf == HARF_nn)
                         sonuc.ekle(HARF_n);
                     else {
-                        if (harf.sertDonusum() == null)
-                            sonuc.ekle(harf);
-                        else
+                        if (sonHarf.sertMi() && harf.sertDonusum()!=null)
                             sonuc.ekle(harf.sertDonusum());
+                        else
+                            sonuc.ekle(harf);
                     } break;
                 case SESLI_AA:
                     if (i == 0 && sonHarf.sesliMi())
