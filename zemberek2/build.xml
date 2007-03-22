@@ -252,9 +252,9 @@
         <antcall target="dil-ekle">
             <param name="dil" value="${dil}"/>
         </antcall>
-        <mkdir dir="${build.dir}/${dil}/kaynaklar"/>
-        <copy todir="${build.dir}/${dil}/kaynaklar">
-            <fileset dir="${build.tum}/kaynaklar"/>
+        <mkdir dir="${build.dir}/${dil}/kaynaklar/${dil}"/>
+        <copy todir="${build.dir}/${dil}/kaynaklar/${dil}">
+            <fileset dir="${build.tum}/kaynaklar/${dil}"/>
         </copy>
         <jar jarfile="${jar.dir}/zemberek-${dil}-${surum}.jar"
              basedir="${build.dir}/${dil}">
