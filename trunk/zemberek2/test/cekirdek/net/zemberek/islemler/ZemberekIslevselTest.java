@@ -99,6 +99,10 @@ public class ZemberekIslevselTest extends TemelTest {
         beklenen = new String[] {"kul", "Kulu"};
         hesaplanan = kb.stringKokBul("Kulu");
         TestUtils.assertObjectArrayContentsEqual(beklenen, hesaplanan);
+
+        beklenen = new String[] {"kurt", "kur"};
+        hesaplanan = kb.stringKokBul("kurda");
+        TestUtils.assertObjectArrayContentsEqual(beklenen, hesaplanan);
     }
 
     @Test

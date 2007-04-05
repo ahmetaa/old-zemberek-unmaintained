@@ -70,4 +70,11 @@ public interface EkUretici {
      * @return olasi baslangic harfleri bir Set icerisinde.
      */
     Set<TurkceHarf> olasiBaslangicHarfleri(List<EkUretimBileseni> bilesenler);
+
+    /**
+     * bilesenlere gore en basta sesli harf olup olamayacagini belirler.
+     * @param bilesenler
+     * @return
+     */
+    boolean sesliIleBaslayabilir(List<EkUretimBileseni> bilesenler);
 }

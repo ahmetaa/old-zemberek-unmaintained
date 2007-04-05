@@ -29,4 +29,5 @@ package net.zemberek.yapi.ek;
 
 public interface EkUretimKurali {
 
- }
+    boolean isSesliUretimKurali();
+}

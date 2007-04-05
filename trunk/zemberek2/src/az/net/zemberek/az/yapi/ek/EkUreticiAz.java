@@ -31,15 +31,13 @@ import net.zemberek.az.yapi.AzericeSesliUretici;
 import net.zemberek.yapi.Alfabe;
 import net.zemberek.yapi.HarfDizisi;
 import net.zemberek.yapi.TurkceHarf;
-import net.zemberek.yapi.ek.Ek;
-import net.zemberek.yapi.ek.EkUretici;
-import net.zemberek.yapi.ek.EkUretimBileseni;
-import net.zemberek.yapi.ek.TemelEkUretimKurali;
+import net.zemberek.yapi.ek.*;
+import static net.zemberek.yapi.ek.TemelEkUretimKurali.KAYNASTIR;
 
 import java.util.List;
 import java.util.Set;
 
-public class EkUreticiAz implements EkUretici {
+public class EkUreticiAz  extends TemelEkUretici implements EkUretici {
 
     private AzericeSesliUretici sesliUretici;
 
@@ -55,7 +53,7 @@ public class EkUreticiAz implements EkUretici {
         for (int i = 0; i < bilesenler.size(); i++) {
             EkUretimBileseni ekUretimBileseni = bilesenler.get(i);
             final TurkceHarf harf = ekUretimBileseni.harf;
-            switch ((TemelEkUretimKurali)ekUretimBileseni.kural) {
+            switch ((TemelEkUretimKurali) ekUretimBileseni.kural) {
                 case HARF:
                     sonuc.ekle(harf);
                     break;
@@ -89,16 +87,4 @@ public class EkUreticiAz implements EkUretici {
         }
         return sonuc;
     }
-
-    public HarfDizisi olusumIcinEkUret(HarfDizisi ulanacak,
-                                       Ek sonrakiEk,
-                                       List<EkUretimBileseni> bilesenler) {
-        //TODO: gecici olarak bu sekilde
-        return cozumlemeIcinEkUret(ulanacak, null, bilesenler);
-    }
-
-    public Set<TurkceHarf> olasiBaslangicHarfleri(List<EkUretimBileseni> bilesenler) {
-        return null;
-    }
-
 }

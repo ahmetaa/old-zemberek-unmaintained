@@ -33,7 +33,6 @@ import net.zemberek.yapi.Kelime;
 import net.zemberek.yapi.TurkceHarf;
 
 import java.util.*;
-import java.io.Serializable;
 
 /**
  * Ek sinifi icerisinde eke ozel bilgiler, o ekten sonra gelebilecek eklerin listesi

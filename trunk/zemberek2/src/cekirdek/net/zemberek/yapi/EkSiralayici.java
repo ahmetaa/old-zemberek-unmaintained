@@ -33,24 +33,20 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/**
- * User: ahmet
- * Date: Sep 6, 2005
- */
 
 /**
  * Bu sinif rasgele bir sirada gelen ek ve kok bilgisini kullanarak olasi dogru ek dizilimlerini uretir
  * <p/>
  * aakin,Sep 6, 2005
  */
-public class EkSiralayici {
+public final class EkSiralayici {
 
-    private List<List<Ek>> tumOlusumlar;
-    private List<Ek> ekler;
-    private Ek baslangicEki;
-    private int tum;
+    private final List<List<Ek>> tumOlusumlar=new ArrayList<List<Ek>>();
+    private final List<Ek> ekler;
+    private final Ek baslangicEki;
+    private final int tum;
 
-    public EkSiralayici(List ekler, Ek baslangicEki) {
+    public EkSiralayici(List<Ek> ekler, Ek baslangicEki) {
         this.ekler = ekler;
         this.baslangicEki = baslangicEki;
         this.tum = ekler.size();
@@ -65,8 +61,7 @@ public class EkSiralayici {
     public List<List<Ek>> olasiEkDizilimleriniBul() {
         if (ekler == null)
             return Collections.EMPTY_LIST;
-        tumOlusumlar = new ArrayList<List<Ek>>();
-        List<Ek> kopya = new ArrayList(ekler);
+        List<Ek> kopya = new ArrayList<Ek>(ekler);
         yuru(new ArrayList<Ek>(), baslangicEki, kopya);
         return tumOlusumlar;
     }
@@ -85,7 +80,7 @@ public class EkSiralayici {
         for (int i = 0; i < rasgeleEkler.size(); i++) {
             Ek ek = rasgeleEkler.get(i);
             if (incelenenEk.ardindanGelebilirMi(ek)) {
-                List newList = new ArrayList(rasgeleEkler);
+                List<Ek> newList = new ArrayList<Ek>(rasgeleEkler);
                 newList.remove(i);
                 olusan.add(ek);
                 if (newList.size() != 0)
@@ -95,7 +90,7 @@ public class EkSiralayici {
         if (olusan.size() == tum) {
             if (!this.tumOlusumlar.contains(olusan))
                 this.tumOlusumlar.add(olusan);
-            olusan = new ArrayList();
+            olusan = new ArrayList<Ek>();
         } else {
             rasgeleEkler.add(incelenenEk);
             if (olusan.size() > 0)

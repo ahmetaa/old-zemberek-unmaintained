@@ -33,11 +33,6 @@ import net.zemberek.yapi.ek.Ek;
 import java.util.HashSet;
 import java.util.Set;
 
-import net.zemberek.yapi.HarfDizisi;
-import net.zemberek.yapi.ek.Ek;
-
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * Koke ilskin ozel durumu ifade eder. kok ozel durumlarinin farkli ozlelikleri

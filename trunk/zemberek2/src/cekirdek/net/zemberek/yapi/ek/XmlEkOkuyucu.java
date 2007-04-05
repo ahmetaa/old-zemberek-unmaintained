@@ -29,7 +29,6 @@ package net.zemberek.yapi.ek;
 
 import net.zemberek.araclar.Kayitci;
 import net.zemberek.araclar.XmlYardimcisi;
-import net.zemberek.yapi.Alfabe;
 import org.w3c.dom.Attr;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -144,7 +143,9 @@ public class XmlEkOkuyucu {
             ek.setOzelDurumlar(ozelDurumlar);
 
             ekOzellikleriBelirle(ek, ekElement);
-            xmlDisiEkOzellikleriBelirle(ek, bilesenler);
+
+            ek.setSesliIleBaslayabilir(ekUretici.sesliIleBaslayabilir(bilesenler));
+
             ek.baslangicHarfleriEkle(ekUretici.olasiBaslangicHarfleri(bilesenler));
             for (EkOzelDurumu oz : ozelDurumlar) {
                 ek.baslangicHarfleriEkle(ekUretici.olasiBaslangicHarfleri(oz.uretimBilesenleri()));
@@ -267,22 +268,4 @@ public class XmlEkOkuyucu {
         ardisilEkler.addAll(ardisilEkSet);
         return ardisilEkler;
     }
-
-    /**
-     * bazi ek ozellikleri konfigurasyon dosyasinda yer almaz, ekler okunduktan sonra
-     * bilesenlere gore otomatik olarak belirlenir.
-     *
-     * @param ek
-     * @param bilesenler
-     */
-    public void xmlDisiEkOzellikleriBelirle(Ek ek, List<EkUretimBileseni> bilesenler) {
-        for (EkUretimBileseni bilesen : bilesenler) {
-            if (bilesen.harf.sesliMi())
-                ek.setSesliIleBaslayabilir(true);
-            if (bilesen.harf != Alfabe.TANIMSIZ_HARF)
-                return;
-        }
-    }
-
-
 }
