@@ -58,7 +58,7 @@ public class TemelKokOzelDurumBilgisi {
 
     public KokOzelDurumu ozelDurum(int indeks) {
         if (indeks < 0 || indeks >= ozelDurumDizisi.length)
-            throw new IndexOutOfBoundsException("istenilen indekksli ozel durum mevcut degil:" + indeks);
+            throw new IndexOutOfBoundsException("istenilen indeksli ozel durum mevcut degil:" + indeks);
         return ozelDurumDizisi[indeks];
     }
 

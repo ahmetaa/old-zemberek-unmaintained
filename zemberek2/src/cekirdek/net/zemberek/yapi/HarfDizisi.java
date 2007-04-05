@@ -124,7 +124,7 @@ public class HarfDizisi implements CharSequence {
      *
      * @return varsa son harf, Yoksa TANIMSIZ_HARF.
      */
-    public final TurkceHarf sonHarf() {
+    public TurkceHarf sonHarf() {
         if (boy > 0)
             return dizi[boy - 1];
         else
@@ -137,7 +137,7 @@ public class HarfDizisi implements CharSequence {
      *
      * @return varsa son sesli yoksa TANIMSIZ_HARF
      */
-    public final TurkceHarf sonSesli() {
+    public TurkceHarf sonSesli() {
         for (int i = boy - 1; i >= 0; i--) {
             if (dizi[i].sesliMi())
                 return dizi[i];
@@ -256,7 +256,7 @@ public class HarfDizisi implements CharSequence {
      * @param i istenilen pozisyondaki harf.
      * @return girilen pozisyondaki harf, yoksa TANIMSIZ_HARF
      */
-    public final TurkceHarf harf(int i) {
+    public TurkceHarf harf(int i) {
         if (i < 0)
             return Alfabe.TANIMSIZ_HARF;
         if (i < boy)
@@ -309,7 +309,7 @@ public class HarfDizisi implements CharSequence {
      * @param harfDizisi kiyaslanacak harfDizisi
      * @return true eger esitse.
      */
-    public final boolean asciiToleransliKiyasla(HarfDizisi harfDizisi) {
+    public boolean asciiToleransliKiyasla(HarfDizisi harfDizisi) {
         if (harfDizisi == null) return false;
         if (this == harfDizisi) return true;
         if (boy != harfDizisi.boy) return false;
@@ -320,7 +320,7 @@ public class HarfDizisi implements CharSequence {
         return true;
     }
 
-    public final boolean asciiToleransliAradanKiyasla(int baslangic, HarfDizisi kelime) {
+    public boolean asciiToleransliAradanKiyasla(int baslangic, HarfDizisi kelime) {
         if (kelime == null) return false;
         if (boy < baslangic + kelime.length())
             return false;
@@ -330,7 +330,7 @@ public class HarfDizisi implements CharSequence {
         return true;
     }
 
-    public final boolean asciiToleransliBastanKiyasla(HarfDizisi giris) {
+    public boolean asciiToleransliBastanKiyasla(HarfDizisi giris) {
         if (giris == null) return false;
         if (giris.length() > this.boy)
             return false;
@@ -340,7 +340,7 @@ public class HarfDizisi implements CharSequence {
         return true;
     }
 
-    public final boolean aradanKiyasla(int baslangic, HarfDizisi kelime) {
+    public boolean aradanKiyasla(int baslangic, HarfDizisi kelime) {
         if (kelime == null) return false;
         if (boy < baslangic + kelime.length())
             return false;
@@ -350,7 +350,7 @@ public class HarfDizisi implements CharSequence {
         return true;
     }
 
-    public final boolean bastanKiyasla(HarfDizisi giris) {
+    public boolean bastanKiyasla(HarfDizisi giris) {
         if (giris == null) return false;
         if (giris.length() > this.boy)
             return false;
@@ -367,7 +367,7 @@ public class HarfDizisi implements CharSequence {
      * @param harf kullanilacak harf
      * @throws ArrayIndexOutOfBoundsException
      */
-    public final void harfDegistir(int index, TurkceHarf harf) {
+    public void harfDegistir(int index, TurkceHarf harf) {
         if (index < 0 || index >= boy)
             throw new ArrayIndexOutOfBoundsException("indeks degeri:"+index+ " fakat harf dizi boyu:"+boy);
         dizi[index] = harf;
@@ -437,7 +437,7 @@ public class HarfDizisi implements CharSequence {
      *
      * @return ilk TurkceHarf.
      */
-    public final TurkceHarf ilkHarf() {
+    public TurkceHarf ilkHarf() {
         if (boy == 0) return Alfabe.TANIMSIZ_HARF;
         else
             return dizi[0];
@@ -448,7 +448,7 @@ public class HarfDizisi implements CharSequence {
      * "kedi" icin (1) "k" olusturur.
      * @param index kirpilmaya baslanacak pozisyon
      */
-    public final void kirp(int index) {
+    public void kirp(int index) {
         if (index <= boy && index >= 0)
             boy = index;
     }
@@ -499,11 +499,11 @@ public class HarfDizisi implements CharSequence {
 
     //--------- asagidaki metodlar CharSequence arayuzu icin hazirlandi. -----
 
-    public final int length() {
+    public int length() {
         return boy;
     }
 
-    public final char charAt(int index) {
+    public char charAt(int index) {
         if (index < 0 || index >= boy)
             throw new StringIndexOutOfBoundsException(index);
         return dizi[index].charDeger();

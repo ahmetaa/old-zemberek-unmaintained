@@ -37,7 +37,7 @@ import java.util.Map;
  * uretim parametresi olarak gelen Map icerisinde hangi kelimenin hangi kelimeye
  * donusecegi belirtilir.
  * ornegin
- * demek->diyen icin de->ye donusumu, ben->bana icin ben->ban donusumu.
+ * demek->diyen icin de->di donusumu, ben->bana icin ben->ban donusumu.
  */
 public class YeniIcerikAta implements HarfDizisiIslemi {
 

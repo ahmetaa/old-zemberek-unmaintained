@@ -33,40 +33,42 @@ import net.zemberek.yapi.ek.EkKuralBilgisi;
 import java.util.*;
 
 public enum TatarcaEkUretimKurali implements EkUretimKurali {
-    SESLI_EI,
-    SESLI_AA,
-    SERTLESTIR,
-    KAYNASTIR,
-    N_DONUSUMU,
-    HARF;
 
-    // ek uretim kural kelimesinde kullanilan parcalarin dilbilgisi kurali karsiliklarini tutan tablo.
-    private static final Map<Character, EkUretimKurali> kuralTablosu = new HashMap();
+    SESLI_EI(true),
+    SESLI_AA(true),
+    SERTLESTIR(false),
+    KAYNASTIR(false),
+    N_DONUSUMU(false),
+    HARF(false);
 
-    static {
-        kuralTablosu.put('E', SESLI_EI);
-        kuralTablosu.put('A', SESLI_AA);
-        kuralTablosu.put('>', SERTLESTIR);
-        kuralTablosu.put('+', KAYNASTIR);
-        kuralTablosu.put('@', N_DONUSUMU);
+    private final boolean sesliUretimKurali;
+
+    TatarcaEkUretimKurali(boolean sesliUretimKurali) {
+        this.sesliUretimKurali = sesliUretimKurali;
     }
 
-    private static final Set<Character> sesliKurallari =
-            new HashSet<Character>(Arrays.asList('A', 'E'));
-    private static final Set<Character> harfKurallari =
-            new HashSet<Character>(Arrays.asList('+', '>', '@'));
+    public boolean isSesliUretimKurali() {
+        return sesliUretimKurali;
+    }
+
 
     public static class KarakterBilgisi implements EkKuralBilgisi {
 
         public Set<Character> sesliKuralKarakterleri() {
-            return sesliKurallari;
+            return new HashSet<Character>(Arrays.asList('A', 'E'));
         }
 
         public Set<Character> harfKuralKarakterleri() {
-            return harfKurallari;
+            return new HashSet<Character>(Arrays.asList('+', '>', '@'));
         }
 
         public Map<Character, EkUretimKurali> karakterKuralTablosu() {
+            final Map<Character, EkUretimKurali> kuralTablosu = new HashMap();
+            kuralTablosu.put('E', SESLI_EI);
+            kuralTablosu.put('A', SESLI_AA);
+            kuralTablosu.put('>', SERTLESTIR);
+            kuralTablosu.put('+', KAYNASTIR);
+            kuralTablosu.put('@', N_DONUSUMU);
             return kuralTablosu;
         }
 

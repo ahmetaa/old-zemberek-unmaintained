@@ -43,7 +43,6 @@ public abstract class TemelEkOzelDurumUretici implements EkOzelDurumUretici {
     protected Alfabe alfabe;
 
     public enum TemelEkOzelDurumuTipi implements EkOzelDurumTipi {
-
         SON_HARF_YUMUSAMA,
         OLDURGAN,
         ON_EK,

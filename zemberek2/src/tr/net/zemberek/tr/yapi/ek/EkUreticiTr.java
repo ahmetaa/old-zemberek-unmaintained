@@ -31,17 +31,14 @@ import net.zemberek.tr.yapi.TurkceSesliUretici;
 import net.zemberek.yapi.Alfabe;
 import net.zemberek.yapi.HarfDizisi;
 import net.zemberek.yapi.TurkceHarf;
-import net.zemberek.yapi.ek.Ek;
-import net.zemberek.yapi.ek.EkUretici;
-import net.zemberek.yapi.ek.EkUretimBileseni;
-import net.zemberek.yapi.ek.TemelEkUretimKurali;
+import net.zemberek.yapi.ek.*;
 
 import java.util.List;
 import java.util.Set;
 import java.util.HashSet;
 
 
-public class EkUreticiTr implements EkUretici {
+public class EkUreticiTr extends TemelEkUretici implements EkUretici {
 
     private TurkceSesliUretici sesliUretici;
     public final TurkceHarf HARF_a;
@@ -65,9 +62,9 @@ public class EkUreticiTr implements EkUretici {
         HarfDizisi sonuc = new HarfDizisi(4);
         TurkceHarf sonSesli = ulanacak.sonSesli();
         for (int i = 0; i < bilesenler.size(); i++) {
-            EkUretimBileseni<TemelEkUretimKurali> ekUretimBileseni = bilesenler.get(i);
+            EkUretimBileseni ekUretimBileseni = bilesenler.get(i);
             final TurkceHarf harf = ekUretimBileseni.harf;
-            switch (ekUretimBileseni.kural) {
+            switch ((TemelEkUretimKurali) ekUretimBileseni.kural) {
                 case HARF:
                     sonuc.ekle(harf);
                     break;
@@ -102,17 +99,13 @@ public class EkUreticiTr implements EkUretici {
         return sonuc;
     }
 
-    public HarfDizisi olusumIcinEkUret(HarfDizisi ulanacak, Ek sonrakiEk, List<EkUretimBileseni> bilesenler) {
-        //TODO: gecici olarak bu sekilde
-        return cozumlemeIcinEkUret(ulanacak, null, bilesenler);
-    }
-
+    @Override
     public Set<TurkceHarf> olasiBaslangicHarfleri(List<EkUretimBileseni> bilesenler) {
         Set<TurkceHarf> kume = new HashSet(4);
-        for (int i=0; i< bilesenler.size(); i++) {
-            EkUretimBileseni<TemelEkUretimKurali> bilesen = bilesenler.get(i);
+        for (int i = 0; i < bilesenler.size(); i++) {
+            EkUretimBileseni bilesen = bilesenler.get(i);
             final TurkceHarf harf = bilesen.harf;
-            switch (bilesen.kural) {
+            switch ((TemelEkUretimKurali) bilesen.kural) {
                 case HARF:
                     kume.add(harf);
                     return kume;
@@ -124,17 +117,17 @@ public class EkUreticiTr implements EkUretici {
                     kume.add(harf.sertDonusum());
                     return kume;
                 case SESLI_AE:
-                      kume.add(HARF_a);
-                      kume.add(HARF_e);
-                      if(i>0)
+                    kume.add(HARF_a);
+                    kume.add(HARF_e);
+                    if (i > 0)
                         return kume;
                 case SESLI_IU:
-                      kume.add(HARF_i);
-                      kume.add(HARF_u);
-                      kume.add(HARF_ii);
-                      kume.add(HARF_uu);
-                      if(i>0)
-                        return kume;                    
+                    kume.add(HARF_i);
+                    kume.add(HARF_u);
+                    kume.add(HARF_ii);
+                    kume.add(HARF_uu);
+                    if (i > 0)
+                        return kume;
             }
         }
         return kume;

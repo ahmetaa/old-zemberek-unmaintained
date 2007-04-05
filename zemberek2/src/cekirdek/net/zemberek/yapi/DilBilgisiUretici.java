@@ -44,7 +44,7 @@ public class DilBilgisiUretici {
             System.exit(0);
 
         } else {
-            System.out.println("Dil adi girmelisiniz (tr,tm,az gibi)");
+            System.out.println("Dil adi girmelisiniz (tr,tm,az,tt gibi)");
             System.exit(1);
         }
     }

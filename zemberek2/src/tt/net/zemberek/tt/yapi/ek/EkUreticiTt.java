@@ -37,7 +37,6 @@ import net.zemberek.yapi.ek.EkUretimBileseni;
 
 import java.util.List;
 import java.util.Set;
-import java.util.Collections;
 
 public class EkUreticiTt implements EkUretici {
 
@@ -59,10 +58,10 @@ public class EkUreticiTt implements EkUretici {
         HarfDizisi sonuc = new HarfDizisi(4);
         TurkceHarf sonSesli = ulanacak.sonSesli();
         for (int i = 0; i < bilesenler.size(); i++) {
-            EkUretimBileseni<TatarcaEkUretimKurali> ekUretimBileseni = bilesenler.get(i);
+            EkUretimBileseni ekUretimBileseni = bilesenler.get(i);
             final TurkceHarf harf = ekUretimBileseni.harf;
             final TurkceHarf sonHarf = ulanacak.sonHarf();
-            switch (ekUretimBileseni.kural) {
+            switch ((TatarcaEkUretimKurali)ekUretimBileseni.kural) {
                 case HARF:
                     sonuc.ekle(harf);
                     break;
@@ -112,5 +111,14 @@ public class EkUreticiTt implements EkUretici {
 
     public Set<TurkceHarf> olasiBaslangicHarfleri(List<EkUretimBileseni> bilesenler) {
         return null;
+    }
+
+    public boolean sesliIleBaslayabilir(List<EkUretimBileseni> bilesenler) {
+        for (EkUretimBileseni bilesen : bilesenler) {
+            if (bilesen.kural == TatarcaEkUretimKurali.KAYNASTIR)
+                continue;
+            return bilesen.harf.sesliMi() || bilesen.kural.isSesliUretimKurali();
+        }
+        return false;
     }
 }

@@ -33,7 +33,7 @@ import net.zemberek.yapi.TurkceHarf;
  * uretim bilesen sinifi, uretim kural kelimesindeki bilesenleri temsil eder.
  * degistirilemez, thread safe.
  */
-public final class EkUretimBileseni<EkUretimKurali> {
+public final class EkUretimBileseni {
 
     public final EkUretimKurali kural;
     public final TurkceHarf harf;
