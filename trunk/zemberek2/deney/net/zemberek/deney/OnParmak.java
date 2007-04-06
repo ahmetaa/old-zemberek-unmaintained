@@ -1,11 +1,11 @@
 package net.zemberek.deney;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.Random;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -36,6 +36,9 @@ public class OnParmak {
 	private DilAyarlari dilayarlari;
 	
 	private String[] levels;
+	private final int numLines = 20;
+	private final int numWordsInLines = 8;
+	private final int numRequiredWords = numLines * numWordsInLines;
 
 	public void init(String[] levels) {
 		dilayarlari = new TurkiyeTurkcesi();
@@ -80,19 +83,30 @@ public class OnParmak {
 		
 		String cur = "";
 		for (String level: this.levels) {
+			Random random = new Random();
+
 			Element levelEl = dom.createElement("Level");
 			Element newCharsEl = dom.createElement("NewCharacters");
 			newCharsEl.appendChild(dom.createTextNode(level));
 			levelEl.appendChild(newCharsEl);
 
 			cur += level;
-			for (int i = 0; i < 10; ++i) {
+			Collection<String> kokler = kokSec(cur, level);
+			if (kokler.size() < numRequiredWords) {
+				for (int i  = 0; i < numRequiredWords - kokler.size(); ++i) {
+					kokler.add(generateString(cur.toCharArray(), 5));
+				}
+			}
+
+			Object[] kokArray = kokler.toArray();
+			for (int i = 0; i < numLines; ++i) {
+				Element lineEl = dom.createElement("Line");
 				String line = "";
-				for (String kok : kokSec(cur, level, 10, 10*i)) {
-					line += kok + " ";
+				for (int j = 0; j < numWordsInLines; ++j) {
+					int index = random.nextInt(kokArray.length);
+					line += kokArray[index] + " ";
 				}
 				line = line.trim();
-				Element lineEl = dom.createElement("Line");
 				lineEl.appendChild(dom.createTextNode(line));
 				levelEl.appendChild(lineEl);
 			}
@@ -113,8 +127,20 @@ public class OnParmak {
 			e.printStackTrace();
 		}
 	}
+
+	private String generateString(char[] chars, int length) {
+		Random random = new Random();
+		String str = "";
+		int len = random.nextInt(length) + 1; 
+		while (len > 0) {
+			char c = chars[random.nextInt(chars.length)];
+			str += c;
+			--len;
+		}
+		return str; 
+	}
 	
-	public Collection<Kok> tumKokler() {
+	private Collection<Kok> tumKokler() {
 		return kokler.tumKokler();
 	}
 	
@@ -137,16 +163,9 @@ public class OnParmak {
 		return true;
 	}
 	
-	public Collection<String> kokSec(String harfler, String musthaveone, int count, int from) {
+	private Collection<String> kokSec(String harfler, String musthaveone) {
 		HashSet<String> koklist = new HashSet<String>(100);
-		int i = 0;
 		for (Kok kok : tumKokler()) {
-			if (from != 0) {
-				--from;
-				continue;
-			}
-			if (i == count)
-				break;
 			if (checkKok(kok, harfler)) {
 				boolean hasone = false;
 				for (char c : musthaveone.toCharArray()) {
@@ -155,7 +174,6 @@ public class OnParmak {
 				}
 				if (hasone) {
 					koklist.add(kok.icerik());
-					++i;
 				}
 			}
 		}
@@ -164,13 +182,17 @@ public class OnParmak {
 
 	public static void main(String[] args) {
 		OnParmak onparmak = new OnParmak();
-		String[] lectures = {
+		String[] levels= {
 				"jf", "kd", "ls", "şa", "ci",
 				"nt", "vı", "me", "hr", "go",
 				"bp", "ğu", "ün", "çz", "ö"
 		};
-		onparmak.init(lectures);
+		onparmak.init(levels);
 		onparmak.createKTouchDocument();
-		onparmak.printToFile("/home/baris/deneme.xml");
+		
+		if (args.length == 1)
+			onparmak.printToFile(args[0]);
+		else
+			onparmak.printToFile("/home/baris/turkish.ktouch.xml");
 	}
 }
