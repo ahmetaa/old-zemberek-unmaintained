@@ -46,7 +46,7 @@ public class TestTurkishTokenStream {
     @Test
     public void testNextWord() {
         String input = "Ahmet Mehmet Betul Madeline";
-        ArrayList list = new ArrayList();
+        ArrayList<String> list = new ArrayList<String>();
         ByteArrayInputStream is = new ByteArrayInputStream(input.getBytes());
         TurkishTokenStream tstream;
         tstream = new TurkishTokenStream(is, null);
@@ -60,7 +60,7 @@ public class TestTurkishTokenStream {
 
     @Test
     public void testNextSentence() {
-        ArrayList list = new ArrayList();
+        ArrayList<String> list = new ArrayList<String>();
         TurkishTokenStream tstream;
         tstream = new TurkishTokenStream("kaynaklar/tr/test/tokensentencetest.txt", null);
         String s = null;
@@ -73,7 +73,7 @@ public class TestTurkishTokenStream {
 
     @Test
     public void testNextWordKomplex() {
-        ArrayList list = new ArrayList();
+        ArrayList<String> list = new ArrayList<String>();
         TurkishTokenStream tstream;
         tstream = new TurkishTokenStream("kaynaklar/tr/test/tokentest.txt", null);
         String s = null;
@@ -82,7 +82,7 @@ public class TestTurkishTokenStream {
         }
         assertEquals(7, list.size());
         System.out.println("list = " + list);
-        assertTrue("kelime" + list.get(0), list.get(6).equals(list.get(0)));
+        assertTrue("kelime" + list.get(0), list.get(6).equalsIgnoreCase(list.get(0)));
     }
 
 
