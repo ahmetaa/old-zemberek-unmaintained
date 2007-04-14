@@ -57,7 +57,7 @@ public class TestOzelDurumCozumleme extends TemelTest {
                 dilAyarlari.kokTipiAdlari());
         Sozluk sozluk = new AgacSozluk(kokOkuyucu, alfabe, dilBilgisi.kokOzelDurumlari());
         //Normal denetleyici-cozumleyici olusumu
-        KokAdayiBulucu kokBulucu = sozluk.getKokBulucuFactory().getKesinKokBulucu();
+        KokAdayiBulucu kokBulucu = sozluk.kokBulucuFactory().kesinKokBulucu();
         cozumleyici = new StandartCozumleyici(
                 kokBulucu,
                 new KesinHDKiyaslayici(),

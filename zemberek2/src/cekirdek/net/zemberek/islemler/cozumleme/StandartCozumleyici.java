@@ -84,7 +84,7 @@ public class StandartCozumleyici implements KelimeCozumleyici {
             return BOS_KELIME_DIZISI;
 
         //kok adaylarinin bulunmasi.
-        List<Kok> kokler = kokBulucu.getAdayKokler(strIslenmis);
+        List<Kok> kokler = kokBulucu.adayKokleriBul(strIslenmis);
 
         if (log.isLoggable(Level.FINE)) log.fine("Giris: " + strGiris + ", Adaylar: " + kokler);
         HarfDizisi girisDizi = new HarfDizisi(strIslenmis, alfabe);

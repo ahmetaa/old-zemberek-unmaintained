@@ -75,7 +75,7 @@ public class ToleransliKokAdayiBulucu implements KokAdayiBulucu {
         this.tolerans = tolerans;
     }
 
-    public List<Kok> getAdayKokler(String giris) {
+    public List<Kok> adayKokleriBul(String giris) {
         return benzerKokleriBul(giris);
     }
 
@@ -91,10 +91,10 @@ public class ToleransliKokAdayiBulucu implements KokAdayiBulucu {
 
     private void yuru(KokDugumu dugum, String olusan) {
         String tester = olusan;
-        tester += dugum.getHarf();
+        tester += dugum.harf();
         if (dugum.getKok() != null) {
             distanceCalculationCount++;
-            if (MetinAraclari.parcasiDuzeltmeMesafesiIcinde((String) dugum.getKelime(), giris, tolerans)) {
+            if (MetinAraclari.parcasiDuzeltmeMesafesiIcinde((String) dugum.kelime(), giris, tolerans)) {
             	// Aday kök bulundu
                 adaylar.add(dugum.getKok());
             } else {
@@ -108,7 +108,7 @@ public class ToleransliKokAdayiBulucu implements KokAdayiBulucu {
             }
         }
 
-        for (KokDugumu altDugum : dugum.altDugumDizisiGetir()) {
+        for (KokDugumu altDugum : dugum.altDugumDizisi()) {
             if (altDugum != null) {
                 this.yuru(altDugum, tester);
             }

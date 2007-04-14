@@ -45,5 +45,5 @@ public interface KokAdayiBulucu {
      * @param giris: Uzerinde aday kok aramasi yapilacak giris kelimesi.
      * @return Aday kok dizisi
      */
-    public List<Kok> getAdayKokler(String giris);
+    public List<Kok> adayKokleriBul(String giris);
 }

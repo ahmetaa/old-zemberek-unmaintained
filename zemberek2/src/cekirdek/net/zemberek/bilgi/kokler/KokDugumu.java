@@ -38,17 +38,17 @@ import java.util.List;
 
 /**
  * Kök düğümü sınıfı Kök ağacının yapıtaşıdır. Her düğüm, kökler, eşseli kökler,
- * değişmiş halleri ifade eden bir string ve uygun �ekilde bellek kullanımı için 
+ * değişmiş halleri ifade eden bir string ve uygun şekilde bellek kullanımı için 
  * hazırlanmış özel bir alt düğüm listesi nesnesi taşır.
  * <p/>
- * çeşitli nedenlerle değişikliğe uğrayabilecek olan kökler ağaca eklenirken
+ * Çeşitli nedenlerle değişikliğe uğrayabilecek olan kökler ağaca eklenirken
  * değişmiş halleri ile beraber eklenirler. Örneğin kitap kökü hem kitab hem de
  * kitap hali ile sözlüğe eklenir, ancak bu iki kelime için oluşan düğüm de
- * aynı kökü gösterirler. Böylece Kitabına gibi kelimeler için kök adayları
- * aranırken kitap köküne erişilmiş olur.
+ * aynı kökü gösterirler. Böylece "kitabına" gibi kelimeler için kök adayları
+ * aranırken "kitap" köküne erişilmiş olur.
  * <p/>
  * Eş sesli olan kökler aynı düğüme bağlanırlar. Ağacın oluşumu sırasında ilk 
- * gelen kök düğümdeki kök değişkenne, sonradan gelenler de esSesliler listesine 
+ * gelen kök düğümdeki kök değişkenine, sonradan gelenler de esSesliler listesine 
  * eklenirler. Arama sırasında bu kök te aday olarak döndürülür.
  *
  * @author MDA
@@ -85,11 +85,11 @@ public class KokDugumu {
      * @return Eğer verilen karakteri taşıyan bir alt düğüm varsa
      * o düğümü, yoksa null.
      */
-    public final KokDugumu altDugumGetir(char in) {
+    public final KokDugumu altDugumBul(char in) {
         if (altDugumler == null)
             return null;
         else
-            return altDugumler.altDugumGetir(in);
+            return altDugumler.altDugum(in);
     }
 
     /**
@@ -99,7 +99,7 @@ public class KokDugumu {
      * @param dugum
      * @return Eklenen düğüm
      */
-    public final KokDugumu addNode(KokDugumu dugum) {
+    public final KokDugumu dugumEkle(KokDugumu dugum) {
         if (altDugumler == null) {
             altDugumler = new AltDugumListesi();
         }
@@ -110,11 +110,11 @@ public class KokDugumu {
     /**
      * @return tum alt dugumler. dizi olarak.
      */
-    public final KokDugumu[] altDugumDizisiGetir() {
+    public final KokDugumu[] altDugumDizisi() {
         if (altDugumler == null) {
             return new KokDugumu[0];
         }
-        return altDugumler.altDugumlerDizisiGetir();
+        return altDugumler.altDugumlerDizisi();
     }
 
     public final boolean altDugumVarMi(){
@@ -139,11 +139,11 @@ public class KokDugumu {
         return this.kok;
     }
 
-    public final List<Kok> getEsSesliler() {
+    public final List<Kok> esSesliler() {
         return esSesliler;
     }
 
-    public final CharSequence getKelime() {
+    public final CharSequence kelime() {
         if (kelime != null) return kelime;
         if (kok != null) return kok.icerik();
         return null;
@@ -157,7 +157,7 @@ public class KokDugumu {
      * @return düğüme bağlı kök ve eş seslilerin hepsini bir listeye 
      * koyarak geri döndürür.
      */
-    public List<Kok> tumKokleriGetir() {
+    public List<Kok> tumKokler() {
         if (kok != null) {
             ArrayList<Kok> kokler = new ArrayList<Kok>();
             kokler.add(kok);
@@ -173,7 +173,7 @@ public class KokDugumu {
      * @return düğüme bağlı tum köklerin icerigi "icerik" ile ayni olanlairni dondurur
      * koyarak geri döndürür.
      */
-    public List<Kok> tumKokleriGetir(String icerik) {
+    public List<Kok> tumKokler(String icerik) {
         if (kok != null) {
             ArrayList<Kok> kokler = new ArrayList<Kok>(2);
             if(kok.icerik().equals(icerik))
@@ -213,11 +213,11 @@ public class KokDugumu {
 
     public final void kopyala(KokDugumu kaynak) {
         this.kok = kaynak.getKok();
-        this.kelime = kaynak.getKelime();
-        this.esSesliler = kaynak.getEsSesliler();
+        this.kelime = kaynak.kelime();
+        this.esSesliler = kaynak.esSesliler();
     }
 
-    public final char getHarf() {
+    public final char harf() {
         return harf;
     }
 
@@ -226,13 +226,13 @@ public class KokDugumu {
     }
 
     /**
-     * Düğümün ve alt düğümlerinin ağaç yapısı �eklinde string gösterimini döndürür.
+     * Düğümün ve alt düğümlerinin ağaç yapısı şeklinde string gösterimini döndürür.
      * sadece debug amaçlıdır.
      *
      * @param level
      * @return dugumun string halini dondurur.
      */
-    public final String getStringRep(int level) {
+    public final String goster(int level) {
         char[] indentChars = new char[level * 2];
         for (int i = 0; i < indentChars.length; i++)
             indentChars[i] = ' ';
@@ -253,12 +253,12 @@ public class KokDugumu {
             str += " ]";
         }
 
-        KokDugumu[] subNodes = altDugumDizisiGetir();
+        KokDugumu[] subNodes = altDugumDizisi();
         if (subNodes != null) {
             str += "\n " + indent + " Alt dugumler:\n";
             for (KokDugumu subNode : subNodes) {
                 if (subNode != null) {
-                    str += subNode.getStringRep(level + 1) + "\n";
+                    str += subNode.goster(level + 1) + "\n";
                 }
             }
         }
@@ -300,11 +300,11 @@ public class KokDugumu {
                 if (tumDugumler == null) {
                     tumDugumler = new HashMap<Character, KokDugumu>(CEP_BUYUKLUGU + 2);
                     for (int i = 0; i < CEP_BUYUKLUGU; i++) {
-                        tumDugumler.put(dugumler[i].getHarf(), dugumler[i]);
+                        tumDugumler.put(dugumler[i].harf(), dugumler[i]);
                     }
                     dugumler = null;
                 }
-                tumDugumler.put(dugum.getHarf(), dugum);
+                tumDugumler.put(dugum.harf(), dugum);
             } else {
                 dugumler[index++] = dugum;
             }
@@ -315,10 +315,10 @@ public class KokDugumu {
          * @param giris
          * @return ilgili KokDugumu
          */
-        public final KokDugumu altDugumGetir(char giris) {
+        public final KokDugumu altDugum(char giris) {
             if (dugumler != null) {
                 for (int i=0 ; i< index; i++) {
-                    if (dugumler[i].getHarf() == giris) {
+                    if (dugumler[i].harf() == giris) {
                         return dugumler[i];
                     }
                 }
@@ -332,7 +332,7 @@ public class KokDugumu {
          * Alt düğümleri dizi olarak döndürür.
          * @return KokDugumu[] cinsinden alt düğümler dizisi
          */
-        public final KokDugumu[] altDugumlerDizisiGetir() {
+        public final KokDugumu[] altDugumlerDizisi() {
             if (dugumler != null){
                 return dugumler;
             }

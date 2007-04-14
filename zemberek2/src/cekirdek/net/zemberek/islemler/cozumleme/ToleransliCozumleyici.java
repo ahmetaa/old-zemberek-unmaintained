@@ -65,7 +65,7 @@ public class ToleransliCozumleyici {
         String strIslenmis = alfabe.ayikla(strGiris);
         if (strIslenmis.length() == 0)
             return BOS_KELIME_DIZISI;
-        List<Kok> kokler = kokBulucu.getAdayKokler(strIslenmis);
+        List<Kok> kokler = kokBulucu.adayKokleriBul(strIslenmis);
         List<Kelime> cozumler = new ArrayList();
         if (log.isLoggable(Level.FINER)) log.finer("Giris: " + strIslenmis + ", Adaylar: " + kokler);
 
