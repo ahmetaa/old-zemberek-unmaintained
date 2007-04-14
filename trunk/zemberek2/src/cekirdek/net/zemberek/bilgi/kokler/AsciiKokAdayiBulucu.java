@@ -58,7 +58,7 @@ public class AsciiKokAdayiBulucu implements KokAdayiBulucu {
         return walkCount;
     }
 
-    public List<Kok> getAdayKokler(String giris) {
+    public List<Kok> adayKokleriBul(String giris) {
         this.giris = giris;
         asciiGiris = agac.getAlfabe().asciifyString(giris);
         adaylar = new ArrayList<Kok>(4);
@@ -91,11 +91,11 @@ public class AsciiKokAdayiBulucu implements KokAdayiBulucu {
      * @param olusan : Yürüme sırasında oluşan kelime (düğümlerin karakter değerlerinden)
      */
     public void yuru(KokDugumu dugum, String olusan) {
-        String tester = (olusan + dugum.getHarf()).trim();
+        String tester = (olusan + dugum.harf()).trim();
         walkCount++;
         if (dugum.getKok() != null) {
-            if (log.isLoggable(Level.FINEST)) log.finest("Kok : " + dugum.getKelime());
-            if (asciiTolaransliKarsilastir((String) dugum.getKelime(), giris)) {
+            if (log.isLoggable(Level.FINEST)) log.finest("Kok : " + dugum.kelime());
+            if (asciiTolaransliKarsilastir((String) dugum.kelime(), giris)) {
             	// Aday kok bulundu.
                 dugum.tumKokleriEkle(adaylar);
             } else {
@@ -110,9 +110,9 @@ public class AsciiKokAdayiBulucu implements KokAdayiBulucu {
        int seviye = tester.length();
        if(seviye == giris.length()) return;
        // Uygun tüm alt dallarda yürü
-       for (KokDugumu altDugum : dugum.altDugumDizisiGetir()) {
+       for (KokDugumu altDugum : dugum.altDugumDizisi()) {
            if (altDugum != null) {
-               if (agac.getAlfabe().asciiToleransliKiyasla(altDugum.getHarf(), giris.charAt(seviye)))
+               if (agac.getAlfabe().asciiToleransliKiyasla(altDugum.harf(), giris.charAt(seviye)))
                    this.yuru(altDugum, tester);
            }
        }

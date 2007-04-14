@@ -65,8 +65,8 @@ public class TestKesinKokBulucu extends TemelTest {
     @Test
     public void testWordTreeKokSecici() {
         bulucu = new KesinKokAdayiBulucu(sozluk.getAgac());
-        out.println("Agac:" + sozluk.getAgac().getKokDugumu().getStringRep(2));
-        List list = bulucu.getAdayKokler("karalar");
+        out.println("Agac:" + sozluk.getAgac().getKokDugumu().goster(2));
+        List list = bulucu.adayKokleriBul("karalar");
         TestUtils.printList(list);
         out.println("Tamamlanma s�resi: " + TimeTracker.stopClock("x"));
     }
@@ -74,8 +74,8 @@ public class TestKesinKokBulucu extends TemelTest {
     @Test
     public void testToleransliKokBulBasit() {
         bulucu = new ToleransliKokAdayiBulucu(sozluk.getAgac(), 1);
-        out.println("Agac:" + sozluk.getAgac().getKokDugumu().getStringRep(2));
-        List list = bulucu.getAdayKokler("deniz");
+        out.println("Agac:" + sozluk.getAgac().getKokDugumu().goster(2));
+        List list = bulucu.adayKokleriBul("deniz");
         TestUtils.printList(list);
         out.println("Tamamlanma s�resi: " + TimeTracker.stopClock("x"));
     }
@@ -85,7 +85,7 @@ public class TestKesinKokBulucu extends TemelTest {
         okuyucu = new IkiliKokOkuyucu("kaynaklar/tr/bilgi/kokler_tr.bin", dilBilgisi.kokOzelDurumlari());
         sozluk = new AgacSozluk(okuyucu, alfabe, dilBilgisi.kokOzelDurumlari());
         bulucu = new KesinKokAdayiBulucu(sozluk.getAgac());
-        List list = bulucu.getAdayKokler("etkiler");
+        List list = bulucu.adayKokleriBul("etkiler");
         out.println(list);
     }
 
@@ -94,7 +94,7 @@ public class TestKesinKokBulucu extends TemelTest {
     public void ozelKokAgacTest() throws IOException {
         sozluk=sozlukUret("kaynaklar/tr/test/agac-kokler-2.txt");
         bulucu = new KesinKokAdayiBulucu(sozluk.getAgac());
-        assertTrue("tek sonuc bekleniyordu", bulucu.getAdayKokler("atoller").size()==1);
+        assertTrue("tek sonuc bekleniyordu", bulucu.adayKokleriBul("atoller").size()==1);
     }
 
     private AgacSozluk sozlukUret(String duzyaziDosya) throws IOException {

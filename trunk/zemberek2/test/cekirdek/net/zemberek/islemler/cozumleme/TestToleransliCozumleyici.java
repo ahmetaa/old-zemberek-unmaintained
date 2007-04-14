@@ -63,7 +63,7 @@ public class TestToleransliCozumleyici extends TemelTest {
                 dilAyarlari.kokTipiAdlari());
         Sozluk sozluk = new AgacSozluk(kokOkuyucu, alfabe, dilBilgisi.kokOzelDurumlari());
         //Normal denetleyici-cozumleyici olusumu
-        KokAdayiBulucu kokBulucu = sozluk.getKokBulucuFactory().getToleransliKokBulucu(1);
+        KokAdayiBulucu kokBulucu = sozluk.kokBulucuFactory().toleransliKokBulucu(1);
         cozumleyici = new ToleransliCozumleyici(
                 kokBulucu,
                 dilBilgisi.ekler(),

@@ -76,12 +76,12 @@ public class KokAgaciYuruyucu {
     }
 
     public void agaciTara(){
-        walk(sozluk.getAgac().getKokDugumu(), "");
+        yuru(sozluk.getAgac().getKokDugumu(), "");
     }
 
-    public void walk(KokDugumu dugum, String olusan)
+    public void yuru(KokDugumu dugum, String olusan)
     {
-        String tester = (olusan + dugum.getHarf()).trim();
+        String tester = (olusan + dugum.harf()).trim();
         walkCount++;
         if (dugum != null){
             dugumSayisi++;
@@ -95,16 +95,16 @@ public class KokAgaciYuruyucu {
                     set.add(dugum.getKok());
                 }
             }
-            if(dugum.getEsSesliler() != null){
+            if(dugum.esSesliler() != null){
                 esSesliTasiyanDugumSayisi++;
                 if(set!= null){
-                	set.addAll(dugum.getEsSesliler());
+                	set.addAll(dugum.esSesliler());
                 }
             }
             if(!dugum.altDugumVarMi()){
                 ucDugumSayisi++;
             }else{
-                KokDugumu[] altDugumler = dugum.altDugumDizisiGetir();
+                KokDugumu[] altDugumler = dugum.altDugumDizisi();
                 int top = 0;
                 for (KokDugumu altDugum : altDugumler) {
                     if(altDugum != null) top++;
@@ -112,11 +112,11 @@ public class KokAgaciYuruyucu {
                 dugumSayilari[top]++;
             }
         }
-        KokDugumu[] altDugumler = dugum.altDugumDizisiGetir();
+        KokDugumu[] altDugumler = dugum.altDugumDizisi();
         if (altDugumler != null){
         	for (KokDugumu altDugum : altDugumler){
         		if (altDugum != null){
-        			this.walk(altDugum, tester);
+        			this.yuru(altDugum, tester);
         		}
         	}
         }

@@ -35,9 +35,9 @@ package net.zemberek.bilgi.kokler;
  * @author MDA
  */
 public interface KokAdayiBulucuUretici {
-    public KokAdayiBulucu getKesinKokBulucu();
+    public KokAdayiBulucu kesinKokBulucu();
 
-    public KokAdayiBulucu getToleransliKokBulucu(int tolerans);
+    public KokAdayiBulucu toleransliKokBulucu(int tolerans);
 
-    public KokAdayiBulucu getAsciiKokBulucu();
+    public KokAdayiBulucu asciiKokBulucu();
 }

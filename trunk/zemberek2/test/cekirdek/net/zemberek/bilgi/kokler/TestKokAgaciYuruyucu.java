@@ -47,7 +47,7 @@ public class TestKokAgaciYuruyucu extends TemelTest {
       KokAgaciYuruyucu yuruyucu = new KokAgaciYuruyucu(sozluk , null);
         TimeTracker.startClock("x");
         System.out.println("Sozluk Yuklendi: " + TimeTracker.getElapsedTimeString("x"));
-        yuruyucu.walk(sozluk.getAgac().getKokDugumu(), "");
+        yuruyucu.yuru(sozluk.getAgac().getKokDugumu(), "");
         System.out.println("Agacta Yurundu: " + TimeTracker.getElapsedTimeString("x"));
         System.out.println("Toplam dugum sayisi:" + yuruyucu.dugumSayisi);
         System.out.println("Kok tasiyan dugum sayisi:" + yuruyucu.kokTasiyanDugumSayisi);

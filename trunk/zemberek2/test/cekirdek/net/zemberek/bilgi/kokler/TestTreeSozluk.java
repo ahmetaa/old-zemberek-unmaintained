@@ -78,7 +78,7 @@ public class TestTreeSozluk extends TemelTest {
         List<Kok> list = okuyucu2.hepsiniOku();
         for (Kok kok : list) {
             if (testSozluk.kokBul(kok.icerik()) == null) {
-                fail("Kelime aðaçta bulunamadý: " + kok.icerik());
+                fail("Kelime aï¿½aï¿½ta bulunamadï¿½: " + kok.icerik());
                 return;
             }
         }
@@ -92,7 +92,7 @@ public class TestTreeSozluk extends TemelTest {
         List<Kok> list = okuyucu2.hepsiniOku();
         for (Kok kok : list) {
             if (testSozluk.kokBul(kok.icerik()) == null) {
-                fail("Kelime aðaçta bulunamadý: " + kok.icerik());
+                fail("Kelime aï¿½aï¿½ta bulunamadï¿½: " + kok.icerik());
             }
         }
         Collection kokler = testSozluk.kokBul("imren");
@@ -107,7 +107,7 @@ public class TestTreeSozluk extends TemelTest {
         List<Kok> list = okuyucu2.hepsiniOku();
         for (Kok kok : list) {
             if (testSozluk.kokBul(kok.icerik()) == null) {
-                fail("Kelime aðaçta bulunamadý: " + kok.icerik());
+                fail("Kelime aï¿½aï¿½ta bulunamadï¿½: " + kok.icerik());
             }
         }
         List kokler = testSozluk.kokBul("usul");
@@ -144,12 +144,12 @@ public class TestTreeSozluk extends TemelTest {
         kokler = sozluk.kokBul("bahsed");
         assertTrue(kokler.size() == 1);
 
-        KokAdayiBulucu kb = sozluk.getKokBulucuFactory().getKesinKokBulucu();
-        List<Kok> adaylar = kb.getAdayKokler("bahsetmek");
+        KokAdayiBulucu kb = sozluk.kokBulucuFactory().kesinKokBulucu();
+        List<Kok> adaylar = kb.adayKokleriBul("bahsetmek");
         assertTrue(adaylar.size() == 1);
         assertEquals(adaylar.get(0).icerik(), "bahset");
 
-        adaylar = kb.getAdayKokler("bahseden");
+        adaylar = kb.adayKokleriBul("bahseden");
         assertTrue(adaylar.size() == 1);
         assertEquals(adaylar.get(0).icerik(), "bahset");
 

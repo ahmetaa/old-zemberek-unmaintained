@@ -92,7 +92,7 @@ public class Zemberek {
         //Sozluk hazirla.
         Sozluk kokler = dilBilgisi.kokler();
         //Normal denetleyici-cozumleyici olusumu
-        KokAdayiBulucu kokBulucu = kokler.getKokBulucuFactory().getKesinKokBulucu();
+        KokAdayiBulucu kokBulucu = kokler.kokBulucuFactory().kesinKokBulucu();
         cozumleyici = new StandartCozumleyici(
                 kokBulucu,
                 new KesinHDKiyaslayici(),
@@ -101,7 +101,7 @@ public class Zemberek {
                 dilBilgisi.cozumlemeYardimcisi());
 
         // ASCII-Turkce donusturucu icin tukce toleransli cozumleyici olusumu.
-        KokAdayiBulucu turkceToleransliKokBulucu = kokler.getKokBulucuFactory().getAsciiKokBulucu();
+        KokAdayiBulucu turkceToleransliKokBulucu = kokler.kokBulucuFactory().asciiKokBulucu();
         asciiToleransliCozumleyici = new StandartCozumleyici(
                 turkceToleransliKokBulucu,
                 new AsciiToleransliHDKiyaslayici(),
@@ -109,7 +109,7 @@ public class Zemberek {
                 dilBilgisi.ekler(),
                 dilBilgisi.cozumlemeYardimcisi());
 
-        KokAdayiBulucu toleransliBulucu = kokler.getKokBulucuFactory().getToleransliKokBulucu(1);
+        KokAdayiBulucu toleransliBulucu = kokler.kokBulucuFactory().toleransliKokBulucu(1);
         ToleransliCozumleyici toleransliCozumleyici = new ToleransliCozumleyici(
                 toleransliBulucu,
                 dilBilgisi.ekler(),
@@ -261,7 +261,7 @@ public class Zemberek {
     public String[] asciidenTurkceye(String giris) {
         Kelime[] kelimeler = asciiCozumle(giris, CozumlemeSeviyesi.TUM_KOKLER);
         // cift olusumlari temizle.
-        List<String> olusumlar = new ArrayList(kelimeler.length);
+        ArrayList<String> olusumlar = new ArrayList<String>(kelimeler.length);
         for (Kelime kelime : kelimeler) {
             String olusum = kelime.icerikStr();
             if (!olusumlar.contains(olusum))
@@ -356,17 +356,17 @@ public class Zemberek {
      *
      * @param kelime giris kelimesi
      * @return Kok ve ek olusumlarini ifade eden String dizilerini tasiyan List.
-     *         List<List<String>>
+     *         List<String[]>
      *         Eger kelime ayristirilamiyorsa sifir uzunluklu String dizisi tasiyan tek elemanli
      *         liste doner. .
      */
     public List<String[]> kelimeAyristir(String kelime) {
-        Set<String[]> sonuclar = new HashSet();
+        Set<String[]> sonuclar = new HashSet<String[]>();
         Kelime[] cozumler = cozumleyici.cozumle(kelime, CozumlemeSeviyesi.TUM_KOK_VE_EKLER);
         for (Kelime kel : cozumler) {
             sonuclar.add(kelimeUretici.ayristir(kel));
         }
-        return new ArrayList(sonuclar);
+        return new ArrayList<String[]>(sonuclar);
     }
 
     /**

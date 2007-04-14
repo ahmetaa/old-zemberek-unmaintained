@@ -48,7 +48,7 @@ public class TestKelimeCozumleyici extends TemelTest {
     public void once() throws IOException {
         super.once();
         cozumleyici = new StandartCozumleyici(
-                dilBilgisi.kokler().getKokBulucuFactory().getKesinKokBulucu(),
+                dilBilgisi.kokler().kokBulucuFactory().kesinKokBulucu(),
                 new KesinHDKiyaslayici(),
                 this.alfabe,
                 dilBilgisi.ekler(),

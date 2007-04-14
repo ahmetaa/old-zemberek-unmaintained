@@ -60,7 +60,7 @@ public class TestKelimeUretici extends TemelTest {
         super.once();
         kelimeUretici = new KelimeUretici(alfabe, dilBilgisi.cozumlemeYardimcisi());
         //Normal denetleyici-cozumleyici olusumu
-        KokAdayiBulucu kokBulucu = dilBilgisi.kokler().getKokBulucuFactory().getKesinKokBulucu();
+        KokAdayiBulucu kokBulucu = dilBilgisi.kokler().kokBulucuFactory().kesinKokBulucu();
         cozumleyici = new StandartCozumleyici(kokBulucu, new KesinHDKiyaslayici(), alfabe, dilBilgisi.ekler(), dilBilgisi.cozumlemeYardimcisi());
         kokler = dilBilgisi.kokler();
     }

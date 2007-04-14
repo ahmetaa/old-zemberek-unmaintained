@@ -43,7 +43,7 @@ import java.util.logging.Logger;
  * Kök ağacı zemberek sisteminin temel veri taşıyıcılarından biridir. Kök 
  * sözlüğünden okunan tüm kökler bu ağaca yerleştirilirler. Ağacın oluşumundan 
  * AgacSozluk sınıfı sorumludur.
- * Kök ağacı kompakt DAWG (Directed Acyclic Word Graph) ve Patricia tree benzeri
+ * Kök ağacı kompakt DAWG (Directed Acyclic Word Graph) benzeri
  * bir yapıya sahiptir. Ağaca eklenen her kök harflerine göre bir ağaç oluşturacak
  * şekilde yerleştirilir. Bir kökü bulmak için ağacın başından itibaren kökü 
  * oluşturan harfleri temsil eden düğümleri izlemek yeterlidir. 
@@ -54,8 +54,6 @@ import java.util.logging.Logger;
  * başka bir kök olmayacaksa tüm harfleri için ayrı ayrı değil, sadece gerektiği
  * kadar düğüm oluşturulur.
  * <p/>
- * Kod içerisinde hangi durumda nasıl düğüm oluşturulduğu detaylarıyla 
- * anlatılmıştır.
  *
  * @author MDA
  */
@@ -98,7 +96,7 @@ public class KokAgaci {
         // dek kelimenin harflerini izleyerek alt düğümlerde ilerle
         while (idx < giris.length) {
             oncekiDugum = node;
-            node = node.altDugumGetir(giris[idx]);
+            node = node.altDugumBul(giris[idx]);
             if (node == null) break;
             idx++;
         }
@@ -133,12 +131,12 @@ public class KokAgaci {
                 node.setKelime(icerik);
             }
             // Eş seslilik durumu.
-            else if (node.getKelime().equals(icerik)) {
+            else if (node.kelime().equals(icerik)) {
                 node.kokEkle(kok);
             }
             // (2) durumu
             else if (node.getKok() != null) {
-                KokDugumu newNode = node.addNode(new KokDugumu(node.getKelime().charAt(idx)));
+                KokDugumu newNode = node.dugumEkle(new KokDugumu(node.kelime().charAt(idx)));
                 newNode.kopyala(node);
                 node.temizle();
                 node.kokEkle(kok);
@@ -150,12 +148,12 @@ public class KokAgaci {
         /**
          * Kaldığımız düğüme bağlı bir kök yoksa bu kök için bir düğüm oluşturup ekleriz.
          */
-        if (oncekiDugum.getKok() == null || idx == oncekiDugum.getKelime().length()) {
-            oncekiDugum.addNode(new KokDugumu(giris[idx], icerik, kok));
+        if (oncekiDugum.getKok() == null || idx == oncekiDugum.kelime().length()) {
+            oncekiDugum.dugumEkle(new KokDugumu(giris[idx], icerik, kok));
             return;
         }
         
-        if (oncekiDugum.getKelime().equals(icerik)) {
+        if (oncekiDugum.kelime().equals(icerik)) {
             oncekiDugum.kokEkle(kok);
             return;
         }
@@ -170,25 +168,25 @@ public class KokAgaci {
          * i-s-t-i-m-l-->istimlak
          *         |-->istim
          */
-        char[] nodeHd = ((String)oncekiDugum.getKelime()).toCharArray();
+        char[] nodeHd = ((String)oncekiDugum.kelime()).toCharArray();
         KokDugumu newNode = oncekiDugum;
 
         if (nodeHd.length <= giris.length) {
             while (idx < nodeHd.length && nodeHd[idx] == giris[idx]) {
-                newNode = newNode.addNode(new KokDugumu(nodeHd[idx]));
+                newNode = newNode.dugumEkle(new KokDugumu(nodeHd[idx]));
                 idx++;
             }
 
             // Kisa dugumun eklenmesi.
             if (idx < nodeHd.length) {
-                KokDugumu temp = newNode.addNode(new KokDugumu(nodeHd[idx]));
+                KokDugumu temp = newNode.dugumEkle(new KokDugumu(nodeHd[idx]));
                 temp.kopyala(oncekiDugum);
             } else {
                 newNode.kopyala(oncekiDugum);
             }
 
             // Uzun olan dugumun (yeni gelen) eklenmesi
-            newNode.addNode(new KokDugumu(giris[idx], icerik, kok));
+            newNode.dugumEkle(new KokDugumu(giris[idx], icerik, kok));
             oncekiDugum.temizle();
         }
 
@@ -206,19 +204,19 @@ public class KokAgaci {
 
         else {
             while (idx < giris.length && giris[idx] == nodeHd[idx]) {
-                newNode = newNode.addNode(new KokDugumu(giris[idx]));
+                newNode = newNode.dugumEkle(new KokDugumu(giris[idx]));
                 idx++;
             }
             // Kisa dugumun eklenmesi.
             if (idx < giris.length) {
-                newNode.addNode(new KokDugumu(giris[idx], icerik, kok));
+                newNode.dugumEkle(new KokDugumu(giris[idx], icerik, kok));
             } else {
                 newNode.kokEkle(kok);
                 newNode.setKelime(icerik);
             }
 
             // Uzun olan dugumun (yeni gelen) eklenmesi.
-            newNode = newNode.addNode(new KokDugumu(nodeHd[idx]));
+            newNode = newNode.dugumEkle(new KokDugumu(nodeHd[idx]));
             newNode.kopyala(oncekiDugum);
             // Es seslileri tasi.
             oncekiDugum.temizle();
@@ -237,15 +235,15 @@ public class KokAgaci {
         // Basit bir tree traverse algoritması ile kelime bulunur.
         KokDugumu node = baslangicDugumu;
         while (node != null && girisIndex < girisChars.length) {
-            if (node.getKelime() != null && node.getKelime().equals(str)) {
+            if (node.kelime() != null && node.kelime().equals(str)) {
                 break;
             }
             if (log.isLoggable(Level.FINE)) 
-            	log.fine("Harf: " + node.getHarf()+ " Taranan Kelime: " + node.getKelime());
-            node = node.altDugumGetir(girisChars[girisIndex++]);
+            	log.fine("Harf: " + node.harf()+ " Taranan Kelime: " + node.kelime());
+            node = node.altDugumBul(girisChars[girisIndex++]);
         }
         if (node != null) {
-            return node.tumKokleriGetir(str);
+            return node.tumKokler(str);
         }
         return Collections.emptyList();
     }

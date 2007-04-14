@@ -112,7 +112,7 @@ public class TimeTracker {
         if (timer == null)
             return "Geçersiz Kronometre: " + name;
         timer.refresh();
-        return "Delta: " + (double) timer.getDiff()/1000000L  + " s. Elapsed: " + (double) timer.getElapsedTime()/1000000L + " s.";
+        return "Delta: " + (double) timer.getDiff()/1000L  + " s. Elapsed: " + (double) timer.getElapsedTime()/1000L + " s.";
     }
 
     /**

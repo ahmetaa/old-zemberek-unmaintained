@@ -43,13 +43,14 @@ import net.zemberek.yapi.kok.KokOzelDurumBilgisi;
 
 
 /**
- * Zemberek kütüphanesindeki tek sözlük gerçeklemesi Ağaç sözlüktür.
+ * Zemberek kütüphanesindeki mevcut tek sözlük gerçeklemesi Ağaç sözlüktür.
  * Ağaç sözlük, inşası sırasında verilen kök sözlüğü okuyucu nesnesini kullanarak
  * tüm kökleri okur ve bir ağaç yapısına yerleştirir.
+ * 
  * Daha sonra bu sözlük nesnesinden çeşitli kök bulucu nesneleri oluşturulup
  * kullanılabilir.
  *
- * @author MDA & GBA
+ * @author MDA
  */
 public class AgacSozluk implements Sozluk {
 
@@ -72,6 +73,7 @@ public class AgacSozluk implements Sozluk {
         while ((kok = okuyucu.oku()) != null) {
             ekle(kok);
         }
+        System.out.println(agac);
         kokAdayiBulucuFactory = new AgacKokAdayiBulucuUretici(this.agac);
     }
 
@@ -81,8 +83,7 @@ public class AgacSozluk implements Sozluk {
      * @param alfabe
      * @param ozelDurumlar
      */
-    public AgacSozluk(List<Kok> kokler, Alfabe alfabe,
-    		KokOzelDurumBilgisi ozelDurumlar) {
+    public AgacSozluk(List<Kok> kokler, Alfabe alfabe, KokOzelDurumBilgisi ozelDurumlar) {
         agac = new KokAgaci(new KokDugumu(), alfabe);
         this.ozelDurumlar = ozelDurumlar;
         for(Kok kok : kokler){
@@ -150,7 +151,7 @@ public class AgacSozluk implements Sozluk {
      * KokAdayiBulucu kokSecici = kokler.getKokBulucuFactory().getKesinKokBulucu();
      * </pre>
      */
-    public KokAdayiBulucuUretici getKokBulucuFactory() {
+    public KokAdayiBulucuUretici kokBulucuFactory() {
         return kokAdayiBulucuFactory;
     }
 
@@ -167,15 +168,15 @@ public class AgacSozluk implements Sozluk {
             this.agac = agac;
         }
 
-        public KokAdayiBulucu getKesinKokBulucu() {
+        public KokAdayiBulucu kesinKokBulucu() {
             return new KesinKokAdayiBulucu(this.agac);
         }
 
-        public KokAdayiBulucu getToleransliKokBulucu(int tolerans) {
+        public KokAdayiBulucu toleransliKokBulucu(int tolerans) {
             return new ToleransliKokAdayiBulucu(this.agac, tolerans);
         }
 
-        public KokAdayiBulucu getAsciiKokBulucu() {
+        public KokAdayiBulucu asciiKokBulucu() {
             return new AsciiKokAdayiBulucu(this.agac);
         }
     }
