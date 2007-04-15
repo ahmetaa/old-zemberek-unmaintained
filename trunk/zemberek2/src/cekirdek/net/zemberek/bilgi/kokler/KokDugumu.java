@@ -135,7 +135,7 @@ public class KokDugumu {
         }
     }
 
-    public final Kok getKok() {
+    public final Kok kok() {
         return this.kok;
     }
 
@@ -212,7 +212,7 @@ public class KokDugumu {
     }
 
     public final void kopyala(KokDugumu kaynak) {
-        this.kok = kaynak.getKok();
+        this.kok = kaynak.kok();
         this.kelime = kaynak.kelime();
         this.esSesliler = kaynak.esSesliler();
     }

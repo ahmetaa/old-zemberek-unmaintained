@@ -135,7 +135,7 @@ public class KokAgaci {
                 node.kokEkle(kok);
             }
             // (2) durumu
-            else if (node.getKok() != null) {
+            else if (node.kok() != null) {
                 KokDugumu newNode = node.dugumEkle(new KokDugumu(node.kelime().charAt(idx)));
                 newNode.kopyala(node);
                 node.temizle();
@@ -148,7 +148,7 @@ public class KokAgaci {
         /**
          * Kaldığımız düğüme bağlı bir kök yoksa bu kök için bir düğüm oluşturup ekleriz.
          */
-        if (oncekiDugum.getKok() == null || idx == oncekiDugum.kelime().length()) {
+        if (oncekiDugum.kok() == null || idx == oncekiDugum.kelime().length()) {
             oncekiDugum.dugumEkle(new KokDugumu(giris[idx], icerik, kok));
             return;
         }

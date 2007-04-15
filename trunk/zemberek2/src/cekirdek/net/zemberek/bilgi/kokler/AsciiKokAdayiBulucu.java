@@ -93,7 +93,7 @@ public class AsciiKokAdayiBulucu implements KokAdayiBulucu {
     public void yuru(KokDugumu dugum, String olusan) {
         String tester = (olusan + dugum.harf()).trim();
         walkCount++;
-        if (dugum.getKok() != null) {
+        if (dugum.kok() != null) {
             if (log.isLoggable(Level.FINEST)) log.finest("Kok : " + dugum.kelime());
             if (asciiTolaransliKarsilastir((String) dugum.kelime(), giris)) {
             	// Aday kok bulundu.
