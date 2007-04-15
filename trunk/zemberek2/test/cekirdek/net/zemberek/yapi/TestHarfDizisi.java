@@ -281,19 +281,18 @@ public class TestHarfDizisi extends TemelTest {
         HarfDizisi d1 = hd("azut");
         HarfDizisi d2 = hd("armut");
         HarfDizisi d3 = hd("armt");
-        HarfDizisi d4 = hd("");
-        HarfDizisi d5 = null;
-        HarfDizisi d6 = hd("armutlu");
+        HarfDizisi d4 = hd("armutlu");
+        HarfDizisi d5 = hd("armut"+Alfabe.CHAR_cc+"u");
 
         assertTrue(d2.compareTo(d1)<0);
         assertTrue(d2.compareTo(d2)==0);
         assertTrue(d2.compareTo(d3)>0);
-        assertTrue(d2.compareTo(d4)>0);
-        assertTrue(d2.compareTo(d5)>0);
-        assertTrue(d2.compareTo(d6)<0);
+        assertTrue(d2.compareTo(hd(""))>0);
+        assertTrue(d2.compareTo(null)>0);
+        assertTrue(d2.compareTo(d4)<0);
 
-        List<HarfDizisi> l = Arrays.asList(d1,d2,d3,d6);
-        List<HarfDizisi> lsirali = Arrays.asList(d3,d2,d6,d1);
+        List<HarfDizisi> l = Arrays.asList(d1,d2,d3,d4,d5);
+        List<HarfDizisi> lsirali = Arrays.asList(d3,d2,d5,d4,d1);
         Collections.sort(l);
         assertEquals(l, lsirali);
     }
