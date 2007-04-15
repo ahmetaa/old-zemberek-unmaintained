@@ -61,7 +61,7 @@ public class KesinKokAdayiBulucu implements KokAdayiBulucu {
         while (girisIndex < giris.length()) {
             node = node.altDugumBul(giris.charAt(girisIndex));
             if (node == null) break;
-            if (node.getKok() != null) {
+            if (node.kok() != null) {
                 if (giris.startsWith((String) node.kelime())) {
                     node.tumKokleriEkle(adaylar);
                 }

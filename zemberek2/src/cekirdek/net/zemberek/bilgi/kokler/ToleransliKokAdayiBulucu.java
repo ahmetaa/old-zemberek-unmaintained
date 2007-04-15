@@ -92,11 +92,11 @@ public class ToleransliKokAdayiBulucu implements KokAdayiBulucu {
     private void yuru(KokDugumu dugum, String olusan) {
         String tester = olusan;
         tester += dugum.harf();
-        if (dugum.getKok() != null) {
+        if (dugum.kok() != null) {
             distanceCalculationCount++;
             if (MetinAraclari.parcasiDuzeltmeMesafesiIcinde((String) dugum.kelime(), giris, tolerans)) {
             	// Aday kök bulundu
-                adaylar.add(dugum.getKok());
+                adaylar.add(dugum.kok());
             } else {
                 // Mesafe sınırı aşıldı.
                 return;

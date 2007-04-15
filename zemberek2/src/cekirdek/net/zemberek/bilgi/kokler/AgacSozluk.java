@@ -68,7 +68,7 @@ public class AgacSozluk implements Sozluk {
      */
     public AgacSozluk(KokOkuyucu okuyucu, Alfabe alfabe, KokOzelDurumBilgisi ozelDurumlar) throws IOException {
         this.ozelDurumlar = ozelDurumlar;
-        agac = new KokAgaci(new KokDugumu(), alfabe);
+        this.agac = new KokAgaci(new KokDugumu(), alfabe);
         Kok kok;
         while ((kok = okuyucu.oku()) != null) {
             ekle(kok);
