@@ -103,7 +103,7 @@ public class TestHeceleyici extends TemelTest {
 
     @Test
     public void testHeceIndeks2() {
-        String kelime = "türklerin";
+        String kelime = "turklerin";
         int[] sonuclar = heceIslemleri.heceIndeksleriniBul(kelime);
         Arrays.toString(sonuclar);
         assertNotNull(sonuclar);
@@ -112,8 +112,9 @@ public class TestHeceleyici extends TemelTest {
         assertEquals(6, sonuclar[2]);
     }
 
+    @Test
     public void testHeceIndeks3() {
-        String kelime = "t�rk�lerin";
+        String kelime = "turkulerin";
         int[] sonuclar = heceIslemleri.heceIndeksleriniBul(kelime);
         Arrays.toString(sonuclar);
         assertNotNull(sonuclar);
@@ -122,7 +123,8 @@ public class TestHeceleyici extends TemelTest {
         assertEquals(5, sonuclar[2]);
         assertEquals(7, sonuclar[3]);
     }
-
+    
+    @Test
     public void testHeceIndeks4() {
         String kelime = "psikoloji";
         int[] sonuclar = heceIslemleri.heceIndeksleriniBul(kelime);

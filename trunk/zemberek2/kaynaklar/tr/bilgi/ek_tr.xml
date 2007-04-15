@@ -176,7 +176,7 @@
         <ek ad="BOS_EK" uretim=""/>
 
         <!-- isim yalin. -->
-        <ek ad="ISIM_KOK" uretim="">
+        <ek ad="ISIM_KOK" uretim="" k_en="noun" kis="ad">
             <ardisil-ekler>
                 <kume>ISIM_HAL</kume>
                 <kume>ISIM_SAHIPLIK</kume>
@@ -213,7 +213,7 @@
         </ek>
 
         <!-- fiil KOK -->
-        <ek ad="FIIL_KOK" uretim="">
+        <ek ad="FIIL_KOK" uretim="" k_en="verb" kis="eylem">
             <ardisil-ekler>
                 <kume>FIIL_ZAMAN</kume>
                 <kume>FIIL_DONUSUM</kume>
@@ -239,7 +239,7 @@
         </ek>
 
         <!-- isim cogul eki _ler. "gelsin cay_lar.." -->
-        <ek ad="ISIM_COGUL_LER" uretim="lAr">
+        <ek ad="ISIM_COGUL_LER" uretim="lAr" k_en="a3pl" kis="ler">
             <ardisil-ekler>
                 <kume>ISIM_HAL</kume>
                 <kume>IMEK_ZAMAN</kume>
@@ -264,7 +264,7 @@
         </ek>
 
         <!-- isim kucultme _cik.  "Kedi_cik pek SirinmiS".  -->
-        <ek ad="ISIM_KUCULTME_CIK" uretim=">cIk">
+        <ek ad="ISIM_KUCULTME_CIK" uretim=">cIk" k_en="dim" kis="cik">
             <ozel-durum ad="SON_HARF_YUMUSAMA" uretim=">cIğ"/>
             <ardisil-ekler>
                 <kume>ISIM_HAL</kume>
@@ -286,7 +286,7 @@
         </ek>
 
         <!-- cegiz: "kedi_ceGiz, kitapcaGIz  -->
-        <ek ad="ISIM_KUCULTME_CEGIZ" uretim="cAğIz">
+        <ek ad="ISIM_KUCULTME_CEGIZ" uretim="cAğIz" k_en="affect" kis="cegiz">
             <ardisil-ekler>
                 <kume>ISIM_HAL</kume>
                 <kume>ISIM_SAHIPLIK</kume>
@@ -368,7 +368,7 @@
         </ek>
 
         <!-- isim belirtme _i: "kedi_yi gordun mu+"  -->
-        <ek ad="ISIM_BELIRTME_I" uretim="+yI">
+        <ek ad="ISIM_BELIRTME_I" uretim="+yI" >
             <ozel-durum ad="ON_EK" uretim="nI">
                 <on-ek>ZAMAN_BELIRTME_KI</on-ek>
                 <on-ek>ISIM_BULUNMA_KI</on-ek>
@@ -378,7 +378,7 @@
         </ek>
 
         <!-- isim durum lik: "deli_lik etme.."  -->
-        <ek ad="ISIM_DURUM_LIK" uretim="lIk">
+        <ek ad="ISIM_DURUM_LIK" uretim="lIk" k_en="ness" kis="durum_luk">
             <ozel-durum ad="SON_HARF_YUMUSAMA" uretim="lIğ"/>
             <ardisil-ekler>
                 <kume>ISIM_HAL</kume>
