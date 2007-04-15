@@ -32,6 +32,7 @@ import net.zemberek.yapi.TurkceHarf;
 /**
  * uretim bilesen sinifi, uretim kural kelimesindeki bilesenleri temsil eder.
  * degistirilemez, thread safe.
+ * Her kural icin bir harf bilgisi bulunmayabilir. bu durumda TANIMSIZ_HARF kullanilir.
  */
 public final class EkUretimBileseni {
 

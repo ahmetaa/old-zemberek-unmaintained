@@ -34,7 +34,7 @@ package net.zemberek.yapi;
  * String gibi genel bir tasiyici degil ara islem nesnesi olarak kullanilmasi onerilir.
  * String'den farkli olarak "degistirilebilir" bir yapidadir ve Thread-safe degildir.
  */
-public class HarfDizisi implements CharSequence {
+public class HarfDizisi implements CharSequence, Comparable<HarfDizisi> {
 
     private TurkceHarf[] dizi;
     private int boy = 0;
@@ -61,9 +61,9 @@ public class HarfDizisi implements CharSequence {
      * Eger String boyu kapasiteden buyukse kapasite'yi boy'a esitler.
      * Eger String icindeki karakter Alfabe'de yar almiyorsa "TANIMSIZ_HARF" harfi olarak eklenir.
      *
-     * @param str ornek alincak String
+     * @param str      ornek alincak String
      * @param kapasite baslangic olusan TurkceHarf[] boyu
-     * @param alfabe ilgili alfabe
+     * @param alfabe   ilgili alfabe
      */
     public HarfDizisi(String str, Alfabe alfabe, int kapasite) {
         if (kapasite < str.length())
@@ -78,7 +78,7 @@ public class HarfDizisi implements CharSequence {
     /**
      * Belirlenen alfabe ile String icerigini Harflere donusturur.
      *
-     * @param str ornek alincak String
+     * @param str    ornek alincak String
      * @param alfabe ilgili alfabe
      */
     public HarfDizisi(String str, Alfabe alfabe) {
@@ -182,13 +182,14 @@ public class HarfDizisi implements CharSequence {
     /**
      * girilen pozisyona herf ekler, bu noktadan sonraki harfler otelenir.
      * "armut" icin (2, a) "aramut" uretir.
+     *
      * @param index eklenecek pozisyon
-     * @param harf eklenecek harf.
+     * @param harf  eklenecek harf.
      * @throws ArrayIndexOutOfBoundsException
      */
     public void ekle(int index, TurkceHarf harf) {
         if (index < 0 || index > boy)
-            throw new ArrayIndexOutOfBoundsException("index degeri:"+index+ " fakat harf dizi boyu:"+boy);
+            throw new ArrayIndexOutOfBoundsException("index degeri:" + index + " fakat harf dizi boyu:" + boy);
 
         if (boy == dizi.length)
             kapasiteAyarla();
@@ -218,6 +219,7 @@ public class HarfDizisi implements CharSequence {
     /**
      * Diziye baska bir harf dizisinin icerigini index ile belirtilen harften itibaren ekler.
      * "armut" icin (2, hede) "arhedemut" uretir.
+     *
      * @param index eklencek pozisyon
      * @param hdizi eklenecek harf dizisi
      * @return this.
@@ -225,7 +227,7 @@ public class HarfDizisi implements CharSequence {
      */
     public HarfDizisi ekle(int index, HarfDizisi hdizi) {
         if (index < 0 || index > boy)
-            throw new ArrayIndexOutOfBoundsException("indeks degeri:"+index+ " fakat harf dizi boyu:"+boy);
+            throw new ArrayIndexOutOfBoundsException("indeks degeri:" + index + " fakat harf dizi boyu:" + boy);
 
         //dizi kapasitesini ayarla
         int hboy = hdizi.length();
@@ -364,12 +366,12 @@ public class HarfDizisi implements CharSequence {
      * istenen noktadaki harfi giris parametresi olan TurkceHarf ile degistirir.
      *
      * @param index degistirilecek indeks.
-     * @param harf kullanilacak harf
+     * @param harf  kullanilacak harf
      * @throws ArrayIndexOutOfBoundsException
      */
     public void harfDegistir(int index, TurkceHarf harf) {
         if (index < 0 || index >= boy)
-            throw new ArrayIndexOutOfBoundsException("indeks degeri:"+index+ " fakat harf dizi boyu:"+boy);
+            throw new ArrayIndexOutOfBoundsException("indeks degeri:" + index + " fakat harf dizi boyu:" + boy);
         dizi[index] = harf;
     }
 
@@ -395,7 +397,7 @@ public class HarfDizisi implements CharSequence {
     /**
      * verilen pozisyondaki harfi siler. kelimenin kalan kismi otelenir.
      * eger verilen pozisyon yanlis ise  ArrayIndexOutOfBoundsException firlatir.
-     *
+     * <p/>
      * "kedi" icin (2) "kei" olusturur.
      *
      * @param index silinecek harf pozisyonu
@@ -404,11 +406,11 @@ public class HarfDizisi implements CharSequence {
      */
     public HarfDizisi harfSil(int index) {
         if (index < 0 || index >= boy)
-            throw new ArrayIndexOutOfBoundsException("indeks degeri:"+index+ " fakat harf dizi boyu:"+boy);
+            throw new ArrayIndexOutOfBoundsException("indeks degeri:" + index + " fakat harf dizi boyu:" + boy);
         if (index == boy - 1) {
             boy--;
         } else {
-	        System.arraycopy(dizi, index+1, dizi, index, boy-index-1);
+            System.arraycopy(dizi, index + 1, dizi, index, boy - index - 1);
             boy--;
         }
         return this;
@@ -417,13 +419,14 @@ public class HarfDizisi implements CharSequence {
     /**
      * verilen pozisyondan belli miktar harfi siler.
      * "kediler" icin (2,2) "keler" olusturur.
-     * @param index silinmeye baslanacak pozisyon
+     *
+     * @param index      silinmeye baslanacak pozisyon
      * @param harfSayisi silinecek harf miktari
      * @return dizinin kendisi
      */
     public HarfDizisi harfSil(int index, int harfSayisi) {
         if (index < 0 || index >= boy)
-            throw new ArrayIndexOutOfBoundsException("indeks degeri:"+index+ " fakat harf dizi boyu:"+boy);
+            throw new ArrayIndexOutOfBoundsException("indeks degeri:" + index + " fakat harf dizi boyu:" + boy);
         if (index + harfSayisi > boy)
             harfSayisi = boy - index;
         for (int i = index + harfSayisi; i < boy; i++)
@@ -446,6 +449,7 @@ public class HarfDizisi implements CharSequence {
     /**
      * "index" numarali harften itibaren siler.
      * "kedi" icin (1) "k" olusturur.
+     *
      * @param index kirpilmaya baslanacak pozisyon
      */
     public void kirp(int index) {
@@ -455,6 +459,7 @@ public class HarfDizisi implements CharSequence {
 
     /**
      * sadece belirli bir bolumunu String'e donusturur.
+     *
      * @param index String'e donusum baslangic noktasi.
      * @return olusan String.
      */
@@ -466,8 +471,33 @@ public class HarfDizisi implements CharSequence {
         return s.toString();
     }
 
+    @Override
     public String toString() {
         return new StringBuilder(this).toString();
+    }
+
+    /**
+     * Compare to metodu siralama icin kiyaslama yapar. Kiyaslama harflerin alfabetik sirasina gore yapilir.
+     * 
+     * @param o
+     * @return
+     */
+    public int compareTo(HarfDizisi o) {
+        if (o == null)
+            return 1;
+
+        if (this == o)
+            return 0;
+
+        int l = o.boy;
+        int n = Math.min(boy, l);
+        TurkceHarf v[] = o.dizi;
+
+        for (int i = 0; i < n; i++) {
+            if (dizi[i] != v[i])
+                return dizi[i].alfabetikSira() - v[i].alfabetikSira();
+        }
+        return boy - l;
     }
 
     /* ------------------------- ozel metodlar ------------------------------- */
@@ -512,5 +542,4 @@ public class HarfDizisi implements CharSequence {
     public CharSequence subSequence(int start, int end) {
         return araDizi(start, end);
     }
-
 }

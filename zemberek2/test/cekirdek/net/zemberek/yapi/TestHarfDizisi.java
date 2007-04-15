@@ -33,6 +33,9 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.io.IOException;
+import java.util.List;
+import java.util.Arrays;
+import java.util.Collections;
 
 /**
  * User: aakin
@@ -189,43 +192,43 @@ public class TestHarfDizisi extends TemelTest {
 
     @Test
     public void testBastanKarsilastir() {
-        HarfDizisi dizi = new HarfDizisi("merhaba", alfabe);
-        assertTrue(dizi.bastanKiyasla(new HarfDizisi("m", alfabe)));
-        assertTrue(dizi.bastanKiyasla(new HarfDizisi("merha", alfabe)));
-        assertTrue(dizi.bastanKiyasla(new HarfDizisi("merhaba", alfabe)));
-        assertTrue(dizi.bastanKiyasla(new HarfDizisi("merhabal", alfabe)) == false);
+        HarfDizisi dizi = hd("merhaba");
+        assertTrue(dizi.bastanKiyasla(hd("m")));
+        assertTrue(dizi.bastanKiyasla(hd("merha")));
+        assertTrue(dizi.bastanKiyasla(hd("merhaba")));
+        assertTrue(dizi.bastanKiyasla(hd("merhabal")) == false);
     }
 
     @Test
     public void testEquals() {
-        HarfDizisi dizi = new HarfDizisi("merhaba", alfabe);
-        assertTrue(dizi.equals(new HarfDizisi("merhaba", alfabe)));
-        assertTrue(dizi.equals(new HarfDizisi("merha", alfabe)) == false);
-        assertTrue(dizi.equals(new HarfDizisi("merhabalar", alfabe)) == false);
+        HarfDizisi dizi = hd("merhaba");
+        assertTrue(dizi.equals(hd("merhaba")));
+        assertTrue(dizi.equals(hd("merha")) == false);
+        assertTrue(dizi.equals(hd("merhabalar")) == false);
         dizi = new HarfDizisi("merhaba", alfabe, 20);
-        assertTrue(dizi.equals(new HarfDizisi("merhaba", alfabe)));
+        assertTrue(dizi.equals(hd("merhaba")));
         assertTrue(dizi.equals(new HarfDizisi("merhaba", alfabe, 15)));
         assertTrue(dizi.equals(new HarfDizisi("merhabalar", alfabe, 15)) == false);
     }
 
     @Test
     public void testSesliSayisi() {
-        HarfDizisi dizi = new HarfDizisi("merhaba", alfabe);
+        HarfDizisi dizi =hd("merhaba");
         assertTrue(dizi.sesliSayisi() == 3);
-        dizi = new HarfDizisi("aarteetytye", alfabe);
+        dizi = hd("aarteetytye");
         assertTrue(dizi.sesliSayisi() == 5);
-        dizi = new HarfDizisi("art", alfabe);
+        dizi =hd("art");
         assertTrue(dizi.sesliSayisi() == 1);
-        dizi = new HarfDizisi("rrt", alfabe);
+        dizi =hd("rrt");
         assertTrue(dizi.sesliSayisi() == 0);
     }
 
     @Test
     public void testTurkceToleransliKiyasla() {
-        HarfDizisi hd1 = new HarfDizisi("\u00c7\u0131k\u0131s", alfabe);
-        HarfDizisi hd2 = new HarfDizisi("Ciki\u015f", alfabe);
-        HarfDizisi hdkisa = new HarfDizisi("Ci", alfabe);
-        HarfDizisi hdtkisaturkce = new HarfDizisi("\u00c7\u0131", alfabe);
+        HarfDizisi hd1 = hd("\u00c7\u0131k\u0131s");
+        HarfDizisi hd2 = hd("Ciki\u015f");
+        HarfDizisi hdkisa =hd("Ci");
+        HarfDizisi hdtkisaturkce =hd("\u00c7\u0131");
         assertTrue(hd1.asciiToleransliKiyasla(hd2));
         assertTrue(hd2.asciiToleransliKiyasla(hd1));
         assertTrue(hd1.asciiToleransliBastanKiyasla(hdkisa));
@@ -250,9 +253,9 @@ public class TestHarfDizisi extends TemelTest {
     public void testCharSequenceMethods() {
         HarfDizisi dizi = new HarfDizisi("armut", alfabe);
         assertEquals(dizi.length(), 5);
-        assertEquals(dizi.subSequence(0, 3), new HarfDizisi("arm", alfabe));
-        assertEquals(dizi.subSequence(1, 3), new HarfDizisi("rm", alfabe));
-        assertEquals(dizi.subSequence(3, 3), new HarfDizisi("", alfabe));
+        assertEquals(dizi.subSequence(0, 3), hd("arm"));
+        assertEquals(dizi.subSequence(1, 3), hd("rm"));
+        assertEquals(dizi.subSequence(3, 3), hd(""));
         assertNull(dizi.subSequence(3, 1));
         assertEquals(dizi.charAt(0), 'a');
         assertEquals(dizi.charAt(4), 't');
@@ -272,4 +275,27 @@ public class TestHarfDizisi extends TemelTest {
         }
 
     }
+
+    @Test
+    public void testCompareTo() {
+        HarfDizisi d1 = hd("azut");
+        HarfDizisi d2 = hd("armut");
+        HarfDizisi d3 = hd("armt");
+        HarfDizisi d4 = hd("");
+        HarfDizisi d5 = null;
+        HarfDizisi d6 = hd("armutlu");
+
+        assertTrue(d2.compareTo(d1)<0);
+        assertTrue(d2.compareTo(d2)==0);
+        assertTrue(d2.compareTo(d3)>0);
+        assertTrue(d2.compareTo(d4)>0);
+        assertTrue(d2.compareTo(d5)>0);
+        assertTrue(d2.compareTo(d6)<0);
+
+        List<HarfDizisi> l = Arrays.asList(d1,d2,d3,d6);
+        List<HarfDizisi> lsirali = Arrays.asList(d3,d2,d6,d1);
+        Collections.sort(l);
+        assertEquals(l, lsirali);
+    }
+
 }
