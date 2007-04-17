@@ -28,14 +28,15 @@
 package net.zemberek.yapi;
 
 import net.zemberek.TemelTest;
+import static net.zemberek.yapi.Alfabe.*;
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.io.IOException;
-import java.util.List;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.List;
 
 /**
  * User: aakin
@@ -122,10 +123,10 @@ public class TestHarfDizisi extends TemelTest {
         HarfDizisi o2 = new HarfDizisi("er", alfabe);
         HarfDizisi o3 = new HarfDizisi("ere", alfabe);
         assertTrue(kelime.aradanKiyasla(4, o1));
-        assertTrue(kelime.aradanKiyasla(5, o1) == false);
-        assertTrue(kelime.aradanKiyasla(11, o1) == false);
+        assertFalse(kelime.aradanKiyasla(5, o1));
+        assertFalse(kelime.aradanKiyasla(11, o1));
         assertTrue(kelime.aradanKiyasla(8, o2));
-        assertTrue(kelime.aradanKiyasla(8, o3) == false);
+        assertFalse(kelime.aradanKiyasla(8, o3));
     }
 
     @Test
@@ -153,7 +154,7 @@ public class TestHarfDizisi extends TemelTest {
         assertEquals(kelime.ilkSesli(0), alfabe.harf('a'));
         assertEquals(kelime.ilkSesli(1), alfabe.harf('a'));
         assertEquals(kelime.ilkSesli(3), alfabe.harf('e'));
-        assertEquals(kelime.ilkSesli(6), Alfabe.TANIMSIZ_HARF);
+        assertEquals(kelime.ilkSesli(6), TANIMSIZ_HARF);
     }
 
     @Test
@@ -166,7 +167,7 @@ public class TestHarfDizisi extends TemelTest {
         assertEquals(kelime.sonHarf(), alfabe.harf('d'));
         kelime = new HarfDizisi("kulak", alfabe);
         kelime.sonHarfYumusat();
-        assertEquals(kelime.sonHarf(), alfabe.harf(Alfabe.CHAR_gg));
+        assertEquals(kelime.sonHarf(), alfabe.harf(CHAR_gg));
     }
 
     @Test
@@ -196,19 +197,19 @@ public class TestHarfDizisi extends TemelTest {
         assertTrue(dizi.bastanKiyasla(hd("m")));
         assertTrue(dizi.bastanKiyasla(hd("merha")));
         assertTrue(dizi.bastanKiyasla(hd("merhaba")));
-        assertTrue(dizi.bastanKiyasla(hd("merhabal")) == false);
+        assertFalse(dizi.bastanKiyasla(hd("merhabal")));
     }
 
     @Test
     public void testEquals() {
         HarfDizisi dizi = hd("merhaba");
         assertTrue(dizi.equals(hd("merhaba")));
-        assertTrue(dizi.equals(hd("merha")) == false);
-        assertTrue(dizi.equals(hd("merhabalar")) == false);
+        assertFalse(dizi.equals(hd("merha")));
+        assertFalse(dizi.equals(hd("merhabalar")));
         dizi = new HarfDizisi("merhaba", alfabe, 20);
         assertTrue(dizi.equals(hd("merhaba")));
         assertTrue(dizi.equals(new HarfDizisi("merhaba", alfabe, 15)));
-        assertTrue(dizi.equals(new HarfDizisi("merhabalar", alfabe, 15)) == false);
+        assertFalse(dizi.equals(new HarfDizisi("merhabalar", alfabe, 15)));
     }
 
     @Test
@@ -225,10 +226,10 @@ public class TestHarfDizisi extends TemelTest {
 
     @Test
     public void testTurkceToleransliKiyasla() {
-        HarfDizisi hd1 = hd("\u00c7\u0131k\u0131s");
-        HarfDizisi hd2 = hd("Ciki\u015f");
+        HarfDizisi hd1 = hd(CHAR_CC+""+CHAR_ii+"k"+CHAR_ii+""+CHAR_ss);
+        HarfDizisi hd2 = hd("Ciki"+CHAR_ss);
         HarfDizisi hdkisa =hd("Ci");
-        HarfDizisi hdtkisaturkce =hd("\u00c7\u0131");
+        HarfDizisi hdtkisaturkce =hd(CHAR_CC+""+CHAR_ii);
         assertTrue(hd1.asciiToleransliKiyasla(hd2));
         assertTrue(hd2.asciiToleransliKiyasla(hd1));
         assertTrue(hd1.asciiToleransliBastanKiyasla(hdkisa));
@@ -263,12 +264,12 @@ public class TestHarfDizisi extends TemelTest {
 
     @Test
     public void testHepsiBuyukHarfmi() {
-        String strs[] = {"AA", "AA" + Alfabe.CHAR_SAPKALI_A, "AWAQ", ""};
+        String strs[] = {"AA", "AA" + CHAR_SAPKALI_A, "AWAQ", ""};
         for (String s : strs) {
             HarfDizisi d = hd(s);
             assertTrue("olmadi" + s, d.hepsiBuyukHarfmi());
         }
-        String ss[] = {"aaa", "Aa", "AA"+Alfabe.CHAR_SAPKALI_a, "AwAQ", "..A", "-"};
+        String ss[] = {"aaa", "Aa", "AA"+ CHAR_SAPKALI_a, "AwAQ", "..A", "-"};
         for (String s : ss) {
             HarfDizisi d = hd(s);
             assertFalse("olmadi" + s, d.hepsiBuyukHarfmi());
@@ -282,7 +283,7 @@ public class TestHarfDizisi extends TemelTest {
         HarfDizisi d2 = hd("armut");
         HarfDizisi d3 = hd("armt");
         HarfDizisi d4 = hd("armutlu");
-        HarfDizisi d5 = hd("armut"+Alfabe.CHAR_cc+"u");
+        HarfDizisi d5 = hd("armut"+ CHAR_cc+"u");
 
         assertTrue(d2.compareTo(d1)<0);
         assertTrue(d2.compareTo(d2)==0);
