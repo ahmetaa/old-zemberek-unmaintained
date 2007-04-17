@@ -41,6 +41,7 @@ import net.zemberek.yapi.kok.KokOzelDurumu;
 public class Kok {
 
     private static final KokOzelDurumu[] BOS_OZEL_DURUM_DIZISI = new KokOzelDurumu[0];
+    public static final Kok BOS_KOK = new Kok("", KelimeTipi.ISIM);
 
     private int indeks;
     // Eger bir kok icinde alfabe disi karakter barindiriyorsa (nokta, tire gibi) orjinal hali bu
@@ -66,7 +67,7 @@ public class Kok {
 
     public boolean ozelDurumIceriyormu(KokOzelDurumTipi tip) {
         for (KokOzelDurumu oz : ozelDurumlar) {
-            if (oz.indeks()==tip.indeks())
+            if (oz.indeks() == tip.indeks())
                 return true;
         }
         return false;
@@ -103,8 +104,8 @@ public class Kok {
      * @param tip
      */
     public void ozelDurumCikar(KokOzelDurumTipi tip) {
-        if(!ozelDurumIceriyormu(tip))
-          return;
+        if (!ozelDurumIceriyormu(tip))
+            return;
         KokOzelDurumu[] yeni = new KokOzelDurumu[ozelDurumlar.length - 1];
         int j = 0;
         for (KokOzelDurumu oz : ozelDurumlar) {
@@ -129,7 +130,9 @@ public class Kok {
             if (ozelDurum != null)
                 strOzel += ozelDurum.kisaAd() + " ";
         }
-        return icerik + " " + tip + " " + strOzel;
+        if (tip != null)
+            return icerik + " " + tip + " " + strOzel;
+        else return icerik;
     }
 
     public HarfDizisi ozelDurumUygula(Alfabe alfabe, Ek ek) {
@@ -144,8 +147,8 @@ public class Kok {
     }
 
     public boolean yapiBozucuOzelDurumVarmi() {
-        if(ozelDurumlar.length==0)
-          return false;
+        if (ozelDurumlar.length == 0)
+            return false;
         for (KokOzelDurumu ozelDurum : ozelDurumlar) {
             if (ozelDurum.yapiBozucumu())
                 return true;

@@ -477,10 +477,15 @@ public class HarfDizisi implements CharSequence, Comparable<HarfDizisi> {
     }
 
     /**
-     * Compare to metodu siralama icin kiyaslama yapar. Kiyaslama harflerin alfabetik sirasina gore yapilir.
-     * 
+     * Compare to metodu siralama icin kiyaslama yapar. Kiyaslama oncelikle harflerin alfabetik sirasina
+     * daha sonra dizilerin boyutuna gore yapilir.
+     *
      * @param o
      * @return
+     *        'kedi'.compareTo('kedi') -> 0
+     #        'kedi'.compareTo('ke')  -> 2 (boy farki)
+     *        'kedi'.compareTo('kedm') -> -4 (i->m alfabetik sira farki)
+     *        'kedi'.compareTo(null) -> 1
      */
     public int compareTo(HarfDizisi o) {
         if (o == null)
@@ -491,11 +496,10 @@ public class HarfDizisi implements CharSequence, Comparable<HarfDizisi> {
 
         int l = o.boy;
         int n = Math.min(boy, l);
-        TurkceHarf v[] = o.dizi;
 
         for (int i = 0; i < n; i++) {
-            if (dizi[i] != v[i])
-                return dizi[i].alfabetikSira() - v[i].alfabetikSira();
+            if (!dizi[i].equals(o.dizi[i]))
+                return dizi[i].alfabetikSira() - o.dizi[i].alfabetikSira();
         }
         return boy - l;
     }
