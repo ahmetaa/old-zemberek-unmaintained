@@ -27,8 +27,12 @@
 
 package net.zemberek.deney;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import net.zemberek.araclar.MetinAraclari;
 import net.zemberek.araclar.TimeTracker;
+import net.zemberek.yapi.Alfabe;
 
 public class MetinAraclari2 {
 
@@ -97,6 +101,28 @@ public class MetinAraclari2 {
       return false;
   }
 
+  
+  public static List<String> adaylariBul(String s, char[] alfabe){
+	  List<String> adaylar = new ArrayList<String>(20);
+	  // Tek harf Eksik olanları bul
+	  for(int i=0; i< s.length(); i++){
+		  adaylar.add( s.substring(0 ,i) + s.substring(i+1) ); 
+ 	  }
+	  // Degisiklikleri ve eklemeleri bul
+	  for(char c : alfabe){
+		  for(int i=0; i< s.length(); i++){
+			  adaylar.add( s.substring(0 ,i) + c + s.substring(i+1) ); 
+	 	  }
+		  for(int i=0; i< s.length(); i++){
+			  adaylar.add( s.substring(0 ,i) + c + s.substring(i) );
+	 	  }
+	  }
+	  // Transpozisyonları bul
+	  for(int i=0; i< s.length()-1; i++){
+		  adaylar.add( s.substring(0 ,i) + s.charAt(i+1) + s.charAt(i) + s.substring(i+2) ); 
+ 	  }
+	  return adaylar;
+  }
 
 //
 //    /// <summary>
@@ -112,8 +138,11 @@ public class MetinAraclari2 {
     }
 
     public static void main(String[] args) {
-    	boolean s = ParcasiDuzeltmeMesafesiIcinde("ebm", "elma", 1);
-    	if (s) System.out.println("ok");
+    	List<String> adaylar = adaylariBul("merhaba", "abcdefghijklmnoprstuvyz".toCharArray());
+    	System.out.println("Adaylar (" + adaylar.size() + ") :" + adaylar);
+
+//    	boolean s = ParcasiDuzeltmeMesafesiIcinde("ebm", "elma", 1);
+//    	if (s) System.out.println("ok");
 //    	int iter = 100000;
 //    	TimeTracker.startClock("l1");
 //    	for(int i=0; i<iter; i++){
