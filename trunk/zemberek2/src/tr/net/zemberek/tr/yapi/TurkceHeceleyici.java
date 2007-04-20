@@ -38,7 +38,7 @@ import java.util.Collections;
 public class TurkceHeceleyici implements Heceleyici {
 
     public List<String> hecele(HarfDizisi kelime) {
-        List<String> list = new ArrayList();
+        List<String> list = new ArrayList<String>();
         while (kelime.length() > 0) {
             int index = sonHeceHarfSayisi(kelime);
             if (index < 0) {

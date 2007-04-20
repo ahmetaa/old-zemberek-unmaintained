@@ -57,7 +57,7 @@ public class KelimeUretici {
      * @param ekler : dogru sekilde sirali ek listesi.
      * @return String, eger ek listesi dogru ve koke uygun ise olusan kelime, yoksa "".
      */
-    public String kelimeUret(Kok kok, List ekler) {
+    public String kelimeUret(Kok kok, List<Ek> ekler) {
         UretimNesnesi ure = uretimNesnesiUret(kok, ekler);
         return ure.olusum;
     }

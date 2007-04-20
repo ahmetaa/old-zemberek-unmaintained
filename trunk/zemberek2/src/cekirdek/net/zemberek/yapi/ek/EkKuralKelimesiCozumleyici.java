@@ -54,7 +54,7 @@ public class EkKuralKelimesiCozumleyici {
     public List<EkUretimBileseni> cozumle(String uretimKelimesi) {
         if (uretimKelimesi == null || uretimKelimesi.length() == 0)
             return Collections.emptyList();
-        List<EkUretimBileseni> bilesenler = new ArrayList();
+        List<EkUretimBileseni> bilesenler = new ArrayList<EkUretimBileseni>();
         Iterator<EkUretimBileseni> it = new BilesenIterator(uretimKelimesi.trim().replaceAll("[ ]", ""));
         while (it.hasNext())
             bilesenler.add(it.next());

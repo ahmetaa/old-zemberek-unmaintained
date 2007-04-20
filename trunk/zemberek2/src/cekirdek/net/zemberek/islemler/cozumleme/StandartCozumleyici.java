@@ -71,7 +71,7 @@ public class StandartCozumleyici implements KelimeCozumleyici {
      * Eger flag false ise ilk dogru cozumu tek elemanli dizi seklinde
      * dondurur.bu yontem hiz gerektiren denetleme islemi icin kullanilir.
      *
-     * @param strGiris
+     * @param strGiris String cinsinden giris kelimesi
      * @param seviye: cozumnleme isleminin ne zaman sona erecegi bu bilesenin degerine gore
      * anlasilir.
      * @return tek ya da coklu kelime dizisi.
@@ -91,7 +91,7 @@ public class StandartCozumleyici implements KelimeCozumleyici {
         boolean icerikDegisti = false;
 
         //cozumlerin bulunmasi
-        List<Kelime> cozumler = new ArrayList(2);
+        List<Kelime> cozumler = new ArrayList<Kelime>(2);
         for (int i = kokler.size() - 1; i >= 0; i--) {
             if (icerikDegisti) {
                 girisDizi = new HarfDizisi(strIslenmis, alfabe);
@@ -194,12 +194,12 @@ public class StandartCozumleyici implements KelimeCozumleyici {
 
                 if (harfDizisiKiyaslayici.kiyasla(kelime.icerik(), giris) && !incelenenEk.sonEkOlamazMi()) {
                     if (seviye!= CozumlemeSeviyesi.TUM_KOK_VE_EKLER) {
-                        uygunSonuclar = new ArrayList(1);
+                        uygunSonuclar = new ArrayList<Kelime>(1);
                         uygunSonuclar.add(kelime);
                         return uygunSonuclar;
                     }
                     if (uygunSonuclar.isEmpty())
-                        uygunSonuclar = new ArrayList(2);
+                        uygunSonuclar = new ArrayList<Kelime>(2);
                     uygunSonuclar.add(kelime.clone());
                 }
             }

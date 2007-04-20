@@ -83,8 +83,8 @@ public class KokDonusturucu {
         // donusum tablosu
         Map<Kok, Kok> kokTablosu = new HashMap<Kok, Kok>();
         kokTablosu.put(yabanciKokler.get(0), kokler.kokBul("sabitle", FIIL));
-        kokTablosu.put(yabanciKokler.get(1), kokler.kokBul("gösteri", ISIM));
-        kokTablosu.put(yabanciKokler.get(2), kokler.kokBul("biçem", ISIM));
+        kokTablosu.put(yabanciKokler.get(1), kokler.kokBul("g"+Alfabe.CHAR_oo+"teri", ISIM));
+        kokTablosu.put(yabanciKokler.get(2), kokler.kokBul("bi"+Alfabe.CHAR_cc+"em", ISIM));
 
         // yabanci cozumleyici
         Sozluk yabanciSozluk = new AgacSozluk(yabanciKokler, db.alfabe(), db.kokOzelDurumlari());

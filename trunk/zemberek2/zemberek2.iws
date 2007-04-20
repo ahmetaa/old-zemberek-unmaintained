@@ -18,241 +18,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kaynaklar/tm/bilgi/ek_tm.xml" afterPath="$PROJECT_DIR$/kaynaklar/tm/bilgi/ek_tm.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/islemler/cozumleme/HarfDizisiKiyaslayici.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/islemler/cozumleme/HarfDizisiKiyaslayici.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zemberek2.ipr" afterPath="$PROJECT_DIR$/zemberek2.ipr" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/ek/EkYonetici.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/ek/EkYonetici.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/demo/net/zemberek/demo/TurkDiliTuru.java" afterPath="$PROJECT_DIR$/src/demo/net/zemberek/demo/TurkDiliTuru.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/ek/EkOzelDurumu.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/ek/EkOzelDurumu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/bilgi/araclar/IkiliKokOkuyucu.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/bilgi/araclar/IkiliKokOkuyucu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/istatistik/IstatistikRaporlayici.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/istatistik/IstatistikRaporlayici.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/HarfDizisi.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/HarfDizisi.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/istatistik/EkIstatistikleri.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/istatistik/EkIstatistikleri.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/az/net/zemberek/az/yapi/Azerice.java" afterPath="$PROJECT_DIR$/src/az/net/zemberek/az/yapi/Azerice.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/bilgi/kokler/ToleransliKokBulucu.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/bilgi/kokler/ToleransliKokBulucu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/islemler/cozumleme/BasitKelimeYigini.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/islemler/cozumleme/BasitKelimeYigini.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/islemler/TurkceYaziTesti.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/islemler/TurkceYaziTesti.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/islemler/AsciiDonusturucu.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/islemler/AsciiDonusturucu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/demo/net/zemberek/demo/GirisAlani.java" afterPath="$PROJECT_DIR$/src/demo/net/zemberek/demo/GirisAlani.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/cekirdek/net/zemberek/kullanim/TestTemizlik.java" afterPath="$PROJECT_DIR$/test/cekirdek/net/zemberek/kullanim/TestTemizlik.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/az/net/zemberek/az/yapi/ek/AzericeEkOzelDurumUretici.java" afterPath="$PROJECT_DIR$/src/az/net/zemberek/az/yapi/ek/AzericeEkOzelDurumUretici.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tr/net/zemberek/tr/islemler/SoruEkiIsleyici.java" afterPath="$PROJECT_DIR$/src/tr/net/zemberek/tr/islemler/SoruEkiIsleyici.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/araclar/turkce/YaziIsleyici.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/araclar/turkce/YaziIsleyici.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/cekirdek/net/zemberek/yapi/ek/TestSayiEkleri.java" afterPath="$PROJECT_DIR$/test/cekirdek/net/zemberek/yapi/ek/TestSayiEkleri.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/islemler/cozumleme/StandartCozumleyici.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/islemler/cozumleme/StandartCozumleyici.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/cekirdek/net/zemberek/islemler/TestHeceleyici.java" afterPath="$PROJECT_DIR$/test/cekirdek/net/zemberek/islemler/TestHeceleyici.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/istatistik/Hece.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/istatistik/Hece.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tm/net/zemberek/tm/yapi/ek/KiEkOzelDurumu.java" afterPath="$PROJECT_DIR$/src/tm/net/zemberek/tm/yapi/ek/KiEkOzelDurumu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/kok/Yumusama.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/kok/Yumusama.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/araclar/turkce/TurkishTokenStream.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/araclar/turkce/TurkishTokenStream.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/kok/KokOzelDurumBilgisi.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/kok/KokOzelDurumBilgisi.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/ek/TemelEkYonetici.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/ek/TemelEkYonetici.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/kok/HarfDizisiIslemi.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/kok/HarfDizisiIslemi.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/istatistik/KokIstatistikBilgisi.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/istatistik/KokIstatistikBilgisi.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/KelimeTipi.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/KelimeTipi.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/cekirdek/net/zemberek/kullanim/TestTurkceMi.java" afterPath="$PROJECT_DIR$/test/cekirdek/net/zemberek/kullanim/TestTurkceMi.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/islemler/cozumleme/CozumlemeYardimcisi.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/islemler/cozumleme/CozumlemeYardimcisi.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/islemler/cozumleme/ToleransliCozumleyici.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/islemler/cozumleme/ToleransliCozumleyici.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/bilgi/kokler/KokBulucu.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/bilgi/kokler/KokBulucu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/kok/AraSesliDusmesi.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/kok/AraSesliDusmesi.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/az/net/zemberek/az/yapi/AzericeHeceBulucu.java" afterPath="$PROJECT_DIR$/src/az/net/zemberek/az/yapi/AzericeHeceBulucu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/EkSiralayici.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/EkSiralayici.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/istatistik/TemelIstatistikYazici.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/istatistik/TemelIstatistikYazici.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/istatistik/UcluIstatistikleri.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/istatistik/UcluIstatistikleri.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/bilgi/kokler/KokDugumu.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/bilgi/kokler/KokDugumu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/istatistik/EkZinciri.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/istatistik/EkZinciri.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/cekirdek/net/zemberek/islemler/cozumleme/TestCozumlemeYardimcisi.java" afterPath="$PROJECT_DIR$/test/cekirdek/net/zemberek/islemler/cozumleme/TestCozumlemeYardimcisi.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tm/net/zemberek/tm/yapi/ek/EkUreticiTm.java" afterPath="$PROJECT_DIR$/src/tm/net/zemberek/tm/yapi/ek/EkUreticiTm.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/bilgi/araclar/DuzYaziKokYazici.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/bilgi/araclar/DuzYaziKokYazici.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/Cumle.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/Cumle.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/cekirdek/net/zemberek/bilgi/koksecici/TestKesinKokBulucu.java" afterPath="$PROJECT_DIR$/test/cekirdek/net/zemberek/bilgi/koksecici/TestKesinKokBulucu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/cekirdek/net/zemberek/yapi/ek/TestIsimEkleri.java" afterPath="$PROJECT_DIR$/test/cekirdek/net/zemberek/yapi/ek/TestIsimEkleri.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tr/net/zemberek/tr/yapi/kok/YumusamaNk.java" afterPath="$PROJECT_DIR$/src/tr/net/zemberek/tr/yapi/kok/YumusamaNk.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tr/net/zemberek/tr/yapi/kok/TurkceKokOzelDurumBilgisi.java" afterPath="$PROJECT_DIR$/src/tr/net/zemberek/tr/yapi/kok/TurkceKokOzelDurumBilgisi.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/kok/SonSesliIncelt.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/kok/SonSesliIncelt.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tr/net/zemberek/tr/yapi/ek/SimdikiZamanEkOzelDurumuTr.java" afterPath="$PROJECT_DIR$/src/tr/net/zemberek/tr/yapi/ek/SimdikiZamanEkOzelDurumuTr.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/ek/Ek.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/ek/Ek.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/araclar/turkce/TurkceMetinOkuyucu.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/araclar/turkce/TurkceMetinOkuyucu.java" />
+      <change type="DELETED" beforePath="C:\google-code\zemberek\zemberek2\src\cekirdek\net\zemberek\yapi\ek\EkKonfigurasyonHatasi.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/islemler/HeceIslemleri.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/islemler/HeceIslemleri.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/ek/EkKuralKelimesiCozumleyici.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/ek/EkKuralKelimesiCozumleyici.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tr/net/zemberek/tr/yapi/TurkceHeceleyici.java" afterPath="$PROJECT_DIR$/src/tr/net/zemberek/tr/yapi/TurkceHeceleyici.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zemberek2.iws" afterPath="$PROJECT_DIR$/zemberek2.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/bilgi/ZemberekAyarlari.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/bilgi/ZemberekAyarlari.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tr/net/zemberek/tr/yapi/ek/TurkceEkOzelDurumUretici.java" afterPath="$PROJECT_DIR$/src/tr/net/zemberek/tr/yapi/ek/TurkceEkOzelDurumUretici.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/istatistik/BinaryIstatistikOkuyucu.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/istatistik/BinaryIstatistikOkuyucu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/cekirdek/net/zemberek/yapi/TestHeceBulur.java" afterPath="$PROJECT_DIR$/test/cekirdek/net/zemberek/yapi/TestHeceBulur.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/cekirdek/net/zemberek/islemler/TestKelimeUretici.java" afterPath="$PROJECT_DIR$/test/cekirdek/net/zemberek/islemler/TestKelimeUretici.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kaynaklar/az/bilgi/ek_az.xml" afterPath="$PROJECT_DIR$/kaynaklar/az/bilgi/ek_az.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tr/net/zemberek/tr/islemler/TurkceCozumlemeYardimcisi.java" afterPath="$PROJECT_DIR$/src/tr/net/zemberek/tr/islemler/TurkceCozumlemeYardimcisi.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/istatistik/EkIstatistikBilgisi.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/istatistik/EkIstatistikBilgisi.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/cekirdek/net/zemberek/kullanim/TestPerformans.java" afterPath="$PROJECT_DIR$/test/cekirdek/net/zemberek/kullanim/TestPerformans.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tm/net/zemberek/tm/islemler/TurkmenceCozumlemeYardimcisi.java" afterPath="$PROJECT_DIR$/src/tm/net/zemberek/tm/islemler/TurkmenceCozumlemeYardimcisi.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tr/net/zemberek/tr/yapi/ek/SuOzelDurumu.java" afterPath="$PROJECT_DIR$/src/tr/net/zemberek/tr/yapi/ek/SuOzelDurumu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tr/net/zemberek/tr/yapi/TurkceSesliUretici.java" afterPath="$PROJECT_DIR$/src/tr/net/zemberek/tr/yapi/TurkceSesliUretici.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/istatistik/KokCebi.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/istatistik/KokCebi.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/islemler/cozumleme/OneriUretici.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/islemler/cozumleme/OneriUretici.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/kok/KokOzelDurumu.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/kok/KokOzelDurumu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tr/net/zemberek/tr/HarfDizisiUretici.java" afterPath="$PROJECT_DIR$/src/tr/net/zemberek/tr/HarfDizisiUretici.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/az/net/zemberek/az/yapi/AzericeSesliUretici.java" afterPath="$PROJECT_DIR$/src/az/net/zemberek/az/yapi/AzericeSesliUretici.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/cekirdek/net/zemberek/islemler/cozumleme/TestOzelDurumCozumleme.java" afterPath="$PROJECT_DIR$/test/cekirdek/net/zemberek/islemler/cozumleme/TestOzelDurumCozumleme.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/demo/net/zemberek/demo/DemoMain.java" afterPath="$PROJECT_DIR$/src/demo/net/zemberek/demo/DemoMain.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/cekirdek/net/zemberek/araclar/turkce/TestTurkishTokenStream.java" afterPath="$PROJECT_DIR$/test/cekirdek/net/zemberek/araclar/turkce/TestTurkishTokenStream.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/zemberek_tr.properties" afterPath="$PROJECT_DIR$/src/cekirdek/zemberek_tr.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/islemler/KelimeUretici.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/islemler/KelimeUretici.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/cekirdek/net/zemberek/kullanim/ZemberekDeneme.java" afterPath="$PROJECT_DIR$/test/cekirdek/net/zemberek/kullanim/ZemberekDeneme.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/az/net/zemberek/az/yapi/ek/EkUreticiAz.java" afterPath="$PROJECT_DIR$/src/az/net/zemberek/az/yapi/ek/EkUreticiAz.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/bilgi/araclar/IkiliKokYazici.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/bilgi/araclar/IkiliKokYazici.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/ek/EkUretici.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/ek/EkUretici.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/cekirdek/net/zemberek/yapi/ek/BaseTestEkler.java" afterPath="$PROJECT_DIR$/test/cekirdek/net/zemberek/yapi/ek/BaseTestEkler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/SesliUretici.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/SesliUretici.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/istatistik/Istatistik.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/istatistik/Istatistik.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/araclar/Kayitci.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/araclar/Kayitci.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/demo/net/zemberek/demo/DemoYonetici.java" afterPath="$PROJECT_DIR$/src/demo/net/zemberek/demo/DemoYonetici.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/cekirdek/net/zemberek/islemler/TestKelimeKokFrekansKiyaslayici.java" afterPath="$PROJECT_DIR$/test/cekirdek/net/zemberek/islemler/TestKelimeKokFrekansKiyaslayici.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tr/net/zemberek/tr/yapi/ek/GenisZamanEkOzelDurumuTr.java" afterPath="$PROJECT_DIR$/src/tr/net/zemberek/tr/yapi/ek/GenisZamanEkOzelDurumuTr.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/istatistik/KelimeZinciri.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/istatistik/KelimeZinciri.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/cekirdek/net/zemberek/yapi/ozeldurum/TestOzelDurumlar.java" afterPath="$PROJECT_DIR$/test/cekirdek/net/zemberek/yapi/ozeldurum/TestOzelDurumlar.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/ek/EkOzelDurumUretici.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/ek/EkOzelDurumUretici.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/ek/EkOzelDurumTipi.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/ek/EkOzelDurumTipi.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/cekirdek/net/zemberek/kullanim/RastgeleKelimeUretici.java" afterPath="$PROJECT_DIR$/test/cekirdek/net/zemberek/kullanim/RastgeleKelimeUretici.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/demo/net/zemberek/demo/MainFrame.java" afterPath="$PROJECT_DIR$/src/demo/net/zemberek/demo/MainFrame.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/istatistik/IstatistikYazici.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/istatistik/IstatistikYazici.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/ek/UretimKurali.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/ek/UretimKurali.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/bilgi/kokler/KokBulucuUretici.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/bilgi/kokler/KokBulucuUretici.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/araclar/TimeTracker.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/araclar/TimeTracker.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/cekirdek/net/zemberek/islemler/cozumleme/TestCozumlemePerformans.java" afterPath="$PROJECT_DIR$/test/cekirdek/net/zemberek/islemler/cozumleme/TestCozumlemePerformans.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tm/net/zemberek/tm/yapi/TurkmenceHeceBulucu.java" afterPath="$PROJECT_DIR$/src/tm/net/zemberek/tm/yapi/TurkmenceHeceBulucu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tm/net/zemberek/tm/yapi/ek/MeEkOzelDurumu.java" afterPath="$PROJECT_DIR$/src/tm/net/zemberek/tm/yapi/ek/MeEkOzelDurumu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tr/net/zemberek/tr/yapi/ek/TurkceEkAdlari.java" afterPath="$PROJECT_DIR$/src/tr/net/zemberek/tr/yapi/ek/TurkceEkAdlari.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/araclar/IstatistikAraclari.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/araclar/IstatistikAraclari.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/kok/Ciftleme.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/kok/Ciftleme.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/erisim/Zemberek.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/erisim/Zemberek.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/istatistik/GenelKokIstatistikBilgisi.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/istatistik/GenelKokIstatistikBilgisi.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tm/net/zemberek/tm/yapi/ek/TurkmenceEkOzelDurumUretici.java" afterPath="$PROJECT_DIR$/src/tm/net/zemberek/tm/yapi/ek/TurkmenceEkOzelDurumUretici.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/bilgi/kokler/KokAgaciYuruyucu.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/bilgi/kokler/KokAgaciYuruyucu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/istatistik/Istatistikler.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/istatistik/Istatistikler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/cekirdek/net/zemberek/bilgi/koksecici/TestTurkceHarfToleransliKokSecici.java" afterPath="$PROJECT_DIR$/test/cekirdek/net/zemberek/bilgi/koksecici/TestTurkceHarfToleransliKokSecici.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/cekirdek/net/zemberek/araclar/TestMetinAraclari.java" afterPath="$PROJECT_DIR$/test/cekirdek/net/zemberek/araclar/TestMetinAraclari.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/cekirdek/net/zemberek/islemler/cozumleme/TestToleransliCozumleyici.java" afterPath="$PROJECT_DIR$/test/cekirdek/net/zemberek/islemler/cozumleme/TestToleransliCozumleyici.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/cekirdek/net/zemberek/araclar/TestQKlavye.java" afterPath="$PROJECT_DIR$/test/cekirdek/net/zemberek/araclar/TestQKlavye.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tm/net/zemberek/tm/yapi/ek/SonHarfDusumOzelDurumu.java" afterPath="$PROJECT_DIR$/src/tm/net/zemberek/tm/yapi/ek/SonHarfDusumOzelDurumu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/bilgi/kokler/Sozluk.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/bilgi/kokler/Sozluk.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/DilBilgisi.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/DilBilgisi.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/az/net/zemberek/az/islemler/AzericeCozumlemeYardimcisi.java" afterPath="$PROJECT_DIR$/src/az/net/zemberek/az/islemler/AzericeCozumlemeYardimcisi.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/cekirdek/net/zemberek/islemler/TestTurkcedenDonusturucu.java" afterPath="$PROJECT_DIR$/test/cekirdek/net/zemberek/islemler/TestTurkcedenDonusturucu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/cekirdek/net/zemberek/yapi/alfabe/TestTurkceHarf.java" afterPath="$PROJECT_DIR$/test/cekirdek/net/zemberek/yapi/alfabe/TestTurkceHarf.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/DilBilgisiUretici.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/DilBilgisiUretici.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/cekirdek/net/zemberek/islemler/TestEkSiralayici.java" afterPath="$PROJECT_DIR$/test/cekirdek/net/zemberek/islemler/TestEkSiralayici.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/cekirdek/net/zemberek/kullanim/TestIstatistik.java" afterPath="$PROJECT_DIR$/test/cekirdek/net/zemberek/kullanim/TestIstatistik.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/bilgi/kokler/KokAgaci.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/bilgi/kokler/KokAgaci.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/cekirdek/net/zemberek/yapi/TestHarfDizisi.java" afterPath="$PROJECT_DIR$/test/cekirdek/net/zemberek/yapi/TestHarfDizisi.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/az/net/zemberek/az/yapi/ek/AzericeEkAdlari.java" afterPath="$PROJECT_DIR$/src/az/net/zemberek/az/yapi/ek/AzericeEkAdlari.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/araclar/turkce/YaziBirimiTipi.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/araclar/turkce/YaziBirimiTipi.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/bilgi/araclar/KokOkuyucu.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/bilgi/araclar/KokOkuyucu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kaynaklar/tr/bilgi/ek_tr.xml" afterPath="$PROJECT_DIR$/kaynaklar/tr/bilgi/ek_tr.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tm/net/zemberek/tm/yapi/TurkmenceSesliUretici.java" afterPath="$PROJECT_DIR$/src/tm/net/zemberek/tm/yapi/TurkmenceSesliUretici.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/cekirdek/net/zemberek/bilgi/test.properties" afterPath="$PROJECT_DIR$/test/cekirdek/net/zemberek/bilgi/test.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/bilgi/kokler/KesinKokBulucu.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/bilgi/kokler/KesinKokBulucu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tr/net/zemberek/tr/yapi/ek/EkUreticiTr.java" afterPath="$PROJECT_DIR$/src/tr/net/zemberek/tr/yapi/ek/EkUreticiTr.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tr/net/zemberek/tr/yapi/kok/TurkceKokOzelDurumTipleri.java" afterPath="$PROJECT_DIR$/src/tr/net/zemberek/tr/yapi/kok/TurkceKokOzelDurumTipleri.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/cekirdek/net/zemberek/TemelTest.java" afterPath="$PROJECT_DIR$/test/cekirdek/net/zemberek/TemelTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tm/net/zemberek/tm/yapi/ek/TurkmenceEkAdlari.java" afterPath="$PROJECT_DIR$/src/tm/net/zemberek/tm/yapi/ek/TurkmenceEkAdlari.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/islemler/DenetlemeCebi.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/islemler/DenetlemeCebi.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/cekirdek/net/zemberek/kullanim/TestHecele.java" afterPath="$PROJECT_DIR$/test/cekirdek/net/zemberek/kullanim/TestHecele.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tr/net/zemberek/tr/yapi/TurkceHeceBulucu.java" afterPath="$PROJECT_DIR$/src/tr/net/zemberek/tr/yapi/TurkceHeceBulucu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/araclar/turkce/YaziBirimi.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/araclar/turkce/YaziBirimi.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/islemler/KelimeKokFrekansKiyaslayici.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/islemler/KelimeKokFrekansKiyaslayici.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/araclar/KayitBicimleyici.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/araclar/KayitBicimleyici.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/TurkceDilBilgisi.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/TurkceDilBilgisi.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/istatistik/IkiliIstatistikleri.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/istatistik/IkiliIstatistikleri.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/bilgi/araclar/DuzYaziKokOkuyucu.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/bilgi/araclar/DuzYaziKokOkuyucu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/bilgi/araclar/KokYazici.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/bilgi/araclar/KokYazici.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/cekirdek/net/zemberek/araclar/turkce/TestYaziIsleyici.java" afterPath="$PROJECT_DIR$/test/cekirdek/net/zemberek/araclar/turkce/TestYaziIsleyici.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/tr/islevsel/TestDenetleme.java" afterPath="$PROJECT_DIR$/test/tr/islevsel/TestDenetleme.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/ek/OldurganEkOzelDurumu.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/ek/OldurganEkOzelDurumu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/istatistik/KelimeBilgisi.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/istatistik/KelimeBilgisi.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lisanslar/lisans.txt" afterPath="$PROJECT_DIR$/lisanslar/lisans.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/kok/YeniIcerikAta.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/kok/YeniIcerikAta.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/ek/OnEkOzelDurumu.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/ek/OnEkOzelDurumu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/islemler/Heceleyici.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/islemler/Heceleyici.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/cekirdek/net/zemberek/araclar/TestTimeTracker.java" afterPath="$PROJECT_DIR$/test/cekirdek/net/zemberek/araclar/TestTimeTracker.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/cekirdek/net/zemberek/islemler/ZemberekIslevselTest.java" afterPath="$PROJECT_DIR$/test/cekirdek/net/zemberek/islemler/ZemberekIslevselTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/ek/ZamanKiOzelDurumu.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/ek/ZamanKiOzelDurumu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/kok/Ulama.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/kok/Ulama.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/cekirdek/net/zemberek/kullanim/TestOner.java" afterPath="$PROJECT_DIR$/test/cekirdek/net/zemberek/kullanim/TestOner.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/Kelime.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/Kelime.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/cekirdek/net/zemberek/kullanim/TestDogrula.java" afterPath="$PROJECT_DIR$/test/cekirdek/net/zemberek/kullanim/TestDogrula.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/cekirdek/net/zemberek/islemler/cozumleme/AbstractCozumlemeTest.java" afterPath="$PROJECT_DIR$/test/cekirdek/net/zemberek/islemler/cozumleme/AbstractCozumlemeTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/istatistik/BinaryIstatistikYazici.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/istatistik/BinaryIstatistikYazici.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/cekirdek/net/zemberek/kullanim/TestAscii.java" afterPath="$PROJECT_DIR$/test/cekirdek/net/zemberek/kullanim/TestAscii.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.xml" afterPath="$PROJECT_DIR$/build.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/cekirdek/net/zemberek/bilgi/araclar/TestBinarySozluk.java" afterPath="$PROJECT_DIR$/test/cekirdek/net/zemberek/bilgi/araclar/TestBinarySozluk.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/islemler/cozumleme/KelimeCozumleyici.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/islemler/cozumleme/KelimeCozumleyici.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/ek/TemelEkOzelDurumUretici.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/ek/TemelEkOzelDurumUretici.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/islemler/cozumleme/AsciiToleransliHDKiyaslayici.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/islemler/cozumleme/AsciiToleransliHDKiyaslayici.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/kok/TemelKokOzelDurumBilgisi.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/kok/TemelKokOzelDurumBilgisi.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/ek/EkUretimBileseni.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/ek/EkUretimBileseni.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/bilgi/KaynakYukleyici.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/bilgi/KaynakYukleyici.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/istatistik/KelimeIstatistikleri.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/istatistik/KelimeIstatistikleri.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/cekirdek/net/zemberek/bilgi/araclar/TestDuzMetinSozlukYazici.java" afterPath="$PROJECT_DIR$/test/cekirdek/net/zemberek/bilgi/araclar/TestDuzMetinSozlukYazici.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/istatistik/EkFrekansBilgisi.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/istatistik/EkFrekansBilgisi.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/cekirdek/net/zemberek/bilgi/kokler/TestTreeSozluk.java" afterPath="$PROJECT_DIR$/test/cekirdek/net/zemberek/bilgi/kokler/TestTreeSozluk.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/demo/net/zemberek/demo/DemoPaneli.java" afterPath="$PROJECT_DIR$/src/demo/net/zemberek/demo/DemoPaneli.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tr/net/zemberek/tr/yapi/ek/BeraberlikIsOzelDurumu.java" afterPath="$PROJECT_DIR$/src/tr/net/zemberek/tr/yapi/ek/BeraberlikIsOzelDurumu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/az/net/zemberek/az/yapi/kok/AzericeKokOzelDurumTipleri.java" afterPath="$PROJECT_DIR$/src/az/net/zemberek/az/yapi/kok/AzericeKokOzelDurumTipleri.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/cekirdek/net/zemberek/bilgi/kokler/TestKokAgaciYuruyucu.java" afterPath="$PROJECT_DIR$/test/cekirdek/net/zemberek/bilgi/kokler/TestKokAgaciYuruyucu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/cekirdek/net/zemberek/kullanim/TestCozumle.java" afterPath="$PROJECT_DIR$/test/cekirdek/net/zemberek/kullanim/TestCozumle.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/cekirdek/net/zemberek/yapi/ek/TestEkUreticiTr.java" afterPath="$PROJECT_DIR$/test/cekirdek/net/zemberek/yapi/ek/TestEkUreticiTr.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/istatistik/KokIstatistikleri.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/istatistik/KokIstatistikleri.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/istatistik/DosyaRaporlayici.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/istatistik/DosyaRaporlayici.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/demo/net/zemberek/demo/IslemTipi.java" afterPath="$PROJECT_DIR$/src/demo/net/zemberek/demo/IslemTipi.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/cekirdek/net/zemberek/bilgi/TestKaynakYukleyici.java" afterPath="$PROJECT_DIR$/test/cekirdek/net/zemberek/bilgi/TestKaynakYukleyici.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/istatistik/KelimeTipZinciri.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/istatistik/KelimeTipZinciri.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/HeceBulucu.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/HeceBulucu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/kok/KokOzelDurumTipi.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/kok/KokOzelDurumTipi.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/cekirdek/net/zemberek/islemler/cozumleme/TestKelimeCozumleyici.java" afterPath="$PROJECT_DIR$/test/cekirdek/net/zemberek/islemler/cozumleme/TestKelimeCozumleyici.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/cekirdek/net/zemberek/bilgi/araclar/TestSozlukOkuyucu.java" afterPath="$PROJECT_DIR$/test/cekirdek/net/zemberek/bilgi/araclar/TestSozlukOkuyucu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/demo/net/zemberek/demo/CikisAlani.java" afterPath="$PROJECT_DIR$/src/demo/net/zemberek/demo/CikisAlani.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tm/net/zemberek/tm/yapi/kok/TurkmenceKokOzelDurumTipleri.java" afterPath="$PROJECT_DIR$/src/tm/net/zemberek/tm/yapi/kok/TurkmenceKokOzelDurumTipleri.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/cekirdek/net/zemberek/yapi/alfabe/TestAlfabe.java" afterPath="$PROJECT_DIR$/test/cekirdek/net/zemberek/yapi/alfabe/TestAlfabe.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tm/net/zemberek/tm/yapi/kok/TurkmenceKokOzelDurumBilgisi.java" afterPath="$PROJECT_DIR$/src/tm/net/zemberek/tm/yapi/kok/TurkmenceKokOzelDurumBilgisi.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/DilAyarlari.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/DilAyarlari.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/Alfabe.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/Alfabe.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/araclar/MetinAraclari.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/araclar/MetinAraclari.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/araclar/TusTakimi.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/araclar/TusTakimi.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/ek/EkUretimKurali.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/ek/EkUretimKurali.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/bilgi/kokler/AgacSozluk.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/bilgi/kokler/AgacSozluk.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/cekirdek/net/zemberek/TestGirdisi.java" afterPath="$PROJECT_DIR$/test/cekirdek/net/zemberek/TestGirdisi.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/islemler/BasitDenetlemeCebi.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/islemler/BasitDenetlemeCebi.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/Kok.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/Kok.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/az/net/zemberek/az/yapi/kok/AzericeKokOzelDurumBilgisi.java" afterPath="$PROJECT_DIR$/src/az/net/zemberek/az/yapi/kok/AzericeKokOzelDurumBilgisi.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/ek/SonHarfYumusamaOzelDurumu.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/ek/SonHarfYumusamaOzelDurumu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/demo/net/zemberek/demo/SwingFactory.java" afterPath="$PROJECT_DIR$/src/demo/net/zemberek/demo/SwingFactory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/istatistik/KonsolRaporlayici.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/istatistik/KonsolRaporlayici.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/TurkceHarf.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/TurkceHarf.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/kok/SonHarfDusmesi.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/kok/SonHarfDusmesi.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/cekirdek/net/zemberek/yapi/TestKok.java" afterPath="$PROJECT_DIR$/test/cekirdek/net/zemberek/yapi/TestKok.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/bilgi/kokler/AsciiKokBulucu.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/bilgi/kokler/AsciiKokBulucu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/cekirdek/net/zemberek/TestUtils.java" afterPath="$PROJECT_DIR$/test/cekirdek/net/zemberek/TestUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/araclar/XmlYardimcisi.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/araclar/XmlYardimcisi.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/kok/BosHarfDizisiIslemi.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/kok/BosHarfDizisiIslemi.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tm/net/zemberek/tm/yapi/Turkmence.java" afterPath="$PROJECT_DIR$/src/tm/net/zemberek/tm/yapi/Turkmence.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/istatistik/HeceIstatistikleri.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/istatistik/HeceIstatistikleri.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/ek/XmlEkOkuyucu.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/ek/XmlEkOkuyucu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/istatistik/KarakterIstatistikleri.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/istatistik/KarakterIstatistikleri.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tm/net/zemberek/tm/yapi/ek/EdilgenOzelDurumu.java" afterPath="$PROJECT_DIR$/src/tm/net/zemberek/tm/yapi/ek/EdilgenOzelDurumu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/islemler/HataliKodlamaTemizleyici.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/islemler/HataliKodlamaTemizleyici.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/cekirdek/net/zemberek/araclar/turkce/TestTurkceMetinOkuyucu.java" afterPath="$PROJECT_DIR$/test/cekirdek/net/zemberek/araclar/turkce/TestTurkceMetinOkuyucu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/islemler/cozumleme/KesinHDKiyaslayici.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/islemler/cozumleme/KesinHDKiyaslayici.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/cekirdek/net/zemberek/araclar/turkce/TestTurkishTokenStreamPerf.java" afterPath="$PROJECT_DIR$/test/cekirdek/net/zemberek/araclar/turkce/TestTurkishTokenStreamPerf.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/CokluKok.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/CokluKok.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/araclar/JaroWinkler.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/araclar/JaroWinkler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/istatistik/TemelRaporlayici.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/istatistik/TemelRaporlayici.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tr/net/zemberek/tr/yapi/ek/EdilgenOzelDurumu.java" afterPath="$PROJECT_DIR$/src/tr/net/zemberek/tr/yapi/ek/EdilgenOzelDurumu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/istatistik/IstatistikToplayici.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/istatistik/IstatistikToplayici.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/cekirdek/net/zemberek/bilgi/koksecici/TestHataToleransliKokSecici.java" afterPath="$PROJECT_DIR$/test/cekirdek/net/zemberek/bilgi/koksecici/TestHataToleransliKokSecici.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/cekirdek/net/zemberek/kullanim/TestBenzerlik.java" afterPath="$PROJECT_DIR$/test/cekirdek/net/zemberek/kullanim/TestBenzerlik.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/cekirdek/net/zemberek/yapi/ek/TestFiilEkleri.java" afterPath="$PROJECT_DIR$/test/cekirdek/net/zemberek/yapi/ek/TestFiilEkleri.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/cekirdek/net/zemberek/araclar/turkce/TestExtractor.java" afterPath="$PROJECT_DIR$/test/cekirdek/net/zemberek/araclar/turkce/TestExtractor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tr/net/zemberek/tr/yapi/TurkiyeTurkcesi.java" afterPath="$PROJECT_DIR$/src/tr/net/zemberek/tr/yapi/TurkiyeTurkcesi.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/deney/net/zemberek/deney/oneri/KokDonusturucu.java" afterPath="$PROJECT_DIR$/deney/net/zemberek/deney/oneri/KokDonusturucu.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/Alfabe.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/Alfabe.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/islemler/KelimeUretici.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/islemler/KelimeUretici.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/islemler/cozumleme/StandartCozumleyici.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/islemler/cozumleme/StandartCozumleyici.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/HarfDizisi.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/HarfDizisi.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zemberek2.ipr" afterPath="$PROJECT_DIR$/zemberek2.ipr" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cekirdek/net/zemberek/islemler/cozumleme/OneriUretici.java" afterPath="$PROJECT_DIR$/src/cekirdek/net/zemberek/islemler/cozumleme/OneriUretici.java" />
     </list>
+    <list name="Failed commit: Default" comment="blah" />
   </component>
   <component name="ChangeListSynchronizer" />
   <component name="ChangesViewManager" flattened_view="true" />
@@ -394,91 +174,91 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="BinaryIstatistikYazici.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cekirdek/net/zemberek/istatistik/BinaryIstatistikYazici.java">
+      <file leaf-file-name="ZamanKiOzelDurumu.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/ek/ZamanKiOzelDurumu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="0" selection-start="964" selection-end="964" vertical-scroll-proportion="0.6344486">
+            <state line="44" column="13" selection-start="1400" selection-end="1400" vertical-scroll-proportion="0.26111907">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TemelTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/cekirdek/net/zemberek/TemelTest.java">
+      <file leaf-file-name="KokOzelDurumu.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/kok/KokOzelDurumu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="13" selection-start="1104" selection-end="1104" vertical-scroll-proportion="0.6796116">
+            <state line="40" column="13" selection-start="1240" selection-end="1240" vertical-scroll-proportion="-3.6800573">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TurkmenceCozumlemeYardimcisi.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/tm/net/zemberek/tm/islemler/TurkmenceCozumlemeYardimcisi.java">
+      <file leaf-file-name="SonHarfDusmesi.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/kok/SonHarfDusmesi.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="13" selection-start="1312" selection-end="1312" vertical-scroll-proportion="0.7125155">
+            <state line="34" column="13" selection-start="1031" selection-end="1031" vertical-scroll-proportion="0.18077475">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TurkceEkAdlari.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/tr/net/zemberek/tr/yapi/ek/TurkceEkAdlari.java">
+      <file leaf-file-name="SonSesliIncelt.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/kok/SonSesliIncelt.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="13" selection-start="987" selection-end="987" vertical-scroll-proportion="0.6407767">
+            <state line="36" column="13" selection-start="1117" selection-end="1117" vertical-scroll-proportion="0.18077475">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestEkKuralCozumleyici.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test/tm/net/zemberek/tm/ek/TestEkKuralCozumleyici.java">
+      <file leaf-file-name="Ulama.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/kok/Ulama.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="34" column="13" selection-start="1059" selection-end="1059" vertical-scroll-proportion="0.18077475">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="build.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build.xml">
+      <file leaf-file-name="YeniIcerikAta.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/kok/YeniIcerikAta.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="28" selection-start="926" selection-end="947" vertical-scroll-proportion="0.49566296">
+            <state line="41" column="13" selection-start="1288" selection-end="1288" vertical-scroll-proportion="0.26111907">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ek_az.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/kaynaklar/az/bilgi/ek_az.xml">
+      <file leaf-file-name="Yumusama.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/kok/Yumusama.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="2" selection-start="734" selection-end="734" vertical-scroll-proportion="0.34951457">
+            <state line="34" column="13" selection-start="1055" selection-end="1055" vertical-scroll-proportion="0.18077475">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ek_tm.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/kaynaklar/tm/bilgi/ek_tm.xml">
+      <file leaf-file-name="CokluKok.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/CokluKok.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="6" selection-start="739" selection-end="739" vertical-scroll-proportion="0.37670383">
+            <state line="35" column="13" selection-start="1078" selection-end="1078" vertical-scroll-proportion="0.20086083">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ek_tr.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/kaynaklar/tr/bilgi/ek_tr.xml">
+      <file leaf-file-name="Alfabe.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/Alfabe.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="2" selection-start="735" selection-end="735" vertical-scroll-proportion="0.37670383">
+            <state line="181" column="9" selection-start="7256" selection-end="7256" vertical-scroll-proportion="-4.1420374">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="lisans.txt" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lisanslar/lisans.txt">
+      <file leaf-file-name="HarfDizisi.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/HarfDizisi.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="168" column="262" selection-start="24031" selection-end="24031" vertical-scroll-proportion="1.9033457">
+            <state line="431" column="9" selection-start="13575" selection-end="13575" vertical-scroll-proportion="-1.4906744">
               <folding />
             </state>
           </provider>
@@ -588,6 +368,7 @@
     <option name="LOGIN_SILENTLY" value="false" />
     <option name="INTEGRATE_RUN_RESOLVE" value="true" />
     <option name="INTEGRATE_REVERT_UNCHANGED" value="true" />
+    <option name="SERVER_TIMEOUT" value="20000" />
   </component>
   <component name="ProjectLevelVcsManager">
     <OptionsSetting value="true" id="Add" />
@@ -625,7 +406,7 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2" />
+          <option name="myItemId" value="PsiDirectory:C:\google-code\zemberek\zemberek2" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
       </PATH>
@@ -639,15 +420,11 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2" />
+          <option name="myItemId" value="PsiDirectory:C:\google-code\zemberek\zemberek2" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2\test" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2\test\tr" />
+          <option name="myItemId" value="PsiDirectory:C:\google-code\zemberek\zemberek2\src" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
       </PATH>
@@ -661,31 +438,23 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2" />
+          <option name="myItemId" value="PsiDirectory:C:\google-code\zemberek\zemberek2" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2\test" />
+          <option name="myItemId" value="PsiDirectory:C:\google-code\zemberek\zemberek2\src" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2\test\tm" />
+          <option name="myItemId" value="PsiDirectory:C:\google-code\zemberek\zemberek2\src\cekirdek" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2\test\tm\net" />
+          <option name="myItemId" value="PsiDirectory:C:\google-code\zemberek\zemberek2\src\cekirdek\net\zemberek" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2\test\tm\net\zemberek" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2\test\tm\net\zemberek\tm" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2\test\tm\net\zemberek\tm\ek" />
+          <option name="myItemId" value="PsiDirectory:C:\google-code\zemberek\zemberek2\src\cekirdek\net\zemberek\yapi" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
       </PATH>
@@ -699,49 +468,27 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2" />
+          <option name="myItemId" value="PsiDirectory:C:\google-code\zemberek\zemberek2" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2\test" />
+          <option name="myItemId" value="PsiDirectory:C:\google-code\zemberek\zemberek2\src" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2\test\cekirdek" />
+          <option name="myItemId" value="PsiDirectory:C:\google-code\zemberek\zemberek2\src\cekirdek" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2\test\cekirdek\net\zemberek" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="zemberek2.ipr" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="zemberek2" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2" />
+          <option name="myItemId" value="PsiDirectory:C:\google-code\zemberek\zemberek2\src\cekirdek\net\zemberek" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2\test" />
+          <option name="myItemId" value="PsiDirectory:C:\google-code\zemberek\zemberek2\src\cekirdek\net\zemberek\yapi" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2\test\cekirdek" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2\test\cekirdek\net\zemberek" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2\test\cekirdek\net\zemberek\bilgi" />
+          <option name="myItemId" value="PsiDirectory:C:\google-code\zemberek\zemberek2\src\cekirdek\net\zemberek\yapi\kok" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
       </PATH>
@@ -755,57 +502,27 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2" />
+          <option name="myItemId" value="PsiDirectory:C:\google-code\zemberek\zemberek2" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2\test" />
+          <option name="myItemId" value="PsiDirectory:C:\google-code\zemberek\zemberek2\src" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2\test\cekirdek" />
+          <option name="myItemId" value="PsiDirectory:C:\google-code\zemberek\zemberek2\src\cekirdek" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2\test\cekirdek\net\zemberek" />
+          <option name="myItemId" value="PsiDirectory:C:\google-code\zemberek\zemberek2\src\cekirdek\net\zemberek" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2\test\cekirdek\net\zemberek\bilgi" />
+          <option name="myItemId" value="PsiDirectory:C:\google-code\zemberek\zemberek2\src\cekirdek\net\zemberek\yapi" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2\test\cekirdek\net\zemberek\bilgi\araclar" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="zemberek2.ipr" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="zemberek2" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2\test" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2\test\cekirdek" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2\test\cekirdek\net\zemberek" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2\test\cekirdek\net\zemberek\araclar" />
+          <option name="myItemId" value="PsiDirectory:C:\google-code\zemberek\zemberek2\src\cekirdek\net\zemberek\yapi\ek" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
       </PATH>
@@ -819,37 +536,23 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2" />
+          <option name="myItemId" value="PsiDirectory:C:\google-code\zemberek\zemberek2" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2\src" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="zemberek2.ipr" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="zemberek2" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2" />
+          <option name="myItemId" value="PsiDirectory:C:\google-code\zemberek\zemberek2\src" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2\src" />
+          <option name="myItemId" value="PsiDirectory:C:\google-code\zemberek\zemberek2\src\cekirdek" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2\src\tm" />
+          <option name="myItemId" value="PsiDirectory:C:\google-code\zemberek\zemberek2\src\cekirdek\net\zemberek" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2\src\tm\net\zemberek\tm" />
+          <option name="myItemId" value="PsiDirectory:C:\google-code\zemberek\zemberek2\src\cekirdek\net\zemberek\istatistik" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
       </PATH>
@@ -863,49 +566,23 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2" />
+          <option name="myItemId" value="PsiDirectory:C:\google-code\zemberek\zemberek2" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2\src" />
+          <option name="myItemId" value="PsiDirectory:C:\google-code\zemberek\zemberek2\src" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2\src\tm" />
+          <option name="myItemId" value="PsiDirectory:C:\google-code\zemberek\zemberek2\src\cekirdek" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2\src\tm\net\zemberek\tm" />
+          <option name="myItemId" value="PsiDirectory:C:\google-code\zemberek\zemberek2\src\cekirdek\net\zemberek" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2\src\tm\net\zemberek\tm\islemler" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="zemberek2.ipr" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="zemberek2" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2\src" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2\src\demo" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2\src\demo\net\zemberek\demo" />
+          <option name="myItemId" value="PsiDirectory:C:\google-code\zemberek\zemberek2\src\cekirdek\net\zemberek\islemler" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
       </PATH>
@@ -919,45 +596,27 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2" />
+          <option name="myItemId" value="PsiDirectory:C:\google-code\zemberek\zemberek2" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2\src" />
+          <option name="myItemId" value="PsiDirectory:C:\google-code\zemberek\zemberek2\src" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2\src\cekirdek" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="zemberek2.ipr" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="zemberek2" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2" />
+          <option name="myItemId" value="PsiDirectory:C:\google-code\zemberek\zemberek2\src\cekirdek" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2\src" />
+          <option name="myItemId" value="PsiDirectory:C:\google-code\zemberek\zemberek2\src\cekirdek\net\zemberek" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2\src\az" />
+          <option name="myItemId" value="PsiDirectory:C:\google-code\zemberek\zemberek2\src\cekirdek\net\zemberek\islemler" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2\src\az\net\zemberek\az" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2\src\az\net\zemberek\az\yapi" />
+          <option name="myItemId" value="PsiDirectory:C:\google-code\zemberek\zemberek2\src\cekirdek\net\zemberek\islemler\cozumleme" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
       </PATH>
@@ -971,27 +630,19 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2" />
+          <option name="myItemId" value="PsiDirectory:C:\google-code\zemberek\zemberek2" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2\src" />
+          <option name="myItemId" value="PsiDirectory:C:\google-code\zemberek\zemberek2\src" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2\src\az" />
+          <option name="myItemId" value="PsiDirectory:C:\google-code\zemberek\zemberek2\src\cekirdek" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2\src\az\net\zemberek\az" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2\src\az\net\zemberek\az\yapi" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2\src\az\net\zemberek\az\yapi\kok" />
+          <option name="myItemId" value="PsiDirectory:C:\google-code\zemberek\zemberek2\src\cekirdek\net\zemberek" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
       </PATH>
@@ -1005,27 +656,23 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2" />
+          <option name="myItemId" value="PsiDirectory:C:\google-code\zemberek\zemberek2" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2\src" />
+          <option name="myItemId" value="PsiDirectory:C:\google-code\zemberek\zemberek2\src" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2\src\az" />
+          <option name="myItemId" value="PsiDirectory:C:\google-code\zemberek\zemberek2\src\az" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2\src\az\net\zemberek\az" />
+          <option name="myItemId" value="PsiDirectory:C:\google-code\zemberek\zemberek2\src\az\net\zemberek\az" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2\src\az\net\zemberek\az\yapi" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2\src\az\net\zemberek\az\yapi\ek" />
+          <option name="myItemId" value="PsiDirectory:C:\google-code\zemberek\zemberek2\src\az\net\zemberek\az\yapi" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
       </PATH>
@@ -1039,41 +686,23 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2" />
+          <option name="myItemId" value="PsiDirectory:C:\google-code\zemberek\zemberek2" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2\src" />
+          <option name="myItemId" value="PsiDirectory:C:\google-code\zemberek\zemberek2\src" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2\src\az" />
+          <option name="myItemId" value="PsiDirectory:C:\google-code\zemberek\zemberek2\src\az" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2\src\az\net\zemberek\az" />
+          <option name="myItemId" value="PsiDirectory:C:\google-code\zemberek\zemberek2\src\az\net\zemberek\az" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2\src\az\net\zemberek\az\islemler" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="zemberek2.ipr" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="zemberek2" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2\lisanslar" />
+          <option name="myItemId" value="PsiDirectory:C:\google-code\zemberek\zemberek2\src\az\net\zemberek\az\islemler" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
       </PATH>
@@ -1087,45 +716,19 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2" />
+          <option name="myItemId" value="PsiDirectory:C:\google-code\zemberek\zemberek2" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2\kaynaklar" />
+          <option name="myItemId" value="PsiDirectory:C:\google-code\zemberek\zemberek2\deney" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2\kaynaklar\tr" />
+          <option name="myItemId" value="PsiDirectory:C:\google-code\zemberek\zemberek2\deney\net\zemberek" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2\kaynaklar\tr\test" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="zemberek2.ipr" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="zemberek2" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2\kaynaklar" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2\kaynaklar\tr" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2\kaynaklar\tr\metinler" />
+          <option name="myItemId" value="PsiDirectory:C:\google-code\zemberek\zemberek2\deney\net\zemberek\yapi\obek" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
       </PATH>
@@ -1139,45 +742,19 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2" />
+          <option name="myItemId" value="PsiDirectory:C:\google-code\zemberek\zemberek2" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2\kaynaklar" />
+          <option name="myItemId" value="PsiDirectory:C:\google-code\zemberek\zemberek2\deney" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2\kaynaklar\tr" />
+          <option name="myItemId" value="PsiDirectory:C:\google-code\zemberek\zemberek2\deney\net\zemberek" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2\kaynaklar\tr\bilgi" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="zemberek2.ipr" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="zemberek2" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2\kaynaklar" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2\kaynaklar\tm" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2\kaynaklar\tm\bilgi" />
+          <option name="myItemId" value="PsiDirectory:C:\google-code\zemberek\zemberek2\deney\net\zemberek\deney" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
       </PATH>
@@ -1191,44 +768,30 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2" />
+          <option name="myItemId" value="PsiDirectory:C:\google-code\zemberek\zemberek2" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2\kaynaklar" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="zemberek2.ipr" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="zemberek2" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2" />
+          <option name="myItemId" value="PsiDirectory:C:\google-code\zemberek\zemberek2\deney" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2\kaynaklar" />
+          <option name="myItemId" value="PsiDirectory:C:\google-code\zemberek\zemberek2\deney\net\zemberek" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2\kaynaklar\az" />
+          <option name="myItemId" value="PsiDirectory:C:\google-code\zemberek\zemberek2\deney\net\zemberek\deney" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:E:\google_code\zemberek\zemberek2\kaynaklar\az\bilgi" />
+          <option name="myItemId" value="PsiDirectory:C:\google-code\zemberek\zemberek2\deney\net\zemberek\deney\oneri" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
       </PATH>
     </subPane>
   </component>
   <component name="ProjectReloadState">
-    <option name="STATE" value="0" />
+    <option name="STATE" value="2" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="0.5" version="1" splitterProportion="0.5">
@@ -1238,7 +801,7 @@
       <showLibraryContents />
       <hideEmptyPackages ProjectPane="true" />
       <abbreviatePackageNames />
-      <showStructure ProjectPane="false" PackagesPane="false" Scope="false" Favorites="false" />
+      <showStructure Favorites="false" ProjectPane="false" Scope="false" PackagesPane="false" />
       <autoscrollToSource />
       <autoscrollFromSource />
       <sortByType />
@@ -1296,53 +859,40 @@
     </key>
   </component>
   <component name="RestoreUpdateTree" />
-  <component name="RunManager" selected="Application.demo">
-    <tempConfiguration default="false" name="TestCozumlemePerformans.testPerformans2" type="JUnit" factoryName="JUnit" enabled="false" merge="false">
-      <pattern value="net.zemberek.islemler.cozumleme.*" />
-      <module name="zemberek2" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" value="" />
-      <option name="PACKAGE_NAME" value="net.zemberek.islemler.cozumleme" />
-      <option name="MAIN_CLASS_NAME" value="net.zemberek.islemler.cozumleme.TestCozumlemePerformans" />
-      <option name="METHOD_NAME" value="testPerformans2" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ADDITIONAL_CLASS_PATH" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="wholeProject" />
-      </option>
-      <RunnerSettings RunnerId="Profile ">
-        <option name="myStartupWithAllocations" value="false" />
-        <option name="myCPUStartup" value="" />
-        <option name="myUsedMemoryThreshold" value="0" />
-        <option name="myDontLaunchUI" value="false" />
-        <option name="myCaptureMemoryOnExit" value="false" />
-        <option name="myCaptureCPUOnExit" value="false" />
-        <option name="mySnapshotsDir" value="" />
-        <option name="myForceJVMTI" value="false" />
-        <option name="myDisableAlloc" value="false" />
-        <option name="myDisableCounts" value="false" />
-      </RunnerSettings>
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method>
-        <option name="Make" value="true" />
-      </method>
-    </tempConfiguration>
-    <configuration default="true" type="Application" factoryName="Application" enabled="false" merge="false">
-      <option name="MAIN_CLASS_NAME" />
+  <component name="RunManager" selected="Application.BasitKokObekBulucu">
+    <tempConfiguration default="false" name="BasitKokObekBulucu" type="Application" factoryName="Application" enabled="false" merge="false">
+      <option name="MAIN_CLASS_NAME" value="net.zemberek.yapi.obek.BasitKokObekBulucu" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <module name="" />
+      <module name="zemberek2" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
       <method>
         <option name="Make" value="true" />
       </method>
+    </tempConfiguration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="C:/IntelliJ-IDEA-4.5/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit" enabled="false" merge="false">
       <module name="" />
@@ -1363,24 +913,18 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
+    <configuration default="true" type="Application" factoryName="Application" enabled="false" merge="false">
       <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="C:/IntelliJ-IDEA-4.5/bin/appletviewer.policy" />
       <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <module name="" />
+      <method>
+        <option name="Make" value="true" />
+      </method>
     </configuration>
     <configuration default="false" name="demo" type="Application" factoryName="Application" enabled="false" merge="false">
       <option name="MAIN_CLASS_NAME" value="net.zemberek.demo.DemoMain" />
@@ -1470,6 +1014,8 @@
     <option name="PROJECT" value="" />
     <option name="VIEW" value="" />
     <option name="ALTERNATIVE_WORKING_PATH" value="" />
+    <option name="LOCK_ON_CHECKOUT" value="false" />
+    <option name="UNLOCK_ON_CHECKIN" value="false" />
   </component>
   <component name="StructuralSearchPlugin" />
   <component name="StructureViewFactory">
@@ -1507,7 +1053,8 @@
     <option name="UPDATE_RUN_STATUS" value="false" />
     <option name="UPDATE_RECURSIVELY" value="true" />
     <option name="MERGE_DRY_RUN" value="false" />
-    <configuration useDefault="true">C:\Documents and Settings\ahmet\Application Data\Subversion</configuration>
+    <configuration useDefault="true">C:\Documents and Settings\aakin\Application Data\Subversion</configuration>
+    <upgradeMode>none</upgradeMode>
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1524,17 +1071,17 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-4" y="-4" width="1288" height="1002" extended-state="0" />
+    <frame x="-4" y="-4" width="1448" height="874" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="CVS" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32837528" order="8" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32927817" order="3" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32951945" order="7" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27088404" order="0" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24713959" order="1" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26992103" order="0" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24664879" order="1" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="1" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32036614" order="8" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31769437" order="8" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32990867" order="6" />
       <window_info id="Profile" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32911393" order="8" />
       <window_info id="Module Dependencies" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
@@ -1542,13 +1089,13 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13949716" order="1" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32951945" order="8" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3604119" order="2" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35924932" order="2" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="2" />
       <window_info id="File View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39130434" order="4" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="0" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.47940505" order="8" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297587" order="8" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="0" />
       <window_info id="IdeaSpring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
       <window_info id="Favorites" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
@@ -1571,7 +1118,7 @@
     <option name="PERFORM_COMMIT_IN_BACKGROUND" value="false" />
     <option name="PUT_FOCUS_INTO_COMMENT" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="lisans uzerinden simdilik turkce karakterleri sildim. sanirim bendeki sistemde bir kodlama problemi var, fakat nedenini anlayamadim. google code depolamadan da kaynaklanmis olabilir, emin degilim." />
+    <option name="LAST_COMMIT_MESSAGE" value="ufak tefek duzeltmeler." />
     <option name="SAVE_LAST_COMMIT_MESSAGE" value="true" />
     <option name="CHECKIN_DIALOG_SPLITTER_PROPORTION" value="0.8" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
@@ -1579,13 +1126,11 @@
     <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
     <option name="FILE_HISTORY_DIALOG_COMMENTS_SPLITTER_PROPORTION" value="0.8" />
     <option name="FILE_HISTORY_DIALOG_SPLITTER_PROPORTION" value="0.5" />
-    <option name="ERROR_OCCURED" value="false" />
+    <option name="ERROR_OCCURED" value="true" />
     <option name="ACTIVE_VCS_NAME" value="svn" />
     <option name="UPDATE_GROUP_BY_PACKAGES" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.796748" />
-    <MESSAGE value="rename problemi.." />
-    <MESSAGE value="iyelik ve hal eki bilgisi ek xml dosyasina cikarildi. &#10;TurkceEkYOnetici ve TurkmenceEkYonetici siniflari iptal. TemelEkYonetici sinifini kullaniyorlar.&#10;&#10;ozumlemeYardimcisi sinifina sadece iki parametreli constructor yeterli." />
     <MESSAGE value="isim hatasi duzeltme islemi" />
     <MESSAGE value="kucuk duzeltmeler" />
     <MESSAGE value="pusur kalmis" />
@@ -1594,6 +1139,8 @@
     <MESSAGE value="Eger giriste hem kokun deforme olmus hali hem de asil kok icerigi yer aliyorsa kok referansinin adaylar arasinda sadece bir defa bulunmasi gerekir. Biraz yavas olsa da !adaylar.contains(kok) denetimini ekledim. Sistemin dogru calismasi hizli calismasindan daha onemli, ki, testlerde gozle gorulur bir yavaslama olmadi." />
     <MESSAGE value="build islemleri duzenledndi. bir kac ayar daha gerekiyor." />
     <MESSAGE value="lisans uzerinden simdilik turkce karakterleri sildim. sanirim bendeki sistemde bir kodlama problemi var, fakat nedenini anlayamadim. google code depolamadan da kaynaklanmis olabilir, emin degilim." />
+    <MESSAGE value="blah" />
+    <MESSAGE value="ufak tefek duzeltmeler." />
   </component>
   <component name="VssConfiguration">
     <option name="CLIENT_PATH" value="" />
@@ -1626,9 +1173,12 @@
     <GetOptions>
       <option name="REPLACE_WRITABLE" value="0" />
       <option name="MAKE_WRITABLE" value="false" />
+      <option name="ANSWER_NEGATIVELY" value="false" />
       <option name="ANSWER_POSITIVELY" value="false" />
       <option name="RECURSIVE" value="false" />
+      <option name="VERSION" />
     </GetOptions>
+    <VssConfigurableExcludedFilesTag />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -1653,107 +1203,107 @@
     <option name="myLastEditedConfigurable" value="Default" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/az/net/zemberek/az/yapi/Azerice.java">
+    <entry file="file://$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/ek/TemelEkOzelDurumUretici.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="13" selection-start="1568" selection-end="1568" vertical-scroll-proportion="-0.41747573">
+        <state line="38" column="22" selection-start="1098" selection-end="1098" vertical-scroll-proportion="-0.100430414">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/az/net/zemberek/az/yapi/AzericeSesliUretici.java">
+    <entry file="file://$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/ek/TemelEkUretici.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="12" selection-start="1242" selection-end="1242" vertical-scroll-proportion="0.36893204">
+        <state line="37" column="22" selection-start="1136" selection-end="1136" vertical-scroll-proportion="0.14060259">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/az/net/zemberek/az/yapi/ek/AzericeEkOzelDurumUretici.java">
+    <entry file="file://$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/ek/TemelEkUretimKurali.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="13" selection-start="1117" selection-end="1117" vertical-scroll-proportion="0.13592233">
+        <state line="35" column="47" selection-start="1111" selection-end="1111" vertical-scroll-proportion="0.080344334">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/az/net/zemberek/az/yapi/ek/EkUreticiAz.java">
+    <entry file="file://$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/ek/EkUretimKurali.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="13" selection-start="1262" selection-end="1262" vertical-scroll-proportion="-0.26889715">
+        <state line="29" column="0" selection-start="926" selection-end="926" vertical-scroll-proportion="0.080344334">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/az/net/zemberek/az/yapi/ek/AzericeEkAdlari.java">
+    <entry file="file://$PROJECT_DIR$/src/tt/net/zemberek/tt/yapi/ek/TatarcaEkUretimKurali.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="13" selection-start="942" selection-end="942" vertical-scroll-proportion="0.5631068">
+        <state line="34" column="12" selection-start="1051" selection-end="1051" vertical-scroll-proportion="0.1205165">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cekirdek/net/zemberek/istatistik/BinaryIstatistikYazici.java">
+    <entry file="file://$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/ek/ZamanKiOzelDurumu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="0" selection-start="964" selection-end="964" vertical-scroll-proportion="0.6344486">
+        <state line="44" column="13" selection-start="1400" selection-end="1400" vertical-scroll-proportion="0.26111907">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/cekirdek/net/zemberek/TemelTest.java">
+    <entry file="file://$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/kok/KokOzelDurumu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="13" selection-start="1104" selection-end="1104" vertical-scroll-proportion="0.6796116">
+        <state line="40" column="13" selection-start="1240" selection-end="1240" vertical-scroll-proportion="-3.6800573">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/tm/net/zemberek/tm/islemler/TurkmenceCozumlemeYardimcisi.java">
+    <entry file="file://$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/kok/SonHarfDusmesi.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="13" selection-start="1312" selection-end="1312" vertical-scroll-proportion="0.7125155">
+        <state line="34" column="13" selection-start="1031" selection-end="1031" vertical-scroll-proportion="0.18077475">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/tr/net/zemberek/tr/yapi/ek/TurkceEkAdlari.java">
+    <entry file="file://$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/kok/SonSesliIncelt.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="13" selection-start="987" selection-end="987" vertical-scroll-proportion="0.6407767">
+        <state line="36" column="13" selection-start="1117" selection-end="1117" vertical-scroll-proportion="0.18077475">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build.xml">
+    <entry file="file://$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/kok/Ulama.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="28" selection-start="926" selection-end="947" vertical-scroll-proportion="0.49566296">
+        <state line="34" column="13" selection-start="1059" selection-end="1059" vertical-scroll-proportion="0.18077475">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kaynaklar/az/bilgi/ek_az.xml">
+    <entry file="file://$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/kok/YeniIcerikAta.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="2" selection-start="734" selection-end="734" vertical-scroll-proportion="0.34951457">
+        <state line="41" column="13" selection-start="1288" selection-end="1288" vertical-scroll-proportion="0.26111907">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kaynaklar/tm/bilgi/ek_tm.xml">
+    <entry file="file://$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/kok/Yumusama.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="6" selection-start="739" selection-end="739" vertical-scroll-proportion="0.37670383">
+        <state line="34" column="13" selection-start="1055" selection-end="1055" vertical-scroll-proportion="0.18077475">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kaynaklar/tr/bilgi/ek_tr.xml">
+    <entry file="file://$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/CokluKok.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="2" selection-start="735" selection-end="735" vertical-scroll-proportion="0.37670383">
+        <state line="35" column="13" selection-start="1078" selection-end="1078" vertical-scroll-proportion="0.20086083">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lisanslar/lisans.txt">
+    <entry file="file://$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/Alfabe.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="168" column="262" selection-start="24031" selection-end="24031" vertical-scroll-proportion="1.9033457">
+        <state line="181" column="9" selection-start="7256" selection-end="7256" vertical-scroll-proportion="-4.1420374">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/tm/net/zemberek/tm/ek/TestEkKuralCozumleyici.java">
+    <entry file="file://$PROJECT_DIR$/src/cekirdek/net/zemberek/yapi/HarfDizisi.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="431" column="9" selection-start="13575" selection-end="13575" vertical-scroll-proportion="-1.4906744">
           <folding />
         </state>
       </provider>

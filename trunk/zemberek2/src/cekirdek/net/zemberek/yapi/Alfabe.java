@@ -90,10 +90,10 @@ public class Alfabe {
     protected boolean turkceMap[] = new boolean[TURKISH_CHAR_MAP_SIZE];
     protected byte alfabetikSiralar[] = new byte[TURKISH_CHAR_MAP_SIZE];
 
-    protected Map<Character, TurkceHarf> harfler = new HashMap();
+    protected Map<Character, TurkceHarf> harfler = new HashMap<Character, TurkceHarf>();
     private char[] asciiDisi = new char[20];
 
-    private Map<TurkceHarf, TurkceHarf> ozelInceSesliler = new HashMap();
+    private Map<TurkceHarf, TurkceHarf> ozelInceSesliler = new HashMap<TurkceHarf, TurkceHarf>();
 
     private static Logger logger = Kayitci.kayitciUret(Alfabe.class);
 
@@ -118,7 +118,7 @@ public class Alfabe {
      * char olarak girilen harfin TurkceHarf karsiligini dondurur.
      * Bu sekilde harfin Turkce'ye has ozelliklerine erisilebilir. sesli, sert vs.
      *
-     * @param harf
+     * @param harf istenen harfin char karsiligi
      * @return char harfin turkeceHarf karsiligi. Eger yoksa TANIMSIZ_HARF doner.
      */
     public TurkceHarf harf(char harf) {
@@ -131,7 +131,7 @@ public class Alfabe {
      * girilen stringi kucuk harfe donusturup icindeki uyumsuz karakterleri siler
      * "Wah'met-@" -> "ahmet"
      *
-     * @param giris
+     * @param giris ayiklanacak kelime
      * @return girisin ayiklanmis hali (String)
      */
     public String ayikla(String giris) {
@@ -191,7 +191,7 @@ public class Alfabe {
      * istenilen kalin seslinin inceltilmis kopya halini dondurur. sadece ters sesli
      * ozel durumu isleminde kullanilmaslidir.
      *
-     * @param kalinSesli
+     * @param kalinSesli inceltilecek sesli
      * @return eger varsa karsilik dusen kalin sesli. yoksa seslinin kendisi.
      */
     public TurkceHarf kalinSesliIncelt(TurkceHarf kalinSesli) {
@@ -228,6 +228,8 @@ public class Alfabe {
     /**
      * harf dosyasindan harf bilgilerini okur ve TurkceHarf, ve alfabe sinifi icin
      * gerekli harf iliskili veri yapilarinin olusturur.
+     *
+     * @param bilgi okunan ozellikler
      */
     private void harfBilgisiOlustur(Map<String, String> bilgi) {
 
@@ -376,7 +378,7 @@ public class Alfabe {
     /**
      * "a,b,c,d" seklindeki bir Stringi bosluklardan temizleyip {'a','b','c','d'} char dizisine donusturur.
      *
-     * @param tum
+     * @param tum giris kelimesi
      * @return virgul ile ayrilmis karater dizisi.
      */
     protected char[] harfAyristir(String tum) {
@@ -394,12 +396,13 @@ public class Alfabe {
     /**
      * "a-b,c-d,e-f" seklindeki Stringi Harf cifti listesine donusturur.
      *
+     * @param tum giris.
      * @return TurkceHarf cifti tasiyan HarfCifti listesi
      */
     protected List<HarfCifti> harfCiftiAyristir(String tum) {
         tum = tum.replaceAll("[ \t]", "");
         String[] charStrDizi = virgulReg.split(tum);
-        List<HarfCifti> ciftler = new ArrayList(charStrDizi.length);
+        List<HarfCifti> ciftler = new ArrayList<HarfCifti>(charStrDizi.length);
         for (String s : charStrDizi) {
             String[] cift = tireReg.split(s);
             if (cift.length != 2)

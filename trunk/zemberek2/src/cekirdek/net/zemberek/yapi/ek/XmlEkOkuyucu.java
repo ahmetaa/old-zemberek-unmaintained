@@ -46,8 +46,8 @@ public class XmlEkOkuyucu {
 
     private static Logger log = Kayitci.kayitciUret(XmlEkOkuyucu.class);
 
-    private Map<String, Set<Ek>> ekKumeleri = new HashMap();
-    private Map<String, Ek> ekler = new HashMap();
+    private Map<String, Set<Ek>> ekKumeleri = new HashMap<String, Set<Ek>>() ;
+    private Map<String, Ek> ekler = new HashMap<String, Ek>();
 
     private final String xmlEkDosyasi;
     private final EkUretici ekUretici;
@@ -86,7 +86,7 @@ public class XmlEkOkuyucu {
      * xml dosyadan sadece eklerin adlarini okuyup Ek nesnelerin ilk hallerinin
      * olusturulmasini saglar.
      *
-     * @param eklerElement
+     * @param eklerElement tum ekleri iceren Ekler bileseni
      */
     private void ilkEkleriOlustur(Element eklerElement) {
         List<Element> tumEkler = XmlYardimcisi.elemanlar(eklerElement, "ek");
@@ -102,13 +102,13 @@ public class XmlEkOkuyucu {
     /**
      * xml dosyadan ek kumelerini ayiklar. sonuclar ekKumeleri Map'ina atilir.
      *
-     * @param ekKumeleriElement
+     * @param ekKumeleriElement tum ek kumelerini iceren xml bileseni.
      */
     private void ekKumeleriniOlustur(Element ekKumeleriElement) {
         List<Element> xmlKumeler = XmlYardimcisi.elemanlar(ekKumeleriElement, "ek-kumesi");
         for (Element ekKumeEl : xmlKumeler) {
             String kumeAdi = ekKumeEl.getAttribute("ad");
-            Set<Ek> kumeEkleri = new HashSet();
+            Set<Ek> kumeEkleri = new HashSet<Ek>();
             List<Element> xmlKumeEkleri = XmlYardimcisi.elemanlar(ekKumeEl, "ek");
             for (Element ekEl : xmlKumeEkleri) {
                 String ekAdi = ekEl.getTextContent();
@@ -123,7 +123,7 @@ public class XmlEkOkuyucu {
     /**
      * asil ek nesnelerinin olusturulma islemi burada olur.
      *
-     * @param eklerElement
+     * @param eklerElement tum ekleri iceren xml ekler bileseni.
      */
     private void ekleriOlustur(Element eklerElement) {
         List<Element> tumEkler = XmlYardimcisi.elemanlar(eklerElement, "ek");
@@ -158,8 +158,8 @@ public class XmlEkOkuyucu {
      * HAL ve IYELIK eki ozellikleri burada belirlenir. ek iceriisne farkli ozellikler
      * eklenecekse burasi ona gore degistirilmeli.
      *
-     * @param ek
-     * @param ekElement
+     * @param ek ozellikleri belirlenecek Ek
+     * @param ekElement xml Ek bileseni.
      */
     private void ekOzellikleriBelirle(Ek ek, Element ekElement) {
         List<Element> ozellikler = XmlYardimcisi.elemanlar(ekElement, "ozellik");
@@ -173,10 +173,10 @@ public class XmlEkOkuyucu {
     }
 
     private List<EkOzelDurumu> ozelDurumlariOku(Element ekElement) {
-        List<EkOzelDurumu> ozelDurumlar = new ArrayList();
+        List<EkOzelDurumu> ozelDurumlar = new ArrayList<EkOzelDurumu>();
         //xml ozel durumlarini al.
         List<Element> ozelDurumlarXml = XmlYardimcisi.elemanlar(ekElement, "ozel-durum");
-        if (ozelDurumlarXml == null) return Collections.EMPTY_LIST;
+        if (ozelDurumlarXml == null) return Collections.emptyList();
 
         for (Element element : ozelDurumlarXml) {
             String ozelDurumAdi = element.getAttribute("ad");
@@ -190,7 +190,7 @@ public class XmlEkOkuyucu {
 
             List<Element> oneklerElements = XmlYardimcisi.elemanlar(element, "on-ek");
             if (oneklerElements != null) {
-                Set<Ek> onekler = new HashSet();
+                Set<Ek> onekler = new HashSet<Ek>();
                 for (Element onekEl : oneklerElements) {
                     String onekAdi = onekEl.getTextContent();
                     onekler.add(ekler.get(onekAdi));
@@ -267,5 +267,12 @@ public class XmlEkOkuyucu {
 
         ardisilEkler.addAll(ardisilEkSet);
         return ardisilEkler;
+    }
+}
+
+class EkKonfigurasyonHatasi extends RuntimeException {
+
+    public EkKonfigurasyonHatasi(String message) {
+        super(message);
     }
 }
