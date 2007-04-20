@@ -480,7 +480,7 @@ public class HarfDizisi implements CharSequence, Comparable<HarfDizisi> {
      * Compare to metodu siralama icin kiyaslama yapar. Kiyaslama oncelikle harflerin alfabetik sirasina
      * daha sonra dizilerin boyutuna gore yapilir.
      *
-     * @param o
+     * @param o kiyaslanacak dizi.
      * @return
      *        'kedi'.compareTo('kedi') -> 0
      #        'kedi'.compareTo('ke')  -> 2 (boy farki)

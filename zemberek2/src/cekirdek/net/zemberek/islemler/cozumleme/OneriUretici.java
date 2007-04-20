@@ -77,7 +77,7 @@ public class OneriUretici {
         if (ayarlar.oneriDeasciifierKullan())
             asciiTurkceOneriler = asciiToleransliCozumleyici.cozumle(kelime, CozumlemeSeviyesi.TUM_KOKLER);
 
-        Set<String> ayriYazimOnerileri = Collections.EMPTY_SET;
+        Set<String> ayriYazimOnerileri = Collections.emptySet();
 
         // Kelime yanlislikla bitisik yazilmis iki kelimeden mi olusmus?
         if (ayarlar.oneriBilesikKelimeKullan()) {
@@ -86,14 +86,14 @@ public class OneriUretici {
                 String s2 = kelime.substring(i, kelime.length());
                 if (cozumleyici.cozumlenebilir(s1) && cozumleyici.cozumlenebilir(s2)) {
 
-                    Set<String> set1 = new HashSet();
+                    Set<String> set1 = new HashSet<String>();
                     Kelime[] kelimeler1 = cozumleyici.cozumle(s1, CozumlemeSeviyesi.TUM_KOKLER);
                     for (Kelime kelime1 : kelimeler1) {
                         yardimci.kelimeBicimlendir(kelime1);
                         set1.add(kelime1.icerik().toString());
                     }
 
-                    Set<String> set2 = new HashSet();
+                    Set<String> set2 = new HashSet<String>();
                     Kelime[] kelimeler2 = cozumleyici.cozumle(s2, CozumlemeSeviyesi.TUM_KOKLER);
                     for (Kelime kelime1 : kelimeler2) {
                         yardimci.kelimeBicimlendir(kelime1);
@@ -101,7 +101,7 @@ public class OneriUretici {
                     }
 
                     if (ayriYazimOnerileri.size() == 0) {
-                        ayriYazimOnerileri = new HashSet();
+                        ayriYazimOnerileri = new HashSet<String>();
                     }
 
                     for (String str1 : set1) {
@@ -133,7 +133,7 @@ public class OneriUretici {
         }
 
         //Çift sonuçları liste sirasını bozmadan iptal et.
-        List<String> tekilListe = new ArrayList(new LinkedHashSet<String>(sonucListesi));
+        List<String> tekilListe = new ArrayList<String>(new LinkedHashSet<String>(sonucListesi));
 
         	
         // Son olarak yer kalmışsa ayrı yazılım önerilerini ekle

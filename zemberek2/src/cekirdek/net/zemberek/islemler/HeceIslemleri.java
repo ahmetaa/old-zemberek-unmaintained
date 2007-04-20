@@ -51,7 +51,7 @@ public class HeceIslemleri {
      * Gelen String'i turkce heceleme kurallarina gore hecelerine ayirir. Sonucta
      * heceleri bir liste icinde dondurur. Eger heceleme yapilamazsa bos liste doner.
      *
-     * @param giris
+     * @param giris hecelenecek kelime
      * @return sonHeceHarfSayisi String dizisi
      */
     public String[] hecele(String giris) {
@@ -62,7 +62,7 @@ public class HeceIslemleri {
     /**
      * girisin hecelenebir olup olmadigini bulur.
      *
-     * @param giris
+     * @param giris hecelenecek kelime
      * @return hecelenebilirse true, aksi halde false.
      */
     public boolean hecelenebilirmi(String giris) {
