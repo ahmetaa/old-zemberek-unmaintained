@@ -70,7 +70,7 @@ public class ZemberekServerProtocolHandler extends IoHandlerAdapter {
 	 */
 	private synchronized String processMessage(String mesaj) {
         try{
-            //System.out.println("Alinan mesaj: " + mesaj );
+            System.out.println("Alinan mesaj: " + mesaj  + " Timestamp: " + System.currentTimeMillis());
             String[] parcalar = mesaj.trim().split(" ");
             if (parcalar.length < 2) {
             	return "?";
@@ -83,7 +83,7 @@ public class ZemberekServerProtocolHandler extends IoHandlerAdapter {
                     	return "#";
                     }
                 }
-            } else if (parcalar[0].equalsIgnoreCase("&")) {
+            } else if (parcalar[0].equals("&")) {
                 String[] liste = zemberek.oner(parcalar[1].trim());
                 if (liste.length == 0) {
                 	return "#";
@@ -98,6 +98,15 @@ public class ZemberekServerProtocolHandler extends IoHandlerAdapter {
                     cevap += ")";
                     return cevap;
                 }
+            } else if (parcalar[0].equals("-")){
+                String cevap = "- ";
+            	String[] heceler = zemberek.hecele(parcalar[1].trim());
+                for (int i = 0; i < heceler.length; i++) {
+                    cevap += heceler[i];
+                    if (i < heceler.length - 1)
+                        cevap += "-";
+                }
+                return cevap;
             }
             }catch(Exception e){
                 e.printStackTrace();
