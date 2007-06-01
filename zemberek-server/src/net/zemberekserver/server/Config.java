@@ -44,7 +44,7 @@ public class Config {
 	public static boolean allowRemote;
 	public static String busName;
 	public static boolean useDbusSystemConnection;
-
+	private static String keys[] = { "PORT_NUMBER","USE_DBUS","USE_SOCKETS","BUS_NAME","ALLOW_REMOTE","USE_DBUS_SYSTEM_CONNECTION" };
 
 	private static Properties properties = null;
 
@@ -65,6 +65,9 @@ public class Config {
 		busName = getPropertyValue("BUS_NAME", Defaults.BUS_NAME);
 		allowRemote = getPropertyValue("ALLOW_REMOTE", Defaults.ALLOW_REMOTE);
 		useDbusSystemConnection = getPropertyValue("USE_DBUS_SYSTEM_CONNECTION", Defaults.USE_DBUS_SYSTEM_CONNECTION);
+		for(int i=0;i<keys.length;i++) {
+			properties.setProperty(keys[i], System.getProperty(keys[i], properties.getProperty(keys[i])));
+		}
 	}
 
 	private static String getPropertyValue(String propertyName, String defaultValue) {
