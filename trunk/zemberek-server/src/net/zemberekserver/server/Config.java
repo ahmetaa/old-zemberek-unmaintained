@@ -59,15 +59,17 @@ public class Config {
 		catch (Exception e) {
 			e.printStackTrace();
 		}
+		for(int i=0;i<keys.length;i++) {
+			String sysProp=System.getProperty(keys[i]);
+			if(sysProp != null)
+				properties.setProperty(keys[i], sysProp);
+		}
 		serverPort = getPropertyValue("PORT_NUMBER", Defaults.PORT_NUMBER);
 		useDbus = getPropertyValue("USE_DBUS", Defaults.USE_DBUS);
 		useSockets = getPropertyValue("USE_SOCKETS", Defaults.USE_SOCKETS);
 		busName = getPropertyValue("BUS_NAME", Defaults.BUS_NAME);
 		allowRemote = getPropertyValue("ALLOW_REMOTE", Defaults.ALLOW_REMOTE);
 		useDbusSystemConnection = getPropertyValue("USE_DBUS_SYSTEM_CONNECTION", Defaults.USE_DBUS_SYSTEM_CONNECTION);
-		for(int i=0;i<keys.length;i++) {
-			properties.setProperty(keys[i], System.getProperty(keys[i], properties.getProperty(keys[i])));
-		}
 	}
 
 	private static String getPropertyValue(String propertyName, String defaultValue) {
