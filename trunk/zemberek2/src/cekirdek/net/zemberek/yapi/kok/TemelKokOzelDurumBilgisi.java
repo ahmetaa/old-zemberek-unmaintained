@@ -75,7 +75,7 @@ public class TemelKokOzelDurumBilgisi {
         // eger varsa kok adlarini kullanarak iliskili ekleri bul ve bir Set'e ata.
         String[] ekAdlari = tip.ekAdlari();
         if (ekAdlari.length > 0) {
-            Set set = new HashSet(ekAdlari.length);
+            Set<Ek> set = new HashSet<Ek>(ekAdlari.length);
             for (String s : ekAdlari) {
                 Ek ek = ekYonetici.ek(s);
                 if (ek != null) {

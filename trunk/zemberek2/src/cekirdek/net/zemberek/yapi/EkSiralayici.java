@@ -60,7 +60,7 @@ public final class EkSiralayici {
      */
     public List<List<Ek>> olasiEkDizilimleriniBul() {
         if (ekler == null)
-            return Collections.EMPTY_LIST;
+            return Collections.emptyList();
         List<Ek> kopya = new ArrayList<Ek>(ekler);
         yuru(new ArrayList<Ek>(), baslangicEki, kopya);
         return tumOlusumlar;

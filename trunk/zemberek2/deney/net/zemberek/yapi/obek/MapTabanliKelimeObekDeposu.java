@@ -46,7 +46,7 @@ public class MapTabanliKelimeObekDeposu implements KelimeObekDeposu {
             if (kokObekKumeTablosu.containsKey(obekBileseni.kok)) {
                 kokObekKumeTablosu.get(obekBileseni.kok).add(obek);
             } else {
-                Set<KelimeObegi> s = new HashSet(2);
+                Set<KelimeObegi> s = new HashSet<KelimeObegi>(2);
                 s.add(obek);
                 kokObekKumeTablosu.put(obekBileseni.kok, s);
             }
