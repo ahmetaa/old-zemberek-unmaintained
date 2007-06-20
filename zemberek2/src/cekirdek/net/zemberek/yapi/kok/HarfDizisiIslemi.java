@@ -37,7 +37,7 @@ public interface HarfDizisiIslemi {
 
     /**
      * dizi uzerinde degisiklik yapacak metod.
-     * @param dizi
+     * @param dizi uzerinde islem yapilacak olan dizi. visitor deseni.
      */
     void uygula(HarfDizisi dizi);
 

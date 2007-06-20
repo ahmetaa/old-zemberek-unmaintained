@@ -42,36 +42,34 @@ import java.util.List;
 
 public class EkIstatistikleri implements Istatistik {
 
-    private HashMap ekIstatistikBilgileri = new HashMap();
+    private HashMap<String, EkIstatistikBilgisi> ekIstatistikBilgileri = new HashMap<String, EkIstatistikBilgisi>();
 
     public void istatistikGuncelle(Kelime kelime) {
-        List ekler = kelime.ekler();
+        List<Ek> ekler = kelime.ekler();
         // kelime sonu için bir null ek ekliyoruz.
         ekler.add(TemelEkYonetici.BOS_EK);
         for (int i = 0; i < ekler.size() - 1; i++) {
-            Ek ek = (Ek) ekler.get(i);
-            EkIstatistikBilgisi ekBilgisi = (EkIstatistikBilgisi) ekIstatistikBilgileri.get(ek.ad());
+            Ek ek = ekler.get(i);
+            EkIstatistikBilgisi ekBilgisi = ekIstatistikBilgileri.get(ek.ad());
             if (ekBilgisi == null) {
                 ekBilgisi = new EkIstatistikBilgisi(ek);
                 ekIstatistikBilgileri.put(ek.ad(), ekBilgisi);
             }
-            Ek ardisilEk = (Ek) ekler.get(i + 1);
+            Ek ardisilEk = ekler.get(i + 1);
             ekBilgisi.ardisilEkEkle(ardisilEk);
         }
     }
 
     public void tamamla() {
-        for (Iterator i = ekIstatistikBilgileri.values().iterator(); i.hasNext();) {
-            EkIstatistikBilgisi ekBilgisi = (EkIstatistikBilgisi) i.next();
-            ekBilgisi.duzenle();
+        for (EkIstatistikBilgisi ekIstatistikBilgisi : ekIstatistikBilgileri.values()) {
+            ekIstatistikBilgisi.duzenle();
         }
     }
 
     public String toString() {
         StringBuffer b = new StringBuffer();
-        for (Iterator i = ekIstatistikBilgileri.values().iterator(); i.hasNext();) {
-            EkIstatistikBilgisi ekBilgisi = (EkIstatistikBilgisi) i.next();
-            b.append(ekBilgisi.toString());
+        for (EkIstatistikBilgisi ekIstatistikBilgisi : ekIstatistikBilgileri.values()) {
+            b.append(ekIstatistikBilgisi.toString());
         }
         return b.toString();
     }

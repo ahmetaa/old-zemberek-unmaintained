@@ -26,7 +26,7 @@ public class DuzyaziKelimeObegiOkuyucu {
 
     public List<KelimeObegi> tumunuOku(String kaynak) throws IOException {
         BufferedReader reader = new KaynakYukleyici("utf-8").getReader(kaynak);
-        List<KelimeObegi> koList = new ArrayList();
+        List<KelimeObegi> koList = new ArrayList<KelimeObegi>();
 
         while (reader.ready()) {
 
@@ -63,7 +63,7 @@ public class DuzyaziKelimeObegiOkuyucu {
                     });
 
                     // son kok ise fiili yoksa fiil olmayan koku tercih et.
-                    for (Kok kok : kokAdaylari) {
+/*                    for (Kok kok : kokAdaylari) {
                         if (i == kelimeDizi.length - 1 && kok.tip() == FIIL) {
                             aday = kok;
                             break;
@@ -72,7 +72,7 @@ public class DuzyaziKelimeObegiOkuyucu {
                             aday = kok;
                             break;
                         }
-                    }
+                    }*/
                 }
 
 

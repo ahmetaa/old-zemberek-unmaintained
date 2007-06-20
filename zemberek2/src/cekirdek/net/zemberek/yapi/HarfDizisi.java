@@ -483,7 +483,7 @@ public class HarfDizisi implements CharSequence, Comparable<HarfDizisi> {
      * @param o kiyaslanacak dizi.
      * @return
      *        'kedi'.compareTo('kedi') -> 0
-     #        'kedi'.compareTo('ke')  -> 2 (boy farki)
+     *        'kedi'.compareTo('ke')  -> 2 (boy farki)
      *        'kedi'.compareTo('kedm') -> -4 (i->m alfabetik sira farki)
      *        'kedi'.compareTo(null) -> 1
      */

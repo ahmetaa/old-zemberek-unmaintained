@@ -40,9 +40,7 @@ import net.zemberek.islemler.KokBulucu;
 import net.zemberek.islemler.KelimeTabanliKokBulucu;
 import net.zemberek.erisim.Zemberek;
 
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Collections;
+import java.util.*;
 import java.io.IOException;
 import java.io.BufferedReader;
 
@@ -98,6 +96,7 @@ public class BasitKelimeObegiBulucu {
      * cumle kelimelerini cozumleyip kok adaylarindan ilklerini alarak buna dayanan
      * kok dizisi ile kelime obklerini bulmaya calisir.
      * Aslinda tum olasi kok kombinasyonlari ile denemesi gerekir.
+     *
      * @param cumle
      * @return
      */
@@ -106,6 +105,15 @@ public class BasitKelimeObegiBulucu {
         String[] strs = cumle.replaceAll(" \\t+", "").split("[\\| ]");
         for (String str : strs) {
             Kok[] adayKokler = kokBulucu.kokBul(str);
+
+            if (adayKokler.length > 1) {
+                // kok icerigi boyuna gore buyukten kucuge sirala.
+                Arrays.sort(adayKokler, new Comparator<Kok>() {
+                    public int compare(Kok o1, Kok o2) {
+                        return o2.icerik().length() - o1.icerik().length();
+                    }
+                });
+            }
             if (adayKokler.length > 0)
                 kokler.add(adayKokler[0]);
         }
