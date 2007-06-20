@@ -147,12 +147,14 @@
             update="true"
             excludes="**/*.zip"
             />
-    	<zip destfile="${dist.dir}/${isim}-src-${surum}.zip" basedir="." update="true">
+    	<tar destfile="${dist.dir}/${isim}-${surum}.tar" basedir=".">
     		<exclude name="**/.*"/>
     		<exclude name="**/dist/**"/>
     		<exclude name="**/build/**"/>
     		<exclude name="**/bin/**"/>
-    	</zip>
+    	</tar>
+    	<gzip zipfile="${dist.dir}/${isim}-${surum}.tar.gz" src="${dist.dir}/${isim}-${surum}.tar"/>
+    	<delete file="${dist.dir}/${isim}-${surum}.tar"/>
 
     </target>
 
