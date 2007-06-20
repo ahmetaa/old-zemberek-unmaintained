@@ -57,12 +57,12 @@ public class SoruEkiIsleyici {
         for (int i = 0; i < cumleKelimeleri.length; i++) {
             Kelime kelime = cumleKelimeleri[i];
             // ilk kelime degilse ve kelime aslinda soru eki ise..
-            if (i > 0 && kelime.kok().tip().equals(KelimeTipi.SORU)) {
+            if (i > 0 && kelime.kok().tip()==KelimeTipi.SORU) {
                 // onceki kelimeyi al ve sonuna soru eki ekle.
                 // daha sonra soru "kokunden" sonra gelen tum ekleri de ekle.
                 Kelime oncekiKelime = cumleKelimeleri[i - 1];
-                oncekiKelime.ekler().add(ekYonetici.ek(TurkceEkAdlari.FIIL_SORU_MI));
-                if (kelime.ekler().size() > 1)
+                oncekiKelime.ekEkle(ekYonetici.ek(TurkceEkAdlari.FIIL_SORU_MI));
+                if (kelime.ekSayisi() > 1)
                     oncekiKelime.ekler().addAll(kelime.ekler().subList(1, kelime.ekler().size()));
             } else
                 yeniKelimeler[j++] = kelime;

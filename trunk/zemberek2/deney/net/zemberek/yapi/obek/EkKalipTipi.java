@@ -27,24 +27,11 @@
 
 package net.zemberek.yapi.obek;
 
-import net.zemberek.yapi.Kok;
-
-import java.util.HashSet;
-import java.util.Set;
-
-public class KokObekDeposu {
-
-    private Set<KokObegi> obekler = new HashSet<KokObegi>();
-
-    public void ekle(Kok... dizi) {
-        obekler.add(new KokObegi(dizi));
-    }
-
-    public void ekle(KokObegi obek) {
-        obekler.add(obek);
-    }
-
-    public boolean var(KokObegi obek) {
-        return obekler.contains(obek);
-    }
+public enum EkKalipTipi {
+    YALIN,
+    KISI,
+    KISI_I,
+    KISI_A,
+    ISIM_I,
+    ISIM_A
 }
