@@ -70,9 +70,9 @@ public class KelimeObegi implements Kavram {
     public String toString() {
         StringBuilder b = new StringBuilder();
         for (int i = 0; i < bilesenler.length; i++) {
-            b.append(bilesenler[i].kok());
+            b.append(bilesenler[i].kok().icerik());
             if (i < bilesenler.length - 1)
-                b.append(" | ");
+                b.append("|");
         }
         return b.toString();
     }
