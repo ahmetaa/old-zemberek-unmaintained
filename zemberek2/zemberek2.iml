@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module version="4" relativePaths="true" type="JAVA_MODULE">
-  <component name="JiBX binding compiler" />
   <component name="ModuleRootManager" />
-  <component name="NewModuleRootManager" inherit-compiler-output="false">
-    <output url="file://$MODULE_DIR$/classes" />
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/deney" isTestSource="false" />
@@ -13,8 +11,6 @@
       <sourceFolder url="file://$MODULE_DIR$/src/tm" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/tr" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/tt" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/test/cekirdek" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/test/tr" isTestSource="true" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
@@ -31,7 +27,7 @@
   </component>
   <component name="copyright">
     <Base>
-      <setting name="state" value="1" />
+      <setting name="state" value="2" />
     </Base>
     <LanguageOptions name="$TEMPLATE$">
       <option name="templateOptions">
@@ -46,8 +42,8 @@
           <option name="filler" value=" " />
         </value>
       </option>
-      <option name="notice" value=" ***** BEGIN LICENSE BLOCK *****&#10;&#10; Version: MPL 1.1&#10;&#10; The contents of this file are subject to the Mozilla Public License Version&#10; 1.1 (the &quot;License&quot;); you may not use this file except in compliance with&#10; the License. You may obtain a copy of the License at&#10; http://www.mozilla.org/MPL/&#10;&#10; Software distributed under the License is distributed on an &quot;AS IS&quot; basis,&#10; WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License&#10; for the specific language governing rights and limitations under the&#10; License.&#10;&#10; The Original Code is Zemberek Doğal Dil İşleme Kütüphanesi.&#10;&#10; The Initial Developer of the Original Code is&#10; Ahmet A. Akın, Mehmet D. Akın.&#10; Portions created by the Initial Developer are Copyright (C) 2006&#10; the Initial Developer. All Rights Reserved.&#10;&#10; Contributor(s):&#10;&#10; ***** END LICENSE BLOCK *****" />
-      <option name="keyword" value="MPL" />
+      <option name="notice" value="Copyright (c) &amp;#36;today.year, Your Corporation. All Rights Reserved." />
+      <option name="keyword" value="Copyright" />
       <option name="fileTypeOverride" value="4" />
       <option name="relativeBefore" value="true" />
       <option name="addBlankAfter" value="true" />

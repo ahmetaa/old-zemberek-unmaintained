@@ -25,16 +25,7 @@
  *  ***** END LICENSE BLOCK *****
  */
 
-package net.zemberek.islemler.cozumleme;
+package net.zemberek.yapi.obek;
 
-import net.zemberek.yapi.Kelime;
-
-/**
- */
-public interface KelimeCozumleyici {
-
-    public Kelime[] cozumle(String strGiris, CozumlemeSeviyesi seviye);
-
-    public boolean cozumlenebilir(String giris);
-
+public interface Kavram {
 }

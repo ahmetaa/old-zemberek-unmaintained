@@ -96,7 +96,7 @@ public class TurkiyeTurkcesi implements DilAyarlari {
     }
 
     public Map<String, KelimeTipi> kokTipiAdlari() {
-        Map<String, KelimeTipi> tipMap = new HashMap();
+        Map<String, KelimeTipi> tipMap = new HashMap<String, KelimeTipi>();
         tipMap.put("IS", ISIM);
         tipMap.put("FI", FIIL);
         tipMap.put("SI", SIFAT);
@@ -116,7 +116,7 @@ public class TurkiyeTurkcesi implements DilAyarlari {
     }
 
     public Map<KelimeTipi, String> baslangiEkAdlari() {
-        Map<KelimeTipi, String> baslangicEkAdlari = new EnumMap(KelimeTipi.class);
+        Map<KelimeTipi, String> baslangicEkAdlari = new EnumMap<KelimeTipi, String>(KelimeTipi.class);
         baslangicEkAdlari.put(ISIM, ISIM_KOK);
         baslangicEkAdlari.put(SIFAT, ISIM_KOK);
         baslangicEkAdlari.put(FIIL, FIIL_KOK);

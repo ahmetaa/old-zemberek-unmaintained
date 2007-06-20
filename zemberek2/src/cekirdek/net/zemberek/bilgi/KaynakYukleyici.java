@@ -56,7 +56,7 @@ public class KaynakYukleyici {
      * UTF metinlerin en basinda BOM adi verilen bir isaret bilgisi yer alabiliyor (UTF-8'de yer
      * almasi gerekmiyor aslinda). Bu bilgi Java tarafindan UTF-8 icin goz ardi edilmiyor.
      * Windows altinda olusturulan duz metinlerde bu bilgi koyuldugu icin Java'da okumada probleme yol acabiliyor.
-     * Bu nedenleutf-8 icin BOM bilgisinin yer alip almadiginin denetlenmesi gerekiyor. asagidaki byte dizisi
+     * Bu nedenle utf-8 icin BOM bilgisinin yer alip almadiginin denetlenmesi gerekiyor. asagidaki byte dizisi
      * UTF-8 icerisinde yer alan BOM bilgisini ifade ediyor.
      */
     private static final byte[] bomBytes = new byte[]{(byte) 0xef, (byte) 0xbb, (byte) 0xbf};
@@ -118,21 +118,21 @@ public class KaynakYukleyici {
      * @return
      * @throws IOException
      */
-    private InputStream utf8BomDenetle(InputStream is) throws IOException {
-        if (is == null)
-            throw new IOException("inputStream is null. throwing exception");
-        if (encoding != null && !encoding.equalsIgnoreCase("UTF-8"))
-            return is;
-        PushbackInputStream pis = new PushbackInputStream(is, bomBytes.length);
-        byte[] okunanBom = new byte[bomBytes.length];
-        if (pis.read(okunanBom, 0, bomBytes.length) == -1) {
-            return is;
-        }
-        if (!Arrays.equals(okunanBom, bomBytes)) {
-            pis.unread(okunanBom);
-        }
-        return pis;
+private InputStream utf8BomDenetle(InputStream is) throws IOException {
+    if (is == null)
+        throw new IOException("inputStream is null. throwing exception");
+    if (encoding != null && !encoding.equalsIgnoreCase("UTF-8"))
+        return is;
+    PushbackInputStream pis = new PushbackInputStream(is, bomBytes.length);
+    byte[] okunanBom = new byte[bomBytes.length];
+    if (pis.read(okunanBom, 0, bomBytes.length) == -1) {
+        return is;
     }
+    if (!Arrays.equals(okunanBom, bomBytes)) {
+        pis.unread(okunanBom);
+    }
+    return pis;
+}
 
     /**
      * belirtilen kaynagi Stream olarak once classpath kokunden (jar ise jar icinden) yuklemeye calisir.
@@ -192,7 +192,8 @@ public class KaynakYukleyici {
             }
             return ozellikler;
         } finally {
-            if (reader != null) reader.close();
+            if (reader != null)
+                reader.close();
         }
     }
 
