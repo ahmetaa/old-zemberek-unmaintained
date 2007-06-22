@@ -25,11 +25,11 @@
  *  ***** END LICENSE BLOCK *****
  */
 
-package net.zemberek.tm.yapi.ek;
+package net.zemberek.tk.yapi.ek;
 
 import net.zemberek.islemler.cozumleme.HarfDizisiKiyaslayici;
-import net.zemberek.tm.yapi.TurkmenceSesliUretici;
-import net.zemberek.tm.yapi.kok.TurkmenceKokOzelDurumTipleri;
+import net.zemberek.tk.yapi.TurkmenceSesliUretici;
+import net.zemberek.tk.yapi.kok.TurkmenceKokOzelDurumTipleri;
 import net.zemberek.yapi.Alfabe;
 import net.zemberek.yapi.HarfDizisi;
 import net.zemberek.yapi.Kelime;

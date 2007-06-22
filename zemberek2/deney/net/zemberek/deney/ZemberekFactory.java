@@ -52,11 +52,11 @@ public abstract class ZemberekFactory {
 	private static Zemberek _getZemberek(String dilKodu) {
 		try {
 			DilAyarlari dil = null;
-			if (dilKodu.equalsIgnoreCase("tr") || dilKodu.equalsIgnoreCase("tm")) {
+			if (dilKodu.equalsIgnoreCase("tr") || dilKodu.equalsIgnoreCase("tk")) {
 				if (dilKodu.equalsIgnoreCase("tr"))
 					dil = (DilAyarlari) Class.forName("net.zemberek.tr.yapi.TurkiyeTurkcesi").newInstance();
-				else if (dilKodu.equalsIgnoreCase("tm"))
-					dil = (DilAyarlari) Class.forName("net.zemberek.tm.yapi.Turkmence").newInstance();
+				else if (dilKodu.equalsIgnoreCase("tk"))
+					dil = (DilAyarlari) Class.forName("net.zemberek.tk.yapi.Turkmence").newInstance();
 				if(dil !=null) return new Zemberek(dil);
 				return null;
 			}

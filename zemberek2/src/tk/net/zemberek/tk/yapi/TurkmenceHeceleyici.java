@@ -16,7 +16,7 @@
  *  The Original Code is "Zemberek Dogal Dil Isleme Kutuphanesi"
  *
  *  The Initial Developer of the Original Code is
- *  Serkan Kaba.
+ *  Ahmet A. Akin, Mehmet D. Akin, Guychmyrat Amanmyradov.
  *  Portions created by the Initial Developer are Copyright (C) 2006
  *  the Initial Developer. All Rights Reserved.
  *
@@ -25,16 +25,21 @@
  *  ***** END LICENSE BLOCK *****
  */
 
-package net.zemberek.deney;
+package net.zemberek.tk.yapi;
 
-import junit.framework.TestCase;
+import net.zemberek.yapi.HarfDizisi;
+import net.zemberek.yapi.Heceleyici;
 
-public class TestZemberekFactory extends TestCase {
+import java.util.List;
+import java.util.Collections;
 
-	public void testGetZemberek() {
-		//Aynı referansı döndürmesi gerekiyor ondan == ile kontrol ettim
-		assertTrue(ZemberekFactory.getZemberek("tr")==ZemberekFactory.getZemberek("tr"));
-		assertTrue(ZemberekFactory.getZemberek("tk")==ZemberekFactory.getZemberek("tk"));
-	}
+/**
+ * User: ahmet
+ * Date: Sep 22, 2006
+ */
+public class TurkmenceHeceleyici implements Heceleyici {
 
+    public List<String> hecele(HarfDizisi dizi) {
+        return Collections.emptyList();
+    }
 }

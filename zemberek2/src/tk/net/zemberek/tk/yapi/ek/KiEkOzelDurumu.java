@@ -25,28 +25,38 @@
  *  ***** END LICENSE BLOCK *****
  */
 
-package net.zemberek.tm.yapi.ek;
+package net.zemberek.tk.yapi.ek;
 
 import net.zemberek.islemler.cozumleme.HarfDizisiKiyaslayici;
-import net.zemberek.tm.yapi.kok.TurkmenceKokOzelDurumTipleri;
+import net.zemberek.yapi.Alfabe;
 import net.zemberek.yapi.HarfDizisi;
 import net.zemberek.yapi.Kelime;
+import net.zemberek.yapi.ek.Ek;
 import net.zemberek.yapi.ek.EkOzelDurumu;
 
-/**
- * User: ahmet
- * Date: May 10, 2006
- */
-public class SonHarfDusumOzelDurumu extends EkOzelDurumu {
+public class KiEkOzelDurumu extends EkOzelDurumu {
+
+    private final HarfDizisi KI;
+
+    public KiEkOzelDurumu(Alfabe alfabe) {
+        KI = new HarfDizisi("ki", alfabe);
+    }
 
     public HarfDizisi cozumlemeIcinUret(Kelime kelime, HarfDizisi giris, HarfDizisiKiyaslayici kiyaslayici) {
-        if(kelime.kok().ozelDurumIceriyormu(TurkmenceKokOzelDurumTipleri.ISIM_SON_SESLI_DUSMESI) &&
-                kelime.ekler().size()<=1)
-        {
-           return ekUretici.cozumlemeIcinEkUret(kelime.icerik(), giris, uretimBilesenleri);
-        } else
-        {
-            return null;
-        }
+        if (kiyaslayici == null) return null;
+        // eki olustur.
+        HarfDizisi ek = ekUretici.cozumlemeIcinEkUret(kelime.icerik(), giris, uretimBilesenleri);
+        //olusum.ekle(0, ekHarfi);
+        int harfPozisyonu = kelime.boy() + ek.length();
+        if (kiyaslayici.aradanKiyasla(giris, KI, harfPozisyonu))
+            return ek;
+        return null;
+    }
+
+    @Override
+    public HarfDizisi olusumIcinUret(Kelime kelime, Ek sonrakiEk) {
+        if (sonrakiEk.ad().equals(TurkmenceEkAdlari.AT_YERGORKEZYAN_KI))
+            return ekUretici.olusumIcinEkUret(kelime.icerik(), sonrakiEk, uretimBilesenleri);
+        return null;
     }
 }

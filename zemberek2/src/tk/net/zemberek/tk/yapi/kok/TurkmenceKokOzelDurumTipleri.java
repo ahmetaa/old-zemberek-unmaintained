@@ -25,9 +25,9 @@
  *  ***** END LICENSE BLOCK *****
  */
 
-package net.zemberek.tm.yapi.kok;
+package net.zemberek.tk.yapi.kok;
 
-import static net.zemberek.tm.yapi.ek.TurkmenceEkAdlari.*;
+import static net.zemberek.tk.yapi.ek.TurkmenceEkAdlari.*;
 import net.zemberek.yapi.kok.KokOzelDurumTipi;
 
 /**

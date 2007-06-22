@@ -40,7 +40,7 @@
 	<!-- java, test, bilgi dizinleri -->
 	<property name="src.cekirdek" location="src/cekirdek"/>
 	<property name="src.tr" location="src/tr"/>
-	<property name="src.tm" location="src/tm"/>
+	<property name="src.tk" location="src/tk"/>
 	<property name="src.demo" location="src/demo"/>
 	<property name="test.cekirdek" location="test/cekirdek"/>
 	<property name="kaynaklar.dir" location="kaynaklar"/>
@@ -118,7 +118,7 @@
 
 
 	<target name="derle-dil" depends="derle-cekirdek">
-		<fail unless="dil" message="bu ant gorevi icin 'dil' parametresi gerekli. tr, tm gibi."/>
+		<fail unless="dil" message="bu ant gorevi icin 'dil' parametresi gerekli. tr, tk gibi."/>
 		<mkdir dir="${build.dir}/${dil}"/>
 		<javac srcdir="src/${dil}"
                destdir="${build.dir}/${dil}"
@@ -158,7 +158,7 @@
 	<!--   dile iliskin bilgi dosyalarini uretir.  dil parametresi ile cagrilir.  -->
 	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 	<target name="bilgi">
-		<fail unless="dil" message="bu ant gorevi icin 'dil' parametresi gerekli. tr,tm gibi."/>
+		<fail unless="dil" message="bu ant gorevi icin 'dil' parametresi gerekli. tr,tk gibi."/>
 		<java classname="net.zemberek.yapi.DilBilgisiUretici" fork="true" failonerror="true">
 			<classpath>
 				<path refid="classpath.build"/>
@@ -177,7 +177,7 @@
 	<!--   sonuclar build/dil/.. ve build/kaynaklar/dil/.. altina kopyalanir.-->
 	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 	<target name="dil-ekle">
-		<fail unless="dil" message="bu ant gorevi icin 'dil' parametresi gerekli. tr,tm gibi."/>
+		<fail unless="dil" message="bu ant gorevi icin 'dil' parametresi gerekli. tr,tk gibi."/>
 		<antcall target="derle-dil">
 			<param name="dil" value="${dil}"/>
 		</antcall>
@@ -214,7 +214,7 @@
 			<param name="dil" value="tr"/>
 		</antcall>
 		<antcall target="dil-ekle">
-			<param name="dil" value="tm"/>
+			<param name="dil" value="tk"/>
 		</antcall>
 		<antcall target="dil-ekle">
 			<param name="dil" value="az"/>
@@ -250,7 +250,7 @@
 	<!--        dile ozel jar uretir. dil parametresi gerekir.           -->
 	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 	<target name="jar-dil" depends="derle-cekirdek">
-		<fail unless="dil" message="bu ant gorevi icin 'dil' parametresi gerekli. tr,tm gibi."/>
+		<fail unless="dil" message="bu ant gorevi icin 'dil' parametresi gerekli. tr,tk gibi."/>
 		<mkdir dir="${jar.dir}"/>
 		<antcall target="dil-ekle">
 			<param name="dil" value="${dil}"/>
@@ -277,9 +277,9 @@
 	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 	<!--       Turkmence icin jar uretir                                 -->
 	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-	<target name="jar-tm">
+	<target name="jar-tk">
 		<antcall target="jar-dil">
-			<param name="dil" value="tm"/>
+			<param name="dil" value="tk"/>
 		</antcall>
 	</target>
 
@@ -332,7 +332,7 @@
 		<antcall target="jar-tum" />
 		<antcall target="jar-cekirdek" />
 		<antcall target="jar-tr" />
-		<antcall target="jar-tm" />
+		<antcall target="jar-tk" />
 		<antcall target="jar-az"/>
 		<antcall target="jar-demo" />
 

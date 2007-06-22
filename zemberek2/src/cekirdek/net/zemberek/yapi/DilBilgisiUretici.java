@@ -33,7 +33,7 @@ import java.io.IOException;
 public class DilBilgisiUretici {
 
     public static final String TR_SINIF = "net.zemberek.tr.yapi.TurkiyeTurkcesi";
-    public static final String TM_SINIF = "net.zemberek.tm.yapi.Turkmence";
+    public static final String TM_SINIF = "net.zemberek.tk.yapi.Turkmence";
     public static final String AZ_SINIF = "net.zemberek.az.yapi.Azerice";
     public static final String TT_SINIF = "net.zemberek.tt.yapi.Tatarca";
     
@@ -44,7 +44,7 @@ public class DilBilgisiUretici {
             System.exit(0);
 
         } else {
-            System.out.println("Dil adi girmelisiniz (tr,tm,az,tt gibi)");
+            System.out.println("Dil adi girmelisiniz (tr,tk,az,tt gibi)");
             System.exit(1);
         }
     }
@@ -54,7 +54,7 @@ public class DilBilgisiUretici {
 
         if (dilAdi.equals("tr"))
             dilAyari = dilAyarUret(TR_SINIF);
-        else if (dilAdi.equals("tm"))
+        else if (dilAdi.equals("tk"))
             dilAyari = dilAyarUret(TM_SINIF);
         else if(dilAdi.equals("az"))
         	dilAyari=dilAyarUret(AZ_SINIF);

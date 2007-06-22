@@ -37,7 +37,7 @@ import net.zemberek.yapi.DilAyarlari;
 public enum TurkDiliTuru {
 
     TURKIYE("net.zemberek.tr.yapi.TurkiyeTurkcesi"),
-    TURKMEN("net.zemberek.tm.yapi.Turkmence"),
+    TURKMEN("net.zemberek.tk.yapi.Turkmence"),
     AZERI("net.zemberek.az.yapi.Azerice"),
     TATAR("net.zemberek.tt.yapi.Tatarca");
 
