@@ -25,22 +25,28 @@
  *  ***** END LICENSE BLOCK *****
  */
 
-package net.zemberek.tm.yapi;
+package net.zemberek.tk.yapi.ek;
 
-import net.zemberek.yapi.Alfabe;
+import net.zemberek.islemler.cozumleme.HarfDizisiKiyaslayici;
+import net.zemberek.tk.yapi.kok.TurkmenceKokOzelDurumTipleri;
 import net.zemberek.yapi.HarfDizisi;
-import net.zemberek.yapi.Heceleyici;
-
-import java.util.List;
-import java.util.Collections;
+import net.zemberek.yapi.Kelime;
+import net.zemberek.yapi.ek.EkOzelDurumu;
 
 /**
  * User: ahmet
- * Date: Sep 22, 2006
+ * Date: May 10, 2006
  */
-public class TurkmenceHeceleyici implements Heceleyici {
+public class SonHarfDusumOzelDurumu extends EkOzelDurumu {
 
-    public List<String> hecele(HarfDizisi dizi) {
-        return Collections.emptyList();
+    public HarfDizisi cozumlemeIcinUret(Kelime kelime, HarfDizisi giris, HarfDizisiKiyaslayici kiyaslayici) {
+        if(kelime.kok().ozelDurumIceriyormu(TurkmenceKokOzelDurumTipleri.ISIM_SON_SESLI_DUSMESI) &&
+                kelime.ekler().size()<=1)
+        {
+           return ekUretici.cozumlemeIcinEkUret(kelime.icerik(), giris, uretimBilesenleri);
+        } else
+        {
+            return null;
+        }
     }
 }

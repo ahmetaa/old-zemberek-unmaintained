@@ -25,7 +25,7 @@
  *  ***** END LICENSE BLOCK *****
  */
 
-package net.zemberek.tm.yapi;
+package net.zemberek.tk.yapi;
 
 import net.zemberek.yapi.Alfabe;
 import net.zemberek.yapi.HarfDizisi;

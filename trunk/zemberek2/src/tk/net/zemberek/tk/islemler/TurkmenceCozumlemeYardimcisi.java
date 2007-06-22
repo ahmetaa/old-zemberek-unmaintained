@@ -25,9 +25,8 @@
  *  ***** END LICENSE BLOCK *****
  */
 
-package net.zemberek.tm.islemler;
+package net.zemberek.tk.islemler;
 
-import net.zemberek.islemler.DenetlemeCebi;
 import net.zemberek.islemler.cozumleme.CozumlemeYardimcisi;
 import net.zemberek.yapi.Alfabe;
 import net.zemberek.yapi.HarfDizisi;

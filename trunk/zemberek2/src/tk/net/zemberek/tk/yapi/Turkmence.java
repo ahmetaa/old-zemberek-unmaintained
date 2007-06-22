@@ -25,13 +25,13 @@
  *  ***** END LICENSE BLOCK *****
  */
 
-package net.zemberek.tm.yapi;
+package net.zemberek.tk.yapi;
 
-import net.zemberek.tm.islemler.TurkmenceCozumlemeYardimcisi;
-import net.zemberek.tm.yapi.ek.EkUreticiTm;
-import net.zemberek.tm.yapi.ek.TurkmenceEkOzelDurumUretici;
-import static net.zemberek.tm.yapi.ek.TurkmenceEkAdlari.*;
-import net.zemberek.tm.yapi.kok.TurkmenceKokOzelDurumBilgisi;
+import net.zemberek.tk.islemler.TurkmenceCozumlemeYardimcisi;
+import net.zemberek.tk.yapi.ek.EkUreticiTm;
+import net.zemberek.tk.yapi.ek.TurkmenceEkOzelDurumUretici;
+import static net.zemberek.tk.yapi.ek.TurkmenceEkAdlari.*;
+import net.zemberek.tk.yapi.kok.TurkmenceKokOzelDurumBilgisi;
 import net.zemberek.yapi.Alfabe;
 import net.zemberek.yapi.DilAyarlari;
 import net.zemberek.yapi.KelimeTipi;
@@ -50,7 +50,7 @@ import java.util.Map;
 public class Turkmence implements DilAyarlari {
 
     public Locale locale() {
-        return new Locale("tm");
+        return new Locale("tk");
     }
 
     public Class alfabeSinifi() {
@@ -74,7 +74,7 @@ public class Turkmence implements DilAyarlari {
     }
 
     public String[] duzYaziKokDosyalari() {
-        return new String[]{"kaynaklar/tm/bilgi/kokler.txt"};
+        return new String[]{"kaynaklar/tk/bilgi/kokler.txt"};
     }
 
     public EkKuralBilgisi ekKuralBilgisi() {

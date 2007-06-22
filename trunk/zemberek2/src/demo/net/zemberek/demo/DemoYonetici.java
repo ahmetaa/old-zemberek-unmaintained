@@ -139,7 +139,7 @@ public class DemoYonetici {
         for (YaziBirimi birim : analizDizisi) {
             if (birim.tip == YaziBirimiTipi.KELIME) {
                 Kelime[] sonuclar = zemberek.asciiCozumle(birim.icerik);
-                Set<String> tekilSonuclar = new HashSet(2);
+                Set<String> tekilSonuclar = new HashSet<String>(2);
                 for (Kelime s : sonuclar) {
                     tekilSonuclar.add(s.icerik().toString());
                 }

@@ -25,7 +25,7 @@
  *  ***** END LICENSE BLOCK *****
  */
 
-package net.zemberek.tm.yapi.ek;
+package net.zemberek.tk.yapi.ek;
 
 /**
  * User: ahmet
