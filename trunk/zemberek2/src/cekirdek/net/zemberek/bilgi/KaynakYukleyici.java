@@ -118,21 +118,21 @@ public class KaynakYukleyici {
      * @return
      * @throws IOException
      */
-private InputStream utf8BomDenetle(InputStream is) throws IOException {
-    if (is == null)
-        throw new IOException("inputStream is null. throwing exception");
-    if (encoding != null && !encoding.equalsIgnoreCase("UTF-8"))
-        return is;
-    PushbackInputStream pis = new PushbackInputStream(is, bomBytes.length);
-    byte[] okunanBom = new byte[bomBytes.length];
-    if (pis.read(okunanBom, 0, bomBytes.length) == -1) {
-        return is;
+    private InputStream utf8BomDenetle(InputStream is) throws IOException {
+        if (is == null)
+            throw new IOException("inputStream is null. throwing exception");
+        if (encoding != null && !encoding.equalsIgnoreCase("UTF-8"))
+            return is;
+        PushbackInputStream pis = new PushbackInputStream(is, bomBytes.length);
+        byte[] okunanBom = new byte[bomBytes.length];
+        if (pis.read(okunanBom, 0, bomBytes.length) == -1) {
+            return is;
+        }
+        if (!Arrays.equals(okunanBom, bomBytes)) {
+            pis.unread(okunanBom);
+        }
+        return pis;
     }
-    if (!Arrays.equals(okunanBom, bomBytes)) {
-        pis.unread(okunanBom);
-    }
-    return pis;
-}
 
     /**
      * belirtilen kaynagi Stream olarak once classpath kokunden (jar ise jar icinden) yuklemeye calisir.

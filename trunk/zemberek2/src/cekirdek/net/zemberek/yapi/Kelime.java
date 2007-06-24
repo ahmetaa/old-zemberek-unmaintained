@@ -125,14 +125,15 @@ public class Kelime implements Cloneable {
     }
 
     public String toString() {
-        StringBuilder ekStr = new StringBuilder();
-        for (Ek ek : ekler) {
-            ekStr.append(ek.ad()).append(" + ");
+        StringBuilder str = new StringBuilder(" [ Kok: " + kok.icerik() + ", " + kok.tip() + " ] ");
+        if(ekler.size()>1)
+           str.append(" Ekler: ");
+        for (int i = 1; i < ekler.size(); i++) {
+            str.append(ekler.get(i).ad());
+            if(i<ekler.size()-1)
+              str.append(" + ");
         }
-        if (ekStr.length() > 3)
-            ekStr.delete(ekStr.length() - 3, ekStr.length());
-        return "{Icerik: " + icerik + " Kok: " + kok.icerik() + " tip:" + kok.tip() + "} " +
-                " Ekler:" + ekStr;
+        return str.toString();
     }
 
     public void icerikEkle(HarfDizisi eklenecek) {

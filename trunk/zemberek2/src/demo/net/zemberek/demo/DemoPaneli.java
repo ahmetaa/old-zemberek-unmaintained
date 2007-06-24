@@ -71,7 +71,7 @@ public class DemoPaneli {
 
         //giris ve cikisin pencere buyudugunde ayni ende kalmasi icin onlari ayrica Grid Layout'a
         //sahip bir panele yerlestir. sonucta her ikisinide ana panelin merkezine koy.
-        JPanel ioPanel = new JPanel(new GridLayout());
+        JPanel ioPanel = new JPanel(new GridLayout(2,1));
         girisAlani = new GirisAlani(dy.ozelKarakterDizisiGetir());
         ioPanel.add(girisAlani.getMainPanel());
         ioPanel.add(cikisAlani.getMainPanel());

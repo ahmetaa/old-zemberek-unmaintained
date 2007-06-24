@@ -53,7 +53,8 @@ public class MainFrame extends JFrame {
         }
         cp.add(panel);
         cp.validate();
-        setSize(750, 500);
+        setSize(800, 680);
+        setLocation(100,100);
         //pack();
         setVisible(true);
         shownContent = panel;
