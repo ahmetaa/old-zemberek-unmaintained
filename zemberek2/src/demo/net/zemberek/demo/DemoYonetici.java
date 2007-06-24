@@ -32,7 +32,6 @@ import net.zemberek.araclar.turkce.YaziBirimi;
 import net.zemberek.araclar.turkce.YaziBirimiTipi;
 import net.zemberek.araclar.turkce.YaziIsleyici;
 import net.zemberek.erisim.Zemberek;
-import net.zemberek.demo.IslemTipi;
 import net.zemberek.islemler.TurkceYaziTesti;
 import net.zemberek.yapi.DilBilgisi;
 import net.zemberek.yapi.Kelime;
@@ -120,9 +119,9 @@ public class DemoYonetici {
         for (YaziBirimi birim : analizDizisi) {
             if (birim.tip == YaziBirimiTipi.KELIME) {
                 Kelime[] cozumler = zemberek.kelimeCozumle(birim.icerik);
-
+                sonuc.append(birim.icerik).append('\n');
                 if (cozumler.length == 0)
-                    sonuc.append(birim.icerik).append(" :cozulemedi\n");
+                    sonuc.append(" :cozulemedi\n");
                 else {
                     for (Kelime cozum : cozumler)
                         sonuc.append(cozum).append("\n");

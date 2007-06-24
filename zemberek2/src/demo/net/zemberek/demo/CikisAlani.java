@@ -29,7 +29,6 @@ package net.zemberek.demo;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
-import javax.swing.border.LineBorder;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
 
@@ -55,7 +54,7 @@ public class CikisAlani {
         mainPanel = new JPanel();
         mainPanel.setLayout(new BorderLayout());
         mainPanel.add(makeInputPanel(), BorderLayout.CENTER);
-        mainPanel.setBorder(new TitledBorder(new LineBorder(Color.red), "\u00c7\u0131k\u0131\u015f alan\u0131"));
+        mainPanel.setBorder(new TitledBorder(new EmptyBorder(2,2,2,2), "\u00c7\u0131k\u0131\u015f alan\u0131"));
     }
 
 

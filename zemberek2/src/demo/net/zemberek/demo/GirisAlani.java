@@ -29,9 +29,10 @@ package net.zemberek.demo;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
-import javax.swing.border.LineBorder;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 
 /**
@@ -62,7 +63,7 @@ public class GirisAlani {
     private void configure() {
         mainPanel = new JPanel();
         mainPanel.setLayout(new BorderLayout());
-        mainPanel.setBorder(new TitledBorder(new LineBorder(Color.red), "Giri\u015f alan\u0131"));
+        mainPanel.setBorder(new TitledBorder(new EmptyBorder(2,2,2,2), "Giri\u015f alan\u0131"));
         ozelKarakterDugmeAlaniOlustur(ozelKarakterler);
         mainPanel.add(makeInputPanel(), BorderLayout.CENTER);
     }
@@ -90,10 +91,10 @@ public class GirisAlani {
         buttonPanel = new JPanel();
         buttonPanel.setLayout(new FlowLayout(FlowLayout.LEFT,5,5));
         //makechars
-        for (int i = 0; i < ozelKarakterler.length; i++) {
-            JButton button = SwingFactory.getRegularButton(String.valueOf(ozelKarakterler[i]));
-            button.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
+        for (char anOzelKarakterler : ozelKarakterler) {
+            JButton button = SwingFactory.getRegularButton(String.valueOf(anOzelKarakterler));
+            button.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent evt) {
                     String turkceChar = ((JButton) evt.getSource()).getText();
                     int pos = inputArea.getCaretPosition();
                     inputArea.insert(turkceChar, pos);
