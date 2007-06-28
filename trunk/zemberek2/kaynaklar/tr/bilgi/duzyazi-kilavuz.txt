@@ -15631,7 +15631,7 @@ gökkandil IS
 #gök kır (renk)
 #gök kubbe
 #gök kumu
-#gök kuşağı
+gökkuşağı IS
 #gök kutbu
 gökkuzgun IS
 gökkuzgungiller IS
