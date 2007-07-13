@@ -5,7 +5,6 @@
 	<classpathentry kind="src" path="src/tt"/>
 	<classpathentry kind="src" path="src/demo"/>
 	<classpathentry kind="src" path="src/az"/>
-	<classpathentry kind="src" path="src/tm"/>
 	<classpathentry kind="src" path="test/cekirdek"/>
 	<classpathentry kind="src" path="src/cekirdek"/>
 	<classpathentry kind="src" path="deney"/>
