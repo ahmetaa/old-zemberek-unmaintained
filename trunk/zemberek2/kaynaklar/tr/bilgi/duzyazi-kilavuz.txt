@@ -11601,6 +11601,7 @@ ekşimtırak IS YUM
 #ektirme
 #ektirmek
 ektoderm IS
+eküri IS
 ekvator IS
 Ekvator OZ
 #ekvatoral IS TERS
