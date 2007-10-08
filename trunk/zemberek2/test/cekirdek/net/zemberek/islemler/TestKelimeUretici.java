@@ -46,9 +46,7 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.List;
 
 /**
@@ -76,17 +74,17 @@ public class TestKelimeUretici extends TemelTest {
     @Test
     public void testKelimeUret() {
 
-    Kok kok = kokler.kokBul("armut", KelimeTipi.ISIM);
-    List<Ek> ekler = Arrays.asList(
-            ek(ISIM_KOK),
-            ek(ISIM_SAHIPLIK_BIZ_IMIZ),
-            ek(ISIM_TANIMLAMA_DIR));
-    assertEquals("armudumuzdur", kelimeUretici.kelimeUret(kok, ekler));
+        Kok kok = kokler.kokBul("armut", KelimeTipi.ISIM);
+        List<Ek> ekler = Arrays.asList(
+                ek(ISIM_KOK),
+                ek(ISIM_SAHIPLIK_BIZ_IMIZ),
+                ek(ISIM_TANIMLAMA_DIR));
+        assertEquals("armudumuzdur", kelimeUretici.kelimeUret(kok, ekler));
 
         kok = kokler.kokBul("sabret", KelimeTipi.FIIL);
         ekler = Arrays.asList(
-                ek(FIIL_KOK),ek(FIIL_YETENEK_EBIL),
-                ek(FIIL_GELECEKZAMAN_ECEK),ek(FIIL_KISI_BIZ));
+                ek(FIIL_KOK), ek(FIIL_YETENEK_EBIL),
+                ek(FIIL_GELECEKZAMAN_ECEK), ek(FIIL_KISI_BIZ));
         assertEquals("sabredebilece\u011fiz", kelimeUretici.kelimeUret(kok, ekler));
     }
 
