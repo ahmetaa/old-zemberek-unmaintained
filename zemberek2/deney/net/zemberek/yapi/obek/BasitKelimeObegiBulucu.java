@@ -27,22 +27,18 @@
 
 package net.zemberek.yapi.obek;
 
-import net.zemberek.yapi.Kok;
-import net.zemberek.yapi.DilBilgisi;
-import net.zemberek.yapi.TurkceDilBilgisi;
-import net.zemberek.tr.yapi.TurkiyeTurkcesi;
-import net.zemberek.bilgi.kokler.KokAdayiBulucu;
 import net.zemberek.bilgi.KaynakYukleyici;
-import net.zemberek.islemler.cozumleme.KelimeCozumleyici;
-import net.zemberek.islemler.cozumleme.StandartCozumleyici;
-import net.zemberek.islemler.cozumleme.KesinHDKiyaslayici;
-import net.zemberek.islemler.KokBulucu;
-import net.zemberek.islemler.KelimeTabanliKokBulucu;
 import net.zemberek.erisim.Zemberek;
+import net.zemberek.islemler.KokBulucu;
+import net.zemberek.tr.yapi.TurkiyeTurkcesi;
+import net.zemberek.yapi.Kok;
 
-import java.util.*;
-import java.io.IOException;
 import java.io.BufferedReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
 
 public class BasitKelimeObegiBulucu {
 
@@ -52,7 +48,7 @@ public class BasitKelimeObegiBulucu {
 
     public BasitKelimeObegiBulucu(KelimeObekDeposu depo, KokBulucu kokBulucu) {
         this.depo = depo;
-        this.kokBulucu = kokBulucu;
+        this.kokBulucu = kokBulucu;   
     }
 
     /**

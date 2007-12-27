@@ -288,14 +288,14 @@ public class TurkceDilBilgisi implements DilBilgisi {
         logger.info("Ikili sozluk dosyasi olusturuluyor...");
 
         //kokleri duz yazi dosyalardan oku
-        List tumKokler = new ArrayList();
+        List<Kok> tumKokler = new ArrayList<Kok>();
         for (String dosyaAdi : dilAyarlari.duzYaziKokDosyalari()) {
             KokOkuyucu okuyucu = new DuzYaziKokOkuyucu(
                     dosyaAdi,
                     ozelDurumBilgisi,
                     alfabe,
                     dilAyarlari.kokTipiAdlari());
-            List list = okuyucu.hepsiniOku();
+            List<Kok> list = okuyucu.hepsiniOku();
             logger.info("Okunan kok sayisi: " + list.size());
             tumKokler.addAll(list);
         }

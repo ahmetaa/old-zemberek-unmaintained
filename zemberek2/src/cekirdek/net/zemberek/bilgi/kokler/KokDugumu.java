@@ -265,6 +265,7 @@ public class KokDugumu {
         return str;
     }
 
+    @Override
     public String toString() {
         StringBuilder buf = new StringBuilder();
         buf.append("harf:").append(harf);

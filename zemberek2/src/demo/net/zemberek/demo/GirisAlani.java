@@ -91,8 +91,8 @@ public class GirisAlani {
         buttonPanel = new JPanel();
         buttonPanel.setLayout(new FlowLayout(FlowLayout.LEFT,5,5));
         //makechars
-        for (char anOzelKarakterler : ozelKarakterler) {
-            JButton button = SwingFactory.getRegularButton(String.valueOf(anOzelKarakterler));
+        for (char ozelKarakter : ozelKarakterler) {
+            JButton button = SwingFactory.getRegularButton(String.valueOf(ozelKarakter));
             button.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent evt) {
                     String turkceChar = ((JButton) evt.getSource()).getText();

@@ -9,12 +9,12 @@
                 <root id="src.dir"/>
                 <root id="cekirdek.dir"/>
                 <root id="demo.dir"/>
-                <root id="tm.dir"/>
                 <root id="tr.dir"/>
+                <root id="src.tk.dir"/>
+                <root id="src.tt.dir"/>
             </source-roots>
             <test-roots>
                 <root id="test.src.dir"/>
-                <root id="test.tm.dir"/>
                 <root id="test.tr.dir"/>
             </test-roots>
         </data>
