@@ -248,6 +248,7 @@ public class KokAgaci {
         return Collections.emptyList();
     }
 
+    @Override
     public String toString() {
         return baslangicDugumu.toString();
     }
