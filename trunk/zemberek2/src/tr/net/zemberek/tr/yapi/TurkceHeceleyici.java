@@ -42,7 +42,6 @@ public class TurkceHeceleyici implements Heceleyici {
         while (kelime.length() > 0) {
             int index = sonHeceHarfSayisi(kelime);
             if (index < 0) {
-                list.clear();
                 return Collections.emptyList();
             }
             int basla = kelime.length() - index;
