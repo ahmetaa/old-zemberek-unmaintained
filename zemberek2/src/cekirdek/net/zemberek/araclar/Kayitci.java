@@ -39,33 +39,37 @@ public class Kayitci {
     private static final ConsoleHandler ch = new ConsoleHandler();
 
     static {
-        ch.setFormatter(new KayitBicimleyici());
+        try {
+            ch.setFormatter(new KayitBicimleyici());
+        } catch (SecurityException e) {
+            System.out.println("Guvenlik erisim problemi. Varsayilan kayit bicimleyici kullanilacak.");
+        }
     }
 
     /**
      * default Logger uretici. seviye:WARNING
-     * @param ad
-     * @return
+     * @param ad logger adi.
+     * @return Logger
      */
     public static Logger kayitciUret(String ad) {
-        Logger logger = Logger.getLogger(ad);
-        logger.setUseParentHandlers(false);
-        logger.addHandler(ch);
-        logger.setLevel(Level.WARNING);
-        return logger;
+        return kayitciUret(ad, Level.WARNING);
     }
 
     /**
      * handler seviyesinden farkli olarak istenilen seviyede kayitci uretilmesini saglar.
-     * @param ad
-     * @param level
-     * @return
+     * @param ad : logger adi
+     * @param level : log level
+     * @return  Logger
      */
     public static Logger kayitciUret(String ad, Level level) {
         Logger logger = Logger.getLogger(ad);
-        logger.setUseParentHandlers(false);
-        logger.addHandler(ch);
-        logger.setLevel(level);
+        try {
+            logger.setUseParentHandlers(false);
+            logger.addHandler(ch);
+            logger.setLevel(level);
+        } catch (SecurityException e) {
+            System.out.println("Guvenlik erisim problemi. Varsayilan kayitci kullanilacak.");
+        }
         return logger;
     }
 
