@@ -27,10 +27,7 @@
 
 package net.zemberek.araclar;
 
-import java.util.logging.ConsoleHandler;
-import java.util.logging.Logger;
-import java.util.logging.Level;
-import java.util.logging.Handler;
+import java.util.logging.*;
 
 /**
  * Java kayit tutma sisemi icin yardimci metodlar.
