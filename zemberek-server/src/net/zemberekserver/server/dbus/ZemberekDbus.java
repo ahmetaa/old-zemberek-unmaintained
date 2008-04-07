@@ -45,17 +45,15 @@ public class ZemberekDbus implements ZemberekDbusInterface {
 		this.zemberek=zemberek;
 	}
 	
-	public boolean isRemote() {	return false; }
+	public boolean isRemote() { return false; }
 	
 	public static void start(Zemberek zemberek, String busName) {
 		try {
 			DBusConnection conn;
-			if (Config.useDbusSystemConnection){
-				 conn = DBusConnection.getConnection(DBusConnection.SYSTEM);
-			}
-			else {
-				conn = DBusConnection.getConnection(DBusConnection.SESSION);
-			}			
+			if (Config.useDbusSystemConnection)
+				conn = DBusConnection.getConnection(DBusConnection.SYSTEM);
+			else
+				conn = DBusConnection.getConnection(DBusConnection.SESSION);			
 			conn.requestBusName(busName);
 			conn.exportObject("/net/zemberekserver/server/dbus/ZemberekDbus" , new ZemberekDbus(zemberek));
 			System.out.println("Zemberek DBus arayüzü başlatıldı. busName: " + busName);
