@@ -32,7 +32,6 @@ import org.freedesktop.dbus.DBusConnection;
 import org.freedesktop.dbus.exceptions.DBusException;
 
 import net.zemberekserver.server.Config;
-//import net.zemberekserver.server.dbus.ZemberekDbusInterface;
 
 import java.util.List;
 public class DBusClient {
