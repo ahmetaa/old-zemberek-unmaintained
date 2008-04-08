@@ -75,7 +75,11 @@ public class KaynakYukleyici {
      * @param encoding
      */
     public KaynakYukleyici(String encoding) {
-        this.encoding = encoding.toUpperCase();
+        if(encoding==null){
+            log.warning("encoding null, varsayilan deger kullanilacak.");
+            this.encoding = Charset.defaultCharset().name();
+        }else
+          this.encoding = encoding.toUpperCase();
         log.fine("Kaynak yukleyici olusturuluyor. varsayilan karakter seti:" + encoding);
     }
 
@@ -102,10 +106,17 @@ public class KaynakYukleyici {
      * @return true-> kaynak erisiminde hata olusmadi false-> kaynak erisiminde hata olustu ya da kaynak=null
      */
     public boolean kaynakMevcutmu(String kaynakAdi) {
-        if(new File(kaynakAdi).exists() || this.getClass().getResource("/"+kaynakAdi)!=null)
-          return true;
-        else
-          return false;
+        if (this.getClass().getResource("/" + kaynakAdi) != null)
+            return true;
+
+        try {
+            if (new File(kaynakAdi).exists())
+                return true;
+        } catch (SecurityException e) {
+            // bu hata applet yada bezneri guvenlik kisitlamali uygulamalardan erisilirken olusabilir.
+            System.out.println("Guvenlik hatasi nedeniyle dis dosya erisimi mumkun degil.");
+        }
+        return false;
     }
 
     /**
