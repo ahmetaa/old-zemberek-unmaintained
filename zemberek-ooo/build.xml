@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<project default="build-all">
+
+	<property file="compile.properties"/>
+	<property file="openoffice.properties"/>
+
+	<property name="idl.file" value="zemberek_ooo.idl"/>
+	<property name="project.version" value="1.0-Beta4"/>
+	<property name="project.name" value="zemberek-ooo-${project.version}" />
+	<property name="spellchecker.project.name" value="ZemberekSpellChecker" />	
+	<property name="hyphenator.project.name" value="ZemberekHyphenator" />
+	<property name="spellchecker.registration.classname" value="net.zemberek.ooo.spellchecker.TurkishSpellChecker" />
+	<property name="hyphenator.registration.classname" value="net.zemberek.ooo.hyphenator.TurkishHyphenator" />
+	<property name="run.classname" value="${registration.classname}" />
+	<property name="src.dir" value="${basedir}/src" />
+	<property name="dist.dir" value="${basedir}/dist" />
+	<property name="lib.dir" value="${basedir}/lib" />
+	<property name="res.dir" value="${basedir}/resources" />
+	<property name="idl.dir" value="${res.dir}/idl" />
+	<property name="build.dir" value="${basedir}/build" />
+	<property name="build.classes.dir" value="${build.dir}/classes" />
+	<property name="dist.jar.dir" value="${dist.dir}/libs" />
+	<property name="dist.jar.skipreg.dir" value="${dist.jar.dir}/skip_registration" />
+
+	<target name="init" description="initialization">
+		<mkdir dir="${build.dir}" />
+		<mkdir dir="${build.classes.dir}" />
+		<mkdir dir="${dist.dir}" />
+		<mkdir dir="${dist.jar.dir}" />
+		<mkdir dir="${dist.jar.skipreg.dir}" />
+	</target>
+
+	<target name="compile-java" depends="init" description="compile all java files">
+		<javac srcdir="${src.dir}" destdir="${build.classes.dir}" source="1.5" target="1.5"
+      deprecation="${compile.deprecation}" debug="${compile.debug}" optimize="${compile.optimize}">
+			<classpath>
+				<fileset dir="${lib.dir}">
+					<include name="**/*.jar" />
+					<include name="**/*.zip" />
+				</fileset>
+				<fileset dir="${openoffice.lib.dir}">
+					<include name="**/*.jar" />
+					<include name="**/*.zip" />
+				</fileset>
+			</classpath>
+			<src path="${src.dir}"/>
+			<include name="**/*.java" />
+		</javac>
+	</target>
+
+	<!--
+	
+	<target name="idlc" if="idl.file" description="invoke idlc">
+		<echo message="Execute command: ${openoffice.sdk.bin.dir}/idlc -C -O${build.res.dir}/idl -I${openoffice.sdk.dir}/idl ${idl.file}" />
+		<echo message="" />
+		<exec executable="${openoffice.sdk.bin.dir}/idlc" outputproperty="idl.out">
+			<env key="PATH" path="${java.library.path}:${openoffice.program.dir}" />
+			<env key="LD_LIBRARY_PATH" value="${openoffice.program.dir}" />
+			<arg value="-C" />
+			<arg value="-O${build.res.dir}/idl" />
+			<arg value="-I${openoffice.sdk.dir}/idl" />
+			<arg value="${idl.file}" />
+		</exec>
+		<echo message="${idl.out}" />
+	</target>
+
+	<target name="regmerge" if="idl.file" depends="idlc" description="invoke remerge">
+		<basename property="filename" file="${idl.file}" suffix=".idl"/>
+		<echo message="Execute command: ${openoffice.sdk.bin.dir}/regmerge ${filename}.rdb /UCR ${build.res.dir}/idl/${filename}.urd" />
+		<echo message=""/>
+		<exec executable="${openoffice.sdk.bin.dir}/regmerge" outputproperty="regmerge.out">
+			<env key="PATH" path="${java.library.path}:${openoffice.program.dir}"/>
+			<env key="LD_LIBRARY_PATH" value="${openoffice.program.dir}" />
+			<arg value="${build.res.dir}/idl/${filename}.rdb"/>
+			<arg value="/UCR" />
+			<arg value="${build.res.dir}/idl/${filename}.urd"/>
+		</exec>
+		<echo message="${regmerge.out}" />
+	</target>
+
+	<target name="javamaker" if="idl.file" depends="regmerge" description="invoke javamaker">
+		<basename property="filename" file="${idl.file}" suffix=".idl" />
+		<echo message="Execute command: ${openoffice.sdk.bin.dir}/javamaker -nD -O${src.dir} -BUCR ${build.res.dir}/idl/${filename}.rdb ${openoffice.program.dir}/types.rdb" />
+		<echo message="" />
+		<exec executable="${openoffice.sdk.bin.dir}/javamaker" outputproperty="javamaker.out">
+			<env key="PATH" path="${java.library.path}:${openoffice.program.dir}" />
+			<env key="LD_LIBRARY_PATH" value="${openoffice.program.dir}" />
+			<arg value="-nD" />
+			<arg value="-O${src.dir}" />
+			<arg value="-BUCR" />
+			<arg value="${build.res.dir}/idl/${filename}.rdb" />
+			<arg value="${openoffice.program.dir}/types.rdb" />
+		</exec>
+		<echo message="${javamaker.out}" />
+	</target>
+
+	<target name="pkgchk" description="run pkgchk">
+	    <exec executable="${openoffice.program.dir}/pkgchk" > 
+			<arg value="-v"/>
+		</exec>
+        </target>
+	
+	<target name="unopkg_add" description="run pkgchk">
+		<exec executable="${openoffice.program.dir}/unopkg" >
+			<arg value="add"/>
+			<arg value="${build.dir}/${project.name}.zip" />
+		</exec>
+	</target>
+
+	<target name="unopkg_reinstall" description="run pkgchk">
+		<exec executable="${openoffice.program.dir}/unopkg" >
+			<arg value="reinstall"/>
+			<arg value="${build.dir}/${project.name}.zip" />
+		</exec>
+	</target>
+
+	<target name="unopkg_remove" description="run pkgchk">
+		<exec executable="${openoffice.program.dir}/unopkg" >
+			<arg value="remove"/>
+			<arg value="${openoffice.dir}/user/uno_packages/${project.name}.zip" />
+		</exec>
+	</target>
+	
+	<target name="compile-idl" description="build all idl files">
+	</target>
+	-->
+
+	<target name="build-all" depends="clean,init" description="build the project">
+		<!-- <antcall target="compile-idl" /> -->
+		<antcall target="compile-java" />
+		<!-- deprecated <copydir dest="${dist.jar.skipreg.dir}" src="${lib.dir}" /> -->
+		<copy todir="${dist.jar.skipreg.dir}"> 
+		<!-- <copy todir="${dist.jar.dir}"> -->
+			<fileset dir="${lib.dir}">
+			      <include name="*.jar"/>
+  	        </fileset>
+		</copy>
+		
+		<jar jarfile="${build.dir}/${spellchecker.project.name}.uno.jar" basedir="${build.classes.dir}">
+			<include name="net/zemberek/ooo/**"/>
+            <exclude name="net/zemberek/ooo/hyphenator/**"/>
+			<manifest>
+				<attribute name="RegistrationClassName" value="${spellchecker.registration.classname}" />
+				<attribute name="Class-Path" value="skip_registration/zemberek2-cekirdek.jar skip_registration/zemberek2-tr.jar"/>
+			</manifest>
+		</jar>
+		
+		<jar jarfile="${build.dir}/${hyphenator.project.name}.uno.jar" basedir="${build.classes.dir}">
+			<include name="net/zemberek/ooo/**"/>
+            <exclude name="net/zemberek/ooo/spellchecker/**"/>
+			<manifest>
+				<attribute name="RegistrationClassName" value="${hyphenator.registration.classname}" />
+				<attribute name="Class-Path" value="skip_registration/zemberek2-cekirdek.jar skip_registration/zemberek2-tr.jar"/>
+			</manifest>
+		</jar>
+		
+		<zip destfile="${build.dir}/${project.name}.zip">
+       		<zipfileset file="${build.dir}/${spellchecker.project.name}.uno.jar" />
+       		<zipfileset file="${build.dir}/${hyphenator.project.name}.uno.jar" />
+<!--       		<zipfileset file="${basedir}/binary-sozluk.bin" />-->
+			<zipfileset dir="${res.dir}/xcu">
+				<include name="*.xcu" />
+				<include name="*.xcs" />
+			</zipfileset>
+			<zipfileset dir="${dist.jar.dir}">
+			</zipfileset>
+		</zip>
+	</target>
+
+	<target name="install" depends="build-all" description="install the project">
+		<copy file="${build.dir}/${project.name}.zip" todir="${openoffice.dir}/user/uno_packages" />
+		<echo message="packagecheck" />
+		<antcall target="pkgchk" />
+	</target>
+
+	<target name="reinstall" depends="build-all" description="install the project">
+		<copy file="${build.dir}/${project.name}.zip" todir="${openoffice.dir}/user/uno_packages" />
+		<echo message="packagecheck" />
+		<antcall target="pkgchk" />
+	</target>
+
+	<target name="ooo-listen" description="enable OpenOffice to receive connections">
+		<exec executable="${openoffice.program.dir}/soffice" spawn="true">
+			<arg value="-accept=socket,host=${openoffice.hostname},port=${openoffice.port};urp;" />
+		</exec>
+	</target>
+
+	<target name="uninstall" description="uninstall the project">
+		<delete file="${openoffice.dir}/user/uno_packages/${project.name}.zip" />
+		<antcall target="pkgchk" /> 
+	</target>
+
+	<!--
+	<target name="ooo-run" description="run OpenOffice">
+		<exec executable="${openoffice.program.dir}/soffice" spawn="false" />
+	</target>
+	-->
+	
+	<target name="ooo2-run" description="run OpenOffice">
+		<exec executable="${openoffice.program.dir}/soffice" spawn="false" />
+	</target>
+	
+	<target name="clean" depends="init" description="remove build-related items">
+		<delete dir="${build.dir}" includeEmptyDirs="true" />
+		<delete dir="${dist.jar.skipreg.dir}" includeEmptyDirs="true"/>
+		<delete dir="${dist.jar.dir}" includeEmptyDirs="true"/>
+		<delete dir="${dist.dir}" includeEmptyDirs="true"/>
+	</target>
+
+</project>
