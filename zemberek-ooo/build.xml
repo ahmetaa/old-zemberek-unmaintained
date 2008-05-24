@@ -155,16 +155,17 @@
 			</manifest>
 		</jar>
 		
-		<zip destfile="${build.dir}/${project.name}.zip">
-       		<zipfileset file="${build.dir}/${spellchecker.project.name}.uno.jar" />
-       		<zipfileset file="${build.dir}/${hyphenator.project.name}.uno.jar" />
+		<zip destfile="${build.dir}/${project.name}.oxt">
+       			<zipfileset file="${build.dir}/${spellchecker.project.name}.uno.jar" />
+       			<zipfileset file="${build.dir}/${hyphenator.project.name}.uno.jar" />
 <!--       		<zipfileset file="${basedir}/binary-sozluk.bin" />-->
 			<zipfileset dir="${res.dir}/xcu">
 				<include name="*.xcu" />
 				<include name="*.xcs" />
 			</zipfileset>
-			<zipfileset dir="${dist.jar.dir}">
-			</zipfileset>
+			<zipfileset file="${res.dir}/xml/description.xml"/>
+			<zipfileset file="${res.dir}/xml/manifest.xml" prefix="META-INF"/>
+			<zipfileset dir="${dist.jar.dir}"/>
 		</zip>
 	</target>
 
