@@ -325,7 +325,14 @@
              update="true"
              excludes="**/*.zip"
              />
-
+		<zip destfile="${dist.dir}/zemberek-${surum}-src.zip">
+			<zipfileset dir="." prefix="zemberek-${surum}-src">
+				<exclude name="**/.svn" />
+				<exclude name="**/dagitim/**"/>
+				<exclude name="**/build/**"/>
+				<exclude name="**/bin/**"/>
+			</zipfileset>
+		</zip>
 		<echo message="Dagitim dosyalari ${dist.dir} dizininde olusturuldu."/>
 	</target>
 
