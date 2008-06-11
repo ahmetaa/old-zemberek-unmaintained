@@ -54,7 +54,7 @@ import com.sun.star.uno.XInterface;
 // the services only once (as long as this factory itself exists) 
 // and returns only reference to that instance.
 // 
-
+@SuppressWarnings("unchecked")
 public class OneInstanceFactory implements
         XSingleServiceFactory,
         XServiceInfo

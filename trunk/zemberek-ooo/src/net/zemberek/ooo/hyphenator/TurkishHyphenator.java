@@ -63,7 +63,7 @@ import com.sun.star.linguistic2.XPossibleHyphens;
 import com.sun.star.uno.AnyConverter;
 import com.sun.star.uno.Exception;
 import com.sun.star.uno.UnoRuntime;
-
+@SuppressWarnings("unchecked")
 public class TurkishHyphenator extends ComponentBase implements
         XHyphenator,
         XLinguServiceEventBroadcaster,
@@ -258,8 +258,8 @@ public class TurkishHyphenator extends ComponentBase implements
                             }
                             if(i < heceIndeksleri.length){
                                 //System.out.println("HeceIndeks: " + i + " Boy: " + heceIndeksleri[i]);
-                                nHyphenationPos = (short)(heceIndeksleri[i-1]);
-                                nHyphenPos = (short) (nHyphenationPos);
+                                nHyphenationPos = (short)(heceIndeksleri[i-1]-1);
+                                nHyphenPos = nHyphenationPos;
                             }
                             else {
                                 nHyphenationPos =  -1;

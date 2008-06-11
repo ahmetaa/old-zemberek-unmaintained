@@ -49,7 +49,7 @@ import com.sun.star.lang.EventObject;
 import com.sun.star.uno.XInterface;
 
 import java.util.ArrayList;
-
+@SuppressWarnings("unchecked")
 public class PropChgHelper implements
         XPropertyChangeListener,
         XLinguServiceEventBroadcaster
@@ -57,7 +57,7 @@ public class PropChgHelper implements
     XInterface          xEvtSource;
     String[]            aPropNames;
     XPropertySet        xPropSet;
-    ArrayList           aLngSvcEvtListeners;
+	ArrayList           aLngSvcEvtListeners;
 
     public PropChgHelper(
             XInterface      xEvtSource,
