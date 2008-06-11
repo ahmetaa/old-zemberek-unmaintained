@@ -296,7 +296,6 @@
 
 	<!-- tüm diller için -->
 	<target name="dist">
-
 		<delete dir="${dist.dir}"/>
 
 		<mkdir dir="${dist.dir}"/>
@@ -328,9 +327,10 @@
 		<zip destfile="${dist.dir}/zemberek-${surum}-src.zip">
 			<zipfileset dir="." prefix="zemberek-${surum}-src">
 				<exclude name="**/.svn" />
-				<exclude name="**/dagitim/**"/>
-				<exclude name="**/build/**"/>
-				<exclude name="**/bin/**"/>
+				<exclude name="dagitim/**"/>
+				<exclude name="build/**"/>
+				<exclude name="bin/**"/>
+				<exclude name="kaynaklar/**/*.bin"/>
 			</zipfileset>
 		</zip>
 		<echo message="Dagitim dosyalari ${dist.dir} dizininde olusturuldu."/>
