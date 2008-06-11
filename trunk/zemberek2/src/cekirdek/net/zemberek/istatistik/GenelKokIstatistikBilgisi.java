@@ -1,28 +1,5 @@
 /*
- *  ***** BEGIN LICENSE BLOCK *****
- *
- *  Version: MPL 1.1
- *
- *  The contents of this file are subject to the Mozilla Public License Version
- *  1.1 (the "License"); you may not use this file except in compliance with
- *  the License. You may obtain a copy of the License at
- *  http://www.mozilla.org/MPL/
- *
- *  Software distributed under the License is distributed on an "AS IS" basis,
- *  WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
- *  for the specific language governing rights and limitations under the
- *  License.
- *
- *  The Original Code is "Zemberek Dogal Dil Isleme Kutuphanesi"
- *
- *  The Initial Developer of the Original Code is
- *  Ahmet A. Akin, Mehmet D. Akin.
- *  Portions created by the Initial Developer are Copyright (C) 2006
- *  the Initial Developer. All Rights Reserved.
- *
- *  Contributor(s):
- *
- *  ***** END LICENSE BLOCK *****
+ * Lisans bilgisi icin lutfen proje ana dizinindeki zemberek2-lisans.txt dosyasini okuyunuz.
  */
 
 /*
@@ -50,7 +27,7 @@ public class GenelKokIstatistikBilgisi implements KokIstatistikBilgisi {
     private double ortalamaKelimeUzunlugu = 0;
     private long toplamUzunluk = 0;
     private int ortalamaEkSayisi = 0;
-    private ArrayList ekListesi = null;
+    private ArrayList<EkZinciri> ekListesi = null;
 
     //Ek istatistikleri, bu kelime kökü için kullanılan ek zincirlerinden
     //en sık kullanılan "n" adedini tutar. Her bir zincir bir Ek dizisi ve kullanım frekansı
@@ -60,7 +37,7 @@ public class GenelKokIstatistikBilgisi implements KokIstatistikBilgisi {
     // ek sayilari icin max ek zincir boyu
     public static final int TABLO_MAX_EK_SAYISI = 15;
 
-    private HashMap ekZincirleri = new HashMap();
+    private HashMap<String, EkZinciri> ekZincirleri = new HashMap<String,EkZinciri>();
     int[] ekUzunlukSayilari = new int[TABLO_MAX_EK_SAYISI];
 
     public GenelKokIstatistikBilgisi() {
@@ -84,7 +61,7 @@ public class GenelKokIstatistikBilgisi implements KokIstatistikBilgisi {
         ekZincirleriniGuncelle(kelime.ekler());
     }
 
-    public void ekZincirleriniGuncelle(List ekler) {
+    public void ekZincirleriniGuncelle(List<Ek> ekler) {
         int ekSayisi = ekler.size();
         if (ekSayisi > 0 && ekSayisi < TABLO_MAX_EK_SAYISI) {
             // yal�n kelimelerde de bir ek bulunuyor.
@@ -92,11 +69,15 @@ public class GenelKokIstatistikBilgisi implements KokIstatistikBilgisi {
         }
 
         if (ekSayisi > 0 && ekSayisi <= TABLO_MAX_EK_ZINCIR_BOYU) {
-            String ekAnahtari = "";
-            for (Iterator i = ekler.iterator(); i.hasNext();) {
-                ekAnahtari += ((Ek) i.next()).ad();
+            StringBuilder builder = new StringBuilder();
+            for (int i = 0; i < ekler.size(); i++) {
+                builder.append(ekler.get(i).ad());
+                if(i<ekler.size()-1)
+                  builder.append('+');
             }
-            EkZinciri zincir = (EkZinciri) ekZincirleri.get(ekAnahtari);
+            String ekAnahtari= builder.toString();
+
+            EkZinciri zincir = ekZincirleri.get(ekAnahtari);
             if (zincir == null) {
                 //System.out.println("EkAnahtarı: " + ekAnahtari);
                 zincir = new EkZinciri(ekler);
@@ -137,14 +118,15 @@ public class GenelKokIstatistikBilgisi implements KokIstatistikBilgisi {
 
     public void duzenle() {
         if(ekListesi == null) {
-            ekListesi = new ArrayList();
+            ekListesi = new ArrayList<EkZinciri>();
         }
         ekListesi.clear();
-        for (Iterator it = ekZincirleri.values().iterator(); it.hasNext();) {
-            EkZinciri zincir = (EkZinciri) it.next();
-            zincir.kullanimFrekansi = IstatistikAraclari.yuzdeHesapla(zincir.getKullanimSayisi(), this.kullanimSayisi);
-            ekListesi.add(zincir);
 
+        for (EkZinciri zincir : ekZincirleri.values()) {
+            zincir.kullanimFrekansi = IstatistikAraclari.yuzdeHesapla(
+                    zincir.getKullanimSayisi(),
+                    this.kullanimSayisi);
+            ekListesi.add(zincir);
         }
         Collections.sort(ekListesi);
     }
@@ -174,7 +156,7 @@ public class GenelKokIstatistikBilgisi implements KokIstatistikBilgisi {
     }
 
     public EkZinciri getEkZinciri(String ekZinciriStr) {
-        return (EkZinciri) ekZincirleri.get(ekZinciriStr);
+        return ekZincirleri.get(ekZinciriStr);
     }
 }
 

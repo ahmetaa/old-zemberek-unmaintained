@@ -1,28 +1,5 @@
 /*
- *  ***** BEGIN LICENSE BLOCK *****
- *
- *  Version: MPL 1.1
- *
- *  The contents of this file are subject to the Mozilla Public License Version
- *  1.1 (the "License"); you may not use this file except in compliance with
- *  the License. You may obtain a copy of the License at
- *  http://www.mozilla.org/MPL/
- *
- *  Software distributed under the License is distributed on an "AS IS" basis,
- *  WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
- *  for the specific language governing rights and limitations under the
- *  License.
- *
- *  The Original Code is "Zemberek Dogal Dil Isleme Kutuphanesi"
- *
- *  The Initial Developer of the Original Code is
- *  Ahmet A. Akin, Mehmet D. Akin.
- *  Portions created by the Initial Developer are Copyright (C) 2006
- *  the Initial Developer. All Rights Reserved.
- *
- *  Contributor(s):
- *
- *  ***** END LICENSE BLOCK *****
+ * Lisans bilgisi icin lutfen proje ana dizinindeki zemberek2-lisans.txt dosyasini okuyunuz.
  */
 
 /*
@@ -43,38 +20,38 @@ import java.util.*;
 
 public class TestUtils {
     /**
-     * iki Collection'un elemanlarý birbirine eþitse (sýra önemsiz) ok. deðilse fail.
+     * iki Collection'un elemanlarï¿½ birbirine eï¿½itse (sï¿½ra ï¿½nemsiz) ok. deï¿½ilse fail.
      *
      * @param a
      * @param b
      */
     public static void assertCollectionsEqual(final Collection a, final Collection b) {
         if (a.size() != b.size()) {
-            throw new AssertionFailedError("Collectionlar eþit deðil");
+            throw new AssertionFailedError("Collectionlar eï¿½it deï¿½il");
         }
         final Collection copyOfB = new LinkedList(b);
         for (final Object object : a) {
             if (!copyOfB.contains(object)) {
-                throw new AssertionFailedError("Collectionlar eþit deðil beklenen : " + a + " Eldeki : " + b);
+                throw new AssertionFailedError("Collectionlar eï¿½it deï¿½il beklenen : " + a + " Eldeki : " + b);
             }
             copyOfB.remove(object);
         }
     }
 
     /**
-     * iki Collection'un elemanlarý birbirine eþitse (sýra önemsiz) ok. deðilse fail.
+     * iki Collection'un elemanlarï¿½ birbirine eï¿½itse (sï¿½ra ï¿½nemsiz) ok. deï¿½ilse fail.
      *
      * @param a
      * @param b
      */
     public static void assertCollectionContentsEqual(final Collection a, final Collection b) {
         if (a.size() != b.size()) {
-            throw new AssertionFailedError("Collectionlar eþit deðil");
+            throw new AssertionFailedError("Collectionlar eï¿½it deï¿½il");
         }
         final Collection copyOfB = new LinkedList(b);
         for (final Object object : a) {
             if (!copyOfB.contains(object)) {
-                throw new AssertionFailedError("Collectionlar eþit deðil beklenen : " + a + " Eldeki : " + b);
+                throw new AssertionFailedError("Collectionlar eï¿½it deï¿½il beklenen : " + a + " Eldeki : " + b);
             }
             copyOfB.remove(object);
         }
@@ -82,7 +59,7 @@ public class TestUtils {
 
     public static boolean assertObjectArrayContentsEqual(Object[] d1, Object[] d2) {
         if (d1.length != d2.length) {
-            throw new AssertionFailedError("Collectionlar eþit deðil");
+            throw new AssertionFailedError("Collectionlar eï¿½it deï¿½il");
         }
         for (Object o1 : d1) {
             boolean found = false;
@@ -112,12 +89,12 @@ public class TestUtils {
      * basit satir okuyucu.
      *
      * @param dosya
-     * @return
+     * @return 
      * @throws IOException
      */
     public static List<String> satirlariOku(String dosya) throws IOException {
         BufferedReader reader = new KaynakYukleyici("UTF-8").getReader(dosya);
-        List<String> satirlar = new ArrayList();
+        List<String> satirlar = new ArrayList<String>();
         String s;
         while ((s = reader.readLine()) != null) {
             if (s.startsWith("#") || s.trim().length() == 0) continue;
@@ -130,7 +107,7 @@ public class TestUtils {
     public static List<TestGirdisi> girdileriOku(String dosya) throws IOException {
 
         List<String> satirlar = satirlariOku(dosya);
-        List<TestGirdisi> sonuc = new ArrayList();
+        List<TestGirdisi> sonuc = new ArrayList<TestGirdisi>();
         for (String s : satirlar) {
             int esitlik = s.indexOf(':');
             if (esitlik == -1)

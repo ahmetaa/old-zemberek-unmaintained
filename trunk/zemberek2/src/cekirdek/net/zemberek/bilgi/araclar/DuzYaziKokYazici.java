@@ -1,44 +1,20 @@
 /*
- *  ***** BEGIN LICENSE BLOCK *****
- *
- *  Version: MPL 1.1
- *
- *  The contents of this file are subject to the Mozilla Public License Version
- *  1.1 (the "License"); you may not use this file except in compliance with
- *  the License. You may obtain a copy of the License at
- *  http://www.mozilla.org/MPL/
- *
- *  Software distributed under the License is distributed on an "AS IS" basis,
- *  WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
- *  for the specific language governing rights and limitations under the
- *  License.
- *
- *  The Original Code is "Zemberek Dogal Dil Isleme Kutuphanesi"
- *
- *  The Initial Developer of the Original Code is
- *  Ahmet A. Akin, Mehmet D. Akin.
- *  Portions created by the Initial Developer are Copyright (C) 2006
- *  the Initial Developer. All Rights Reserved.
- *
- *  Contributor(s):
- *
- *  ***** END LICENSE BLOCK *****
+ * Lisans bilgisi icin lutfen proje ana dizinindeki zemberek2-lisans.txt dosyasini okuyunuz.
  */
 
-/*
- * Created on 06.Nis.2004
- */
 package net.zemberek.bilgi.araclar;
 
-import net.zemberek.yapi.Kok;
 import net.zemberek.yapi.KelimeTipi;
+import net.zemberek.yapi.Kok;
 import net.zemberek.yapi.kok.KokOzelDurumu;
 
-import java.io.*;
-import java.util.Iterator;
+import java.io.BufferedWriter;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.HashMap;
 
 /**
  * Verilen bir sözlüğün düzyazı olarak yazılmasını sağlar.
@@ -48,7 +24,7 @@ import java.util.HashMap;
 public class DuzYaziKokYazici implements KokYazici {
 
     BufferedWriter writer;
-    private Map<KelimeTipi, String> tipAdlari = new HashMap();
+    private Map<KelimeTipi, String> tipAdlari = new HashMap<KelimeTipi, String>();
 
     public DuzYaziKokYazici(String dosyaAdi, Map<String, KelimeTipi> kokAdTipMap) throws IOException {
         for (Map.Entry<String, KelimeTipi> entry : kokAdTipMap.entrySet()) {

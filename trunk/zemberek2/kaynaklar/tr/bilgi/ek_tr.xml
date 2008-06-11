@@ -1,27 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-
 <!--
-  ~  ***** BEGIN LICENSE BLOCK *****
-  ~  Version: MPL 1.1
-  ~
-  ~  The contents of this file are subject to the Mozilla Public License Version
-  ~  1.1 (the "License"); you may not use this file except in compliance with
-  ~  the License. You may obtain a copy of the License at
-  ~  http://www.mozilla.org/MPL/
-  ~
-  ~  Software distributed under the License is distributed on an "AS IS" basis,
-  ~  WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
-  ~  for the specific language governing rights and limitations under the
-  ~  License.
-  ~
-  ~  The Original Code is Zemberek Doðal Dil Isleme Kutuphanesi.
-  ~
-  ~  The Initial Developer of the Original Code is
-  ~  Ahmet A. Akin, Mehmet D. Akin.
-  ~  Portions created by the Initial Developer are Copyright (C) 2006
-  ~  the Initial Developer. All Rights Reserved.
-  ~
-  ~  ***** END LICENSE BLOCK *****
+  ~ Lisans bilgisi icin lutfen proje ana dizinindeki zemberek2-lisans.txt dosyasini okuyunuz.
   -->
 
 <!-- ek isimleri su sekilde olusur: kokturu+grup adi+belirleyici+"sey"kokune eklenmis hali-->
@@ -665,6 +644,7 @@
 
         <!-- isim sahiplik onlar _lari : "ev_leri guzelmis.."  -->
         <ek ad="ISIM_SAHIPLIK_ONLAR_LERI" uretim="lArI">
+            <ozel-durum ad="SU" uretim="yunuz"/>               
             <ardisil-ekler>
                 <kume>ISIM_HAL</kume>
                 <kume>IMEK_ZAMAN</kume>
@@ -709,6 +689,7 @@
         <ek ad="ISIM_ILGI_CI" uretim=">cI">
             <ardisil-ekler>
                 <kume>ISIM_HAL</kume>
+                <kume>ISIM_KISI</kume>
                 <kume>IMEK_ZAMAN</kume>
                 <kume>ISIM_SAHIPLIK</kume>
                 <aek>ISIM_COGUL_LER</aek>
@@ -751,7 +732,7 @@
             </ardisil-ekler>
         </ek>
 
-        <!-- isim KISI sen _sin : "ne tuhaf adam_sin"  -->
+        <!-- isim KISI o"  -->
         <ek ad="ISIM_KISI_O_BOS" uretim=""/>
 
         <!-- isim KISI biz _iz : "ne tuhaf millet_iz"  -->
@@ -974,7 +955,7 @@
             <ardisil-ekler kopya-ek="FIIL_DONUSUM_EN"/>
         </ek>
 
-        <!-- edilgenlik sorunlu bir ek. iki ayri ek seklinde ifade etmek zorunda kaldim. -->
+        <!-- edilgenlik sorunlu bir ek. iki ayri ek seklinde ifade etmek zorunda kaldik. -->
         <ek ad="FIIL_EDILGEN_IL" uretim="Il">
             <ozel-durum ad="EDILGEN" uretim=""/>
             <ardisil-ekler>
@@ -1486,7 +1467,7 @@
         </ek>
 
         <!-- bu ek normalde kullanilmaz. sadece ceviri gibi islemlerde gerekli olabilir. -->
-        <ek ad="FIIL_SORU_MI" uretim="mI">
+        <ek ad="FIIL_SORU_MI" uretim="ga">
             <ardisil-ekler>
                 <kume>FIIL_KISI</kume>
                 <aek>FIIL_GECMISZAMAN_DI</aek>
@@ -1541,7 +1522,7 @@
         </ek>
 
         <!-- isim imek "idi" _di : "adam aslan_di simdi elin kopegi oldu.." -->
-        <ek ad="IMEK_HIKAYE_DI" uretim="+y>dI">
+        <ek ad="IMEK_HIKAYE_DI" uretim="+ydI">
             <ozellik>HAL</ozellik>
             <ozel-durum ad="ON_EK" uretim=">dI">
                 <on-ek>IMEK_KOK</on-ek>

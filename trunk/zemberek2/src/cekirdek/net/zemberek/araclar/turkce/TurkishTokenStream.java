@@ -1,36 +1,11 @@
 /*
- *  ***** BEGIN LICENSE BLOCK *****
- *
- *  Version: MPL 1.1
- *
- *  The contents of this file are subject to the Mozilla Public License Version
- *  1.1 (the "License"); you may not use this file except in compliance with
- *  the License. You may obtain a copy of the License at
- *  http://www.mozilla.org/MPL/
- *
- *  Software distributed under the License is distributed on an "AS IS" basis,
- *  WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
- *  for the specific language governing rights and limitations under the
- *  License.
- *
- *  The Original Code is "Zemberek Dogal Dil Isleme Kutuphanesi"
- *
- *  The Initial Developer of the Original Code is
- *  Ahmet A. Akin, Mehmet D. Akin.
- *  Portions created by the Initial Developer are Copyright (C) 2006
- *  the Initial Developer. All Rights Reserved.
- *
- *  Contributor(s):
- *
- *  ***** END LICENSE BLOCK *****
+ * Lisans bilgisi icin lutfen proje ana dizinindeki zemberek2-lisans.txt dosyasini okuyunuz.
  */
 
-/*
- * Created on 15.Mar.2004
- */
 package net.zemberek.araclar.turkce;
 
 import net.zemberek.istatistik.Istatistikler;
+import net.zemberek.bilgi.KaynakYukleyici;
 
 import java.io.*;
 
@@ -57,10 +32,9 @@ public class TurkishTokenStream {
      * @param encoding: default için null verin
      */
     public TurkishTokenStream(String fileName, String encoding) {
-        try {
-            FileInputStream fis = new FileInputStream(new File(fileName));
-            setupReader(fis, encoding);
-        } catch (FileNotFoundException e) {
+        try{
+        bis = new KaynakYukleyici(encoding).getReader(fileName);
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -72,19 +46,13 @@ public class TurkishTokenStream {
      * @param encoding : default için null verin
      */
     public TurkishTokenStream(InputStream is, String encoding) {
-        setupReader(is, encoding);
+        try {
+            bis = new BufferedReader(new InputStreamReader(is, encoding));
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace(); 
+        }
     }
 
-    private void setupReader(InputStream is, String encoding) {
-        if (encoding == null)
-            bis = new BufferedReader(new InputStreamReader(is));
-        else
-            try {
-                bis = new BufferedReader(new InputStreamReader(is, encoding));
-            } catch (UnsupportedEncodingException e) {
-                e.printStackTrace();
-            }
-    }
 
     public static int MAX_KELIME_BOY = 256;
     private char[] kelimeBuffer = new char[MAX_KELIME_BOY];

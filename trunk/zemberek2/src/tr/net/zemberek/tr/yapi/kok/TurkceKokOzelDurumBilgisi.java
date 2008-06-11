@@ -1,28 +1,5 @@
 /*
- *  ***** BEGIN LICENSE BLOCK *****
- *
- *  Version: MPL 1.1
- *
- *  The contents of this file are subject to the Mozilla Public License Version
- *  1.1 (the "License"); you may not use this file except in compliance with
- *  the License. You may obtain a copy of the License at
- *  http://www.mozilla.org/MPL/
- *
- *  Software distributed under the License is distributed on an "AS IS" basis,
- *  WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
- *  for the specific language governing rights and limitations under the
- *  License.
- *
- *  The Original Code is "Zemberek Dogal Dil Isleme Kutuphanesi"
- *
- *  The Initial Developer of the Original Code is
- *  Ahmet A. Akin, Mehmet D. Akin.
- *  Portions created by the Initial Developer are Copyright (C) 2006
- *  the Initial Developer. All Rights Reserved.
- *
- *  Contributor(s):
- *
- *  ***** END LICENSE BLOCK *****
+ * Lisans bilgisi icin lutfen proje ana dizinindeki zemberek2-lisans.txt dosyasini okuyunuz.
  */
 
 package net.zemberek.tr.yapi.kok;
@@ -46,6 +23,8 @@ import java.util.Map;
  * gerceklestirilir. Turkce ozel durum tanimlamalari TurkceKokOzelDurumTipleri sinifinda yapilmistir.
  */
 public class TurkceKokOzelDurumBilgisi extends TemelKokOzelDurumBilgisi implements KokOzelDurumBilgisi {
+
+    private static final String[] BOS_STRING_DIZISI = new String[0];
 
     /**
      * KokOzel durum nesneleri burada uretilir. uretim icin "uretici" metodu kullanilir. bu metod KokOzelDurumu sinifi
@@ -71,13 +50,13 @@ public class TurkceKokOzelDurumBilgisi extends TemelKokOzelDurumBilgisi implemen
 
         ekle(uretici(KUCULTME, new SonHarfDusmesi()).yapiBozucu(true));
 
-        Map<String, String> benSenDonusum = new HashMap();
+        Map<String, String> benSenDonusum = new HashMap<String, String>();
 
         benSenDonusum.put("ben", "ban");
         benSenDonusum.put("sen", "san");
         ekle(uretici(TEKIL_KISI_BOZULMASI, new YeniIcerikAta(alfabe, benSenDonusum)).yapiBozucu(true));
 
-        Map<String, String> deYeDonusum = new HashMap();
+        Map<String, String> deYeDonusum = new HashMap<String, String>();
         deYeDonusum.put("de", "di");
         deYeDonusum.put("ye", "yi");
         ekle(uretici(FIIL_KOK_BOZULMASI, new YeniIcerikAta(alfabe, deYeDonusum)).yapiBozucu(true));
@@ -124,11 +103,11 @@ public class TurkceKokOzelDurumBilgisi extends TemelKokOzelDurumBilgisi implemen
     public String[] ozelDurumUygula(Kok kok) {
         //kok icinde ozel durum yok ise cik..
         if (!kok.ozelDurumVarmi())
-            return new String[0];
+            return BOS_STRING_DIZISI;
 
         HarfDizisi hdizi = new HarfDizisi(kok.icerik(), alfabe);
 
-        List degismisIcerikler = new ArrayList(1);
+        List<String> degismisIcerikler = new ArrayList<String>(1);
 
         //ara sesli dusmesi nedeniyle bazen yapay oarak kok'e ters sesli etkisi ozel durumunun eklenmesi gerekir.
         // nakit -> nakde seklinde. normal kosullarda "nakda" olusmasi gerekirdi.
@@ -174,7 +153,7 @@ public class TurkceKokOzelDurumBilgisi extends TemelKokOzelDurumBilgisi implemen
             degismisIcerikler.add(tempDizi.toString());
         }
         // yani ozel durumlar eklenmis olabileceginden koke ods'u tekrar koke esle.
-        return (String[]) degismisIcerikler.toArray(new String[degismisIcerikler.size()]);
+        return degismisIcerikler.toArray(new String[degismisIcerikler.size()]);
     }
 
     public void ozelDurumBelirle(Kok kok) {

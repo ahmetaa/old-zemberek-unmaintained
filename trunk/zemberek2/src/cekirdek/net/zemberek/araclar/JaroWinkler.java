@@ -1,32 +1,6 @@
-/*
- *  ***** BEGIN LICENSE BLOCK *****
- *
- *  Version: MPL 1.1
- *
- *  The contents of this file are subject to the Mozilla Public License Version
- *  1.1 (the "License"); you may not use this file except in compliance with
- *  the License. You may obtain a copy of the License at
- *  http://www.mozilla.org/MPL/
- *
- *  Software distributed under the License is distributed on an "AS IS" basis,
- *  WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
- *  for the specific language governing rights and limitations under the
- *  License.
- *
- *  The Original Code is "Zemberek Dogal Dil Isleme Kutuphanesi"
- *
- *  The Initial Developer of the Original Code is
- *  Ahmet A. Akin, Mehmet D. Akin.
- *  Portions created by the Initial Developer are Copyright (C) 2006
- *  the Initial Developer. All Rights Reserved.
- *
- *  Contributor(s):
- *
- *  ***** END LICENSE BLOCK *****
- */
-
-
 package net.zemberek.araclar;
+
+import static java.lang.Math.*;
 
 /**
  * 
@@ -79,7 +53,7 @@ public class JaroWinkler {
         for (int i = 0; i < s.length(); i++) {
             char ch = s.charAt(i);
             boolean foundIt = false;
-            for (int j = Math.max(0, i - halflen); !foundIt && j < Math.min(i + halflen, t.length()); j++) {
+            for (int j = max(0, i - halflen); !foundIt && j < min(i + halflen, t.length()); j++) {
                 if (copy.charAt(j) == ch) {
                     foundIt = true;
                     common.append(ch);
@@ -101,7 +75,7 @@ public class JaroWinkler {
     }
 
     private static int commonPrefixLength(int maxLength, String common1, String common2) {
-        int n = Math.min(maxLength, Math.min(common1.length(), common2.length()));
+        int n = min(maxLength, min(common1.length(), common2.length()));
         for (int i = 0; i < n; i++) {
             if (common1.charAt(i) != common2.charAt(i)) return i;
         }

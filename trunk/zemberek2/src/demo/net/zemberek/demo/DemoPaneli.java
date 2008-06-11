@@ -1,28 +1,5 @@
 /*
- *  ***** BEGIN LICENSE BLOCK *****
- *
- *  Version: MPL 1.1
- *
- *  The contents of this file are subject to the Mozilla Public License Version
- *  1.1 (the "License"); you may not use this file except in compliance with
- *  the License. You may obtain a copy of the License at
- *  http://www.mozilla.org/MPL/
- *
- *  Software distributed under the License is distributed on an "AS IS" basis,
- *  WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
- *  for the specific language governing rights and limitations under the
- *  License.
- *
- *  The Original Code is "Zemberek Dogal Dil Isleme Kutuphanesi"
- *
- *  The Initial Developer of the Original Code is
- *  Ahmet A. Akin, Mehmet D. Akin.
- *  Portions created by the Initial Developer are Copyright (C) 2006
- *  the Initial Developer. All Rights Reserved.
- *
- *  Contributor(s):
- *
- *  ***** END LICENSE BLOCK *****
+ * Lisans bilgisi icin lutfen proje ana dizinindeki zemberek2-lisans.txt dosyasini okuyunuz.
  */
 
 package net.zemberek.demo;
@@ -40,7 +17,7 @@ import java.io.IOException;
  */
 public class DemoPaneli {
 
-    private JPanel mainPanel;
+    private JPanel temelIslemlerPaneli;
     private GirisAlani girisAlani;
     private CikisAlani cikisAlani = new CikisAlani();
     private DemoYonetici dy;
@@ -57,17 +34,17 @@ public class DemoPaneli {
         girisAlani.setYazi(text);
     }
 
-    public JPanel getMainPanel() {
-        return mainPanel;
+    public JPanel getTemelIslemlerPaneli() {
+        return temelIslemlerPaneli;
     }
 
     public void configure() {
         // ana paneli ve islem dugmelerinin yer alacagi paneli olustur
-        mainPanel = new JPanel();
+        temelIslemlerPaneli = new JPanel();
         JPanel buttonPanel = makeButtonPanel();
         // Islem dugmelerini kuzeye yerlestir
-        mainPanel.setLayout(new BorderLayout());
-        mainPanel.add(buttonPanel, BorderLayout.NORTH);
+        temelIslemlerPaneli.setLayout(new BorderLayout());
+        temelIslemlerPaneli.add(buttonPanel, BorderLayout.NORTH);
 
         //giris ve cikisin pencere buyudugunde ayni ende kalmasi icin onlari ayrica Grid Layout'a
         //sahip bir panele yerlestir. sonucta her ikisinide ana panelin merkezine koy.
@@ -75,7 +52,7 @@ public class DemoPaneli {
         girisAlani = new GirisAlani(dy.ozelKarakterDizisiGetir());
         ioPanel.add(girisAlani.getMainPanel());
         ioPanel.add(cikisAlani.getMainPanel());
-        mainPanel.add(ioPanel, BorderLayout.CENTER);
+        temelIslemlerPaneli.add(ioPanel, BorderLayout.CENTER);
     }
 
 
@@ -111,7 +88,7 @@ public class DemoPaneli {
                 else
                     c = new JFileChooser(currentDir);
 
-                int rVal = c.showOpenDialog(mainPanel);
+                int rVal = c.showOpenDialog(temelIslemlerPaneli);
                 if (rVal == JFileChooser.APPROVE_OPTION) {
                     try {
                         File f = c.getSelectedFile();
@@ -138,18 +115,7 @@ public class DemoPaneli {
         topPanel.add(btnClear);
 
 
-        JButton btnTurkceTest;
-        btnTurkceTest = SwingFactory.getRegularButton("T\u00fcrk\u00e7e Test");
-        btnTurkceTest.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent evt) {
-                cikisAlani.setYazi(dy.turkceTest(girisAlani.getYazi()));
-            }
-        });
-        topPanel.add(btnTurkceTest);
-
         pt.add(topPanel, BorderLayout.NORTH);
-
-
 
         JButton btnDenetle;
         btnDenetle = SwingFactory.getRegularButton("Denetle");
@@ -177,6 +143,15 @@ public class DemoPaneli {
             }
         });
         centerPanel.add(btnDeascii);
+
+        JButton btnDeascii2;
+        btnDeascii2 = SwingFactory.getRegularButton("Ascii->Tr 2");
+        btnDeascii2.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                cikisAlani.setYazi(dy.asciiToTurkceTahmin(girisAlani.getYazi()));
+            }
+        });
+        centerPanel.add(btnDeascii2);        
 
         JButton btnascii;
         btnascii = SwingFactory.getRegularButton("Tr->Ascii");

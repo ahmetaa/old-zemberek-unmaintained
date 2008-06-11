@@ -1,28 +1,5 @@
 /*
- *  ***** BEGIN LICENSE BLOCK *****
- *
- *  Version: MPL 1.1
- *
- *  The contents of this file are subject to the Mozilla Public License Version
- *  1.1 (the "License"); you may not use this file except in compliance with
- *  the License. You may obtain a copy of the License at
- *  http://www.mozilla.org/MPL/
- *
- *  Software distributed under the License is distributed on an "AS IS" basis,
- *  WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
- *  for the specific language governing rights and limitations under the
- *  License.
- *
- *  The Original Code is "Zemberek Dogal Dil Isleme Kutuphanesi"
- *
- *  The Initial Developer of the Original Code is
- *  Ahmet A. Akin, Mehmet D. Akin.
- *  Portions created by the Initial Developer are Copyright (C) 2006
- *  the Initial Developer. All Rights Reserved.
- *
- *  Contributor(s):
- *
- *  ***** END LICENSE BLOCK *****
+ * Lisans bilgisi icin lutfen proje ana dizinindeki zemberek2-lisans.txt dosyasini okuyunuz.
  */
 
 /*
@@ -40,28 +17,29 @@ import java.util.List;
  * @author MDA & GBA
  */
 public class EkZinciri implements Comparable {
-    List ekler = null;
+    List<Ek> ekler = null;
     double kullanimFrekansi = 0.0d;
     int kullanimSayisi;
     String eklerStr = "";
 
     public EkZinciri() {
-        ekler = new ArrayList();
+        ekler = new ArrayList<Ek>();
     }
 
     /**
      * @param ekler
      */
-    public EkZinciri(List ekler) {
-        StringBuffer buf = new StringBuffer();
+    public EkZinciri(List<Ek> ekler) {
         this.ekler = ekler;
+        StringBuilder builder = new StringBuilder();
         for (int i = 0; i < ekler.size(); i++) {
-            buf.append(((Ek) ekler.get(i)).ad());
-            //buf.append(' ');
+            builder.append(ekler.get(i).ad());
+            if (i < ekler.size()-1)
+                builder.append('+');
         }
+        eklerStr = builder.toString();
         kullanimSayisi = 0;
         kullanimFrekansi = 0;
-        eklerStr = buf.toString();
     }
 
     /**
@@ -99,24 +77,12 @@ public class EkZinciri implements Comparable {
     }
 
     public String getStringRep() {
-        StringBuffer s = new StringBuffer();
-        for (int i = 0; i < ekler.size(); i++) {
-            s.append(((Ek) ekler.get(i)).ad());
-            s.append(' ');
-        }
-        return s.toString();
+       return eklerStr;
     }
 
+    @Override
     public String toString() {
-        StringBuffer s = new StringBuffer();
-        for (int i = 0; i < ekler.size()-1; i++) {
-            s.append(((Ek) ekler.get(i)).ad());
-            s.append(' ');
-        }
-        return s.toString();
-//
-//        String res = eklerStr + " Frekans: " + kullanimFrekansi;
-//        return res;
+       return eklerStr;
     }
 
     public String getEklerStr() {
