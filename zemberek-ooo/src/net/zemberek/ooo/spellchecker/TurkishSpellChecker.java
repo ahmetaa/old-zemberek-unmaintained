@@ -168,7 +168,7 @@ public class TurkishSpellChecker extends ComponentBase implements
         short nRes = -1;
         if (IsEqual( aLocale, turkishLocale )){
             if(zemberek != null){
-                if(false == zemberek.denetle(aWord)){
+                if(!zemberek.denetle(aWord)){
                     nRes = SpellFailure.SPELLING_ERROR;
                 }
             }
