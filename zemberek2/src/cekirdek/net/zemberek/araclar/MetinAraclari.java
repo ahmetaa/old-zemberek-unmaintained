@@ -16,9 +16,9 @@ public class MetinAraclari {
      * Degistirilmis Levenshtein Edit Dist. algoritması. transpozisyonları da 1 düzeltme mesafesi
      * olarak hesaplar. 
      * TODO: Alphan'ın mesafe aşımını sezip kısa kesme kodunu ekle.
-     * @param source
-     * @param target
-     * @param limit
+     * @param s kaynak
+     * @param t hedef
+     * @param limit sinir degeri
      * @return iki kelime arasindaki mesafe, tamsayi cinsinden. kucuk rakamlar daha buyuk benzerligi gosterir.
      */
     private static int duzeltmeMesafesi(String s, String t, int limit)
