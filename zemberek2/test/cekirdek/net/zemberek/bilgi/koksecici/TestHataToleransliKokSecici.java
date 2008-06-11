@@ -1,28 +1,5 @@
 /*
- *  ***** BEGIN LICENSE BLOCK *****
- *
- *  Version: MPL 1.1
- *
- *  The contents of this file are subject to the Mozilla Public License Version
- *  1.1 (the "License"); you may not use this file except in compliance with
- *  the License. You may obtain a copy of the License at
- *  http://www.mozilla.org/MPL/
- *
- *  Software distributed under the License is distributed on an "AS IS" basis,
- *  WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
- *  for the specific language governing rights and limitations under the
- *  License.
- *
- *  The Original Code is "Zemberek Dogal Dil Isleme Kutuphanesi"
- *
- *  The Initial Developer of the Original Code is
- *  Ahmet A. Akin, Mehmet D. Akin.
- *  Portions created by the Initial Developer are Copyright (C) 2006
- *  the Initial Developer. All Rights Reserved.
- *
- *  Contributor(s):
- *
- *  ***** END LICENSE BLOCK *****
+ * Lisans bilgisi icin lutfen proje ana dizinindeki zemberek2-lisans.txt dosyasini okuyunuz.
  */
 
 /*
@@ -80,14 +57,14 @@ public class TestHataToleransliKokSecici {
                 TurkceAlfabe.ref(),
                 KokTipiAdlari.getKokTipAdlari());
 //        okuyucu.initialize("kaynaklar/test/tree_test_sozluk.txt");
-        System.out.println("Okuyucu Initialization süresi: " + TimeTracker.getElapsedTimeString("x"));
+        System.out.println("Okuyucu Initialization sï¿½resi: " + TimeTracker.getElapsedTimeString("x"));
         AgacSozluk sozluk = new AgacSozluk(okuyucu, TurkceAlfabe.ref(), TurkceKokOzelDurumlari.ref());
-        System.out.println("Sozluk Initialization süresi: " + TimeTracker.getElapsedTimeString("x"));
+        System.out.println("Sozluk Initialization sï¿½resi: " + TimeTracker.getElapsedTimeString("x"));
         bulucu = sozluk.getKokBulucuFactory().getToleransliKokBulucu();
         List list = bulucu.getAdayKokler("ixtersen");
         //System.out.println("Walk Count : " + bulucu.getYurumeSayisi());
         //System.out.println("Distance Calculation Count : " + bulucu.getDistanceCalculationCount());
-        System.out.println("Tamamlanma süresi: " + TimeTracker.stopClock("x"));
+        System.out.println("Tamamlanma sï¿½resi: " + TimeTracker.stopClock("x"));
         TestUtils.printList(list);
         ToleransliCozumleyici cozumleyici =
                 new ToleransliCozumleyici(bulucu, TurkceEkYonetici.ref(), TurkceAlfabe.ref(), new TurkceCozumlemeYardimcisi(TurkceAlfabe.ref(), null));

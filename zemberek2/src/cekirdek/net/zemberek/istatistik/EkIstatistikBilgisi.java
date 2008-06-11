@@ -1,28 +1,5 @@
 /*
- *  ***** BEGIN LICENSE BLOCK *****
- *
- *  Version: MPL 1.1
- *
- *  The contents of this file are subject to the Mozilla Public License Version
- *  1.1 (the "License"); you may not use this file except in compliance with
- *  the License. You may obtain a copy of the License at
- *  http://www.mozilla.org/MPL/
- *
- *  Software distributed under the License is distributed on an "AS IS" basis,
- *  WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
- *  for the specific language governing rights and limitations under the
- *  License.
- *
- *  The Original Code is "Zemberek Dogal Dil Isleme Kutuphanesi"
- *
- *  The Initial Developer of the Original Code is
- *  Ahmet A. Akin, Mehmet D. Akin.
- *  Portions created by the Initial Developer are Copyright (C) 2006
- *  the Initial Developer. All Rights Reserved.
- *
- *  Contributor(s):
- *
- *  ***** END LICENSE BLOCK *****
+ * Lisans bilgisi icin lutfen proje ana dizinindeki zemberek2-lisans.txt dosyasini okuyunuz.
  */
 
 /*
@@ -40,15 +17,15 @@ public class EkIstatistikBilgisi {
     public static long toplamKullanim = 0;
     private Ek ek;
     private int kullanimSayisi = 0;
-    private HashMap ardisilEkler = new HashMap();
-    List ardisilEkListesi = new ArrayList();
+    private HashMap<String, EkFrekansBilgisi>  ardisilEkler= new HashMap<String, EkFrekansBilgisi>();
+    List<EkFrekansBilgisi> ardisilEkListesi = new ArrayList<EkFrekansBilgisi>();
 
     public EkIstatistikBilgisi(Ek ek) {
         this.ek = ek;
     }
 
     public void ardisilEkEkle(Ek ardisilEk) {
-        EkFrekansBilgisi ekFrek = (EkFrekansBilgisi) ardisilEkler.get(ardisilEk.ad());
+        EkFrekansBilgisi ekFrek = ardisilEkler.get(ardisilEk.ad());
         if (ekFrek == null) {
             ekFrek = new EkFrekansBilgisi(ardisilEk);
             if (ardisilEk.ad() == null) {
@@ -63,9 +40,8 @@ public class EkIstatistikBilgisi {
     }
 
     public void duzenle() {
-        ardisilEkListesi = new ArrayList();
-        for (Iterator it = ardisilEkler.values().iterator(); it.hasNext();) {
-            EkFrekansBilgisi ekFreq = (EkFrekansBilgisi) it.next();
+        ardisilEkListesi = new ArrayList<EkFrekansBilgisi>();
+        for (EkFrekansBilgisi ekFreq : ardisilEkler.values()) {
             ekFreq.setKullanimFrekansi(IstatistikAraclari.yuzdeHesapla(ekFreq.getKullanim(), this.kullanimSayisi));
             ardisilEkListesi.add(ekFreq);
 
@@ -74,7 +50,7 @@ public class EkIstatistikBilgisi {
     }
 
     public String toString() {
-        StringBuffer buffer = new StringBuffer();
+        StringBuilder buffer = new StringBuilder();
         buffer.append(ek.ad() + " Kullanim : %" + IstatistikAraclari.onbindeHesaplaStr(this.kullanimSayisi, toplamKullanim) + "\n");
         for (Iterator i = ardisilEkListesi.iterator(); i.hasNext();) {
             EkFrekansBilgisi freq = (EkFrekansBilgisi) i.next();

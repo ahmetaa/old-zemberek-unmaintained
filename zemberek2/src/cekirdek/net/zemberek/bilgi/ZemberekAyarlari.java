@@ -1,28 +1,5 @@
 /*
- *  ***** BEGIN LICENSE BLOCK *****
- *
- *  Version: MPL 1.1
- *
- *  The contents of this file are subject to the Mozilla Public License Version
- *  1.1 (the "License"); you may not use this file except in compliance with
- *  the License. You may obtain a copy of the License at
- *  http://www.mozilla.org/MPL/
- *
- *  Software distributed under the License is distributed on an "AS IS" basis,
- *  WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
- *  for the specific language governing rights and limitations under the
- *  License.
- *
- *  The Original Code is "Zemberek Dogal Dil Isleme Kutuphanesi"
- *
- *  The Initial Developer of the Original Code is
- *  Ahmet A. Akin, Mehmet D. Akin.
- *  Portions created by the Initial Developer are Copyright (C) 2006
- *  the Initial Developer. All Rights Reserved.
- *
- *  Contributor(s):
- *
- *  ***** END LICENSE BLOCK *****
+ * Lisans bilgisi icin lutfen proje ana dizinindeki zemberek2-lisans.txt dosyasini okuyunuz.
  */
 
 package net.zemberek.bilgi;
@@ -56,12 +33,13 @@ public final class ZemberekAyarlari {
     private URI bilgiAlfabe;
     private URI bilgiDizini;
     private URI bilgiCep;
-    
+
 
     /**
      * classpath kokunden zemberek_'locale_str'.properties dosyasina erismeye calisir.
      * Bu dosyanin normalde projede yer almis olmasi gerekir. Eger bulunamazsa sistem
      * varsayilan degerleri kullanir.
+     *
      * @param dilKisaAdi kisa ad (tr,az vs)
      */
     public ZemberekAyarlari(String dilKisaAdi) {
@@ -101,9 +79,9 @@ public final class ZemberekAyarlari {
                 bilgiCep = new File(dizin, ayarlar.getProperty("bilgi.harf")).toURI();
             }
         } catch (NumberFormatException e) {
-            logger.severe("property erisim hatasi!! Muhtemel tip donusum problemi.. varsayilan parametreler kullanilacak ");
-                   } catch (Exception e) {
-            logger.severe("property erisim hatasi!! propety yer almiyor, ya da adi yanlis yazilmis olabilir. varsayilan konfigurasyon kullanilacak.");
+            logger.severe("property erisim hatasi! Muhtemel tip donusum problemi.. varsayilan parametreler kullanilacak ");
+        } catch (Exception e) {
+            logger.severe("property erisim hatasi! property yer almiyor, ya da adi yanlis yazilmis olabilir. varsayilan konfigurasyon kullanilacak.");
         }
     }
 

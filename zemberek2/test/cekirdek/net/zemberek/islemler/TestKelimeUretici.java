@@ -1,29 +1,5 @@
 /*
- *  ***** BEGIN LICENSE BLOCK *****
- *
- *  Version: MPL 1.1
- *
- *  The contents of this file are subject to the Mozilla Public License Version
- *  1.1 (the "License"); you may not use this file except in compliance with
- *  the License. You may obtain a copy of the License at
- *  http://www.mozilla.org/MPL/
- *
- *  Software distributed under the License is distributed on an "AS IS" basis,
- *  WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
- *  for the specific language governing rights and limitations under the
- *  License.
- *
- *  The Original Code is "Zemberek Dogal Dil Isleme Kutuphanesi"
- *
- *  The Initial Developer of the Original Code is
- *  Ahmet A. Akin, Mehmet D. Akin.
- *  Portions created by the Initial Developer are Copyright (C) 2006
- *  the Initial Developer. All Rights Reserved.
- *
- *  Contributor(s):
- *   Serkan Kaba
- *
- *  ***** END LICENSE BLOCK *****
+ * Lisans bilgisi icin lutfen proje ana dizinindeki zemberek2-lisans.txt dosyasini okuyunuz.
  */
 
 package net.zemberek.islemler;
@@ -46,8 +22,8 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.List;
+import java.util.ArrayList;
 
 /**
  */
@@ -71,26 +47,32 @@ public class TestKelimeUretici extends TemelTest {
         return dilBilgisi.ekler().ek(ad);
     }
 
+    private List<Ek> ekDizisi(String... ekAdlari) {
+        List<Ek> ekler = new ArrayList<Ek>();
+        for (String s : ekAdlari)
+            ekler.add(ek(s));
+        return ekler;
+    }
+
     @Test
     public void testKelimeUret() {
 
         Kok kok = kokler.kokBul("armut", KelimeTipi.ISIM);
-        List<Ek> ekler = Arrays.asList(
-                ek(ISIM_KOK),
-                ek(ISIM_SAHIPLIK_BIZ_IMIZ),
-                ek(ISIM_TANIMLAMA_DIR));
+        List<Ek> ekler = ekDizisi(ISIM_KOK, ISIM_SAHIPLIK_BIZ_IMIZ, ISIM_TANIMLAMA_DIR);
         assertEquals("armudumuzdur", kelimeUretici.kelimeUret(kok, ekler));
 
+        Kelime almanyada = cozumleyici.cozumle("Almanya'da", CozumlemeSeviyesi.TEK_KOK)[0];
+        assertEquals("Almanya'da", kelimeUretici.kelimeUret(almanyada.kok(), almanyada.ekler()));
+
         kok = kokler.kokBul("sabret", KelimeTipi.FIIL);
-        ekler = Arrays.asList(
-                ek(FIIL_KOK), ek(FIIL_YETENEK_EBIL),
-                ek(FIIL_GELECEKZAMAN_ECEK), ek(FIIL_KISI_BIZ));
+        ekler = ekDizisi(FIIL_KOK, FIIL_YETENEK_EBIL, FIIL_GELECEKZAMAN_ECEK, FIIL_KISI_BIZ);
         assertEquals("sabredebilece\u011fiz", kelimeUretici.kelimeUret(kok, ekler));
     }
 
     /**
      * fonksiyonel olusum testi. hepsi-dogru.txt dosyasindaki kelimeleri cozumleyip geri olusturur.
      * TODO:kisaltmalar islemiyor.
+     *
      * @throws java.io.IOException
      */
     @Ignore("Henuz kisaltmalarda islemiyor.")
@@ -108,14 +90,14 @@ public class TestKelimeUretici extends TemelTest {
 
     @Test
     public void testEkAyristirma() {
-    	String l1[] = { "kedi","le","r","im"};
-    	String l2[] = { "kedi","ler","im"};
-        Kelime[] cozumler = cozumleyici.cozumle("kedilerim",  CozumlemeSeviyesi.TEK_KOK);
+        String l1[] = {"kedi", "le", "r", "im"};
+        String l2[] = {"kedi", "ler", "im"};
+        Kelime[] cozumler = cozumleyici.cozumle("kedilerim", CozumlemeSeviyesi.TEK_KOK);
         for (Kelime kel : cozumler) {
-            if(kel.ekSayisi()==4)
-              assertEquals(l1 , kelimeUretici.ayristir(kel));
+            if (kel.ekSayisi() == 4)
+                assertEquals(l1, kelimeUretici.ayristir(kel));
             else
-              assertEquals(l2 , kelimeUretici.ayristir(kel));
+                assertEquals(l2, kelimeUretici.ayristir(kel));
         }
     }
 

@@ -1,28 +1,5 @@
 /*
- *  ***** BEGIN LICENSE BLOCK *****
- *
- *  Version: MPL 1.1
- *
- *  The contents of this file are subject to the Mozilla Public License Version
- *  1.1 (the "License"); you may not use this file except in compliance with
- *  the License. You may obtain a copy of the License at
- *  http://www.mozilla.org/MPL/
- *
- *  Software distributed under the License is distributed on an "AS IS" basis,
- *  WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
- *  for the specific language governing rights and limitations under the
- *  License.
- *
- *  The Original Code is "Zemberek Dogal Dil Isleme Kutuphanesi"
- *
- *  The Initial Developer of the Original Code is
- *  Ahmet A. Akin, Mehmet D. Akin.
- *  Portions created by the Initial Developer are Copyright (C) 2006
- *  the Initial Developer. All Rights Reserved.
- *
- *  Contributor(s):
- *
- *  ***** END LICENSE BLOCK *****
+ * Lisans bilgisi icin lutfen proje ana dizinindeki zemberek2-lisans.txt dosyasini okuyunuz.
  */
 
 package net.zemberek.demo;
@@ -32,7 +9,6 @@ import net.zemberek.araclar.turkce.YaziBirimi;
 import net.zemberek.araclar.turkce.YaziBirimiTipi;
 import net.zemberek.araclar.turkce.YaziIsleyici;
 import net.zemberek.erisim.Zemberek;
-import net.zemberek.islemler.TurkceYaziTesti;
 import net.zemberek.yapi.DilBilgisi;
 import net.zemberek.yapi.Kelime;
 
@@ -88,7 +64,7 @@ public class DemoYonetici {
             case YAZI_COZUMLE:
                 return yaziCozumle(giris);
             case ASCII_TURKCE:
-                return asciiToTurkce(giris);
+                return asciiToTurkceTahmin(giris);
             case TURKCE_ASCII:
                 return turkceToAscii(giris);
             case HECELE:
@@ -162,6 +138,33 @@ public class DemoYonetici {
     }
 
 
+    public String asciiToTurkceTahmin(String giris) {
+        List<YaziBirimi> analizDizisi = YaziIsleyici.analizDizisiOlustur(giris);
+        StringBuffer sonuc = new StringBuffer();
+        for (YaziBirimi birim : analizDizisi) {
+            if (birim.tip == YaziBirimiTipi.KELIME) {
+                Kelime[] sonuclar = zemberek.asciiCozumle(birim.icerik);
+                if (sonuclar.length > 0)
+                    sonuc.append(applyCase(birim.icerik, sonuclar[0].icerik().toString()));
+                else
+                    sonuc.append(birim.icerik);
+            } else
+                sonuc.append(birim.icerik);
+        }
+        return sonuc.toString();
+    }
+
+    private String applyCase(String caseStr, String source) {
+        char[] chrs = caseStr.toCharArray();
+        char[] chrz = source.toCharArray();
+        for (int i = 0; i < chrs.length; i++) {
+            if (Character.isUpperCase(chrs[i]))
+                chrz[i] = dilBilgisi.alfabe().buyukHarf(chrz[i]).charDeger();
+        }
+        return new String(chrz);
+    }
+
+
     public String turkceToAscii(String giris) {
         List analizDizisi = YaziIsleyici.analizDizisiOlustur(giris);
         StringBuffer sonuc = new StringBuffer();
@@ -225,18 +228,5 @@ public class DemoYonetici {
             sonuc.append(birim.icerik);
         }
         return sonuc.toString();
-    }
-
-    public String turkceTest(String giris) {
-        int sonuc = zemberek.dilTesti(giris);
-        if (sonuc == TurkceYaziTesti.HIC)
-            return "Turkce degil";
-        if (sonuc == TurkceYaziTesti.AZ)
-            return "Yazi Turkce degil ama turkce olabilecek kelimeler iceriyor";
-        if (sonuc == TurkceYaziTesti.ORTA)
-            return "Turkce. Cok miktarda yanlis yazilmis ya da yabanci kelime iceriyor ";
-        if (sonuc == TurkceYaziTesti.YUKSEK)
-            return "Turkce. Yanlis yazilmis ya da yabanci kelimeler iceriyor";
-        return "Turkce";
     }
 }

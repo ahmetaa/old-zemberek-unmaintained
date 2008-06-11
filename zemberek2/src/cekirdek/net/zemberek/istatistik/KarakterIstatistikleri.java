@@ -1,28 +1,5 @@
 /*
- *  ***** BEGIN LICENSE BLOCK *****
- *
- *  Version: MPL 1.1
- *
- *  The contents of this file are subject to the Mozilla Public License Version
- *  1.1 (the "License"); you may not use this file except in compliance with
- *  the License. You may obtain a copy of the License at
- *  http://www.mozilla.org/MPL/
- *
- *  Software distributed under the License is distributed on an "AS IS" basis,
- *  WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
- *  for the specific language governing rights and limitations under the
- *  License.
- *
- *  The Original Code is "Zemberek Dogal Dil Isleme Kutuphanesi"
- *
- *  The Initial Developer of the Original Code is
- *  Ahmet A. Akin, Mehmet D. Akin.
- *  Portions created by the Initial Developer are Copyright (C) 2006
- *  the Initial Developer. All Rights Reserved.
- *
- *  Contributor(s):
- *
- *  ***** END LICENSE BLOCK *****
+ * Lisans bilgisi icin lutfen proje ana dizinindeki zemberek2-lisans.txt dosyasini okuyunuz.
  */
 
 /*
@@ -31,6 +8,8 @@
 package net.zemberek.istatistik;
 
 import net.zemberek.araclar.IstatistikAraclari;
+
+import java.util.*;
 
 /**
  * @author MDA & GBA
@@ -107,23 +86,43 @@ public class KarakterIstatistikleri {
                 + "\nOrtalama Cümle uz.  : " + ortalamaCumleBoyu
                 ;
 
-        long toplamHarf = 0; 
-        for (int i = 0; i < harfDagilimi.length; i++) toplamHarf+= harfDagilimi[i];
+        long toplamHarf = 0;
+        for (int miktar : harfDagilimi)
+            toplamHarf += miktar;
         
         str += "\n\nHarf Dagilimi";
+
+        List<CharFreq> list = new ArrayList<CharFreq>();
         for (int i = 0; i < harfDagilimi.length; i++) {
-            if (harfDagilimi[i] > 0){
-                str = str +"\nHarf " + (char) i + ": " + harfDagilimi[i] 
-                    + " %" + IstatistikAraclari.yuzdeHesaplaStr(harfDagilimi[i] , toplamHarf);
-            }
+            if( harfDagilimi[i] >0 )
+              list.add(new CharFreq((char) i, harfDagilimi[i]));
+        }
+        Collections.sort(list);
+
+        for (CharFreq charFreq : list) {
+            str = str +"\nHarf " + charFreq.c + ": " + charFreq.i
+                + " %" + IstatistikAraclari.yuzdeHesaplaStr(charFreq.i , toplamHarf);
+
         }
 
-//        str += "\nRakam Dagilimi";
-//        for (int i = 0; i < rakamDagilimi.length; i++) {
-//            str += "\nRakam " + i + " : " + rakamDagilimi[i];
-//        }
         str+="\n";
         return str;
+    }
+
+    private class CharFreq implements Comparable<CharFreq> {
+        char c;
+        int i;
+
+        private CharFreq(char c, int i) {
+            this.c = c;
+            this.i = i;
+        }
+
+        public int compareTo(CharFreq charFreq) {
+            if (i < charFreq.i) return 1;
+            else if (i > charFreq.i) return -1;
+            return 0;
+        }
     }
 
 

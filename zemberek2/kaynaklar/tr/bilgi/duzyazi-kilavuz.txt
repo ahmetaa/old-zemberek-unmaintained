@@ -1,4 +1,4 @@
-﻿aba IS
+﻿﻿aba IS
 abadî IS
 abajur IS
 abaküs IS
@@ -366,6 +366,7 @@ ahzükabz IS
 aidat IS
 aidiyet IS
 aile IS
+ailecek IS
 ailevî IS EK
 ait IS
 ajan IS
@@ -15632,7 +15633,7 @@ gökkandil IS
 #gök kır (renk)
 #gök kubbe
 #gök kumu
-gökkuşağı IS
+#gök kuşağı
 #gök kutbu
 gökkuzgun IS
 gökkuzgungiller IS
@@ -15985,6 +15986,7 @@ gözaltı IS
 #göz aşısı
 #göz aşinalığı
 gözaydın IS
+gözardı IS YAL
 #göz bağcı
 #göz bağcılık,-ğı
 #göz bağı
@@ -41052,7 +41054,6 @@ sinematograf IS
 sinerama IS
 sinerji IS
 sinestezi IS
-Singapur OZ
 singin IS
 sini IS
 #sinik,-ği

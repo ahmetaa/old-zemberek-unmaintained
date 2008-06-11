@@ -1,28 +1,5 @@
 /*
- *  ***** BEGIN LICENSE BLOCK *****
- *
- *  Version: MPL 1.1
- *
- *  The contents of this file are subject to the Mozilla Public License Version
- *  1.1 (the "License"); you may not use this file except in compliance with
- *  the License. You may obtain a copy of the License at
- *  http://www.mozilla.org/MPL/
- *
- *  Software distributed under the License is distributed on an "AS IS" basis,
- *  WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
- *  for the specific language governing rights and limitations under the
- *  License.
- *
- *  The Original Code is "Zemberek Dogal Dil Isleme Kutuphanesi"
- *
- *  The Initial Developer of the Original Code is
- *  Ahmet A. Akin, Mehmet D. Akin.
- *  Portions created by the Initial Developer are Copyright (C) 2006
- *  the Initial Developer. All Rights Reserved.
- *
- *  Contributor(s):
- *
- *  ***** END LICENSE BLOCK *****
+ * Lisans bilgisi icin lutfen proje ana dizinindeki zemberek2-lisans.txt dosyasini okuyunuz.
  */
 
 /*
@@ -46,7 +23,7 @@ public class TestOner {
     public static void cozumle(String str) {
         if (zemberek.kelimeDenetle(str) == true) {
             Kelime[] sonuc = zemberek.kelimeCozumle(str);
-            System.out.println("Oluþan çözümleme sayýsý: " + sonuc.length);
+            System.out.println("Oluï¿½an ï¿½ï¿½zï¿½mleme sayï¿½sï¿½: " + sonuc.length);
             for (Kelime kelime : sonuc) {
                 Kok kok = kelime.kok();
                 System.out.println("Kok :" + kok.icerik() + " Tipi : " + kok.tip().toString());
@@ -63,7 +40,7 @@ public class TestOner {
         } else {
             String[] oneriler = zemberek.oner(str);
             if (oneriler.length==0) {
-                System.out.println(str + " Türkçe deðil, Öneri üretiliyor:");
+                System.out.println(str + " Tï¿½rkï¿½e deï¿½il, ï¿½neri ï¿½retiliyor:");
                 for (int i = 0; i < oneriler.length; i++) {
                     System.out.println("Oneri-" + " : " + oneriler[i]);
                 }

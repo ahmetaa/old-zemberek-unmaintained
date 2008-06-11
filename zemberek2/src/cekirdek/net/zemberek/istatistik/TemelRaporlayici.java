@@ -1,28 +1,5 @@
 /*
- *  ***** BEGIN LICENSE BLOCK *****
- *
- *  Version: MPL 1.1
- *
- *  The contents of this file are subject to the Mozilla Public License Version
- *  1.1 (the "License"); you may not use this file except in compliance with
- *  the License. You may obtain a copy of the License at
- *  http://www.mozilla.org/MPL/
- *
- *  Software distributed under the License is distributed on an "AS IS" basis,
- *  WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
- *  for the specific language governing rights and limitations under the
- *  License.
- *
- *  The Original Code is "Zemberek Dogal Dil Isleme Kutuphanesi"
- *
- *  The Initial Developer of the Original Code is
- *  Ahmet A. Akin, Mehmet D. Akin.
- *  Portions created by the Initial Developer are Copyright (C) 2006
- *  the Initial Developer. All Rights Reserved.
- *
- *  Contributor(s):
- *
- *  ***** END LICENSE BLOCK *****
+ * Lisans bilgisi icin lutfen proje ana dizinindeki zemberek2-lisans.txt dosyasini okuyunuz.
  */
 
 /*
@@ -68,13 +45,15 @@ public abstract class TemelRaporlayici implements IstatistikRaporlayici {
 
             writer.write("\nGenel istatistikler:\n");
             writer.write("------------------------\n");
-            
+
+            writer.write("\nEn cok kullanilan ilk kac kok toplam koklerin yuzde kacini olusturuyor?:\n");
             for (int i = 0; i < kokIst.getAraToplamSayaci(); i++) {
                 writer.write("-> ilk " + kokIst.getKontrolDizisi()[i]
                         + " kok, toplamın %" + kokIst.getKokKapsamaYuzdeleri()[i] + "\n");
             }
             writer.write("\n");
 
+            writer.write("\nEk miktari kullanim oranlari:\n");
             int[] toplamEkUzunlukSayilari = kokIst.getToplamEkUzunlukSayilari();
             long toplamKelime = kokIst.getToplamKelime();
             long toplamKokSayisi = kokIst.getToplamKokSayisi();
@@ -84,6 +63,7 @@ public abstract class TemelRaporlayici implements IstatistikRaporlayici {
                         + "\n");
             }
             writer.write("\n");
+            writer.write("\nCozulebilen Kelime tip dagilimi (isaretleme eksikligi nedeniyle isim-fiil harici hatali olabilir):\n");
             writer.write("Toplam kelime sayısı: " + toplamKelime + "\n");
             writer.write("Toplam isim sayisi: " + kokIst.getToplamIsimSayisi()
                     + "  Oran: %" + IstatistikAraclari.yuzdeHesaplaStr(kokIst.getToplamIsimSayisi(), toplamKelime)
@@ -103,7 +83,8 @@ public abstract class TemelRaporlayici implements IstatistikRaporlayici {
             writer.write("Toplam fiil kök sayisi: " + kokIst.getToplamFiilKokSayisi()
                     + "  Oran: %" + IstatistikAraclari.yuzdeHesaplaStr(kokIst.getToplamFiilKokSayisi(), toplamKokSayisi) + "\n");
             writer.write("\n\n");
-            
+
+            writer.write("\nEn cok kullanilan kelimeler:\n");
             int sayac = 1;
             int toplam = 0;
             List ikiliHarfler = kelimeIst.getKelimeListesi();
@@ -121,6 +102,7 @@ public abstract class TemelRaporlayici implements IstatistikRaporlayici {
 			}
             
             writer.write("\n\n");
+            writer.write("\nEn cok kullanilan kok ve bagli ek oranlari:\n");               
             sayac = 1;
             limit = istatistikler.getKokLimit() > kokListesi.size() ? kokListesi.size():istatistikler.getKokLimit(); 
             for (int i = 0; i < limit ; i++) {
@@ -144,7 +126,7 @@ public abstract class TemelRaporlayici implements IstatistikRaporlayici {
                                 + " Toplam: %" + IstatistikAraclari.df.format(ekKapsam) + "\n");
                     }
                 }
-                writer.write("----> Kullanım oranı %0.1'den fazla olan ek zincirlerinin kapsam oran�: %"
+                writer.write("----> Kullanım oranı %0.1'den fazla olan ek zincirlerinin kapsam oranı: %"
                         + IstatistikAraclari.df.format(ekKapsam) + "\n\n");
                 writer.write(report);
             }
@@ -182,7 +164,7 @@ public abstract class TemelRaporlayici implements IstatistikRaporlayici {
             
             // Hece Istaistikleri
             long araToplam = 0;
-            for (int i = 0; i < heceIst.getHeceListesi().size(); i++) {
+            for (int i = 0; i < heceIst.getHeceListesi().size() && i<istatistikler.getHeceLimit(); i++) {
                 Hece hece = (Hece) heceIst.getHeceListesi().get(i);
                 araToplam += hece.getKullanim();
                 writer.write(i + ". " + hece.getHece() + " [" + hece.getKullanim() + "] Oran(%): "

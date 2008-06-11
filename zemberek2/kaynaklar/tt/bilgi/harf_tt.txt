@@ -20,5 +20,5 @@ sert-donusum=c-ç,ğ-k,b-p,d-t
 # ascii-turkce ozlelikleriinn tam tersi sayilir ama daha az bilgi iceriyor. sapkali harflerin donusumunde
 # cift olasilik olmasi nedeniyle.
 ascii-turkce=c-ç,g-ğ,i-ı,I-İ,o-ö,s-ş,u-ü,a-ä,C-Ç,G-Ğ,O-Ö,S-Ş,U-Ü
-# atarca locale bilgisi yetersiz oldugundna turkce locale bilgisi harf donusunlerinde kullanilacak.
+# Tatarca locale bilgisi yetersiz oldugundna turkce locale bilgisi harf donusunlerinde kullanilacak.
 locale=tr

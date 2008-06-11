@@ -1,5 +1,8 @@
 Surum Degisiklikler listesi
 
+Surum 2.1
+- Cesitli hata giderimi.
+
 Surum 2.0 (11 subat 2007)
 - Zemberek alt yapisi tamamen dilden bagimsiz hale getirildi. Kod buyuk oranda elden gecirildi.
 - xml ek tnaimlama sitemi degisti.

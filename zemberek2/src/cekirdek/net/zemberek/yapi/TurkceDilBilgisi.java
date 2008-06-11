@@ -1,28 +1,5 @@
 /*
- *  ***** BEGIN LICENSE BLOCK *****
- *
- *  Version: MPL 1.1
- *
- *  The contents of this file are subject to the Mozilla Public License Version
- *  1.1 (the "License"); you may not use this file except in compliance with
- *  the License. You may obtain a copy of the License at
- *  http://www.mozilla.org/MPL/
- *
- *  Software distributed under the License is distributed on an "AS IS" basis,
- *  WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
- *  for the specific language governing rights and limitations under the
- *  License.
- *
- *  The Original Code is "Zemberek Dogal Dil Isleme Kutuphanesi"
- *
- *  The Initial Developer of the Original Code is
- *  Ahmet A. Akin, Mehmet D. Akin.
- *  Portions created by the Initial Developer are Copyright (C) 2006
- *  the Initial Developer. All Rights Reserved.
- *
- *  Contributor(s):
- *
- *  ***** END LICENSE BLOCK *****
+ * Lisans bilgisi icin lutfen proje ana dizinindeki zemberek2-lisans.txt dosyasini okuyunuz.
  */
 
 package net.zemberek.yapi;
@@ -130,8 +107,7 @@ public class TurkceDilBilgisi implements DilBilgisi {
                 Constructor c = clazz.getConstructor(String.class, String.class);
                 alfabe = (Alfabe) c.newInstance(alfabeDosyaAdi, dilAyarlari.locale().getLanguage());
             } catch (Exception e) {
-                logger.severe("Alfabe uretilemiyor. muhtemel dosya erisim hatasi.");
-                e.printStackTrace();
+                logger.severe("Alfabe uretilemiyor. muhtemel dosya erisim hatasi."+ e.getMessage());
             }
         return alfabe;
     }
@@ -155,8 +131,7 @@ public class TurkceDilBilgisi implements DilBilgisi {
                         XmlEkOkuyucu.class);
                 ekYonetici = (EkYonetici) c.newInstance(dilAyarlari.baslangiEkAdlari(), ekOkuyucu);
             } catch (Exception e) {
-                logger.severe("ek yonetici sinif uretilemiyor.");
-                e.printStackTrace();
+                logger.severe("ek yonetici sinif uretilemiyor." + e.getMessage());
             }
         }
         return ekYonetici;
@@ -181,8 +156,7 @@ public class TurkceDilBilgisi implements DilBilgisi {
                 try {
                     ikiliKokDosyasiUret();
                 } catch (IOException e) {
-                    e.printStackTrace();
-                    logger.severe("kok bilgilerine erisim saglanamadigindan uygulama calismaya devam edemez.");
+                    logger.severe("kok bilgilerine erisim saglanamadigindan uygulama calismaya devam edemez." + e.getMessage());
                     return null;
                 }
             }
@@ -193,8 +167,7 @@ public class TurkceDilBilgisi implements DilBilgisi {
                 logger.fine("Sozluk ve agac uretiliyor:" + dilAdi);
                 sozluk = new AgacSozluk(okuyucu, alfabe, ozelDurumBilgisi);
             } catch (IOException e) {
-                e.printStackTrace();
-                logger.severe("sozluk uretilemiyor.");
+                logger.severe("sozluk uretilemiyor." + e.getMessage());
             }
         }
         return sozluk;
@@ -210,8 +183,7 @@ public class TurkceDilBilgisi implements DilBilgisi {
                 Constructor c = clazz.getConstructor(EkYonetici.class, Alfabe.class);
                 ozelDurumBilgisi = (KokOzelDurumBilgisi) c.newInstance(ekYonetici, alfabe);
             } catch (Exception e) {
-                logger.severe("kok ozel durum bilgi nesnesi uretilemiyor.");
-                e.printStackTrace();
+                logger.severe("kok ozel durum bilgi nesnesi uretilemiyor."+ e.getMessage());
             }
         }
         return ozelDurumBilgisi;
@@ -250,7 +222,7 @@ public class TurkceDilBilgisi implements DilBilgisi {
                     Constructor c = clazz.getConstructor();
                     heceleyici = (Heceleyici) c.newInstance();
                 } catch (Exception e2) {
-                    logger.warning("heceleyici nesnesi uretilemiyor. heceleme islemi basarisiz olacak.");
+                    logger.warning("heceleyici nesnesi uretilemiyor. heceleme islemi basarisiz olacak."+ e2.getMessage());
                 }
             }
         }
@@ -268,8 +240,7 @@ public class TurkceDilBilgisi implements DilBilgisi {
                 Constructor c = clazz.getConstructor(Alfabe.class);
                 yardimci = (CozumlemeYardimcisi) c.newInstance(alfabe);
             } catch (Exception e) {
-                logger.severe("cozumleme yardimcisi nesnesi uretilemiyor.");
-                e.printStackTrace();
+                logger.severe("cozumleme yardimcisi nesnesi uretilemiyor."+ e.getMessage());
             }
         }
         return yardimci;
