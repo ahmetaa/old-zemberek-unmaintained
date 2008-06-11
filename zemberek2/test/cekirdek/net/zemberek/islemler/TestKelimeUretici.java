@@ -67,6 +67,10 @@ public class TestKelimeUretici extends TemelTest {
         kok = kokler.kokBul("sabret", KelimeTipi.FIIL);
         ekler = ekDizisi(FIIL_KOK, FIIL_YETENEK_EBIL, FIIL_GELECEKZAMAN_ECEK, FIIL_KISI_BIZ);
         assertEquals("sabredebilece\u011fiz", kelimeUretici.kelimeUret(kok, ekler));
+        
+        kok = kokler.kokBul("sabret", KelimeTipi.FIIL);
+        ekler = ekDizisi(FIIL_YETENEK_EBIL, FIIL_GELECEKZAMAN_ECEK, FIIL_KISI_BIZ);
+        assertEquals("sabredebilece\u011fiz", kelimeUretici.kelimeUret(kok, ekler));
     }
 
     /**
