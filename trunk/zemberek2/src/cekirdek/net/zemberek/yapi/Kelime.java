@@ -12,7 +12,7 @@ import java.util.List;
 public class Kelime implements Cloneable {
 
     private static final HarfDizisi BOS_ICERIK = new HarfDizisi(0);
-    private HarfDizisi icerik=BOS_ICERIK;
+    private HarfDizisi icerik = BOS_ICERIK;
     private Kok kok;
     private List<Ek> ekler = new ArrayList<Ek>(3);
     private KelimeTipi tip;
@@ -97,18 +97,26 @@ public class Kelime implements Cloneable {
         ekler.add(ek);
     }
 
+    public boolean ekVarmi(String ekAdi) {
+        for (Ek ek : ekler) {
+            if (ek.ad().equalsIgnoreCase(ekAdi))
+                return true;
+        }
+        return false;
+    }
+
     public Kok kok() {
         return kok;
     }
 
     public String toString() {
         StringBuilder str = new StringBuilder(" [ Kok: " + kok.icerik() + ", " + kok.tip() + " ] ");
-        if(ekler.size()>1)
-           str.append(" Ekler: ");
+        if (ekler.size() > 1)
+            str.append(" Ekler: ");
         for (int i = 1; i < ekler.size(); i++) {
             str.append(ekler.get(i).ad());
-            if(i<ekler.size()-1)
-              str.append(" + ");
+            if (i < ekler.size() - 1)
+                str.append(" + ");
         }
         return str.toString();
     }
@@ -120,9 +128,10 @@ public class Kelime implements Cloneable {
     /**
      * Kelime icerisinde sadece kok ya da kok tipini belirten baslangic eki var ise bu metod
      * true dondurur. Eger baska bir ek eklenmis ise true doner.
+     *
      * @return
      */
     public boolean gercekEkYok() {
-        return ekler.size()<2;
+        return ekler.size() < 2;
     }
 }

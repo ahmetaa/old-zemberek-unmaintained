@@ -8,10 +8,7 @@ import net.zemberek.araclar.Kayitci;
 
 import java.io.*;
 import java.net.URI;
-import java.util.Properties;
-import java.util.Arrays;
-import java.util.Map;
-import java.util.HashMap;
+import java.util.*;
 import java.util.logging.Logger;
 import java.nio.charset.Charset;
 
@@ -161,10 +158,9 @@ public class KaynakYukleyici {
      */
     public Map<String, String> kodlamaliOzellikDosyasiOku(String dosyaAdi) throws IOException {
         BufferedReader reader = null;
-        Map<String, String> ozellikler;
         try {
             reader = getReader(dosyaAdi);
-            ozellikler = new HashMap<String, String>();
+            Map<String, String> ozellikler = new HashMap<String, String>();
             while (reader.ready()) {
                 String line = reader.readLine().trim();
                 if (line.length() == 0 || line.charAt(0) == '#')
