@@ -15,11 +15,13 @@ import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.*;
 import net.zemberek.yapi.Kelime;
 import net.zemberek.yapi.KelimeTipi;
 import net.zemberek.yapi.Kok;
+import net.zemberek.yapi.Alfabe;
 import net.zemberek.yapi.ek.Ek;
 import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
+import org.junit.Assert;
 
 import java.io.IOException;
 import java.util.List;
@@ -36,7 +38,7 @@ public class TestKelimeUretici extends TemelTest {
     @Before
     public void once() throws IOException {
         super.once();
-        kelimeUretici = new KelimeUretici(alfabe, dilBilgisi.cozumlemeYardimcisi());
+        kelimeUretici = new KelimeUretici(alfabe, dilBilgisi.ekler(), dilBilgisi.cozumlemeYardimcisi());
         //Normal denetleyici-cozumleyici olusumu
         KokAdayiBulucu kokBulucu = dilBilgisi.kokler().kokBulucuFactory().kesinKokBulucu();
         cozumleyici = new StandartCozumleyici(kokBulucu, new KesinHDKiyaslayici(), alfabe, dilBilgisi.ekler(), dilBilgisi.cozumlemeYardimcisi());
@@ -67,10 +69,28 @@ public class TestKelimeUretici extends TemelTest {
         kok = kokler.kokBul("sabret", KelimeTipi.FIIL);
         ekler = ekDizisi(FIIL_KOK, FIIL_YETENEK_EBIL, FIIL_GELECEKZAMAN_ECEK, FIIL_KISI_BIZ);
         assertEquals("sabredebilece\u011fiz", kelimeUretici.kelimeUret(kok, ekler));
-        
+
         kok = kokler.kokBul("sabret", KelimeTipi.FIIL);
         ekler = ekDizisi(FIIL_YETENEK_EBIL, FIIL_GELECEKZAMAN_ECEK, FIIL_KISI_BIZ);
         assertEquals("sabredebilece\u011fiz", kelimeUretici.kelimeUret(kok, ekler));
+    }
+
+    private static String I = String.valueOf(Alfabe.CHAR_ii);
+
+    @Test
+    public void testKelimeUretRasgeleDiziliEk() {
+
+        Kok kok = kokler.kokBul("armut", KelimeTipi.ISIM);
+        List<Ek> ekler = ekDizisi(ISIM_YONELME_E, ISIM_TANIMLAMA_DIR, ISIM_SAHIPLIK_BIZ_IMIZ);
+        assertEquals("armudumuzad" + I + "r", kelimeUretici.sirasizEklerleUret(kok, ekler));
+
+        kok = kokler.kokBul("sabret", KelimeTipi.FIIL);
+        ekler = ekDizisi(FIIL_GELECEKZAMAN_ECEK, FIIL_YETENEK_EBIL, FIIL_KOK, FIIL_KISI_BIZ);
+        assertEquals("sabredebilece\u011fiz", kelimeUretici.sirasizEklerleUret(kok, ekler));
+
+        kok = kokler.kokBul("sabret", KelimeTipi.FIIL);
+        ekler = ekDizisi(FIIL_YETENEK_EBIL, FIIL_GELECEKZAMAN_ECEK, FIIL_KISI_BIZ, ISIM_DONUSUM_LES);
+        Assert.assertEquals("sabret", kelimeUretici.sirasizEklerleUret(kok, ekler));
     }
 
     /**

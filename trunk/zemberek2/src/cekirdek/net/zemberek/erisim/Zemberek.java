@@ -105,7 +105,7 @@ public class Zemberek {
         asciiDonusturucu = new AsciiDonusturucu(dilBilgisi.alfabe());
         heceIslemleri = new HeceIslemleri(dilBilgisi.alfabe(), dilBilgisi.heceBulucu());
 
-        kelimeUretici = new KelimeUretici(dilBilgisi.alfabe(), dilBilgisi.cozumlemeYardimcisi());
+        kelimeUretici = new KelimeUretici(dilBilgisi.alfabe(), dilBilgisi.ekler(), dilBilgisi.cozumlemeYardimcisi());
 
         denetlemeCebi = dilBilgisi.denetlemeCebi();
     }

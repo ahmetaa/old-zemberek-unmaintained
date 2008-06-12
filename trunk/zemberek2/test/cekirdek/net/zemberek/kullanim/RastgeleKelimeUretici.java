@@ -32,7 +32,7 @@ public class RastgeleKelimeUretici {
         DilBilgisi db = new TurkceDilBilgisi(new TurkiyeTurkcesi());
         alfabe = db.alfabe();
         ekYonetici = db.ekler();
-        kelimeUretici = new KelimeUretici(alfabe, db.cozumlemeYardimcisi());
+        kelimeUretici = new KelimeUretici(alfabe, ekYonetici, db.cozumlemeYardimcisi());
 
         for (Kok kok : db.kokler().tumKokler()) {
             if (kok.tip() == KelimeTipi.ISIM) {

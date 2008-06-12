@@ -31,7 +31,7 @@ public class TemelEkYonetici implements EkYonetici {
     public TemelEkYonetici(Map<KelimeTipi, String> baslangicEkMap,
                            XmlEkOkuyucu okuyucu) throws IOException {
 
-         long start = System.currentTimeMillis();
+        long start = System.currentTimeMillis();
         okuyucu.xmlOku();
         ekler = okuyucu.getEkler();
         for (KelimeTipi tip : baslangicEkMap.keySet()) {
@@ -61,7 +61,7 @@ public class TemelEkYonetici implements EkYonetici {
      * Kok nesnesinin tipine gore gelebilecek ilk ek'i dondurur.
      * Baslangic ekleri bilgisi dil tarafindan belirlenir.
      *
-     * @param kok
+     * @param kok baslangic eki belirlemede kullanilacak kok.
      * @return ilk Ek, eger kok tipi baslangic ekleri <baslangicEkleri>
      *         haritasinda belirtilmemisse BOS_EK doner.
      */
