@@ -27,9 +27,11 @@
 
 package net.zemberek.az.islemler;
 
-import net.zemberek.islemler.DenetlemeCebi;
 import net.zemberek.islemler.cozumleme.CozumlemeYardimcisi;
-import net.zemberek.yapi.*;
+import net.zemberek.yapi.Alfabe;
+import net.zemberek.yapi.HarfDizisi;
+import net.zemberek.yapi.Kelime;
+import net.zemberek.yapi.Kok;
 
 
 /**

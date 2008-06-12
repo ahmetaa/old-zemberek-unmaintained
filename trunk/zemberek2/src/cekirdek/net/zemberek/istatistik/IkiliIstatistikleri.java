@@ -10,6 +10,7 @@ package net.zemberek.istatistik;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * @author MDA
@@ -51,7 +52,7 @@ public class IkiliIstatistikleri implements Istatistik{
         Collections.sort(siraliKelimeZincirleri);
     }
 
-    public ArrayList getSiraliKelimeZincirleri() {
+    public List<KelimeZinciri> getSiraliKelimeZincirleri() {
         return siraliKelimeZincirleri;
     }
 

@@ -8,13 +8,12 @@
  */
 package net.zemberek.istatistik;
 
+import java.util.HashMap;
+import java.util.List;
+
 import net.zemberek.yapi.Kelime;
 import net.zemberek.yapi.ek.Ek;
 import net.zemberek.yapi.ek.TemelEkYonetici;
-
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
 
 
 public class EkIstatistikleri implements Istatistik {

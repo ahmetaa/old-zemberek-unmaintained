@@ -7,7 +7,7 @@
  */
 package net.zemberek.istatistik;
 
-class KelimeBilgisi implements Comparable {
+class KelimeBilgisi implements Comparable<KelimeBilgisi> {
 	String kelime;
 	int miktar = 1;
 	
@@ -15,7 +15,7 @@ class KelimeBilgisi implements Comparable {
 		this.kelime = kelime;
 	}
 	
-	public int compareTo(Object o) {
-		return ((KelimeBilgisi)o).miktar - this.miktar;
+	public int compareTo(KelimeBilgisi o) {
+		return o.miktar - this.miktar;
 	}
 }

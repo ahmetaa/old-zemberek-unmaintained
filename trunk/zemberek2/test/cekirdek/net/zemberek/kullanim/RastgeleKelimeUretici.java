@@ -19,9 +19,9 @@ import java.util.Random;
 public class RastgeleKelimeUretici {
 
     private static Random random = new Random();
-    ArrayList isimler = new ArrayList(100);
-    ArrayList sifatlar = new ArrayList(100);
-    ArrayList fiiller = new ArrayList(100);
+    List<Kok> isimler = new ArrayList<Kok>(100);
+    List<Kok> sifatlar = new ArrayList<Kok>(100);
+    List<Kok> fiiller = new ArrayList<Kok>(100);
     EkYonetici ekYonetici;
     KelimeUretici kelimeUretici;
     Alfabe alfabe;
@@ -47,38 +47,38 @@ public class RastgeleKelimeUretici {
 
     public Kok isimSec() {
         int r = random.nextInt(isimler.size());
-        return (Kok) isimler.get(r);
+        return isimler.get(r);
     }
 
     public Kok fiilSec() {
         int r = random.nextInt(fiiller.size());
-        return (Kok) fiiller.get(r);
+        return fiiller.get(r);
     }
 
     public Kok sifatSec() {
         int r = random.nextInt(sifatlar.size());
-        return (Kok) sifatlar.get(r);
+        return sifatlar.get(r);
     }
 
-    public List rastgeleEkListesiGetir(List ekler, int limit) {
+    public List<Ek> rastgeleEkListesiGetir(List<Ek> ekler, int limit) {
         if (ekler.size() == limit) {
             return ekler;
         }
-        Ek sonEk = (Ek) ekler.get(ekler.size() - 1);
-        List olasiArdisilEkler = sonEk.ardisilEkler();
+        Ek sonEk = ekler.get(ekler.size() - 1);
+        List<Ek> olasiArdisilEkler = sonEk.ardisilEkler();
         if (olasiArdisilEkler == null || olasiArdisilEkler.size() == 0) {
             return ekler;
         }
-        Ek rastgeleEk = (Ek) olasiArdisilEkler.get(random.nextInt(olasiArdisilEkler.size()));
+        Ek rastgeleEk = olasiArdisilEkler.get(random.nextInt(olasiArdisilEkler.size()));
         ekler.add(rastgeleEk);
         return rastgeleEkListesiGetir(ekler, limit);
     }
 
     public String rastgeleKelimeOlustur(Kok kok, int maxEkSayisi) {
         Kelime kelime = kelimeUret(kok);
-        ArrayList girisEkListesi = new ArrayList();
+        List<Ek> girisEkListesi = new ArrayList<Ek>();
         girisEkListesi.add(kelime.sonEk());
-        List rastgeleEkler = rastgeleEkListesiGetir(girisEkListesi, maxEkSayisi);
+        List<Ek> rastgeleEkler = rastgeleEkListesiGetir(girisEkListesi, maxEkSayisi);
         return kelimeUretici.kelimeUret(kok, rastgeleEkler);
     }
 

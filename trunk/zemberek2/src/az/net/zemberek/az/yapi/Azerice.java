@@ -51,23 +51,23 @@ public class Azerice implements DilAyarlari {
         return new Locale("az");
     }
 
-    public Class alfabeSinifi() {
+    public Class<Alfabe> alfabeSinifi() {
         return Alfabe.class;
     }
 
-    public Class ekYoneticiSinifi() {
+    public Class<TemelEkYonetici> ekYoneticiSinifi() {
         return TemelEkYonetici.class;
     }
 
-    public Class heceleyiciSinifi() {
+    public Class<AzericeHeceleyici> heceleyiciSinifi() {
         return AzericeHeceleyici.class;
     }
 
-    public Class kokOzelDurumBilgisiSinifi() {
+    public Class<AzericeKokOzelDurumBilgisi> kokOzelDurumBilgisiSinifi() {
         return AzericeKokOzelDurumBilgisi.class;
     }
 
-    public Class cozumlemeYardimcisiSinifi() {
+    public Class<AzericeCozumlemeYardimcisi> cozumlemeYardimcisiSinifi() {
         return AzericeCozumlemeYardimcisi.class;
     }
 
@@ -89,7 +89,7 @@ public class Azerice implements DilAyarlari {
 
     public Map<String, KelimeTipi> kokTipiAdlari() {
         //TODO: burasi azericeye gore duzenlenmeli
-        Map<String, KelimeTipi> tipMap = new HashMap();
+        Map<String, KelimeTipi> tipMap = new HashMap<String, KelimeTipi>();
         tipMap.put("AD", ISIM);
         tipMap.put("EY", FIIL);
         tipMap.put("SI", SIFAT);
@@ -109,7 +109,7 @@ public class Azerice implements DilAyarlari {
     }
 
     public Map<KelimeTipi, String> baslangiEkAdlari() {
-        Map<KelimeTipi, String> baslangicEkAdlari = new EnumMap(KelimeTipi.class);
+        Map<KelimeTipi, String> baslangicEkAdlari = new EnumMap<KelimeTipi, String>(KelimeTipi.class);
         //TODO: Baslangic ekleri simidlik sadece ISIM_KOK baslangic ekini gosteriyor..
         baslangicEkAdlari.put(ISIM, AD_KOK);
         baslangicEkAdlari.put(SIFAT, AD_KOK);

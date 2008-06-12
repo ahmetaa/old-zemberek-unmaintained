@@ -40,7 +40,7 @@ public enum TatarcaEkUretimKurali implements EkUretimKurali {
         }
 
         public Map<Character, EkUretimKurali> karakterKuralTablosu() {
-            final Map<Character, EkUretimKurali> kuralTablosu = new HashMap();
+            final Map<Character, EkUretimKurali> kuralTablosu = new HashMap<Character, EkUretimKurali>();
             kuralTablosu.put('E', SESLI_EI);
             kuralTablosu.put('A', SESLI_AA);
             kuralTablosu.put('>', SERTLESTIR);

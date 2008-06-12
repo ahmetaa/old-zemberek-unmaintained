@@ -32,14 +32,14 @@ public class TestEkSiralayici extends TemelTest {
                 ekler.ek(TurkceEkAdlari.IMEK_SART_SE),
                 ekler.ek(TurkceEkAdlari.FIIL_OLUMSUZLUK_ME),
                 ekler.ek(TurkceEkAdlari.FIIL_GELECEKZAMAN_ECEK)};
-        List<Ek> rasgeleList = new ArrayList(Arrays.asList(rasgele));
+        List<Ek> rasgeleList = new ArrayList<Ek>(Arrays.asList(rasgele));
         Ek[] beklenen = new Ek[]{
                 ekler.ek(TurkceEkAdlari.FIIL_OLUMSUZLUK_ME),
                 ekler.ek(TurkceEkAdlari.FIIL_YETENEK_EBIL),
                 ekler.ek(TurkceEkAdlari.FIIL_GELECEKZAMAN_ECEK),
                 ekler.ek(TurkceEkAdlari.IMEK_SART_SE),
                 ekler.ek(TurkceEkAdlari.ISIM_KISI_BEN_IM)};
-        List<Ek> beklenenList = new ArrayList(Arrays.asList(beklenen));
+        List<Ek> beklenenList = new ArrayList<Ek>(Arrays.asList(beklenen));
 
         EkSiralayici siralayici = new EkSiralayici(rasgeleList, ekler.ek(TurkceEkAdlari.FIIL_KOK));
         List<List<Ek>> sonuc = siralayici.olasiEkDizilimleriniBul();

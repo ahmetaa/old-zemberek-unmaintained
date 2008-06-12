@@ -5,13 +5,6 @@
 package net.zemberek.yapi.ek;
 
 import net.zemberek.TemelTest;
-import net.zemberek.bilgi.KaynakYukleyici;
-import net.zemberek.tr.yapi.ek.EkUreticiTr;
-import org.junit.Test;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.util.Arrays;
 
 /**
  * Fonksiyonel test. ek uretimlerinin dogrulugunu denetler.

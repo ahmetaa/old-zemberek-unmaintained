@@ -8,7 +8,7 @@
 package net.zemberek.istatistik;
 
 
-class KelimeZinciri implements Comparable {
+class KelimeZinciri implements Comparable<KelimeZinciri> {
     int kullanim = 1;
     String ikili = null;
 
@@ -28,8 +28,7 @@ class KelimeZinciri implements Comparable {
         return ikili + " (" + kullanim + ")";
     }
 
-    public int compareTo(Object o) {
-        KelimeZinciri gelen = (KelimeZinciri) o;
-        return gelen.kullanim - this.kullanim;
+    public int compareTo(KelimeZinciri o) {
+        return o.kullanim - this.kullanim;
     }
 }

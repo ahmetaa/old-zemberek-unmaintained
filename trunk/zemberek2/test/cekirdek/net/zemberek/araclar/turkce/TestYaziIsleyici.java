@@ -33,10 +33,10 @@ public class TestYaziIsleyici {
                                    YaziBirimiTipi.KELIME, //Nasilsiniz
                                    YaziBirimiTipi.DIGER //?
         };
-        List analizDizisi = YaziIsleyici.analizDizisiOlustur(giris);
+        List<YaziBirimi> analizDizisi = YaziIsleyici.analizDizisiOlustur(giris);
         assertEquals(analizDizisi.size(), parcalar.length);
         for (int i = 0; i < parcalar.length; i++) {
-            YaziBirimi birim = (YaziBirimi) analizDizisi.get(i);
+            YaziBirimi birim = analizDizisi.get(i);
             assertEquals(parcalar[i], birim.icerik);
             //assertEquals(tipler[i],birim.tip);
             assertEquals("hatali" + i + ":", tipler[i], birim.tip);
@@ -52,10 +52,10 @@ public class TestYaziIsleyici {
                              "Ahmet",
                              "Nasilsiniz",
         };
-        List kelimeler = YaziIsleyici.kelimeAyikla(giris);
+        List<String> kelimeler = YaziIsleyici.kelimeAyikla(giris);
         assertEquals(kelimeler.size(), parcalar.length);
         for (int i = 0; i < parcalar.length; i++) {
-            String birim = (String) kelimeler.get(i);
+            String birim = kelimeler.get(i);
             assertEquals(parcalar[i], birim);
 
         }
@@ -68,11 +68,11 @@ public class TestYaziIsleyici {
         String giris = "Merhaba, ben Ahmet!.  Nasilsiniz? ";
         String[] parcalar = {"ben"
         };
-        List kelimeler = YaziIsleyici.analizIcinKelimeAyikla(giris);
+        List<String> kelimeler = YaziIsleyici.analizIcinKelimeAyikla(giris);
 
         assertEquals(kelimeler.size(), parcalar.length);
         for (int i = 0; i < parcalar.length; i++) {
-            String birim = (String) kelimeler.get(i);
+            String birim = kelimeler.get(i);
             assertEquals(parcalar[i], birim);
 
         }
@@ -85,10 +85,10 @@ public class TestYaziIsleyici {
         String giris = "Merhaba, ben Ahmet!. Nasilsiniz?";
         String[] cumle = {"Merhaba, ben Ahmet!.",
                           "Nasilsiniz?"};
-        List cumleler = YaziIsleyici.cumleAyikla(giris);
+        List<String> cumleler = YaziIsleyici.cumleAyikla(giris);
         assertEquals(cumleler.size(), 2);
         for (int i = 0; i < cumle.length; i++) {
-            String birim = (String) cumleler.get(i);
+            String birim =  cumleler.get(i);
             assertEquals(cumle[i], birim.trim());
 
         }

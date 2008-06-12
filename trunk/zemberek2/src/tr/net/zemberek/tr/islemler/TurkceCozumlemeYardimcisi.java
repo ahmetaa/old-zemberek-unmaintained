@@ -49,9 +49,9 @@ public class TurkceCozumlemeYardimcisi implements CozumlemeYardimcisi {
             olusan.harfDegistir(0, alfabe.buyukHarf(olusan.ilkHarf()));
             if (kok.ozelDurumIceriyormu(TurkceKokOzelDurumTipleri.KESMESIZ))
                 return;
-            List ekler = kelime.ekler();
+            List<Ek> ekler = kelime.ekler();
             if (ekler.size() > 1) {
-                Ek ek = (Ek) ekler.get(1);
+                Ek ek = ekler.get(1);
                 if (ek.iyelikEkiMi() ||ek.halEkiMi()) {
                     int kesmePozisyonu = kok.icerik().length();
                     olusan.ekle(kesmePozisyonu,alfabe.harf('\''));
@@ -90,7 +90,7 @@ public class TurkceCozumlemeYardimcisi implements CozumlemeYardimcisi {
                 return false;
             if (kelime.kok().ozelDurumIceriyormu(TurkceKokOzelDurumTipleri.KESMESIZ))
                 return true;
-            List ekler = kelime.ekler();
+            List<Ek> ekler = kelime.ekler();
             if (ekler.size() > 1) {
                 Ek ek = (Ek) ekler.get(1);
                 if (ek.iyelikEkiMi() || ek.halEkiMi()) {

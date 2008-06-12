@@ -16,7 +16,7 @@ import java.util.List;
 /**
  * @author MDA & GBA
  */
-public class EkZinciri implements Comparable {
+public class EkZinciri implements Comparable<EkZinciri> {
     List<Ek> ekler = null;
     double kullanimFrekansi = 0.0d;
     int kullanimSayisi;
@@ -61,7 +61,7 @@ public class EkZinciri implements Comparable {
             if (ek != null) {
                 // Liste henüz oluşturulmamışsa oluştur.
                 if (this.ekler == null) {
-                    this.ekler = new ArrayList(2);
+                    this.ekler = new ArrayList<Ek>(2);
                 }
                 this.ekler.add(ek);
             }
@@ -71,8 +71,8 @@ public class EkZinciri implements Comparable {
     }
 
 
-    public int compareTo(Object o) {
-        EkZinciri giris = (EkZinciri) o;
+    public int compareTo(EkZinciri o) {
+        EkZinciri giris = o;
         return (giris.kullanimFrekansi - this.kullanimFrekansi > 0 ? 1 : -1);
     }
 
@@ -89,7 +89,7 @@ public class EkZinciri implements Comparable {
         return eklerStr;
     }
 
-    public List getEkler() {
+    public List<Ek> getEkler() {
         return ekler;
     }
 

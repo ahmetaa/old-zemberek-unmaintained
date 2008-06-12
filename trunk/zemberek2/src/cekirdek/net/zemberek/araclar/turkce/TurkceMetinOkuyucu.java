@@ -7,6 +7,7 @@ package net.zemberek.araclar.turkce;
 import net.zemberek.istatistik.Istatistikler;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  */
@@ -19,7 +20,7 @@ public class TurkceMetinOkuyucu {
         if (istatistikler != null) {
             stream.setStatistics(istatistikler);
         }
-        ArrayList list = new ArrayList();
+        List<String> list = new ArrayList<String>();
         while (true) {
             String str = stream.nextWord();
             if (str == null) break;

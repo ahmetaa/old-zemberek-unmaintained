@@ -166,10 +166,10 @@ public class DemoYonetici {
 
 
     public String turkceToAscii(String giris) {
-        List analizDizisi = YaziIsleyici.analizDizisiOlustur(giris);
+        List<YaziBirimi> analizDizisi = YaziIsleyici.analizDizisiOlustur(giris);
         StringBuffer sonuc = new StringBuffer();
-        for (Object anAnalizDizisi : analizDizisi) {
-            YaziBirimi birim = (YaziBirimi) anAnalizDizisi;
+        for (YaziBirimi anAnalizDizisi : analizDizisi) {
+            YaziBirimi birim =  anAnalizDizisi;
             if (birim.tip == YaziBirimiTipi.KELIME)
                 birim.icerik = zemberek.asciiyeDonustur(birim.icerik);
             sonuc.append(birim.icerik);
@@ -178,10 +178,10 @@ public class DemoYonetici {
     }
 
     public String hecele(String giris) {
-        List analizDizisi = YaziIsleyici.analizDizisiOlustur(giris);
+        List<YaziBirimi> analizDizisi = YaziIsleyici.analizDizisiOlustur(giris);
         StringBuffer sonuc = new StringBuffer();
-        for (Object anAnalizDizisi : analizDizisi) {
-            YaziBirimi birim = (YaziBirimi) anAnalizDizisi;
+        for (YaziBirimi anAnalizDizisi : analizDizisi) {
+            YaziBirimi birim = anAnalizDizisi;
             if (birim.tip == YaziBirimiTipi.KELIME) {
                 birim.icerik = dilBilgisi.alfabe().ayikla(birim.icerik);
                 if (!dilBilgisi.alfabe().cozumlemeyeUygunMu(birim.icerik))

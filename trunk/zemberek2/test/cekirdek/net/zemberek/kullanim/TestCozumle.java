@@ -30,11 +30,11 @@ public class TestCozumle {
             for (Kelime kelime: sonuc) {
                 Kok kok = kelime.kok();
                 System.out.println("Kok :" + kok.icerik() + " Tipi : " + kok.tip().toString());
-                List ekler = kelime.ekler();
+                List<Ek> ekler = kelime.ekler();
                 if (ekler != null) {
                     System.out.println("Ekler:");
                     for (int j = 0; j < ekler.size(); j++) {
-                        Ek ek = (Ek) ekler.get(j);
+                        Ek ek = ekler.get(j);
                         System.out.println("Ek-" + j + " : " + ek.ad());
                     }
                 }

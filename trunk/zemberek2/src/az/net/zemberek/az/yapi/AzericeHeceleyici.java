@@ -27,12 +27,11 @@
 
 package net.zemberek.az.yapi;
 
-import net.zemberek.yapi.Heceleyici;
-import net.zemberek.yapi.HarfDizisi;
-import net.zemberek.yapi.Alfabe;
-
-import java.util.List;
 import java.util.Collections;
+import java.util.List;
+
+import net.zemberek.yapi.HarfDizisi;
+import net.zemberek.yapi.Heceleyici;
 
 
 public class AzericeHeceleyici implements Heceleyici {

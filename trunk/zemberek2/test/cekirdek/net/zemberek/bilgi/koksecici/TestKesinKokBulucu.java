@@ -14,6 +14,8 @@ import net.zemberek.bilgi.araclar.DuzYaziKokOkuyucu;
 import net.zemberek.bilgi.araclar.IkiliKokOkuyucu;
 import net.zemberek.bilgi.araclar.KokOkuyucu;
 import net.zemberek.bilgi.kokler.*;
+import net.zemberek.yapi.Kok;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.Ignore;
@@ -43,7 +45,7 @@ public class TestKesinKokBulucu extends TemelTest {
     public void testWordTreeKokSecici() {
         bulucu = new KesinKokAdayiBulucu(sozluk.getAgac());
         out.println("Agac:" + sozluk.getAgac().getKokDugumu().goster(2));
-        List list = bulucu.adayKokleriBul("karalar");
+        List<Kok> list = bulucu.adayKokleriBul("karalar");
         TestUtils.printList(list);
         out.println("Tamamlanma s�resi: " + TimeTracker.stopClock("x"));
     }
@@ -52,7 +54,7 @@ public class TestKesinKokBulucu extends TemelTest {
     public void testToleransliKokBulBasit() {
         bulucu = new ToleransliKokAdayiBulucu(sozluk.getAgac(), 1);
         out.println("Agac:" + sozluk.getAgac().getKokDugumu().goster(2));
-        List list = bulucu.adayKokleriBul("deniz");
+        List<Kok> list = bulucu.adayKokleriBul("deniz");
         TestUtils.printList(list);
         out.println("Tamamlanma s�resi: " + TimeTracker.stopClock("x"));
     }
@@ -62,7 +64,7 @@ public class TestKesinKokBulucu extends TemelTest {
         okuyucu = new IkiliKokOkuyucu("kaynaklar/tr/bilgi/kokler_tr.bin", dilBilgisi.kokOzelDurumlari());
         sozluk = new AgacSozluk(okuyucu, alfabe, dilBilgisi.kokOzelDurumlari());
         bulucu = new KesinKokAdayiBulucu(sozluk.getAgac());
-        List list = bulucu.adayKokleriBul("etkiler");
+        List<Kok> list = bulucu.adayKokleriBul("etkiler");
         out.println(list);
     }
 

@@ -8,14 +8,13 @@
  */
 package net.zemberek.istatistik;
 
-import net.zemberek.araclar.IstatistikAraclari;
-
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
-import java.util.ArrayList;
 import java.util.List;
+
+import net.zemberek.araclar.IstatistikAraclari;
 
 public abstract class TemelRaporlayici implements IstatistikRaporlayici {
     protected Istatistikler istatistikler = null;
@@ -33,7 +32,7 @@ public abstract class TemelRaporlayici implements IstatistikRaporlayici {
             IkiliIstatistikleri heceIkiliIst = istatistikler.getHeceIkiliIstatistikleri();
             KelimeIstatistikleri ikiliHarfIst = istatistikler.getIkiliHarfIstatistikleri();
             
-            List kokListesi = kokIst.getKokListesi();
+            List<GenelKokIstatistikBilgisi> kokListesi = kokIst.getKokListesi();
 
             if (kokListesi == null) {
                 return;
@@ -87,10 +86,10 @@ public abstract class TemelRaporlayici implements IstatistikRaporlayici {
             writer.write("\nEn cok kullanilan kelimeler:\n");
             int sayac = 1;
             int toplam = 0;
-            List ikiliHarfler = kelimeIst.getKelimeListesi();
+            List<KelimeBilgisi> ikiliHarfler = kelimeIst.getKelimeListesi();
             int limit = istatistikler.getKelimeLimit() > ikiliHarfler.size() ? ikiliHarfler.size():istatistikler.getKokLimit(); 
             for (int i = 0; i < limit; i++) {
-            	KelimeBilgisi kelime = (KelimeBilgisi) ikiliHarfler.get(i);
+            	KelimeBilgisi kelime = ikiliHarfler.get(i);
             	toplam += kelime.miktar;
             	writer.write((sayac++) + ". "
             			+ "[ " + kelime.kelime + " ]"
@@ -107,8 +106,8 @@ public abstract class TemelRaporlayici implements IstatistikRaporlayici {
             limit = istatistikler.getKokLimit() > kokListesi.size() ? kokListesi.size():istatistikler.getKokLimit(); 
             for (int i = 0; i < limit ; i++) {
                 String report = "";
-                GenelKokIstatistikBilgisi istatistik = (GenelKokIstatistikBilgisi) kokListesi.get(i);
-                ArrayList ekler = istatistik.getEkListesi();
+                GenelKokIstatistikBilgisi istatistik = kokListesi.get(i);
+                List<EkZinciri> ekler = istatistik.getEkListesi();
                 writer.write((sayac++) + ". "
                         + "<" + istatistik.getKok().icerik() + ">"
                         + " Kullanım : " + istatistik.getKullanimSayisi()
@@ -118,7 +117,7 @@ public abstract class TemelRaporlayici implements IstatistikRaporlayici {
 
                 double ekKapsam = 0.0D;
                 for (int j = 0; j < ekler.size(); j++) {
-                    EkZinciri zincir = (EkZinciri) ekler.get(j);
+                    EkZinciri zincir = ekler.get(j);
 
                     if (zincir.getKullanimFrekansi() > 1d) {
                         ekKapsam += zincir.getKullanimFrekansi();
@@ -136,10 +135,10 @@ public abstract class TemelRaporlayici implements IstatistikRaporlayici {
             
             // Ikili istatistikleri
             writer.write("\n\n");
-            List list = ikiliIst.getSiraliKelimeZincirleri();
+            List<KelimeZinciri> list = ikiliIst.getSiraliKelimeZincirleri();
             limit = list.size() < istatistikler.getKokLimit() ? list.size() : istatistikler.getKokLimit();
             for(int i=0; i<limit; i++){
-                KelimeZinciri zincir = (KelimeZinciri) list.get(i);
+                KelimeZinciri zincir = list.get(i);
                 writer.write( (i+1)  + ". " + zincir.toString() + "\n");
             }
 
@@ -148,7 +147,7 @@ public abstract class TemelRaporlayici implements IstatistikRaporlayici {
             list = kokIkiliIst.getSiraliKelimeZincirleri();
             limit = list.size() < istatistikler.getKokLimit() ? list.size() : istatistikler.getKokLimit();
             for(int i=0; i<limit; i++){
-                KelimeZinciri zincir = (KelimeZinciri) list.get(i);
+                KelimeZinciri zincir = list.get(i);
                 writer.write((i+1)  + ". " + zincir.toString() + "\n");
             }
 
@@ -157,7 +156,7 @@ public abstract class TemelRaporlayici implements IstatistikRaporlayici {
             list = heceIkiliIst.getSiraliKelimeZincirleri();
             limit = list.size() < istatistikler.getKokLimit() ? list.size() : istatistikler.getKokLimit();
             for(int i=0; i<limit; i++){
-                KelimeZinciri zincir = (KelimeZinciri) list.get(i);
+                KelimeZinciri zincir = list.get(i);
                 writer.write((i+1)  + ". " + zincir.toString() + "\n");
             }
             

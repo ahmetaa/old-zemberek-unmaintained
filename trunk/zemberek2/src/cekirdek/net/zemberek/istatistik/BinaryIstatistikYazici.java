@@ -8,10 +8,13 @@
  */
 package net.zemberek.istatistik;
 
-import net.zemberek.yapi.Kok;
+import java.io.DataOutputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.List;
 
-import java.io.*;
-import java.util.ArrayList;
+import net.zemberek.yapi.Kok;
 
 public class BinaryIstatistikYazici extends TemelIstatistikYazici implements IstatistikYazici {
 
@@ -29,13 +32,13 @@ public class BinaryIstatistikYazici extends TemelIstatistikYazici implements Ist
 
     public void yaz(Istatistikler ist) {
         KokIstatistikleri kokIst = ist.getKokIstatistikleri();
-        ArrayList list = kokIst.getKokListesi();
+        List<GenelKokIstatistikBilgisi> list = kokIst.getKokListesi();
         try {
             int sinir = ISTATISTIGI_TUTLACAK_KOK_SAYISI;
             if (list.size() < ISTATISTIGI_TUTLACAK_KOK_SAYISI)
 				sinir = list.size();
             for (int i = 0; i < sinir; i++) {
-                GenelKokIstatistikBilgisi bilgi = (GenelKokIstatistikBilgisi) list.get(i);
+                GenelKokIstatistikBilgisi bilgi = list.get(i);
                 Kok kok = bilgi.getKok();
                 if(kok == null){
                 	System.out.println("Kok null?? " + i);

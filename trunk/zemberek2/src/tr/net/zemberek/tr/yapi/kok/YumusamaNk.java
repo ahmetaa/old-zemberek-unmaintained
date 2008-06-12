@@ -6,7 +6,6 @@ package net.zemberek.tr.yapi.kok;
 
 import net.zemberek.yapi.Alfabe;
 import net.zemberek.yapi.HarfDizisi;
-import net.zemberek.yapi.kok.KokOzelDurumu;
 import net.zemberek.yapi.kok.HarfDizisiIslemi;
 
 /**

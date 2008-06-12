@@ -7,13 +7,19 @@
  */
 package net.zemberek.istatistik;
 
-import net.zemberek.araclar.IstatistikAraclari;
-
-import java.io.*;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.Iterator;
+import java.util.List;
+
+import net.zemberek.araclar.IstatistikAraclari;
 
 /**
  * @author MDA & GBA
@@ -57,7 +63,7 @@ public class HeceIstatistikleri implements Istatistik {
     /**
      * @return Returns the heceListesi.
      */
-    public ArrayList getHeceListesi() {
+    public List<Hece> getHeceListesi() {
         return heceListesi;
     }
 
@@ -65,7 +71,7 @@ public class HeceIstatistikleri implements Istatistik {
         String str = "";
         long araToplam = 0;
         for (int i = 0; i < heceListesi.size(); i++) {
-            Hece hece = (Hece) heceListesi.get(i);
+            Hece hece = heceListesi.get(i);
             araToplam += hece.getKullanim();
             str += i + ". " + hece.getHece() + " [" + hece.getKullanim() + "] Oran(%): " + IstatistikAraclari.yuzdeHesaplaStr(hece.getKullanim(), heceSayisi)
                     + " AraToplam(%): " + IstatistikAraclari.yuzdeHesaplaStr(araToplam, heceSayisi) + "\n";
@@ -85,7 +91,7 @@ public class HeceIstatistikleri implements Istatistik {
             writer.write("Toplam Hece Sayisi:" + heceSayisi + "\n");
             writer.write("Toplam Ayrik Hece Sayisi:" + heceListesi.size() + "\n");
             for (int i = 0; i < heceListesi.size(); i++) {
-                Hece hece = (Hece) heceListesi.get(i);
+                Hece hece = heceListesi.get(i);
                 araToplam += hece.getKullanim();
                 str = i + ". " + hece.getHece() + "  Oran: %" + IstatistikAraclari.onbindeHesaplaStr(hece.getKullanim(), heceSayisi)
                         + " AraToplam: %" + IstatistikAraclari.onbindeHesaplaStr(araToplam, heceSayisi) + " [" + hece.getKullanim() + "]\n";

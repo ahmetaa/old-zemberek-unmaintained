@@ -12,7 +12,6 @@ import java.util.List;
 
 import net.zemberek.araclar.IstatistikAraclari;
 import net.zemberek.araclar.TusTakimi;
-import net.zemberek.araclar.turkce.TurkceMetinOkuyucu;
 
 /**
  * F-Q klavye testi sınıfı uzun zamandır tartışması yapılan F-Q klavye kullanımı kavgasına

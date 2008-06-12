@@ -22,8 +22,8 @@ public class TemelKokOzelDurumBilgisi {
 
     protected EkYonetici ekYonetici;
     protected Alfabe alfabe;
-    protected Map<KokOzelDurumTipi, KokOzelDurumu> ozelDurumlar = new HashMap();
-    protected Map<String, KokOzelDurumu> kisaAdOzelDurumlar = new HashMap();
+    protected Map<KokOzelDurumTipi, KokOzelDurumu> ozelDurumlar = new HashMap<KokOzelDurumTipi, KokOzelDurumu>();
+    protected Map<String, KokOzelDurumu> kisaAdOzelDurumlar = new HashMap<String, KokOzelDurumu>();
 
     public static final int MAX_OZEL_DURUM_SAYISI = 30;
     protected KokOzelDurumu[] ozelDurumDizisi = new KokOzelDurumu[MAX_OZEL_DURUM_SAYISI];

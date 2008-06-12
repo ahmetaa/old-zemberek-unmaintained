@@ -30,23 +30,23 @@ public class Turkmence implements DilAyarlari {
         return new Locale("tk");
     }
 
-    public Class alfabeSinifi() {
+    public Class<Alfabe> alfabeSinifi() {
         return Alfabe.class;
     }
 
-    public Class ekYoneticiSinifi() {
+    public Class<TemelEkYonetici> ekYoneticiSinifi() {
         return TemelEkYonetici.class;
     }
 
-    public Class heceleyiciSinifi() {
+    public Class<TurkmenceHeceleyici> heceleyiciSinifi() {
         return TurkmenceHeceleyici.class;
     }
 
-    public Class kokOzelDurumBilgisiSinifi() {
+    public Class<TurkmenceKokOzelDurumBilgisi> kokOzelDurumBilgisiSinifi() {
         return TurkmenceKokOzelDurumBilgisi.class;
     }
 
-    public Class cozumlemeYardimcisiSinifi() {
+    public Class<TurkmenceCozumlemeYardimcisi> cozumlemeYardimcisiSinifi() {
         return TurkmenceCozumlemeYardimcisi.class;
     }
 
@@ -59,7 +59,7 @@ public class Turkmence implements DilAyarlari {
     }    
 
     public Map<String, KelimeTipi> kokTipiAdlari() {
-        Map kokTipAdlari = new HashMap();
+        Map<String, KelimeTipi> kokTipAdlari = new HashMap<String, KelimeTipi>();
         kokTipAdlari.put("AT", ISIM);
         kokTipAdlari.put("ISH", FIIL);
         kokTipAdlari.put("SI", SIFAT);
@@ -79,7 +79,7 @@ public class Turkmence implements DilAyarlari {
     }
 
     public Map<KelimeTipi, String> baslangiEkAdlari() {
-        Map<KelimeTipi, String> baslangicEkAdlari = new EnumMap(KelimeTipi.class);
+        Map<KelimeTipi, String> baslangicEkAdlari = new EnumMap<KelimeTipi, String>(KelimeTipi.class);
         baslangicEkAdlari.put(ISIM, AT_SADA_BOS);
         baslangicEkAdlari.put(SIFAT, AT_SADA_BOS);
         baslangicEkAdlari.put(FIIL, ISLIK_SADA_BOS);

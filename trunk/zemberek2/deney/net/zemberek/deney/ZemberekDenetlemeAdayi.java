@@ -34,7 +34,6 @@ import java.util.StringTokenizer;
 import java.util.Vector;
 
 import net.zemberek.erisim.Zemberek;
-import net.zemberek.tr.yapi.TurkiyeTurkcesi;
 import net.zemberek.yapi.DilAyarlari;
 
 public class ZemberekDenetlemeAdayi {

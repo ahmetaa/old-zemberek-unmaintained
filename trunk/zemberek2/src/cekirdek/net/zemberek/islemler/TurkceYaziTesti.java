@@ -31,7 +31,7 @@ public class TurkceYaziTesti {
 
     private double turkceOranla(String yazi) {
         int cozulenler = 0, asciiCozulenler = 0, cozulemeyenler = 0;
-        List analizDizisi = YaziIsleyici.analizDizisiOlustur(yazi);
+        List<YaziBirimi> analizDizisi = YaziIsleyici.analizDizisiOlustur(yazi);
         for (int i = 0; i < analizDizisi.size(); i++) {
             YaziBirimi birim = (YaziBirimi) analizDizisi.get(i);
             if (birim.tip == YaziBirimiTipi.KELIME) {
