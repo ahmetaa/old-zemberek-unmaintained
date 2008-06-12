@@ -13,6 +13,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 
 import net.zemberek.araclar.IstatistikAraclari;
 import net.zemberek.yapi.Kelime;
@@ -23,7 +24,7 @@ import net.zemberek.yapi.Kok;
  * @author MDA
  */
 public class KokIstatistikleri implements Istatistik {
-    private static HashMap kokler = new HashMap(100);
+    private static HashMap<String, GenelKokIstatistikBilgisi> kokler = new HashMap<String, GenelKokIstatistikBilgisi>(100);
     private long toplamKelime = 0;
 
     private long toplamIsimKokSayisi = 0;
@@ -61,14 +62,14 @@ public class KokIstatistikleri implements Istatistik {
     private int[] toplamEkUzunlukSayilari = new int[GenelKokIstatistikBilgisi.TABLO_MAX_EK_SAYISI];
     private double[] kokKapsamaYuzdeleri = new double[kontrolDizisi.length];
 
-    private ArrayList kokListesi = null;
+    private ArrayList<GenelKokIstatistikBilgisi> kokListesi = null;
 
     public KokIstatistikleri() {
 
     }
 
     public void sonucGuncelle(Kok kok, Kelime giris) {
-        GenelKokIstatistikBilgisi kokBilgisi = (GenelKokIstatistikBilgisi) kokler.get(kok.icerik());
+        GenelKokIstatistikBilgisi kokBilgisi = kokler.get(kok.icerik());
         if (kokBilgisi == null) {
             kokBilgisi = new GenelKokIstatistikBilgisi(kok);
             kokler.put(kok.icerik(), kokBilgisi);
@@ -96,12 +97,12 @@ public class KokIstatistikleri implements Istatistik {
 
 
     public void tamamla() {
-        kokListesi = new ArrayList();
+        kokListesi = new ArrayList<GenelKokIstatistikBilgisi>();
         araToplamSayaci = 0;
 
         // Kokleri bir listeye doldur (sIralamak iÇin)
-        for (Iterator it = kokler.values().iterator(); it.hasNext();) {
-            GenelKokIstatistikBilgisi kokBilgisi = (GenelKokIstatistikBilgisi) it.next();
+        for (Iterator<GenelKokIstatistikBilgisi> it = kokler.values().iterator(); it.hasNext();) {
+            GenelKokIstatistikBilgisi kokBilgisi = it.next();
             toplamKelime += kokBilgisi.getKullanimSayisi();
             if (kokBilgisi.getKok().tip() == KelimeTipi.ISIM) {
                 toplamIsimKokSayisi++;
@@ -121,7 +122,7 @@ public class KokIstatistikleri implements Istatistik {
 
         long araToplam = 0;
         for (int i = 0; i < kokListesi.size(); i++) {
-            GenelKokIstatistikBilgisi istatistik = (GenelKokIstatistikBilgisi) kokListesi.get(i);
+            GenelKokIstatistikBilgisi istatistik = kokListesi.get(i);
             istatistik.setKullanimFrekansi((int)(((double)istatistik.getKullanimSayisi() / this.toplamKelime) * 1000000));
             //istatistik.setKullanimFrekansi((int)istatistik.getKullanimSayisi()); //(int)(((double)istatistik.getKullanimSayisi() / this.toplamKelime) * 1000000));
             araToplam += istatistik.getKullanimSayisi();
@@ -146,18 +147,16 @@ public class KokIstatistikleri implements Istatistik {
         this.ortalamaFiilUzunlugu = (double) toplamFiilKelimeUzunlugu / toplamFiilSayisi;
 
         for (int i = 0; i < toplamKokSayisi; i++) {
-            GenelKokIstatistikBilgisi istatistik = (GenelKokIstatistikBilgisi) kokListesi.get(i);
+            GenelKokIstatistikBilgisi istatistik = kokListesi.get(i);
             istatistik.duzenle();
-            ArrayList ekler = istatistik.getEkListesi();
+            List<EkZinciri> ekler = istatistik.getEkListesi();
         }
 
     }
 
-    class KokMiktarKarsilastirici implements Comparator {
-        public int compare(Object o1, Object o2) {
-            GenelKokIstatistikBilgisi ist1 = (GenelKokIstatistikBilgisi) o1;
-            GenelKokIstatistikBilgisi ist2 = (GenelKokIstatistikBilgisi) o2;
-            return (int) (ist2.getKullanimSayisi() - ist1.getKullanimSayisi());
+    class KokMiktarKarsilastirici implements Comparator<GenelKokIstatistikBilgisi> {
+        public int compare(GenelKokIstatistikBilgisi o1, GenelKokIstatistikBilgisi o2) {
+            return (int) (o2.getKullanimSayisi() - o1.getKullanimSayisi());
         }
     }
 
@@ -165,7 +164,7 @@ public class KokIstatistikleri implements Istatistik {
         return toplamKelimeSayisi;
     }
 
-    public ArrayList getKokListesi() {
+    public List<GenelKokIstatistikBilgisi> getKokListesi() {
         return kokListesi;
     }
 
@@ -179,7 +178,7 @@ public class KokIstatistikleri implements Istatistik {
     }
 
 
-    public static HashMap getKokler() {
+    public static HashMap<String, GenelKokIstatistikBilgisi> getKokler() {
         return kokler;
     }
 

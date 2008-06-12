@@ -4,15 +4,13 @@
 
 package net.zemberek.bilgi;
 
-import junit.framework.TestCase;
-
 import java.io.File;
 import java.io.IOException;
 import java.net.URI;
 import java.util.Properties;
 
-import org.junit.Test;
 import org.junit.Assert;
+import org.junit.Test;
 
 /**
  * User: ahmet

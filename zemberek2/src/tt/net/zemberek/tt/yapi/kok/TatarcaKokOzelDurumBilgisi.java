@@ -39,7 +39,7 @@ public class TatarcaKokOzelDurumBilgisi extends TemelKokOzelDurumBilgisi impleme
 
         HarfDizisi hdizi = new HarfDizisi(kok.icerik(), alfabe);
 
-        List degismisIcerikler = new ArrayList(1);
+        List<String> degismisIcerikler = new ArrayList<String>(1);
 
         boolean yapiBozucuOzelDurumvar = false;
         // kok uzerindeki ozel durumlar basta sona taranip ozel durum koke uygulaniyor.
@@ -53,7 +53,7 @@ public class TatarcaKokOzelDurumBilgisi extends TemelKokOzelDurumBilgisi impleme
         if (yapiBozucuOzelDurumvar)
             degismisIcerikler.add(hdizi.toString());
 
-        return (String[]) degismisIcerikler.toArray(new String[degismisIcerikler.size()]);
+        return degismisIcerikler.toArray(new String[degismisIcerikler.size()]);
     }
 
     public void ozelDurumBelirle(Kok kok) {

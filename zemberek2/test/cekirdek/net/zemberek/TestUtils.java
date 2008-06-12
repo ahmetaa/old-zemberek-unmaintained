@@ -73,16 +73,16 @@ public class TestUtils {
         return true;
     }
 
-    public static void printList(List list) {
+    public static<T> void printList(List<T> list) {
         System.out.println("Liste boyu: " + list.size());
-        for (Object obj : list) {
+        for (T obj : list) {
             System.out.println(obj);
         }
     }
 
 
     public static <T> Set<T> makeSet(T... elements) {
-        return new HashSet(Arrays.asList(elements));
+        return new HashSet<T>(Arrays.asList(elements));
     }
 
     /**

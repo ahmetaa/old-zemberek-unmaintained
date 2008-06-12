@@ -7,13 +7,12 @@
  */
 package net.zemberek.istatistik;
 
+import java.util.List;
+
 import net.zemberek.islemler.HeceIslemleri;
+import net.zemberek.yapi.DilBilgisi;
 import net.zemberek.yapi.Kelime;
 import net.zemberek.yapi.Kok;
-import net.zemberek.yapi.DilBilgisi;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @author MDA
@@ -30,7 +29,7 @@ public class Istatistikler {
     private IkiliIstatistikleri kokIkiliIstatistikleri = new IkiliIstatistikleri();
     private IkiliIstatistikleri heceIkiliIstatistikleri = new IkiliIstatistikleri();
     
-    private List altIstatistikler = null;
+    private List<Istatistikler> altIstatistikler = null;
 	private int kelimeSayisi = 0;
 	private int hatalar = 0;
 	private int dogrular = 0;
@@ -74,7 +73,7 @@ public class Istatistikler {
         karakterIstatistikleri.processChar(ch);
     }
 
-    public List getAltIstatistikler() {
+    public List<Istatistikler> getAltIstatistikler() {
         return altIstatistikler;
     }
 
@@ -90,7 +89,7 @@ public class Istatistikler {
         return heceIstatistikleri;
     }
 
-    public ArrayList getKokListesi() {
+    public List<GenelKokIstatistikBilgisi> getKokListesi() {
         return kokIstatistikleri.getKokListesi();
     }
 

@@ -23,10 +23,10 @@ public class TestExtractor  {
                              "!.  ",
                              "Nasilsiniz",
                              "? "};
-        List analizDizisi = YaziIsleyici.analizDizisiOlustur(giris);
+        List<YaziBirimi> analizDizisi = YaziIsleyici.analizDizisiOlustur(giris);
         assertEquals(analizDizisi.size(), parcalar.length);
         for (int i = 0; i < parcalar.length; i++) {
-            YaziBirimi birim = (YaziBirimi) analizDizisi.get(i);
+            YaziBirimi birim = analizDizisi.get(i);
             assertEquals(parcalar[i], birim.icerik);
 
         }

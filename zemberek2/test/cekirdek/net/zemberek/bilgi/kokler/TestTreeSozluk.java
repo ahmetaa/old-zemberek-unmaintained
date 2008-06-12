@@ -87,28 +87,28 @@ public class TestTreeSozluk extends TemelTest {
                 fail("Kelime a�a�ta bulunamad�: " + kok.icerik());
             }
         }
-        List kokler = testSozluk.kokBul("usul");
+        List<Kok> kokler = testSozluk.kokBul("usul");
         assertEquals(2, kokler.size());
     }
 
     @Test
     public void testKokler() {
-        Collection list = sozluk.kokBul("armut");
+        Collection<Kok> list = sozluk.kokBul("armut");
         System.out.println("list:" + list);
         assertNotNull(list);
         assertTrue(list.size() == 1);
-        Kok kok = (Kok) list.iterator().next();
+        Kok kok = list.iterator().next();
         assertEquals(kok.icerik(), "armut");
         list = sozluk.kokBul("armud");
         System.out.println("list:" + list);
         assertTrue(list.size() == 1);
-        kok = (Kok) list.iterator().next();
+        kok = list.iterator().next();
         assertEquals(kok.icerik(), "armut");
     }
 
     @Test
     public void testEsSesliKokBul() {
-        Collection kokler = sozluk.kokBul("devir");
+        Collection<Kok> kokler = sozluk.kokBul("devir");
         assertTrue(kokler.size() == 2);
         kokler = sozluk.kokBul("devr");
         assertTrue(kokler.size() == 2);

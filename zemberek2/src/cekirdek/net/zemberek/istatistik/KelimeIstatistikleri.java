@@ -8,15 +8,16 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 
 public class KelimeIstatistikleri implements Istatistik{
-	private HashMap kelimeler = new HashMap();
-	private ArrayList kelimeListesi = new ArrayList(100);
+	private HashMap<String, KelimeBilgisi> kelimeler = new HashMap<String, KelimeBilgisi>();
+	private List<KelimeBilgisi> kelimeListesi = new ArrayList<KelimeBilgisi>(100);
 	private static int LIMIT = 1000000;
 	
 	
 	public void isle(String giris){
-		KelimeBilgisi kelime = (KelimeBilgisi)kelimeler.get(giris);
+		KelimeBilgisi kelime = kelimeler.get(giris);
 		if(kelime == null){
 			if(kelimeler.size() == LIMIT) return;
 			kelimeler.put(giris, new KelimeBilgisi(giris));
@@ -29,13 +30,13 @@ public class KelimeIstatistikleri implements Istatistik{
 	}
 
 	public void tamamla() {
-		for (Iterator it = kelimeler.values().iterator(); it.hasNext();) {
+		for (Iterator<KelimeBilgisi> it = kelimeler.values().iterator(); it.hasNext();) {
 			kelimeListesi.add(it.next());
 		}
 		Collections.sort(kelimeListesi);
 	}
 	
-	public ArrayList getKelimeListesi() {
+	public List<KelimeBilgisi> getKelimeListesi() {
 		return kelimeListesi;
 	}
 

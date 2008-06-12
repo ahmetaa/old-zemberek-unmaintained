@@ -10,7 +10,7 @@ package net.zemberek.istatistik;
 
 import net.zemberek.yapi.ek.Ek;
 
-public class EkFrekansBilgisi implements Comparable {
+public class EkFrekansBilgisi implements Comparable<EkFrekansBilgisi> {
     private int kullanim = 1;
     private double kullanimFrekansi = 0.0d;
     private Ek ek;
@@ -27,8 +27,8 @@ public class EkFrekansBilgisi implements Comparable {
         return kullanim;
     }
 
-    public int compareTo(Object o) {
-        EkFrekansBilgisi giris = (EkFrekansBilgisi) o;
+    public int compareTo(EkFrekansBilgisi o) {
+        EkFrekansBilgisi giris = o;
         return (giris.kullanim - this.kullanim > 0 ? 1 : -1);
     }
 

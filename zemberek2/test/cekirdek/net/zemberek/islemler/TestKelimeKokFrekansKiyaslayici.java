@@ -4,18 +4,17 @@
 
 package net.zemberek.islemler;
 
-import net.zemberek.TemelTest;
-import net.zemberek.erisim.Zemberek;
-import net.zemberek.tr.yapi.TurkiyeTurkcesi;
-import net.zemberek.yapi.Kelime;
-import net.zemberek.yapi.Kok;
 import static org.junit.Assert.assertTrue;
-import org.junit.Test;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import java.util.Arrays;
+
+import net.zemberek.TemelTest;
+import net.zemberek.yapi.Kelime;
+import net.zemberek.yapi.Kok;
+
+import org.junit.Test;
 
 /**
  * User: ahmet

@@ -96,7 +96,7 @@ public class GenelKokIstatistikBilgisi implements KokIstatistikBilgisi {
         return res;
     }
 
-    public HashMap getEkZincirleri() {
+    public HashMap<String, EkZinciri> getEkZincirleri() {
         return ekZincirleri;
     }
 
@@ -131,7 +131,7 @@ public class GenelKokIstatistikBilgisi implements KokIstatistikBilgisi {
         Collections.sort(ekListesi);
     }
 
-    public ArrayList getEkListesi() {
+    public List<EkZinciri> getEkListesi() {
         return ekListesi;
     }
 

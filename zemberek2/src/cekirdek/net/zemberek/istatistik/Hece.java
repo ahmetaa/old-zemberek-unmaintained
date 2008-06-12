@@ -11,7 +11,7 @@ package net.zemberek.istatistik;
 /**
  * @author MDA
  */
-public class Hece implements Comparable {
+public class Hece implements Comparable<Hece> {
     private String hece = null;
     private long kullanim = 1;
 
@@ -23,8 +23,8 @@ public class Hece implements Comparable {
         kullanim++;
     }
 
-    public int compareTo(Object o) {
-        return (int) (((Hece) o).kullanim - this.kullanim);
+    public int compareTo(Hece o) {
+        return (int)(o.kullanim - this.kullanim);
     }
 
     /**

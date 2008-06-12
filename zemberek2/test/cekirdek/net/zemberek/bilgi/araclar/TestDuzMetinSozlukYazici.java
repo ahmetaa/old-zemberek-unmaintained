@@ -7,20 +7,19 @@
  */
 package net.zemberek.bilgi.araclar;
 
-import net.zemberek.TemelTest;
-import net.zemberek.araclar.TimeTracker;
-import net.zemberek.yapi.Kok;
-import net.zemberek.yapi.kok.KokOzelDurumu;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
-import org.junit.Test;
-import org.junit.After;
-import org.junit.Before;
 
-import java.io.IOException;
 import java.io.File;
-import java.util.List;
+import java.io.IOException;
 import java.util.Arrays;
+import java.util.List;
+
+import net.zemberek.TemelTest;
+import net.zemberek.yapi.Kok;
+import net.zemberek.yapi.kok.KokOzelDurumu;
+
+import org.junit.Test;
 
 /**
  * @author MDA & GBA

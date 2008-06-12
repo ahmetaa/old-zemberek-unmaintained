@@ -151,7 +151,7 @@ public class Ek {
         return ardisilEkler;
     }
 
-    public void setArdisilEkler(List ardisilEkler) {
+    public void setArdisilEkler(List<Ek> ardisilEkler) {
         this.ardisilEkler = ardisilEkler;
     }
 

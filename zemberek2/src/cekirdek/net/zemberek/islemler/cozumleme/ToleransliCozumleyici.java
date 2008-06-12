@@ -43,7 +43,7 @@ public class ToleransliCozumleyici {
         if (strIslenmis.length() == 0)
             return BOS_KELIME_DIZISI;
         List<Kok> kokler = kokBulucu.adayKokleriBul(strIslenmis);
-        List<Kelime> cozumler = new ArrayList();
+        List<Kelime> cozumler = new ArrayList<Kelime>();
         if (log.isLoggable(Level.FINER)) log.finer("Giris: " + strIslenmis + ", Adaylar: " + kokler);
 
         HarfDizisi girisDizi = new HarfDizisi(strIslenmis, alfabe);
@@ -62,7 +62,7 @@ public class ToleransliCozumleyici {
             if (log.isLoggable(Level.FINER)) log.finer("Aday:" + kok.icerik() + " tolerans:" + kokHatasi);
             if (MetinAraclari.duzeltmeMesafesiIcinde(kok.icerik(), strIslenmis, TOLERANS))
                 cozumler.add(new Kelime(kok, alfabe));
-            List sonuclar;
+            List<Kelime> sonuclar;
             if (TOLERANS > kokHatasi)
                 sonuclar = coz(kok, kokDizi, girisDizi, TOLERANS - kokHatasi);
             else
@@ -77,13 +77,13 @@ public class ToleransliCozumleyici {
         return cozumler.toArray(new Kelime[cozumler.size()]);
     }
 
-    private List coz(Kok kok, HarfDizisi kokDizi, HarfDizisi girisDizi, int tolerans) {
+    private List<Kelime> coz(Kok kok, HarfDizisi kokDizi, HarfDizisi girisDizi, int tolerans) {
 
         Kelime kelime = new Kelime(kok, kokDizi);
         kelime.ekEkle(ekYonetici.ilkEkBelirle(kelime.kok()));
         BasitKelimeYigini kelimeYigini = new BasitKelimeYigini();
 
-        List<Kelime> uygunSonuclar = new ArrayList();
+        List<Kelime> uygunSonuclar = new ArrayList<Kelime>();
 
         //analiz kelimesini kokler kokunden olustur.
         kelimeYigini.temizle();

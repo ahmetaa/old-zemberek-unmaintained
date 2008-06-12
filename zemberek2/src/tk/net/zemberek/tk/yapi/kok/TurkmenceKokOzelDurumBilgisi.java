@@ -39,7 +39,7 @@ public class TurkmenceKokOzelDurumBilgisi extends TemelKokOzelDurumBilgisi imple
 
         ekle(uretici(KICELTME, new SonHarfDusmesi()).yapiBozucu(true));
 
-        Map<String, String> benSenDonusum = new HashMap();
+        Map<String, String> benSenDonusum = new HashMap<String, String>();
         benSenDonusum.put("ben", "ban");
         benSenDonusum.put("sen", "san");
         ekle(uretici(YEKELIK_KISI_BOZUMASI, new YeniIcerikAta(alfabe, benSenDonusum)).yapiBozucu(true));
@@ -69,7 +69,7 @@ public class TurkmenceKokOzelDurumBilgisi extends TemelKokOzelDurumBilgisi imple
 
         HarfDizisi hdizi = new HarfDizisi(kok.icerik(), alfabe);
 
-        List degismisIcerikler = new ArrayList(1);
+        List<String> degismisIcerikler = new ArrayList<String>(1);
 
         //ara sesli dusmesi nedeniyle bazen yapay oarak kok'e ters sesli etkisi ozel durumunun eklenmesi gerekir.
         // nakit -> nakde seklinde. normal kosullarda "nakda" olusmasi gerekirdi.
@@ -105,7 +105,7 @@ public class TurkmenceKokOzelDurumBilgisi extends TemelKokOzelDurumBilgisi imple
             degismisIcerikler.add(tempDizi.toString());
         }
         // yani ozel durumlar eklenmis olabileceginden koke ods'u tekrar koke esle.
-        return (String[]) degismisIcerikler.toArray(new String[degismisIcerikler.size()]);
+        return degismisIcerikler.toArray(new String[degismisIcerikler.size()]);
     }
 
     public void ozelDurumBelirle(Kok kok) {

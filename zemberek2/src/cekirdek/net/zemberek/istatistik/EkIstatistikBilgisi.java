@@ -52,8 +52,8 @@ public class EkIstatistikBilgisi {
     public String toString() {
         StringBuilder buffer = new StringBuilder();
         buffer.append(ek.ad() + " Kullanim : %" + IstatistikAraclari.onbindeHesaplaStr(this.kullanimSayisi, toplamKullanim) + "\n");
-        for (Iterator i = ardisilEkListesi.iterator(); i.hasNext();) {
-            EkFrekansBilgisi freq = (EkFrekansBilgisi) i.next();
+        for (Iterator<EkFrekansBilgisi> i = ardisilEkListesi.iterator(); i.hasNext();) {
+            EkFrekansBilgisi freq = i.next();
             buffer.append("  " + freq.getEk().ad());
             buffer.append("  %" + IstatistikAraclari.onbindeHesaplaStr(freq.getKullanim(), this.kullanimSayisi));
             buffer.append("  (" + freq.getKullanim() + ")\n");
@@ -62,7 +62,7 @@ public class EkIstatistikBilgisi {
         return buffer.toString();
     }
 
-    public List getArdisilEkListesi() {
+    public List<EkFrekansBilgisi> getArdisilEkListesi() {
         return ardisilEkListesi;
     }
 

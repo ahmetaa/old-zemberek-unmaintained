@@ -167,7 +167,7 @@ public class KokOzelDurumu {
         return sesliEkIleOlusur;
     }
 
-    public Set geleibilecekEkler() {
+    public Set<Ek> geleibilecekEkler() {
         return gelebilecekEkler;
     }
 

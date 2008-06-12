@@ -27,15 +27,16 @@
 
 package net.zemberek.az.yapi.ek;
 
+import java.util.List;
+
 import net.zemberek.az.yapi.AzericeSesliUretici;
 import net.zemberek.yapi.Alfabe;
 import net.zemberek.yapi.HarfDizisi;
 import net.zemberek.yapi.TurkceHarf;
-import net.zemberek.yapi.ek.*;
-import static net.zemberek.yapi.ek.TemelEkUretimKurali.KAYNASTIR;
-
-import java.util.List;
-import java.util.Set;
+import net.zemberek.yapi.ek.EkUretici;
+import net.zemberek.yapi.ek.EkUretimBileseni;
+import net.zemberek.yapi.ek.TemelEkUretici;
+import net.zemberek.yapi.ek.TemelEkUretimKurali;
 
 public class EkUreticiAz  extends TemelEkUretici implements EkUretici {
 

@@ -26,7 +26,7 @@ public class TestCozumlemePerformans extends TestKelimeCozumleyici {
         //List kelimeler = YaziIsleyici.analizIcinKelimeAyikla(YaziIsleyici.yaziOkuyucu("kaynaklar/metinler/Ahmet_Hamdi_Tanpinar_Huzur.txt"));
         //List kelimeler = YaziIsleyici.analizIcinKelimeAyikla(YaziIsleyici.yaziOkuyucu("kaynaklar/metinler/Oscar_Wilde_Oykuler1.txt"));
         //List kelimeler = YaziIsleyici.analizIcinKelimeAyikla(YaziIsleyici.yaziOkuyucu("kaynaklar/metinler/Frank_Herbert_Dune1.txt"));
-        List kelimeler = YaziIsleyici.analizIcinKelimeAyikla(YaziIsleyici.yaziOkuyucu("kaynaklar/tr/metinler/buzyeli_vadisi_2.txt"));
+        List<String> kelimeler = YaziIsleyici.analizIcinKelimeAyikla(YaziIsleyici.yaziOkuyucu("kaynaklar/tr/metinler/buzyeli_vadisi_2.txt"));
         //List kelimeler = YaziIsleyici.analizIcinKelimeAyikla(YaziIsleyici.yaziOkuyucu("kaynaklar/tr/metinler/commodore.txt"));
         //List kelimeler = YaziIsleyici.kelimeAyikla(YaziIsleyici.yaziOkuyucu("kaynaklar/metinler/corpus.txt"));
         //int vuru = 0;
@@ -40,7 +40,7 @@ public class TestCozumlemePerformans extends TestKelimeCozumleyici {
             long t1 = System.nanoTime();
         for (int i = 0; i < kelimeler.size(); i++) {
 
-            String kelime = (String) kelimeler.get(i);
+            String kelime = kelimeler.get(i);
 /*            if(denetlemeCebi.containsKey(kelime))
             {
                vuru++;

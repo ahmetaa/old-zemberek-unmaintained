@@ -28,23 +28,23 @@ public class Tatarca implements DilAyarlari {
         return new Locale("tt");
     }
 
-    public Class alfabeSinifi() {
+    public Class<Alfabe> alfabeSinifi() {
         return Alfabe.class;
     }
 
-    public Class ekYoneticiSinifi() {
+    public Class<TemelEkYonetici> ekYoneticiSinifi() {
         return TemelEkYonetici.class;
     }
 
-    public Class heceleyiciSinifi() {
+    public Class<TatarcaHeceleyici> heceleyiciSinifi() {
         return TatarcaHeceleyici.class;
     }
 
-    public Class kokOzelDurumBilgisiSinifi() {
+    public Class<TatarcaKokOzelDurumBilgisi> kokOzelDurumBilgisiSinifi() {
         return TatarcaKokOzelDurumBilgisi.class;
     }
 
-    public Class cozumlemeYardimcisiSinifi() {
+    public Class<TatarcaCozumlemeYardimcisi> cozumlemeYardimcisiSinifi() {
         return TatarcaCozumlemeYardimcisi.class;
     }
 
@@ -66,7 +66,7 @@ public class Tatarca implements DilAyarlari {
 
     public Map<String, KelimeTipi> kokTipiAdlari() {
         //TODO: burasi azericeye gore duzenlenmeli
-        Map<String, KelimeTipi> tipMap = new HashMap();
+        Map<String, KelimeTipi> tipMap = new HashMap<String, KelimeTipi>();
         tipMap.put("IS", ISIM);
         tipMap.put("FI", FIIL);
         tipMap.put("SI", SIFAT);
@@ -86,7 +86,7 @@ public class Tatarca implements DilAyarlari {
     }
 
     public Map<KelimeTipi, String> baslangiEkAdlari() {
-        Map<KelimeTipi, String> baslangicEkAdlari = new EnumMap(KelimeTipi.class);
+        Map<KelimeTipi, String> baslangicEkAdlari = new EnumMap<KelimeTipi, String>(KelimeTipi.class);
         //TODO: Baslangic ekleri simidlik sadece ISIM_KOK baslangic ekini gosteriyor..
         baslangicEkAdlari.put(ISIM, IS_KOK);
         baslangicEkAdlari.put(SIFAT, IS_KOK);

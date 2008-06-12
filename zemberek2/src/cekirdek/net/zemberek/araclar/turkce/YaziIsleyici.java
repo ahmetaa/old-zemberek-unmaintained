@@ -24,12 +24,11 @@ public class YaziIsleyici {
      * @param target
      * @return metin kelimeleri liste icerisinde String olarak dondurulur.
      */
-    public static List kelimeAyikla(String target) {
+    public static List<String> kelimeAyikla(String target) {
         kelimeIt.setText(target);
         int start = kelimeIt.first();
         int end = kelimeIt.next();
-        List kelimeList = new ArrayList();
-
+        List<String> kelimeList = new ArrayList<String>();
         while (end != BreakIterator.DONE) {
             String word = target.substring(start, end);
             if (Character.isLetterOrDigit(word.charAt(0))) {
@@ -48,14 +47,14 @@ public class YaziIsleyici {
     /*TODO: Please review if this method needs to be here
     */
 
-    public static List analizIcinKelimeAyikla(String target) {
-        List cumleler = cumleAyikla(target);
-        List tumKelimeler = new ArrayList();
+    public static List<String> analizIcinKelimeAyikla(String target) {
+        List<String> cumleler = cumleAyikla(target);
+        List<String> tumKelimeler = new ArrayList<String>();
         for (int i = 0; i < cumleler.size(); i++) {
             String cumle = (String) cumleler.get(i);
-            List kelimeler = kelimeAyikla(cumle);
+            List<String> kelimeler = kelimeAyikla(cumle);
             for (int j = 0; j < kelimeler.size(); j++) {
-                String kelime = (String) kelimeler.get(j);
+                String kelime = kelimeler.get(j);
                 if (Character.isLowerCase(kelime.charAt(0))) {
                     char[] chrs = kelime.toCharArray();
                     boolean nokta = false;
@@ -71,11 +70,11 @@ public class YaziIsleyici {
         return tumKelimeler;
     }
 
-    public static List cumleAyikla(String target) {
+    public static List<String> cumleAyikla(String target) {
         cumleIt.setText(target);
         int start = cumleIt.first();
         int end = cumleIt.next();
-        List cumleList = new ArrayList();
+        List<String> cumleList = new ArrayList<String>();
 
         while (end != BreakIterator.DONE) {
             String cumle = target.substring(start, end);
@@ -98,7 +97,7 @@ public class YaziIsleyici {
         int end = kelimeIt.next();
         int boslukBasla = 0;
 
-        List<YaziBirimi> yaziBirimleri = new ArrayList();
+        List<YaziBirimi> yaziBirimleri = new ArrayList<YaziBirimi>();
 
         while (end != BreakIterator.DONE) {
             String word = target.substring(start, end);

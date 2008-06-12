@@ -30,10 +30,6 @@ package net.zemberek.deney;
 import java.util.ArrayList;
 import java.util.List;
 
-import net.zemberek.araclar.MetinAraclari;
-import net.zemberek.araclar.TimeTracker;
-import net.zemberek.yapi.Alfabe;
-
 public class MetinAraclari2 {
 
     private static int duzeltmeMesafesi(String s, String t, int limit)

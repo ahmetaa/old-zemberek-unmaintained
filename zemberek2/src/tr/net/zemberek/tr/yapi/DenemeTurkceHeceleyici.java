@@ -22,9 +22,9 @@ public class DenemeTurkceHeceleyici implements Heceleyici {
      */
 
     public List<String> hecele(HarfDizisi kelime) {
-        ArrayList<String> heceler = new ArrayList();
+        ArrayList<String> heceler = new ArrayList<String>();
         final int sesliSayisi = kelime.sesliSayisi();
-        Set<Integer> heceyapicilar = new HashSet(sesliSayisi);
+        Set<Integer> heceyapicilar = new HashSet<Integer>(sesliSayisi);
 
         final int boy = kelime.length();
         for (int i = 0; i < boy - 1; i++) {
