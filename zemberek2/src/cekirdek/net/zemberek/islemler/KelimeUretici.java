@@ -5,12 +5,10 @@
 package net.zemberek.islemler;
 
 import net.zemberek.islemler.cozumleme.CozumlemeYardimcisi;
-import net.zemberek.yapi.Alfabe;
-import net.zemberek.yapi.HarfDizisi;
-import net.zemberek.yapi.Kelime;
-import net.zemberek.yapi.Kok;
+import net.zemberek.yapi.*;
 import net.zemberek.yapi.ek.Ek;
 import net.zemberek.yapi.ek.TemelEkYonetici;
+import net.zemberek.yapi.ek.EkYonetici;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,8 +19,10 @@ public class KelimeUretici {
 
     private final Alfabe alfabe;
     private final CozumlemeYardimcisi yardimci;
+    private final EkYonetici ekYonetici;
 
-    public KelimeUretici(Alfabe alfabe, CozumlemeYardimcisi yardimci) {
+    public KelimeUretici(Alfabe alfabe, EkYonetici ekler, CozumlemeYardimcisi yardimci) {
+        this.ekYonetici = ekler;
         this.alfabe = alfabe;
         this.yardimci = yardimci;
     }
@@ -37,6 +37,25 @@ public class KelimeUretici {
     public String kelimeUret(Kok kok, List<Ek> ekler) {
         UretimNesnesi ure = uretimNesnesiUret(kok, ekler);
         return ure.olusum;
+    }
+
+    /**
+     * rasgele dizili bir ek listesini kullanarak olasi kelime uretir.
+     *
+     * @param kok   Kelime koku
+     * @param ekler rasgele sirali ekler.
+     * @return eger eklerin tamami uygun sekilde dizilebiliyorsa o dizilimle uretilen kelime stringi.
+     *         eger eklerin tamami dizilemezse ya da ekler listesi bos ise kok icerigi doner.
+     */
+    String sirasizEklerleUret(Kok kok, List<Ek> ekler) {
+        Ek ilkEk = ekYonetici.ilkEkBelirle(kok);
+        if (ilkEk == TemelEkYonetici.BOS_EK)
+            return kok.icerik();
+        if (ekler.contains(ilkEk))
+            ekler.remove(ilkEk);
+        List<List<Ek>> sonuclar = new EkSiralayici(ekler, ilkEk).olasiEkDizilimleriniBul();
+        if (sonuclar.isEmpty()) return kok.icerik();
+        else return uretimNesnesiUret(kok, sonuclar.get(0)).olusum;
     }
 
     /**

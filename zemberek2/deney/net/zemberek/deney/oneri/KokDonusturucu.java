@@ -96,7 +96,7 @@ public class KokDonusturucu {
                 db.cozumlemeYardimcisi());
 
         // kelime uretici
-        KelimeUretici kelimeUretici = new KelimeUretici(db.alfabe(), db.cozumlemeYardimcisi());
+        KelimeUretici kelimeUretici = new KelimeUretici(db.alfabe(),db.ekler(), db.cozumlemeYardimcisi());
 
         // donusturucu
         KokDonusturucu donusturucu = new KokDonusturucu(cozumleyici, kelimeUretici, kokTablosu);
