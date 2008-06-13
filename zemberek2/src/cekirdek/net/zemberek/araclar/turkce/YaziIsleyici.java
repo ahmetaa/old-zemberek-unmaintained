@@ -51,7 +51,7 @@ public class YaziIsleyici {
         List<String> cumleler = cumleAyikla(target);
         List<String> tumKelimeler = new ArrayList<String>();
         for (int i = 0; i < cumleler.size(); i++) {
-            String cumle = (String) cumleler.get(i);
+            String cumle = cumleler.get(i);
             List<String> kelimeler = kelimeAyikla(cumle);
             for (int j = 0; j < kelimeler.size(); j++) {
                 String kelime = kelimeler.get(j);
