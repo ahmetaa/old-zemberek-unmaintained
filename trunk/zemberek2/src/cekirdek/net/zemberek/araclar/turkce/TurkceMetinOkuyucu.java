@@ -29,7 +29,7 @@ public class TurkceMetinOkuyucu {
         System.out.println(" Metin kelime sayisi: " + list.size());
         kelimeler = new String[list.size()];
         for (int i = 0; i < list.size(); i++) {
-            kelimeler[i] = (String) list.get(i);
+            kelimeler[i] = list.get(i);
         }
         return kelimeler;
     }
