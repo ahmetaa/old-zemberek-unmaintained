@@ -4,13 +4,15 @@
 
 package net.zemberek.islemler;
 
-import net.zemberek.islemler.cozumleme.KelimeCozumleyici;
-import net.zemberek.islemler.cozumleme.CozumlemeSeviyesi;
-import net.zemberek.yapi.Alfabe;
-import net.zemberek.yapi.Kok;
-import net.zemberek.yapi.Kelime;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
-import java.util.*;
+import net.zemberek.islemler.cozumleme.CozumlemeSeviyesi;
+import net.zemberek.islemler.cozumleme.KelimeCozumleyici;
+import net.zemberek.yapi.Alfabe;
+import net.zemberek.yapi.Kelime;
+import net.zemberek.yapi.Kok;
 
 /**
  * basit kelime tabanli kok bulucu. simdilik sadece kelime frekansina gore siralama yapar.

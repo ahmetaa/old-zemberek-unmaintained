@@ -7,9 +7,11 @@
  */
 package net.zemberek.istatistik;
 
-import net.zemberek.araclar.IstatistikAraclari;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
-import java.util.*;
+import net.zemberek.araclar.IstatistikAraclari;
 
 /**
  * @author MDA & GBA

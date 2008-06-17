@@ -4,14 +4,14 @@
 
 package net.zemberek.yapi.ek;
 
-import net.zemberek.araclar.Kayitci;
-import net.zemberek.yapi.KelimeTipi;
-import net.zemberek.yapi.Kok;
-
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Logger;
+
+import net.zemberek.araclar.Kayitci;
+import net.zemberek.yapi.KelimeTipi;
+import net.zemberek.yapi.Kok;
 
 /**
  * Bu sinif dile ozel ek yonetici siniflar icin taban olarak kullanilir.

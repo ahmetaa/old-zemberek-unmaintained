@@ -4,7 +4,7 @@
 
 package net.zemberek.islemler;
 
-import java.util.*;
+import java.util.List;
 
 import net.zemberek.yapi.Alfabe;
 import net.zemberek.yapi.HarfDizisi;

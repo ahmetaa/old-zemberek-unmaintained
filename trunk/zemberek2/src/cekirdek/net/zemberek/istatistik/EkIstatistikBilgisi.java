@@ -8,10 +8,14 @@
  */
 package net.zemberek.istatistik;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+
 import net.zemberek.araclar.IstatistikAraclari;
 import net.zemberek.yapi.ek.Ek;
-
-import java.util.*;
 
 public class EkIstatistikBilgisi {
     public static long toplamKullanim = 0;

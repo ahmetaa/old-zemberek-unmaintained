@@ -4,13 +4,11 @@
 
 package net.zemberek.yapi.ek;
 
-import net.zemberek.yapi.ek.EkOzelDurumu;
-import net.zemberek.yapi.ek.Ek;
-import net.zemberek.yapi.Kelime;
-import net.zemberek.yapi.HarfDizisi;
-import net.zemberek.yapi.TurkceHarf;
-import net.zemberek.yapi.Alfabe;
 import net.zemberek.islemler.cozumleme.HarfDizisiKiyaslayici;
+import net.zemberek.yapi.Alfabe;
+import net.zemberek.yapi.HarfDizisi;
+import net.zemberek.yapi.Kelime;
+import net.zemberek.yapi.TurkceHarf;
 
 
 /**

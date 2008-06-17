@@ -4,6 +4,21 @@
 
 package net.zemberek.islemler;
 
+import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.FIIL_GELECEKZAMAN_ECEK;
+import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.FIIL_KISI_BIZ;
+import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.FIIL_KOK;
+import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.FIIL_YETENEK_EBIL;
+import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.ISIM_DONUSUM_LES;
+import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.ISIM_KOK;
+import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.ISIM_SAHIPLIK_BIZ_IMIZ;
+import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.ISIM_TANIMLAMA_DIR;
+import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.ISIM_YONELME_E;
+import static org.junit.Assert.assertEquals;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
 import net.zemberek.TemelTest;
 import net.zemberek.TestUtils;
 import net.zemberek.bilgi.kokler.KokAdayiBulucu;
@@ -11,21 +26,16 @@ import net.zemberek.bilgi.kokler.Sozluk;
 import net.zemberek.islemler.cozumleme.CozumlemeSeviyesi;
 import net.zemberek.islemler.cozumleme.KesinHDKiyaslayici;
 import net.zemberek.islemler.cozumleme.StandartCozumleyici;
-import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.*;
+import net.zemberek.yapi.Alfabe;
 import net.zemberek.yapi.Kelime;
 import net.zemberek.yapi.KelimeTipi;
 import net.zemberek.yapi.Kok;
-import net.zemberek.yapi.Alfabe;
 import net.zemberek.yapi.ek.Ek;
-import static org.junit.Assert.assertEquals;
+
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
-import org.junit.Assert;
-
-import java.io.IOException;
-import java.util.List;
-import java.util.ArrayList;
 
 /**
  */

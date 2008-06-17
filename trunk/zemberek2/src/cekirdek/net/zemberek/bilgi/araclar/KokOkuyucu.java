@@ -4,10 +4,10 @@
 
 package net.zemberek.bilgi.araclar;
 
-import net.zemberek.yapi.Kok;
-
 import java.io.IOException;
 import java.util.List;
+
+import net.zemberek.yapi.Kok;
 
 public interface KokOkuyucu {
 

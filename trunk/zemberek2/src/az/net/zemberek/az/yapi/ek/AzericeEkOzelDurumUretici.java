@@ -28,9 +28,9 @@
 package net.zemberek.az.yapi.ek;
 
 import net.zemberek.yapi.Alfabe;
+import net.zemberek.yapi.ek.EkOzelDurumTipi;
 import net.zemberek.yapi.ek.EkOzelDurumu;
 import net.zemberek.yapi.ek.TemelEkOzelDurumUretici;
-import net.zemberek.yapi.ek.EkOzelDurumTipi;
 
 
 public class AzericeEkOzelDurumUretici extends TemelEkOzelDurumUretici {

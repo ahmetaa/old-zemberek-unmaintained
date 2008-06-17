@@ -4,11 +4,11 @@
 
 package net.zemberek.yapi.kok;
 
-import net.zemberek.yapi.HarfDizisi;
-import net.zemberek.yapi.ek.Ek;
-
 import java.util.HashSet;
 import java.util.Set;
+
+import net.zemberek.yapi.HarfDizisi;
+import net.zemberek.yapi.ek.Ek;
 
 
 /**

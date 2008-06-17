@@ -4,10 +4,10 @@
 
 package net.zemberek.yapi;
 
-import net.zemberek.yapi.ek.Ek;
-
 import java.util.ArrayList;
 import java.util.List;
+
+import net.zemberek.yapi.ek.Ek;
 
 public class Kelime implements Cloneable {
 

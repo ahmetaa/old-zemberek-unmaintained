@@ -4,13 +4,13 @@
 
 package net.zemberek.yapi.ek;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import net.zemberek.TemelTest;
 import net.zemberek.islemler.cozumleme.KesinHDKiyaslayici;
 import net.zemberek.yapi.Kelime;
 import net.zemberek.yapi.KelimeTipi;
 import net.zemberek.yapi.Kok;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 /**
  * User: aakin

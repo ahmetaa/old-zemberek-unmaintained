@@ -4,16 +4,21 @@
 
 package net.zemberek.kullanim;
 
-import net.zemberek.islemler.KelimeUretici;
-import net.zemberek.tr.yapi.TurkiyeTurkcesi;
-import net.zemberek.yapi.*;
-import net.zemberek.yapi.ek.Ek;
-import net.zemberek.yapi.ek.EkYonetici;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+
+import net.zemberek.islemler.KelimeUretici;
+import net.zemberek.tr.yapi.TurkiyeTurkcesi;
+import net.zemberek.yapi.Alfabe;
+import net.zemberek.yapi.DilBilgisi;
+import net.zemberek.yapi.Kelime;
+import net.zemberek.yapi.KelimeTipi;
+import net.zemberek.yapi.Kok;
+import net.zemberek.yapi.TurkceDilBilgisi;
+import net.zemberek.yapi.ek.Ek;
+import net.zemberek.yapi.ek.EkYonetici;
 
 
 public class RastgeleKelimeUretici {

@@ -4,10 +4,6 @@
 
 package net.zemberek.bilgi.araclar;
 
-import net.zemberek.yapi.KelimeTipi;
-import net.zemberek.yapi.Kok;
-import net.zemberek.yapi.kok.KokOzelDurumu;
-
 import java.io.BufferedWriter;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -15,6 +11,10 @@ import java.io.OutputStreamWriter;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import net.zemberek.yapi.KelimeTipi;
+import net.zemberek.yapi.Kok;
+import net.zemberek.yapi.kok.KokOzelDurumu;
 
 /**
  * Verilen bir sözlüğün düzyazı olarak yazılmasını sağlar.

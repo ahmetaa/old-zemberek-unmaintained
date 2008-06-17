@@ -7,11 +7,11 @@
  */
 package net.zemberek.istatistik;
 
-import net.zemberek.yapi.ek.Ek;
-import net.zemberek.yapi.ek.EkYonetici;
-
 import java.util.ArrayList;
 import java.util.List;
+
+import net.zemberek.yapi.ek.Ek;
+import net.zemberek.yapi.ek.EkYonetici;
 
 /**
  * @author MDA & GBA

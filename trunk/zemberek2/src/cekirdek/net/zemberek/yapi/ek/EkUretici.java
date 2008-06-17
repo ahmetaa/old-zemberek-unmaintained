@@ -4,11 +4,11 @@
 
 package net.zemberek.yapi.ek;
 
-import net.zemberek.yapi.HarfDizisi;
-import net.zemberek.yapi.TurkceHarf;
-
 import java.util.List;
 import java.util.Set;
+
+import net.zemberek.yapi.HarfDizisi;
+import net.zemberek.yapi.TurkceHarf;
 
 /**
  * ek uretim kuralinin islenmesinde kullanilan sinif icin ortak arayuz.

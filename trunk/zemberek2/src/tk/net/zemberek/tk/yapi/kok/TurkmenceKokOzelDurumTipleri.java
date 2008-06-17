@@ -4,7 +4,25 @@
 
 package net.zemberek.tk.yapi.kok;
 
-import static net.zemberek.tk.yapi.ek.TurkmenceEkAdlari.*;
+import static net.zemberek.tk.yapi.ek.TurkmenceEkAdlari.AT_ATYASAYIJI_JI;
+import static net.zemberek.tk.yapi.ek.TurkmenceEkAdlari.AT_ATYASAYIJI_LI;
+import static net.zemberek.tk.yapi.ek.TurkmenceEkAdlari.AT_ATYASAYIJI_LIK;
+import static net.zemberek.tk.yapi.ek.TurkmenceEkAdlari.AT_DUSUM_DE;
+import static net.zemberek.tk.yapi.ek.TurkmenceEkAdlari.AT_DUSUM_DEN;
+import static net.zemberek.tk.yapi.ek.TurkmenceEkAdlari.AT_DUSUM_E;
+import static net.zemberek.tk.yapi.ek.TurkmenceEkAdlari.AT_DUSUM_I;
+import static net.zemberek.tk.yapi.ek.TurkmenceEkAdlari.AT_DUSUM_IN;
+import static net.zemberek.tk.yapi.ek.TurkmenceEkAdlari.AT_KOPLUK_LER;
+import static net.zemberek.tk.yapi.ek.TurkmenceEkAdlari.AT_SYPATYASAYIJI_JAGAZ;
+import static net.zemberek.tk.yapi.ek.TurkmenceEkAdlari.AT_SYPATYASAYIJI_JIK;
+import static net.zemberek.tk.yapi.ek.TurkmenceEkAdlari.AT_YOKLUK_SIZ;
+import static net.zemberek.tk.yapi.ek.TurkmenceEkAdlari.AT_YONKEME_BIZ_IMIZ;
+import static net.zemberek.tk.yapi.ek.TurkmenceEkAdlari.AT_YONKEME_MEN_IM;
+import static net.zemberek.tk.yapi.ek.TurkmenceEkAdlari.AT_YONKEME_OLAR_LERI;
+import static net.zemberek.tk.yapi.ek.TurkmenceEkAdlari.AT_YONKEME_OL_I;
+import static net.zemberek.tk.yapi.ek.TurkmenceEkAdlari.AT_YONKEME_SEN_IN;
+import static net.zemberek.tk.yapi.ek.TurkmenceEkAdlari.AT_YONKEME_SIZ_INIZ;
+import static net.zemberek.tk.yapi.ek.TurkmenceEkAdlari.ISLIK_GAYDIMDEREJESI_IL;
 import net.zemberek.yapi.kok.KokOzelDurumTipi;
 
 /**

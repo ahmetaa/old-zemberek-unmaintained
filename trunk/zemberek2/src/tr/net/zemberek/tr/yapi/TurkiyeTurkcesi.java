@@ -4,21 +4,51 @@
 
 package net.zemberek.tr.yapi;
 
-import net.zemberek.tr.islemler.TurkceCozumlemeYardimcisi;
-import net.zemberek.tr.yapi.ek.EkUreticiTr;
-import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.*;
-import net.zemberek.tr.yapi.ek.TurkceEkOzelDurumUretici;
-import net.zemberek.tr.yapi.kok.TurkceKokOzelDurumBilgisi;
-import net.zemberek.yapi.Alfabe;
-import net.zemberek.yapi.DilAyarlari;
-import net.zemberek.yapi.KelimeTipi;
-import static net.zemberek.yapi.KelimeTipi.*;
-import net.zemberek.yapi.ek.*;
+import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.BAGLAC_KOK;
+import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.EDAT_KOK;
+import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.FIIL_KOK;
+import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.IMEK_KOK;
+import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.ISIM_KOK;
+import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.OZEL_KOK;
+import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.SAYI_KOK;
+import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.SORU_KOK;
+import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.UNLEM_KOK;
+import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.YANKI_KOK;
+import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.ZAMAN_KOK;
+import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.ZAMIR_KOK;
+import static net.zemberek.yapi.KelimeTipi.BAGLAC;
+import static net.zemberek.yapi.KelimeTipi.EDAT;
+import static net.zemberek.yapi.KelimeTipi.FIIL;
+import static net.zemberek.yapi.KelimeTipi.HATALI;
+import static net.zemberek.yapi.KelimeTipi.IMEK;
+import static net.zemberek.yapi.KelimeTipi.ISIM;
+import static net.zemberek.yapi.KelimeTipi.KISALTMA;
+import static net.zemberek.yapi.KelimeTipi.OZEL;
+import static net.zemberek.yapi.KelimeTipi.SAYI;
+import static net.zemberek.yapi.KelimeTipi.SIFAT;
+import static net.zemberek.yapi.KelimeTipi.SORU;
+import static net.zemberek.yapi.KelimeTipi.UNLEM;
+import static net.zemberek.yapi.KelimeTipi.YANKI;
+import static net.zemberek.yapi.KelimeTipi.ZAMAN;
+import static net.zemberek.yapi.KelimeTipi.ZAMIR;
 
 import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
+
+import net.zemberek.tr.islemler.TurkceCozumlemeYardimcisi;
+import net.zemberek.tr.yapi.ek.EkUreticiTr;
+import net.zemberek.tr.yapi.ek.TurkceEkOzelDurumUretici;
+import net.zemberek.tr.yapi.kok.TurkceKokOzelDurumBilgisi;
+import net.zemberek.yapi.Alfabe;
+import net.zemberek.yapi.DilAyarlari;
+import net.zemberek.yapi.KelimeTipi;
+import net.zemberek.yapi.ek.EkKuralBilgisi;
+import net.zemberek.yapi.ek.EkOzelDurumUretici;
+import net.zemberek.yapi.ek.EkUretici;
+import net.zemberek.yapi.ek.TemelEkUretimKurali;
+import net.zemberek.yapi.ek.TemelEkYonetici;
 
 /**
  * User: ahmet

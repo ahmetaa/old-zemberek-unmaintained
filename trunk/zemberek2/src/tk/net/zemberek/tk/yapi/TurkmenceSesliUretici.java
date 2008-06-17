@@ -6,8 +6,8 @@ package net.zemberek.tk.yapi;
 
 import net.zemberek.yapi.Alfabe;
 import net.zemberek.yapi.HarfDizisi;
-import net.zemberek.yapi.TurkceHarf;
 import net.zemberek.yapi.SesliUretici;
+import net.zemberek.yapi.TurkceHarf;
 
 /**
  * User: ahmet

@@ -9,10 +9,11 @@ package net.zemberek.araclar.turkce;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
-import org.junit.Test;
 
 import java.io.ByteArrayInputStream;
 import java.util.ArrayList;
+
+import org.junit.Test;
 
 /**
  * @author MDA & GBA
@@ -25,12 +26,12 @@ public class TestTurkishTokenStream {
         ArrayList<String> list = new ArrayList<String>();
         ByteArrayInputStream is = new ByteArrayInputStream(input.getBytes());
         TurkishTokenStream tstream;
-        tstream = new TurkishTokenStream(is, null);
+        tstream = new TurkishTokenStream(is, "UTF-8");
         String s = null;
         while ((s = tstream.nextWord()) != null) {
             list.add(s);
         }
-        assertEquals(4, list.size());
+        assertEquals(3, list.size());
         assertTrue(list.get(0).equals("Ahmet"));
     }
 

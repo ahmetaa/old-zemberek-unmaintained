@@ -4,12 +4,12 @@
 
 package net.zemberek.islemler;
 
-import net.zemberek.bilgi.KaynakYukleyici;
-
-import java.util.HashSet;
-import java.util.Set;
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.util.HashSet;
+import java.util.Set;
+
+import net.zemberek.bilgi.KaynakYukleyici;
 
 /**
  * User: ahmet

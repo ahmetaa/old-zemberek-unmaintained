@@ -4,10 +4,14 @@
 
 package net.zemberek.tt.yapi.ek;
 
-import net.zemberek.yapi.ek.EkUretimKurali;
-import net.zemberek.yapi.ek.EkKuralBilgisi;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
-import java.util.*;
+import net.zemberek.yapi.ek.EkKuralBilgisi;
+import net.zemberek.yapi.ek.EkUretimKurali;
 
 public enum TatarcaEkUretimKurali implements EkUretimKurali {
 

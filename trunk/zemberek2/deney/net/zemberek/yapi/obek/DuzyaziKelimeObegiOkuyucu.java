@@ -1,19 +1,23 @@
 package net.zemberek.yapi.obek;
 
-import net.zemberek.yapi.*;
-import static net.zemberek.yapi.KelimeTipi.*;
-import net.zemberek.bilgi.kokler.KokAdayiBulucu;
-import net.zemberek.bilgi.KaynakYukleyici;
-import net.zemberek.tr.yapi.TurkiyeTurkcesi;
-import net.zemberek.islemler.cozumleme.KelimeCozumleyici;
-import net.zemberek.islemler.cozumleme.StandartCozumleyici;
-import net.zemberek.islemler.cozumleme.KesinHDKiyaslayici;
-import net.zemberek.islemler.KokBulucu;
-import net.zemberek.islemler.KelimeTabanliKokBulucu;
-
-import java.util.*;
-import java.io.IOException;
 import java.io.BufferedReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+
+import net.zemberek.bilgi.KaynakYukleyici;
+import net.zemberek.bilgi.kokler.KokAdayiBulucu;
+import net.zemberek.islemler.KelimeTabanliKokBulucu;
+import net.zemberek.islemler.KokBulucu;
+import net.zemberek.islemler.cozumleme.KelimeCozumleyici;
+import net.zemberek.islemler.cozumleme.KesinHDKiyaslayici;
+import net.zemberek.islemler.cozumleme.StandartCozumleyici;
+import net.zemberek.tr.yapi.TurkiyeTurkcesi;
+import net.zemberek.yapi.DilBilgisi;
+import net.zemberek.yapi.Kok;
+import net.zemberek.yapi.TurkceDilBilgisi;
 
 public class DuzyaziKelimeObegiOkuyucu {
 

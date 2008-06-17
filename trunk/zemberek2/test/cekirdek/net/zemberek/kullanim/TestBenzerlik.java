@@ -4,10 +4,10 @@
 
 package net.zemberek.kullanim;
 
+import java.text.DecimalFormat;
+
 import net.zemberek.araclar.JaroWinkler;
 import net.zemberek.araclar.MetinAraclari;
-
-import java.text.DecimalFormat;
 
 public class TestBenzerlik {
 

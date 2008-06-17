@@ -4,6 +4,11 @@
 
 package net.zemberek.islemler.cozumleme;
 
+import static org.junit.Assert.assertTrue;
+
+import java.io.IOException;
+import java.util.List;
+
 import net.zemberek.TemelTest;
 import net.zemberek.TestUtils;
 import net.zemberek.bilgi.araclar.DuzYaziKokOkuyucu;
@@ -11,12 +16,9 @@ import net.zemberek.bilgi.araclar.KokOkuyucu;
 import net.zemberek.bilgi.kokler.AgacSozluk;
 import net.zemberek.bilgi.kokler.KokAdayiBulucu;
 import net.zemberek.bilgi.kokler.Sozluk;
-import static org.junit.Assert.assertTrue;
+
 import org.junit.Before;
 import org.junit.Test;
-
-import java.io.IOException;
-import java.util.List;
 
 /**
  */

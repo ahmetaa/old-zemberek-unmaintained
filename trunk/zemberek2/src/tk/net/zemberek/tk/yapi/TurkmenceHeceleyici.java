@@ -4,11 +4,11 @@
 
 package net.zemberek.tk.yapi;
 
+import java.util.Collections;
+import java.util.List;
+
 import net.zemberek.yapi.HarfDizisi;
 import net.zemberek.yapi.Heceleyici;
-
-import java.util.List;
-import java.util.Collections;
 
 /**
  * User: ahmet

@@ -4,13 +4,13 @@
 
 package net.zemberek.bilgi;
 
-import net.zemberek.araclar.Kayitci;
-
 import java.io.File;
 import java.io.IOException;
 import java.net.URI;
 import java.util.Properties;
 import java.util.logging.Logger;
+
+import net.zemberek.araclar.Kayitci;
 
 /**
  * User: ahmet

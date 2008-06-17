@@ -4,17 +4,19 @@
 
 package net.zemberek.yapi.ozeldurum;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
+import java.io.IOException;
+
 import net.zemberek.TemelTest;
 import net.zemberek.yapi.HarfDizisi;
 import net.zemberek.yapi.KelimeTipi;
 import net.zemberek.yapi.Kok;
 import net.zemberek.yapi.kok.KokOzelDurumBilgisi;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+
 import org.junit.Before;
 import org.junit.Test;
-
-import java.io.IOException;
 
 /**
  */

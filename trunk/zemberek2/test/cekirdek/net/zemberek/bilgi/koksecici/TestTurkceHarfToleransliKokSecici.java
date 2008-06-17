@@ -7,9 +7,9 @@
  */
 package net.zemberek.bilgi.koksecici;
 
-import junit.framework.TestCase;
-
 import java.io.IOException;
+
+import junit.framework.TestCase;
 
 /**
  * @author MDA & GBA

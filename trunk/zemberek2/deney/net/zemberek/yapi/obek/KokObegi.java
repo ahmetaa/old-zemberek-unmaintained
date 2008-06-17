@@ -27,9 +27,9 @@
 
 package net.zemberek.yapi.obek;
 
-import net.zemberek.yapi.Kok;
-
 import java.util.Arrays;
+
+import net.zemberek.yapi.Kok;
 
 public class KokObegi {
     public final Kok[] kokler;

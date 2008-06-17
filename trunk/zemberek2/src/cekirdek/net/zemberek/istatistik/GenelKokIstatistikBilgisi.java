@@ -7,12 +7,15 @@
  */
 package net.zemberek.istatistik;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+
 import net.zemberek.araclar.IstatistikAraclari;
 import net.zemberek.yapi.Kelime;
 import net.zemberek.yapi.Kok;
 import net.zemberek.yapi.ek.Ek;
-
-import java.util.*;
 
 /**
  * @author MDA 

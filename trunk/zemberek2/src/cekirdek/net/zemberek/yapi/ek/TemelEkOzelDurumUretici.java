@@ -4,10 +4,10 @@
 
 package net.zemberek.yapi.ek;
 
+import java.util.logging.Logger;
+
 import net.zemberek.araclar.Kayitci;
 import net.zemberek.yapi.Alfabe;
-
-import java.util.logging.Logger;
 
 /**
  * User: ahmet

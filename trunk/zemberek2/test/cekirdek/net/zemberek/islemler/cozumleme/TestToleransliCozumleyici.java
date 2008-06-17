@@ -4,6 +4,13 @@
 
 package net.zemberek.islemler.cozumleme;
 
+import static org.junit.Assert.assertTrue;
+
+import java.io.IOException;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 import net.zemberek.TemelTest;
 import net.zemberek.TestGirdisi;
 import net.zemberek.TestUtils;
@@ -13,14 +20,9 @@ import net.zemberek.bilgi.kokler.AgacSozluk;
 import net.zemberek.bilgi.kokler.KokAdayiBulucu;
 import net.zemberek.bilgi.kokler.Sozluk;
 import net.zemberek.yapi.Kelime;
-import static org.junit.Assert.assertTrue;
+
 import org.junit.Before;
 import org.junit.Test;
-
-import java.io.IOException;
-import java.util.List;
-import java.util.Set;
-import java.util.HashSet;
 
 /**
  */

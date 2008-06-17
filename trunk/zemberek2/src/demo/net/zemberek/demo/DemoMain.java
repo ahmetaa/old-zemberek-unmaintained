@@ -4,10 +4,10 @@
 
 package net.zemberek.demo;
 
-import net.zemberek.araclar.turkce.YaziIsleyici;
-
 import java.io.File;
 import java.io.IOException;
+
+import net.zemberek.araclar.turkce.YaziIsleyici;
 /**
  */
 public class DemoMain {

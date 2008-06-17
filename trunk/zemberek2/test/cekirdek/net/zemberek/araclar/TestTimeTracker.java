@@ -8,6 +8,7 @@
 package net.zemberek.araclar;
 
 import static org.junit.Assert.assertTrue;
+
 import org.junit.Test;
 
 /**
