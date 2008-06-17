@@ -4,13 +4,13 @@
 
 package net.zemberek.tr.yapi;
 
-import net.zemberek.yapi.Heceleyici;
-import net.zemberek.yapi.HarfDizisi;
-import net.zemberek.yapi.TurkceHarf;
-
-import java.util.List;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
+
+import net.zemberek.yapi.HarfDizisi;
+import net.zemberek.yapi.Heceleyici;
+import net.zemberek.yapi.TurkceHarf;
 
 public class TurkceHeceleyici implements Heceleyici {
 

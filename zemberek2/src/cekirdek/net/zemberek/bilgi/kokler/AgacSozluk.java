@@ -14,8 +14,8 @@ import java.util.List;
 
 import net.zemberek.bilgi.araclar.KokOkuyucu;
 import net.zemberek.yapi.Alfabe;
-import net.zemberek.yapi.Kok;
 import net.zemberek.yapi.KelimeTipi;
+import net.zemberek.yapi.Kok;
 import net.zemberek.yapi.kok.KokOzelDurumBilgisi;
 
 
@@ -82,6 +82,7 @@ public class AgacSozluk implements Sozluk {
     public Kok kokBul(String str, KelimeTipi tip) {
         List<Kok> kokler = agac.bul(str);
         for (Kok kok : kokler) {
+        	//TODO: Bu karsilastirma dogru mu?
             if(kok.tip()==tip) return kok;
         }
         return null;

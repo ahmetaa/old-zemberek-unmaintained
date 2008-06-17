@@ -4,18 +4,55 @@
 
 package net.zemberek.tr.yapi.kok;
 
-import static net.zemberek.tr.yapi.kok.TurkceKokOzelDurumTipleri.*;
-import net.zemberek.yapi.Alfabe;
-import net.zemberek.yapi.HarfDizisi;
-import net.zemberek.yapi.KelimeTipi;
-import net.zemberek.yapi.Kok;
-import net.zemberek.yapi.ek.EkYonetici;
-import net.zemberek.yapi.kok.*;
+import static net.zemberek.tr.yapi.kok.TurkceKokOzelDurumTipleri.CIFTLEME;
+import static net.zemberek.tr.yapi.kok.TurkceKokOzelDurumTipleri.EK_OZEL_DURUMU;
+import static net.zemberek.tr.yapi.kok.TurkceKokOzelDurumTipleri.FIIL_ARA_SESLI_DUSMESI;
+import static net.zemberek.tr.yapi.kok.TurkceKokOzelDurumTipleri.FIIL_GECISSIZ;
+import static net.zemberek.tr.yapi.kok.TurkceKokOzelDurumTipleri.FIIL_KOK_BOZULMASI;
+import static net.zemberek.tr.yapi.kok.TurkceKokOzelDurumTipleri.GENIS_ZAMAN;
+import static net.zemberek.tr.yapi.kok.TurkceKokOzelDurumTipleri.ISIM_SESLI_DUSMESI;
+import static net.zemberek.tr.yapi.kok.TurkceKokOzelDurumTipleri.ISIM_SON_SESLI_DUSMESI;
+import static net.zemberek.tr.yapi.kok.TurkceKokOzelDurumTipleri.ISIM_TAMLAMASI;
+import static net.zemberek.tr.yapi.kok.TurkceKokOzelDurumTipleri.KAYNASTIRMA_N;
+import static net.zemberek.tr.yapi.kok.TurkceKokOzelDurumTipleri.KESME;
+import static net.zemberek.tr.yapi.kok.TurkceKokOzelDurumTipleri.KESMESIZ;
+import static net.zemberek.tr.yapi.kok.TurkceKokOzelDurumTipleri.KISALTMA_SON_SESLI;
+import static net.zemberek.tr.yapi.kok.TurkceKokOzelDurumTipleri.KISALTMA_SON_SESSIZ;
+import static net.zemberek.tr.yapi.kok.TurkceKokOzelDurumTipleri.KUCULTME;
+import static net.zemberek.tr.yapi.kok.TurkceKokOzelDurumTipleri.OZEL_IC_KARAKTER;
+import static net.zemberek.tr.yapi.kok.TurkceKokOzelDurumTipleri.SESSIZ_YUMUSAMASI;
+import static net.zemberek.tr.yapi.kok.TurkceKokOzelDurumTipleri.SESSIZ_YUMUSAMASI_NK;
+import static net.zemberek.tr.yapi.kok.TurkceKokOzelDurumTipleri.SIMDIKI_ZAMAN;
+import static net.zemberek.tr.yapi.kok.TurkceKokOzelDurumTipleri.SU_OZEL_DURUMU;
+import static net.zemberek.tr.yapi.kok.TurkceKokOzelDurumTipleri.TEKIL_KISI_BOZULMASI;
+import static net.zemberek.tr.yapi.kok.TurkceKokOzelDurumTipleri.TERS_SESLI_EK;
+import static net.zemberek.tr.yapi.kok.TurkceKokOzelDurumTipleri.TIRE;
+import static net.zemberek.tr.yapi.kok.TurkceKokOzelDurumTipleri.YALIN;
+import static net.zemberek.tr.yapi.kok.TurkceKokOzelDurumTipleri.ZAMIR_IM;
+import static net.zemberek.tr.yapi.kok.TurkceKokOzelDurumTipleri.ZAMIR_IN;
+import static net.zemberek.tr.yapi.kok.TurkceKokOzelDurumTipleri.ZAMIR_SESLI_OZEL;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import net.zemberek.yapi.Alfabe;
+import net.zemberek.yapi.HarfDizisi;
+import net.zemberek.yapi.KelimeTipi;
+import net.zemberek.yapi.Kok;
+import net.zemberek.yapi.ek.EkYonetici;
+import net.zemberek.yapi.kok.AraSesliDusmesi;
+import net.zemberek.yapi.kok.BosHarfDizisiIslemi;
+import net.zemberek.yapi.kok.Ciftleme;
+import net.zemberek.yapi.kok.KokOzelDurumBilgisi;
+import net.zemberek.yapi.kok.KokOzelDurumu;
+import net.zemberek.yapi.kok.SonHarfDusmesi;
+import net.zemberek.yapi.kok.SonSesliIncelt;
+import net.zemberek.yapi.kok.TemelKokOzelDurumBilgisi;
+import net.zemberek.yapi.kok.Ulama;
+import net.zemberek.yapi.kok.YeniIcerikAta;
+import net.zemberek.yapi.kok.Yumusama;
 
 
 /**

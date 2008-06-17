@@ -4,6 +4,9 @@
 
 package net.zemberek.tt.yapi.kok;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import net.zemberek.yapi.Alfabe;
 import net.zemberek.yapi.HarfDizisi;
 import net.zemberek.yapi.KelimeTipi;
@@ -13,9 +16,6 @@ import net.zemberek.yapi.kok.KokOzelDurumBilgisi;
 import net.zemberek.yapi.kok.KokOzelDurumu;
 import net.zemberek.yapi.kok.TemelKokOzelDurumBilgisi;
 import net.zemberek.yapi.kok.Yumusama;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class TatarcaKokOzelDurumBilgisi extends TemelKokOzelDurumBilgisi implements KokOzelDurumBilgisi {
 

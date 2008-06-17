@@ -4,14 +4,15 @@
 
 package net.zemberek.kullanim;
 
+import static java.lang.System.out;
+
+import java.util.Arrays;
+import java.util.List;
+
 import net.zemberek.erisim.Zemberek;
 import net.zemberek.tr.yapi.TurkiyeTurkcesi;
 import net.zemberek.yapi.Kelime;
 import net.zemberek.yapi.Kok;
-
-import static java.lang.System.out;
-import java.util.Arrays;
-import java.util.List;
 
 public class ZemberekDeneme {
 

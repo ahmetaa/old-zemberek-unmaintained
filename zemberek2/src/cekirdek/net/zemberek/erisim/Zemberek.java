@@ -4,20 +4,42 @@
 
 package net.zemberek.erisim;
 
+import java.io.File;
+import java.io.IOException;
+import java.net.URI;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Properties;
+import java.util.Set;
+import java.util.logging.Logger;
+
 import net.zemberek.araclar.Kayitci;
 import net.zemberek.bilgi.KaynakYukleyici;
 import net.zemberek.bilgi.ZemberekAyarlari;
 import net.zemberek.bilgi.kokler.KokAdayiBulucu;
 import net.zemberek.bilgi.kokler.Sozluk;
-import net.zemberek.islemler.*;
-import net.zemberek.islemler.cozumleme.*;
-import net.zemberek.yapi.*;
-
-import java.io.File;
-import java.io.IOException;
-import java.net.URI;
-import java.util.*;
-import java.util.logging.Logger;
+import net.zemberek.islemler.AsciiDonusturucu;
+import net.zemberek.islemler.DenetlemeCebi;
+import net.zemberek.islemler.HeceIslemleri;
+import net.zemberek.islemler.KelimeKokFrekansKiyaslayici;
+import net.zemberek.islemler.KelimeTabanliKokBulucu;
+import net.zemberek.islemler.KelimeUretici;
+import net.zemberek.islemler.KokBulucu;
+import net.zemberek.islemler.TurkceYaziTesti;
+import net.zemberek.islemler.cozumleme.AsciiToleransliHDKiyaslayici;
+import net.zemberek.islemler.cozumleme.CozumlemeSeviyesi;
+import net.zemberek.islemler.cozumleme.KelimeCozumleyici;
+import net.zemberek.islemler.cozumleme.KesinHDKiyaslayici;
+import net.zemberek.islemler.cozumleme.OneriUretici;
+import net.zemberek.islemler.cozumleme.StandartCozumleyici;
+import net.zemberek.islemler.cozumleme.ToleransliCozumleyici;
+import net.zemberek.yapi.DilAyarlari;
+import net.zemberek.yapi.DilBilgisi;
+import net.zemberek.yapi.Kelime;
+import net.zemberek.yapi.Kok;
+import net.zemberek.yapi.TurkceDilBilgisi;
 
 /**
  * <b>EN:</b>This is a facade for accessing the high level functions of the Zemberek library.

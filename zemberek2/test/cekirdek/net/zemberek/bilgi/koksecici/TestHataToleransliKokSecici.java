@@ -7,10 +7,10 @@
  */
 package net.zemberek.bilgi.koksecici;
 
+import java.io.IOException;
+
 import net.zemberek.bilgi.araclar.KokOkuyucu;
 import net.zemberek.bilgi.kokler.KokAdayiBulucu;
-
-import java.io.IOException;
 
 /**
  * @author MDA & GBA

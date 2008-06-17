@@ -4,12 +4,12 @@
 
 package net.zemberek.tr.yapi.ek;
 
-import net.zemberek.yapi.ek.EkOzelDurumu;
-import net.zemberek.yapi.ek.Ek;
-import net.zemberek.yapi.HarfDizisi;
-import net.zemberek.yapi.Kelime;
 import net.zemberek.islemler.cozumleme.HarfDizisiKiyaslayici;
 import net.zemberek.tr.yapi.kok.TurkceKokOzelDurumTipleri;
+import net.zemberek.yapi.HarfDizisi;
+import net.zemberek.yapi.Kelime;
+import net.zemberek.yapi.ek.Ek;
+import net.zemberek.yapi.ek.EkOzelDurumu;
 
 /**
  * 'su' kokune kaynastirma iceren cesitli ekler eklendiginde normal kaynastirma harfi yerine

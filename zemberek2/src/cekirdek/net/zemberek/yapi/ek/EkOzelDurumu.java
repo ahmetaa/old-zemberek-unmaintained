@@ -4,13 +4,13 @@
 
 package net.zemberek.yapi.ek;
 
-import net.zemberek.islemler.cozumleme.HarfDizisiKiyaslayici;
-import net.zemberek.yapi.HarfDizisi;
-import net.zemberek.yapi.Kelime;
-
 import java.util.Collections;
 import java.util.List;
 import java.util.Set;
+
+import net.zemberek.islemler.cozumleme.HarfDizisiKiyaslayici;
+import net.zemberek.yapi.HarfDizisi;
+import net.zemberek.yapi.Kelime;
 
 /**
  * Ek ozel durumu ek'e benzer bir yapiya sahiptir. Farkli olarak bazi ozel durumlarda yer alan

@@ -4,18 +4,23 @@
 
 package net.zemberek.bilgi.kokler;
 
-import net.zemberek.TemelTest;
-import net.zemberek.araclar.TimeTracker;
-import net.zemberek.bilgi.araclar.DuzYaziKokOkuyucu;
-import net.zemberek.bilgi.araclar.KokOkuyucu;
-import net.zemberek.bilgi.araclar.IkiliKokOkuyucu;
-import net.zemberek.yapi.Kok;
-import static org.junit.Assert.*;
-import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import java.io.IOException;
 import java.util.Collection;
 import java.util.List;
+
+import net.zemberek.TemelTest;
+import net.zemberek.araclar.TimeTracker;
+import net.zemberek.bilgi.araclar.DuzYaziKokOkuyucu;
+import net.zemberek.bilgi.araclar.IkiliKokOkuyucu;
+import net.zemberek.bilgi.araclar.KokOkuyucu;
+import net.zemberek.yapi.Kok;
+
+import org.junit.Test;
 
 /**
  */
@@ -72,7 +77,7 @@ public class TestTreeSozluk extends TemelTest {
                 fail("Kelime a�a�ta bulunamad�: " + kok.icerik());
             }
         }
-        Collection kokler = testSozluk.kokBul("imren");
+        Collection<Kok> kokler = testSozluk.kokBul("imren");
         assertEquals(2, kokler.size());
     }
 
@@ -116,7 +121,7 @@ public class TestTreeSozluk extends TemelTest {
 
     @Test
     public void testKokBul() {
-        Collection kokler = sozluk.kokBul("bahset");
+        Collection<Kok> kokler = sozluk.kokBul("bahset");
         assertTrue(kokler.size() == 1);
         kokler = sozluk.kokBul("bahsed");
         assertTrue(kokler.size() == 1);

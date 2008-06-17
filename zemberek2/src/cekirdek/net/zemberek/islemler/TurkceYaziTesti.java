@@ -4,14 +4,14 @@
 
 package net.zemberek.islemler;
 
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import net.zemberek.araclar.turkce.YaziBirimi;
 import net.zemberek.araclar.turkce.YaziBirimiTipi;
 import net.zemberek.araclar.turkce.YaziIsleyici;
 import net.zemberek.islemler.cozumleme.KelimeCozumleyici;
-
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  */

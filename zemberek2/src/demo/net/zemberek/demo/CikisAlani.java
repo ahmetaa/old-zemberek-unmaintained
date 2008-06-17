@@ -4,10 +4,13 @@
 
 package net.zemberek.demo;
 
-import javax.swing.*;
+import java.awt.BorderLayout;
+
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
-import java.awt.*;
 
 /**
  */

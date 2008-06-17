@@ -4,12 +4,15 @@
 
 package net.zemberek.yapi.ek;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 import net.zemberek.islemler.cozumleme.HarfDizisiKiyaslayici;
 import net.zemberek.yapi.HarfDizisi;
 import net.zemberek.yapi.Kelime;
 import net.zemberek.yapi.TurkceHarf;
-
-import java.util.*;
 
 /**
  * Ek sinifi icerisinde eke ozel bilgiler, o ekten sonra gelebilecek eklerin listesi

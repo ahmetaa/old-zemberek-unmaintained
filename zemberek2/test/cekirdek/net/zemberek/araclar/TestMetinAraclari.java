@@ -7,13 +7,17 @@
  */
 package net.zemberek.araclar;
 
-import net.zemberek.araclar.turkce.YaziIsleyici;
-import static org.junit.Assert.*;
-import org.junit.Test;
-import org.junit.Ignore;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import java.io.IOException;
 import java.util.List;
+
+import net.zemberek.araclar.turkce.YaziIsleyici;
+
+import org.junit.Ignore;
+import org.junit.Test;
 
 /**
  * @author MDA

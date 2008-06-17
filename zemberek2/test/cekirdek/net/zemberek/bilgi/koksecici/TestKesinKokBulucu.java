@@ -7,23 +7,27 @@
  */
 package net.zemberek.bilgi.koksecici;
 
+import static java.lang.System.out;
+import static org.junit.Assert.assertTrue;
+
+import java.io.IOException;
+import java.util.List;
+
 import net.zemberek.TemelTest;
 import net.zemberek.TestUtils;
 import net.zemberek.araclar.TimeTracker;
 import net.zemberek.bilgi.araclar.DuzYaziKokOkuyucu;
 import net.zemberek.bilgi.araclar.IkiliKokOkuyucu;
 import net.zemberek.bilgi.araclar.KokOkuyucu;
-import net.zemberek.bilgi.kokler.*;
+import net.zemberek.bilgi.kokler.AgacSozluk;
+import net.zemberek.bilgi.kokler.KesinKokAdayiBulucu;
+import net.zemberek.bilgi.kokler.KokAdayiBulucu;
+import net.zemberek.bilgi.kokler.ToleransliKokAdayiBulucu;
 import net.zemberek.yapi.Kok;
 
 import org.junit.Before;
-import org.junit.Test;
 import org.junit.Ignore;
-import static org.junit.Assert.assertTrue;
-
-import java.io.IOException;
-import java.util.List;
-import static java.lang.System.*;
+import org.junit.Test;
 
 /**
  * @author MDA & GBA

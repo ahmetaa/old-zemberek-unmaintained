@@ -6,9 +6,9 @@ package net.zemberek.tt.islemler;
 
 import net.zemberek.islemler.cozumleme.CozumlemeYardimcisi;
 import net.zemberek.yapi.Alfabe;
+import net.zemberek.yapi.HarfDizisi;
 import net.zemberek.yapi.Kelime;
 import net.zemberek.yapi.Kok;
-import net.zemberek.yapi.HarfDizisi;
 
 /**
  * Created by IntelliJ IDEA.

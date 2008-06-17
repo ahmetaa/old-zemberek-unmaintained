@@ -4,12 +4,17 @@
 
 package net.zemberek.tr.islemler;
 
+import java.util.List;
+
 import net.zemberek.islemler.cozumleme.CozumlemeYardimcisi;
 import net.zemberek.tr.yapi.kok.TurkceKokOzelDurumTipleri;
-import net.zemberek.yapi.*;
+import net.zemberek.yapi.Alfabe;
+import net.zemberek.yapi.HarfDizisi;
+import net.zemberek.yapi.Kelime;
+import net.zemberek.yapi.KelimeTipi;
+import net.zemberek.yapi.Kok;
+import net.zemberek.yapi.TurkceHarf;
 import net.zemberek.yapi.ek.Ek;
-
-import java.util.List;
 
 /**
  * Bu sinif Turkiye Turkcesine ozel cesitli islemleri icerir.

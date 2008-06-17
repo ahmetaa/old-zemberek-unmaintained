@@ -4,11 +4,13 @@
 
 package net.zemberek.tr.yapi.ek;
 
+import java.util.logging.Logger;
+
 import net.zemberek.araclar.Kayitci;
 import net.zemberek.yapi.Alfabe;
-import net.zemberek.yapi.ek.*;
-
-import java.util.logging.Logger;
+import net.zemberek.yapi.ek.EkOzelDurumTipi;
+import net.zemberek.yapi.ek.EkOzelDurumu;
+import net.zemberek.yapi.ek.TemelEkOzelDurumUretici;
 
 /**
  * User: ahmet

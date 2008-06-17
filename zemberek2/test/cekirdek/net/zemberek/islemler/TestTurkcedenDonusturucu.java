@@ -4,8 +4,9 @@
 
 package net.zemberek.islemler;
 
-import net.zemberek.TemelTest;
 import static org.junit.Assert.assertEquals;
+import net.zemberek.TemelTest;
+
 import org.junit.Test;
 
 /**

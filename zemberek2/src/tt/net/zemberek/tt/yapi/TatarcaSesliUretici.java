@@ -5,8 +5,8 @@
 package net.zemberek.tt.yapi;
 
 import net.zemberek.yapi.Alfabe;
-import net.zemberek.yapi.TurkceHarf;
 import net.zemberek.yapi.HarfDizisi;
+import net.zemberek.yapi.TurkceHarf;
 
 public class TatarcaSesliUretici {
 

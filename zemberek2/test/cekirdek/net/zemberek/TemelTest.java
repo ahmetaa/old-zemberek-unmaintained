@@ -4,11 +4,16 @@
 
 package net.zemberek;
 
-import net.zemberek.tr.yapi.TurkiyeTurkcesi;
-import net.zemberek.yapi.*;
-import org.junit.Before;
-
 import java.io.IOException;
+
+import net.zemberek.tr.yapi.TurkiyeTurkcesi;
+import net.zemberek.yapi.Alfabe;
+import net.zemberek.yapi.DilAyarlari;
+import net.zemberek.yapi.DilBilgisi;
+import net.zemberek.yapi.HarfDizisi;
+import net.zemberek.yapi.TurkceDilBilgisi;
+
+import org.junit.Before;
 
 /**
  * User: ahmet

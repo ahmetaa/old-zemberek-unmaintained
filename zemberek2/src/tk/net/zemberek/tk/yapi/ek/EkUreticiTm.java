@@ -4,14 +4,17 @@
 
 package net.zemberek.tk.yapi.ek;
 
+import java.util.List;
+import java.util.logging.Logger;
+
 import net.zemberek.tk.yapi.TurkmenceSesliUretici;
 import net.zemberek.yapi.Alfabe;
 import net.zemberek.yapi.HarfDizisi;
 import net.zemberek.yapi.TurkceHarf;
-import net.zemberek.yapi.ek.*;
-
-import java.util.List;
-import java.util.logging.Logger;
+import net.zemberek.yapi.ek.EkUretici;
+import net.zemberek.yapi.ek.EkUretimBileseni;
+import net.zemberek.yapi.ek.TemelEkUretici;
+import net.zemberek.yapi.ek.TemelEkUretimKurali;
 
 public class EkUreticiTm extends TemelEkUretici implements EkUretici {
 

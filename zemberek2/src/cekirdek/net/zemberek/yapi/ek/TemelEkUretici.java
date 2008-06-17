@@ -5,11 +5,12 @@
 package net.zemberek.yapi.ek;
 
 import static net.zemberek.yapi.ek.TemelEkUretimKurali.KAYNASTIR;
-import net.zemberek.yapi.HarfDizisi;
-import net.zemberek.yapi.TurkceHarf;
 
 import java.util.List;
 import java.util.Set;
+
+import net.zemberek.yapi.HarfDizisi;
+import net.zemberek.yapi.TurkceHarf;
 
 
 public abstract class TemelEkUretici implements EkUretici {

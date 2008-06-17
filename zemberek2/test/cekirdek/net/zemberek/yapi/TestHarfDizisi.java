@@ -4,16 +4,29 @@
 
 package net.zemberek.yapi;
 
-import net.zemberek.TemelTest;
-import static net.zemberek.yapi.Alfabe.*;
-import static org.junit.Assert.*;
-import org.junit.Before;
-import org.junit.Test;
+import static net.zemberek.yapi.Alfabe.CHAR_CC;
+import static net.zemberek.yapi.Alfabe.CHAR_SAPKALI_A;
+import static net.zemberek.yapi.Alfabe.CHAR_SAPKALI_a;
+import static net.zemberek.yapi.Alfabe.CHAR_cc;
+import static net.zemberek.yapi.Alfabe.CHAR_gg;
+import static net.zemberek.yapi.Alfabe.CHAR_ii;
+import static net.zemberek.yapi.Alfabe.CHAR_ss;
+import static net.zemberek.yapi.Alfabe.TANIMSIZ_HARF;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+
+import net.zemberek.TemelTest;
+
+import org.junit.Before;
+import org.junit.Test;
 
 /**
  * User: aakin

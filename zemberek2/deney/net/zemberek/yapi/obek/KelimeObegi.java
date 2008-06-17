@@ -27,11 +27,6 @@
 
 package net.zemberek.yapi.obek;
 
-import net.zemberek.yapi.Kok;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Iterator;
 import java.util.Arrays;
 
 public class KelimeObegi implements Kavram {

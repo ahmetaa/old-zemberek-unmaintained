@@ -4,15 +4,21 @@
 
 package net.zemberek.yapi;
 
-import net.zemberek.TemelTest;
-import static net.zemberek.tr.yapi.kok.TurkceKokOzelDurumTipleri.*;
-import net.zemberek.yapi.kok.KokOzelDurumBilgisi;
+import static net.zemberek.tr.yapi.kok.TurkceKokOzelDurumTipleri.FIIL_KOK_BOZULMASI;
+import static net.zemberek.tr.yapi.kok.TurkceKokOzelDurumTipleri.ISIM_SESLI_DUSMESI;
+import static net.zemberek.tr.yapi.kok.TurkceKokOzelDurumTipleri.SESSIZ_YUMUSAMASI;
+import static net.zemberek.tr.yapi.kok.TurkceKokOzelDurumTipleri.SIMDIKI_ZAMAN;
+import static net.zemberek.tr.yapi.kok.TurkceKokOzelDurumTipleri.TEKIL_KISI_BOZULMASI;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
-import org.junit.Before;
-import org.junit.Test;
 
 import java.io.IOException;
+
+import net.zemberek.TemelTest;
+import net.zemberek.yapi.kok.KokOzelDurumBilgisi;
+
+import org.junit.Before;
+import org.junit.Test;
 
 /**
  */

@@ -8,14 +8,14 @@
  */
 package net.zemberek.kullanim;
 
+import java.util.List;
+
 import net.zemberek.erisim.Zemberek;
 import net.zemberek.tr.yapi.TurkiyeTurkcesi;
 import net.zemberek.yapi.Alfabe;
 import net.zemberek.yapi.Kelime;
 import net.zemberek.yapi.Kok;
 import net.zemberek.yapi.ek.Ek;
-
-import java.util.List;
 
 public class TestCozumle {
 

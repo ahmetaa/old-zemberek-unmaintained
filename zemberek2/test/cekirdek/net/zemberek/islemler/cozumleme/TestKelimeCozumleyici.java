@@ -4,14 +4,16 @@
 
 package net.zemberek.islemler.cozumleme;
 
-import net.zemberek.TemelTest;
-import net.zemberek.TestUtils;
 import static org.junit.Assert.assertTrue;
-import org.junit.Before;
-import org.junit.Test;
 
 import java.io.IOException;
 import java.util.List;
+
+import net.zemberek.TemelTest;
+import net.zemberek.TestUtils;
+
+import org.junit.Before;
+import org.junit.Test;
 
 /**
  * User: aakin

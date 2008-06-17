@@ -8,9 +8,9 @@
  */
 package net.zemberek.bilgi.araclar;
 
-import junit.framework.TestCase;
-
 import java.io.IOException;
+
+import junit.framework.TestCase;
 
 /**
  * @author MDA

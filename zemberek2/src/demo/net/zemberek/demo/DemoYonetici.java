@@ -4,6 +4,13 @@
 
 package net.zemberek.demo;
 
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.logging.Logger;
+
 import net.zemberek.araclar.Kayitci;
 import net.zemberek.araclar.turkce.YaziBirimi;
 import net.zemberek.araclar.turkce.YaziBirimiTipi;
@@ -11,9 +18,6 @@ import net.zemberek.araclar.turkce.YaziIsleyici;
 import net.zemberek.erisim.Zemberek;
 import net.zemberek.yapi.DilBilgisi;
 import net.zemberek.yapi.Kelime;
-
-import java.util.*;
-import java.util.logging.Logger;
 
 /**
  */

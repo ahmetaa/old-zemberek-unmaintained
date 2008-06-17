@@ -7,11 +7,11 @@
  */
 package net.zemberek.bilgi.kokler;
 
-import net.zemberek.yapi.Kok;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+
+import net.zemberek.yapi.Kok;
 
 /**
  * Kök düğümü sınıfı Kök ağacının yapıtaşıdır. Her düğüm, kökler, eşseli kökler,

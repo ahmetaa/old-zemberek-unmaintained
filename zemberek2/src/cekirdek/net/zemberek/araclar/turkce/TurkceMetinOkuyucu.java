@@ -4,10 +4,10 @@
 
 package net.zemberek.araclar.turkce;
 
-import net.zemberek.istatistik.Istatistikler;
-
 import java.util.ArrayList;
 import java.util.List;
+
+import net.zemberek.istatistik.Istatistikler;
 
 /**
  */

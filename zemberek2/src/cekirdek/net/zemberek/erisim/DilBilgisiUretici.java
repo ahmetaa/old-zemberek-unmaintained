@@ -4,10 +4,10 @@
 
 package net.zemberek.erisim;
 
+import java.io.IOException;
+
 import net.zemberek.yapi.DilAyarlari;
 import net.zemberek.yapi.TurkceDilBilgisi;
-
-import java.io.IOException;
 
 
 public class DilBilgisiUretici {

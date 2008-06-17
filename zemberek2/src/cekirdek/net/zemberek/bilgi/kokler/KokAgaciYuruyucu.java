@@ -8,15 +8,19 @@
  */
 package net.zemberek.bilgi.kokler;
 
+import java.io.IOException;
+import java.util.HashSet;
+import java.util.Set;
+
 import net.zemberek.araclar.IstatistikAraclari;
 import net.zemberek.araclar.TimeTracker;
 import net.zemberek.bilgi.araclar.IkiliKokOkuyucu;
 import net.zemberek.bilgi.araclar.KokOkuyucu;
-import net.zemberek.yapi.*;
-
-import java.io.IOException;
-import java.util.HashSet;
-import java.util.Set;
+import net.zemberek.yapi.Alfabe;
+import net.zemberek.yapi.DilAyarlari;
+import net.zemberek.yapi.DilBilgisi;
+import net.zemberek.yapi.Kok;
+import net.zemberek.yapi.TurkceDilBilgisi;
 
 /**
  * Sadece Kök ağacının istatistiklerini elde etmek için yazılmış basit bir yürüyücü.

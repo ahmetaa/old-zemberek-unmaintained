@@ -1,8 +1,8 @@
 package net.zemberek.yapi.obek;
 
-import net.zemberek.yapi.Kok;
-
 import java.util.List;
+
+import net.zemberek.yapi.Kok;
 
 /**
  * Farkli Kelime obek gerceklemeleri icin ortak arayuz.

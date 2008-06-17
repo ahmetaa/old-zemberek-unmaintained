@@ -4,9 +4,13 @@
 
 package net.zemberek.yapi.ek;
 
-import net.zemberek.yapi.Alfabe;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
+import java.util.NoSuchElementException;
 
-import java.util.*;
+import net.zemberek.yapi.Alfabe;
 
 /**
  * Ek bilgi dosyasinda yer alan ek kural kelimeinin cozumlenmesinde kullanilir.

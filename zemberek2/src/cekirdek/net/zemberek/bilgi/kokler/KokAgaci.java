@@ -7,14 +7,14 @@
  */
 package net.zemberek.bilgi.kokler;
 
-import net.zemberek.yapi.Alfabe;
-import net.zemberek.yapi.Kok;
-import net.zemberek.araclar.Kayitci;
-
-import java.util.List;
 import java.util.Collections;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import net.zemberek.araclar.Kayitci;
+import net.zemberek.yapi.Alfabe;
+import net.zemberek.yapi.Kok;
 
 /**
  * Kök ağacı zemberek sisteminin temel veri taşıyıcılarından biridir. Kök 

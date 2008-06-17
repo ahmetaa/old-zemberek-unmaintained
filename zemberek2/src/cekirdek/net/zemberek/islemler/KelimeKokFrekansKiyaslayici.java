@@ -4,10 +4,10 @@
 
 package net.zemberek.islemler;
 
+import java.util.Comparator;
+
 import net.zemberek.yapi.Kelime;
 import net.zemberek.yapi.Kok;
-
-import java.util.Comparator;
 
 /**
  * iki kelimeyi kok kullanim frekansina gore kiyaslar. Sonucta o1 frekansi yuksek ise NEGATIF

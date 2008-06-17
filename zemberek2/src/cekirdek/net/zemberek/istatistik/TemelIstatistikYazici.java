@@ -8,7 +8,11 @@
  */
 package net.zemberek.istatistik;
 
-import java.io.*;
+import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.OutputStreamWriter;
+import java.io.UnsupportedEncodingException;
 
 public class TemelIstatistikYazici {
     protected FileOutputStream outputFile = null;

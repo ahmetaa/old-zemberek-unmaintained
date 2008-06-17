@@ -5,8 +5,8 @@
 package net.zemberek.yapi;
 
 import net.zemberek.bilgi.kokler.Sozluk;
-import net.zemberek.islemler.cozumleme.CozumlemeYardimcisi;
 import net.zemberek.islemler.DenetlemeCebi;
+import net.zemberek.islemler.cozumleme.CozumlemeYardimcisi;
 import net.zemberek.yapi.ek.EkYonetici;
 import net.zemberek.yapi.kok.KokOzelDurumBilgisi;
 

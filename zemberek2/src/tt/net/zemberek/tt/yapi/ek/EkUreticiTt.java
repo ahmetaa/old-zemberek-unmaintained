@@ -4,6 +4,9 @@
 
 package net.zemberek.tt.yapi.ek;
 
+import java.util.List;
+import java.util.Set;
+
 import net.zemberek.tt.yapi.TatarcaSesliUretici;
 import net.zemberek.yapi.Alfabe;
 import net.zemberek.yapi.HarfDizisi;
@@ -11,9 +14,6 @@ import net.zemberek.yapi.TurkceHarf;
 import net.zemberek.yapi.ek.Ek;
 import net.zemberek.yapi.ek.EkUretici;
 import net.zemberek.yapi.ek.EkUretimBileseni;
-
-import java.util.List;
-import java.util.Set;
 
 public class EkUreticiTt implements EkUretici {
 

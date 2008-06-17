@@ -27,18 +27,18 @@
 
 package net.zemberek.az.yapi.kok;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import net.zemberek.yapi.Alfabe;
 import net.zemberek.yapi.HarfDizisi;
-import net.zemberek.yapi.Kok;
 import net.zemberek.yapi.KelimeTipi;
+import net.zemberek.yapi.Kok;
 import net.zemberek.yapi.ek.EkYonetici;
+import net.zemberek.yapi.kok.KokOzelDurumBilgisi;
 import net.zemberek.yapi.kok.KokOzelDurumu;
 import net.zemberek.yapi.kok.TemelKokOzelDurumBilgisi;
 import net.zemberek.yapi.kok.Yumusama;
-import net.zemberek.yapi.kok.KokOzelDurumBilgisi;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * User: ahmet

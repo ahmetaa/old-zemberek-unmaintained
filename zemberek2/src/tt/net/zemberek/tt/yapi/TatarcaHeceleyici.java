@@ -4,11 +4,11 @@
 
 package net.zemberek.tt.yapi;
 
-import net.zemberek.yapi.Heceleyici;
-import net.zemberek.yapi.HarfDizisi;
-
-import java.util.List;
 import java.util.Collections;
+import java.util.List;
+
+import net.zemberek.yapi.HarfDizisi;
+import net.zemberek.yapi.Heceleyici;
 
 /**
  * Created by IntelliJ IDEA.

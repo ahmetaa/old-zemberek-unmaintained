@@ -4,15 +4,18 @@
 
 package net.zemberek.tr.yapi.ek;
 
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 import net.zemberek.tr.yapi.TurkceSesliUretici;
 import net.zemberek.yapi.Alfabe;
 import net.zemberek.yapi.HarfDizisi;
 import net.zemberek.yapi.TurkceHarf;
-import net.zemberek.yapi.ek.*;
-
-import java.util.List;
-import java.util.Set;
-import java.util.HashSet;
+import net.zemberek.yapi.ek.EkUretici;
+import net.zemberek.yapi.ek.EkUretimBileseni;
+import net.zemberek.yapi.ek.TemelEkUretici;
+import net.zemberek.yapi.ek.TemelEkUretimKurali;
 
 
 public class EkUreticiTr extends TemelEkUretici implements EkUretici {

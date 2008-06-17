@@ -27,8 +27,8 @@
 
 package net.zemberek.az.yapi;
 
-import net.zemberek.yapi.TurkceHarf;
 import net.zemberek.yapi.Alfabe;
+import net.zemberek.yapi.TurkceHarf;
 
 /**
  * User: ahmet

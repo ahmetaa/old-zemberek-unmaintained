@@ -4,10 +4,10 @@
 
 package net.zemberek.yapi.kok;
 
+import java.util.Map;
+
 import net.zemberek.yapi.Alfabe;
 import net.zemberek.yapi.HarfDizisi;
-
-import java.util.Map;
 
 /**
  * kuralsiz kok bozulmasi ozel durumlarinda kullanilir.

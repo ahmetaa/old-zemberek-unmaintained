@@ -11,13 +11,6 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Text;
-
-import com.sun.org.apache.xml.internal.serialize.OutputFormat;
-import com.sun.org.apache.xml.internal.serialize.XMLSerializer;
-
 import net.zemberek.bilgi.ZemberekAyarlari;
 import net.zemberek.bilgi.kokler.Sozluk;
 import net.zemberek.tr.yapi.TurkiyeTurkcesi;
@@ -25,6 +18,13 @@ import net.zemberek.yapi.DilAyarlari;
 import net.zemberek.yapi.DilBilgisi;
 import net.zemberek.yapi.Kok;
 import net.zemberek.yapi.TurkceDilBilgisi;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Text;
+
+import com.sun.org.apache.xml.internal.serialize.OutputFormat;
+import com.sun.org.apache.xml.internal.serialize.XMLSerializer;
 
 public class OnParmak {
 	private Document dom;

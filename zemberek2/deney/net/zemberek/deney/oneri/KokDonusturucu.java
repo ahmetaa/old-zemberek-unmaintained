@@ -27,21 +27,27 @@
 
 package net.zemberek.deney.oneri;
 
-import net.zemberek.yapi.*;
-import static net.zemberek.yapi.KelimeTipi.*;
-import net.zemberek.islemler.cozumleme.KelimeCozumleyici;
-import net.zemberek.islemler.cozumleme.CozumlemeSeviyesi;
-import net.zemberek.islemler.cozumleme.StandartCozumleyici;
-import net.zemberek.islemler.cozumleme.KesinHDKiyaslayici;
-import net.zemberek.islemler.KelimeUretici;
-import net.zemberek.bilgi.kokler.Sozluk;
-import net.zemberek.bilgi.kokler.AgacSozluk;
-import net.zemberek.tr.yapi.TurkiyeTurkcesi;
+import static net.zemberek.yapi.KelimeTipi.FIIL;
+import static net.zemberek.yapi.KelimeTipi.ISIM;
 
-import java.util.Map;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Arrays;
+import java.util.Map;
+
+import net.zemberek.bilgi.kokler.AgacSozluk;
+import net.zemberek.bilgi.kokler.Sozluk;
+import net.zemberek.islemler.KelimeUretici;
+import net.zemberek.islemler.cozumleme.CozumlemeSeviyesi;
+import net.zemberek.islemler.cozumleme.KelimeCozumleyici;
+import net.zemberek.islemler.cozumleme.KesinHDKiyaslayici;
+import net.zemberek.islemler.cozumleme.StandartCozumleyici;
+import net.zemberek.tr.yapi.TurkiyeTurkcesi;
+import net.zemberek.yapi.Alfabe;
+import net.zemberek.yapi.DilBilgisi;
+import net.zemberek.yapi.Kelime;
+import net.zemberek.yapi.Kok;
+import net.zemberek.yapi.TurkceDilBilgisi;
 
 public class KokDonusturucu {
 

@@ -4,11 +4,11 @@
 
 package net.zemberek.islemler.cozumleme;
 
-import net.zemberek.araclar.TimeTracker;
-import net.zemberek.araclar.turkce.YaziIsleyici;
-
 import java.io.IOException;
 import java.util.List;
+
+import net.zemberek.araclar.TimeTracker;
+import net.zemberek.araclar.turkce.YaziIsleyici;
 
 import org.junit.Test;
 

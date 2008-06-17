@@ -4,10 +4,14 @@
 
 package net.zemberek.araclar.turkce;
 
-import net.zemberek.istatistik.Istatistikler;
-import net.zemberek.bilgi.KaynakYukleyici;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
 
-import java.io.*;
+import net.zemberek.bilgi.KaynakYukleyici;
+import net.zemberek.istatistik.Istatistikler;
 
 /**
  * TurkishTokenStream

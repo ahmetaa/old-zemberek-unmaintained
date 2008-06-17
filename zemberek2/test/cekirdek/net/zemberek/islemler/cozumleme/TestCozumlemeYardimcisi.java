@@ -4,14 +4,15 @@
 
 package net.zemberek.islemler.cozumleme;
 
+import static org.junit.Assert.assertEquals;
 import net.zemberek.TemelTest;
 import net.zemberek.tr.islemler.TurkceCozumlemeYardimcisi;
 import net.zemberek.tr.yapi.kok.TurkceKokOzelDurumTipleri;
+import net.zemberek.yapi.Alfabe;
 import net.zemberek.yapi.Kelime;
 import net.zemberek.yapi.KelimeTipi;
 import net.zemberek.yapi.Kok;
-import net.zemberek.yapi.Alfabe;
-import static org.junit.Assert.assertEquals;
+
 import org.junit.Test;
 
 

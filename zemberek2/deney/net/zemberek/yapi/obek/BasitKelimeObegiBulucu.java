@@ -27,18 +27,18 @@
 
 package net.zemberek.yapi.obek;
 
-import net.zemberek.bilgi.KaynakYukleyici;
-import net.zemberek.erisim.Zemberek;
-import net.zemberek.islemler.KokBulucu;
-import net.zemberek.tr.yapi.TurkiyeTurkcesi;
-import net.zemberek.yapi.Kok;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+
+import net.zemberek.bilgi.KaynakYukleyici;
+import net.zemberek.erisim.Zemberek;
+import net.zemberek.islemler.KokBulucu;
+import net.zemberek.tr.yapi.TurkiyeTurkcesi;
+import net.zemberek.yapi.Kok;
 
 public class BasitKelimeObegiBulucu {
 

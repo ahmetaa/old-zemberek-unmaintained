@@ -4,10 +4,10 @@
 
 package net.zemberek.tr.islemler;
 
+import net.zemberek.tr.yapi.ek.TurkceEkAdlari;
 import net.zemberek.yapi.Kelime;
 import net.zemberek.yapi.KelimeTipi;
 import net.zemberek.yapi.ek.EkYonetici;
-import net.zemberek.tr.yapi.ek.TurkceEkAdlari;
 
 public class SoruEkiIsleyici {
 
