@@ -243,8 +243,6 @@ public class TurkishHyphenator extends ComponentBase implements
                 if(heceIndeksleri != null){
                     if(heceIndeksleri.length > 1){
                         int i = 0;
-                        int boy = 0;
-                        int eskiBoy = 0;
                         while(i<heceIndeksleri.length && heceIndeksleri[i] < nHyphMinLeading){
                             i++;
                         }
