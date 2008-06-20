@@ -30,7 +30,7 @@ public class ZemberekClient {
             byte[] govde = mesaj.getBytes("UTF-8");
             String boy = ""  + (govde.length);
             byte[] boyBuffer = boy.getBytes();
-            // toplam mesaj boyumuz "boy + bo�luk + UTf-8 kodlanm�� Stringin byte hali" �eklinde  
+            // toplam mesaj boyumuz "boy + boşluk + UTf-8 kodlanmış Stringin byte hali" �eklinde  
             byte[] mesajBytes = new byte[govde.length + boyBuffer.length + 1];
             System.arraycopy(boyBuffer, 0, mesajBytes, 0, boyBuffer.length);
             mesajBytes[boyBuffer.length] = ' ';
@@ -44,7 +44,7 @@ public class ZemberekClient {
     
     public void connect() throws Exception{
         socket = new Socket();
-        // 250ms de bağlanamazsak bağlant� yok kabul ediyoruz.
+        // 250ms de bağlanamazsak bağlantı yok kabul ediyoruz.
         socket.connect(new InetSocketAddress((InetAddress)null, ZEMBEREK_SERVER_PORT), 250);
         socket.setTcpNoDelay(true);
         socket.setSoTimeout(SOCKET_READ_TIMEOUT);
