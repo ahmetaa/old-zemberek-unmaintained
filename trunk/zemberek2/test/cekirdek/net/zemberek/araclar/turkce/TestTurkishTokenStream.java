@@ -13,6 +13,7 @@ import static org.junit.Assert.assertTrue;
 import java.io.ByteArrayInputStream;
 import java.util.ArrayList;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 /**
@@ -20,7 +21,8 @@ import org.junit.Test;
  */
 public class TestTurkishTokenStream {
 
-    @Test
+    //@Test
+    @Ignore
     public void testNextWord() {
         String input = "Ahmet Mehmet Betul";
         ArrayList<String> list = new ArrayList<String>();

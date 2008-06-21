@@ -12,7 +12,7 @@ import junit.framework.TestCase;
 /**
  * @author MDA & GBA
  */
-public class TestSozlukOkuyucu extends TestCase {
+public class TestSozlukOkuyucu /*extends TestCase*/ {
 /*    SozlukAraclari sozlukaraclari = new SozlukAraclari();
 
     public void testOku()
