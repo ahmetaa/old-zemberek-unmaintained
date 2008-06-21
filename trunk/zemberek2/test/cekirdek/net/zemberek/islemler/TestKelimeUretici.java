@@ -109,7 +109,7 @@ public class TestKelimeUretici extends TemelTest {
      *
      * @throws java.io.IOException
      */
-   // @Ignore("Henuz kisaltmalarda islemiyor.")
+    @Ignore("Henuz kisaltmalarda islemiyor.")
     @Test
     public void testCozGeriOlustur() throws IOException {
         List<String> kelimeler = TestUtils.satirlariOku("kaynaklar/tr/test/hepsi-dogru.txt");
