@@ -46052,7 +46052,8 @@ terbiyevî IS
 terbiyum IS
 Tercan OZ
 tercih IS
-tercihan IS
+tercihen IS
+tercihane IS
 #tercih etmek
 terciibent IS YUM
 tercüman IS
