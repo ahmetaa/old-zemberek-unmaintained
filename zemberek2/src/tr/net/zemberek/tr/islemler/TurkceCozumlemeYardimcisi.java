@@ -8,12 +8,7 @@ import java.util.List;
 
 import net.zemberek.islemler.cozumleme.CozumlemeYardimcisi;
 import net.zemberek.tr.yapi.kok.TurkceKokOzelDurumTipleri;
-import net.zemberek.yapi.Alfabe;
-import net.zemberek.yapi.HarfDizisi;
-import net.zemberek.yapi.Kelime;
-import net.zemberek.yapi.KelimeTipi;
-import net.zemberek.yapi.Kok;
-import net.zemberek.yapi.TurkceHarf;
+import net.zemberek.yapi.*;
 import net.zemberek.yapi.ek.Ek;
 
 /**
@@ -57,9 +52,9 @@ public class TurkceCozumlemeYardimcisi implements CozumlemeYardimcisi {
             List<Ek> ekler = kelime.ekler();
             if (ekler.size() > 1) {
                 Ek ek = ekler.get(1);
-                if (ek.iyelikEkiMi() ||ek.halEkiMi()) {
+                if (ek.iyelikEkiMi() || ek.halEkiMi()) {
                     int kesmePozisyonu = kok.icerik().length();
-                    olusan.ekle(kesmePozisyonu,alfabe.harf('\''));
+                    olusan.ekle(kesmePozisyonu, alfabe.harf('\''));
                 }
             }
         }
@@ -116,9 +111,10 @@ public class TurkceCozumlemeYardimcisi implements CozumlemeYardimcisi {
 
     public boolean kokGirisDegismiVarsaUygula(Kok kok, HarfDizisi kokDizi, HarfDizisi girisDizi) {
         //turkce'de sadece kisaltmalarda bu metoda ihtiyacimiz var.
-        char c = kok.getKisaltmaSonSeslisi();
         if (girisDizi.length() == 0) return false;
-        if (kok.tip().equals(KelimeTipi.KISALTMA) && c != 0) {
+        if (kok instanceof Kisaltma) {
+            char c = ((Kisaltma) kok).getKisaltmaSonSeslisi();
+            if (c == 0) return false;
             TurkceHarf h = alfabe.harf(c);
             //toleransli cozumleyicide kok giristen daha uzun olabiliyor.
             // o nedenle asagidaki kontrolun yapilmasi gerekiyor.
@@ -133,8 +129,8 @@ public class TurkceCozumlemeYardimcisi implements CozumlemeYardimcisi {
                 if (kokBoyu < girisDizi.length())
                     girisDizi.ekle(kokBoyu + 1, alfabe.harf('b'));
                 else
-                    girisDizi.ekle( alfabe.harf('b'));
-                kokDizi.ekle( alfabe.harf('b'));
+                    girisDizi.ekle(alfabe.harf('b'));
+                kokDizi.ekle(alfabe.harf('b'));
             }
             return true;
         }

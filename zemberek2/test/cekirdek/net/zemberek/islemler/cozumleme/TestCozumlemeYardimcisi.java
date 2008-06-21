@@ -8,10 +8,7 @@ import static org.junit.Assert.assertEquals;
 import net.zemberek.TemelTest;
 import net.zemberek.tr.islemler.TurkceCozumlemeYardimcisi;
 import net.zemberek.tr.yapi.kok.TurkceKokOzelDurumTipleri;
-import net.zemberek.yapi.Alfabe;
-import net.zemberek.yapi.Kelime;
-import net.zemberek.yapi.KelimeTipi;
-import net.zemberek.yapi.Kok;
+import net.zemberek.yapi.*;
 
 import org.junit.Test;
 
@@ -26,12 +23,12 @@ public class TestCozumlemeYardimcisi extends TemelTest {
     public void testKelimeBicimlendir() {
         CozumlemeYardimcisi yardimci = new TurkceCozumlemeYardimcisi(
                 alfabe);
-        Kok kok = new Kok("tdk", KelimeTipi.KISALTMA);
-        kok.setAsil("TDK");
-        kok.setKisaltmaSonSeslisi('e');
-        kok.ozelDurumEkle(dilBilgisi.kokOzelDurumlari().ozelDurum(TurkceKokOzelDurumTipleri.KISALTMA_SON_SESLI));
+        Kisaltma kisaltma = new Kisaltma("tdk");
+        kisaltma.setAsil("TDK");
+        kisaltma.setKisaltmaSonSeslisi('e');
+        kisaltma.ozelDurumEkle(dilBilgisi.kokOzelDurumlari().ozelDurum(TurkceKokOzelDurumTipleri.KISALTMA_SON_SESLI));
         //cozumleme sirasinda "tdk" "tdke" haline donusur.
-        Kelime kelime = new Kelime(kok, hd("tdkeye"));
+        Kelime kelime = new Kelime(kisaltma, hd("tdkeye"));
         yardimci.kelimeBicimlendir(kelime);
         assertEquals(kelime.icerikStr(), "TDK'ye");
 
@@ -39,10 +36,10 @@ public class TestCozumlemeYardimcisi extends TemelTest {
         yardimci.kelimeBicimlendir(kelime);
         assertEquals(kelime.icerikStr(), "TDK");
 
-        kok.setAsil("Prof.");
-        kok.setIcerik("prof");
-        kok.ozelDurumCikar(TurkceKokOzelDurumTipleri.KISALTMA_SON_SESLI);
-        kok.ozelDurumEkle(dilBilgisi.kokOzelDurumlari().ozelDurum(TurkceKokOzelDurumTipleri.KISALTMA_SON_SESSIZ));
+        kisaltma.setAsil("Prof.");
+        kisaltma.setIcerik("prof");
+        kisaltma.ozelDurumCikar(TurkceKokOzelDurumTipleri.KISALTMA_SON_SESLI);
+        kisaltma.ozelDurumEkle(dilBilgisi.kokOzelDurumlari().ozelDurum(TurkceKokOzelDurumTipleri.KISALTMA_SON_SESSIZ));
 
         kelime.setIcerik(hd("prof" + Alfabe.CHAR_oo + "bler"));
         yardimci.kelimeBicimlendir(kelime);

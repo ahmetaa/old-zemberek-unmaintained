@@ -4,15 +4,12 @@
 
 package net.zemberek.bilgi.araclar;
 
-import java.io.BufferedOutputStream;
-import java.io.DataOutputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.util.List;
-
+import net.zemberek.yapi.Kisaltma;
 import net.zemberek.yapi.Kok;
 import net.zemberek.yapi.kok.KokOzelDurumu;
+
+import java.io.*;
+import java.util.List;
 
 public class IkiliKokYazici implements KokYazici {
 
@@ -39,7 +36,10 @@ public class IkiliKokYazici implements KokYazici {
             // Kök tipi
             dos.write(kok.tip().getIndeks());
 
-            dos.writeChar(kok.getKisaltmaSonSeslisi());
+            if (kok instanceof Kisaltma)
+                dos.writeChar(((Kisaltma) kok).getKisaltmaSonSeslisi());
+            else
+                dos.writeChar('#');
 
             KokOzelDurumu[] ozd = kok.ozelDurumDizisi();
             dos.write(ozd.length);
