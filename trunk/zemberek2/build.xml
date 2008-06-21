@@ -365,8 +365,10 @@
 	</target>
 
 	<!--    test  islemleri   -->
-	<target name="unit-test" depends="derle-cekirdek" description="Run unit tests">
-
+	<target name="unit-test" description="Run unit tests">
+		<antcall target="dil-ekle">
+			<param name="dil" value="tr"/>
+		</antcall>
 		<mkdir dir="${build.test}"/>
 		<javac srcdir="${test.cekirdek}"
                destdir="${build.test}"
@@ -375,6 +377,7 @@
 			<classpath>
 				<path refid="classpath.build"/>
 				<pathelement path="${build.cekirdek}"/>
+				<pathelement path="${build.dir}/tr"/>
 			</classpath>
 		</javac>
 		<copy todir="${build.test}">
@@ -393,9 +396,11 @@
 			<classpath>
 				<path refid="classpath.build"/>
 				<pathelement path="${build.cekirdek}"/>
+				<pathelement path="${build.dir}/tr"/>
 				<pathelement path="${build.test}"/>
 			</classpath>
 			<test name="net.zemberek.AllUnitTests" todir="${test.results}"/>
+			<!-- TODO: Bu sınıfı yaz --> 
 		</junit>
 		<fail if="tests.failed"/>
 	</target>
