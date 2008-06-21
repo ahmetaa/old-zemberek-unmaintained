@@ -15,6 +15,7 @@ import java.util.List;
 import net.zemberek.bilgi.KaynakYukleyici;
 import net.zemberek.yapi.KelimeTipi;
 import net.zemberek.yapi.Kok;
+import net.zemberek.yapi.Kisaltma;
 import net.zemberek.yapi.kok.KokOzelDurumBilgisi;
 import net.zemberek.yapi.kok.KokOzelDurumu;
 
@@ -66,12 +67,19 @@ public class IkiliKokOkuyucu implements KokOkuyucu {
 
         // Tip bilgisini oku (1 byte)
         KelimeTipi tip = KelimeTipi.getTip(dis.read());
-        Kok kok = new Kok(icerik, tip);
+
+        Kok kok;
+        if (tip == KelimeTipi.KISALTMA)
+            kok = new Kisaltma(icerik);
+        else
+            kok = new Kok(icerik, tip);
 
         if (asil.length() != 0)
             kok.setAsil(asil);
 
-        kok.setKisaltmaSonSeslisi(dis.readChar());
+        char kisaltmaSeslisi = dis.readChar();
+        if (kisaltmaSeslisi != '#')
+            ((Kisaltma) kok).setKisaltmaSonSeslisi(kisaltmaSeslisi);
 
         // Özel durum sayısını (1 byte) ve ozel durumlari oku.
         int ozelDurumSayisi = dis.read();

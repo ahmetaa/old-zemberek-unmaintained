@@ -21,14 +21,16 @@ public class Kok {
     public static final Kok BOS_KOK = new Kok("", KelimeTipi.ISIM);
 
     private int indeks;
+
     // Eger bir kok icinde alfabe disi karakter barindiriyorsa (nokta, tire gibi) orjinal hali bu
     // String icinde yer alir. Aksi halde null.
     private String asil;
-    // bazi kisaltmalara ek eklenebilmesi icin kisaltmanin asil halinin son seslisine ihtiyac duyulur.
-    private char kisaltmaSonSeslisi;
-    // Kok'un ozel karakterlerden tmeizlenmis hali. Genel olarak kok icerigi olarak bu String kullanilir.
+
+    // Kok'un ozel karakterlerden temizlenmis hali. Genel olarak kok icerigi olarak bu String kullanilir.
     private String icerik;
-    private KelimeTipi tip;
+
+    protected KelimeTipi tip;
+
     //performans ve kaynak tuketimini nedeniyle icin ozel durumlari Set yerine diziye koyduk.
     private KokOzelDurumu[] ozelDurumlar = BOS_OZEL_DURUM_DIZISI;
 
@@ -222,13 +224,5 @@ public class Kok {
 
     public void setAsil(String asil) {
         this.asil = asil;
-    }
-
-    public char getKisaltmaSonSeslisi() {
-        return kisaltmaSonSeslisi;
-    }
-
-    public void setKisaltmaSonSeslisi(char kisaltmaSonSeslisi) {
-        this.kisaltmaSonSeslisi = kisaltmaSonSeslisi;
     }
 }

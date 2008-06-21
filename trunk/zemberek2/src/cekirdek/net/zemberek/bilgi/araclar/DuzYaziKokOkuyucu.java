@@ -18,6 +18,7 @@ import net.zemberek.bilgi.KaynakYukleyici;
 import net.zemberek.yapi.Alfabe;
 import net.zemberek.yapi.KelimeTipi;
 import net.zemberek.yapi.Kok;
+import net.zemberek.yapi.Kisaltma;
 import net.zemberek.yapi.kok.KokOzelDurumBilgisi;
 
 /**
@@ -65,7 +66,7 @@ public class DuzYaziKokOkuyucu implements KokOkuyucu {
         while ((kok = oku()) != null) {
             list.add(kok);
         }
-        if(reader!=null)
+        if (reader != null)
             reader.close();
         return list;
     }
@@ -76,26 +77,33 @@ public class DuzYaziKokOkuyucu implements KokOkuyucu {
             line = reader.readLine().trim();
             if (line.startsWith("#") || line.length() == 0) continue;
 
-            String tokens[] = AYIRICI_PATTERN.split(line, -1);
+            String tokens[] = AYIRICI_PATTERN.split(line);
             if (tokens == null || tokens.length < 2) {
                 log.warning("Eksik bilgi!" + line);
                 continue;
             }
-            String icerik = tokens[0];
-            Kok kok = new Kok(icerik);
 
-            // ayikla() ile kok icerigi kucuk harfe donusturuluyor ve '- vs 
+            String asil = tokens[0];
+
+            // ayikla() ile kok icerigi kucuk harfe donusturuluyor ve '- vs
             // isaretler siliniyor.
-            kok.setIcerik(alfabe.ayikla(kok.icerik()));
+            String icerik = alfabe.ayikla(asil);
+            Kok kok;
 
             // kelime tipini belirle. ilk parca mutlaka kok tipini belirler
             if (kokTipAdlari.containsKey(tokens[1])) {
                 KelimeTipi tip = kokTipAdlari.get(tokens[1]);
-                kok.setTip(tip);                
+                if (tip == KelimeTipi.KISALTMA)
+                    kok = new Kisaltma(icerik);
+                else
+                    kok = new Kok(icerik, tip);
                 ozelDurumlar.kokIcerikIsle(kok, tip, icerik);
 
             } else
-                log.warning("Kok tipi bulunamadi!" + line);
+                throw new IllegalArgumentException("Kok tipi bulunamadi!" + line);
+
+            if (!asil.equals(icerik))
+                kok.setAsil(asil);
 
             // kok ozelliklerini ekle.
             ozelDurumlar.duzyaziOzelDurumOku(kok, icerik, tokens);

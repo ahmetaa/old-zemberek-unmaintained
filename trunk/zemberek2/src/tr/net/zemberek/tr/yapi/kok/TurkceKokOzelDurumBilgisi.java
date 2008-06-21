@@ -37,10 +37,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import net.zemberek.yapi.Alfabe;
-import net.zemberek.yapi.HarfDizisi;
-import net.zemberek.yapi.KelimeTipi;
-import net.zemberek.yapi.Kok;
+import net.zemberek.yapi.*;
 import net.zemberek.yapi.ek.EkYonetici;
 import net.zemberek.yapi.kok.AraSesliDusmesi;
 import net.zemberek.yapi.kok.BosHarfDizisiIslemi;
@@ -218,7 +215,8 @@ public class TurkceKokOzelDurumBilgisi extends TemelKokOzelDurumBilgisi implemen
                     char sonSesli = parca.charAt(0);
                     if (!alfabe.harf(sonSesli).sesliMi())
                         logger.warning("Hatali kisaltma harfi.. Sesli bekleniyordu." + ozelDurum);
-                    kok.setKisaltmaSonSeslisi(sonSesli);
+                    Kisaltma kis = (Kisaltma) kok;
+                    kis.setKisaltmaSonSeslisi(sonSesli);
                     if (parca.length() > 1) {
                         kok.ozelDurumEkle(ozelDurumlar.get(KISALTMA_SON_SESSIZ));
                     } else
@@ -226,7 +224,7 @@ public class TurkceKokOzelDurumBilgisi extends TemelKokOzelDurumBilgisi implemen
                 } else {
                     char sonHarf = kok.icerik().charAt(kok.icerik().length() - 1);
                     if (!alfabe.harf(sonHarf).sesliMi()) {
-                        kok.setKisaltmaSonSeslisi('e');
+                        ((Kisaltma) kok).setKisaltmaSonSeslisi('e');
                         kok.ozelDurumEkle(ozelDurumlar.get(KISALTMA_SON_SESLI));
                     }
                 }
@@ -242,9 +240,9 @@ public class TurkceKokOzelDurumBilgisi extends TemelKokOzelDurumBilgisi implemen
             }
         }
 
-        //kisaltmalari ve ozel karakter iceren kokleri asil icerik olarak ata.
-        if (kok.tip() == KelimeTipi.KISALTMA || kok.ozelDurumIceriyormu(OZEL_IC_KARAKTER))
-            kok.setAsil(okunanIcerik);
+        //kisaltma ve ozel karakter iceren kokler disinda asil icerik olarak bir sey yazma.
+        if (kok.tip() != KelimeTipi.KISALTMA && !kok.ozelDurumIceriyormu(OZEL_IC_KARAKTER))
+            kok.setAsil(null);
     }
 
     public void kokIcerikIsle(Kok kok, KelimeTipi tip, String icerik) {

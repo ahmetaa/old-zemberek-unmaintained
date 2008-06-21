@@ -11,6 +11,7 @@ import net.zemberek.araclar.TimeTracker;
 import net.zemberek.araclar.turkce.YaziIsleyici;
 
 import org.junit.Test;
+import org.junit.Ignore;
 
 /**
  */
@@ -19,8 +20,8 @@ public class TestCozumlemePerformans extends TestKelimeCozumleyici {
     public void testPerformans() {
     }
 
-    //@Ignore("Performans")
-    @Test
+    @Ignore("Performans")
+    //@Test
     public void testPerformans2() throws IOException {
 
         //List kelimeler = YaziIsleyici.analizIcinKelimeAyikla(YaziIsleyici.yaziOkuyucu("kaynaklar/metinler/Ahmet_Hamdi_Tanpinar_Huzur.txt"));
