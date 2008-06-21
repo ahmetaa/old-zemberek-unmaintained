@@ -118,6 +118,7 @@
 	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 	<target name="temizle">
 		<delete dir="${build.dir}"/>
+		<delete dir="${dist.dir}"/>
 		<delete>
 			<fileset dir="${kaynaklar.dir}/">
 				<include name="**/*.bin"/>

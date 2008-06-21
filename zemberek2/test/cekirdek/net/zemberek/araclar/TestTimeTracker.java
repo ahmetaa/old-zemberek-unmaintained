@@ -9,6 +9,7 @@ package net.zemberek.araclar;
 
 import static org.junit.Assert.assertTrue;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 /**
@@ -25,7 +26,8 @@ public class TestTimeTracker {
         System.out.println(TimeTracker.stopClock("x"));
     }
 
-    @Test
+    //@Test
+    @Ignore
     public void testDelta() {
         TimeTracker.startClock("x");
         sleepMe(300);
