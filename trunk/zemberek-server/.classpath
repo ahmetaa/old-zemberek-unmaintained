@@ -13,9 +13,10 @@
 	<classpathentry kind="lib" path="lib/slf4j-nop.jar"/>
 	<classpathentry kind="lib" path="lib/unix.jar">
 		<attributes>
-			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="zemberek-server/lib"/>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="zemberek-server/lib/native-x86_64"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="lib/mina-core-1.1.0.jar"/>
+	<classpathentry kind="lib" path="lib/hexdump.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
