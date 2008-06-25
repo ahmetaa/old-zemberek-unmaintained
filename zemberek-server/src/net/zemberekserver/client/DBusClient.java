@@ -30,7 +30,6 @@ package net.zemberekserver.client;
 
 import org.freedesktop.dbus.DBusConnection;
 import org.freedesktop.dbus.exceptions.DBusException;
-
 import net.zemberekserver.server.Config;
 
 import java.util.List;
@@ -44,7 +43,7 @@ public class DBusClient {
 		else {
 			conn = DBusConnection.getConnection(DBusConnection.SESSION);
 		}		
-		ZemberekDbusInterface zemberek = (ZemberekDbusInterface) conn.getRemoteObject("net.zemberekserver.server.dbus","/net/zemberekserver/server/dbus/ZemberekDbus",ZemberekDbusInterface.class);
+		ZemberekDbusInterface zemberek = conn.getRemoteObject("net.zemberekserver.server.dbus","/net/zemberekserver/server/dbus/ZemberekDbus",ZemberekDbusInterface.class);
 		long start = System.currentTimeMillis();
 		for(int i=0; i<10000; i++){
 			if(i % 100 == 0) System.out.print(".");
