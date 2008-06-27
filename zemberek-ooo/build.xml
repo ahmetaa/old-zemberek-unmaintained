@@ -6,7 +6,7 @@
 	<property file="openoffice.properties"/>
 
 	<property name="idl.file" value="zemberek_ooo.idl"/>
-	<property name="project.version" value="1.0-Beta4"/>
+	<property name="project.version" value="1.0_rc1"/>
 	<property name="project.name" value="zemberek-ooo-${project.version}" />
 	<property name="spellchecker.project.name" value="ZemberekSpellChecker" />	
 	<property name="hyphenator.project.name" value="ZemberekHyphenator" />
