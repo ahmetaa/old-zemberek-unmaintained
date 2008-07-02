@@ -70,7 +70,7 @@ public class Sacmalayici {
         TurkceDilBilgisi dil = (TurkceDilBilgisi)zemberek.dilBilgisi();
         Sozluk kokler = dil.kokler();
         alfabe=dil.alfabe();
-        kelimeUretici = new KelimeUretici(dil.alfabe(), dil.cozumlemeYardimcisi());
+        kelimeUretici = new KelimeUretici(dil.alfabe(), dil.ekler(), dil.cozumlemeYardimcisi());
         ekYonetici = dil.ekler();
         
         Collection<Kok>koklist = kokler.tumKokler();
