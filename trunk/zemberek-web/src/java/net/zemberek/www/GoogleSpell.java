@@ -10,7 +10,6 @@ import com.sun.org.apache.xml.internal.serialize.OutputFormat;
 import com.sun.org.apache.xml.internal.serialize.XMLSerializer;
 import java.io.*;
 import java.util.Hashtable;
-import java.util.Locale;
 import java.util.StringTokenizer;
 
 import javax.servlet.*;
