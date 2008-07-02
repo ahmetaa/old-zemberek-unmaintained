@@ -6,9 +6,9 @@ package net.zemberek.demo;
 
 import java.awt.BorderLayout;
 
+import javax.swing.JEditorPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
 
@@ -16,7 +16,7 @@ import javax.swing.border.TitledBorder;
  */
 public class CikisAlani {
     private JPanel mainPanel;
-    private JTextArea outputArea;
+    private JEditorPane outputArea;
 
     public CikisAlani() {
         configure();
@@ -40,10 +40,10 @@ public class CikisAlani {
 
     public JPanel makeInputPanel() {
         JPanel pq = new JPanel(new BorderLayout());
-        outputArea = new JTextArea();
+        outputArea = new JEditorPane();
         outputArea.setBorder(new EmptyBorder(1, 3, 1, 3));
-        outputArea.setLineWrap(true);
         outputArea.setEditable(false);
+        outputArea.setContentType("text/html");
 
         // jTextPanel scroll bar icermez. O yuzden onu scroll pane'e ekliyoruz.
         JScrollPane ps = new JScrollPane();

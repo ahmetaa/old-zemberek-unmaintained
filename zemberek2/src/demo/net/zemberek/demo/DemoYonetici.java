@@ -86,7 +86,7 @@ public class DemoYonetici {
         for (YaziBirimi birim : analizDizisi) {
             if (birim.tip == YaziBirimiTipi.KELIME) {
                 if (!zemberek.kelimeDenetle(birim.icerik))
-                    birim.icerik = "#" + birim.icerik;
+                    birim.icerik = "<font color=\"#FF0033\">" + birim.icerik+"</font>";
             }
             sonuc.append(birim.icerik);
         }
@@ -99,12 +99,12 @@ public class DemoYonetici {
         for (YaziBirimi birim : analizDizisi) {
             if (birim.tip == YaziBirimiTipi.KELIME) {
                 Kelime[] cozumler = zemberek.kelimeCozumle(birim.icerik);
-                sonuc.append(birim.icerik).append('\n');
+                sonuc.append(birim.icerik).append("<br>");
                 if (cozumler.length == 0)
-                    sonuc.append(" :cozulemedi\n");
+                    sonuc.append(" :cozulemedi<br>");
                 else {
                     for (Kelime cozum : cozumler)
-                        sonuc.append(cozum).append("\n");
+                        sonuc.append(cozum).append("<br>");
                 }
             }
         }
@@ -124,7 +124,7 @@ public class DemoYonetici {
                 }
 
                 if (tekilSonuclar.size() == 0)
-                    birim.icerik = "#" + birim.icerik;
+                	 birim.icerik = "<font color=\"#FF0033\">" + birim.icerik+"</font>";
                 else if (tekilSonuclar.size() == 1)
                     birim.icerik = tekilSonuclar.iterator().next();
                 else {
@@ -189,11 +189,11 @@ public class DemoYonetici {
             if (birim.tip == YaziBirimiTipi.KELIME) {
                 birim.icerik = dilBilgisi.alfabe().ayikla(birim.icerik);
                 if (!dilBilgisi.alfabe().cozumlemeyeUygunMu(birim.icerik))
-                    birim.icerik = "#" + birim.icerik;
+                	 birim.icerik = "<font color=\"#FF0033\">" + birim.icerik+"</font>";
                 else {
                     String[] sonuclar = zemberek.hecele(birim.icerik);
                     if (sonuclar.length == 0)
-                        birim.icerik = "#" + birim.icerik;
+                    	 birim.icerik = "<font color=\"#FF0033\">" + birim.icerik+"</font>";
                     else {
                         StringBuffer bfr = new StringBuffer("[");
                         for (int j = 0; j < sonuclar.length - 1; j++)
@@ -215,7 +215,7 @@ public class DemoYonetici {
             if (birim.tip == YaziBirimiTipi.KELIME) {
                 String[] cozumler = zemberek.oner(birim.icerik);
                 if (cozumler.length == 0)
-                    birim.icerik = "#" + birim.icerik;
+                	 birim.icerik = "<font color=\"#FF0033\">" + birim.icerik+"</font>";
                 else if (cozumler.length == 1)
                     birim.icerik = cozumler[0];
                 else {
