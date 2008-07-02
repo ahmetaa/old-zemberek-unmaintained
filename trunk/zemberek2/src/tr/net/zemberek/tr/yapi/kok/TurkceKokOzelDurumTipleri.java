@@ -61,7 +61,8 @@ public enum TurkceKokOzelDurumTipleri implements KokOzelDurumTipi {
             ISIM_SAHIPLIK_SIZ_INIZ,
             ISIM_SAHIPLIK_O_I,
             ISIM_SAHIPLIK_BIZ_IMIZ,
-            ISIM_TAMLAMA_IN),
+            ISIM_TAMLAMA_IN,
+            ISIM_TAMLAMA_I),
 
     CIFTLEME("CIFT"),
 
