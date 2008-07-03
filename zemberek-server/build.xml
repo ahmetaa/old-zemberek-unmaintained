@@ -148,7 +148,7 @@
             excludes="**/*.zip"
             />
     	<tar destfile="${dist.dir}/${isim}-${surum}.tar.gz" basedir="." compression="gzip">
-    		<exclude name="**/.*"/>
+    		<exclude name="**/.*/**"/>
     		<exclude name="**/dist/**"/>
     		<exclude name="**/build/**"/>
     		<exclude name="**/bin/**"/>
