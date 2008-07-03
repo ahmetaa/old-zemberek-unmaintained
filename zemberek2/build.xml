@@ -327,6 +327,11 @@
              />
 		<zip destfile="${dist.dir}/zemberek-${surum}-src.zip">
 			<zipfileset dir="." prefix="zemberek-${surum}-src">
+				<exclude name=".settings/**" />
+				<exclude name=".classpath" />
+				<exclude name=".project" />
+				<exclude name="zemberek2.*"/>
+				<!-- TODO: Uygunsa nbproject dizinini de kaldır -->
 				<exclude name="**/.svn" />
 				<exclude name="dagitim/**"/>
 				<exclude name="build/**"/>
