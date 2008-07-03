@@ -26,7 +26,7 @@
 ~  ***** END LICENSE BLOCK *****
 -->
 
-<project name="zemberek_server" default="java">
+<project name="zemberek-server" default="dist">
 
     <!-- read the parameters from build.properties file.-->
     <property file="build.properties"/>
@@ -138,7 +138,7 @@
                 <attribute name="Main-Class"
                     value="net.zemberekserver.server.ZemberekServer"/>
                 <attribute name="Class-Path"
-                    value=". lib/mina-core-1.1.jar lib/slf4j-nop.jar lib/zemberek-cekirdek-2.0.jar lib/zemberek-tr-2.0.jar lib/dbus.jar lib/unix.jar"/>
+                    value=". lib/mina-core-1.1.0.jar lib/slf4j-nop.jar lib/zemberek-cekirdek-2.1_rc1.jar lib/zemberek-tr-2.1_rc1.jar lib/dbus.jar lib/unix.jar lib/hexdump.jar"/>
             </manifest>
         </jar>
         <!-- create the zip file with the same naming scheme -->
