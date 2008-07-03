@@ -153,7 +153,9 @@
     		<exclude name="**/build/**"/>
     		<exclude name="**/bin/**"/>
     	</tar>
-
+    	<echo>UYARI!</echo>
+    	<echo>Derlenmiş JNI kütüphanesi (libunix-java.so) ile ilgili sorun yaşarsanız lütfen bildiriniz.</echo>
+    	<echo>Kütüphaneyi kaynağını http://www.matthew.ath.cx/projects/java/ adresinden indirerek derleyebilirsiniz.</echo>
     </target>
 
 </project>
