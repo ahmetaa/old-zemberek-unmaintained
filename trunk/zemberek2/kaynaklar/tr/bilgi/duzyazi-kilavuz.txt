@@ -49111,7 +49111,7 @@ Vakfıkebir OZ
 vakfiye IS
 vakıa IS
 vakıf IS DUS
-vâkıf IS
+vâkıf IS DUS
 #vakıf arazisi
 #vakıf geliri
 #vakıf malı
