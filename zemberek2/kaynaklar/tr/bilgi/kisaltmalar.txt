@@ -98,9 +98,9 @@ BCG KI SON
 Bçvş. KI SON:u*
 #Başçavuş
 BDT KI SON
-#Bankacılık Denetleme ...
-BDDK KI
 #Bağımsız Devletler Topluluğu
+BDDK KI
+#Bankacılık Düzenleme ve Denetleme Kurumu
 B.E. KI
 #Büyük Elçi
 belgeç KI
