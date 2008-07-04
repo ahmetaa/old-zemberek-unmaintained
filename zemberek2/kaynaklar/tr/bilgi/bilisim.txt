@@ -8,7 +8,8 @@ biçem IS
 öznitelik IS
 özdevim IS
 özdevinim IS
-bankamatik IS
+bankamatik IS YUM
+#duzyazi-kilavuz.txt'de de yer alıyor.
 adreslemek FI
 çubukkod IS
 bip IS YAL
@@ -119,3 +120,4 @@ Apple OZ
 Mac OZ
 Quantum OZ
 Truetype OZ
+kısayol IS
