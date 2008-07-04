@@ -153,9 +153,16 @@
     		<exclude name="**/build/**"/>
     		<exclude name="**/bin/**"/>
     	</tar>
-    	<echo>UYARI!</echo>
-    	<echo>Derlenmiş JNI kütüphanesi (libunix-java.so) ile ilgili sorun yaşarsanız lütfen bildiriniz.</echo>
-    	<echo>Kütüphaneyi kaynağını http://www.matthew.ath.cx/projects/java/ adresinden indirerek derleyebilirsiniz.</echo>
+    	<tar destfile="${dist.dir}/${isim}-nolibs-${surum}.tar.gz" basedir="." compression="gzip">
+    	    <exclude name="**/.*/**"/>
+    	    <exclude name="**/dist/**"/>
+    	    <exclude name="**/build/**"/>
+    		<exclude name="**/bin/**"/>
+    		<exclude name="**/lib/**"/>
+    	</tar>
+    	<echo level="warning">UYARI!</echo>
+    	<echo level="warning">Derlenmiş JNI kütüphanesi (libunix-java.so) ile ilgili sorun yaşarsanız lütfen bildiriniz.</echo>
+    	<echo level="warning">Kütüphaneyi kaynağını http://www.matthew.ath.cx/projects/java/ adresinden indirerek derleyebilirsiniz.</echo>
     </target>
 
 </project>
