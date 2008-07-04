@@ -327,16 +327,25 @@
              />
 		<zip destfile="${dist.dir}/zemberek-${surum}-src.zip">
 			<zipfileset dir="." prefix="zemberek-${surum}-src">
-				<exclude name=".settings/**" />
-				<exclude name=".classpath" />
-				<exclude name=".project" />
+				<exclude name="**/.*/**"/>
 				<exclude name="zemberek2.*"/>
 				<!-- TODO: Uygunsa nbproject dizinini de kaldır -->
-				<exclude name="**/.svn" />
 				<exclude name="dagitim/**"/>
 				<exclude name="build/**"/>
 				<exclude name="bin/**"/>
 				<exclude name="kaynaklar/**/*.bin"/>
+			</zipfileset>
+		</zip>
+		<zip destfile="${dist.dir}/zemberek-${surum}-nolibs-src.zip">
+			<zipfileset dir="." prefix="zemberek-${surum}-src">
+				<exclude name="**/.*/**"/>
+				<exclude name="zemberek2.*"/>
+				<!-- TODO: Uygunsa nbproject dizinini de kaldır -->
+				<exclude name="dagitim/**"/>
+				<exclude name="build/**"/>
+				<exclude name="bin/**"/>
+				<exclude name="kaynaklar/**/*.bin"/>
+				<exclude name="lib/**"/>
 			</zipfileset>
 		</zip>
 		<echo message="Dagitim dosyalari ${dist.dir} dizininde olusturuldu."/>
