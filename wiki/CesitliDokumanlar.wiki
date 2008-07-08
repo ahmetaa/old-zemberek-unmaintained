@@ -1,4 +1,4 @@
-Cesitli Belgeler.
+=Cesitli Belgeler.=
 
 
 * [http://docs.google.com/Doc?id=ah8p92nkjzcw_8dhssst Zemberek projesinin indirilmesi ve farkli Java gelistirme ortamlarinda acilmasi]
@@ -8,3 +8,5 @@ Cesitli Belgeler.
 * [http://docs.google.com/Doc?id=ah8p92nkjzcw_13c7zfq9 Turk Dili gelistirici Belgesi]
 
 * [http://docs.google.com/Doc?id=ah8p92nkjzcw_18d5bv6d Soru-Cevap]
+
+* [http://docs.google.com/View?docid=dd9w44bk_2d7dkwt zemberek-dbus]
