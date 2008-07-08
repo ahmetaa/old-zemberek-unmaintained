@@ -40,7 +40,7 @@ public class TestOner {
         } else {
             String[] oneriler = zemberek.oner(str);
             if (oneriler.length==0) {
-                System.out.println(str + " T�rk�e de�il, �neri �retiliyor:");
+                System.out.println(str + " Türkçe değil, �neri �retiliyor:");
                 for (int i = 0; i < oneriler.length; i++) {
                     System.out.println("Oneri-" + " : " + oneriler[i]);
                 }

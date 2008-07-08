@@ -7,8 +7,6 @@
  */
 package net.zemberek.bilgi.araclar;
 
-import junit.framework.TestCase;
-
 /**
  * @author MDA & GBA
  */

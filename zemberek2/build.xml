@@ -380,7 +380,7 @@
 
 	<!--    test  islemleri   -->
 	<target name="unit-test" description="Run unit tests">
-		<antcall target="dil-ekle">
+		<antcall target="derle-dil">
 			<param name="dil" value="tr"/>
 		</antcall>
 		<mkdir dir="${build.test}"/>
@@ -413,8 +413,22 @@
 				<pathelement path="${build.dir}/tr"/>
 				<pathelement path="${build.test}"/>
 			</classpath>
-			<test name="net.zemberek.AllUnitTests" todir="${test.results}"/>
-			<!-- TODO: Bu sınıfı yaz --> 
+			<batchtest>
+				<fileset dir="${build.test}">
+					<include name="**/Test*.class"/>
+					<exclude name="**/TestGirdisi.class"/>
+					<exclude name="**/TestUtils.class"/>
+					<exclude name="**/TestTurkceMetinOkuyucu.class"/>
+					<exclude name="**/net/zemberek/kullanim/**"/>
+					<exclude name="**/TestIsimEkleri.class"/>
+					<exclude name="**/TestSayiEkleri.class"/>
+					<exclude name="**/TestEkUreticiTr.class"/>
+					<exclude name="**/TestTurkishTokenStreamPerf.class"/>
+					<exclude name="**/TestSozlukOkuyucu.class"/>
+					<exclude name="**/TestBinarySozluk.class"/>
+					<exclude name="**/TestHataToleransliKokSecici.class"/>
+				</fileset>
+			</batchtest>
 		</junit>
 		<fail if="tests.failed"/>
 	</target>
