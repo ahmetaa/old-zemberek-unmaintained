@@ -373,8 +373,7 @@
         	    defaultexcludes="no"
                 windowtitle="Generated Documentation for Zemberek"
                 doctitle="Generated Documentation for Zemberek"
-                bottom="Copyright 2005 Zemberek Development Team. All Rights Reserved.">
-			<classpath refid="classpath.build"/>
+                bottom="Copyright 2005-2008 Zemberek Development Team. All Rights Reserved.">
 		</javadoc>
 	</target>
 
