@@ -26119,13 +26119,13 @@ kişniş IS
 kit IS
 kitabe IS
 kitabet IS
+kitabevi IS
 kitabî IS
 kitap IS YUM
 #kitap açacağı
 #kitapçı
 #kitapçılık,-ğı
 #kitap ehli
-#kitap evi
 #kitap kurdu
 #kitaplaştırma
 #kitaplaştırmak
