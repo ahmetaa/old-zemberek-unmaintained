@@ -124,6 +124,7 @@
             </fileset>
         </copy>
     	
+    	<copy file="runbase.sh" todir="${dist.dir}" />
     	<copy file="run.sh" todir="${dist.dir}" />
     	<copy file="runtest_dbus.sh" todir="${dist.dir}" /> 
     	<copy file="runtest_socket.sh" todir="${dist.dir}" />
