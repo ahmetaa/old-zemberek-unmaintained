@@ -1,0 +1,11 @@
+﻿harfler=a,b,ç,d,e,ä,f,g,h,i,j,ž,k,l,m,n,ň,o,ö,p,r,s,ş,t,u,ü,w,y,ý,z,â,î,û,q,x,c,.,-,',"
+sesli=a,e,ä,y,i,o,ö,u,ü
+ince-sesli=e,ä,i,ö,ü
+duz-sesli=a,e,ä,y,i
+yuvarlak-sesli=o,ö,u,ü
+sert=f,s,t,k,ç,ş,h,p
+ascii-disi=ç,ä,ž,ň,ö,ş,ü,ý
+turkce-ascii=ç-c,ö-o,ş-s,ü-u,ä-a,ň-n,ž-n
+yumusama-donusum=ç-j,p-b,t-d,k-g
+ayiklama=.,-,',"
+ayiklama-donusum=â-a,î-i,û-ü

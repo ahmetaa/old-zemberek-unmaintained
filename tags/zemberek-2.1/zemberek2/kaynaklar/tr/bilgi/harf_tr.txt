@@ -1,0 +1,26 @@
+﻿# tum harfler. icerisinde kilavuz icerisind eyer alan yabanci icerikli kelimelerin
+# cozumlenebilmesi icin gerekli harfler ve simgeler de yer alir.
+harfler=a,b,c,ç,d,e,f,g,ğ,h,ı,i,j,k,l,m,n,o,ö,p,r,s,ş,t,u,ü,v,y,z,â,î,û,q,w,x,.,-,',"
+sesli=a,e,ı,i,o,ö,u,ü
+ince-sesli=e,i,ö,ü
+duz-sesli=a,e,ı,i
+yuvarlak-sesli=o,ö,u,ü
+sert=f,s,t,k,ç,ş,h,p
+ascii-disi=ç,ğ,ı,ö,ş,ü,Ç,İ,Ğ,Ö,Ş,Ü
+turkce-ascii=ç-c,Ç-C,ğ-g,Ğ-G,ı-i,İ-I,ö-o,Ö-O,ş-s,Ş-S,ü-u,Ü-U,â-a,î-i,û-u
+yumusama-donusum=ç-c,g-ğ,k-ğ,p-b,t-d
+ayiklama=.,-,',"
+ayiklama-donusum=â-a,î-i,û-u
+
+# secimlik ozellikler:
+
+# sert-donusum aslinda yumusama-donusumun tam tersi sayilir.
+# ama bazi durumlarda farkli bilgi icerebilir.
+sert-donusum=c-ç,ğ-k,b-p,d-t
+# ascii-turkce ozlelikleriinn tam tersi sayilir ama daha az bilgi iceriyor. sapkali harflerin donusumunde
+# cift olasilik olmasi nedeniyle.
+ascii-turkce=c-ç,g-ğ,i-ı,I-İ,o-ö,s-ş,u-ü,a-â,C-Ç,G-Ğ,O-Ö,S-Ş,U-Ü
+
+# incelebilen kalin sesliler. bu sesliler kalin orjinallerinin aynisidir ancak kalin degil incedir.
+# sadece bir ozel durum icin kullanilir (saat->saatler orenginde oldugu gibi. ikinci a harfi ince).
+ozel-ince-sesli=a,ı,u,o

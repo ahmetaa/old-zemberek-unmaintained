@@ -1,0 +1,9 @@
+Arutlar:Armutlar
+yapazilecekler:yapabilecekler
+ixterseniz:isterseniz
+armutlr:armutla,armutlu,armutlar
+davulc:davulcu,davulca,davula,davulu,davul
+sandalyecki:sandalyeci,sandalyecik
+sndalyeci:sandalyeci
+kitaplaradn:kitaplardan
+sfil:sefil

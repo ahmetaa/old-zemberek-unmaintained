@@ -1,0 +1,206 @@
+package net.zemberek.yapi;
+
+/**
+ * Created by IntelliJ IDEA.
+ * User: aakin
+ * Date: Feb 15, 2004
+ * Time: 10:55:05 PM
+ * To change this template use File | Settings | File Templates.
+ */
+
+public final class TurkceHarf implements Cloneable {
+
+    // Harfin bilgisayar karsiligi.
+    private char charDeger;
+    // Harfin kullanilan dil alfabesindeki sirasi
+    private int alfabetikSira;
+    private boolean sesli = false;
+    private boolean sert = false;
+    private boolean inceSesli = false;
+    private boolean buyukHarf = false;
+    private boolean asciiDisi = false;
+    private boolean duzSesli = false;
+    private boolean yuvarlakSesli = false;
+
+    // harf bir sekilde yumusuyorsa hangi harfe donusuyor?
+    private TurkceHarf yumusama = null;
+    private TurkceHarf sertDonusum = null;
+    // Harf ASCII kumesinde yer aliyorsa ve turkce'ye ozel bir karaktere benzesiyorsa, benzesen harf.
+    // ornegin s icin sh, i -> noktasiz i
+    private TurkceHarf asciiDonusum = null;
+    // eger harf ASCII icinde yer almiyorsa ve benzesen bir ASCII karsiligi varsa bu harf.
+    private TurkceHarf turkceDonusum = null;
+
+
+    //Harf nesneleri degistirilemez oldugundan asagidaki yapiyi kullanarak harflerin
+    // Setter ya da constructor kullanilmadan uretilmelerini sagliyoruz.
+    public static class HarfYapici {
+
+        char charDeger;
+        int alfabetikSira;
+        boolean sesli = false;
+        boolean sert = false;
+        boolean inceSesli = false;
+        boolean buyukHarf = false;
+        boolean asciiDisi = false;
+        boolean duzSesli = false;
+        boolean yuvarlakSesli = false;
+        TurkceHarf yumusama = null;
+        TurkceHarf sertDonusum = null;
+        TurkceHarf asciiDonusum = null;
+        TurkceHarf turkceDonusum = null;
+
+        public HarfYapici(char c, int sira, boolean b) {
+            charDeger = c;
+            alfabetikSira = sira;
+            buyukHarf = b;
+        }
+
+        HarfYapici sesli(boolean b) {
+            sesli = b;
+            return this;
+        }
+
+        HarfYapici sert(boolean b) {
+            sert = b;
+            return this;
+        }
+
+        HarfYapici inceSesli(boolean b) {
+            inceSesli = b;
+            return this;
+        }
+
+        HarfYapici asciiDisi(boolean b) {
+            asciiDisi = b;
+            return this;
+        }
+
+        HarfYapici duzSesli(boolean b) {
+            duzSesli = b;
+            return this;
+        }
+
+        HarfYapici yuvarlakSesli(boolean b) {
+            yuvarlakSesli = b;
+            return this;
+        }
+
+        HarfYapici yumusama(TurkceHarf h) {
+            yumusama = h;
+            return this;
+        }
+
+        HarfYapici asciiDonusum(TurkceHarf h) {
+            asciiDonusum = h;
+            return this;
+        }
+
+        HarfYapici turkceDonusum(TurkceHarf h) {
+            turkceDonusum = h;
+            return this;
+        }
+
+        public TurkceHarf yap() {
+            return new TurkceHarf(this);
+        }
+
+    }
+
+    private TurkceHarf(HarfYapici hy) {
+        this.charDeger = hy.charDeger;
+        this.alfabetikSira = hy.alfabetikSira;
+        this.buyukHarf = hy.buyukHarf;
+        this.sesli = hy.sesli;
+        this.yumusama = hy.yumusama;
+        this.yuvarlakSesli = hy.yuvarlakSesli;
+        this.turkceDonusum = hy.turkceDonusum;
+        this.asciiDisi = hy.asciiDisi;
+        this.asciiDonusum = hy.asciiDonusum;
+        this.turkceDonusum = hy.turkceDonusum;
+    }
+
+
+    public String toString() {
+        return "harf:" + charDeger;
+    }
+
+    public final boolean asciiToleransliKiyasla(TurkceHarf ha) {
+
+        //eger harf icerikleri ayni degilse turkce-ascii donusumleri kiyaslanir.
+        if (charDeger != ha.charDeger) {
+            if (turkceDonusum != null && turkceDonusum.charDeger == ha.charDeger)
+                return true;
+            return asciiDonusum != null && asciiDonusum.charDeger == ha.charDeger;
+        }
+        return true;
+    }
+
+    public TurkceHarf clone() {
+        TurkceHarf kopya = new TurkceHarf.HarfYapici(charDeger, alfabetikSira,buyukHarf).yap();
+        kopya.sert = sert;
+        kopya.sesli = sesli;
+        kopya.inceSesli = inceSesli;
+        kopya.buyukHarf = buyukHarf;
+        kopya.asciiDisi = asciiDisi;
+        kopya.duzSesli = duzSesli;
+        kopya.yumusama = yumusama;
+        kopya.sertDonusum = sertDonusum;
+        kopya.asciiDonusum = asciiDonusum;
+        kopya.turkceDonusum = turkceDonusum;
+        return kopya;
+    }
+
+    public char charDeger() {
+        return charDeger;
+    }
+
+    public int alfabetikSira() {
+        return alfabetikSira;
+    }
+
+    public boolean sesliMi() {
+        return sesli;
+    }
+
+    public boolean sertMi() {
+        return sert;
+    }
+
+    public boolean inceSesliMi() {
+        return inceSesli;
+    }
+
+    public boolean buyukHarfMi() {
+        return buyukHarf;
+    }
+
+    public boolean asciiDisindaMi() {
+        return asciiDisi;
+    }
+
+    public boolean duzSesliMi() {
+        return duzSesli;
+    }
+
+    public boolean yuvarlakSesliMi() {
+        return yuvarlakSesli;
+    }
+
+    public TurkceHarf getYumusama() {
+        return yumusama;
+    }
+
+    public TurkceHarf sertDonusum() {
+        return sertDonusum;
+    }
+
+    public TurkceHarf turkceDonusum() {
+        return asciiDonusum;
+    }
+
+    public TurkceHarf asciiDonusum() {
+        return turkceDonusum;
+    }
+
+}
