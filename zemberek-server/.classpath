@@ -16,7 +16,7 @@
 	</classpathentry>
 	<classpathentry kind="lib" path="lib/mina-core-1.1.0.jar"/>
 	<classpathentry kind="lib" path="lib/hexdump.jar"/>
-	<classpathentry kind="lib" path="lib/zemberek-cekirdek-2.1_rc1.jar"/>
-	<classpathentry kind="lib" path="lib/zemberek-tr-2.1_rc1.jar"/>
+	<classpathentry kind="lib" path="lib/zemberek-cekirdek-2.1.jar"/>
+	<classpathentry kind="lib" path="lib/zemberek-tr-2.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
