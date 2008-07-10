@@ -36,8 +36,8 @@
 
 	<property name="lib.runtime" location="lib/dagitim"/>
 	<property name="licences.dir" location="dokuman/lisanslar"/>
-
-
+	
+	
 	<!--    show the library files for classpath information and a complete build(tests etc).-->
 	<path id="classpath.build">
 		<fileset dir="lib/dagitim"/>
@@ -337,7 +337,7 @@
 			</zipfileset>
 		</zip>
 		<zip destfile="${dist.dir}/zemberek-${surum}-nolibs-src.zip">
-			<zipfileset dir="." prefix="zemberek-${surum}-src">
+			<zipfileset dir="." prefix="zemberek-${surum}-nolibs-src">
 				<exclude name="**/.*/**"/>
 				<exclude name="zemberek2.*"/>
 				<!-- TODO: Uygunsa nbproject dizinini de kaldır -->
