@@ -40,12 +40,14 @@ public abstract class ZemberekFactory {
 	}
 
 	public static Zemberek getZemberek(String dilKodu) {
-		if (zemberekNesneleri.containsKey(dilKodu))
-			return zemberekNesneleri.get(dilKodu);
-		else {
-			Zemberek z = _getZemberek(dilKodu);
-			zemberekNesneleri.put(dilKodu, z);
-			return z;
+		synchronized (zemberekNesneleri) {
+			if (zemberekNesneleri.containsKey(dilKodu))
+				return zemberekNesneleri.get(dilKodu);
+			else {
+				Zemberek z = _getZemberek(dilKodu);
+				zemberekNesneleri.put(dilKodu, z);
+				return z;
+			}
 		}
 	}
 
