@@ -11,67 +11,67 @@ buyrun -> ozel durum
 > ?uydu ->ozel durum.
 
 nerden
-dýþarda
+dÄ±ÅŸarda
 babamlardan
 omuzuna (bu da bilinen hata)
 benimki
-þurdan
-aldýrmazlýkla
+ÅŸurdan
+aldÄ±rmazlÄ±kla
 sensin
 
 sura
-sübjektivite?
+sÃ¼bjektivite?
 
-usulcacýk ?
+usulcacÄ±k ?
 
 proses:
 
 
- kýpýrdaþýp: bunun icin yeni bir ek yazmam gerekecek gibi..
-imrendiðini : kok secicide problem var gibi. isim ilan "imren" geliyor sadece.
+ kÄ±pÄ±rdaÅŸÄ±p: bunun icin yeni bir ek yazmam gerekecek gibi..
+imrendiÄŸini : kok secicide problem var gibi. isim ilan "imren" geliyor sadece.
 ozel durum, isim son sesli dusmesi. aslinda kokun icindeki gizli "i"
 cekim ekinden kaynaklaniyor saniyorum
 -yukarlara:
--dýþarda
+-dÄ±ÅŸarda
 
 Ozel  durumlar. dusunecegim
 -annemleri
 -Buyrun
 
 Bilgi lazim
-Fransýzcasýyla:  kesme isareti gerekir saniyorum. bilgi lazim..
+FransÄ±zcasÄ±yla:  kesme isareti gerekir saniyorum. bilgi lazim..
 Yahudisi Ermenisi Rumu.. kesme glirmi gelmezmi sorunu..
 
-asýk
-tezcanlýlýðýný
+asÄ±k
+tezcanlÄ±lÄ±ÄŸÄ±nÄ±
 mecra
 bilinmezlikler
-çakýrkeyif
-ürküntüyü
-iðrentiye
+Ã§akÄ±rkeyif
+Ã¼rkÃ¼ntÃ¼yÃ¼
+iÄŸrentiye
 mucizevi
-aldýrmazca
-zývýrý (ývýr zývýrý)
+aldÄ±rmazca
+zÄ±vÄ±rÄ± (Ä±vÄ±r zÄ±vÄ±rÄ±)
 birbirlerini
-kýsacasý
-baþabaþ
+kÄ±sacasÄ±
+baÅŸabaÅŸ
 somon
-oynaþmalarla
-tapýnan
-dehasý
-þezlonglarý
-kapalýydý
-döþeli
-tekdüze
+oynaÅŸmalarla
+tapÄ±nan
+dehasÄ±
+ÅŸezlonglarÄ±
+kapalÄ±ydÄ±
+dÃ¶ÅŸeli
+tekdÃ¼ze
 demiyorum
-vazgeçerim
-gözyaþlarýna
-kurslarý
-silikleþip
-huzursuzlanýrdý
-tonlamalarý
-ambulanslarýn
-davranmasana (çocuk gibi davranmasana)
+vazgeÃ§erim
+gÃ¶zyaÅŸlarÄ±na
+kurslarÄ±
+silikleÅŸip
+huzursuzlanÄ±rdÄ±
+tonlamalarÄ±
+ambulanslarÄ±n
+davranmasana (Ã§ocuk gibi davranmasana)
 
 
 
@@ -82,26 +82,26 @@ gelin -> hangi ek?
 Gazi Antep?
 
 Hatalar:
--savaþçýlarýnkiyle
+-savaÅŸÃ§Ä±larÄ±nkiyle
 -omuz omuza
 -devrildi +
--üzerlerine ?
--düþünsenize +
+-Ã¼zerlerine ?
+-dÃ¼ÅŸÃ¼nsenize +
 -seferkinden +
--durmamacasýna+
--koþuþturmaca+
+-durmamacasÄ±na+
+-koÅŸuÅŸturmaca+
 -gelmece+
--yanýk +
+-yanÄ±k +
 -devriyelerde +
--kadarlardý
--þamandýra +
+-kadarlardÄ±
+-ÅŸamandÄ±ra +
 -suyunun +
 
 sakinalim, takinalim?
 
 bagirmak-bagrismak cagirmak-cagrismak fiil sesli dusmesi ile ayni yapiya sahip.
 
-kapayýncaya?
+kapayÄ±ncaya?
 
 son -> sonuncu ? sayi kabul edilebilir ancak diger sayi eklerinde cuvallar.
 
@@ -192,9 +192,9 @@ cunku bici sadece yalin halde bulunabilir
 
 Ornekler:
 ----------
-cacýk IS YUM
+cacÄ±k IS YUM
 caymak FI
-cayýr IS YAL YAN
+cayÄ±r IS YAL YAN
 cemaat IS TERS
 cet IS YUM CIFT (ben bu trafigin yedi ceddini.. gibi)
 
@@ -252,7 +252,7 @@ kelimelerde ayni eki uretiyor. [-imsi: elmamsi, armudumsu] [-si: elmamsi, armuts
 - name, ihtarname
 - sever
 
-ihtira,-ý. Bu tuhaf bir konu. normalde ismin i hali geleceginde ihtirayI olmasi gerekirken -I oluyor.
+ihtira,-Ä±. Bu tuhaf bir konu. normalde ismin i hali geleceginde ihtirayI olmasi gerekirken -I oluyor.
 
 sayilara ozel ekler:
 -er
