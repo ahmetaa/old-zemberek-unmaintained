@@ -3,35 +3,35 @@ TSpell Notlar
 Haziran 2004
 
 1. Kok seciciler ve Performans
-Ne yazık ki hash secici istediğim performansı sağlayamadı, bir iki temizlik ve
-numara ekleyip yaklaşık 280.000 kök/s de sabitledim, aslında yapılabilcek bir kaç şey
+Ne yazÄ±k ki hash secici istediÄŸim performansÄ± saÄŸlayamadÄ±, bir iki temizlik ve
+numara ekleyip yaklaÅŸÄ±k 280.000 kÃ¶k/s de sabitledim, aslÄ±nda yapÄ±labilcek bir kaÃ§ ÅŸey
 daha var. 
-- String sınıfının toCharArray() metodu oldukça yavaş, eğer kök seçiciye doğrudan bir 
-karakter dizisi gönderirsek %15-20 hızlanabilir. 
+- String sÄ±nÄ±fÄ±nÄ±n toCharArray() metodu oldukÃ§a yavaÅŸ, eÄŸer kÃ¶k seÃ§iciye doÄŸrudan bir 
+karakter dizisi gÃ¶nderirsek %15-20 hÄ±zlanabilir. 
 - Karsilastirma icin bir tur ozel hash degeri kullanilabilir, bu da %5-10 arasi bir getiri 
 yapabilir.
-Ancak basit yapılı MapSecici zaten yaklasik 240.000 lik bir peformansa sahip
-o yuzden eziyete değer mi bilinmez, en iyisi şimdilik bu çalışmayı ikinci plana atmak.
+Ancak basit yapÄ±lÄ± MapSecici zaten yaklasik 240.000 lik bir peformansa sahip
+o yuzden eziyete deÄŸer mi bilinmez, en iyisi ÅŸimdilik bu Ã§alÄ±ÅŸmayÄ± ikinci plana atmak.
 Tabi MapSecicinin her zaman dogru adaylari getirmedigi bir gercek fakat gene de elde
 edecegimiz %20-25 lik ekstar performans icin simdilik kasmaya gerek yok.; 
 
 2.Kelimeler
-(TurkceHarf <- HarfDizisi <- Kelime) Su anda kullanmakta olduğumuz bu yapının yerine
-(char[] <- Kelime) şeklinde bir basitleşmeye gitmenin getirisi ve götürüsü ne olur acaba?
-Getiriler: Daha basit bir yapı ve kolay debug, daha küçük bellek ihtiyacı
-Götürüler: Daha az modüler ve nesneye yönelimli yapı (ancak iyileştirilebilir)
-Belirsiz : Performans, nesnelerden doğrudan çağrı ile yapılacak işler için bazı boolean
- kelime haritaları kullanılması gerekecek. Ancak bunlar nesne oluşturma ve çağırma bedellerinden
- küçükse daha iyi performans gösterebilir. denenmeli.
+(TurkceHarf <- HarfDizisi <- Kelime) Su anda kullanmakta olduÄŸumuz bu yapÄ±nÄ±n yerine
+(char[] <- Kelime) ÅŸeklinde bir basitleÅŸmeye gitmenin getirisi ve gÃ¶tÃ¼rÃ¼sÃ¼ ne olur acaba?
+Getiriler: Daha basit bir yapÄ± ve kolay debug, daha kÃ¼Ã§Ã¼k bellek ihtiyacÄ±
+GÃ¶tÃ¼rÃ¼ler: Daha az modÃ¼ler ve nesneye yÃ¶nelimli yapÄ± (ancak iyileÅŸtirilebilir)
+Belirsiz : Performans, nesnelerden doÄŸrudan Ã§aÄŸrÄ± ile yapÄ±lacak iÅŸler iÃ§in bazÄ± boolean
+ kelime haritalarÄ± kullanÄ±lmasÄ± gerekecek. Ancak bunlar nesne oluÅŸturma ve Ã§aÄŸÄ±rma bedellerinden
+ kÃ¼Ã§Ã¼kse daha iyi performans gÃ¶sterebilir. denenmeli.
 
-Soru: Kelime sınıfını "Java String" sınıfının Türkçe için özelleşmiş bir versiyonu gibi kullanabilir miyiz?
+Soru: Kelime sÄ±nÄ±fÄ±nÄ± "Java String" sÄ±nÄ±fÄ±nÄ±n TÃ¼rkÃ§e iÃ§in Ã¶zelleÅŸmiÅŸ bir versiyonu gibi kullanabilir miyiz?
 
 .... 
 
-Nisan - Mayıs 2004
-Refactoring ihtiyacı:
-Bir kelime enflasyonumuz var ve çözülmesi gerekiyor.
-Elimizdeki kelime, kök, sozluk kelimesi vs ye bir bakalım:
+Nisan - MayÄ±s 2004
+Refactoring ihtiyacÄ±:
+Bir kelime enflasyonumuz var ve Ã§Ã¶zÃ¼lmesi gerekiyor.
+Elimizdeki kelime, kÃ¶k, sozluk kelimesi vs ye bir bakalÄ±m:
 
 TurkceHarf : Tek bir turkce harfi ifade ediyor, harfin kendisi, sirasi, sert, yumusakligi vs gibi bilgileri tasiyor. 
 HarfDizisi : TurkceHarf dizisi tasiyan bir container. karmasik karsilastirma, buyuyebilme gibi ozellikleri tasiyor
@@ -47,7 +47,7 @@ birinin icine sabit int'ler koymak cok daha sade ve dogru.
 
 - FilteringStream
 MetinAraclari sinifinda hep benzeri isler yapiliyor, ozellikle injecterror ve ASCIIfyTurkish 
-gibi minik araclar icin bir tür FilePipe yapmak iyi olacak
+gibi minik araclar icin bir tÃ¼r FilePipe yapmak iyi olacak
 soyle ki, bu pipe input olarak String, FileName veya Stream alabilecek,
 output olarak ta gene ayni turden bir cikti verecek. tabi bir suru constructor gerekli.
 
@@ -61,124 +61,124 @@ Bir ara yapacagim. Refactoring iyidir vesselam.
 
 
 - 13 Mart 2004
-Karakter kodlaması.. bela mı bela. işin doğrusu bu konuyu eskiden beri sevmezdim, konu Türkçe
-olunca gene hortladı tabi anında. 
+Karakter kodlamasÄ±.. bela mÄ± bela. iÅŸin doÄŸrusu bu konuyu eskiden beri sevmezdim, konu TÃ¼rkÃ§e
+olunca gene hortladÄ± tabi anÄ±nda. 
 
 - 10 Mart 2004
-İstatistikler.. Yaptığımız işlemler sırasında çeşitli istatistikleri de tutabiliriz, biraz
-düşünelim, en basitinden en tuhafına kadar. Verilen bir metin için:
-Yapısal olarak:
+Ä°statistikler.. YaptÄ±ÄŸÄ±mÄ±z iÅŸlemler sÄ±rasÄ±nda Ã§eÅŸitli istatistikleri de tutabiliriz, biraz
+dÃ¼ÅŸÃ¼nelim, en basitinden en tuhafÄ±na kadar. Verilen bir metin iÃ§in:
+YapÄ±sal olarak:
 
- - Harf sayısı
- - Hece sayısı
- - Kelime sayısı
- - Cümle sayısı
- - Hepsinin oranları (En çok kullanılan harf, hece, kelime vs.)
- - Ortalama kelime uzunluğu
- - Ortalama Cümle uzunluğu
+ - Harf sayÄ±sÄ±
+ - Hece sayÄ±sÄ±
+ - Kelime sayÄ±sÄ±
+ - CÃ¼mle sayÄ±sÄ±
+ - Hepsinin oranlarÄ± (En Ã§ok kullanÄ±lan harf, hece, kelime vs.)
+ - Ortalama kelime uzunluÄŸu
+ - Ortalama CÃ¼mle uzunluÄŸu
  - En uzun kelime
- - En uzun cümle
+ - En uzun cÃ¼mle
  
- Imla denetimi ve Gramer yönünden :
+ Imla denetimi ve Gramer yÃ¶nÃ¼nden :
  
- - isim, Sıfat, Fiil vs sayısı  ve oranları
- - En sık kullandığı kelime, ek, hece
- - Kelime kökenlerine göre sayılar ve oranları (Arapça, Fransoıca vs.)
- - Denetim doğruluk oranı
- - Kelimelerin anlamsal türlerinin oranı (Bilimsel, genel, hukuki vs)
- - Olumsuz cümle oranı ?
- - Soru cümlesi sayısı ?
+ - isim, SÄ±fat, Fiil vs sayÄ±sÄ±  ve oranlarÄ±
+ - En sÄ±k kullandÄ±ÄŸÄ± kelime, ek, hece
+ - Kelime kÃ¶kenlerine gÃ¶re sayÄ±lar ve oranlarÄ± (ArapÃ§a, FransoÄ±ca vs.)
+ - Denetim doÄŸruluk oranÄ±
+ - Kelimelerin anlamsal tÃ¼rlerinin oranÄ± (Bilimsel, genel, hukuki vs)
+ - Olumsuz cÃ¼mle oranÄ± ?
+ - Soru cÃ¼mlesi sayÄ±sÄ± ?
  
  Gizli istatistikler
- - Genel Türkçe metinlerden sapma miktarı (genel Ek sıralamasından sapma oranı - cache-miss, 
-   Kök adayı vuru oranı vs. Bu istatistik bizim büyük miktarda veriyi taramamızdan sonra 
+ - Genel TÃ¼rkÃ§e metinlerden sapma miktarÄ± (genel Ek sÄ±ralamasÄ±ndan sapma oranÄ± - cache-miss, 
+   KÃ¶k adayÄ± vuru oranÄ± vs. Bu istatistik bizim bÃ¼yÃ¼k miktarda veriyi taramamÄ±zdan sonra 
    toplanabilir.) 
   
-  Tüm bu istatistikler herhangi bir metin için bir rapor şeklinde sunulabilse iyi olurdu sanırım.
+  TÃ¼m bu istatistikler herhangi bir metin iÃ§in bir rapor ÅŸeklinde sunulabilse iyi olurdu sanÄ±rÄ±m.
  
-Sözlük işini ben aldım. Elimizdeki kısmen dönüştürülmüş sözlüğü bizim istediğimiz formata
-getireceğim, diğer taraftan da basit bir xml sözlük hazırlayacağım, hayırlısı.
+SÃ¶zlÃ¼k iÅŸini ben aldÄ±m. Elimizdeki kÄ±smen dÃ¶nÃ¼ÅŸtÃ¼rÃ¼lmÃ¼ÅŸ sÃ¶zlÃ¼ÄŸÃ¼ bizim istediÄŸimiz formata
+getireceÄŸim, diÄŸer taraftan da basit bir xml sÃ¶zlÃ¼k hazÄ±rlayacaÄŸÄ±m, hayÄ±rlÄ±sÄ±.
 
 - 6 Mart 2004
-Kelime sayısı ile ilgili tahminim hatalı olabilir, Osmanlıca kelimeleri ekleyince sayı ikiyüzbini 
-bulabiliyor sanırım.
-Biraz sözlük üzerinde düşünelim, Ahmet'in bu konudaki bilgisi çok daha geniş.. Kabaca sayacak olursak;
- Kelimenin biçimsel özellikleri
-  - Türü (isim, sıfat, fiil, zarf, zamir, edat)
-  - Orijini (Türkçe, Arapça, Farsça, Fransızca ...)
+Kelime sayÄ±sÄ± ile ilgili tahminim hatalÄ± olabilir, OsmanlÄ±ca kelimeleri ekleyince sayÄ± ikiyÃ¼zbini 
+bulabiliyor sanÄ±rÄ±m.
+Biraz sÃ¶zlÃ¼k Ã¼zerinde dÃ¼ÅŸÃ¼nelim, Ahmet'in bu konudaki bilgisi Ã§ok daha geniÅŸ.. Kabaca sayacak olursak;
+ Kelimenin biÃ§imsel Ã¶zellikleri
+  - TÃ¼rÃ¼ (isim, sÄ±fat, fiil, zarf, zamir, edat)
+  - Orijini (TÃ¼rkÃ§e, ArapÃ§a, FarsÃ§a, FransÄ±zca ...)
   - Sonu sert sessizle mi bitiyor?
-  - Dğer özel durumlar (bunlar için Ahmet özel karakterler kullanıyordu)
- Anlamsal özellikler? 
-  - Sanırım bu konuda şimdilik tam bir muamma..
+  - DÄŸer Ã¶zel durumlar (bunlar iÃ§in Ahmet Ã¶zel karakterler kullanÄ±yordu)
+ Anlamsal Ã¶zellikler? 
+  - SanÄ±rÄ±m bu konuda ÅŸimdilik tam bir muamma..
 
-Aslında sözlük girişi için basit bir php veya java arayüzü yapılıp bilgiler bir Musql veritabanına
-girilirse daha iyi olacakmış gibi görünüyor. binary ve xml sözlükler bu veritabanı sorgulanarak
-oluşturulabilir.
+AslÄ±nda sÃ¶zlÃ¼k giriÅŸi iÃ§in basit bir php veya java arayÃ¼zÃ¼ yapÄ±lÄ±p bilgiler bir Musql veritabanÄ±na
+girilirse daha iyi olacakmÄ±ÅŸ gibi gÃ¶rÃ¼nÃ¼yor. binary ve xml sÃ¶zlÃ¼kler bu veritabanÄ± sorgulanarak
+oluÅŸturulabilir.
 
 
 - 5 Mart 2004
 
-İMLA DENETİMİ
-imla denetimi algoritması kabaca şu adımlardan oluşuyor
+Ä°MLA DENETÄ°MÄ°
+imla denetimi algoritmasÄ± kabaca ÅŸu adÄ±mlardan oluÅŸuyor
 
-1. Sözlüğün okunması : Sadece en başta yapılıyor
-   - Sözlük genişleyebilir yapıda, muhtemelen XML formatında olacak, ayrıca bu sözlüğü binary
-     formata dönüştüren bir kütüphane fonksiyonuna da ihtiyacımız olacak, ancak taban daima okunaklı
-     ve esnek olan XML sözlük olmalı. Bu konuda yapılmış çalışmalar taban alınabilir. 
-   - Türkçede yüzbin civarında muhtemel kelime var, ortalama olarak xml versiyonunun 4-5 MB, binary 
-     versiyonunun da 1 MB civarında olması muhtemel. Taşınabilirliği arttırmak için sıkıştırma yolu
+1. SÃ¶zlÃ¼ÄŸÃ¼n okunmasÄ± : Sadece en baÅŸta yapÄ±lÄ±yor
+   - SÃ¶zlÃ¼k geniÅŸleyebilir yapÄ±da, muhtemelen XML formatÄ±nda olacak, ayrÄ±ca bu sÃ¶zlÃ¼ÄŸÃ¼ binary
+     formata dÃ¶nÃ¼ÅŸtÃ¼ren bir kÃ¼tÃ¼phane fonksiyonuna da ihtiyacÄ±mÄ±z olacak, ancak taban daima okunaklÄ±
+     ve esnek olan XML sÃ¶zlÃ¼k olmalÄ±. Bu konuda yapÄ±lmÄ±ÅŸ Ã§alÄ±ÅŸmalar taban alÄ±nabilir. 
+   - TÃ¼rkÃ§ede yÃ¼zbin civarÄ±nda muhtemel kelime var, ortalama olarak xml versiyonunun 4-5 MB, binary 
+     versiyonunun da 1 MB civarÄ±nda olmasÄ± muhtemel. TaÅŸÄ±nabilirliÄŸi arttÄ±rmak iÃ§in sÄ±kÄ±ÅŸtÄ±rma yolu
      da denenebilir.
 
-2. Denetim yapılacak kelime için ön inceleme - işlem yapılması
-   - Çok mu kısa? 'o' hariç.
-   - Çok mu uzun? <40 En uzun kelimemiz : Çekoslovakyalılaştırabileceklerimizden ?
-   - Geçersiz harf taşıyor mu? <-- Azericede Q ve x var, o yüzden diyalektler için farklı olabilir. 
-   - Noktalama işsretlerinden arındırılmalıdır
-   - Tamamen küçük harfe dönüştürülmelidir.
+2. Denetim yapÄ±lacak kelime iÃ§in Ã¶n inceleme - iÅŸlem yapÄ±lmasÄ±
+   - Ã‡ok mu kÄ±sa? 'o' hariÃ§.
+   - Ã‡ok mu uzun? <40 En uzun kelimemiz : Ã‡ekoslovakyalÄ±laÅŸtÄ±rabileceklerimizden ?
+   - GeÃ§ersiz harf taÅŸÄ±yor mu? <-- Azericede Q ve x var, o yÃ¼zden diyalektler iÃ§in farklÄ± olabilir. 
+   - Noktalama iÅŸsretlerinden arÄ±ndÄ±rÄ±lmalÄ±dÄ±r
+   - Tamamen kÃ¼Ã§Ã¼k harfe dÃ¶nÃ¼ÅŸtÃ¼rÃ¼lmelidir.
 
-3. Kök adaylarının belirlenmesi. Bu, hassas bir konu. 
-   - Kitabım kelimesinin kökü 'kitap' tır ancak içinde kitap kelimesini barındırmaz. 
-     Dolayısıyla kök analizinde sert sessiz ile biten kelimelerin yumuşak hallerinin de
-     göz önüne alınması gerekiyor, bu durumda yumuşama şartı olan sert sessizden sonra 
-     sesli harf gelme kuralı da dikkate alınabilir.
-   - Performans: Çoğu kelime için tek bir kök adayı bulunacaktır, ancak bazı kelimelerin
-     çok miktarda adayı olabilir.  örneğin "Elmaslarının" kelimesinin Üç adet aday kök'ü vardır
-     "El","Elma" ve "Elmas". kök arama işleminin optimum olması kelime başına yapılan iş miktarını 
-     da azaltacaktır.
-   - Bu noktada, sırf kök adaylarının hızla belirlenebilmesi için bellekteki sözlüğün yanında
-     daha hafif bir kök aday veri yapısının da bulundurulması anlamlı olabilir. Bu, belli bir
-     bellek yükü de getirecektir, performans getirisi incelenmeli.
+3. KÃ¶k adaylarÄ±nÄ±n belirlenmesi. Bu, hassas bir konu. 
+   - KitabÄ±m kelimesinin kÃ¶kÃ¼ 'kitap' tÄ±r ancak iÃ§inde kitap kelimesini barÄ±ndÄ±rmaz. 
+     DolayÄ±sÄ±yla kÃ¶k analizinde sert sessiz ile biten kelimelerin yumuÅŸak hallerinin de
+     gÃ¶z Ã¶nÃ¼ne alÄ±nmasÄ± gerekiyor, bu durumda yumuÅŸama ÅŸartÄ± olan sert sessizden sonra 
+     sesli harf gelme kuralÄ± da dikkate alÄ±nabilir.
+   - Performans: Ã‡oÄŸu kelime iÃ§in tek bir kÃ¶k adayÄ± bulunacaktÄ±r, ancak bazÄ± kelimelerin
+     Ã§ok miktarda adayÄ± olabilir.  Ã¶rneÄŸin "ElmaslarÄ±nÄ±n" kelimesinin ÃœÃ§ adet aday kÃ¶k'Ã¼ vardÄ±r
+     "El","Elma" ve "Elmas". kÃ¶k arama iÅŸleminin optimum olmasÄ± kelime baÅŸÄ±na yapÄ±lan iÅŸ miktarÄ±nÄ± 
+     da azaltacaktÄ±r.
+   - Bu noktada, sÄ±rf kÃ¶k adaylarÄ±nÄ±n hÄ±zla belirlenebilmesi iÃ§in bellekteki sÃ¶zlÃ¼ÄŸÃ¼n yanÄ±nda
+     daha hafif bir kÃ¶k aday veri yapÄ±sÄ±nÄ±n da bulundurulmasÄ± anlamlÄ± olabilir. Bu, belli bir
+     bellek yÃ¼kÃ¼ de getirecektir, performans getirisi incelenmeli.
 
-4. Kök yapıları: 
-   - Türkçe'de kök kelimeler, kelimenin türüne göre farklı ekleri alabilir ve ekler birbirine
-     bağlanırken belli kurallar vardır, bir eke sadce belli bazı ekler birleştirilebilir.
-     Ahmet eski programda bu iş için bir ek matrisi hazırlamıştı, bu matrisi kullanmak gene 
-     anlamlı olabilir.
+4. KÃ¶k yapÄ±larÄ±: 
+   - TÃ¼rkÃ§e'de kÃ¶k kelimeler, kelimenin tÃ¼rÃ¼ne gÃ¶re farklÄ± ekleri alabilir ve ekler birbirine
+     baÄŸlanÄ±rken belli kurallar vardÄ±r, bir eke sadce belli bazÄ± ekler birleÅŸtirilebilir.
+     Ahmet eski programda bu iÅŸ iÃ§in bir ek matrisi hazÄ±rlamÄ±ÅŸtÄ±, bu matrisi kullanmak gene 
+     anlamlÄ± olabilir.
    
-5. Adaylar üzerinde kelime üzerinden gidilerek muhtemel ekler sentezlenir
-   - Ahmet'in örneği üzernden girdersek, "Elmaslarının" kelimesi için önce "El" kelimesi bulunur
-     (Bu noktada enteresan bir soru, Ahmet örneğinde El için önce çoğul ekinin deneneceğini ve Eller ile 
-     uyuşmayacağından olmayacağını yazmış.  ancak ler - lar ekini denemenin bile anlamı yok, çünkü El'den
-     sonra gelen harf zaten 'm', isim  köküne 'm' ile başlayan ek gelemeyeceğinden El, daha işin başında
-     elenebilirdi. Belki de bu tür numaraları şimdilik programa dahil etmemekte fayda var.)
-   - Sentez sonucunda elde edilen kelime giriş kelimesine eşit olduğu zaman kelime denetlemesi 
-     başarı ile tamamlanır, eğer aday kök kalmamışsa denetleme başarısız demektir.  
-   - Burada Perormans incelemesi yapılabilir, ayrıca adaptif algoritmalar kullanarak kök cinslerine
-     göre , hatta her kök için gelmesi en muhtemel 2-3 ek'in indexi de sözlükle beraber tutulabilir,
-     bu puanlandırmanın doğru olabilmesi için ilginç şey denenebilir
-       - Programa milyonlarca kelime verilerek istatistiki bilgiler değerlendirilir
-       - Metnin yapısına göre farklı ek seçim puanlandırılmaları yapabilir (jenerik, hukuki, bilimsel vs.)
-     Performans çalışmasının bir diğer ayağı da karşılaştırma işlemlerindeki mini numaralar olabilir,
-     hash değerlerinin karşılaştırılması vs gibi. 
+5. Adaylar Ã¼zerinde kelime Ã¼zerinden gidilerek muhtemel ekler sentezlenir
+   - Ahmet'in Ã¶rneÄŸi Ã¼zernden girdersek, "ElmaslarÄ±nÄ±n" kelimesi iÃ§in Ã¶nce "El" kelimesi bulunur
+     (Bu noktada enteresan bir soru, Ahmet Ã¶rneÄŸinde El iÃ§in Ã¶nce Ã§oÄŸul ekinin deneneceÄŸini ve Eller ile 
+     uyuÅŸmayacaÄŸÄ±ndan olmayacaÄŸÄ±nÄ± yazmÄ±ÅŸ.  ancak ler - lar ekini denemenin bile anlamÄ± yok, Ã§Ã¼nkÃ¼ El'den
+     sonra gelen harf zaten 'm', isim  kÃ¶kÃ¼ne 'm' ile baÅŸlayan ek gelemeyeceÄŸinden El, daha iÅŸin baÅŸÄ±nda
+     elenebilirdi. Belki de bu tÃ¼r numaralarÄ± ÅŸimdilik programa dahil etmemekte fayda var.)
+   - Sentez sonucunda elde edilen kelime giriÅŸ kelimesine eÅŸit olduÄŸu zaman kelime denetlemesi 
+     baÅŸarÄ± ile tamamlanÄ±r, eÄŸer aday kÃ¶k kalmamÄ±ÅŸsa denetleme baÅŸarÄ±sÄ±z demektir.  
+   - Burada Perormans incelemesi yapÄ±labilir, ayrÄ±ca adaptif algoritmalar kullanarak kÃ¶k cinslerine
+     gÃ¶re , hatta her kÃ¶k iÃ§in gelmesi en muhtemel 2-3 ek'in indexi de sÃ¶zlÃ¼kle beraber tutulabilir,
+     bu puanlandÄ±rmanÄ±n doÄŸru olabilmesi iÃ§in ilginÃ§ ÅŸey denenebilir
+       - Programa milyonlarca kelime verilerek istatistiki bilgiler deÄŸerlendirilir
+       - Metnin yapÄ±sÄ±na gÃ¶re farklÄ± ek seÃ§im puanlandÄ±rÄ±lmalarÄ± yapabilir (jenerik, hukuki, bilimsel vs.)
+     Performans Ã§alÄ±ÅŸmasÄ±nÄ±n bir diÄŸer ayaÄŸÄ± da karÅŸÄ±laÅŸtÄ±rma iÅŸlemlerindeki mini numaralar olabilir,
+     hash deÄŸerlerinin karÅŸÄ±laÅŸtÄ±rÄ±lmasÄ± vs gibi. 
      
 
-6. İstisnai durumlar
+6. Ä°stisnai durumlar
 
-KELİME TAVSİYESİ        
-Bozuk kelimeler için uygun tavsiyelerde bulunmak oldukça farklı bir yol izlemeyi gerektirebilir.
-Bu durumda da yakınlık analizi, kök türü, hatta kısmi bir anlamsal analiz çok daha iyi tavsiyelerde
-bulunulmasını sağlayabilir.
-Örneğin "Elmazlarının" kelimesi için "Elmalarının" ,"Elmaslarının", "Olmazlarının" tavsiyelerini 
-verebilmek oldukça zorlu bir işmiş gibi görünüyor.
+KELÄ°ME TAVSÄ°YESÄ°        
+Bozuk kelimeler iÃ§in uygun tavsiyelerde bulunmak oldukÃ§a farklÄ± bir yol izlemeyi gerektirebilir.
+Bu durumda da yakÄ±nlÄ±k analizi, kÃ¶k tÃ¼rÃ¼, hatta kÄ±smi bir anlamsal analiz Ã§ok daha iyi tavsiyelerde
+bulunulmasÄ±nÄ± saÄŸlayabilir.
+Ã–rneÄŸin "ElmazlarÄ±nÄ±n" kelimesi iÃ§in "ElmalarÄ±nÄ±n" ,"ElmaslarÄ±nÄ±n", "OlmazlarÄ±nÄ±n" tavsiyelerini 
+verebilmek oldukÃ§a zorlu bir iÅŸmiÅŸ gibi gÃ¶rÃ¼nÃ¼yor.
 
 
