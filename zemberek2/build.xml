@@ -272,7 +272,7 @@
 	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 	<target name="jar-tt">
 		<antcall target="jar-dil">
-			<param name="dil" value="az"/>
+			<param name="dil" value="tt"/>
 		</antcall>
 	</target>
 
