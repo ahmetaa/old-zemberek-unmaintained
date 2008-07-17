@@ -148,22 +148,42 @@
             update="true"
             excludes="**/*.zip"
             />
-    	<tar destfile="${dist.dir}/${isim}-${surum}.tar.gz" basedir="." compression="gzip">
-    		<exclude name="**/.*/**"/>
-    		<exclude name="**/dist/**"/>
-    		<exclude name="**/build/**"/>
-    		<exclude name="**/bin/**"/>
-    	</tar>
-    	<tar destfile="${dist.dir}/${isim}-nolibs-${surum}.tar.gz" basedir="." compression="gzip">
-    	    <exclude name="**/.*/**"/>
-    	    <exclude name="**/dist/**"/>
-    	    <exclude name="**/build/**"/>
-    		<exclude name="**/bin/**"/>
-    		<exclude name="**/lib/**"/>
-    	</tar>
+    	<antcall target="tarball">
+    		<param name="nolibs" value="false"/>
+    	</antcall>
+    	<antcall target="tarball">
+    		<param name="nolibs" value="true"/>
+    	</antcall>
+    	
     	<echo level="warning">UYARI!</echo>
     	<echo level="warning">Derlenmiş JNI kütüphanesi (libunix-java.so) ile ilgili sorun yaşarsanız lütfen bildiriniz.</echo>
     	<echo level="warning">Kütüphaneyi kaynağını http://www.matthew.ath.cx/projects/java/ adresinden indirerek derleyebilirsiniz.</echo>
     </target>
+	
+	<target name="tarball">
+		<condition property="nolibssuff" value="-nolibs" else="">
+			<istrue value="${nolibs}"/>
+		</condition>
+		<condition property="libs" value="lib/**" else="lib">
+			<isfalse value="${nolibs}"/>
+		</condition>
+		<tar
+			destfile="${dist.dir}/${isim}${nolibssuff}-${surum}.tar.gz"
+			compression="gzip"
+			longfile="gnu">
+			<tarfileset prefix="${isim}${nolibssuff}-${surum}" dir=".">
+				<include name="config/**"/>
+				<include name="lisanslar/**"/>
+				<include name="src/**"/>
+				<include name="test/**"/>
+				<include name="${libs}"/>
+				<include name="build.*"/>
+				<include name="zemberek-server.xml"/>
+			</tarfileset>
+			<tarfileset prefix="${isim}${nolibssuff}-${surum}" mode="755" dir=".">
+				<include name="*.sh"/>
+			</tarfileset>
+		</tar>
+	</target>
 
 </project>
