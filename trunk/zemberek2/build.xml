@@ -325,30 +325,41 @@
              update="true"
              excludes="**/*.zip"
              />
-		<zip destfile="${dist.dir}/zemberek-${surum}-src.zip">
-			<zipfileset dir="." prefix="zemberek-${surum}-src">
-				<exclude name="**/.*/**"/>
-				<exclude name="zemberek2.*"/>
-				<!-- TODO: Uygunsa nbproject dizinini de kaldır -->
-				<exclude name="dagitim/**"/>
-				<exclude name="build/**"/>
-				<exclude name="bin/**"/>
-				<exclude name="kaynaklar/**/*.bin"/>
-			</zipfileset>
-		</zip>
-		<zip destfile="${dist.dir}/zemberek-${surum}-nolibs-src.zip">
-			<zipfileset dir="." prefix="zemberek-${surum}-nolibs-src">
-				<exclude name="**/.*/**"/>
-				<exclude name="zemberek2.*"/>
-				<!-- TODO: Uygunsa nbproject dizinini de kaldır -->
-				<exclude name="dagitim/**"/>
-				<exclude name="build/**"/>
-				<exclude name="bin/**"/>
-				<exclude name="kaynaklar/**/*.bin"/>
-				<exclude name="lib/**"/>
-			</zipfileset>
-		</zip>
+		<antcall target="srcdist">
+    		<param name="nolibs" value="false"/>
+    	</antcall>
+    	<antcall target="srcdist">
+    		<param name="nolibs" value="true"/>
+    	</antcall>
 		<echo message="Dagitim dosyalari ${dist.dir} dizininde olusturuldu."/>
+	</target>
+	
+	<target name="srcdist">
+		<condition property="nolibssuff" value="-nolibs" else="">
+			<istrue value="${nolibs}"/>
+		</condition>
+		<condition property="libsdev" value="lib/**" else="lib/gelistirme">
+			<isfalse value="${nolibs}"/>
+		</condition>
+		<condition property="libsdist" value="" else="lib/dagitim">
+			<isfalse value="${nolibs}"/>
+		</condition>
+		<zip destfile="${dist.dir}/zemberek-${surum}${nolibssuff}-src.zip">
+			<zipfileset dir="." prefix="zemberek-${surum}${nolibssuff}-src">
+				<include name="deney/**"/>
+				<include name="dokuman/**"/>
+				<include name="kaynaklar/**"/>
+				<!-- TODO: Uygunsa nbproject dizinini de kaldır -->
+				<include name="nbproject/**"/>
+				<include name="src/**"/>
+				<include name="test/**"/>
+				<include name="build.*"/>
+				<include name="*.txt"/>
+				<exclude name="kaynaklar/**/*.bin"/>
+				<include name="${libsdev}"/>
+				<include name="${libsdist}"/>
+			</zipfileset>
+		</zip>		
 	</target>
 
 
