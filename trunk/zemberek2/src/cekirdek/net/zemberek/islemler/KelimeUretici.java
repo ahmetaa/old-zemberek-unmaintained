@@ -93,11 +93,13 @@ public class KelimeUretici {
             if (ozelDurumSonrasi != null)
                 kelime.setIcerik(ozelDurumSonrasi);
             else
-                return ure;
+                return sonucBicimlendir(ure, kelime);
         } else {
-            return ure;
+            return sonucBicimlendir(ure, kelime);
         }
 
+        yardimci.kokGirisDegismiVarsaUygula(kok, kelime.icerik(), null);
+        
         for (int i = 0; i < ekler.size(); i++) {
 
             Ek ek = ekler.get(i);
@@ -128,10 +130,14 @@ public class KelimeUretici {
             kelime.icerikEkle(ekOlusumu);
             if (ekOlusumu.length() > 0)
                 ure.olusumlar.add(ekOlusumu.toString());
-            kelime.ekler().add(ek);
+            kelime.ekEkle(ek);
         }
 
         //son duzeltmeleri uygula.
+        return sonucBicimlendir(ure, kelime);
+    }
+
+    private UretimNesnesi sonucBicimlendir(UretimNesnesi ure, Kelime kelime) {
         yardimci.kelimeBicimlendir(kelime);
         ure.olusum = kelime.icerikStr();
         return ure;

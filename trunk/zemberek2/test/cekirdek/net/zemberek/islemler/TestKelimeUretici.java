@@ -34,7 +34,6 @@ import net.zemberek.yapi.ek.Ek;
 
 import org.junit.Assert;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 
 /**
@@ -59,7 +58,7 @@ public class TestKelimeUretici extends TemelTest {
         return dilBilgisi.ekler().ek(ad);
     }
 
-    private List<Ek> ekDizisi(String... ekAdlari) {
+    private List<Ek> ekListesi(String... ekAdlari) {
         List<Ek> ekler = new ArrayList<Ek>();
         for (String s : ekAdlari)
             ekler.add(ek(s));
@@ -70,18 +69,18 @@ public class TestKelimeUretici extends TemelTest {
     public void testKelimeUret() {
 
         Kok kok = kokler.kokBul("armut", KelimeTipi.ISIM);
-        List<Ek> ekler = ekDizisi(ISIM_KOK, ISIM_SAHIPLIK_BIZ_IMIZ, ISIM_TANIMLAMA_DIR);
+        List<Ek> ekler = ekListesi(ISIM_KOK, ISIM_SAHIPLIK_BIZ_IMIZ, ISIM_TANIMLAMA_DIR);
         assertEquals("armudumuzdur", kelimeUretici.kelimeUret(kok, ekler));
 
         Kelime almanyada = cozumleyici.cozumle("Almanya'da", CozumlemeSeviyesi.TEK_KOK)[0];
         assertEquals("Almanya'da", kelimeUretici.kelimeUret(almanyada.kok(), almanyada.ekler()));
 
         kok = kokler.kokBul("sabret", KelimeTipi.FIIL);
-        ekler = ekDizisi(FIIL_KOK, FIIL_YETENEK_EBIL, FIIL_GELECEKZAMAN_ECEK, FIIL_KISI_BIZ);
+        ekler = ekListesi(FIIL_KOK, FIIL_YETENEK_EBIL, FIIL_GELECEKZAMAN_ECEK, FIIL_KISI_BIZ);
         assertEquals("sabredebilece\u011fiz", kelimeUretici.kelimeUret(kok, ekler));
 
         kok = kokler.kokBul("sabret", KelimeTipi.FIIL);
-        ekler = ekDizisi(FIIL_YETENEK_EBIL, FIIL_GELECEKZAMAN_ECEK, FIIL_KISI_BIZ);
+        ekler = ekListesi(FIIL_YETENEK_EBIL, FIIL_GELECEKZAMAN_ECEK, FIIL_KISI_BIZ);
         assertEquals("sabredebilece\u011fiz", kelimeUretici.kelimeUret(kok, ekler));
     }
 
@@ -91,25 +90,23 @@ public class TestKelimeUretici extends TemelTest {
     public void testKelimeUretRasgeleDiziliEk() {
 
         Kok kok = kokler.kokBul("armut", KelimeTipi.ISIM);
-        List<Ek> ekler = ekDizisi(ISIM_YONELME_E, ISIM_TANIMLAMA_DIR, ISIM_SAHIPLIK_BIZ_IMIZ);
+        List<Ek> ekler = ekListesi(ISIM_YONELME_E, ISIM_TANIMLAMA_DIR, ISIM_SAHIPLIK_BIZ_IMIZ);
         assertEquals("armudumuzad" + I + "r", kelimeUretici.sirasizEklerleUret(kok, ekler));
 
         kok = kokler.kokBul("sabret", KelimeTipi.FIIL);
-        ekler = ekDizisi(FIIL_GELECEKZAMAN_ECEK, FIIL_YETENEK_EBIL, FIIL_KOK, FIIL_KISI_BIZ);
+        ekler = ekListesi(FIIL_GELECEKZAMAN_ECEK, FIIL_YETENEK_EBIL, FIIL_KOK, FIIL_KISI_BIZ);
         assertEquals("sabredebilece\u011fiz", kelimeUretici.sirasizEklerleUret(kok, ekler));
 
         kok = kokler.kokBul("sabret", KelimeTipi.FIIL);
-        ekler = ekDizisi(FIIL_YETENEK_EBIL, FIIL_GELECEKZAMAN_ECEK, FIIL_KISI_BIZ, ISIM_DONUSUM_LES);
+        ekler = ekListesi(FIIL_YETENEK_EBIL, FIIL_GELECEKZAMAN_ECEK, FIIL_KISI_BIZ, ISIM_DONUSUM_LES);
         Assert.assertEquals("sabret", kelimeUretici.sirasizEklerleUret(kok, ekler));
     }
 
     /**
      * fonksiyonel olusum testi. hepsi-dogru.txt dosyasindaki kelimeleri cozumleyip geri olusturur.
-     * TODO:kisaltmalar islemiyor.
      *
-     * @throws java.io.IOException
+     * @throws java.io.IOException io hatasi durumunda..
      */
-    @Ignore("Henuz kisaltmalarda islemiyor.")
     @Test
     public void testCozGeriOlustur() throws IOException {
         List<String> kelimeler = TestUtils.satirlariOku("kaynaklar/tr/test/hepsi-dogru.txt");

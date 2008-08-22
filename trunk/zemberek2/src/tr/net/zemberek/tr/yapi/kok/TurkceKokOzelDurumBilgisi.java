@@ -160,7 +160,7 @@ public class TurkceKokOzelDurumBilgisi extends TemelKokOzelDurumBilgisi implemen
         for (KokOzelDurumu ozelDurum : kok.ozelDurumDizisi()) {
             // kucultme ozel durumunda problem var, cunku kok'te hem kucultme hem yumusama uygulaniyor.
             if (ozelDurum == null) {
-                logger.warning("null ozle durum!. Kok:" + kok);
+                logger.warning("null ozel durum!. Kok:" + kok);
                 return new String[0];
             }
             if (!ozelDurum.equals(ozelDurum(KUCULTME)))
@@ -207,6 +207,9 @@ public class TurkceKokOzelDurumBilgisi extends TemelKokOzelDurumBilgisi implemen
 
             String ozelDurum = parcalar[i];
 
+            if (ozelDurum.startsWith(OZEL_IC_KARAKTER.kisaAd()))
+                kok.ozelDurumEkle(ozelDurumlar.get(OZEL_IC_KARAKTER));
+
             //kisaltma ozel durumunun analizi burada yapiliyor.
             if (ozelDurum.startsWith(KISALTMA_SON_SESLI.kisaAd())) {
                 int loc = ozelDurum.indexOf(':');
@@ -243,6 +246,7 @@ public class TurkceKokOzelDurumBilgisi extends TemelKokOzelDurumBilgisi implemen
         //kisaltma ve ozel karakter iceren kokler disinda asil icerik olarak bir sey yazma.
         if (kok.tip() != KelimeTipi.KISALTMA && !kok.ozelDurumIceriyormu(OZEL_IC_KARAKTER))
             kok.setAsil(null);
+        else kok.ozelDurumEkle(ozelDurumlar.get(OZEL_IC_KARAKTER));
     }
 
     public void kokIcerikIsle(Kok kok, KelimeTipi tip, String icerik) {

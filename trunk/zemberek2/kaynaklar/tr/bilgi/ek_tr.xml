@@ -625,6 +625,7 @@
 
         <!-- isim sahiplik siz _iniz : "ev_iniz guzelmis.."  -->
         <ek ad="ISIM_SAHIPLIK_SIZ_INIZ" uretim="InIz">
+            <ozel-durum ad="SU" uretim="yunuz"/>
             <ozellik>IYELIK</ozellik>
             <ardisil-ekler>
                 <kume>ISIM_HAL</kume>
@@ -644,7 +645,6 @@
 
         <!-- isim sahiplik onlar _lari : "ev_leri guzelmis.."  -->
         <ek ad="ISIM_SAHIPLIK_ONLAR_LERI" uretim="lArI">
-            <ozel-durum ad="SU" uretim="yunuz"/>               
             <ardisil-ekler>
                 <kume>ISIM_HAL</kume>
                 <kume>IMEK_ZAMAN</kume>
@@ -1467,7 +1467,7 @@
         </ek>
 
         <!-- bu ek normalde kullanilmaz. sadece ceviri gibi islemlerde gerekli olabilir. -->
-        <ek ad="FIIL_SORU_MI" uretim="ga">
+        <ek ad="FIIL_SORU_MI" uretim="mI">
             <ardisil-ekler>
                 <kume>FIIL_KISI</kume>
                 <aek>FIIL_GECMISZAMAN_DI</aek>
@@ -1522,12 +1522,10 @@
         </ek>
 
         <!-- isim imek "idi" _di : "adam aslan_di simdi elin kopegi oldu.." -->
-        <ek ad="IMEK_HIKAYE_DI" uretim="+ydI">
+        <ek ad="IMEK_HIKAYE_DI" uretim="+y>dI">
             <ozellik>HAL</ozellik>
-            <ozel-durum ad="ON_EK" uretim=">dI">
+            <ozel-durum ad="ON_EK" uretim="di">
                 <on-ek>IMEK_KOK</on-ek>
-                <on-ek>FIIL_KOK</on-ek>
-                <on-ek>FIIL_OLUMSUZLUK_ME</on-ek>
             </ozel-durum>
             <ardisil-ekler>
                 <kume>ISIM_KISI</kume>

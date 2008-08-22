@@ -5,6 +5,7 @@
 package net.zemberek.tr.islemler;
 
 import java.util.List;
+import java.util.Locale;
 
 import net.zemberek.islemler.cozumleme.CozumlemeYardimcisi;
 import net.zemberek.tr.yapi.kok.TurkceKokOzelDurumTipleri;
@@ -19,6 +20,7 @@ import net.zemberek.yapi.ek.Ek;
 public class TurkceCozumlemeYardimcisi implements CozumlemeYardimcisi {
 
     private Alfabe alfabe;
+    Locale TR = new Locale("tr");
 
     public TurkceCozumlemeYardimcisi(Alfabe alfabe) {
         this.alfabe = alfabe;
@@ -27,7 +29,7 @@ public class TurkceCozumlemeYardimcisi implements CozumlemeYardimcisi {
     public void kelimeBicimlendir(Kelime kelime) {
         Kok kok = kelime.kok();
         HarfDizisi olusan = kelime.icerik();
-        if (kok.tip().equals(KelimeTipi.KISALTMA)) {
+        if (kok instanceof Kisaltma) {
             //cozumleme sirasinda eklenmis harf varsa onlari sil.
             int silinecek = kok.icerik().length();
             if (kok.ozelDurumIceriyormu(TurkceKokOzelDurumTipleri.KISALTMA_SON_SESSIZ))
@@ -59,13 +61,13 @@ public class TurkceCozumlemeYardimcisi implements CozumlemeYardimcisi {
             }
         }
         // ozel ic karakter iceren kokler icin bicimleme
-/*        if (kok.ozelDurumlar().contains(TurkceKokOzelDurumlari.OZEL_IC_KARAKTER)) {
+        else if (kok.ozelDurumIceriyormu(TurkceKokOzelDurumTipleri.OZEL_IC_KARAKTER)) {
             //olusan ksimdan koku sil
             int silinecek = kok.icerik().length();
             olusan.harfSil(0, silinecek);
             //simdi kokun orjinal halini ekle.
-            olusan.ekle(0, new HarfDizisi(kok.asil()));
-        }*/
+            olusan.ekle(0, new HarfDizisi(kok.asil(), alfabe));
+        }
     }
 
     public boolean kelimeBicimiDenetle(Kelime kelime, String giris) {
@@ -92,7 +94,7 @@ public class TurkceCozumlemeYardimcisi implements CozumlemeYardimcisi {
                 return true;
             List<Ek> ekler = kelime.ekler();
             if (ekler.size() > 1) {
-                Ek ek = (Ek) ekler.get(1);
+                Ek ek = ekler.get(1);
                 if (ek.iyelikEkiMi() || ek.halEkiMi()) {
                     int kesmePozisyonu = kelime.kok().icerik().length();
                     return kesmePozisyonu <= giris.length() && giris.charAt(kesmePozisyonu) == '\'';
@@ -111,26 +113,34 @@ public class TurkceCozumlemeYardimcisi implements CozumlemeYardimcisi {
 
     public boolean kokGirisDegismiVarsaUygula(Kok kok, HarfDizisi kokDizi, HarfDizisi girisDizi) {
         //turkce'de sadece kisaltmalarda bu metoda ihtiyacimiz var.
-        if (girisDizi.length() == 0) return false;
+        if (girisDizi != null && girisDizi.length() == 0) return false;
         if (kok instanceof Kisaltma) {
             char c = ((Kisaltma) kok).getKisaltmaSonSeslisi();
             if (c == 0) return false;
             TurkceHarf h = alfabe.harf(c);
+            kokDizi.ekle(h);
             //toleransli cozumleyicide kok giristen daha uzun olabiliyor.
             // o nedenle asagidaki kontrolun yapilmasi gerekiyor.
             int kokBoyu = kok.icerik().length();
-            if (kokBoyu <= girisDizi.length())
-                girisDizi.ekle(kokBoyu, h);
-            else
-                girisDizi.ekle(h);
-            kokDizi.ekle(h);
+
+            if (girisDizi != null) {
+                if (kokBoyu <= girisDizi.length()) {
+                    girisDizi.ekle(kokBoyu, h);
+                } else {
+                    girisDizi.ekle(h);
+                }
+            }
             if (kok.ozelDurumIceriyormu(TurkceKokOzelDurumTipleri.KISALTMA_SON_SESSIZ)) {
                 //gene toleransli cozumleyicinin hata vermemesi icin asagidaki kontrole ihtiyacimiz var
-                if (kokBoyu < girisDizi.length())
-                    girisDizi.ekle(kokBoyu + 1, alfabe.harf('b'));
-                else
-                    girisDizi.ekle(alfabe.harf('b'));
                 kokDizi.ekle(alfabe.harf('b'));
+
+                if (girisDizi != null) {
+                    if (kokBoyu < girisDizi.length()) {
+                        girisDizi.ekle(kokBoyu + 1, alfabe.harf('b'));
+                    } else {
+                        girisDizi.ekle(alfabe.harf('b'));
+                    }
+                }
             }
             return true;
         }
