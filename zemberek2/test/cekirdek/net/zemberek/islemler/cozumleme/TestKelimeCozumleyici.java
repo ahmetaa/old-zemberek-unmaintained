@@ -42,6 +42,7 @@ public class TestKelimeCozumleyici extends TemelTest {
     @Test
     public void testDenetleDogruYanlis() throws IOException {
         List<String> dogrular = TestUtils.satirlariOku("kaynaklar/tr/test/hepsi-dogru.txt");
+        dogrular.addAll(TestUtils.satirlariOku("kaynaklar/tr/test/kisaltmalar-dogru.txt"));
         for (String s : dogrular) {
             assertTrue("denetleme hatasi:" + s, cozumleyici.cozumlenebilir(s));
         }

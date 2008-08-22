@@ -30,7 +30,7 @@ AKP KI
 Alb. KI SON:a*
 #Albay
 Alm. KI
-#Anavatan PArtisi
+#Anavatan Partisi
 ANAP KI
 #Almanca
 anat. KI SON:i
