@@ -84,9 +84,7 @@ public class DemoYonetici {
                 if (!zemberek.kelimeDenetle(birim.icerik)) {
                     sonuc.append(hataliKelimeBicimle(birim.icerik));
                 } else sonuc.append(birim.icerik);
-            } else if (birim.icerik.equals("\n"))
-                sonuc.append("<br>");
-            else sonuc.append(birim.icerik);
+            } else sonuc.append(kelimeHariciBicimle(birim.icerik));
         }
         return sonuc.toString();
     }
@@ -127,13 +125,16 @@ public class DemoYonetici {
                 else {
                     sonuc.append(koseliParantezStringDiziBicimle(tekilSonuclar, " "));
                 }
-
-            } else if (birim.icerik.equals("\n"))
-                sonuc.append("<br>");
-            else
-                sonuc.append(birim.icerik);
+            } else sonuc.append(kelimeHariciBicimle(birim.icerik));
         }
         return sonuc.toString();
+    }
+
+    private String kelimeHariciBicimle(String str) {
+        if (str.equals("\n"))
+            return "<br>";
+        else
+            return str;
     }
 
 
@@ -147,10 +148,7 @@ public class DemoYonetici {
                     sonuc.append(applyCase(birim.icerik, sonuclar[0].icerik().toString()));
                 else
                     sonuc.append(birim.icerik);
-            } else if (birim.icerik.equals("\n"))
-                sonuc.append("<br>");
-            else
-                sonuc.append(birim.icerik);
+            } else sonuc.append(kelimeHariciBicimle(birim.icerik));
         }
         return sonuc.toString();
     }
@@ -171,8 +169,8 @@ public class DemoYonetici {
         StringBuffer sonuc = new StringBuffer();
         for (YaziBirimi birim : analizDizisi) {
             if (birim.tip == YaziBirimiTipi.KELIME)
-                birim.icerik = zemberek.asciiyeDonustur(birim.icerik);
-            sonuc.append(birim.icerik);
+                sonuc.append(zemberek.asciiyeDonustur(birim.icerik));
+            else sonuc.append(kelimeHariciBicimle(birim.icerik));
         }
         return sonuc.toString();
     }
@@ -193,8 +191,8 @@ public class DemoYonetici {
                         sonuc.append(koseliParantezStringDiziBicimle(sonuclar, "-"));
                     }
                 }
-            }
-            sonuc.append(birim.icerik);
+            } else
+                sonuc.append(birim.icerik);
         }
         return sonuc.toString();
     }
@@ -212,8 +210,8 @@ public class DemoYonetici {
                 else {
                     sonuc.append(koseliParantezStringDiziBicimle(cozumler, ", "));
                 }
-            }
-            sonuc.append(birim.icerik);
+            } else
+                sonuc.append(birim.icerik);
         }
         return sonuc.toString();
     }
