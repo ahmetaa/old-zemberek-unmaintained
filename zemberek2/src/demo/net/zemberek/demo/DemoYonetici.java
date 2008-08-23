@@ -4,11 +4,7 @@
 
 package net.zemberek.demo;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.logging.Logger;
 
 import net.zemberek.araclar.Kayitci;
@@ -85,10 +81,12 @@ public class DemoYonetici {
         StringBuffer sonuc = new StringBuffer();
         for (YaziBirimi birim : analizDizisi) {
             if (birim.tip == YaziBirimiTipi.KELIME) {
-                if (!zemberek.kelimeDenetle(birim.icerik))
-                    birim.icerik = "<font color=\"#FF0033\">" + birim.icerik+"</font>";
-            }
-            sonuc.append(birim.icerik);
+                if (!zemberek.kelimeDenetle(birim.icerik)) {
+                    sonuc.append(hataliKelimeBicimle(birim.icerik));
+                } else sonuc.append(birim.icerik);
+            } else if (birim.icerik.equals("\n"))
+                sonuc.append("<br>");
+            else sonuc.append(birim.icerik);
         }
         return sonuc.toString();
     }
@@ -122,21 +120,18 @@ public class DemoYonetici {
                 for (Kelime s : sonuclar) {
                     tekilSonuclar.add(s.icerik().toString());
                 }
-
                 if (tekilSonuclar.size() == 0)
-                	 birim.icerik = "<font color=\"#FF0033\">" + birim.icerik+"</font>";
+                    sonuc.append(hataliKelimeBicimle(birim.icerik));
                 else if (tekilSonuclar.size() == 1)
-                    birim.icerik = tekilSonuclar.iterator().next();
+                    sonuc.append(tekilSonuclar.iterator().next());
                 else {
-                    StringBuffer bfr = new StringBuffer("[ ");
-                    for (String aTekilSonuclar : tekilSonuclar) {
-                        bfr.append(aTekilSonuclar).append(" ");
-                    }
-                    bfr.append("]");
-                    birim.icerik = bfr.toString();
+                    sonuc.append(koseliParantezStringDiziBicimle(tekilSonuclar, " "));
                 }
-            }
-            sonuc.append(birim.icerik);
+
+            } else if (birim.icerik.equals("\n"))
+                sonuc.append("<br>");
+            else
+                sonuc.append(birim.icerik);
         }
         return sonuc.toString();
     }
@@ -152,7 +147,9 @@ public class DemoYonetici {
                     sonuc.append(applyCase(birim.icerik, sonuclar[0].icerik().toString()));
                 else
                     sonuc.append(birim.icerik);
-            } else
+            } else if (birim.icerik.equals("\n"))
+                sonuc.append("<br>");
+            else
                 sonuc.append(birim.icerik);
         }
         return sonuc.toString();
@@ -172,8 +169,7 @@ public class DemoYonetici {
     public String turkceToAscii(String giris) {
         List<YaziBirimi> analizDizisi = YaziIsleyici.analizDizisiOlustur(giris);
         StringBuffer sonuc = new StringBuffer();
-        for (YaziBirimi anAnalizDizisi : analizDizisi) {
-            YaziBirimi birim =  anAnalizDizisi;
+        for (YaziBirimi birim : analizDizisi) {
             if (birim.tip == YaziBirimiTipi.KELIME)
                 birim.icerik = zemberek.asciiyeDonustur(birim.icerik);
             sonuc.append(birim.icerik);
@@ -184,22 +180,17 @@ public class DemoYonetici {
     public String hecele(String giris) {
         List<YaziBirimi> analizDizisi = YaziIsleyici.analizDizisiOlustur(giris);
         StringBuffer sonuc = new StringBuffer();
-        for (YaziBirimi anAnalizDizisi : analizDizisi) {
-            YaziBirimi birim = anAnalizDizisi;
+        for (YaziBirimi birim : analizDizisi) {
             if (birim.tip == YaziBirimiTipi.KELIME) {
                 birim.icerik = dilBilgisi.alfabe().ayikla(birim.icerik);
                 if (!dilBilgisi.alfabe().cozumlemeyeUygunMu(birim.icerik))
-                	 birim.icerik = "<font color=\"#FF0033\">" + birim.icerik+"</font>";
+                    sonuc.append(hataliKelimeBicimle(birim.icerik));
                 else {
                     String[] sonuclar = zemberek.hecele(birim.icerik);
                     if (sonuclar.length == 0)
-                    	 birim.icerik = "<font color=\"#FF0033\">" + birim.icerik+"</font>";
+                        sonuc.append(hataliKelimeBicimle(birim.icerik));
                     else {
-                        StringBuffer bfr = new StringBuffer("[");
-                        for (int j = 0; j < sonuclar.length - 1; j++)
-                            bfr.append(sonuclar[j]).append("-");
-                        bfr.append(sonuclar[sonuclar.length - 1]).append("]");
-                        birim.icerik = bfr.toString();
+                        sonuc.append(koseliParantezStringDiziBicimle(sonuclar, "-"));
                     }
                 }
             }
@@ -215,22 +206,34 @@ public class DemoYonetici {
             if (birim.tip == YaziBirimiTipi.KELIME) {
                 String[] cozumler = zemberek.oner(birim.icerik);
                 if (cozumler.length == 0)
-                	 birim.icerik = "<font color=\"#FF0033\">" + birim.icerik+"</font>";
+                    sonuc.append(hataliKelimeBicimle(birim.icerik));
                 else if (cozumler.length == 1)
-                    birim.icerik = cozumler[0];
+                    sonuc.append(cozumler[0]);
                 else {
-                    StringBuffer bfr = new StringBuffer("[ ");
-                    for (int j = 0; j < cozumler.length; j++) {
-                        bfr.append(cozumler[j]);
-                        if (j < cozumler.length - 1)
-                            bfr.append(", ");
-                    }
-                    bfr.append("]");
-                    birim.icerik = bfr.toString();
+                    sonuc.append(koseliParantezStringDiziBicimle(cozumler, ", "));
                 }
             }
             sonuc.append(birim.icerik);
         }
         return sonuc.toString();
+    }
+
+    private String koseliParantezStringDiziBicimle(String[] cozumler, String ayrac) {
+        StringBuilder bfr = new StringBuilder("[");
+        for (int j = 0; j < cozumler.length; j++) {
+            bfr.append(cozumler[j]);
+            if (j < cozumler.length - 1)
+                bfr.append(ayrac);
+        }
+        bfr.append("]");
+        return bfr.toString();
+    }
+
+    private String koseliParantezStringDiziBicimle(Collection<String> cozumler, String ayrac) {
+        return koseliParantezStringDiziBicimle(cozumler.toArray(new String[cozumler.size()]), ayrac);
+    }
+
+    private String hataliKelimeBicimle(String kelime) {
+        return "<font color=\"#FF0033\">" + kelime + "</font>";
     }
 }
