@@ -1,5 +1,6 @@
 package net.zemberekserver.client;
 import java.util.List;
+
 import org.freedesktop.dbus.DBusInterface;
 public interface ZemberekDbusInterface extends DBusInterface
 {

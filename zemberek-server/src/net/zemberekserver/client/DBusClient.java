@@ -28,11 +28,12 @@
 
 package net.zemberekserver.client;
 
-import org.freedesktop.dbus.DBusConnection;
-import org.freedesktop.dbus.exceptions.DBusException;
+import java.util.List;
+
 import net.zemberekserver.server.Config;
 
-import java.util.List;
+import org.freedesktop.dbus.DBusConnection;
+import org.freedesktop.dbus.exceptions.DBusException;
 public class DBusClient {
 
 	public static void main(String[] args) throws DBusException {
