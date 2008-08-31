@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+  ~ Lisans bilgisi icin lutfen proje ana dizinindeki zemberek2-lisans.txt dosyasini okuyunuz.
+  -->
+
+<ek-bilgisi>
+
+    <!-- ek kumeleri -->
+    <ek-kumeleri>
+        <ek-kumesi ad="ISIM_HAL">
+            <ek>AD_YONELME_E</ek>
+            <ek>AD_KALMA_DE</ek>
+        </ek-kumesi>
+    </ek-kumeleri>
+
+    <!-- ekler -->
+    <ekler>
+
+        <!-- ad yalin. -->
+        <ek ad="AD_KOK" uretim="">
+            <ardisil-ekler>
+                <aek>AD_COGUL_LER</aek>
+                <aek>AD_YONELME_E</aek>
+                <aek>AD_KALMA_DE</aek>
+                <aek>AD_KUCULTME_CEGIZ</aek>
+            </ardisil-ekler>
+        </ek>
+
+        <!-- ad cogul eki _ler. "qýz_lar.." -->
+        <ek ad="AD_COGUL_LER" uretim="lAr">
+            <ardisil-ekler>
+                <aek>AD_YONELME_E</aek>
+                <aek>AD_KALMA_DE</aek>
+            </ardisil-ekler>
+        </ek>
+
+        <!-- cegiz: "kedi_ceGiz -->
+        <ek ad="AD_KUCULTME_CEGIZ" uretim="cAğIz">
+            <ardisil-ekler>
+                <aek>AD_COGUL_LER</aek>
+                <aek>AD_YONELME_E</aek>
+                <aek>AD_KALMA_DE</aek>
+            </ardisil-ekler>
+        </ek>
+
+        <!-- ad yonelme : "kedi_ye bak"  -->
+        <ek ad="AD_YONELME_E" uretim="+yA"/>
+
+        <!-- ad kalma : "ev_de yemek var."  -->
+        <ek ad="AD_KALMA_DE" uretim=">dA"/>
+
+    </ekler>
+
+</ek-bilgisi>
