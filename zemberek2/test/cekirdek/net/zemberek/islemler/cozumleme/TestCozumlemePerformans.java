@@ -21,7 +21,7 @@ public class TestCozumlemePerformans extends TestKelimeCozumleyici {
     }
 
     @Ignore("Performans")
-    //@Test
+    @Test
     public void testPerformans2() throws IOException {
 
         //List kelimeler = YaziIsleyici.analizIcinKelimeAyikla(YaziIsleyici.yaziOkuyucu("kaynaklar/metinler/Ahmet_Hamdi_Tanpinar_Huzur.txt"));

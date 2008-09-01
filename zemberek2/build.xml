@@ -422,24 +422,14 @@
 				<pathelement path="${build.dir}/tr"/>
 				<pathelement path="${build.test}"/>
 			</classpath>
-			<batchtest todir="${test.results}">
+			<batchtest haltonfailure="true" todir="${test.results}">
 				<fileset dir="${build.test}">
 					<include name="**/Test*.class"/>
 					<exclude name="**/TestGirdisi.class"/>
 					<exclude name="**/TestUtils.class"/>
-					<exclude name="**/TestTurkceMetinOkuyucu.class"/>
-					<exclude name="**/net/zemberek/kullanim/**"/>
-					<exclude name="**/TestIsimEkleri.class"/>
-					<exclude name="**/TestSayiEkleri.class"/>
-					<exclude name="**/TestEkUreticiTr.class"/>
-					<exclude name="**/TestTurkishTokenStreamPerf.class"/>
-					<exclude name="**/TestSozlukOkuyucu.class"/>
-					<exclude name="**/TestBinarySozluk.class"/>
-					<exclude name="**/TestHataToleransliKokSecici.class"/>
 				</fileset>
 			</batchtest>
 		</junit>
-		<fail if="tests.failed"/>
 	</target>
 
 
