@@ -5,11 +5,15 @@
 package net.zemberek.araclar.turkce;
 
 import net.zemberek.araclar.TimeTracker;
+import org.junit.Ignore;
+import org.junit.Test;
 
 /**
  */
 public class TestTurkishTokenStreamPerf {
 
+    @Ignore("Performans")
+    @Test
     public void testNextWordPerf() {
         TimeTracker.startClock("x");
         TurkishTokenStream tstream = new TurkishTokenStream("kaynaklar/tr/metinler/Frank_Herbert_Dune1.txt", null);
@@ -23,7 +27,8 @@ public class TestTurkishTokenStreamPerf {
 
     }
 
-
+    @Ignore("Performans")
+    @Test
     public void testNextSentencePerf() {
         TimeTracker.startClock("x");
         TurkishTokenStream tstream = new TurkishTokenStream("kaynaklar/tr/metinler/Frank_Herbert_Dune1.txt", null);

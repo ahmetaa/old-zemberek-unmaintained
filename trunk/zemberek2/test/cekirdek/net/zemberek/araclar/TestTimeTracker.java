@@ -22,12 +22,12 @@ public class TestTimeTracker {
         TimeTracker.startClock("x");
         sleepMe(300);
         long time = TimeTracker.getElapsedTime("x");
-        assertTrue(time >= 300 && time < 400);
+        assertTrue("unexpected time:"+time, time >= 300 && time < 400);
         System.out.println(TimeTracker.stopClock("x"));
     }
 
-    //@Test
     @Ignore
+    @Test
     public void testDelta() {
         TimeTracker.startClock("x");
         sleepMe(300);
