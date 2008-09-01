@@ -422,7 +422,7 @@
 				<pathelement path="${build.dir}/tr"/>
 				<pathelement path="${build.test}"/>
 			</classpath>
-			<batchtest haltonfailure="true" todir="${test.results}">
+			<batchtest todir="${test.results}">
 				<fileset dir="${build.test}">
 					<include name="**/Test*.class"/>
 					<exclude name="**/TestGirdisi.class"/>
@@ -430,6 +430,7 @@
 				</fileset>
 			</batchtest>
 		</junit>
+		<fail if="tests.failed"/>
 	</target>
 
 
