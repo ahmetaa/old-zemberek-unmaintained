@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <description xmlns="http://openoffice.org/extensions/description/2006" xmlns:d="http://openoffice.org/extensions/description/2006" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <version value="1.0" />
-	<identifier value="net.zemberek.ooo.spellchecker"/>
+    <version value="1.0_rc1"/>
+    <identifier value="net.zemberek.ooo.spellchecker"/>
+    <display-name>
+        <name lang="en-US">Zemberek Turkish Spell Checker</name>
+        <name lang="tr">Zemberek Türkçe İmla Denetimi</name>
+    </display-name>
+    <dependencies>
+        <OpenOffice.org-minimal-version value="2.0" d:name="OpenOffice.org 2.0"/>
+    </dependencies>
+    <publisher>
+        <name xlink:href="http://code.google.com/p/zemberek/" lang="en">Zemberek Project</name>
+    </publisher>
 </description>
