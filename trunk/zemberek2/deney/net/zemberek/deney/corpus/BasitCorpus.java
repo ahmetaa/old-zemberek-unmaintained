@@ -7,6 +7,7 @@ import java.io.File;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 import java.util.*;
+import java.text.Collator;
 
 import net.zemberek.erisim.Zemberek;
 import net.zemberek.tr.yapi.TurkiyeTurkcesi;
@@ -30,6 +31,7 @@ public class BasitCorpus implements KelimeDenetleyici {
                 e.printStackTrace();
             }
         }
+        System.out.println("kelime sayisi:"+kelimeKullanim.size());
     }
 
     private void oku(String file) throws IOException {
@@ -101,6 +103,12 @@ public class BasitCorpus implements KelimeDenetleyici {
         updateCorpus(files);
     }
 
+    public void exportOrderedWordFile(String filename) throws IOException {
+        List<String> list = Collects.newArrayList(kelimeKullanim.keySet());
+        Collections.sort(list, new TurkceSiralamaKiyaslayici());
+        new SimpleFileWriter.Builder(filename).encoding("utf-8").build().writeToStringLines(list);
+    }
+
     private static Zemberek zemberek;
 
     private synchronized void kelimeleriEkle(Collection<String> coll) {
@@ -141,7 +149,7 @@ public class BasitCorpus implements KelimeDenetleyici {
 
     @Override
     public boolean denetle(String s) {
-        return kelimeKullanim.containsKey(s);
+        return kelimeKullanim.containsKey(s) || kelimeKullanim.containsKey(Words.uncapitalize(s));
     }
 
 
@@ -165,12 +173,21 @@ public class BasitCorpus implements KelimeDenetleyici {
         }
     }
 
+    private class TurkceSiralamaKiyaslayici implements Comparator<String> {
+        public int compare(String o1, String o2) {
+            Collator turkishCollator = Collator.getInstance(new Locale("tr"));
+            return turkishCollator.compare(o1, o2);
+        }
+    }
+
     public static void main(String[] args) throws IOException {
-        List<File> kaynaklar = Files.crawlDirectory(new File("corpus/kaynaklar/utf-8"));
+        new BasitCorpus("corpus/corpus.txt").exportOrderedWordFile("corpus/corpus-kelime.txt");
+/*        List<File> kaynaklar = Files.crawlDirectory(new File("corpus/kaynaklar/utf-8"));
         String[] filez = new String[kaynaklar.size()];
         for (int i = 0; i < filez.length; i++) {
             filez[i] = kaynaklar.get(i).getAbsolutePath();
         }
-        new BasitCorpus("corpus/corpus.txt").createLimitedCorpus(300000, filez);
+        new BasitCorpus("corpus/corpus.txt").createLimitedCorpus(500000, filez);*/
+        
     }
 }
