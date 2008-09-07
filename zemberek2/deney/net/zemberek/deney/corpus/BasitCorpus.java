@@ -156,7 +156,7 @@ public class BasitCorpus implements KelimeDenetleyici {
         }
 
         public int compareTo(StringIntPair o) {
-            return Comparators.compare(freq, o.freq);
+            return Comparators.compare(o.freq, freq);
         }
 
         @Override
