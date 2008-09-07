@@ -20,8 +20,7 @@ public class ZemberekVersusCorpusDenetleyici {
                     zemberekHit++;
                 } else {
                     zemberekMiss++;
-                }
-                ;
+                }                
                 if (corp.denetle(s))
                     corpusHit++;
                 else corpusMiss++;
@@ -37,8 +36,9 @@ public class ZemberekVersusCorpusDenetleyici {
 
 
     public static void main(String[] args) throws IOException {
-       // new ZemberekVersusCorpusDenetleyici().kiyaslamaRaporu("corpus/kaynaklar/test/tolstoy-dirilis-utf8.txt");
+        new ZemberekVersusCorpusDenetleyici().kiyaslamaRaporu("corpus/kaynaklar/test/tolstoy-dirilis-utf8.txt");
         new ZemberekVersusCorpusDenetleyici().kiyaslamaRaporu("corpus/kaynaklar/test/efendi-ile-usagi.txt");
+        new ZemberekVersusCorpusDenetleyici().kiyaslamaRaporu("corpus/kaynaklar/test/bu-iste-bir-yalnizlik-var.txt");
     }
 
 
