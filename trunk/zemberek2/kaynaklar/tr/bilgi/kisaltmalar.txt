@@ -847,3 +847,5 @@ zm. KI SON:i*
 #Zamir
 zool. KI SON:i
 #Zooloji
+YTL KI SON:a
+YKr KI SON:u*
