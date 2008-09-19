@@ -119,13 +119,6 @@ public class KelimeUretici {
             else
                 ekOlusumu = new HarfDizisi(ek.olusumIcinUret(kelime, TemelEkYonetici.BOS_EK));
 
-            //TODO: asagidaki bolum dil ozel. muhtemelen olusumIcinURet metodu duzletilirse gerek kalmaz.
-            // ek son harf yumusatmayi kendimiz hallediyoruz (eger yalin ek ise bu islemi pas geciyoruz.)
-            if (i > 1) {
-                if (kelime.sonHarf().sertMi() && ekOlusumu.ilkHarf().sesliMi())
-                    kelime.icerik().sonHarfYumusat();
-            }
-
             //eki kelimeye ve ek olusumlarina ekle.
             kelime.icerikEkle(ekOlusumu);
             if (ekOlusumu.length() > 0)

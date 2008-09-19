@@ -2565,6 +2565,7 @@ belirlemek FI
 belirlenim IS
 belirli SI
 belirmek FI
+belirtmek FI
 belirsiz IS
 belirteç IS YUM
 belirti IS
@@ -2600,6 +2601,7 @@ bellik IS YUM
 #bel soğukluğu
 bembeyaz IS
 bemol IS
+ben IS
 ben ZA TEKIL_KISI_BOZULMASI ZAMIR_IM
 benbenci IS
 #benbencilik,-ği

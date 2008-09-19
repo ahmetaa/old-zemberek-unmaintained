@@ -12,10 +12,7 @@ import net.zemberek.tr.yapi.TurkceSesliUretici;
 import net.zemberek.yapi.Alfabe;
 import net.zemberek.yapi.HarfDizisi;
 import net.zemberek.yapi.TurkceHarf;
-import net.zemberek.yapi.ek.EkUretici;
-import net.zemberek.yapi.ek.EkUretimBileseni;
-import net.zemberek.yapi.ek.TemelEkUretici;
-import net.zemberek.yapi.ek.TemelEkUretimKurali;
+import net.zemberek.yapi.ek.*;
 
 
 public class EkUreticiTr extends TemelEkUretici implements EkUretici {
@@ -38,7 +35,10 @@ public class EkUreticiTr extends TemelEkUretici implements EkUretici {
         HARF_uu = alfabe.harf(Alfabe.CHAR_uu);
     }
 
-    public HarfDizisi cozumlemeIcinEkUret(HarfDizisi ulanacak, HarfDizisi giris, List<EkUretimBileseni> bilesenler) {
+    public HarfDizisi cozumlemeIcinEkUret(HarfDizisi ulanacak,
+                                          HarfDizisi giris,
+                                          List<EkUretimBileseni> bilesenler) {
+
         HarfDizisi sonuc = new HarfDizisi(4);
         TurkceHarf sonSesli = ulanacak.sonSesli();
         for (int i = 0; i < bilesenler.size(); i++) {
@@ -58,6 +58,11 @@ public class EkUreticiTr extends TemelEkUretici implements EkUretici {
                     else
                         sonuc.ekle(harf);
                     break;
+                case YUMUSAT:
+                    //yumusatma durumu analiz sirasianda uretimi etkilemez. bu kural sadece olusumda onemlidir.
+                    //o nedenle dofgrudan harf eklernir.
+                    sonuc.ekle(harf);
+                    break;
                 case SESLI_AE:
                     if (i == 0 && ulanacak.sonHarf().sesliMi())
                         break;
@@ -76,6 +81,19 @@ public class EkUreticiTr extends TemelEkUretici implements EkUretici {
                     break;
             }
         }
+        return sonuc;
+    }
+
+    @Override
+    public HarfDizisi olusumIcinEkUret(HarfDizisi ulanacak,
+                                       Ek sonrakiEk,
+                                       List<EkUretimBileseni> bilesenler) {
+        if (bilesenler.size() == 0)
+            return HarfDizisi.BOS_DIZI;
+        HarfDizisi sonuc = cozumlemeIcinEkUret(ulanacak, ulanacak, bilesenler);
+        if (sonrakiEk.sesliIleBaslayabilirMi() &&
+                bilesenler.get(bilesenler.size() - 1).kural == TemelEkUretimKurali.YUMUSAT)
+            sonuc.sonHarfYumusat();
         return sonuc;
     }
 

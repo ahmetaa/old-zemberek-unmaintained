@@ -174,6 +174,10 @@ public class Ek {
         return sonEkOlamaz;
     }
 
+    public List<EkUretimBileseni> uretimBilesenleri() {
+        return uretimBilesenleri;
+    }
+
     public void setSonEkOlamaz(boolean sonEkOlamaz) {
         this.sonEkOlamaz = sonEkOlamaz;
     }

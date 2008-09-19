@@ -243,7 +243,7 @@
         </ek>
 
         <!-- isim kucultme _cik.  "Kedi_cik pek SirinmiS".  -->
-        <ek ad="ISIM_KUCULTME_CIK" uretim=">cIk" k_en="dim" kis="cik">
+        <ek ad="ISIM_KUCULTME_CIK" uretim=">cI~k" k_en="dim" kis="cik">
             <ozel-durum ad="SON_HARF_YUMUSAMA" uretim=">cIğ"/>
             <ardisil-ekler>
                 <kume>ISIM_HAL</kume>
@@ -357,7 +357,7 @@
         </ek>
 
         <!-- isim durum lik: "deli_lik etme.."  -->
-        <ek ad="ISIM_DURUM_LIK" uretim="lIk" k_en="ness" kis="durum_luk">
+        <ek ad="ISIM_DURUM_LIK" uretim="lI~k" k_en="ness" kis="durum_luk">
             <ozel-durum ad="SON_HARF_YUMUSAMA" uretim="lIğ"/>
             <ardisil-ekler>
                 <kume>ISIM_HAL</kume>
@@ -514,7 +514,7 @@
         </ek>
 
         <!-- isim "icin yapilmis" _lik : "limon_luk_ta seni bekliyorlar."  -->
-        <ek ad="ISIM_BULUNMA_LIK" uretim="lIk">
+        <ek ad="ISIM_BULUNMA_LIK" uretim="lI~k">
             <ozel-durum ad="SON_HARF_YUMUSAMA" uretim="lIğ"/>
             <ardisil-ekler>
                 <kume>ISIM_HAL</kume>
@@ -878,7 +878,7 @@
             </oncelikli-ekler>
         </ek>
 
-        <ek ad="FIIL_DONUSUM_IK" uretim="+yIk">
+        <ek ad="FIIL_DONUSUM_IK" uretim="+yI~k">
             <ozel-durum ad="SON_HARF_YUMUSAMA" uretim="+yIğ"/>
             <ardisil-ekler kopya-ek="FIIL_DONUSUM_EN"/>
         </ek>
@@ -894,7 +894,7 @@
         </ek>
 
         <!-- gidecekler hazirlansin. yapacak bir sey yok.  -->
-        <ek ad="FIIL_DONUSUM_ECEK" uretim="+yAcAk">
+        <ek ad="FIIL_DONUSUM_ECEK" uretim="+yAcA~k">
             <ozel-durum ad="SON_HARF_YUMUSAMA" uretim="+yAcAğ"/>
             <ardisil-ekler>
                 <kume>ISIM_HAL</kume>
@@ -982,7 +982,7 @@
         <ek ad="FIIL_EMIR_SIZRESMI_INIZ" uretim="+yInIz"/>
 
         <!-- Utanc verici ekimiz. "rakibini calim at-arak gecti.." -->
-        <ek ad="FIIL_SUREKLILIK_EREK" uretim="+yArAk">
+        <ek ad="FIIL_SUREKLILIK_EREK" uretim="+yArA~k">
             <ozel-durum ad="SON_HARF_YUMUSAMA" uretim="+yArAğ"/>
             <!-- ardisil ek biraz sorunlu. gelerekten+ -->
             <ardisil-ekler>
@@ -1025,7 +1025,7 @@
             </ardisil-ekler>
         </ek>
 
-        <ek ad="FIIL_GELECEKZAMAN_ECEK" uretim="+yAcAk">
+        <ek ad="FIIL_GELECEKZAMAN_ECEK" uretim="+yAcA~k">
             <ozel-durum ad="SON_HARF_YUMUSAMA" uretim="+yAcAğ"/>
             <ardisil-ekler>
                 <kume>FIIL_ZAMAN_ARDISIL</kume>
@@ -1177,7 +1177,7 @@
         </ek>
 
         <!-- bil-dik bir yuz. calmadik kapi.. bu ekin asil adi nedir+-->
-        <ek ad="FIIL_BELIRTME_DIK" uretim=">dIk">
+        <ek ad="FIIL_BELIRTME_DIK" uretim=">dI~k">
             <ozel-durum ad="SON_HARF_YUMUSAMA" uretim=">dIğ"/>
             <ardisil-ekler>
                 <kume>ISIM_HAL</kume>
