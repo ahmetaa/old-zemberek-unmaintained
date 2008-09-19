@@ -14,6 +14,7 @@ public class HarfDizisi implements CharSequence, Comparable<HarfDizisi> {
 
     private TurkceHarf[] dizi;
     private int boy = 0;
+    public static final HarfDizisi BOS_DIZI = new HarfDizisi(0);
 
     /**
      * default constructor. 7 boyutlu bir TurkceHarf referans dizisi olusturur.

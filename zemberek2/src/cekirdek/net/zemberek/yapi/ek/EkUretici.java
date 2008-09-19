@@ -22,7 +22,7 @@ public interface EkUretici {
      * Kelime Cozumleme islemi icin ek uretimi.
      * @param ulanacak
      * @param giris
-     * @param bilesenler
+     * @param bilesenler ek uretim bilesenleri
      * @return uretilen ek, HarfDizisi cinsinden.
      */
     HarfDizisi cozumlemeIcinEkUret(HarfDizisi ulanacak,
@@ -33,7 +33,7 @@ public interface EkUretici {
      * Kelime uretimi icin ek uretimi.
      * @param ulanacak
      * @param sonrakiEk
-     * @param bilesenler
+     * @param bilesenler ek uretim bilesenleri.
      * @return uretilen ek, HarfDizisi cinsinden.
      */
     HarfDizisi olusumIcinEkUret(HarfDizisi ulanacak,

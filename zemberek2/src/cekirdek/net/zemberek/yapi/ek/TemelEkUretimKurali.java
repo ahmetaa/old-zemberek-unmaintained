@@ -22,7 +22,8 @@ public enum TemelEkUretimKurali implements EkUretimKurali {
     SESSIZ_Y(false),
     SERTLESTIR(false),
     KAYNASTIR(false),
-    HARF(false);
+    HARF(false),
+    YUMUSAT(false);
 
     final boolean sesliUretimKurali;
 
@@ -43,7 +44,7 @@ public enum TemelEkUretimKurali implements EkUretimKurali {
         }
 
         public Set<Character> harfKuralKarakterleri() {
-            return  new HashSet<Character>(Arrays.asList('+', '>'));
+            return  new HashSet<Character>(Arrays.asList('+', '>', '~'));
         }
 
         public Map<Character, EkUretimKurali> karakterKuralTablosu() {
@@ -54,6 +55,7 @@ public enum TemelEkUretimKurali implements EkUretimKurali {
             kuralTablosu.put('Y', SESSIZ_Y);
             kuralTablosu.put('+', KAYNASTIR);
             kuralTablosu.put('>', SERTLESTIR);
+            kuralTablosu.put('~', YUMUSAT);
             return kuralTablosu;
 
         }

@@ -4,15 +4,8 @@
 
 package net.zemberek.islemler;
 
-import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.FIIL_GELECEKZAMAN_ECEK;
-import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.FIIL_KISI_BIZ;
-import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.FIIL_KOK;
-import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.FIIL_YETENEK_EBIL;
-import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.ISIM_DONUSUM_LES;
-import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.ISIM_KOK;
-import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.ISIM_SAHIPLIK_BIZ_IMIZ;
-import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.ISIM_TANIMLAMA_DIR;
-import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.ISIM_YONELME_E;
+import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.*;
+
 import static org.junit.Assert.assertEquals;
 
 import java.io.IOException;
@@ -68,16 +61,17 @@ public class TestKelimeUretici extends TemelTest {
     @Test
     public void testKelimeUret() {
 
-        Kok kok = kokler.kokBul("armut", KelimeTipi.ISIM);
-        List<Ek> ekler = ekListesi(ISIM_KOK, ISIM_SAHIPLIK_BIZ_IMIZ, ISIM_TANIMLAMA_DIR);
+        Kok kok = kokler.kokBul("sabret", KelimeTipi.FIIL);
+        List<Ek> ekler = ekListesi(FIIL_KOK, FIIL_YETENEK_EBIL, FIIL_GELECEKZAMAN_ECEK, FIIL_KISI_BIZ);
+        assertEquals("sabredebilece\u011fiz", kelimeUretici.kelimeUret(kok, ekler));
+
+
+        kok = kokler.kokBul("armut", KelimeTipi.ISIM);
+        ekler = ekListesi(ISIM_KOK, ISIM_SAHIPLIK_BIZ_IMIZ, ISIM_TANIMLAMA_DIR);
         assertEquals("armudumuzdur", kelimeUretici.kelimeUret(kok, ekler));
 
         Kelime almanyada = cozumleyici.cozumle("Almanya'da", CozumlemeSeviyesi.TEK_KOK)[0];
         assertEquals("Almanya'da", kelimeUretici.kelimeUret(almanyada.kok(), almanyada.ekler()));
-
-        kok = kokler.kokBul("sabret", KelimeTipi.FIIL);
-        ekler = ekListesi(FIIL_KOK, FIIL_YETENEK_EBIL, FIIL_GELECEKZAMAN_ECEK, FIIL_KISI_BIZ);
-        assertEquals("sabredebilece\u011fiz", kelimeUretici.kelimeUret(kok, ekler));
 
         kok = kokler.kokBul("sabret", KelimeTipi.FIIL);
         ekler = ekListesi(FIIL_YETENEK_EBIL, FIIL_GELECEKZAMAN_ECEK, FIIL_KISI_BIZ);
@@ -116,6 +110,17 @@ public class TestKelimeUretici extends TemelTest {
                 String uretilen = kelimeUretici.kelimeUret(kelime.kok(), kelime.ekler());
                 assertEquals("cozumlenen:" + s + ", olusan:" + uretilen + " ile ayni degil", s, uretilen);
             }
+        }
+    }
+
+    @Test
+    public void testYumusama() {
+        String kelime = "uyutuyor";
+        Kelime[] kelimeler = cozumleyici.cozumle(kelime, CozumlemeSeviyesi.TUM_KOKLER);
+        for (Kelime kel : kelimeler) {
+            String uretilen = kelimeUretici.kelimeUret(kel.kok(), kel.ekler());
+            System.out.println(uretilen);
+            assertEquals(uretilen, kelime);
         }
     }
 
