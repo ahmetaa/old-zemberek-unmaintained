@@ -61,6 +61,7 @@
             <ek>FIIL_DONUSUM_MEZ</ek>
             <ek>FIIL_DONUSUM_ECEK</ek>
             <ek>FIIL_DONUSUM_MIS</ek>
+            <ek>FIIL_DONUSUM_ILI</ek>
         </ek-kumesi>
 
         <ek-kumesi ad="FIIL_KISI">
@@ -213,7 +214,7 @@
                 <oek>FIIL_GENISZAMAN_IR</oek>
                 <oek>FIIL_MASTAR_MEK</oek>
                 <oek>FIIL_DONUSUM_ME</oek>
-            </oncelikli-ekler>            
+            </oncelikli-ekler>
 
         </ek>
 
@@ -347,7 +348,7 @@
         </ek>
 
         <!-- isim belirtme _i: "kedi_yi gordun mu+"  -->
-        <ek ad="ISIM_BELIRTME_I" uretim="+yI" >
+        <ek ad="ISIM_BELIRTME_I" uretim="+yI">
             <ozel-durum ad="ON_EK" uretim="nI">
                 <on-ek>ZAMAN_BELIRTME_KI</on-ek>
                 <on-ek>ISIM_BULUNMA_KI</on-ek>
@@ -587,7 +588,7 @@
 
         <!-- isim sahiplik biz _imiz : "ev_i guzelmis.."  -->
         <ek ad="ISIM_SAHIPLIK_O_I" uretim="+sI">
-            <ozel-durum ad="SU" uretim="yu"/>            
+            <ozel-durum ad="SU" uretim="yu"/>
             <ozellik>IYELIK</ozellik>
             <ardisil-ekler>
                 <kume>ISIM_HAL</kume>
@@ -604,7 +605,7 @@
 
         <!-- isim sahiplik biz _imiz : "ev_imiz perisan.."  -->
         <ek ad="ISIM_SAHIPLIK_BIZ_IMIZ" uretim="ImIz">
-            <ozel-durum ad="SU" uretim="yumuz"/>               
+            <ozel-durum ad="SU" uretim="yumuz"/>
             <ozellik>IYELIK</ozellik>
             <ardisil-ekler>
                 <kume>ISIM_HAL</kume>
@@ -865,6 +866,10 @@
             </oncelikli-ekler>
         </ek>
 
+        <ek ad="FIIL_DONUSUM_ILI" uretim="IlI">
+            <ardisil-ekler kopya-ek="FIIL_DONUSUM_EN"/>
+        </ek>
+
         <!-- bu gelisler artik sIkmaya basladi. -->
         <ek ad="FIIL_DONUSUM_IS" uretim="+yIş">
             <ardisil-ekler kopya-ek="FIIL_DONUSUM_EN">
@@ -1121,8 +1126,8 @@
                 <aek>FIIL_OLUMSUZLUK_ME</aek>
             </ardisil-ekler>
             <oncelikli-ekler>
-                 <oek>FIIL_KISI_BIZ</oek>
-                 <oek>FIIL_KISI_BEN</oek>
+                <oek>FIIL_KISI_BIZ</oek>
+                <oek>FIIL_KISI_BEN</oek>
             </oncelikli-ekler>
         </ek>
 
@@ -1511,7 +1516,7 @@
             <ozellik>HAL</ozellik>
             <ozel-durum ad="ON_EK" uretim="se">
                 <on-ek>IMEK_KOK</on-ek>
-            </ozel-durum>            
+            </ozel-durum>
             <ardisil-ekler>
                 <kume>ISIM_KISI</kume>
             </ardisil-ekler>

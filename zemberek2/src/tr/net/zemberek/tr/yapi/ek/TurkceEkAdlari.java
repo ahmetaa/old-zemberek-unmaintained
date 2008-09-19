@@ -75,6 +75,7 @@ public class TurkceEkAdlari {
     public static final String FIIL_DONUSUM_IS = "FIIL_DONUSUM_IS";
     public static final String FIIL_DONUSUM_IK = "FIIL_DONUSUM_IK";
     public static final String FIIL_DONUSUM_IM = "FIIL_DONUSUM_IM";
+    public static final String FIIL_DONUSUM_ILI = "FIIL_DONUSUM_ILI";
     public static final String FIIL_DONUSUM_INTI = "FIIL_DONUSUM_INTI";
     public static final String FIIL_DONUSUM_ESICE = "FIIL_DONUSUM_ESICE";
     public static final String FIIL_DONUSUM_ESI = "FIIL_DONUSUM_ESI";

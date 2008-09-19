@@ -2369,6 +2369,7 @@ başrahip IS
 başrejisör IS
 başrol IS
 başsavcı IS
+başsağlığı IS
 başşehir IS DUS
 baştaban IS
 baştabip IS YUM
@@ -30903,6 +30904,8 @@ metraj IS
 metrdotel IS
 #metrdotellik,-ği
 metre IS
+metrekare IS
+metreküp IS
 #metre kare
 #metre küp
 #metrelik,-ği
@@ -51521,6 +51524,7 @@ yepelek IS YUM
 #yepisyeni
 yepyeni SI
 yer IS
+yeralt IS IS_TAM
 #yer adı
 #yer adı bilimi
 #yer alıştırmaları
