@@ -21,18 +21,19 @@ public class Kelime implements Cloneable {
     }
 
     public Ek[] ekDizisi() {
-        return (Ek[]) ekler.toArray();
+        return ekler.toArray(new Ek[ekler.size()]);
     }
 
     public Kelime clone() {
-        Kelime kopya = new Kelime();
-        //kok'u kopyalamaya gerek yok. referans esitlemesi yeter
-        kopya.kok = kok;
-        kopya.icerik = new HarfDizisi(icerik);
-        kopya.ekler = new ArrayList<Ek>(ekler);
-        kopya.tip = this.tip;
-        return kopya;
-    }
+		try {
+			Kelime kopya = (Kelime) super.clone();
+			kopya.icerik = new HarfDizisi(icerik);
+			kopya.ekler = new ArrayList<Ek>(ekler);
+			return kopya;
+		} catch (CloneNotSupportedException e) {
+			throw new Error("Clone is supported, this can not happen " + e.getMessage());
+		}
+	}
 
     public List<Ek> ekler() {
         return ekler;
