@@ -59,9 +59,10 @@ public class EkUreticiTr extends TemelEkUretici implements EkUretici {
                         sonuc.ekle(harf);
                     break;
                 case YUMUSAT:
-                    //yumusatma durumu analiz sirasianda uretimi etkilemez. bu kural sadece olusumda onemlidir.
-                    //o nedenle dofgrudan harf eklernir.
-                    sonuc.ekle(harf);
+                    if (giris.harf(ulanacak.length() + sonuc.length() + 1).sesliMi())
+                        sonuc.ekle(harf.yumusama());
+                    else
+                        sonuc.ekle(harf);
                     break;
                 case SESLI_AE:
                     if (i == 0 && ulanacak.sonHarf().sesliMi())

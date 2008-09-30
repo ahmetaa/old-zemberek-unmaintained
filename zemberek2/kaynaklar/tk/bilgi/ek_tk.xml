@@ -246,8 +246,7 @@
         </ek>
 
         <!-- isim kucultme _cik.  "Kedi_cik pek SirinmiS".  -->
-        <ek ad="AT_SYPATYASAYIJI_JIK" uretim="jIk">
-            <ozel-durum ad="SON_HARF_YUMUSAMA" uretim="jIg"/>
+        <ek ad="AT_SYPATYASAYIJI_JIK" uretim="jI~k">
             <ardisil-ekler>
                 <kume>AT_DUSUM</kume>
                 <kume>AT_YONKEME</kume>
@@ -459,8 +458,7 @@
         </ek>
 
         <!-- isim "icin yapilmis" _lik : "limon_luk_ta seni bekliyorlar."  -->
-        <ek ad="AT_ATYASAYIJI_LIK" uretim="lIk">
-		<ozel-durum ad="SON_HARF_YUMUSAMA" uretim="jIg"/>
+        <ek ad="AT_ATYASAYIJI_LIK" uretim="lI~k">
             <ardisil-ekler>
                 <kume>AT_DUSUM</kume>
                 <kume>AT_YONKEME</kume>
@@ -723,8 +721,7 @@
         </ek>
 
 
-        <ek ad="ISLIK_HALYASAYIJI_IK" uretim="Ik">
-            <ozel-durum ad="SON_HARF_YUMUSAMA" uretim="Ig"/>
+        <ek ad="ISLIK_HALYASAYIJI_IK" uretim="I~k">
             <ardisil-ekler kopya-ek="ISLIK_HALYASAYIJI_EN"/>
         </ek>
 
@@ -739,8 +736,7 @@
         </ek>
 
         <!-- gidecekler hazirlansin. yapacak bir sey yok.  -->
-        <ek ad="ISLIK_HALYASAYIJI_JEK" uretim="jAk">
-            <ozel-durum ad="SON_HARF_YUMUSAMA" uretim="jAg"/>
+        <ek ad="ISLIK_HALYASAYIJI_JEK" uretim="jA~k">
             <ardisil-ekler>
 			    <kume>AT_DUSUM</kume>
                 <aek>AT_KOPLUK_LER</aek>
@@ -853,8 +849,7 @@
             </ardisil-ekler>
         </ek>
 
-        <ek ad="ISLIK_MALIMGELEJEKZAMAN_JEK" uretim="jAk">
-            <ozel-durum ad="SON_HARF_YUMUSAMA" uretim="jAg"/>
+        <ek ad="ISLIK_MALIMGELEJEKZAMAN_JEK" uretim="jA~k">
             <ardisil-ekler>
      			 <aek>IMEK_RIVAYET_MIS</aek>
                  <aek>IMEK_HIKAYE_DI</aek>
@@ -967,8 +962,7 @@
         </ek>
 
         <!-- bil-dik bir yuz. calmadik kapi.. bu ekin asil adi nedir?-->
-        <ek ad="ISLIK_BELLETME_DIK" uretim="dIk">
-            <ozel-durum ad="SON_HARF_YUMUSAMA" uretim="dIg"/>
+        <ek ad="ISLIK_BELLETME_DIK" uretim="dI~k">
             <ardisil-ekler>
                 <kume>AT_YONKEME</kume>
 				<aek>ISLIK_SORAG_MI</aek>
