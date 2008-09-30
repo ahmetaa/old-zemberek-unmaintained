@@ -48,7 +48,7 @@ public class BinaryIstatistikOkuyucu {
             }
         }
        catch(EOFException e){
-            	System.out.println("Bitti. Frekansi yazilan kök sayisi: " + sayac);
+            	System.out.println("Bitti. Frekansi yazilan kok sayisi: " + sayac);
             }
        finally {
             if (dis != null)

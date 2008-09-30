@@ -20,7 +20,6 @@ public abstract class TemelEkOzelDurumUretici implements EkOzelDurumUretici {
     protected Alfabe alfabe;
 
     public enum TemelEkOzelDurumuTipi implements EkOzelDurumTipi {
-        SON_HARF_YUMUSAMA,
         OLDURGAN,
         ON_EK,
         ZAMAN_KI;
@@ -35,8 +34,6 @@ public abstract class TemelEkOzelDurumUretici implements EkOzelDurumUretici {
             return null;
         else
             switch (TemelEkOzelDurumuTipi.valueOf(ad)) {
-                case SON_HARF_YUMUSAMA:
-                    return new SonHarfYumusamaOzelDurumu();
                 case OLDURGAN:
                     return new OldurganEkOzelDurumu(alfabe);
                 case ON_EK:

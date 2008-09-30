@@ -1351,6 +1351,7 @@ araz IS
 arazbar IS
 arazbarbuselik IS YUM
 arazi IS
+arazöz IS
 arbalet IS
 arbede IS
 arbitraj IS
@@ -1761,7 +1762,7 @@ avlu IS
 avokado IS
 avrat IS YUM
 avret IS
-Avro OZ
+avro IS
 avrovil IS
 avuç IS YUM
 avuçlamak FI
@@ -5138,6 +5139,7 @@ cemaziyülâhır IS
 cemaziyülevvel IS
 cembiye IS
 #cemetme
+cemev IS IS_TAM
 cemetmek FI GEN YUM
 #cemi IS KESME
 cemil IS
@@ -5290,6 +5292,7 @@ ceza IS
 #ceza alanı
 #ceza atışı
 #ceza evi
+cezaev IS IS_TAM
 cezaî SI
 #cezalandırılma
 #cezalandırılmak
@@ -8350,6 +8353,7 @@ deccal IS
 Deccal OZ
 decrescendo IS
 dede IS
+dedektif IS
 #dedelik,-ği
 dedikodu IS
 #dedikoducu
@@ -8962,7 +8966,7 @@ derivasyon IS
 derk IS
 derkenar IS
 #derk etmek
-#derlem
+derlem IS
 #derlemci
 #derlemcilik,-ği
 #derleme
@@ -12375,7 +12379,7 @@ ertelemek FI
 ertesi IS YAL
 Eruh OZ
 ervah IS
-erzak IS
+erzak IS YUM
 Erzin OZ
 Erzincan OZ
 Erzurum OZ
@@ -13850,6 +13854,7 @@ Finike OZ
 finiş IS
 fino IS
 Fin-Ugor OZ
+Finlandiya OZ
 firak IS
 #firaklı
 firar IS
@@ -14944,6 +14949,7 @@ genel IS
 #genel dil bilimi
 #geneleme
 #genel ev
+genelev IS
 genelge IS
 #genel gider
 #genel görünüm
@@ -16534,6 +16540,7 @@ günöte IS
 gün-tün IS YAL OZEL_IC_KARAKTER
 günü IS
 #günü birlik
+günübirlik IS
 #günü birliğine
 #günücü
 #günücülük,-ğü
@@ -23117,6 +23124,7 @@ karabiber IS
 karabibergiller IS
 karabina IS
 karabinyer IS
+karaborsa IS
 #kara borsa
 #kara borsacı
 #kara borsacılık,-ğı
@@ -24917,6 +24925,7 @@ kesik IS YUM
 kesimhane IS
 #kesimlik,-ği
 kesin IS
+kesinkes IS
 #kesin bilgi
 #Kesin Hesap Kanunu
 #kesinleme
@@ -25018,7 +25027,7 @@ Keşmir OZ
 keşşaf IS
 ket IS
 ketal IS TERS
-ketçap IS
+ketçap IS YUM
 kete IS
 keten IS
 #ketencik,-ği
@@ -25926,6 +25935,7 @@ kilojul IS TERS
 kilokalori IS
 #kiloluk,-ğu
 kilometre IS
+kilometrekare IS
 #kilometre kare
 #kilometre taşı
 kilosikl IS
@@ -26155,7 +26165,7 @@ klâpe IS
 klârnet IS
 #klârnetçi
 klâs IS
-klâsik IS
+klâsik IS YUM
 #klâsikleşme
 #klâsikleşmek
 #klâsiklik,-ği
@@ -29126,6 +29136,7 @@ liturya IS
 lityum IS
 liva IS
 livar IS
+livata IS
 liyakat IS TERS
 #liyakatli
 #liyakat sahibi
@@ -33026,6 +33037,7 @@ nanik IS YUM
 nankör SI
 #nankörce
 #nankörlük,-ğü
+nanoteknoloji IS
 nansuk IS YUM
 napalm IS
 #napalm bombası
@@ -33753,6 +33765,7 @@ oba IS
 obabaşı IS
 obelisk IS
 oberj IS
+obezite IS
 obje IS
 objektif IS
 #objektiflik,-ği
@@ -34247,6 +34260,7 @@ ordubozan IS
 #ordubozanlık,-ğı
 #orducu
 #ordu evi
+orduev IS IS_TAM
 ordugâh IS
 orfoz IS
 org IS
@@ -38207,6 +38221,7 @@ rustaî IS
 Rusya OZ
 rutenyum IS
 rutherfordyum IS
+rutin SI
 rutubet IS
 #rutubetlendirme
 #rutubetlendirmek
@@ -39800,6 +39815,7 @@ selofan IS
 seloteyp IS YUM
 selp IS YUM
 #selp etmek
+selülit IS
 selüloit IS YUM
 selüloz IS
 selülozik IS YUM
@@ -42080,6 +42096,7 @@ subasar IS
 #su basmanı
 subaşı IS
 subay IS
+subjektif IS
 #subaylık,-ğı
 #su bidonu
 #su bilimci
@@ -42149,10 +42166,9 @@ suhulet IS
 #su ısıtıcısı
 suibrik IS YUM IS_TAM
 suibriğigiller IS
-suiistimal IS TERS
-#suiistimal etmek
+suistimal IS TERS
+#suistimal etmek
 suikast IS
-suikastçı IS
 suiniyet IS
 suizan IS CIFT
 #su kabağı
@@ -42828,10 +42844,10 @@ süzülmek FI
 şaft IS
 şaful IS
 şah IS
-şahadet IS
-#şahadet etmek
-şahadetname IS
-#şahadet parmağı
+şehadet IS
+#şehadet etmek
+şehadetname IS
+#şehadet parmağı
 şahane SI
 şahap IS YUM
 şahbaz IS
@@ -46073,7 +46089,7 @@ tere IS
 tereci IS
 tereddi IS
 #tereddi etmek
-tereddüt IS
+tereddüt IS YUM
 #tereddüt etmek
 #tereddütlü
 #tereddütsüz
@@ -46849,6 +46865,7 @@ tiryaki SI
 #tiryakilik,-ği
 tişört IS
 titan IS
+titanyum IS
 titiz IS
 #titizce
 #titizlenme
