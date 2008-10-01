@@ -1,0 +1,105 @@
+Surum Degisiklikler listesi
+
+Surum 2.1
+- Cesitli hata giderimi.
+
+Surum 2.0 (11 subat 2007)
+- Zemberek alt yapisi tamamen dilden bagimsiz hale getirildi. Kod buyuk oranda elden gecirildi.
+- xml ek tnaimlama sitemi degisti.
+- kok bulma metodu eklendi. (Stemmer)
+- Buyuk oranda calisan Turkmence ve test amacli Azerice dilleri eklendi.
+-----------------------------------------------
+Surum 0.6.4 (29 Ocak 2006), OpenOffice.org eklentisi 1.0-Beta3
+- Kok kullanim frekansi ile ilgili 0.6.3 surumundeki degisiklikteki bir hata duzeltildi. istatistik dosyasinin dagitim icinde yer almasi gerekmiyor.
+- Sayilar icin oneri sistemi kullanilmaya calisilirsa ortaya cikan bir NPE hatasi giderildi
+- Onceki surumlerde yer almayan bazi bilisim terimleri eklendi.
+- Kod icinde bazi iyilestirmeler gerceklestirildi (hata bildirimi, kayit tutma ve dosya yukleme siniflarinda)
+-----------------------------------------------
+Surum 0.6.3 (27 Aralik 2005), OpenOffice.org eklentisi 1.0-Beta2
+- Kok kullanim frekansina dayali basit puanlama mekanizmasi isler hale gecirildi. Ascii donusturucu ve oneri uretim islemleri bu sayede sonuclari daha uygun sekilde siraliyor.
+- Oneri islemi kisaltma denetimi sirasinda NPE (Null Pointer Exception) hatasi verebiliyordu. Duzeltildi.
+- Ascii->Turkce donusum islemi kucuk I harfi icin islemiyordu. Duzeltildi (Halen buyuk I harfi ile iliskili bir hata mevcut)
+- Zemberek sinifina String[] cinsinden donus yapan Ascii Turkce donusturucu eklendi. Ayrica ayni sinifa Cozumleyici, oneri uretim siniflarina kolay erisim metotlari da eklendi.
+- Gelistirme kodlarinda Dom4j kutuphanesine bagimlilik kaldirildi. Xml okuma islemleri icin Java'nin  kendi ic siniflari kullaniliyor. - Ek tanimlama dosyasinin yapisi xml bilesen (element) ozellikleri (attribute) yerine dogrudan bilesen icerigini kullanacak sekilde degistirildi. Ornegin <kume ad=".."/> yerine <kume>...</kume> seklinde. 
+------------------------------------------------
+Surum 0.6.2, OpenOffice.org eklentisi 1.0-Beta
+- Kisaltma destegi
+- 500'e yakin eksik kok eklendi
+- Cesitli ek dizilim hatalari giderildi.
+- Ilk olusum suresinde bellek kullaniminda iyilestirme
+Konular::
+- Kisaltmalarin sisteme eklenmesi ile oneri sisteminin hizinda dusus gerceklesmis olabilir. Ancak bunun kullaniciya dogrudan yansimayacagini tahmin ediyoruz.
+-------------------------------------
+Surum 0.6.1
+- Ozellikle Open Office eklentisi gibi uygulamalari ilk acilista fazla bekletmemek icin kaynak yukleme konusunda hiz arttirici bir kac calisma gerceklestirildi. Bu konuda daha fazla calisma yapilmasi gerekebilir.
+--------------------------------------
+Surum 0.6
+- Yapi buyuk olcude dilden bagimsiz bir hale geldi. Yani farkli Turk dillerine iliskin islemler zemberek ile
+  daha kolay bicimde gerceklestirilebilecek. Yapiyi bagimsizlastirmak icin alt yapida ciddi
+  degisiklikler gerceklestirildi. Halen az da olsa degisiklik gerekiyor. Ilk farkli dil uygulamasi
+  olarak Turkmence uzerinde calisma yapilacak (Guychmyrat Amanmyradow onceki kod yapisi ile zaten Turkmece
+  konusunda calisma gerceklestirimisti).
+- Ek yapisi degistirildi. Ekler artik ayri ayri sinif degil, dis bir dosyada tanimmlanip tek bir sinif ile ifade ediliyor.
+  Bu sayede Zemberek icindeki 120 civarindaki sinif silinmis oldu
+- Oneri sistemi istatistiksel kok bilgilerini kullanip onerilerin daha uygun sekilde siralanmasini sagliyor.
+- Kelime uretim mekanizmasi eklendi. Istenilen kok ve ek listesi ile kelime uretimi saglanabiliyor.
+- Kelime ayrisim islemi eklendi. Ornegin "zembereklere" kelimesi "zemberek-ler-e" seklinde ayristiriliyor. Bunun
+  cozumlemeden farki eklerin icerigini ayristirmasi.
+- Proje sinif ve dizin yapisinda cesitli degisiklikler gerceklestirildi. Gelisim amacli kodlarda ve test
+  kodlarinda Java 5 kullanilmaya baslandi.
+- Zemberek erisim sinifindaki erisim metodlarinda degisiklik ve eklemeler meydana geldi. Zemberek sinifinin yapisi artik Singleton degil.
+- Deneme amacli rasgele basit cumlecik olusturma sinifi eklendi.
+- Oneri mekanizmasinda kullanilan benzerlik algoritmasinin basarimi arttirildi.(Alphan)
+- Cozumleme islemi artik ayni koke ait ilk ek cozumunde islemi durdurmuyor, tum olasi ek cozumlerini buluyor.
+- Rasgele siralanmis ekleri dil biglisine gore siraya dizen algoritma eklendi. Bu basir ceviri islemlerinde kullanilabilir.
+- Bazi bilinen bilisim ozel isimleri kok olarak sisteme eklenmeye basladi.
+Konular:
+- Dil bagimsizligi ve ek degisiklikleri cozumleme dogruluk basarimini az da olsa kotu yonde etkilemis olabilir.
+- eklerin dis dosyadan okunmasi ve islenmesi nedeniyle ilklendirme suresi biraz daha uzadi (200-500ms).
+------------------------------------------
+Surum 0.5.1
+- Zemberek projesinin diger java projeleri uzerinden daha kolay kullanilmasini saglayan degisiklikler yapildi.
+- Apache Commons-Logging'e olan bagimlilik kaldirildi. Java'nin kendi ic kayit tutma mekanizmasi kullaniliyor.
+-------------------------------------------
+Surum 0.5
+- Kilavuz tamamlandi. yaklasik 23.500 kok ve 7000 ozel kisi adi ile otuz binden fazla kelime kokunu taniyabiliyor.
+- < uzeri - uzer*leri >, < gozyasi - gozyas*lari> turundeki ozel durumlar gerceklendi..
+- "imek" fiiline iliskin hatalar giderildi.
+- Eklentinin kilitlenmesine neden olan kritik bir hata dahil pek cok irili ufakli hata giderildi.
+- Sistemin ikili (binary) bir kilavuz dosyasi uzerinden calismasi saglandi.Kok agaci olusturma mekanizmasi duzenlendi. Bu sayede ilk calisma hizi biraz daha iyilestirildi
+- Yazilim yapisinin farkli Turk lehceleri ile de calisabilmesi icin alt yapi calismasina baslandi.
+- Ek olusum mekanizmasinin daha az kaynak tuketmesini saglayacak mekanizma icin calismaya baslandi.
+- Ascii->Turkce donusumunde birden cok secenegin olustugu durumlarda dogru olan kelimenin secimini saglayacak puanlama melkanizmasinin ilk hali gerceklestirildi. Bu ozellik duzenlenip gelistirilerek bir sonraki surumde calistirilacak.
+---------------------------------------------
+Surum 0.4.1
+- Ozel adlar eklendi
+- Muhtelif sozluk, ek, cozumleyici ve ozel durum hatasi giderildi.
+- Duzyazi sozluk okuyucu hizi arttirildi, ama sozlugun buyumesi ile bu artis hissedilmiyor.
+- Kelime sayisi Ozel Adlarla birlikte 25bin civarina yukseldi.
+------------------------------------------
+Surum 0.4
+- Proje isim ve paket yapisi degisti.
+- Temizleyici mekanizma eklendi.
+- Zemberek Open Office Eklenti projesinin ilk surumleri cikti.
+-----------------------------------------
+Surum 0.3
+- Hatali kelimeler icin oneri mekanizmasi konusundaki ilk calisma gerceklestirildi. Denemek icin
+giris alanina bir harfi eksik, fazla, yanlis ya da iki harfi yer degistirmis hatali bir kelime yazip "Oner" dugmesine basin.
+- Cozumleme ve denetleme mekanizmasi yaklasik %99 kesinlikle calisiyor.
+- Hatali olup dogru kabul edilen durumlarin bir kismi ortadan kaldirildi.
+- Kod yapisi biraz daha duzeltildi.
+----------------------------------------------------
+Surum 0.2
+- Arayuz yenilendi. giris ve cikis icin iki ayri alan bulunuyor. giris'e yazarak, kopyala-yapistir yontemi ile ya da doyadan okuyarak veri yerlestiriliyor.
+- Islemler giris icindeki yazi uzerinden gerceklestiriliyor. Su islemler mevcut:
+Denetleme: giris uzerinde kelime dogruluk testi yapiliyor. Sonucta hatali kelimerin basina "#" isareti koyuluyor. diger kelimelerde oynama yapilmiyor
+Cozumleme: Bu tum kelimeri ayrintili icimde cozumluyor. kok ve ekleri , bir kelimenin tum olasi kokleri icin belirtiyor.
+Ascii->Tr: Turkce karakter kullanmadan yazilmis yaziyi turkce yapmaya calisir. Sonucta basi kelimelerde birden fazla sonuc cikabilir.
+Tr->Ascii: turkceye ozel karakterleri ingilizcede de olan benzerlerine donusturur.
+Hecele: basit blok heceleme islemi.
+
+Bazi konular:
+Sistemdeki GUI demo amaclidir. Cozumleme ve diger islemlerde hatalar soz konusudur. Henuz cozumleyici basarimi %95 civarinda oldugundan cozulemeyen kelimeler ortaya cikabilir. Her yeni versiyonda basarim artacaktir. Yanlis kelimelerin dogru varsayildigi durumlar soz konusu olabilir. Bu konu da yeni versiyonlarda gelistirilecektir. Algoritmalar simdilik fonksiyonellik gozetilerek gelistirilmektedir. Bu asamada performans calismasini zararli buldugumuzdan sistem beklenenden yavas calisabilir, ya da fazla kaynak tuketebilir. Bu konudaki calismalar umuyoruz bir kac surum sonra gerceklestirilebilir.
+--------------------------------------------------
+Surum 0.1
+Temel cozumleyici ve heceleyici

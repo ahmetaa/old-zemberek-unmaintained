@@ -1,0 +1,1 @@
+"gelistirme" dizininde sadece gelistirme aninda gerekli kutuphaneler yer alir.
