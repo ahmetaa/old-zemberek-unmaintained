@@ -1,9 +1,19 @@
 package net.zemberek.deney.pandul;
 
-public class NodeTest {
+import junit.framework.TestCase;
+
+public class NodeTest extends TestCase{
   
-  public void testNode() {
-    
+  Node node;
+  
+  @Override
+  public void setUp() {
+    node = new Node();
+  }
+  
+  public void testAddNode() {
+    node.addNodeFor('a');
+    assertNotNull(node.getChildNode('a'));
   }
   
 }
