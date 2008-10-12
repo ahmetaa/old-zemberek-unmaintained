@@ -6,7 +6,7 @@ package net.zemberek.deney.pandul;
  * @author mdakin
  *
  */
-public class Letters {
+public class TurkishAlphabet implements Alphabet{
   
   // Turkce ozel
   public static final char CHAR_CC = '\u00c7'; // Kuyruklu buyuk c (ch)
@@ -55,7 +55,7 @@ public class Letters {
     
   }
  
-  public static boolean isTurkish(char c) {
+  public static boolean isValid(char c) {
      return getIndex(c) == -1 ? false : true;
   }
   

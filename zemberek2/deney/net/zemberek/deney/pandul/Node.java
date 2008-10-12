@@ -1,5 +1,6 @@
 package net.zemberek.deney.pandul;
 
+
 /**
  * A compact implementation for trie nodes.  
  * 
@@ -7,21 +8,36 @@ package net.zemberek.deney.pandul;
  *
  */
 public class Node {
-  private byte letter = -1;
+  private byte letter;
   private int bitmap;
+  private int attribute;
   // For compactness, sacrifice some construction performance 
   // (Using an arraylist would require an extra int) 
   private Node[] children;
 
   public Node() {
+    letter = -1;
   }
   
+  /**
+   * @param c : A Turkish character
+   * 
+   */
   public Node(char c) {
-    this.letter = (byte) Letters.getIndex(c);
+    if (!TurkishAlphabet.isValid(c)) {
+      throw new IllegalArgumentException("Illegal character: " + c);
+    }
+    this.letter = (byte) TurkishAlphabet.getIndex(c);
   }
   
+  /**
+   * Returns child node identfied with char c.
+   * @param c
+   * @return the child node, identified by input char c, 
+   * null if there is no child exist for given char.
+   */
   public final Node getChildNode(char c) {
-    int index = Letters.getIndex(c);
+    int index = TurkishAlphabet.getIndex(c);
     assert (index != -1);
     if (hasChild(index)) {
       return children[getArrayIndex(index)];
@@ -29,15 +45,26 @@ public class Node {
     return null;
   }
   
-  public final void addNodeFor(char c) {
-    int index = Letters.getIndex(c);
-    if(hasChild(index)) {
+  /**
+   * Creates a child node identified by character c and attaches it 
+   * to children list.
+   * 
+   * @param c
+   * @throws IllegalArgumentException if c is not a legal character.
+   */
+  public Node addNodeFor(char c) {
+    if (!TurkishAlphabet.isValid(c)) {
+      throw new IllegalArgumentException("Illegal character: " + c);
+    }
+    int index = TurkishAlphabet.getIndex(c);
+    if (hasChild(index)) {
+      
       // Subnode with given character already exists.
     }
-    addChild(c, index);
+    return addChild(c, index);
   }
   
-  final void addChild(char c, int index) {
+  final Node addChild(char c, int index) {
     // Create a new Node.
     Node child = new Node(c);
     if(children == null) {
@@ -60,6 +87,7 @@ public class Node {
     }
     // update bitmap
     bitmap |= (1 << index);
+    return child;
   }
   
   final boolean hasChild (int index) {
@@ -73,12 +101,15 @@ public class Node {
     return Integer.bitCount(bitmap & (-1 >>> 32 - index));
   }
   
+  /**
+   * @return the representative char. or # if node is root
+   */
   public char getChar(){
-    //Empty?
+    //Empty node?
     if (letter == -1) {
       return '#';
     }
-    return Letters.getChar(letter);
+    return TurkishAlphabet.getChar(letter);
   }
   
   public String toString() {
@@ -89,7 +120,45 @@ public class Node {
        s += node.getChar() + " "; 
       }
       s += ")";
+    } else {
+      s += ".";
+    }
+    if (attribute != 0) {
+      s += " * ";
     }
     return s;
+  }
+  
+  /**
+   * Returns string representation of node and all child nodes until leafs.
+   *
+   * @param level
+   * @return 
+   */
+  public final void toDeepString(StringBuffer b, int level) {
+    char[] indentChars = new char[level * 2];
+    for (int i = 0; i < indentChars.length; i++)
+      indentChars[i] = ' ';
+    b.append(indentChars).append(this.toString());
+    b.append("\n");
+    if (children != null) {
+      for (Node subNode : this.children) {
+        subNode.toDeepString(b, level + 1);
+      }
+    }
+  }
+  
+  public final String dump() {
+    StringBuffer b = new StringBuffer();
+    toDeepString(b, 0);
+    return b.toString();
+  }
+
+  public int getAttribute() {
+    return attribute;
+  }
+
+  public void setAttribute(int attribute) {
+    this.attribute = attribute;
   }
 }

@@ -47,11 +47,11 @@ public class NodeTest extends TestCase{
     testChar('b');
     testChar('z');
     // Last char (32th)
-    testChar(Letters.alphabet[Letters.alphabet.length - 1]);
+    testChar(TurkishAlphabet.alphabet[TurkishAlphabet.alphabet.length - 1]);
   }
   
   public void testAddNodAll() {
-    for(char c : Letters.alphabet) {
+    for(char c : TurkishAlphabet.alphabet) {
       testChar(c);
     }
   }
@@ -60,12 +60,12 @@ public class NodeTest extends TestCase{
     testTwoCharacter('a', 'b');
     testTwoCharacter('b', 'a');
     // Last char (32th)
-    testTwoCharacter('a', Letters.alphabet[Letters.alphabet.length - 1]);
+    testTwoCharacter('a', TurkishAlphabet.alphabet[TurkishAlphabet.alphabet.length - 1]);
   }
  
   public void testAddTwoNodeAll() {
-    for(char c1 : Letters.alphabet) {
-      for(char c2 : Letters.alphabet) {
+    for(char c1 : TurkishAlphabet.alphabet) {
+      for(char c2 : TurkishAlphabet.alphabet) {
         testTwoCharacter(c1, c2);
         testTwoCharacter(c2, c1);
       }
