@@ -112,6 +112,7 @@ public class Node {
     return TurkishAlphabet.getChar(letter);
   }
   
+  @Override
   public String toString() {
     String s = getChar() + " : ";
     if (children != null) {
@@ -147,10 +148,45 @@ public class Node {
       }
     }
   }
+
+  /**
+   * Returns flat string representation of node and all child nodes.
+   * Used for testing purposes only. Given a tree like this:
+   * 
+   *      a
+   *     / \
+   *    b   c*
+   *   /
+   *  e* 
+   *   
+   * This method returns: a:(bc)|b:(e)|e:(.)*|c:(.)*
+   *  
+   * @return 
+   */
+  public final void toFlatString(StringBuffer b) {
+    b.append(this.toString().replaceAll(" ", "") + "|");
+    if (children != null) {
+      for (Node subNode : this.children) {
+        subNode.toFlatString(b);
+      }
+    }
+  }
   
-  public final String dump() {
+  /**
+   * Returns string representation of Node (and subnodes) for testing.
+   * 
+   * @param flat : if true, returns a flat version of node and all subnodes
+   * using a depth first traversal. if false, returns multi line, indented
+   * version of node tree.
+   * @return
+   */
+  public final String dump(boolean flat) {
     StringBuffer b = new StringBuffer();
-    toDeepString(b, 0);
+    if (flat) {
+      toFlatString(b);
+    } else {
+      toDeepString(b, 0);
+    }
     return b.toString();
   }
 
