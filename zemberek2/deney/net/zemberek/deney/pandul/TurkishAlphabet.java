@@ -39,7 +39,15 @@ public class TurkishAlphabet implements Alphabet{
   
   public static final int TURKISH_CHAR_MAP_SIZE = 610;
   public static int turkishLetters[] = new int[TURKISH_CHAR_MAP_SIZE];
-  public static int toLower[] = new int[TURKISH_CHAR_MAP_SIZE];  
+  public static int toLower[] = new int[TURKISH_CHAR_MAP_SIZE];
+
+  public static char[] vowels = {'a', 'e', CHAR_ii, 'i', 'o', CHAR_oo, 'u', CHAR_uu,
+          CHAR_SAPKALI_a, CHAR_SAPKALI_i, CHAR_SAPKALI_u};
+  public static char[] voiceless = {'p', CHAR_cc, 't', 'k'};
+
+  public static boolean vowelLookup[] = new boolean[alphabet.length];
+  public static boolean voicelessLookup[] = new boolean[alphabet.length];
+
  
   // Static initializer fills up lookup tables.
   static {
@@ -51,12 +59,22 @@ public class TurkishAlphabet implements Alphabet{
     for(int i=0; i < alphabet.length; i++) {
       turkishLetters[alphabet[i]] = i;
       toLower[alphabetCapital[i]] = alphabet[i];
+      vowelLookup[i] = false;
+      voicelessLookup[i] = false;
+    }
+
+    for (char vowel : vowels) {
+      vowelLookup[getIndex(vowel)] = true;
+    }
+
+    for (char c : voiceless) {
+      voicelessLookup[getIndex(c)] = true;
     }
     
   }
  
   public static boolean isValid(char c) {
-     return getIndex(c) == -1 ? false : true;
+     return getIndex(c) != -1;
   }
   
   public static int getIndex(char c){
@@ -70,4 +88,20 @@ public class TurkishAlphabet implements Alphabet{
     assert(index > 0 && index < alphabet.length);
     return alphabet[index];
   }
+
+  public static boolean isVowel(char c) {
+    //TODO: should it be checked for validity?
+    if (!isValid(c))
+      throw new IllegalArgumentException("not a valid char:" + c);
+    return vowelLookup[getIndex(c)];
+  }
+
+  public static boolean isVoiceless(char c) {
+    //TODO: should it be checked for validity?
+    if (!isValid(c))
+      throw new IllegalArgumentException("not a valid char:" + c);
+    return voicelessLookup[getIndex(c)];
+  }
+
+  
 }
