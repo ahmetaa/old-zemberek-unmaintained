@@ -78,7 +78,7 @@ public class TinyTrString {
    * @return char at that index.
    */
   public char charAt(int index) {
-    if (index < 0 || index > length())
+    if (index < 0 || index >= length())
       throw new IndexOutOfBoundsException("index must be between [0.." + length() + "). But it is:" + index);
     return TurkishAlphabet.getChar((int) (value >> ((index + 1) * 8) & 0xff));
   }
