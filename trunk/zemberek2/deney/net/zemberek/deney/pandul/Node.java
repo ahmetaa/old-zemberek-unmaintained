@@ -45,6 +45,10 @@ public class Node {
     return null;
   }
   
+  Node[] getChildren() {
+    return children;
+  }
+  
   /**
    * Creates a child node identified by character c and attaches it 
    * to children list.
