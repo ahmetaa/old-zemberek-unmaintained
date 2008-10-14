@@ -44,12 +44,12 @@ public class TestTinyTrString {
 
   @Test(expected = IndexOutOfBoundsException.class)
   public void testCharAtException1() {
-    new TinyTrString("abcdegfh").charAt(-1);
+    new TinyTrString("abcdegf").charAt(-1);
   }
 
   @Test(expected = IndexOutOfBoundsException.class)
   public void testCharAtException2() {
-    new TinyTrString("abcdegfh").charAt(6);
+    new TinyTrString("abc").charAt(3);
   }
 
   String[] strs = {"", "blah", "a", "abcde", "abcdef"};
