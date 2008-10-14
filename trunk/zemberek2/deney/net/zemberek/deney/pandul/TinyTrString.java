@@ -2,10 +2,10 @@ package net.zemberek.deney.pandul;
 
 /**
  * immutable long representation of small strings.
- * it uses the alphabet indexes as characters.
+ * it uses the alphabet indexes as characters.(index starts from zero.)
  * if the length of the string is l, the format is:
  * index(charAt(l-1)|index(charAt(l-2)|..|index(charAt(0)|l
- * for example. String "abe" is : [06020103] -> [e b a 3]
+ * for example. String "abe" is : [04010003] -> [e b a 3]
  * l can be maximum 7.
  */
 public class TinyTrString {
