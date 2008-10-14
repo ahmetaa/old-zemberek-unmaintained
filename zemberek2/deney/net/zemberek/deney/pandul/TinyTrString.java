@@ -14,44 +14,33 @@ public class TinyTrString {
 
   /**
    * long based constructor. checks if input parameter is valid.
-   * TODO: maybe validity check can be seperated for faster construction.
    *
    * @param value the long
-   * @throws IllegalArgumentException if the input vlaue is not valid. (size and idex values)
+   * @throws IndexOutOfBoundsException if String size is not between [0-7] (inclusive)
+   * @throws IllegalArgumentException  if the input vlaue is not valid. (size and idex values)
    */
   public TinyTrString(long value) {
     this.value = value;
-    if (!isValid())
-      throw new IllegalArgumentException("The value is not valid:" + value);
-  }
-
-  /**
-   * checks if the value set is valid. this only may return false if "long" constructor is used.
-   *
-   * @return true if, the size information is correct and embedded characters are valid.
-   */
-  private boolean isValid() {
     int l = length();
     if (l < 0 || length() > 7)
-      return false;
-    if (l == 0)
-      return true;
+      throw new IndexOutOfBoundsException("length must be between [0..7]. But it is:" + l);
+
     long s = value >> 8;
     for (int i = 0; i < l; i++) {
       long t = s & 0xff;
       if (t < 0 || t >= TurkishAlphabet.ALPHABET_SIZE)
-        return false;
+        throw new IllegalArgumentException("String connot contain characters outside TurkishAlphabet");
       s = s >> 8;
     }
-    return true;
+
   }
 
   /**
    * constructor using
    *
    * @param str input string.
-   * @throws IllegalArgumentException if String size is larger than 7 , or if there is a character out of
-   *                                  TurkishAlphabet set.
+   * @throws IndexOutOfBoundsException if String size is larger than 7
+   * @throws IllegalArgumentException  if there is a character out of TurkishAlphabet set.
    */
   public TinyTrString(String str) {
     if (str == null || str.length() == 0) {
@@ -59,7 +48,7 @@ public class TinyTrString {
       return;
     }
     if (str.length() > 7) {
-      throw new IllegalArgumentException("Compact String size cannot be larger than 7");
+      throw new IndexOutOfBoundsException("Compact String size cannot be larger than 7");
     }
     long t = 0;
     for (int i = str.length() - 1; i >= 0; i--) {
@@ -80,6 +69,18 @@ public class TinyTrString {
    */
   public int length() {
     return (int) value & 0xFF;
+  }
+
+  /**
+   * returns the char at given index. index value must be between [0..length) length exclusive.
+   *
+   * @param index index
+   * @return char at that index.
+   */
+  public char charAt(int index) {
+    if (index < 0 || index > length())
+      throw new IndexOutOfBoundsException("index must be between [0.." + length() + "). But it is:" + index);
+    return TurkishAlphabet.getChar((int) (value >> ((index + 1) * 8) & 0xff));
   }
 
   /**

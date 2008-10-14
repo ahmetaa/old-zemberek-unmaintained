@@ -14,7 +14,7 @@ public class TestTinyTrString {
     Assert.assertEquals("cbcb", new TinyTrString(0x0102010204L).asString());
   }
 
-  @Test(expected = IllegalArgumentException.class)
+  @Test(expected = IndexOutOfBoundsException.class)
   public void testLongConstructorException1() {
     new TinyTrString(0xffff);
   }
@@ -24,7 +24,7 @@ public class TestTinyTrString {
     new TinyTrString(0xff01);
   }
 
-  @Test(expected = IllegalArgumentException.class)
+  @Test(expected = IndexOutOfBoundsException.class)
   public void testStringConstructorException1() {
     new TinyTrString("abcdegfh");
   }
@@ -32,6 +32,24 @@ public class TestTinyTrString {
   @Test(expected = IllegalArgumentException.class)
   public void testStringConstructorException2() {
     new TinyTrString("x");
+  }
+
+  @Test
+  public void testCharAt() {
+    TinyTrString t = new TinyTrString("abcdef");
+    Assert.assertEquals('a', t.charAt(0));
+    Assert.assertEquals('b', t.charAt(1));
+    Assert.assertEquals('f', t.charAt(5));
+  }
+
+  @Test(expected = IndexOutOfBoundsException.class)
+  public void testCharAtException1() {
+    new TinyTrString("abcdegfh").charAt(-1);
+  }
+
+  @Test(expected = IndexOutOfBoundsException.class)
+  public void testCharAtException2() {
+    new TinyTrString("abcdegfh").charAt(6);
   }
 
   String[] strs = {"", "blah", "a", "abcde", "abcdef"};
