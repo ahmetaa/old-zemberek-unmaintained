@@ -47,5 +47,56 @@ public class CompactStringTrieTest extends TestCase {
     assertEquals ("#:(e)|e:(klt)|k:.*|l:(am)|a:.*|m:(a)|a:(s)*|s:.*|t:.*|", cst.getRoot().dump(true));
     System.out.println(cst.getRoot().dump(false));
   }
- 
+
+//  public void testCompactionDoesNotEffectEmptyTrie() {
+//    CompactStringTrie cst = new CompactStringTrie();
+//    cst.compress();
+//    assertEquals("#:.|", cst.getRoot().dump(true));
+//    System.out.println(cst.getRoot().dump(false));
+//  }
+//  
+//  public void testCompactionDoesNotEffectSingleCharTrie() {
+//    CompactStringTrie cst = new CompactStringTrie();
+//    cst.add("a");
+//    cst.compress();
+//    assertEquals("#:(a)|a:.*|", cst.getRoot().dump(true));
+//    System.out.println(cst.getRoot().dump(false));
+//  }  
+//  
+//  public void testCompactionDoesNotEffectUncompactableTrie() {
+//    CompactStringTrie cst = new CompactStringTrie();
+//    cst.add("a");
+//    cst.add("ab");
+//    cst.add("c");
+//    cst.compress();
+//    assertEquals ("#:(ac)|a:(b)*|b:.*|c:.*|" , cst.getRoot().dump(true));
+//    System.out.println(cst.getRoot().dump(false));
+//  }
+//  
+//  public void testCompactionSimpleCase() {
+//    CompactStringTrie cst = new CompactStringTrie();
+//    cst.add("ab");
+//    cst.compress();
+//    //assertEquals ("#:(a)|ab:.*" , cst.getRoot().dump(true));
+//    System.out.println(cst.getRoot().dump(false));
+//  } 
+//  
+//  public void testCompactionSimpleCase2() {
+//    CompactStringTrie cst = new CompactStringTrie();
+//    cst.add("abc");
+//    cst.add("vyz");
+//    cst.compress();
+//    //assertEquals ("#:(a)|ab:.*" , cst.getRoot().dump(true));
+//    System.out.println(cst.getRoot().dump(false));
+//  }    
+//  
+//  public void testCompactionSimpleCase3() {
+//    CompactStringTrie cst = new CompactStringTrie();
+//    cst.add("ela");
+//    cst.add("elmas");
+//    cst.compress();
+//    //assertEquals ("#:(a)|ab:.*" , cst.getRoot().dump(true));
+//    System.out.println(cst.getRoot().dump(false));
+//  }   
+  
 }

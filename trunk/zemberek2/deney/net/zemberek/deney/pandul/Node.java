@@ -11,6 +11,7 @@ public class Node {
   private byte letter;
   private int bitmap;
   private int attribute;
+  private TinyTrString str;
   // For compactness, sacrifice some construction performance 
   // (Using an arraylist would require an extra int) 
   private Node[] children;
@@ -28,6 +29,7 @@ public class Node {
       throw new IllegalArgumentException("Illegal character: " + c);
     }
     this.letter = (byte) TurkishAlphabet.getIndex(c);
+    this.str = new TinyTrString(c);
   }
   
   /**
@@ -116,6 +118,14 @@ public class Node {
     return TurkishAlphabet.getChar(letter);
   }
   
+  /**
+   * Merges this node with all suitable subnodes
+   * @param n
+   */
+  public void merge(Node n){
+    // walk down until a leaf or junction, merge all the way.
+  }
+  
   @Override
   public String toString() {
     String s = getChar() + " : ";
@@ -154,7 +164,8 @@ public class Node {
   }
 
   /**
-   * Returns flat string representation of node and all child nodes.
+   * 
+   * @return Flat string representation of node and all child nodes.
    * Used for testing purposes only. Given a tree like this:
    * 
    *      a
@@ -165,7 +176,6 @@ public class Node {
    *   
    * This method returns: a:(bc)|b:(e)|e:(.)*|c:(.)*
    *  
-   * @return 
    */
   public final void toFlatString(StringBuffer b) {
     b.append(this.toString().replaceAll(" ", "") + "|");
