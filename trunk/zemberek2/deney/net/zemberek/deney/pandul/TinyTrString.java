@@ -66,7 +66,7 @@ public class TinyTrString {
       char c = str.charAt(i);
       int index = TurkishAlphabet.getIndex(c);
       if (index == -1)
-        throw new IllegalArgumentException("Compact String size cannot be larger than 7");
+        throw new IllegalArgumentException("String connot contain characters outside TurkishAlphabet");
       t = (t | index) << 8;
     }
     t = t | str.length();
