@@ -32,7 +32,9 @@ public class TurkishAlphabet implements Alphabet{
   public static char[] alphabet = {'a', 'b', 'c', CHAR_cc, 'd','e', 'f', 'g', CHAR_gg, 'h', CHAR_ii,
     'i', 'j', 'k', 'l', 'm', 'n', 'o', CHAR_oo, 'p', 'r', 's', CHAR_ss, 't', 'u', CHAR_uu, 'v',
     'y', 'z', CHAR_SAPKALI_a, CHAR_SAPKALI_i, CHAR_SAPKALI_u};
- 
+
+  public static final int ALPHABET_SIZE = alphabet.length;
+
   public static char[] alphabetCapital = {'A', 'B', 'C', CHAR_CC, 'D','E', 'F', 'G', CHAR_GG, 'h', 
     'I', CHAR_II, 'J', 'K', 'L', 'M', 'N', 'O', CHAR_OO, 'P', 'R', 'S', CHAR_SS, 'T', 'U', CHAR_UU, 
     'V', 'Y', 'Z', CHAR_SAPKALI_A, CHAR_SAPKALI_I, CHAR_SAPKALI_U};
