@@ -5,6 +5,12 @@ import net.zemberek.bilgi.KaynakYukleyici;
 import java.io.BufferedReader;
 import java.io.IOException;
 
+/**
+ * Simple test application to see the performance - footprint of trie
+ * 
+ * @author mdakin
+ *
+ */
 public class Analysis {
   
   static int totalNodes = 0;
@@ -12,6 +18,12 @@ public class Analysis {
   static int[] chainLengths = new int[20];
   static int leafNodes = 0;
   
+  /**
+   * Recursively walks the trie and updates statistics.
+   * @param node
+   * @param chainLen : A chain is nodes with single childs without
+   * a word mark. A leaf node can be part of chain as well.
+   */
   public static void walk(Node node, int chainLen) {
     totalNodes++;
     Node[] children = node.getChildren();
