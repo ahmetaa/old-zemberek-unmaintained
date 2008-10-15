@@ -1,15 +1,27 @@
 package net.zemberek.deney.pandul;
 
+/**
+ * This class has static methods for special long numbers that actually represent
+ * small Strings.
+ * it uses the alphabet indexes as characters.(index starts from zero.)
+ * if the length of the string is l, the format is:
+ * index(charAt(l-1)|index(charAt(l-2)|..|index(charAt(0)|l
+ * for characters 6 bit, for length, 4 bits values are used.
+ * for example. String "abe" is :
+ * binary[ 000100 000001 000000 0011]
+ * hex [40403] -> [e b a 3]
+ * l can be maximum 10.
+ */
 public class TinyStrings {
 
-  private static final int LENGTH_BIT_MASK = 0x0F;
+  private static final int LENGTH_BIT_MASK = 0x0f;
   private static final int MAX_STRING_LEGTH = 10;
   private static final int CHAR_BIT_SIZE = 6;
-  private static final int CHAR_BIT_MASK = 0x3F;
+  private static final int CHAR_BIT_MASK = 0x3f;
   private static final int LENGTH_BIT_SIZE = 4;
 
   /**
-   * long based constructor. checks if input parameter is valid.
+   * long based generator. it sounds useless but it actually makes validity check.
    *
    * @param value the long
    * @return long value.
@@ -18,7 +30,7 @@ public class TinyStrings {
    */
   public static long create(long value) {
     final int l = length(value);
-    if (l < 0 || l > 9)
+    if (l < 0 || l > MAX_STRING_LEGTH - 1)
       throw new IndexOutOfBoundsException("length must be between [0.." + (MAX_STRING_LEGTH - 1) + "]. But it is:" + l);
 
     long s = value >> LENGTH_BIT_SIZE;
@@ -32,7 +44,7 @@ public class TinyStrings {
   }
 
   /**
-   * constructor using
+   * String based generator
    *
    * @param str input string.
    * @return long vString representation.
@@ -61,7 +73,7 @@ public class TinyStrings {
   }
 
   /**
-   * creates an object using value char c.
+   * char based generator.
    *
    * @param c the content.
    * @return long value.
@@ -70,7 +82,7 @@ public class TinyStrings {
   public static long create(char c) {
     final int index = TurkishAlphabet.getIndex(c);
     if (index != -1)
-      return index << CHAR_BIT_SIZE | 0x01;
+      return (index << CHAR_BIT_SIZE) | 0x01;
     else
       throw new IllegalArgumentException("char:" + c + "cannot be outside TurkishAlphabet");
   }
@@ -97,7 +109,7 @@ public class TinyStrings {
     if (index < 0 || index >= length(l))
       throw new IndexOutOfBoundsException("index must be between [0.." + length(l) + "). But it is:" + index);
     l = l >> LENGTH_BIT_SIZE;
-    return TurkishAlphabet.getChar((int) ((l >> ( index  * CHAR_BIT_SIZE)) & CHAR_BIT_MASK));
+    return TurkishAlphabet.getChar((int) ((l >> (index * CHAR_BIT_SIZE)) & CHAR_BIT_MASK));
   }
 
   /**
