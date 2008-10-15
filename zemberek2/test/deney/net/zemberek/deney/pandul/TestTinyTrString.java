@@ -52,6 +52,17 @@ public class TestTinyTrString {
     new TinyTrString("abc").charAt(3);
   }
 
+  @Test
+  public void testCharConstructor() {
+    Assert.assertEquals("a", new TinyTrString('a').toString());
+    Assert.assertEquals(1, new TinyTrString('a').length());
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testCharConstructorException1() {
+    new TinyTrString('$');
+  }
+
   String[] strs = {"", "blah", "a", "abcde", "abcdef"};
 
   @Test

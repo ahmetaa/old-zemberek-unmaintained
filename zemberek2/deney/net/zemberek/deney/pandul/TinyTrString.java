@@ -32,7 +32,6 @@ public class TinyTrString {
         throw new IllegalArgumentException("String connot contain characters outside TurkishAlphabet");
       s = s >> 8;
     }
-
   }
 
   /**
@@ -63,6 +62,21 @@ public class TinyTrString {
   }
 
   /**
+   * creates an object using value char c.
+   *
+   * @param c the content.
+   * @throws IllegalArgumentException if character is out of TurkishAlphabet set.
+   */
+  public TinyTrString(char c) {
+    final int index = TurkishAlphabet.getIndex(c);
+    if (index != -1)
+      this.value = index << 8 | 0x01;
+    else
+      throw new IllegalArgumentException("char:" + c + "cannot be outside TurkishAlphabet");
+  }
+
+
+  /**
    * lenth of the containing characters.
    *
    * @return length
@@ -80,7 +94,7 @@ public class TinyTrString {
   public char charAt(int index) {
     if (index < 0 || index >= length())
       throw new IndexOutOfBoundsException("index must be between [0.." + length() + "). But it is:" + index);
-    return TurkishAlphabet.getChar((int) (value >> ((index + 1) * 8) & 0xff));
+    return TurkishAlphabet.getChar((int) ((value >> (index + 1) * 8) & 0xff));
   }
 
   /**
@@ -90,7 +104,9 @@ public class TinyTrString {
    */
   public String asString() {
     final int length = length();
-    if (length == 0) return "";
+    if (length == 0)
+      return "";
+
     StringBuilder sb = new StringBuilder(length);
     long s = value >> 8;
     for (int i = 0; i < length; i++) {
