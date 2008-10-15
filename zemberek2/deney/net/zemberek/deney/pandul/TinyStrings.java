@@ -81,12 +81,10 @@ public class TinyStrings {
    */
   public static long create(char c) {
     final int index = TurkishAlphabet.getIndex(c);
-    if (index != -1)
-      return (index << CHAR_BIT_SIZE) | 0x01;
-    else
+    if (index == -1)
       throw new IllegalArgumentException("char:" + c + "cannot be outside TurkishAlphabet");
+    return (index << CHAR_BIT_SIZE) | 0x01;
   }
-
 
   /**
    * lenth of the containing characters.
@@ -107,7 +105,7 @@ public class TinyStrings {
    */
   public static char charAt(long l, int index) {
     if (index < 0 || index >= length(l))
-      throw new IndexOutOfBoundsException("index must be between [0.." + length(l) + "). But it is:" + index);
+      throw new IndexOutOfBoundsException("index must be between [0.." + length(l) + "). " + index);
     l = l >> LENGTH_BIT_SIZE;
     return TurkishAlphabet.getChar((int) ((l >> (index * CHAR_BIT_SIZE)) & CHAR_BIT_MASK));
   }
@@ -124,12 +122,25 @@ public class TinyStrings {
       return "";
 
     StringBuilder sb = new StringBuilder(length);
-    l = l >> LENGTH_BIT_SIZE;
+    l = l >>> LENGTH_BIT_SIZE;
     for (int i = 0; i < length; i++) {
       sb.append(TurkishAlphabet.getChar((int) l & CHAR_BIT_MASK));
-      l = l >> CHAR_BIT_SIZE;
+      l = l >>> CHAR_BIT_SIZE;
     }
     return sb.toString();
+  }
+
+  public static void addChar(long s, char c) {
+    final int index = TurkishAlphabet.getIndex(c);
+    if (index == -1) {
+      throw new IllegalArgumentException("Illegal Turkish character : " + c);
+    }
+    int length = length(s);
+    if (length == MAX_STRING_LEGTH) {
+      throw new IndexOutOfBoundsException("No slots left in tiny string. ");
+    }
+    length ++;
+    
   }
 
 }
