@@ -1,27 +1,16 @@
 package net.zemberek.deney.pandul;
 
-/**
- * immutable long representation of small strings.
- * it uses the alphabet indexes as characters.(index starts from zero.)
- * if the length of the string is l, the format is:
- * index(charAt(l-1)|index(charAt(l-2)|..|index(charAt(0)|l
- * for example. String "abe" is : [04010003] -> [e b a 3]
- * l can be maximum 7.
- */
-public class TinyTrString {
-
-  final long value;
-
+public class TinyStrings {
   /**
    * long based constructor. checks if input parameter is valid.
    *
    * @param value the long
+   * @return long value.
    * @throws IndexOutOfBoundsException if String size is not between [0-7] (inclusive)
    * @throws IllegalArgumentException  if the input vlaue is not valid. (size and idex values)
    */
-  public TinyTrString(long value) {
-    this.value = value;
-    int l = length();
+  public static long create(long value) {
+    final int l = length(value);
     if (l < 0 || l > 7)
       throw new IndexOutOfBoundsException("length must be between [0..7]. But it is:" + l);
 
@@ -32,19 +21,20 @@ public class TinyTrString {
         throw new IllegalArgumentException("String connot contain characters outside TurkishAlphabet");
       s = s >> 8;
     }
+    return s;
   }
 
   /**
    * constructor using
    *
    * @param str input string.
+   * @return long vString representation.
    * @throws IndexOutOfBoundsException if String size is larger than 7
    * @throws IllegalArgumentException  if there is a character out of TurkishAlphabet set.
    */
-  public TinyTrString(String str) {
+  public static long create(String str) {
     if (str == null || str.length() == 0) {
-      this.value = 0;
-      return;
+      return 0L;
     }
     if (str.length() > 7) {
       throw new IndexOutOfBoundsException("Compact String size cannot be larger than 7");
@@ -58,19 +48,20 @@ public class TinyTrString {
       t = (t | index) << 8;
     }
     t = t | str.length();
-    value = t;
+    return t;
   }
 
   /**
    * creates an object using value char c.
    *
    * @param c the content.
+   * @return long value.
    * @throws IllegalArgumentException if character is out of TurkishAlphabet set.
    */
-  public TinyTrString(char c) {
+  public static long create(char c) {
     final int index = TurkishAlphabet.getIndex(c);
     if (index != -1)
-      this.value = index << 8 | 0x01;
+      return index << 8 | 0x01;
     else
       throw new IllegalArgumentException("char:" + c + "cannot be outside TurkishAlphabet");
   }
@@ -79,47 +70,44 @@ public class TinyTrString {
   /**
    * lenth of the containing characters.
    *
+   * @param value the long representation.
    * @return length
    */
-  public int length() {
+  public static int length(long value) {
     return (int) value & 0xFF;
   }
 
   /**
    * returns the char at given index. index value must be between [0..length) length exclusive.
    *
+   * @param l the long representation.
    * @param index index
    * @return char at that index.
    */
-  public char charAt(int index) {
-    if (index < 0 || index >= length())
-      throw new IndexOutOfBoundsException("index must be between [0.." + length() + "). But it is:" + index);
-    return TurkishAlphabet.getChar((int) ((value >> (index + 1) * 8) & 0xff));
+  public char charAt(long l, int index) {
+    if (index < 0 || index >= length(l))
+      throw new IndexOutOfBoundsException("index must be between [0.." + length(l) + "). But it is:" + index);
+    return TurkishAlphabet.getChar((int) ((l >> (index + 1) * 8) & 0xff));
   }
 
   /**
    * generates String representation.
    *
+   * @param l the long representation.
    * @return String representation.
    */
-  public String asString() {
-    final int length = length();
+  public static String asString(long l) {
+    final int length = length(l);
     if (length == 0)
       return "";
 
     StringBuilder sb = new StringBuilder(length);
-    long s = value >> 8;
+    l = l >> 8;
     for (int i = 0; i < length; i++) {
-      sb.append(TurkishAlphabet.getChar((int) s & 0xff));
-      s = s >> 8;
+      sb.append(TurkishAlphabet.getChar((int) l & 0xff));
+      l = l >> 8;
     }
     return sb.toString();
   }
-
-  @Override
-  public String toString() {
-    return asString();
-  }
-
 
 }
