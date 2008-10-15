@@ -11,7 +11,7 @@ public class Node {
   private byte letter;
   private int bitmap;
   private int attribute;
-  private TinyTrString str;
+  private long strLong;
   // For compactness, sacrifice some construction performance 
   // (Using an arraylist would require an extra int) 
   private Node[] children;
@@ -29,7 +29,7 @@ public class Node {
       throw new IllegalArgumentException("Illegal character: " + c);
     }
     this.letter = (byte) TurkishAlphabet.getIndex(c);
-    this.str = new TinyTrString(c);
+    this.strLong = TinyStrings.create(c);
   }
   
   /**
