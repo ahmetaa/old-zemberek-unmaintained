@@ -45,7 +45,13 @@ public class TestTinyStrings {
     assertEquals('b', charAt(t, 1));
     assertEquals('f', charAt(t, 5));
   }
-
+  
+  @Test
+  public void testCharAt2() {
+    long t = create('b');
+    assertEquals('b', charAt(t, 0));
+  }
+  
   @Test(expected = IndexOutOfBoundsException.class)
   public void testCharAtException1() {
     charAt(create("abcdegf"), -1);

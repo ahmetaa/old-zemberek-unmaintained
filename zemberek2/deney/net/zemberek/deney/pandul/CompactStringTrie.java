@@ -56,40 +56,21 @@ public class CompactStringTrie {
    *     mas : . * 
    */
   public void compress(){
-    walk(root, new ArrayList<Node>());
+    walkAndMerge(root);
   }
   
   // Depth first traversal to find and compact node chains.
-  private void walk(Node node, List<Node> chain) {
-//    Node[] children = node.getChildren();
-//    chain.add(node);
-//    if (children == null) {
-//      if (chain.size() > 2) {
-//        // We have a long chain, now compress it.
-//        System.out.println("Identified chain:" + chain);
-//      }      
-//      chain.clear();
-//      return;
-//    }
-//    if (children.length > 1 || node.getAttribute() != 0) {
-//      if (chain.size() > 2) {
-//        // We have a long chain, now compress it.
-//        System.out.println("Identified chain:" + chain);
-//        // merge nodes
-//      }
-//      chain.clear();
-//      for(Node child: children) {
-//        walk(child, chain);
-//      }
-//    } else {
-//      walk(children[0], chain);
-//    }
+  private void walkAndMerge(Node node) {
+      Node[] children = node.getChildren();
+      if(children == null) {
+        return;
+      }
+      for(Node child: children) {
+        child.mergeDown();
+        walkAndMerge(child);
+      }
   }
   
-  private void checkChain() {
-    
-  }
-
   public List<String> get(String prefix) {
     return null;
   }
