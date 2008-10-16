@@ -15,7 +15,7 @@ package net.zemberek.deney.pandul;
 public class TinyStrings {
 
   private static final long LENGTH_BIT_MASK = 0x0f;
-  private static final int MAX_STRING_LENGTH = 10;
+  public static final int MAX_STRING_LENGTH = 10;
   private static final int CHAR_BIT_SIZE = 6;
   private static final long CHAR_BIT_MASK = 0x3f;
   private static final int LENGTH_BIT_SIZE = 4;
@@ -83,7 +83,7 @@ public class TinyStrings {
     final long index = TurkishAlphabet.getIndex(c);
     if (index == -1)
       throw new IllegalArgumentException("char:" + c + "cannot be outside TurkishAlphabet");
-    return (index << CHAR_BIT_SIZE) | 0x01;
+    return (index << LENGTH_BIT_SIZE) | 0x01;
   }
 
   /**

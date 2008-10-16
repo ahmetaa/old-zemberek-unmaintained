@@ -1,5 +1,8 @@
 package net.zemberek.deney.pandul;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 /**
  * A compact implementation for trie nodes.  
@@ -8,16 +11,13 @@ package net.zemberek.deney.pandul;
  *
  */
 public class Node {
-  private byte letter;
+  private long strLong;
   private int bitmap;
   private int attribute;
-  private long strLong;
-  // For compactness, sacrifice some construction performance 
-  // (Using an arraylist would require an extra int) 
   private Node[] children;
 
   public Node() {
-    letter = -1;
+    this.strLong = 0;
   }
   
   /**
@@ -28,7 +28,6 @@ public class Node {
     if (!TurkishAlphabet.isValid(c)) {
       throw new IllegalArgumentException("Illegal character: " + c);
     }
-    this.letter = (byte) TurkishAlphabet.getIndex(c);
     this.strLong = TinyStrings.create(c);
   }
   
@@ -112,23 +111,59 @@ public class Node {
    */
   public char getChar(){
     //Empty node?
-    if (letter == -1) {
+    if (strLong == 0) {
       return '#';
     }
-    return TurkishAlphabet.getChar(letter);
+    return TinyStrings.charAt(strLong, 0);
   }
   
   /**
    * Merges this node with all suitable subnodes
    * @param n
    */
-  public void merge(Node n){
-    // walk down until a leaf or junction, merge all the way.
+  public void mergeDown(){
+    // walk down until a leaf or junction, merges all the way.
+    if (!isChainNode()) {
+      return;
+    }
+    List<Node> chain = new ArrayList<Node>();
+    Node node = this.children[0];
+    while(node.isChainNode() && !node.isLeaf() 
+        && chain.size() < TinyStrings.MAX_STRING_LENGTH - 2) {
+      chain.add(node);
+      node = node.children[0];
+    }
+    chain.add(node);
+    System.out.println("chain: " + chain);
+    if(chain.size() > 0) {
+      for(Node n : chain) {
+        strLong = TinyStrings.addChar(strLong, n.getChar());
+      }
+      // child is either leaf or last node of chain.
+      this.attribute = node.attribute; 
+      // link last node to first, thus remove all nodes in between.
+      this.children = node.children;
+    }
+  }
+ 
+  public boolean isLeaf() {
+    return children == null;
+  }
+ 
+  public boolean isChainNode() {
+    return (children != null && children.length == 1 && attribute == 0);
+  }
+  
+  public String getString() {
+    if (strLong == 0) {
+      return "#";
+    }
+    else return TinyStrings.asString(this.strLong);
   }
   
   @Override
   public String toString() {
-    String s = getChar() + " : ";
+    String s = getString() + " : ";
     if (children != null) {
       s += "( ";
       for (Node node : children) {
