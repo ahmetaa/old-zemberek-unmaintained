@@ -14,10 +14,10 @@ package net.zemberek.deney.pandul;
  */
 public class TinyStrings {
 
-  private static final int LENGTH_BIT_MASK = 0x0f;
-  private static final int MAX_STRING_LEGTH = 10;
+  private static final long LENGTH_BIT_MASK = 0x0f;
+  private static final int MAX_STRING_LENGTH = 10;
   private static final int CHAR_BIT_SIZE = 6;
-  private static final int CHAR_BIT_MASK = 0x3f;
+  private static final long CHAR_BIT_MASK = 0x3f;
   private static final int LENGTH_BIT_SIZE = 4;
 
   /**
@@ -30,15 +30,15 @@ public class TinyStrings {
    */
   public static long create(long value) {
     final int l = length(value);
-    if (l < 0 || l > MAX_STRING_LEGTH - 1)
-      throw new IndexOutOfBoundsException("length must be between [0.." + (MAX_STRING_LEGTH - 1) + "]. But it is:" + l);
+    if (l < 0 || l > MAX_STRING_LENGTH - 1)
+      throw new IndexOutOfBoundsException("length must be between [0.." + (MAX_STRING_LENGTH - 1) + "]. But it is:" + l);
 
     long s = value >> LENGTH_BIT_SIZE;
     for (int i = 0; i < l; i++) {
       long t = s & CHAR_BIT_MASK;
       if (t < 0 || t >= TurkishAlphabet.ALPHABET_SIZE)
         throw new IllegalArgumentException("String connot contain characters outside TurkishAlphabet");
-      s = s >> CHAR_BIT_SIZE;
+      s = s >>> CHAR_BIT_SIZE;
     }
     return value;
   }
@@ -48,19 +48,19 @@ public class TinyStrings {
    *
    * @param str input string.
    * @return long vString representation.
-   * @throws IndexOutOfBoundsException if String size is larger than 7
+   * @throws IndexOutOfBoundsException if String size is larger than 10
    * @throws IllegalArgumentException  if there is a character out of TurkishAlphabet set.
    */
   public static long create(String str) {
     if (str == null || str.length() == 0) {
       return 0L;
     }
-    if (str.length() > MAX_STRING_LEGTH) {
-      throw new IndexOutOfBoundsException("String size cannot be larger than " + MAX_STRING_LEGTH);
+    if (str.length() > MAX_STRING_LENGTH) {
+      throw new IndexOutOfBoundsException("String size cannot be larger than " + MAX_STRING_LENGTH);
     }
     long t = 0;
     for (int i = str.length() - 1; i >= 0; i--) {
-      int index = TurkishAlphabet.getIndex(str.charAt(i));
+      long index = TurkishAlphabet.getIndex(str.charAt(i));
       if (index == -1)
         throw new IllegalArgumentException("String connot contain characters outside TurkishAlphabet");
       if (i > 0)
@@ -80,7 +80,7 @@ public class TinyStrings {
    * @throws IllegalArgumentException if character is out of TurkishAlphabet set.
    */
   public static long create(char c) {
-    final int index = TurkishAlphabet.getIndex(c);
+    final long index = TurkishAlphabet.getIndex(c);
     if (index == -1)
       throw new IllegalArgumentException("char:" + c + "cannot be outside TurkishAlphabet");
     return (index << CHAR_BIT_SIZE) | 0x01;
@@ -93,7 +93,7 @@ public class TinyStrings {
    * @return length
    */
   public static int length(long value) {
-    return (int) value & LENGTH_BIT_MASK;
+    return (int) (value & LENGTH_BIT_MASK);
   }
 
   /**
@@ -106,8 +106,8 @@ public class TinyStrings {
   public static char charAt(long l, int index) {
     if (index < 0 || index >= length(l))
       throw new IndexOutOfBoundsException("index must be between [0.." + length(l) + "). " + index);
-    l = l >> LENGTH_BIT_SIZE;
-    return TurkishAlphabet.getChar((int) ((l >> (index * CHAR_BIT_SIZE)) & CHAR_BIT_MASK));
+    l = l >>> LENGTH_BIT_SIZE;
+    return TurkishAlphabet.getChar((int) ((l >>> (index * CHAR_BIT_SIZE)) & CHAR_BIT_MASK));
   }
 
   /**
@@ -124,23 +124,32 @@ public class TinyStrings {
     StringBuilder sb = new StringBuilder(length);
     l = l >>> LENGTH_BIT_SIZE;
     for (int i = 0; i < length; i++) {
-      sb.append(TurkishAlphabet.getChar((int) l & CHAR_BIT_MASK));
+      sb.append(TurkishAlphabet.getChar((int) (l & CHAR_BIT_MASK)));
       l = l >>> CHAR_BIT_SIZE;
     }
     return sb.toString();
   }
 
-  public static void addChar(long s, char c) {
-    final int index = TurkishAlphabet.getIndex(c);
+  /**
+   * adds a character to the end of the TinyString
+   * @param s original String representing long.
+   * @param c char to add
+   * @return String representation.
+   * @throws IndexOutOfBoundsException if String size is 10
+   * @throws IllegalArgumentException  if there is a character out of TurkishAlphabet set.
+   */
+  public static long addChar(long s, char c) {
+    final long index = TurkishAlphabet.getIndex(c);
     if (index == -1) {
       throw new IllegalArgumentException("Illegal Turkish character : " + c);
     }
     int length = length(s);
-    if (length == MAX_STRING_LEGTH) {
+    if (length >= MAX_STRING_LENGTH) {
       throw new IndexOutOfBoundsException("No slots left in tiny string. ");
     }
-    length ++;
-    
+    s = s & ~LENGTH_BIT_MASK & ~(CHAR_BIT_MASK << (length * CHAR_BIT_SIZE + LENGTH_BIT_SIZE));
+    long cMask= index << (length * CHAR_BIT_SIZE + LENGTH_BIT_SIZE);
+    return s | cMask | (length+1);
   }
 
 }
