@@ -2,84 +2,102 @@ package net.zemberek.deney.pandul;
 
 import org.junit.Test;
 import junit.framework.Assert;
+import static junit.framework.Assert.assertEquals;
+import static net.zemberek.deney.pandul.TinyStrings.*;
 
 public class TestTinyStrings {
 
   @Test
   public void testLongCreate() {
     // 00|0001-0001
-    Assert.assertEquals(1, TinyStrings.length(TinyStrings.create(0x11L)));
+    assertEquals(1, length(create(0x11L)));
     // 000010-00|0001-0010
-    Assert.assertEquals(2, TinyStrings.length(TinyStrings.create(0x812L)));
+    assertEquals(2, length(create(0x812L)));
     // 000010-00|0001-0010
-    Assert.assertEquals("bc", TinyStrings.asString(TinyStrings.create(0x812L)));
+    assertEquals("bc", asString(create(0x812L)));
   }
 
   @Test(expected = IndexOutOfBoundsException.class)
   public void testLongCreateException1() {
-    TinyStrings.create(0xffff);
+    create(0xffff);
   }
 
   @Test(expected = IllegalArgumentException.class)
   public void testLongCreateException2() {
     // 11|1111-0001
-    TinyStrings.create(0x03f1L);
+    create(0x03f1L);
   }
 
   @Test(expected = IndexOutOfBoundsException.class)
   public void testStringCreateException1() {
-    TinyStrings.create("abcdegfhijk");
+    create("abcdegfhijk");
   }
 
   @Test(expected = IllegalArgumentException.class)
   public void testStringCreateException2() {
-    TinyStrings.create("x");
+    create("x");
   }
 
   @Test
   public void testCharAt() {
-    long t = TinyStrings.create("abcdef");
-    Assert.assertEquals('a', TinyStrings.charAt(t, 0));
-    Assert.assertEquals('b', TinyStrings.charAt(t, 1));
-    Assert.assertEquals('f', TinyStrings.charAt(t, 5));
+    long t = create("abcdef");
+    assertEquals('a', charAt(t, 0));
+    assertEquals('b', charAt(t, 1));
+    assertEquals('f', charAt(t, 5));
   }
 
   @Test(expected = IndexOutOfBoundsException.class)
   public void testCharAtException1() {
-    TinyStrings.charAt(TinyStrings.create("abcdegf"), -1);
+    charAt(create("abcdegf"), -1);
   }
 
   @Test(expected = IndexOutOfBoundsException.class)
   public void testCharAtException2() {
-    TinyStrings.charAt(TinyStrings.create("abc"), 3);
+    charAt(create("abc"), 3);
   }
 
   @Test
   public void testCharCreate() {
-    Assert.assertEquals("a", TinyStrings.asString(TinyStrings.create('a')));
-    Assert.assertEquals(1, TinyStrings.length(TinyStrings.create('a')));
+    assertEquals("a", asString(create('a')));
+    assertEquals(1, length(create('a')));
   }
 
   @Test(expected = IllegalArgumentException.class)
   public void testCharCreateException1() {
-    TinyStrings.create('$');
+    create('$');
   }
 
   String[] strs = {"blah", "", "a", "abcde", "abcdef"};
 
   @Test
   public void testAsString() {
-    //Assert.assertEquals("", TinyStrings.asString(TinyStrings.create(null)));
+    Assert.assertEquals("", TinyStrings.asString(TinyStrings.create(null)));
     for (String str : strs) {
-      Assert.assertEquals("not working for:" + str, str, TinyStrings.asString(TinyStrings.create(str)));
+      assertEquals("not working for:" + str, str, asString(create(str)));
     }
   }
 
   @Test
   public void testLength() {
     for (String str : strs) {
-      Assert.assertEquals(str.length(), TinyStrings.length(TinyStrings.create(str)));
+      assertEquals(str.length(), length(create(str)));
     }
+  }
+
+  @Test
+  public void testAdd() {
+    assertEquals("abcdefg", asString(addChar(create("abcdef"),'g')));
+    assertEquals("bd", asString(addChar(create("b"),'d')));
+  }
+
+  @Test(expected = IndexOutOfBoundsException.class)
+  public void testAddException1() {
+    addChar(create("abcdegfhij"),'k');
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testAddException2() {
+    addChar(create("abc"),'x');
   }
 
 }
