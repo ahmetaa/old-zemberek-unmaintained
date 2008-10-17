@@ -134,7 +134,6 @@ public class Node {
       node = node.children[0];
     }
     chain.add(node);
-    System.out.println("chain: " + chain);
     if(chain.size() > 0) {
       for(Node n : chain) {
         strLong = TinyStrings.addChar(strLong, n.getChar());
@@ -143,6 +142,7 @@ public class Node {
       this.attribute = node.attribute; 
       // link last node to first, thus remove all nodes in between.
       this.children = node.children;
+      node.children = null;
     }
   }
  

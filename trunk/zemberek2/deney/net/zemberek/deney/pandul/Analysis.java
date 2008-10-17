@@ -43,6 +43,20 @@ public class Analysis {
     }
   }
   
+  
+  public static void report(CompactStringTrie cst){
+    System.out.println("Total Nodes: " + totalNodes);
+    System.out.println("Total Leaf Nodes: " + leafNodes);    
+    for (int i = 0; i < childCounts.length; i++) {
+      if(childCounts[i] == 0) continue;
+      System.out.println("Nodes with " + i + " children: " + childCounts[i]);
+    }
+    for (int i = 0; i < chainLengths.length; i++) {
+      if(chainLengths[i] == 0) continue;
+      System.out.println("Chains of length " + i + " : " + chainLengths[i]);
+    }
+  }
+  
   public static void main(String[] args) throws IOException {
     CompactStringTrie cst = new CompactStringTrie();
     BufferedReader reader = new KaynakYukleyici().getReader("kaynaklar/tr/bilgi/duzyazi-kilavuz.txt");
@@ -62,21 +76,23 @@ public class Analysis {
       line = line.replaceAll("\\`", "");
       line = line.replaceAll("[qwx-]", "");
       total++;
-      System.out.println(line);  
+//      System.out.println(line);  
       cst.add(line);
     }
     System.out.println("Total entries in the dictionary: " + total);
     
     walk(cst.getRoot(), 0);
-    System.out.println("Total Nodes: " + totalNodes);
-    System.out.println("Total Leaf Nodes: " + leafNodes);    
-    for (int i = 0; i < childCounts.length; i++) {
-      if(childCounts[i] == 0) continue;
-      System.out.println("Nodes with " + i + " children: " + childCounts[i]);
-    }
-    for (int i = 0; i < chainLengths.length; i++) {
-      if(chainLengths[i] == 0) continue;
-      System.out.println("Chains of length " + i + " : " + chainLengths[i]);
-    }
+    report(cst);
+    
+    totalNodes = 0;
+    childCounts = new int[40];
+    chainLengths = new int[20];
+    leafNodes = 0;
+    long time = System.currentTimeMillis();
+    cst.compress();
+    System.out.println(System.currentTimeMillis() - time);
+    walk(cst.getRoot(), 0);
+    report(cst);
+    
   }
 }
