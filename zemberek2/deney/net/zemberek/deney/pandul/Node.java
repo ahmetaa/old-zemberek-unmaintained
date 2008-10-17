@@ -5,8 +5,11 @@ import java.util.List;
 
 
 /**
- * A compact implementation for trie nodes.  
+ * A compact implementation for trie nodes for memory limited systems.  
  * 
+ * @TODO(mdakin): Alphabet access should be through an Alphabet singleton 
+ * to able to use different alphabets (languages) 
+ *  
  * @author mdakin
  *
  */
@@ -119,13 +122,12 @@ public class Node {
   
   /**
    * Merges this node with all suitable subnodes
-   * @param n
    */
   public void mergeDown(){
-    // walk down until a leaf or junction, merges all the way.
     if (!isChainNode()) {
       return;
     }
+    // walk down until a leaf or junction, merges all the way.
     List<Node> chain = new ArrayList<Node>();
     Node node = this.children[0];
     while(node.isChainNode() && !node.isLeaf() 
@@ -142,7 +144,6 @@ public class Node {
       this.attribute = node.attribute; 
       // link last node to first, thus remove all nodes in between.
       this.children = node.children;
-      node.children = null;
     }
   }
  
@@ -183,7 +184,6 @@ public class Node {
    * Returns string representation of node and all child nodes until leafs.
    *
    * @param level
-   * @return 
    */
   public final void toDeepString(StringBuffer b, int level) {
     char[] indentChars = new char[level * 2];
@@ -200,7 +200,7 @@ public class Node {
 
   /**
    * 
-   * @return Flat string representation of node and all child nodes.
+   * Flat string representation of node and all child nodes.
    * Used for testing purposes only. Given a tree like this:
    * 
    *      a
@@ -227,7 +227,7 @@ public class Node {
    * @param flat : if true, returns a flat version of node and all subnodes
    * using a depth first traversal. if false, returns multi line, indented
    * version of node tree.
-   * @return
+   * @return a flat or tree string representation of trie.
    */
   public final String dump(boolean flat) {
     StringBuffer b = new StringBuffer();

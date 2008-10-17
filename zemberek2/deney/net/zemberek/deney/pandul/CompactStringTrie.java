@@ -1,6 +1,5 @@
 package net.zemberek.deney.pandul;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -59,7 +58,7 @@ public class CompactStringTrie {
     walkAndMerge(root);
   }
   
-  // Depth first traversal to find and compact node chains.
+  // Depth first traversal, merge chains during the walk.
   private void walkAndMerge(Node node) {
       Node[] children = node.getChildren();
       if(children == null) {
