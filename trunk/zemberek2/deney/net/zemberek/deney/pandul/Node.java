@@ -1,5 +1,8 @@
 package net.zemberek.deney.pandul;
 
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -143,6 +146,7 @@ public class Node {
       // child is either leaf or last node of chain.
       this.attribute = node.attribute; 
       // link last node to first, thus remove all nodes in between.
+      this.bitmap = node.bitmap;
       this.children = node.children;
     }
   }
@@ -185,7 +189,7 @@ public class Node {
    *
    * @param level
    */
-  public final void toDeepString(StringBuffer b, int level) {
+  private final void toDeepString(StringBuffer b, int level) {
     char[] indentChars = new char[level * 2];
     for (int i = 0; i < indentChars.length; i++)
       indentChars[i] = ' ';
@@ -246,4 +250,39 @@ public class Node {
   public void setAttribute(int attribute) {
     this.attribute = attribute;
   }
+  
+  /**
+   * Writes content of node and all subnodes recusrively to data output stream.
+   * TODO(mdakin): Seriazlized size could be improved by writing less for nodes
+   * containing less chars.
+   * @param dos
+   * @throws IOException
+   */
+  public void serialize(DataOutputStream dos) throws IOException {
+    dos.writeLong(strLong);
+    dos.writeInt(attribute);
+    dos.writeInt(bitmap);
+    if(children == null) {
+      return;
+    }
+    for(Node child: children) {
+      child.serialize(dos);
+    }    
+  }
+  
+  public void deserialize(DataInputStream dis) throws IOException {
+    strLong = dis.readLong();
+    attribute = dis.readInt();
+    bitmap = dis.readInt();
+    // For each bit set in bitmap, 
+    if (bitmap == 0) {
+      return;
+    }
+    for (int i = 0; i < 32 ; i++) {
+      if(hasChild(i)) {
+        Node n = addNodeFor(TurkishAlphabet.getChar(i));
+        n.deserialize(dis);
+      }
+    }
+  }  
 }

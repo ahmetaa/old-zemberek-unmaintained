@@ -2,7 +2,10 @@ package net.zemberek.deney.pandul;
 
 import net.zemberek.bilgi.KaynakYukleyici;
 
+import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
+import java.io.DataOutputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 
 /**
@@ -80,13 +83,14 @@ public class Analysis {
 
     walk(cst.getRoot(), 0);
     report(cst);
-
     totalNodes = 0;
     childCounts = new int[40];
     chainLengths = new int[20];
     leafNodes = 0;
     long time = System.currentTimeMillis();
     cst.compress();
+    DataOutputStream dos = new DataOutputStream(new BufferedOutputStream(new FileOutputStream("tr.dic")));
+    cst.save(dos);
     System.out.println("time:" + (System.currentTimeMillis() - time));
     walk(cst.getRoot(), 0);
     report(cst);
