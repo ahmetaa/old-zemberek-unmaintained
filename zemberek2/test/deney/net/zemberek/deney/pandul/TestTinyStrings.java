@@ -1,9 +1,9 @@
 package net.zemberek.deney.pandul;
 
 import org.junit.Test;
-import junit.framework.Assert;
 import static junit.framework.Assert.assertEquals;
 import static net.zemberek.deney.pandul.TinyStrings.*;
+
 
 public class TestTinyStrings {
 
@@ -77,7 +77,7 @@ public class TestTinyStrings {
 
   @Test
   public void testAsString() {
-    Assert.assertEquals("", TinyStrings.asString(TinyStrings.create(null)));
+    assertEquals("", asString(create(null)));
     for (String str : strs) {
       assertEquals("not working for:" + str, str, asString(create(str)));
     }
@@ -92,18 +92,18 @@ public class TestTinyStrings {
 
   @Test
   public void testAdd() {
-    assertEquals("abcdefg", asString(addChar(create("abcdef"),'g')));
-    assertEquals("bd", asString(addChar(create("b"),'d')));
+    assertEquals("abcdefg", asString(addChar(create("abcdef"), 'g')));
+    assertEquals("bd", asString(addChar(create("b"), 'd')));
   }
 
   @Test(expected = IndexOutOfBoundsException.class)
   public void testAddException1() {
-    addChar(create("abcdegfhij"),'k');
+    addChar(create("abcdegfhij"), 'k');
   }
 
   @Test(expected = IllegalArgumentException.class)
   public void testAddException2() {
-    addChar(create("abc"),'x');
+    addChar(create("abc"), 'x');
   }
 
 }

@@ -14,10 +14,10 @@ package net.zemberek.deney.pandul;
  */
 public class TinyStrings {
 
-  private static final long LENGTH_BIT_MASK = 0x0f;
+  private static final long LENGTH_BIT_MASK = 0x0fL;
   public static final int MAX_STRING_LENGTH = 10;
   private static final int CHAR_BIT_SIZE = 6;
-  private static final long CHAR_BIT_MASK = 0x3f;
+  private static final long CHAR_BIT_MASK = 0x3fL;
   private static final int LENGTH_BIT_SIZE = 4;
 
   /**
@@ -147,9 +147,8 @@ public class TinyStrings {
     if (length >= MAX_STRING_LENGTH) {
       throw new IndexOutOfBoundsException("No slots left in tiny string. ");
     }
-    s = s & ~LENGTH_BIT_MASK & ~(CHAR_BIT_MASK << (length * CHAR_BIT_SIZE + LENGTH_BIT_SIZE));
-    long cMask= index << (length * CHAR_BIT_SIZE + LENGTH_BIT_SIZE);
-    return s | cMask | (length+1);
+    // zero the length bits | put the char | put the new lenth.
+    return (s & ~LENGTH_BIT_MASK) | index << (length * CHAR_BIT_SIZE + LENGTH_BIT_SIZE) | (length+1);
   }
 
 }
