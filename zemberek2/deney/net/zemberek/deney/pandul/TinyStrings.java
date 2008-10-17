@@ -28,7 +28,7 @@ public class TinyStrings {
    * @throws IndexOutOfBoundsException if String size is not between [0-10] (inclusive)
    * @throws IllegalArgumentException  if the input vlaue is not valid. (size and idex values)
    */
-  public static long create(long value) {
+   static long create(long value) {
     final int l = length(value);
     if (l < 0 || l > MAX_STRING_LENGTH - 1)
       throw new IndexOutOfBoundsException("length must be between [0.." + (MAX_STRING_LENGTH - 1) + "]. But it is:" + l);
@@ -134,7 +134,7 @@ public class TinyStrings {
    * adds a character to the end of the TinyString
    * @param s original String representing long.
    * @param c char to add
-   * @return String representation.
+   * @return long representation.
    * @throws IndexOutOfBoundsException if String size is 10
    * @throws IllegalArgumentException  if there is a character out of TurkishAlphabet set.
    */
