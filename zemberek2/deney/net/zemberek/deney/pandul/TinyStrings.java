@@ -11,6 +11,8 @@ package net.zemberek.deney.pandul;
  * binary[ 000100 000001 000000 0011]
  * hex [40403] -> [e b a 3]
  * l can be maximum 10.
+ * 
+ * @author ahmetaa
  */
 public class TinyStrings {
 
