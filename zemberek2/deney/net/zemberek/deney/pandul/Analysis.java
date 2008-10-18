@@ -2,9 +2,10 @@ package net.zemberek.deney.pandul;
 
 import net.zemberek.bilgi.KaynakYukleyici;
 
+import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
-import java.io.DataOutputStream;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
@@ -89,11 +90,18 @@ public class Analysis {
     leafNodes = 0;
     long time = System.currentTimeMillis();
     cst.compress();
-    DataOutputStream dos = new DataOutputStream(new BufferedOutputStream(new FileOutputStream("tr.dic")));
-    cst.save(dos);
-    System.out.println("time:" + (System.currentTimeMillis() - time));
+    cst.save(new BufferedOutputStream(new FileOutputStream("tr.dic")));
+    long delta = System.currentTimeMillis() - time;
+    System.out.println("Compression time:" + delta);
     walk(cst.getRoot(), 0);
     report(cst);
-
+    
+    delta = System.currentTimeMillis() - time;
+    System.out.println("time:" + delta);
+    CompactStringTrie cst2 = new CompactStringTrie();
+    cst2.load(new BufferedInputStream(new FileInputStream("tr.dic")));
+    delta = System.currentTimeMillis() - time;
+    System.out.println("Load time:" + delta + "ms");
+    
   }
 }

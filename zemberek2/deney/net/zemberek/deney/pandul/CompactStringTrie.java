@@ -3,6 +3,8 @@ package net.zemberek.deney.pandul;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.List;
 
 /**
@@ -81,14 +83,14 @@ public class CompactStringTrie {
     return root;
   }
 
-  public void save(DataOutputStream writer) throws IOException {
-    root.serialize(writer);
-    writer.close();
+  public void save(OutputStream os) throws IOException {
+    root.serialize(new DataOutputStream(os));
+    os.close();
   }
 
-  public void load(DataInputStream reader) throws IOException {
-    root.deserialize(reader);
-    reader.close();
+  public void load(InputStream is) throws IOException {
+    root.deserialize(new DataInputStream(is));
+    is.close();
   }
 
 
