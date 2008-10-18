@@ -277,12 +277,12 @@ public class Node {
     if (bitmap == 0) {
       return;
     }
-    int tmp = bitmap;
-    int index;
-    while((index = Integer.numberOfTrailingZeros(tmp)) != 32) {
-      Node n = addNodeFor(TurkishAlphabet.getChar(index));
-      n.deserialize(dis);
-      tmp &= ~(1 << index);
+    int limit = Integer.numberOfLeadingZeros(bitmap);
+    for (int i = Integer.numberOfTrailingZeros(bitmap); i < 32 - limit; i++) {
+      if (hasChild(i)) {
+        Node n = addNodeFor(TurkishAlphabet.getChar(i));
+        n.deserialize(dis);
+      }
     }
   }  
 }
