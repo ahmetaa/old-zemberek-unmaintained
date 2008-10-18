@@ -4,8 +4,6 @@ import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
 import java.io.IOException;
 
 import junit.framework.TestCase;
@@ -129,23 +127,20 @@ public class CompactStringTrieTest extends TestCase {
   
   public void testSave() throws IOException {
     ByteArrayOutputStream bo = new ByteArrayOutputStream();
-    DataOutputStream dos = new DataOutputStream(new BufferedOutputStream(bo));
     CompactStringTrie cst = new CompactStringTrie();
     cst.add("a");
     cst.add("b");
     cst.add("elma");
     cst.compress();
     String s1 = cst.getRoot().dump(true);
-    cst.save(dos);
-    dos.close();
+    cst.save(new BufferedOutputStream(bo));
     byte[] b = bo.toByteArray();
     assertNotNull(b);
     assertTrue(b.length > 0);
     System.out.println(b.length);
     ByteArrayInputStream bi = new ByteArrayInputStream(b);
-    DataInputStream dis = new DataInputStream(new BufferedInputStream(bi));
     CompactStringTrie cst2 = new CompactStringTrie();
-    cst2.load(dis);
+    cst2.load(new BufferedInputStream(bi));
     String s2 = cst.getRoot().dump(true);
     assertEquals(s1, s2);
   }

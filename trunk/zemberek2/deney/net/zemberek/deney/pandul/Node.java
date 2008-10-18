@@ -274,15 +274,15 @@ public class Node {
     strLong = dis.readLong();
     attribute = dis.readInt();
     bitmap = dis.readInt();
-    // For each bit set in bitmap, 
     if (bitmap == 0) {
       return;
     }
-    for (int i = 0; i < 32 ; i++) {
-      if(hasChild(i)) {
-        Node n = addNodeFor(TurkishAlphabet.getChar(i));
-        n.deserialize(dis);
-      }
+    int tmp = bitmap;
+    int index;
+    while((index = Integer.numberOfTrailingZeros(tmp)) != 32) {
+      Node n = addNodeFor(TurkishAlphabet.getChar(index));
+      n.deserialize(dis);
+      tmp &= ~(1 << index);
     }
   }  
 }
