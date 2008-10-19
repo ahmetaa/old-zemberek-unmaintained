@@ -284,5 +284,9 @@ public class Node {
         n.deserialize(dis);
       }
     }
+  }
+
+  public boolean hasWord() {
+    return attribute != 0;
   }  
 }

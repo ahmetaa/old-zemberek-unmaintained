@@ -5,6 +5,7 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -75,8 +76,22 @@ public class CompactStringTrie {
       }
   }
   
-  public List<String> get(String prefix) {
-    return null;
+  public List<String> getMatchingRoots(String input) {
+    Node node = root;
+    int index = 0;
+    String s = "";
+    List<String> words = new ArrayList<String>();
+    while (index < input.length()) {
+      node = node.getChildNode(input.charAt(index));
+      if (node == null) break;
+      String nodeString = node.getString();
+      s += nodeString;
+      if (input.startsWith(s) && node.hasWord()) {
+          words.add(s);
+      }
+      index += nodeString.length();
+    }
+    return words;
   }
 
   public Node getRoot() {

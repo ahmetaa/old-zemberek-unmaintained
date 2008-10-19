@@ -5,6 +5,7 @@ import java.io.BufferedOutputStream;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.util.List;
 
 import junit.framework.TestCase;
 
@@ -143,6 +144,22 @@ public class CompactStringTrieTest extends TestCase {
     cst2.load(new BufferedInputStream(bi));
     String s2 = cst.getRoot().dump(true);
     assertEquals(s1, s2);
+  }
+  
+  public void testFindPrefixMatches(){
+    CompactStringTrie cst = new CompactStringTrie();
+    cst.add("el");
+    cst.add("elma");
+    cst.add("ela");
+    cst.add("elmas");
+    cst.add("et");
+    cst.compress();
+    System.out.println(cst.getRoot().dump(false));
+    List<String> roots = cst.getMatchingRoots("elmaslara");
+    assertEquals(3, roots.size());
+    assertEquals("el", roots.get(0));
+    assertEquals("elma", roots.get(1));
+    assertEquals("elmas", roots.get(2));
   }
   
 }
