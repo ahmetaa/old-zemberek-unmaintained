@@ -59,6 +59,7 @@ public class CompactStringTrie {
    *   el : (a m)
    *     a : . * 
    *     mas : . * 
+   * 
    */
   public void compress(){
     walkAndMerge(root);
