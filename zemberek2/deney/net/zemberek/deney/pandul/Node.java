@@ -27,8 +27,8 @@ public class Node {
   }
   
   /**
-   * @param c : A Turkish character
-   * 
+   * @param c : A character. It must be in the alphabet
+   * @throws IllegalArgumentException : If character is not defined in alphabet
    */
   public Node(char c) {
     if (!TurkishAlphabet.isValid(c)) {
@@ -63,7 +63,7 @@ public class Node {
    * @param c
    * @throws IllegalArgumentException if c is not a legal character.
    */
-  public Node addNodeFor(char c) {
+  final Node addNodeFor(char c) {
     if (!TurkishAlphabet.isValid(c)) {
       throw new IllegalArgumentException("Illegal character: " + c);
     }
@@ -115,7 +115,7 @@ public class Node {
   /**
    * @return the representative char. or # if node is root
    */
-  public char getChar(){
+  final char getChar(){
     //Empty node?
     if (strLong == 0) {
       return '#';
@@ -126,7 +126,7 @@ public class Node {
   /**
    * Merges this node with all suitable subnodes
    */
-  public void mergeDown(){
+  final void mergeDown(){
     if (!isChainNode()) {
       return;
     }
@@ -228,8 +228,8 @@ public class Node {
   /**
    * Returns string representation of Node (and subnodes) for testing.
    * 
-   * @param flat : if true, returns a flat version of node and all subnodes
-   * using a depth first traversal. if false, returns multi line, indented
+   * @param flat : if true, returns a flat version of node and all sub nodes
+   * using a depth first traversal. if false, returns multiline, indented
    * version of node tree.
    * @return a flat or tree string representation of trie.
    */
@@ -252,8 +252,8 @@ public class Node {
   }
   
   /**
-   * Writes content of node and all subnodes recusrively to data output stream.
-   * TODO(mdakin): Seriazlized size could be improved by writing less for nodes
+   * Writes content of node and all sub nodes recursively to data output stream.
+   * TODO(mdakin): Serialized size could be improved by writing less for nodes
    * containing less chars.
    * @param dos
    * @throws IOException
@@ -276,12 +276,20 @@ public class Node {
     bitmap = dis.readInt();
     if (bitmap == 0) {
       return;
+    } else {
+      // Create the node list in advance to gain performance. We know that it 
+      // will contain "number of one bits in the bitmap" count of sub nodes.
+      // So we will not bother expanding the bitmap
+      children = new Node[Integer.bitCount(bitmap)];
     }
     int limit = Integer.numberOfLeadingZeros(bitmap);
     for (int i = Integer.numberOfTrailingZeros(bitmap); i < 32 - limit; i++) {
       if (hasChild(i)) {
-        Node n = addNodeFor(TurkishAlphabet.getChar(i));
-        n.deserialize(dis);
+        Node child = new Node(TurkishAlphabet.getChar(i));
+        children[getArrayIndex(i)] = child;
+        child.deserialize(dis);
+//        Node n = addNodeFor(TurkishAlphabet.getChar(i));
+//        n.deserialize(dis);
       }
     }
   }

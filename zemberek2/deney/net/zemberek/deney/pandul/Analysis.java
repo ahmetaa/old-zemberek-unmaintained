@@ -8,6 +8,16 @@ import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeMap;
+import java.util.Map.Entry;
 
 /**
  * Simple test application to see the performance - footprint of trie
@@ -60,9 +70,22 @@ public class Analysis {
       System.out.println("Chains of length " + i + " : " + chainLengths[i]);
     }
   }
+  
+  private static List<Entry<String, Integer>> getSortedCopy(Set<Entry<String, Integer>> set) {
+    List<Entry<String, Integer>> entries = new ArrayList<Entry<String, Integer>>(set);
+    Collections.sort(entries, new Comparator<Entry<String, Integer>>() {
+      public int compare(Entry<String, Integer> o1, Entry<String, Integer> o2) {
+        return o2.getValue().compareTo(o1.getValue());
+      }
+    });
+   return entries; 
+  }
 
   public static void main(String[] args) throws IOException {
     CompactStringTrie cst = new CompactStringTrie();
+    Map<String, Integer> attributes = new TreeMap<String, Integer>();
+    Map<String, Integer> attributeGroups = new TreeMap<String, Integer>();
+        
     BufferedReader reader = new KaynakYukleyici("utf-8").getReader("kaynaklar/tr/bilgi/duzyazi-kilavuz.txt");
     String line;
     int total = 0;
@@ -76,12 +99,41 @@ public class Analysis {
         continue;
       }
       line = parts[0].replaceAll("['.`qwx-]", "");
+      String attributeGroup = "";
+      for (int i = 1; i < parts.length ; i++) {
+        if (parts[i].trim().length() == 0) continue;
+        Integer c = attributes.get(parts[i]);
+        if (c == null) {
+          attributes.put(parts[i], 1);
+        } else {
+          attributes.put(parts[i], c.intValue() + 1);
+        }
+        attributeGroup += parts[i] + "-";
+      }
+      if (attributeGroup.trim().length() != 0) {
+        Integer c = attributeGroups.get(attributeGroup);
+        if (c == null) {
+          attributeGroups.put(attributeGroup, 1);
+        } else {
+          attributeGroups.put(attributeGroup, c.intValue() + 1);
+        }
+      }
       total++;
-//      System.out.println(line);  
       cst.add(line);
     }
     System.out.println("Total entries in the dictionary: " + total);
 
+    System.out.println("Unique Attributes Total:" + attributes.size());
+    
+    for (Entry<String, Integer> entry : getSortedCopy(attributes.entrySet())) {
+      System.out.println(entry.getKey() + " : " + entry.getValue());
+    }
+    System.out.println();
+    System.out.println("Attribute Groups Total: " + attributeGroups.size());
+    for (Entry<String, Integer> entry : getSortedCopy(attributeGroups.entrySet())) {
+      System.out.println(entry.getKey() + " : " + entry.getValue());
+    }
+    
     walk(cst.getRoot(), 0);
     report(cst);
     totalNodes = 0;
