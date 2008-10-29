@@ -34,7 +34,7 @@ public class Analysis {
   /**
    * Recursively walks the trie and updates statistics.
    *
-   * @param node
+   * @param node a Node
    * @param chainLen : A chain is nodes with single childs without
    *                 a word mark. A leaf node can be part of chain as well.
    */

@@ -39,7 +39,7 @@ public class Node {
   
   /**
    * Returns child node identfied with char c.
-   * @param c
+   * @param c child node identifier.
    * @return the child node, identified by input char c, 
    * null if there is no child exist for given char.
    */
@@ -60,8 +60,9 @@ public class Node {
    * Creates a child node identified by character c and attaches it 
    * to children list.
    * 
-   * @param c
+   * @param c child node character
    * @throws IllegalArgumentException if c is not a legal character.
+   * @return returns the the node created for the given character.
    */
   final Node addNodeFor(char c) {
     if (!TurkishAlphabet.isValid(c)) {
@@ -187,9 +188,10 @@ public class Node {
   /**
    * Returns string representation of node and all child nodes until leafs.
    *
-   * @param level
+   * @param b string buffer to append.
+   * @param level level of the operation
    */
-  private final void toDeepString(StringBuffer b, int level) {
+  private void toDeepString(StringBuffer b, int level) {
     char[] indentChars = new char[level * 2];
     for (int i = 0; i < indentChars.length; i++)
       indentChars[i] = ' ';
@@ -214,10 +216,11 @@ public class Node {
    *  e* 
    *   
    * This method returns: a:(bc)|b:(e)|e:(.)*|c:(.)*
-   *  
+   *
+   * @param b stringbuffer to append.
    */
   public final void toFlatString(StringBuffer b) {
-    b.append(this.toString().replaceAll(" ", "") + "|");
+      b.append(this.toString().replaceAll(" ", "")).append("|");
     if (children != null) {
       for (Node subNode : this.children) {
         subNode.toFlatString(b);
@@ -255,8 +258,8 @@ public class Node {
    * Writes content of node and all sub nodes recursively to data output stream.
    * TODO(mdakin): Serialized size could be improved by writing less for nodes
    * containing less chars.
-   * @param dos
-   * @throws IOException
+   * @param dos Data output stream
+   * @throws IOException if something goes wrong during write.
    */
   public void serialize(DataOutputStream dos) throws IOException {
     dos.writeLong(strLong);
