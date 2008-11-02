@@ -30,6 +30,24 @@
 		<mkdir dir="${dist.jar.dir}" />
 		<mkdir dir="${dist.jar.skipreg.dir}" />
 	</target>
+	
+	<path id="ooo2.classpath">
+		<fileset dir="${openoffice.root.dir}/classes">
+			<include name="**/*.jar" />
+			<include name="**/*.zip" />
+		</fileset>
+	</path>
+	
+	<path id="ooo3.classpath">
+		<fileset dir="${openoffice.root.dir}/ure/share/java">
+			<include name="**/*.jar" />
+			<include name="**/*.zip" />
+		</fileset>
+		<fileset dir="${openoffice.root.dir}/basis3.0/program/classes">
+			<include name="**/*.jar" />
+			<include name="**/*.zip" />
+		</fileset>
+	</path>
 
 	<target name="compile-java" depends="init" description="compile all java files">
 		<javac srcdir="${src.dir}" destdir="${build.classes.dir}" source="1.5" target="1.5"
@@ -39,10 +57,7 @@
 					<include name="**/*.jar" />
 					<include name="**/*.zip" />
 				</fileset>
-				<fileset dir="${openoffice.lib.dir}">
-					<include name="**/*.jar" />
-					<include name="**/*.zip" />
-				</fileset>
+				<path refid="ooo${ooo.version}.classpath"/>
 			</classpath>
 			<src path="${src.dir}"/>
 			<include name="**/*.java" />
@@ -127,22 +142,30 @@
 	-->
 
 	<target name="build-all" depends="clean,init" description="build the project">
-		<!-- <antcall target="compile-idl" /> -->
+		<!-- Burasi duzenlencek
+		<fail message="Harici zemberek kullanildiginda zemberek.classpath degeri tanimlanmalidir.">
+			<condition>
+				<and>
+					<istrue value="${use.external.zemberek}"/>
+					<not><isset property="${zemberek.classpath}"/></not>
+				</and>
+			</condition>
+		</fail>
+		-->
+		<condition property="manifest.classpath" value="${zemberek.classpath}" else="skip_registration/zemberek2-cekirdek.jar skip_registration/zemberek2-tr.jar">
+			<istrue value="${use.external.zemberek}"/>
+		</condition>
+		<condition property="zemberek.jars" value="" else="lib/*.jar">
+			<istrue value="${use.external.zemberek}"/>
+		</condition>
 		<antcall target="compile-java" />
-		<!-- deprecated <copydir dest="${dist.jar.skipreg.dir}" src="${lib.dir}" /> -->
-		<copy todir="${dist.jar.skipreg.dir}"> 
-		<!-- <copy todir="${dist.jar.dir}"> -->
-			<fileset dir="${lib.dir}">
-			      <include name="*.jar"/>
-  	        </fileset>
-		</copy>
 		
 		<jar jarfile="${build.dir}/${spellchecker.project.name}.uno.jar" basedir="${build.classes.dir}">
 			<include name="net/zemberek/ooo/**"/>
             <exclude name="net/zemberek/ooo/hyphenator/**"/>
 			<manifest>
 				<attribute name="RegistrationClassName" value="${spellchecker.registration.classname}" />
-				<attribute name="Class-Path" value="skip_registration/zemberek2-cekirdek.jar skip_registration/zemberek2-tr.jar"/>
+				<attribute name="Class-Path" value="${manifest.classpath}"/>
 			</manifest>
 		</jar>
 		
@@ -151,11 +174,11 @@
             <exclude name="net/zemberek/ooo/spellchecker/**"/>
 			<manifest>
 				<attribute name="RegistrationClassName" value="${hyphenator.registration.classname}" />
-				<attribute name="Class-Path" value="skip_registration/zemberek2-cekirdek.jar skip_registration/zemberek2-tr.jar"/>
+				<attribute name="Class-Path" value="${manifest.classpath}"/>
 			</manifest>
 		</jar>
 		
-		<zip destfile="${build.dir}/${project.name}.oxt">
+		<zip destfile="${dist.dir}/${project.name}.oxt">
        			<zipfileset file="${build.dir}/${spellchecker.project.name}.uno.jar" />
        			<zipfileset file="${build.dir}/${hyphenator.project.name}.uno.jar" />
 <!--       		<zipfileset file="${basedir}/binary-sozluk.bin" />-->
@@ -166,7 +189,37 @@
 			<zipfileset file="${res.dir}/xml/description.xml"/>
 			<zipfileset file="${res.dir}/xml/manifest.xml" prefix="META-INF"/>
 			<zipfileset dir="${dist.jar.dir}"/>
+			<zipfileset dir="lib" prefix="skip_registration">
+				<include name="${zemberek.jars}"/>
+			</zipfileset>
 		</zip>
+		<antcall target="tarball">
+    		<param name="nolibs" value="false"/>
+    	</antcall>
+    	<antcall target="tarball">
+    		<param name="nolibs" value="true"/>
+    	</antcall>
+	</target>
+	
+	<target name="tarball">
+		<condition property="nolibssuff" value="-nolibs" else="">
+			<istrue value="${nolibs}"/>
+		</condition>
+		<condition property="libs" value="lib/**" else="lib">
+			<isfalse value="${nolibs}"/>
+		</condition>
+		<tar
+			destfile="${dist.dir}/${project.name}${nolibssuff}.tar.gz"
+			compression="gzip"
+			longfile="gnu">
+			<tarfileset prefix="${project.name}${nolibssuff}" dir=".">
+				<include name="resources/**"/>
+				<include name="src/**"/>
+				<include name="${libs}"/>
+				<include name="build.xml"/>
+				<include name="*.properties"/>
+			</tarfileset>
+		</tar>
 	</target>
 
 	<target name="install" depends="build-all" description="install the project">
