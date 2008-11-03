@@ -21,6 +21,11 @@ public class TinyStrings {
   private static final int CHAR_BIT_SIZE = 6;
   private static final long CHAR_BIT_MASK = 0x3fL;
   private static final int LENGTH_BIT_SIZE = 4;
+  private Alphabet alphabet;
+  
+  public TinyStrings(Alphabet alphabet) {
+    this.alphabet = alphabet;
+  }
 
   /**
    * long based generator. it sounds useless but it actually makes validity check.
@@ -30,7 +35,7 @@ public class TinyStrings {
    * @throws IndexOutOfBoundsException if String size is not between [0-10] (inclusive)
    * @throws IllegalArgumentException  if the input vlaue is not valid. (size and idex values)
    */
-   static long create(long value) {
+   long create(long value) {
     final int l = length(value);
     if (l < 0 || l > MAX_STRING_LENGTH - 1)
       throw new IndexOutOfBoundsException("length must be between [0.." + (MAX_STRING_LENGTH - 1) + "]. But it is:" + l);
@@ -53,7 +58,7 @@ public class TinyStrings {
    * @throws IndexOutOfBoundsException if String size is larger than 10
    * @throws IllegalArgumentException  if there is a character out of TurkishAlphabet set.
    */
-  public static long create(String str) {
+   public long create(String str) {
     if (str == null || str.length() == 0) {
       return 0L;
     }
@@ -62,7 +67,7 @@ public class TinyStrings {
     }
     long t = 0;
     for (int i = str.length() - 1; i >= 0; i--) {
-      long index = TurkishAlphabet.getIndex(str.charAt(i));
+      long index = alphabet.getIndex(str.charAt(i));
       if (index == -1)
         throw new IllegalArgumentException("String connot contain characters outside TurkishAlphabet");
       if (i > 0)
@@ -81,8 +86,8 @@ public class TinyStrings {
    * @return long value.
    * @throws IllegalArgumentException if character is out of TurkishAlphabet set.
    */
-  public static long create(char c) {
-    final long index = TurkishAlphabet.getIndex(c);
+  public long create(char c) {
+    final long index = alphabet.getIndex(c);
     if (index == -1)
       throw new IllegalArgumentException("char:" + c + "cannot be outside TurkishAlphabet");
     return (index << LENGTH_BIT_SIZE) | 0x01;
@@ -94,7 +99,7 @@ public class TinyStrings {
    * @param value the long representation.
    * @return length
    */
-  public static int length(long value) {
+  public int length(long value) {
     return (int) (value & LENGTH_BIT_MASK);
   }
 
@@ -105,11 +110,11 @@ public class TinyStrings {
    * @param index index
    * @return char at that index.
    */
-  public static char charAt(long l, int index) {
+  public char charAt(long l, int index) {
     if (index < 0 || index >= length(l))
       throw new IndexOutOfBoundsException("index must be between [0.." + length(l) + "). " + index);
     l = l >>> LENGTH_BIT_SIZE;
-    return TurkishAlphabet.getChar((int) ((l >>> (index * CHAR_BIT_SIZE)) & CHAR_BIT_MASK));
+    return alphabet.getChar((int) ((l >>> (index * CHAR_BIT_SIZE)) & CHAR_BIT_MASK));
   }
 
   /**
@@ -118,7 +123,7 @@ public class TinyStrings {
    * @param l the long representation.
    * @return String representation.
    */
-  public static String asString(long l) {
+  public String asString(long l) {
     final int length = length(l);
     if (length == 0)
       return "";
@@ -126,7 +131,7 @@ public class TinyStrings {
     StringBuilder sb = new StringBuilder(length);
     l = l >>> LENGTH_BIT_SIZE;
     for (int i = 0; i < length; i++) {
-      sb.append(TurkishAlphabet.getChar((int) (l & CHAR_BIT_MASK)));
+      sb.append(alphabet.getChar((int) (l & CHAR_BIT_MASK)));
       l = l >>> CHAR_BIT_SIZE;
     }
     return sb.toString();
@@ -140,8 +145,8 @@ public class TinyStrings {
    * @throws IndexOutOfBoundsException if String size is 10
    * @throws IllegalArgumentException  if there is a character out of TurkishAlphabet set.
    */
-  public static long addChar(long s, char c) {
-    final long index = TurkishAlphabet.getIndex(c);
+  public long addChar(long s, char c) {
+    final long index = alphabet.getIndex(c);
     if (index == -1) {
       throw new IllegalArgumentException("Illegal Turkish character : " + c);
     }
