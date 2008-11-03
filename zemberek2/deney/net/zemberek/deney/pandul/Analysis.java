@@ -1,6 +1,7 @@
 package net.zemberek.deney.pandul;
 
 import net.zemberek.bilgi.KaynakYukleyici;
+import net.zemberek.deney.pandul.CompactStringTrie.Node;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -11,8 +12,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -82,7 +81,7 @@ public class Analysis {
   }
 
   public static void main(String[] args) throws IOException {
-    CompactStringTrie cst = new CompactStringTrie();
+    CompactStringTrie cst = new CompactStringTrie(new TurkishAlphabet());
     Map<String, Integer> attributes = new TreeMap<String, Integer>();
     Map<String, Integer> attributeGroups = new TreeMap<String, Integer>();
         
@@ -150,7 +149,7 @@ public class Analysis {
     
     delta = System.currentTimeMillis() - time;
     System.out.println("time:" + delta);
-    CompactStringTrie cst2 = new CompactStringTrie();
+    CompactStringTrie cst2 = new CompactStringTrie(new TurkishAlphabet());
     cst2.load(new BufferedInputStream(new FileInputStream("tr.dic")));
     delta = System.currentTimeMillis() - time;
     System.out.println("Load time:" + delta + "ms");

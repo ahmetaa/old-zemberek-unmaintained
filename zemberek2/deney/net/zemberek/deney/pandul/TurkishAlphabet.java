@@ -66,43 +66,47 @@ public class TurkishAlphabet implements Alphabet{
     }
 
     for (char vowel : vowels) {
-      vowelLookup[getIndex(vowel)] = true;
+      vowelLookup[turkishLetters[vowel]] = true;
     }
 
     for (char c : voiceless) {
-      voicelessLookup[getIndex(c)] = true;
+      voicelessLookup[turkishLetters[c]] = true;
     }
     
   }
  
-  public static boolean isValid(char c) {
+  public boolean isValid(char c) {
      return getIndex(c) != -1;
   }
   
-  public static int getIndex(char c){
+  public int getIndex(char c){
     if (c < 0 && c > TURKISH_CHAR_MAP_SIZE) {
       return -1;
     }
     return turkishLetters[c];
   }
  
-  public static char getChar(int index) {
+  public char getChar(int index) {
     assert(index > 0 && index < alphabet.length);
     return alphabet[index];
   }
 
-  public static boolean isVowel(char c) {
+  public boolean isVowel(char c) {
     //TODO: should it be checked for validity?
     if (!isValid(c))
       throw new IllegalArgumentException("not a valid char:" + c);
     return vowelLookup[getIndex(c)];
   }
 
-  public static boolean isVoiceless(char c) {
+  public boolean isVoiceless(char c) {
     //TODO: should it be checked for validity?
     if (!isValid(c))
       throw new IllegalArgumentException("not a valid char:" + c);
     return voicelessLookup[getIndex(c)];
+  }
+
+  public int getSize() {
+    return alphabet.length;
   }
 
   

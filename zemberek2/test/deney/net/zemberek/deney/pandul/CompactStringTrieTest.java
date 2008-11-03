@@ -11,32 +11,32 @@ import junit.framework.TestCase;
 
 
 public class CompactStringTrieTest extends TestCase {
-  
+  TurkishAlphabet alphabet = new TurkishAlphabet();
   public void testSingleChar() {
-    CompactStringTrie cst = new CompactStringTrie();
+    CompactStringTrie cst = new CompactStringTrie(alphabet);
     cst.add("a");
     System.out.println(cst.getRoot());
   }
 
   public void testTwoStrings() {
-    CompactStringTrie cst = new CompactStringTrie();
+    CompactStringTrie cst = new CompactStringTrie(alphabet);
     cst.add("a");
     cst.add("b");
     System.out.println(cst.getRoot());
   }
 
   public void testSingleWord() {
-    CompactStringTrie cst = new CompactStringTrie();
+    CompactStringTrie cst = new CompactStringTrie(alphabet);
     cst.add("a");
     assertEquals ("#:(a)|a:.*|" , cst.getRoot().dump(true));
-    cst = new CompactStringTrie();
+    cst = new CompactStringTrie(alphabet);
     cst.add("a");
     cst.add("b");
     assertEquals ("#:(ab)|a:.*|b:.*|" , cst.getRoot().dump(true));
   }
   
   public void testLongString() {
-    CompactStringTrie cst = new CompactStringTrie();
+    CompactStringTrie cst = new CompactStringTrie(alphabet);
     cst.add("a");
     cst.add("ab");
     cst.add("c");
@@ -45,7 +45,7 @@ public class CompactStringTrieTest extends TestCase {
   }
 
   public void testLongString2() {
-    CompactStringTrie cst = new CompactStringTrie();
+    CompactStringTrie cst = new CompactStringTrie(alphabet);
     cst.add("ela");
     cst.add("elma");
     cst.add("elmas");
@@ -56,14 +56,14 @@ public class CompactStringTrieTest extends TestCase {
   }
 
   public void testCompactionDoesNotEffectEmptyTrie() {
-    CompactStringTrie cst = new CompactStringTrie();
+    CompactStringTrie cst = new CompactStringTrie(alphabet);
     cst.compress();
     assertEquals("#:.|", cst.getRoot().dump(true));
     System.out.println(cst.getRoot().dump(false));
   }
   
   public void testCompactionDoesNotEffectSingleCharTrie() {
-    CompactStringTrie cst = new CompactStringTrie();
+    CompactStringTrie cst = new CompactStringTrie(alphabet);
     cst.add("a");
     cst.compress();
     assertEquals("#:(a)|a:.*|", cst.getRoot().dump(true));
@@ -71,7 +71,7 @@ public class CompactStringTrieTest extends TestCase {
   }  
   
   public void testCompactionDoesNotEffectUncompactableTrie() {
-    CompactStringTrie cst = new CompactStringTrie();
+    CompactStringTrie cst = new CompactStringTrie(alphabet);
     cst.add("a");
     cst.add("ab");
     cst.add("c");
@@ -81,7 +81,7 @@ public class CompactStringTrieTest extends TestCase {
   }
   
   public void testCompactionSimpleCase() {
-    CompactStringTrie cst = new CompactStringTrie();
+    CompactStringTrie cst = new CompactStringTrie(alphabet);
     cst.add("ab");
     System.out.println(cst.getRoot().dump(false));
     cst.compress();
@@ -90,7 +90,7 @@ public class CompactStringTrieTest extends TestCase {
   } 
   
   public void testCompactionSimpleCase2() {
-    CompactStringTrie cst = new CompactStringTrie();
+    CompactStringTrie cst = new CompactStringTrie(alphabet);
     cst.add("patlak");
     System.out.println(cst.getRoot().dump(false));
     cst.compress();
@@ -99,7 +99,7 @@ public class CompactStringTrieTest extends TestCase {
   }
   
   public void testCompactionLongChain() {
-    CompactStringTrie cst = new CompactStringTrie();
+    CompactStringTrie cst = new CompactStringTrie(alphabet);
     cst.add("cobansumbulu");
     System.out.println(cst.getRoot().dump(false));
     cst.compress();
@@ -108,7 +108,7 @@ public class CompactStringTrieTest extends TestCase {
   }  
   
   public void testCompactionSimpleCase3() {
-    CompactStringTrie cst = new CompactStringTrie();
+    CompactStringTrie cst = new CompactStringTrie(alphabet);
     cst.add("abc");
     cst.add("vyz");
     cst.compress();
@@ -117,7 +117,7 @@ public class CompactStringTrieTest extends TestCase {
   }    
   
   public void testCompactionTwoChains() {
-    CompactStringTrie cst = new CompactStringTrie();
+    CompactStringTrie cst = new CompactStringTrie(alphabet);
     cst.add("ela");
     cst.add("elmas");
     System.out.println(cst.getRoot().dump(false));
@@ -128,7 +128,7 @@ public class CompactStringTrieTest extends TestCase {
   
   public void testSave() throws IOException {
     ByteArrayOutputStream bo = new ByteArrayOutputStream();
-    CompactStringTrie cst = new CompactStringTrie();
+    CompactStringTrie cst = new CompactStringTrie(alphabet);
     cst.add("a");
     cst.add("b");
     cst.add("elma");
@@ -140,14 +140,14 @@ public class CompactStringTrieTest extends TestCase {
     assertTrue(b.length > 0);
     System.out.println(b.length);
     ByteArrayInputStream bi = new ByteArrayInputStream(b);
-    CompactStringTrie cst2 = new CompactStringTrie();
+    CompactStringTrie cst2 = new CompactStringTrie(alphabet);
     cst2.load(new BufferedInputStream(bi));
     String s2 = cst.getRoot().dump(true);
     assertEquals(s1, s2);
   }
   
   public void testFindPrefixMatches(){
-    CompactStringTrie cst = new CompactStringTrie();
+    CompactStringTrie cst = new CompactStringTrie(alphabet);
     cst.add("el");
     cst.add("elma");
     cst.add("ela");

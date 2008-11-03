@@ -2,13 +2,13 @@ package net.zemberek.deney.pandul;
 
 import junit.framework.TestCase;
 
+import net.zemberek.deney.pandul.CompactStringTrie.Node;
+
 public class NodeTest extends TestCase{
   
-  public void setUp() {
-  }
-  
-  private void testChar( char c){
-    Node node = new Node();
+  CompactStringTrie cst = new CompactStringTrie(new TurkishAlphabet());
+  private void testChar(char c){
+    Node node = cst.new Node();
     node.addNodeFor(c);
     Node n = node.getChildNode(c);
     System.out.println(c);
@@ -16,8 +16,8 @@ public class NodeTest extends TestCase{
     assertEquals(n.getChar(), c);
   }
 
-  private void testTwoCharacter( char c1, char c2){
-    Node node = new Node();
+  private void testTwoCharacter(char c1, char c2){
+    Node node = cst.new Node();
     node.addNodeFor(c1);
     node.addNodeFor(c2);
     Node n1 = node.getChildNode(c1);
@@ -30,7 +30,7 @@ public class NodeTest extends TestCase{
   }
   
   private void testForCharArray(char[] ca){
-    Node node = new Node();
+    Node node = cst.new Node();
     for (char c : ca) {
       node.addNodeFor(c);
     }
