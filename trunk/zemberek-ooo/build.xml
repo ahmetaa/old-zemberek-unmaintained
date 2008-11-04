@@ -57,7 +57,7 @@
 					<include name="**/*.jar" />
 					<include name="**/*.zip" />
 				</fileset>
-				<path refid="ooo${ooo.version}.classpath"/>
+				<path refid="ooo${openoffice.version}.classpath"/>
 			</classpath>
 			<src path="${src.dir}"/>
 			<include name="**/*.java" />
