@@ -32,7 +32,7 @@
 	</target>
 	
 	<path id="ooo2.classpath">
-		<fileset dir="${openoffice.root.dir}/classes">
+		<fileset dir="${openoffice.lib.dir}">
 			<include name="**/*.jar" />
 			<include name="**/*.zip" />
 		</fileset>
