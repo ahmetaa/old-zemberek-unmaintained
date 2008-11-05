@@ -161,7 +161,7 @@
 		<condition property="manifest.classpath" value="${zemberek.classpath}" else="skip_registration/zemberek2-cekirdek.jar skip_registration/zemberek2-tr.jar">
 			<istrue value="${use.external.zemberek}"/>
 		</condition>
-		<condition property="zemberek.jars" value="" else="lib/*.jar">
+		<condition property="zemberek.jars" value="" else="*.jar">
 			<istrue value="${use.external.zemberek}"/>
 		</condition>
 		<antcall target="compile-java" />
