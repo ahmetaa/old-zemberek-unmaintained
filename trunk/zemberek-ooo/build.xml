@@ -24,6 +24,12 @@
 	<property name="dist.jar.skipreg.dir" value="${dist.jar.dir}/skip_registration" />
 
 	<target name="init" description="initialization">
+		<condition property="use.external.zemberek" value="${use.external.zemberek}" else="false">
+			<isset property="${use.external.zemberek}"/>
+		</condition>
+		<condition property="openoffice.version" value="${openoffice.version}" else="3">
+			<isset property="${openoffice.version}"/>
+		</condition>
 		<mkdir dir="${build.dir}" />
 		<mkdir dir="${build.classes.dir}" />
 		<mkdir dir="${dist.dir}" />
@@ -177,7 +183,6 @@
 				<attribute name="Class-Path" value="${manifest.classpath}"/>
 			</manifest>
 		</jar>
-		
 		<zip destfile="${dist.dir}/${project.name}.oxt">
        			<zipfileset file="${build.dir}/${spellchecker.project.name}.uno.jar" />
        			<zipfileset file="${build.dir}/${hyphenator.project.name}.uno.jar" />
