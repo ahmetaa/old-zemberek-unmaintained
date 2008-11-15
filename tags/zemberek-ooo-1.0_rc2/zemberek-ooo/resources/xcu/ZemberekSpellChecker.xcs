@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<oor:component-schema
+     xmlns:oor="http://openoffice.org/2001/registry"
+     xmlns:xs="http://www.w3.org/2001/XMLSchema"
+     oor:name="ZemberekSpellChecker"
+     oor:package="zemberek">
+   <component>
+     <group oor:name="Data">
+       <prop oor:name="URL" oor:type="xs:string" />
+     </group>
+   </component>
+</oor:component-schema>
