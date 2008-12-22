@@ -7,9 +7,6 @@
         <name lang="tr">Zemberek Türkçe İmla Denetimi</name>
     </display-name>
     <dependencies>
-        <OpenOffice.org-minimal-version value="2.0" d:name="OpenOffice.org 2.0"/>
+        <OpenOffice.org-minimal-version value="2.3" d:name="OpenOffice.org 2.0"/>
     </dependencies>
-    <publisher>
-        <name xlink:href="http://code.google.com/p/zemberek/" lang="en">Zemberek Project</name>
-    </publisher>
 </description>
