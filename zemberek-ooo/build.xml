@@ -21,7 +21,6 @@
 	<property name="build.dir" value="${basedir}/build" />
 	<property name="build.classes.dir" value="${build.dir}/classes" />
 	<property name="dist.jar.dir" value="${dist.dir}/libs" />
-	<property name="dist.jar.skipreg.dir" value="${dist.jar.dir}/skip_registration" />
 
 	<target name="init" description="initialization">
 		<condition property="use.external.zemberek" value="${use.external.zemberek}" else="false">
@@ -34,7 +33,6 @@
 		<mkdir dir="${build.classes.dir}" />
 		<mkdir dir="${dist.dir}" />
 		<mkdir dir="${dist.jar.dir}" />
-		<mkdir dir="${dist.jar.skipreg.dir}" />
 	</target>
 	
 	<path id="ooo2.classpath">
@@ -158,7 +156,7 @@
 			</condition>
 		</fail>
 		-->
-		<condition property="manifest.classpath" value="${zemberek.classpath}" else="skip_registration/zemberek2-cekirdek.jar skip_registration/zemberek2-tr.jar">
+		<condition property="manifest.classpath" value="${zemberek.classpath}" else="zemberek2-cekirdek.jar zemberek2-tr.jar">
 			<istrue value="${use.external.zemberek}"/>
 		</condition>
 		<condition property="zemberek.jars" value="" else="*.jar">
@@ -194,7 +192,7 @@
 			<zipfileset file="${res.dir}/xml/description.xml"/>
 			<zipfileset file="${res.dir}/xml/manifest.xml" prefix="META-INF"/>
 			<zipfileset dir="${dist.jar.dir}"/>
-			<zipfileset dir="lib" prefix="skip_registration">
+			<zipfileset dir="lib">
 				<include name="${zemberek.jars}"/>
 			</zipfileset>
 		</zip>
