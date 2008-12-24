@@ -42,12 +42,23 @@
 		</fileset>
 	</path>
 	
-	<path id="ooo3.classpath">
+	<path id="ooo3.classpath.unix">
 		<fileset dir="${openoffice.root.dir}/ure/share/java">
 			<include name="**/*.jar" />
 			<include name="**/*.zip" />
 		</fileset>
 		<fileset dir="${openoffice.root.dir}/basis3.0/program/classes">
+			<include name="**/*.jar" />
+			<include name="**/*.zip" />
+		</fileset>
+	</path>
+
+	<path id="ooo3.classpath.windows">
+		<fileset dir="${openoffice.root.dir}/ure/java">
+			<include name="**/*.jar" />
+			<include name="**/*.zip" />
+		</fileset>
+		<fileset dir="${openoffice.root.dir}/basis/program/classes">
 			<include name="**/*.jar" />
 			<include name="**/*.zip" />
 		</fileset>
@@ -61,7 +72,7 @@
 					<include name="**/*.jar" />
 					<include name="**/*.zip" />
 				</fileset>
-				<path refid="ooo${openoffice.version}.classpath"/>
+				<path refid="${openoffice.classpath}"/>
 			</classpath>
 			<src path="${src.dir}"/>
 			<include name="**/*.java" />
@@ -162,6 +173,17 @@
 		<condition property="zemberek.jars" value="" else="*.jar">
 			<istrue value="${use.external.zemberek}"/>
 		</condition>
+		<condition property="openoffice.os" value="windows">
+			<os family="windows"/>
+		</condition>
+		<condition property="openoffice.os" value="unix">
+			<os family="unix"/>
+		</condition>
+		
+		<condition property="openoffice.classpath" value="ooo${openoffice.version}.classpath" else="ooo${openoffice.version}.classpath.${openoffice.os}">
+			<equals arg1="${openoffice.version}" arg2="2"/>
+		</condition>
+		
 		<antcall target="compile-java" />
 		
 		<jar jarfile="${build.dir}/${spellchecker.project.name}.uno.jar" basedir="${build.classes.dir}">
