@@ -180,7 +180,11 @@
 			<os family="unix"/>
 		</condition>
 		
-		<condition property="openoffice.classpath" value="ooo${openoffice.version}.classpath" else="ooo${openoffice.version}.classpath.${openoffice.os}">
+		<condition
+			property="openoffice.classpath"
+			value="ooo${openoffice.version}.classpath"
+			else="ooo${openoffice.version}.classpath.${openoffice.os}">
+
 			<equals arg1="${openoffice.version}" arg2="2"/>
 		</condition>
 		
