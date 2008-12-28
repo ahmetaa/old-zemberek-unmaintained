@@ -8,9 +8,10 @@
     <em:name>MozZemberek</em:name>
     <em:version>@VERSION@</em:version>
     <em:description>Zemberek client for zemberek server</em:description>
-    <em:creator>Rail Aliev &lt;rail@i-rs.ru&gt;</em:creator>
+    <em:creator>Rail Aliev</em:creator>
+    <em:contributor>Serkan Kaba</em:contributor>
     <!--em:iconURL>chrome://mozzemberek/skin/classic/icon.png</em:iconURL-->
-	<em:homepageURL>http://code.google.com/p/zemberek/</em:homepageURL>
+    <em:homepageURL>http://code.google.com/p/zemberek/</em:homepageURL>
     <em:targetPlatform>@TARGET_PLATFORM@</em:targetPlatform>
 
 	<em:localized>
