@@ -1,3 +1,4 @@
 * Add platform entry into install.rdf
 * Add extension icon
 * Make servername and port of Zemberek server confiurable
+* Add a conflict dependency with tr-spell UUID: tr@dictionaries.addons.mozilla.org
