@@ -23,6 +23,12 @@ DESTDIR=/usr/lib/firefox
 CC_LINK=$(CXX) -shared -Wl,--no-undefined
 include ../mozzemberek.config
 
+CPU_ARCH = $(shell uname -m | sed -e s/i.86/x86/ )
+TARGET_COMPILER_ABI = gcc3
+OS_TARGET = Linux
+#OS_TARGET = $(shell uname)
+PLATFORM = $(OS_TARGET)_$(CPU_ARCH)-$(TARGET_COMPILER_ABI)
+
 XULRUNNER_INCLUDES=-I$(XULRUNNER_SDK)/sdk/include -I$(XULRUNNER_SDK)/include \
 -I$(XULRUNNER_INCDIR)/xpcom \
 -I$(XULRUNNER_INCDIR)/spellchecker \
@@ -51,13 +57,13 @@ all: xpi
 
 xpi: $(EXTENSION)
 
-extension-files: components/$(COMPONENT) install.rdf
+extension-files: platform/$(PLATFORM)/components/$(COMPONENT) install.rdf
 
-$(EXTENSION): components/$(COMPONENT) install.rdf
+$(EXTENSION): platform/$(PLATFORM)/components/$(COMPONENT) install.rdf
 	zip -r $@ $^
 
-components/$(COMPONENT): $(patsubst %,%.o,$(OBJECTS))
-	-mkdir -p components
+platform/$(PLATFORM)/components/$(COMPONENT): $(patsubst %,%.o,$(OBJECTS))
+	-mkdir -p platform/$(PLATFORM)/components
 	$(CC_LINK) $(LDFLAGS) -o $@ $^ $(CC_LIBS)
 	-strip $@
 
@@ -77,11 +83,11 @@ install.rdf: install.rdf.in
 
 clean:
 	$(RM) $(patsubst %,%.o,$(OBJECTS)) $(EXTENSION) install.rdf chrome.manifest
-	$(RM) -r components
+	$(RM) -r platform
 
 install-unpacked: extension-files
 	echo "# Empty chrome manifest" > chrome.manifest
-	install -m 755 -d '$(DESTDIR)/$(UUID)' '$(DESTDIR)/$(UUID)/components'
-	install -m 644 'components/$(COMPONENT)' '$(DESTDIR)/$(UUID)/components'
+	install -m 755 -d '$(DESTDIR)/$(UUID)' '$(DESTDIR)/$(UUID)/platform/$(PLATFORM)/components'
+	install -m 644 'platform/$(PLATFORM)/components/$(COMPONENT)' '$(DESTDIR)/$(UUID)/platform/$(PLATFORM)/components'
 	install -m 644 install.rdf '$(DESTDIR)/$(UUID)'
 	install -m 644 chrome.manifest '$(DESTDIR)/$(UUID)'
