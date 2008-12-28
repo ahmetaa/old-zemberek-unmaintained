@@ -19,7 +19,7 @@ XULRUNNER_SDK=$(shell pkg-config --variable=sdkdir libxul)
 XULRUNNER_INCDIR=$(shell pkg-config --variable=includedir libxul)
 XULRUNNER_LIBS=$(shell pkg-config libxul --libs)
 NSPR_INCLUDES=$(shell pkg-config --cflags-only-I nspr)
-DESTDIR=/usr/lib/firefox
+MOZILLA_FIVE_HOME?=/usr/lib/firefox
 CC_LINK=$(CXX) -shared -Wl,--no-undefined
 include ../mozzemberek.config
 
@@ -43,9 +43,7 @@ COMPONENT=libmozzemberek.so
 EXTENSION=mozzemberek-$(MOZZEMBEREK_VERSION)-$(PLATFORM).xpi
 UUID=mozzemberek@mozilla.org.tr
 
-ifndef CFLAGS
-	CFLAGS=-O2
-endif
+CFLAGS?=-O2
 CC_FLAGS=$(CFLAGS) -Wall -Wno-non-virtual-dtor -fno-rtti -fno-exceptions -fshort-wchar -fPIC -c
 CC_INCLUDES=$(NSPR_INCLUDES) $(XULRUNNER_INCLUDES) \
 -include mozilla-config.h -include xpcom-config.h
@@ -87,7 +85,7 @@ clean:
 
 install-unpacked: extension-files
 	echo "# Empty chrome manifest" > chrome.manifest
-	install -m 755 -d '$(DESTDIR)/$(UUID)' '$(DESTDIR)/$(UUID)/platform/$(PLATFORM)/components'
-	install -m 644 'platform/$(PLATFORM)/components/$(COMPONENT)' '$(DESTDIR)/$(UUID)/platform/$(PLATFORM)/components'
-	install -m 644 install.rdf '$(DESTDIR)/$(UUID)'
-	install -m 644 chrome.manifest '$(DESTDIR)/$(UUID)'
+	install -m 755 -d '$(DESTDIR)/$(MOZILLA_FIVE_HOME)/extensions/$(UUID)' '$(DESTDIR)/$(MOZILLA_FIVE_HOME)/extensions/$(UUID)/platform/$(PLATFORM)/components'
+	install -m 644 'platform/$(PLATFORM)/components/$(COMPONENT)' '$(DESTDIR)/$(MOZILLA_FIVE_HOME)/extensions/$(UUID)/platform/$(PLATFORM)/components'
+	install -m 644 install.rdf '$(DESTDIR)/$(MOZILLA_FIVE_HOME)/extensions/$(UUID)'
+	install -m 644 chrome.manifest '$(DESTDIR)/$(MOZILLA_FIVE_HOME)/extensions/$(UUID)'
