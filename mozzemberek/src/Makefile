@@ -40,7 +40,7 @@ XULRUNNER_INCLUDES=-I$(XULRUNNER_SDK)/sdk/include -I$(XULRUNNER_SDK)/include \
 HEADERS=mozZemberek.h  zemberek.h  zsconn.h  zstring.h
 OBJECTS=mozZemberek mozZemberekFactory zemberek zsconn zstring
 COMPONENT=libmozzemberek.so
-EXTENSION=mozzemberek.xpi
+EXTENSION=mozzemberek-$(MOZZEMBEREK_VERSION)-$(PLATFORM).xpi
 UUID=mozzemberek@mozilla.org.tr
 
 ifndef CFLAGS
