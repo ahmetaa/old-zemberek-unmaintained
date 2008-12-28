@@ -1,0 +1,18 @@
+This is mozzemberek, an extension for Mozilla programs for using Turkish
+Language spell-checker Zemberek, forked from mozvoikko
+
+Supported versions are:
+
+-  Mozilla Firefox 3.0b1 or above
+-  Mozilla Thunderbird 3.0a1pre (nightly builds newer than 20/092007)
+-  Mozilla SeaMonkey 2.0a1pre (nightly builds newer than 20/092007)
+
+Supported targets:
+-  32-bit Windows (WINNT_x86-msvc)
+-  32-bit Linux (Linux_ix86-gcc3)
+-  64-bit Linux (Linux_x86_64-gcc3)
+
+Binary extension package may contain support one or more of these targets.
+When building against xulrunner on Linux, more platforms may be supported.
+
+Rail Aliev <rail@i-rs.ru>
