@@ -87,7 +87,6 @@
         	<exclude name="net/zemberekserver/server/socket/**" unless="${build.socket}"/>
     		<exclude name="net/zemberekserver/client/socket/**" unless="${build.socket}"/>
     	</javac>
-        <!--<echo message="Building socket server"--> 
         <mkdir dir="${build.test}"/>
         <javac srcdir="${src.test}"
             destdir="${build.test}"
