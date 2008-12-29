@@ -33,8 +33,6 @@ import java.net.InetSocketAddress;
 import net.zemberek.erisim.Zemberek;
 import net.zemberek.tr.yapi.TurkiyeTurkcesi;
 import net.zemberekserver.server.Config;
-import net.zemberekserver.server.ZemberekServer;
-
 import org.apache.mina.common.DefaultIoFilterChainBuilder;
 import org.apache.mina.common.IoAcceptor;
 import org.apache.mina.common.IoAcceptorConfig;
@@ -75,7 +73,7 @@ public class SocketServer {
 		try {
 			server.init(new Zemberek(new TurkiyeTurkcesi()), Config.serverPort, Config.allowRemote);
 		} catch(Exception e){
-			e.printStackTrace();
+			server.shutdown();
 		}
 	}
 	
