@@ -49,7 +49,7 @@
 	<property name="mainclass.all" value="net.zemberekserver.server.ZemberekServer"/>
 	<property name="mainclass.dbus" value="net.zemberekserver.server.dbus.ZemberekDbus"/>
 	<property name="mainclass.socket" value="net.zemberekserver.server.socket.SocketServer"/>
-
+	
     <!--    show the library files for classpath information and a complete build(tests etc).-->
     <path id="classpath.build">
         <fileset dir="lib"/>
@@ -130,6 +130,12 @@
          
         <copy todir="${dist.dir}/lib">
             <fileset dir="${lib.runtime}">
+            	<exclude name="dbus.jar" unless="${build.dbus}"/>
+            	<exclude name="hexdump.jar" unless="${build.dbus}"/>
+            	<exclude name="unix.jar" unless="${build.dbus}"/>
+            	<exclude name="native-*/**" unless="${build.dbus}"/>
+            	<exclude name="mina-core-*.jar" unless="${build.socket}"/>
+            	<exclude name="slf4j-nop.jar" unless="${build.socket}"/>
             </fileset>
         </copy>
 
