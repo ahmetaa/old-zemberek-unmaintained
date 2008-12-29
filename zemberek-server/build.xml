@@ -45,6 +45,10 @@
     <property name="dist.dir" location="dist"/>
     <property name="lib.runtime" location="lib"/>
     <property name="licences.dir" location="lisanslar"/>
+	
+	<property name="mainclass.all" value="net.zemberekserver.server.ZemberekServer"/>
+	<property name="mainclass.dbus" value="net.zemberekserver.server.dbus.ZemberekDbus"/>
+	<property name="mainclass.socket" value="net.zemberekserver.server.socket.SocketServer"/>
 
     <!--    show the library files for classpath information and a complete build(tests etc).-->
     <path id="classpath.build">
@@ -59,15 +63,31 @@
     <!--    Compiles the java files. and results will be copied to build directory-->
     <target name="java" description="Compile Java">
         <mkdir dir="${build.java}"/>
-        <javac srcdir="${src.java}"
+    	<condition property="${build.all}">
+    	    <equals arg1="${build.type}" arg2="all"/>
+    	</condition>
+    	<condition property="${build.dbus}">
+    		<or>
+    			<equals arg1="${build.type}" arg2="dbus"/>
+    			<equals arg1="${build.type}" arg2="all"/>
+    		</or>
+    	</condition>
+    	<condition property="${build.socket}">
+    	    <or>
+    	    	<equals arg1="${build.type}" arg2="socket"/>
+    	    	<equals arg1="${build.type}" arg2="all"/>
+    		</or>
+    	</condition>
+    	<javac srcdir="${src.java}"
             destdir="${build.java}"
-            classpathref="classpath.build" encoding="utf-8"/>
-        <copy todir="${build.java}">
-            <fileset dir="${src.java}">
-                <exclude name="**/*.java"/>
-            </fileset>
-        </copy>
-
+            classpathref="classpath.build" encoding="utf-8">
+        	<exclude name="net/zemberekserver/server/ZemberekServer.java" unless="${build.all}"/>
+        	<exclude name="net/zemberekserver/server/dbus/**" unless="${build.dbus}"/>
+    		<exclude name="net/zemberekserver/client/dbus/**" unless="${build.dbus}"/>
+        	<exclude name="net/zemberekserver/server/socket/**" unless="${build.socket}"/>
+    		<exclude name="net/zemberekserver/client/socket/**" unless="${build.socket}"/>
+    	</javac>
+        <!--<echo message="Building socket server"--> 
         <mkdir dir="${build.test}"/>
         <javac srcdir="${src.test}"
             destdir="${build.test}"
@@ -132,12 +152,23 @@
         <tstamp>
             <format property="release" pattern="-dMMMyy" locale="tr"/>
         </tstamp>
+    	<condition property="mainclass" value="${mainclass.all}">
+    	    <equals arg1="${build.type}" arg2="all"/>
+    	</condition>
+    	<condition property="mainclass" value="${mainclass.dbus}">
+    	    <equals arg1="${build.type}" arg2="dbus"/>
+    	</condition>
+    	<condition property="mainclass" value="${mainclass.socket}">
+    	    <equals arg1="${build.type}" arg2="socket"/>
+    	</condition>
+    	    	
         <jar jarfile="${dist.dir}/${isim}-${surum}.jar" basedir="${build.java}">
             <!-- executable jar icin gerekli class va paket bilgileri-->
             <manifest>
                 <attribute name="Built-By" value="zemberek team"/>
                 <attribute name="Main-Class"
-                    value="net.zemberekserver.server.ZemberekServer"/>
+                    value="${mainclass}"/>
+            	<!-- Classpath herşey derlenmediğinde fazladan jar içerebilir -->
                 <attribute name="Class-Path"
                     value=". lib/mina-core-1.1.0.jar lib/slf4j-nop.jar lib/zemberek-cekirdek-2.1.jar lib/zemberek-tr-2.1.jar lib/dbus.jar lib/unix.jar lib/hexdump.jar"/>
             </manifest>

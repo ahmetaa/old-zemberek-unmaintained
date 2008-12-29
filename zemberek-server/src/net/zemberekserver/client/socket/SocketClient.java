@@ -25,7 +25,7 @@
  *  ***** END LICENSE BLOCK *****
  */
 
-package net.zemberekserver.client;
+package net.zemberekserver.client.socket;
 
 import java.net.InetSocketAddress;
 import java.net.SocketAddress;
