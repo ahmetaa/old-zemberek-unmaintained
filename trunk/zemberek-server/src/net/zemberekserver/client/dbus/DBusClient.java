@@ -26,7 +26,7 @@
  *  ***** END LICENSE BLOCK *****
  */
 
-package net.zemberekserver.client;
+package net.zemberekserver.client.dbus;
 
 import java.util.List;
 

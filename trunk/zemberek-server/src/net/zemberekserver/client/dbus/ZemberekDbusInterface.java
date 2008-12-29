@@ -1,4 +1,4 @@
-package net.zemberekserver.client;
+package net.zemberekserver.client.dbus;
 import java.util.List;
 
 import org.freedesktop.dbus.DBusInterface;
