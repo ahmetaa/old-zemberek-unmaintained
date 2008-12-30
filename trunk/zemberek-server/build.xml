@@ -63,6 +63,9 @@
     <!--    Compiles the java files. and results will be copied to build directory-->
     <target name="java" description="Compile Java">
         <mkdir dir="${build.java}"/>
+    	<condition property="build.type" value="${build.type}" else="all">
+    		<isset property="${build.type}"/>
+    	</condition>
     	<condition property="${build.all}">
     	    <equals arg1="${build.type}" arg2="all"/>
     	</condition>
