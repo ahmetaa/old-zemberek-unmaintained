@@ -65,6 +65,7 @@ public class DBusClient {
 			}
 			System.out.println();
 		}
+		conn.disconnect();
 	}
 
 }
