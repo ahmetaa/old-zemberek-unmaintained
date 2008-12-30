@@ -100,6 +100,7 @@ public class TurkceDilBilgisi implements DilBilgisi {
     }
 
     public Alfabe alfabe() {
+    	//FIXME: Race condition?
         if (alfabe != null) {
             return alfabe;
         } else
@@ -115,6 +116,7 @@ public class TurkceDilBilgisi implements DilBilgisi {
     }
 
     public EkYonetici ekler() {
+    	//FIXME: Race condition?
         if (ekYonetici != null) {
             return ekYonetici;
         } else {
@@ -148,6 +150,7 @@ public class TurkceDilBilgisi implements DilBilgisi {
      * @return Sozluk
      */
     public Sozluk kokler() {
+    	//FIXME: Race condition?
         if (sozluk != null) {
             return sozluk;
         } else {
@@ -176,6 +179,7 @@ public class TurkceDilBilgisi implements DilBilgisi {
     }
 
     public KokOzelDurumBilgisi kokOzelDurumlari() {
+    	//FIXME: Race condition?
         if (ozelDurumBilgisi != null) {
             return ozelDurumBilgisi;
         } else {
@@ -197,6 +201,7 @@ public class TurkceDilBilgisi implements DilBilgisi {
             return null;
         }
 
+      //FIXME: Race condition?
         if (cep != null) {
             return cep;
         } else {
@@ -211,6 +216,7 @@ public class TurkceDilBilgisi implements DilBilgisi {
     }
 
     public Heceleyici heceBulucu() {
+    	//FIXME: Race condition?
         if (heceleyici != null) {
             return heceleyici;
         } else {
@@ -233,6 +239,7 @@ public class TurkceDilBilgisi implements DilBilgisi {
 
 
     public CozumlemeYardimcisi cozumlemeYardimcisi() {
+    	//FIXME: Race condition?
         if (yardimci != null) {
             return yardimci;
         } else {
