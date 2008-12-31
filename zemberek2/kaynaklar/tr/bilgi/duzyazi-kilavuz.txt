@@ -50766,7 +50766,7 @@ yarımşar IS
 #yarım vokal,-li
 #yarım yamalak,-ğı
 yamalak IS YUM
-yarın ZA
+yarın ZAMAN
 #yarınki
 #yarıntı
 #yarı orta sıklet
