@@ -40141,6 +40141,7 @@ sert SI
 sertifika IS
 #sertifikalı
 #sertifikasız
+sertifikasyon IS
 #sertlenme
 sertlenmek FI
 #sertleşme
