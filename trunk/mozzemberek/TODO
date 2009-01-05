@@ -2,3 +2,4 @@
 * Add extension icon
 * Make servername and port of Zemberek server confiurable (check prefs by defult)
 * Add a conflict dependency with tr-spell UUID: tr@dictionaries.addons.mozilla.org
+* Make stripping optional
