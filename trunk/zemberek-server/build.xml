@@ -26,7 +26,7 @@
 ~  ***** END LICENSE BLOCK *****
 -->
 
-<project name="zemberek-server" default="dist">
+<project name="zemberek-server" default="jar">
 
     <!-- read the parameters from build.properties file.-->
     <property file="build.properties"/>
@@ -121,11 +121,43 @@
         <delete dir="${dist.dir}"/>
         <echo message="All clean"/>
     </target>
+	
+	<target name="jar" depends="clean,java">
+		<delete dir="${dist.dir}"/>
+		<mkdir dir="${dist.dir}"/>
+		<condition property="mainclass" value="${mainclass.all}">
+			<equals arg1="${build.type}" arg2="all"/>
+		</condition>
+		<condition property="mainclass" value="${mainclass.dbus}">
+			<equals arg1="${build.type}" arg2="dbus"/>
+		</condition>
+		<condition property="mainclass" value="${mainclass.socket}">
+			<equals arg1="${build.type}" arg2="socket"/>
+		</condition>
+        <jar jarfile="${dist.dir}/${isim}-${surum}.jar" basedir="${build.java}">
+            <!-- executable jar icin gerekli class va paket bilgileri-->
+            <manifest>
+                <attribute name="Built-By" value="zemberek team"/>
+                <attribute name="Main-Class"
+                    value="${mainclass}"/>
+            	<!-- Classpath herşey derlenmediğinde fazladan jar içerebilir -->
+                <attribute name="Class-Path"
+                    value=". lib/mina-core-1.1.0.jar lib/slf4j-nop.jar lib/zemberek-cekirdek-2.1.jar lib/zemberek-tr-2.1.jar lib/dbus.jar lib/unix.jar lib/hexdump.jar"/>
+            </manifest>
+        </jar>
+	</target>
+	
+	<target name="source_dist" depends="jar">
+		<antcall target="tarball">
+			<param name="nolibs" value="false"/>
+		</antcall>
+		<antcall target="tarball">
+			<param name="nolibs" value="true"/>
+		</antcall>
+	</target>
 
-    <target name="dist" depends="clean,java"
+    <target name="prepare_bindist" depends="jar"
         description="Generates distribution files">
-        <delete dir="${dist.dir}"/>
-        <mkdir dir="${dist.dir}"/>
         <mkdir dir="${dist.dir}/lib"/>
         <mkdir dir="${dist.dir}/config"/>
          
@@ -161,44 +193,21 @@
     	<tstamp>
             <format property="release" pattern="-dMMMyy" locale="tr"/>
         </tstamp>
-    	<condition property="mainclass" value="${mainclass.all}">
-    	    <equals arg1="${build.type}" arg2="all"/>
-    	</condition>
-    	<condition property="mainclass" value="${mainclass.dbus}">
-    	    <equals arg1="${build.type}" arg2="dbus"/>
-    	</condition>
-    	<condition property="mainclass" value="${mainclass.socket}">
-    	    <equals arg1="${build.type}" arg2="socket"/>
-    	</condition>
-    	    	
-        <jar jarfile="${dist.dir}/${isim}-${surum}.jar" basedir="${build.java}">
-            <!-- executable jar icin gerekli class va paket bilgileri-->
-            <manifest>
-                <attribute name="Built-By" value="zemberek team"/>
-                <attribute name="Main-Class"
-                    value="${mainclass}"/>
-            	<!-- Classpath herşey derlenmediğinde fazladan jar içerebilir -->
-                <attribute name="Class-Path"
-                    value=". lib/mina-core-1.1.0.jar lib/slf4j-nop.jar lib/zemberek-cekirdek-2.1.jar lib/zemberek-tr-2.1.jar lib/dbus.jar lib/unix.jar lib/hexdump.jar"/>
-            </manifest>
-        </jar>
-        <!-- create the zip file with the same naming scheme -->
-        <zip destfile="${dist.dir}/${isim}-${surum}.zip"
-            basedir="${dist.dir}"
-            update="true"
-            excludes="**/*.zip"
-            />
-    	<antcall target="tarball">
-    		<param name="nolibs" value="false"/>
-    	</antcall>
-    	<antcall target="tarball">
-    		<param name="nolibs" value="true"/>
-    	</antcall>
-    	
-    	<echo level="warning">UYARI!</echo>
-    	<echo level="warning">Derlenmiş JNI kütüphanesi (libunix-java.so) ile ilgili sorun yaşarsanız lütfen bildiriniz.</echo>
-    	<echo level="warning">Kütüphaneyi kaynağını http://www.matthew.ath.cx/projects/java/ adresinden indirerek derleyebilirsiniz.</echo>
+
+       
     </target>
+	
+	<target name="linux_dist" depends="prepare_bindist">
+		<!-- create the zip file with the same naming scheme -->
+		<zip destfile="${dist.dir}/${isim}-${surum}.zip"
+			basedir="${dist.dir}"
+			update="true"
+			excludes="**/*.zip"
+		/>
+		<echo level="warning">UYARI!</echo>
+		<echo level="warning">Derlenmiş JNI kütüphanesi (libunix-java.so) ile ilgili sorun yaşarsanız lütfen bildiriniz.</echo>
+		<echo level="warning">Kütüphaneyi kaynağını http://www.matthew.ath.cx/projects/java/ adresinden indirerek derleyebilirsiniz.</echo>
+	</target>
 	
 	<target name="tarball">
 		<condition property="nolibssuff" value="-nolibs" else="">
