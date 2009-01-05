@@ -24,6 +24,7 @@ class ZSConn
 {
 public:
     ZSConn();
+    ZSConn(const char host[], const int port);
     ~ZSConn();
 
     ZString checkString( const string& str, int offset ) const;

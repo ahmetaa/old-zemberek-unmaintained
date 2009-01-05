@@ -57,9 +57,13 @@
 #include <stdlib.h>
 #include <stdarg.h>
 #include <prprf.h>
+#include <nsIPrefBranch2.h>
+#include <nsStringAPI.h>
 
 static NS_DEFINE_CID(kCharsetConverterManagerCID, NS_ICHARSETCONVERTERMANAGER_CID);
 static NS_DEFINE_CID(kUnicharUtilCID, NS_UNICHARUTIL_CID);
+static const char prefZemberekHost[] = "extensions.mozzemberek.host";
+static const char prefZemberekPort[] = "extensions.mozzemberek.port";
 
 NS_IMPL_ISUPPORTS3(mozZemberek,
                    mozISpellCheckingEngine,
@@ -77,6 +81,18 @@ mozZemberek::Init()
   if (obs) {
     obs->AddObserver(this, "profile-do-change", PR_TRUE);
   }
+  PRUint32 iZemberekPort = 10444;
+  char * sZemberekHost = "localhost";
+  nsCOMPtr<nsIPrefBranch2> prefs = do_GetService("@mozilla.org/preferences-service;1");
+  if (prefs) {
+    PRInt32 val;
+	if (NS_SUCCEEDED(prefs->GetIntPref(prefZemberekPort, &val)))
+	  iZemberekPort = (PRUint32) val;
+    prefs->GetCharPref(prefZemberekHost, &sZemberekHost);
+  }
+  printf("Zemberek host: %s, port: %d\n", sZemberekHost, iZemberekPort);
+  host = sZemberekHost;
+  port = iZemberekPort;
 
   return NS_OK;
 }
@@ -121,7 +137,7 @@ NS_IMETHODIMP mozZemberek::SetDictionary(const PRUnichar *aDictionary)
         if (mZemberek)
             delete mZemberek;
 
-        mZemberek = new Zemberek();
+        mZemberek = new Zemberek(host, port);
 	    if (!mZemberek)
 		  return NS_ERROR_OUT_OF_MEMORY;
 
@@ -219,7 +235,7 @@ NS_IMETHODIMP mozZemberek::GetDictionaryList(PRUnichar ***aDictionaries, PRUint3
         if (mZemberek)
             delete mZemberek;
 
-        mZemberek = new Zemberek();
+        mZemberek = new Zemberek(host, port);
 	    if (!mZemberek)
 		  return NS_ERROR_OUT_OF_MEMORY;
 	    

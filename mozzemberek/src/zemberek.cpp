@@ -26,6 +26,10 @@ Zemberek::Zemberek() : maxSug(25)
 {
     zsconn = new ZSConn();
 }
+Zemberek::Zemberek(const char host[], const int port) : maxSug(25)
+{
+    zsconn = new ZSConn(host, port);
+}
 
 Zemberek::~Zemberek()
 {

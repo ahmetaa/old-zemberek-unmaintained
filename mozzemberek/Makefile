@@ -31,11 +31,7 @@ install-unpacked:
 
 # Rules for creating the source distribution
 SRCDIST=README INSTALL ChangeLog COPYING TODO AUTHORS \
-        Makefile mozzemberek.config \
-		src/install.rdf.in src/mozZemberek.cpp \
-		src/mozZemberek.h src/zemberek.h src/zsconn.h \
-		src/zstring.h src/Makefile src/mozZemberekFactory.cpp \
-		src/zemberek.cpp src/zsconn.cpp src/zstring.cpp
+        Makefile mozzemberek.config $(shell find src -type f)
 
 dist: mozzemberek-$(MOZZEMBEREK_VERSION).tar.gz
 

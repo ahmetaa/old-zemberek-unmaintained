@@ -98,6 +98,8 @@ protected:
   nsInterfaceHashtable<nsStringHashKey, nsIFile> mDictionaries;
   nsString  mDictionary;
   nsString  mLanguage;
+  char *host;
+  int port;
 
   Zemberek  *mZemberek;
 };

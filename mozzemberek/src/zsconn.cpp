@@ -22,30 +22,36 @@
 
 #include "zsconn.h"
 
-#define HOST "localhost"
-#define ZPORT 10444
+#define DEFAULTHOST "localhost"
+#define DEFAULTPORT 10444
 
 
-ZSConn::ZSConn()
+ZSConn::ZSConn(){
+	ZSConn::ZSConn(DEFAULTHOST, DEFAULTPORT);
+}
+ZSConn::ZSConn(const char host[], const int port)
 {
     struct hostent *he;
     struct sockaddr_in saddr;
 
-    if ( ( he = (struct hostent *)gethostbyname(HOST) ) == NULL ) {
+    if ( ( he = (struct hostent *)gethostbyname(host) ) == NULL ) {
 	perror( "gethostbyname()" );
+	return; //segfault if cannot resolve, so return from here
     }
 
     if ( ( _conn = socket(AF_INET, SOCK_STREAM, 0) ) == -1 ) {
 	perror( "socket()" );
+	return;
     }
 
     saddr.sin_family = AF_INET;
-    saddr.sin_port = htons( (uint16_t)ZPORT );
+    saddr.sin_port = htons( (uint16_t)port );
     saddr.sin_addr = *( (struct in_addr *)he->h_addr );
     memset( &(saddr.sin_zero), '\0', 8 );
 
     if ( connect(_conn, (struct sockaddr *)&saddr, sizeof(struct sockaddr)) == -1) {
         perror("zemberek-server hatası");
+	    return;
     }
 }
 
