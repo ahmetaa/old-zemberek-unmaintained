@@ -13,6 +13,7 @@
     <!--em:iconURL>chrome://mozzemberek/skin/classic/icon.png</em:iconURL-->
     <em:homepageURL>http://code.google.com/p/zemberek/</em:homepageURL>
     <em:targetPlatform>@TARGET_PLATFORM@</em:targetPlatform>
+	<em:optionsURL>chrome://mozzemberek/content/mozzemberek.settings.xul</em:optionsURL>
 
 	<em:localized>
 		<Description>

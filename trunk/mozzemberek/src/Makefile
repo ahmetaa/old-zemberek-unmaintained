@@ -49,7 +49,7 @@ CC_INCLUDES=$(NSPR_INCLUDES) $(XULRUNNER_INCLUDES) \
 -include mozilla-config.h -include xpcom-config.h
 CC_LIBS=$(XULRUNNER_LIBS)
 
-.PHONY: all clean xpi extension-files install-unpacked
+.PHONY: all clean xpi extension-files install-unpacked chrome/mozzemberek.jar
 
 all: xpi
 
@@ -57,8 +57,11 @@ xpi: $(EXTENSION)
 
 extension-files: platform/$(PLATFORM)/components/$(COMPONENT) install.rdf
 
-$(EXTENSION): platform/$(PLATFORM)/components/$(COMPONENT) install.rdf
+$(EXTENSION): platform/$(PLATFORM)/components/$(COMPONENT) install.rdf chrome.manifest chrome/mozzemberek.jar defaults/preferences/prefs.js
 	zip -r $@ $^
+
+chrome/mozzemberek.jar:
+	cd chrome && zip mozzemberek.jar -r content locale
 
 platform/$(PLATFORM)/components/$(COMPONENT): $(patsubst %,%.o,$(OBJECTS))
 	-mkdir -p platform/$(PLATFORM)/components
@@ -80,11 +83,10 @@ install.rdf: install.rdf.in
 	sed -e $(INSTALL_RDF_SEDSCRIPT) < $^ > $@
 
 clean:
-	$(RM) $(patsubst %,%.o,$(OBJECTS)) $(EXTENSION) install.rdf chrome.manifest
+	$(RM) $(patsubst %,%.o,$(OBJECTS)) $(EXTENSION) install.rdf chrome/mozzemberek.jar
 	$(RM) -r platform
 
 install-unpacked: extension-files
-	echo "# Empty chrome manifest" > chrome.manifest
 	install -m 755 -d '$(DESTDIR)/$(MOZILLA_FIVE_HOME)/extensions/$(UUID)' '$(DESTDIR)/$(MOZILLA_FIVE_HOME)/extensions/$(UUID)/platform/$(PLATFORM)/components'
 	install -m 644 'platform/$(PLATFORM)/components/$(COMPONENT)' '$(DESTDIR)/$(MOZILLA_FIVE_HOME)/extensions/$(UUID)/platform/$(PLATFORM)/components'
 	install -m 644 install.rdf '$(DESTDIR)/$(MOZILLA_FIVE_HOME)/extensions/$(UUID)'
