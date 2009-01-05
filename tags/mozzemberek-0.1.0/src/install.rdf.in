@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+
+ <Description about="urn:mozilla:install-manifest">
+    <em:id>mozzemberek@mozilla.org.tr</em:id>
+    <em:name>MozZemberek</em:name>
+    <em:version>@VERSION@</em:version>
+    <em:description>Zemberek client for zemberek server</em:description>
+    <em:creator>Rail Aliev</em:creator>
+    <em:contributor>Serkan Kaba</em:contributor>
+    <!--em:iconURL>chrome://mozzemberek/skin/classic/icon.png</em:iconURL-->
+    <em:homepageURL>http://code.google.com/p/zemberek/</em:homepageURL>
+    <em:targetPlatform>@TARGET_PLATFORM@</em:targetPlatform>
+	<em:optionsURL>chrome://mozzemberek/content/mozzemberek.settings.xul</em:optionsURL>
+
+	<em:localized>
+		<Description>
+		<em:locale>tr-TR</em:locale>
+    	<em:name>MozZemberek</em:name>
+		<em:description>Zemberek server istemcisi</em:description>
+    	<em:creator>Rail Aliev &lt;rail@i-rs.ru&gt;</em:creator>
+		<em:homepageURL>http://code.google.com/p/zemberek/</em:homepageURL>
+		</Description>
+	</em:localized>
+
+     
+    <em:targetApplication>
+        <!-- Mozilla Firefox -->
+	<Description>
+	    <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
+	    <em:minVersion>@FF_MIN@</em:minVersion>
+	    <em:maxVersion>@FF_MAX@</em:maxVersion>
+	</Description>
+    </em:targetApplication>
+	
+    <em:targetApplication>
+        <!-- Mozilla Thunderbird -->
+	<Description>
+    	    <em:id>{3550f703-e582-4d05-9a08-453d09bdfdc6}</em:id>
+    	    <em:minVersion>@TB_MIN@</em:minVersion>
+    	    <em:maxVersion>@TB_MAX@</em:maxVersion>
+    	</Description>
+    </em:targetApplication>
+    
+    <em:targetApplication>
+        <!-- Mozilla SeaMonkey -->
+	<Description>
+	    <em:id>{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}</em:id>
+	    <em:minVersion>@SM_MIN@</em:minVersion>
+	    <em:maxVersion>@SM_MAX@</em:maxVersion>
+	</Description>
+    </em:targetApplication>
+
+ </Description>
+</RDF>
