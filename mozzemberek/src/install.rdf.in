@@ -21,6 +21,7 @@
     	<em:name>MozZemberek</em:name>
 		<em:description>Zemberek server istemcisi</em:description>
     	<em:creator>Rail Aliev &lt;rail@i-rs.ru&gt;</em:creator>
+	<em:contributor>Serkan Kaba &lt;serkan_kaba@yahoo.com&gt;</em:contributor>
 		<em:homepageURL>http://code.google.com/p/zemberek/</em:homepageURL>
 		</Description>
 	</em:localized>
