@@ -40,6 +40,7 @@ import net.zemberek.yapi.DilBilgisi;
 import net.zemberek.yapi.Kelime;
 import net.zemberek.yapi.Kok;
 import net.zemberek.yapi.TurkceDilBilgisi;
+import net.zemberek.yapi.ek.Ek;
 
 /**
  * <b>EN:</b>This is a facade for accessing the high level functions of the Zemberek library.
@@ -343,7 +344,7 @@ public class Zemberek {
      * @param ekler ek listesi
      * @return String olarak uretilen kelime.
      */
-    public String kelimeUret(Kok kok, List ekler) {
+    public String kelimeUret(Kok kok, List<Ek> ekler) {
         return kelimeUretici.kelimeUret(kok, ekler);
     }
 

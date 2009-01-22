@@ -21,7 +21,7 @@ import net.zemberek.yapi.Kelime;
 public abstract class EkOzelDurumu {
 
     protected String ad;
-    protected Set onEkler= Collections.EMPTY_SET;
+    protected Set<Ek> onEkler= Collections.emptySet();
     protected EkUretici ekUretici;
     protected List<EkUretimBileseni> uretimBilesenleri;
 
@@ -40,11 +40,11 @@ public abstract class EkOzelDurumu {
         this.ad = ad;
     }
 
-    public Set getOnEkler() {
+    public Set<Ek> getOnEkler() {
         return onEkler;
     }
 
-    public void setOnEkler(Set onEkler) {
+    public void setOnEkler(Set<Ek> onEkler) {
         this.onEkler = onEkler;
     }
 
