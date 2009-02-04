@@ -6,6 +6,8 @@ package net.zemberek.islemler;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Arrays;
+import java.util.Collections;
 
 import net.zemberek.islemler.cozumleme.CozumlemeYardimcisi;
 import net.zemberek.yapi.Alfabe;
@@ -39,8 +41,23 @@ public class KelimeUretici {
      * @return String, eger ek listesi dogru ve koke uygun ise olusan kelime, yoksa "".
      */
     public String kelimeUret(Kok kok, List<Ek> ekler) {
-        UretimNesnesi ure = uretimNesnesiUret(kok, ekler);
+        // defensive copying.
+        List<Ek> eks = new ArrayList<Ek>(ekler);
+        if (eks.size() > 0) {
+            Ek ilkEk = ekYonetici.ilkEkBelirle(kok);
+            if (!eks.get(0).equals(ilkEk))
+                eks.add(0, ilkEk);
+        }
+        UretimNesnesi ure = uretimNesnesiUret(kok, eks);
         return ure.olusum;
+    }
+
+
+    public String kelimeUret(Kok kok, Ek... ekler) {
+        if (ekler == null || ekler.length == 0)
+            return kelimeUret(kok, Collections.<Ek>emptyList());
+        else
+            return kelimeUret(kok, Arrays.asList(ekler));
     }
 
     /**
@@ -52,14 +69,18 @@ public class KelimeUretici {
      *         eger eklerin tamami dizilemezse ya da ekler listesi bos ise kok icerigi doner.
      */
     String sirasizEklerleUret(Kok kok, List<Ek> ekler) {
+        //defensive copying.
+        List<Ek> eks = new ArrayList<Ek>(ekler);
         Ek ilkEk = ekYonetici.ilkEkBelirle(kok);
         if (ilkEk == TemelEkYonetici.BOS_EK)
-            return kok.icerik();
-        if (ekler.contains(ilkEk))
-            ekler.remove(ilkEk);
-        List<List<Ek>> sonuclar = new EkSiralayici(ekler, ilkEk).olasiEkDizilimleriniBul();
-        if (sonuclar.isEmpty()) return kok.icerik();
-        else return uretimNesnesiUret(kok, sonuclar.get(0)).olusum;
+            return kok.asil();
+        if (eks.contains(ilkEk))
+            eks.remove(ilkEk);
+        List<List<Ek>> sonuclar = new EkSiralayici(eks, ilkEk).olasiEkDizilimleriniBul();
+        if (sonuclar.isEmpty())
+            return kok.asil();
+        else
+            return uretimNesnesiUret(kok, sonuclar.get(0)).olusum;
     }
 
     /**
@@ -72,7 +93,7 @@ public class KelimeUretici {
      *         sadece yalin ek var ise sadece kok icerigi doner. Kokun ozel durum ile bozulmus hali degil
      *         orjinal icerigini iceren dizi doner.
      *         TODO:
-     *         simdilik ozle adlarda bas harf kucuk olarak donuyor. Ayrica ozel yazimli koklerin orjinali
+     *         simdilik ozel adlarda bas harf kucuk olarak donuyor. Ayrica ozel yazimli koklerin orjinali
      *         degil ayiklanmis hali doner.
      */
     public String[] ayristir(Kelime kelime) {
@@ -99,7 +120,7 @@ public class KelimeUretici {
         }
 
         yardimci.kokGirisDegismiVarsaUygula(kok, kelime.icerik(), null);
-        
+
         for (int i = 0; i < ekler.size(); i++) {
 
             Ek ek = ekler.get(i);

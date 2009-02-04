@@ -19,6 +19,8 @@ import java.util.Set;
 import net.zemberek.bilgi.ZemberekAyarlari;
 import net.zemberek.islemler.KelimeKokFrekansKiyaslayici;
 import net.zemberek.yapi.Kelime;
+import net.zemberek.yapi.HarfDizisi;
+import net.zemberek.yapi.Alfabe;
 
 public class OneriUretici {
 
@@ -26,13 +28,16 @@ public class OneriUretici {
     private ToleransliCozumleyici toleransliCozumleyici;
     private CozumlemeYardimcisi yardimci;
     private ZemberekAyarlari ayarlar;
+    private Alfabe alfabe;
 
 
-    public OneriUretici(CozumlemeYardimcisi yardimci,
+    public OneriUretici(Alfabe alfabe,
+                        CozumlemeYardimcisi yardimci,
                         KelimeCozumleyici cozumleyici,
                         KelimeCozumleyici asciiToleransliCozumleyici,
                         ToleransliCozumleyici toleransliCozumleyici,
                         ZemberekAyarlari ayarlar) {
+        this.alfabe = alfabe;
         this.yardimci = yardimci;
         this.toleransliCozumleyici = toleransliCozumleyici;
         this.cozumleyici = cozumleyici;
@@ -54,7 +59,7 @@ public class OneriUretici {
     public String[] oner(String kelime) {
         // Once hatalı kelime için tek kelimelik önerileri bulmaya çalış
         Kelime[] oneriler = toleransliCozumleyici.cozumle(kelime);
-        
+
         //Deasciifierden bir şey var mı?
         Kelime[] asciiTurkceOneriler = new Kelime[0];
         if (ayarlar.oneriDeasciifierKullan())
@@ -111,20 +116,40 @@ public class OneriUretici {
 
         // Dönüş listesi string olacak, Yeni bir liste oluştur. 
         ArrayList<String> sonucListesi = new ArrayList<String>();
-        for (Kelime anOneriList : oneriList) {
-            sonucListesi.add(anOneriList.icerik().toString());
+        for (Kelime oneri : oneriList) {
+            final HarfDizisi ic = oneri.icerik();
+            // girisin bas harfi buyuk ise ona gore onerilerin de bas harfini buyut.
+            if (ic.length() > 0 && Character.isUpperCase(kelime.charAt(0))) {
+                ic.harfDegistir(0, alfabe.buyukHarf(ic.harf(0)));
+            }
+
+            // eger hepsi buyuk harf ise girisin cikisin da hepsi buyuk harf olsun.
+            boolean hepsiBuyukHarf = true;
+            for (int j = 0; j < kelime.length(); j++) {
+                if (!Character.isUpperCase(kelime.charAt(j))) {
+                    hepsiBuyukHarf = false;
+                    break;
+                }
+            }
+
+            if (hepsiBuyukHarf) {
+                for (int j = 0; j < ic.length(); j++)
+                    ic.harfDegistir(j, alfabe.buyukHarf(ic.harf(j)));
+            }
+
+            sonucListesi.add(oneri.icerik().toString());
         }
 
         //Çift sonuçları liste sirasını bozmadan iptal et.
         List<String> tekilListe = new ArrayList<String>(new LinkedHashSet<String>(sonucListesi));
 
-        	
         // Son olarak yer kalmışsa ayrı yazılım önerilerini ekle
         for (String oneri : ayriYazimOnerileri) {
-            if (tekilListe.size() < ayarlar.getOneriMax())
+            if (tekilListe.size() < ayarlar.getOneriMax()) {
                 tekilListe.add(oneri);
-            else
+            } else {
                 break;
+            }
         }
 
         return tekilListe.toArray(new String[tekilListe.size()]);
