@@ -62,7 +62,7 @@ public class Zemberek {
     private HeceIslemleri heceIslemleri;
     private ZemberekAyarlari ayarlar;
     private DilBilgisi dilBilgisi;
-    private DenetlemeCebi denetlemeCebi; 
+    private DenetlemeCebi denetlemeCebi;
 
     /**
      * Default constructor.
@@ -117,6 +117,7 @@ public class Zemberek {
                 dilBilgisi.cozumlemeYardimcisi());
 
         oneriUretici = new OneriUretici(
+                dilBilgisi.alfabe(),
                 dilBilgisi.cozumlemeYardimcisi(),
                 cozumleyici,
                 asciiToleransliCozumleyici,
@@ -178,8 +179,8 @@ public class Zemberek {
      *         TR: true:imla denetimi basarili. false: Denetim basarisiz.
      */
     public boolean kelimeDenetle(String giris) {
-        if(denetlemeCebi!=null)
-           return denetlemeCebi.kontrol(giris) || cozumleyici.cozumlenebilir(giris);
+        if (denetlemeCebi != null)
+            return denetlemeCebi.kontrol(giris) || cozumleyici.cozumlenebilir(giris);
         else return cozumleyici.cozumlenebilir(giris);
     }
 
@@ -345,6 +346,17 @@ public class Zemberek {
      * @return String olarak uretilen kelime.
      */
     public String kelimeUret(Kok kok, List<Ek> ekler) {
+        return kelimeUretici.kelimeUret(kok, ekler);
+    }
+
+    /**
+     * Istenilen kok ve rasgele sayida ek ile kelime uretir.
+     *
+     * @param kok   kok nesnesi
+     * @param ekler ek listesi
+     * @return String olarak uretilen kelime.
+     */
+    public String kelimeUret(Kok kok, Ek... ekler) {
         return kelimeUretici.kelimeUret(kok, ekler);
     }
 

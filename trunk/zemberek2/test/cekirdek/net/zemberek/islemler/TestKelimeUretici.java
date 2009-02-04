@@ -62,12 +62,11 @@ public class TestKelimeUretici extends TemelTest {
     public void testKelimeUret() {
 
         Kok kok = kokler.kokBul("sabret", KelimeTipi.FIIL);
-        List<Ek> ekler = ekListesi(FIIL_KOK, FIIL_YETENEK_EBIL, FIIL_GELECEKZAMAN_ECEK, FIIL_KISI_BIZ);
+        List<Ek> ekler = ekListesi(FIIL_YETENEK_EBIL, FIIL_GELECEKZAMAN_ECEK, FIIL_KISI_BIZ);
         assertEquals("sabredebilece\u011fiz", kelimeUretici.kelimeUret(kok, ekler));
 
-
         kok = kokler.kokBul("armut", KelimeTipi.ISIM);
-        ekler = ekListesi(ISIM_KOK, ISIM_SAHIPLIK_BIZ_IMIZ, ISIM_TANIMLAMA_DIR);
+        ekler = ekListesi( ISIM_SAHIPLIK_BIZ_IMIZ, ISIM_TANIMLAMA_DIR);
         assertEquals("armudumuzdur", kelimeUretici.kelimeUret(kok, ekler));
 
         Kelime almanyada = cozumleyici.cozumle("Almanya'da", CozumlemeSeviyesi.TEK_KOK)[0];
