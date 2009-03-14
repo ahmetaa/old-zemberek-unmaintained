@@ -412,7 +412,7 @@
 
 		<mkdir dir="${test.results}"/>
 
-		<junit haltonfailure="false" fork="true" failureproperty="tests.failed" printsummary="on">
+		<junit haltonfailure="false" fork="true" haltonerror="false" failureproperty="tests.failed" errorproperty="tests.failed" printsummary="on">
 			<formatter type="xml"/>
 			<formatter type="plain"/>
 			<formatter type="brief" usefile="false"/>
