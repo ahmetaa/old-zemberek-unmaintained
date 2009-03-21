@@ -3,7 +3,6 @@
   ~ Lisans bilgisi icin lutfen proje ana dizinindeki zemberek2-lisans.txt dosyasini okuyunuz.
   -->
 <project name="zemberek2" default="dist" basedir=".">
-	<!--Bu bir test satırıdır-->
 	<!--Netbeans ile calisiyorsaniz asagidaki satiri (eger aktif degilse) gecerli hale getirmelisiniz.-->
 	<!--<import file="nbproject/build-impl.xml"/>-->
 
