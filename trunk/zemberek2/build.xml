@@ -5,7 +5,7 @@
 <project name="zemberek2" default="dist" basedir=".">
 	<!--Netbeans ile calisiyorsaniz asagidaki satiri (eger aktif degilse) gecerli hale getirmelisiniz.-->
 	<!--<import file="nbproject/build-impl.xml"/>-->
-
+	<!--Bu test için bir yorum satırıdır-->
 
 	<!-- build.properties dosyasini oku.-->
 	<property file="build.properties"/>
