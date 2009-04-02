@@ -1,12 +1,14 @@
-=Cesitli Belgeler.=
+=Çeşitli Belgeler.=
 
 
-* [http://docs.google.com/Doc?id=ah8p92nkjzcw_8dhssst Zemberek projesinin indirilmesi ve farkli Java gelistirme ortamlarinda acilmasi]
+* [http://docs.google.com/Doc?id=ah8p92nkjzcw_8dhssst Zemberek projesinin indirilmesi ve farklı Java geliştirme ortamlarında açılması]
 
-* [http://docs.google.com/Doc?id=ah8p92nkjzcw_17fmfqtq Zemberek Kutuphanesine Java projelerinden erisim]
+* [http://docs.google.com/Doc?id=ah8p92nkjzcw_17fmfqtq Zemberek kütüphanesine Java projelerinden erişim]
 
-* [http://docs.google.com/Doc?id=ah8p92nkjzcw_13c7zfq9 Turk Dili gelistirici Belgesi]
+* [http://docs.google.com/Doc?id=ah8p92nkjzcw_13c7zfq9 Türk Dili geliştirici Belgesi]
 
 * [http://docs.google.com/Doc?id=ah8p92nkjzcw_18d5bv6d Soru-Cevap]
 
 * [http://docs.google.com/View?docid=dd9w44bk_2d7dkwt zemberek-dbus]
+
+* [http://zemberek.googlecode.com/svn/trunk/zemberek2/dokuman/ Kaynak kodda yer alan belgeler]
