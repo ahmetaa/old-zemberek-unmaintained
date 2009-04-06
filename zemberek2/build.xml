@@ -371,6 +371,7 @@
 		<echo message="Generating the javadocs..."/>
 		<delete dir="${java.docs}/api"/>
 		<mkdir dir="${java.docs}/api"/>
+		<mkdir dir="${dist.dir}"/>
 		<javadoc
                 packagenames="net.zemberek.*"
                 sourcepath="${src.cekirdek}"
@@ -384,8 +385,23 @@
         	    defaultexcludes="no"
                 windowtitle="Generated Documentation for Zemberek"
                 doctitle="Generated Documentation for Zemberek"
-                bottom="Copyright 2005-2008 Zemberek Development Team. All Rights Reserved.">
+                bottom="Copyright 2005-2009 Zemberek Development Team. All Rights Reserved.">
 		</javadoc>
+		<zip destfile="${dist.dir}/zemberek-javadoc-${surum}.zip">
+			<zipfileset dir="${java.docs}/api" prefix="zemberek-javadoc-${surum}"/>
+				<!--<include name="deney/**"/>
+				<include name="dokuman/**"/>
+				<include name="kaynaklar/**"/>
+				<include name="nbproject/**"/>
+				<include name="src/**"/>
+				<include name="test/**"/>
+				<include name="build.*"/>
+				<include name="*.txt"/>
+				<exclude name="kaynaklar/**/*.bin"/>
+				<include name="${libsdev}"/>
+				<include name="${libsdist}"/>
+			</zipfileset>-->
+		</zip>
 	</target>
 
 	<!--    test  islemleri   -->
