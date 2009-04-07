@@ -48,6 +48,7 @@ CC_FLAGS=$(CFLAGS) -Wall -Wno-non-virtual-dtor -fno-rtti -fno-exceptions -fshort
 CC_INCLUDES=$(NSPR_INCLUDES) $(XULRUNNER_INCLUDES) \
 -include mozilla-config.h -include xpcom-config.h
 CC_LIBS=$(XULRUNNER_LIBS)
+STRIP?=strip
 
 .PHONY: all clean xpi extension-files install-unpacked chrome/mozzemberek.jar
 
@@ -66,7 +67,7 @@ chrome/mozzemberek.jar:
 platform/$(PLATFORM)/components/$(COMPONENT): $(patsubst %,%.o,$(OBJECTS))
 	-mkdir -p platform/$(PLATFORM)/components
 	$(CC_LINK) $(LDFLAGS) -o $@ $^ $(CC_LIBS)
-	-strip $@
+	-$(STRIP) $@
 
 %.o: %.cpp
 	$(CXX) $(CC_FLAGS) $(CC_INCLUDES) -o $@ $<
