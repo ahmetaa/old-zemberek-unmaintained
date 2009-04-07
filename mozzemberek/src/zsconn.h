@@ -24,14 +24,17 @@ class ZSConn
 {
 public:
     ZSConn();
-    ZSConn(const char host[], const int port);
+    ZSConn(char *host, int port);
     ~ZSConn();
 
     ZString checkString( const string& str, int offset ) const;
     vector<string> getSuggestions (const string& str ) const;
+	virtual void init();
 
 private:
     int _conn;
+	int port;
+	char * host;
 
     enum Z_CHECK_RESULT spellCheck( const string& str ) const;
     string recvResult() const;

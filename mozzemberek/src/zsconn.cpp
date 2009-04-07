@@ -27,21 +27,31 @@
 
 
 ZSConn::ZSConn(){
-	ZSConn::ZSConn(DEFAULTHOST, DEFAULTPORT);
+	host = DEFAULTHOST;
+	port = DEFAULTPORT;
+	init();
 }
-ZSConn::ZSConn(const char host[], const int port)
+
+ZSConn::ZSConn(char *in_host, int in_port)
+{
+	host = in_host;
+	port = in_port;
+	init();
+}
+
+void ZSConn::init()
 {
     struct hostent *he;
     struct sockaddr_in saddr;
 
     if ( ( he = (struct hostent *)gethostbyname(host) ) == NULL ) {
-	perror( "gethostbyname()" );
-	return; //segfault if cannot resolve, so return from here
+	    perror( "gethostbyname()" );
+	    return; //segfault if cannot resolve, so return from here
     }
 
     if ( ( _conn = socket(AF_INET, SOCK_STREAM, 0) ) == -1 ) {
-	perror( "socket()" );
-	return;
+	    perror( "socket()" );
+	    return;
     }
 
     saddr.sin_family = AF_INET;
@@ -90,8 +100,8 @@ enum Z_CHECK_RESULT ZSConn::spellCheck( const string& str ) const
     strstream << str.length()+2 << " * " << str;
     string checkStr = strstream.str();
     if ( send(_conn, checkStr.c_str(), checkStr.length(), 0) == -1) {
-	perror("zemberek-server hatası");
-	return Z_TRUE;
+	    perror("zemberek-server hatası");
+	    return Z_TRUE;
     }
 
     switch ( recvResult()[0] ) {
@@ -115,8 +125,8 @@ vector<string> ZSConn::getSuggestions(const string& str ) const
     strstream << str.length()+2 << " & " << str;
     string checkStr = strstream.str();
     if ( send( _conn, checkStr.c_str(), checkStr.length(), 0 ) == -1 ) {
-	perror("zemberek-server hatası");
-	return suggestions;
+	    perror("zemberek-server hatası");
+	    return suggestions;
     }
 
     string result = recvResult();
