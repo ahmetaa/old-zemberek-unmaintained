@@ -21,12 +21,12 @@
 #include "zstring.h"
 #include "zemberek.h"
 
-/* use myspell's limit for maxSug */
 Zemberek::Zemberek() : maxSug(25)
 {
     zsconn = new ZSConn();
 }
-Zemberek::Zemberek(const char host[], const int port) : maxSug(25)
+
+Zemberek::Zemberek(char *host, int port) : maxSug(25)
 {
     zsconn = new ZSConn(host, port);
 }

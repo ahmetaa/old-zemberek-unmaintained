@@ -20,7 +20,7 @@ class Zemberek
 {
 public:
     Zemberek();
-    Zemberek(const char host[], const int port);
+    Zemberek(char *host, int port);
     ~Zemberek();
 
     int getSuggestions(char ***suggestions, const char *word) const;

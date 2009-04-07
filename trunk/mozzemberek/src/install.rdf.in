@@ -54,5 +54,14 @@
 	</Description>
     </em:targetApplication>
 
+    <em:targetApplication>
+      <!-- Mozilla Prism -->
+	  <Description>
+	    <em:id>prism@developer.mozilla.org</em:id>
+		<em:minVersion>@PRISM_MIN@</em:minVersion>
+		<em:maxVersion>@PRISM_MAX@</em:maxVersion>
+      </Description>
+    </em:targetApplication>
+
  </Description>
 </RDF>
