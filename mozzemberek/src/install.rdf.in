@@ -9,7 +9,7 @@
     <em:version>@VERSION@</em:version>
     <em:description>Zemberek client for zemberek server</em:description>
     <em:creator>Rail Aliev</em:creator>
-    <em:contributor>Serkan Kaba</em:contributor>
+	<em:contributor>Serkan Kaba &lt;serkan_kaba@yahoo.com&gt;</em:contributor>
     <!--em:iconURL>chrome://mozzemberek/skin/classic/icon.png</em:iconURL-->
     <em:homepageURL>http://code.google.com/p/zemberek/</em:homepageURL>
     <em:targetPlatform>@TARGET_PLATFORM@</em:targetPlatform>
