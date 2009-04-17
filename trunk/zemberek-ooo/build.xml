@@ -43,11 +43,11 @@
 	</path>
 	
 	<path id="ooo3.classpath.unix">
-		<fileset dir="${openoffice.root.dir}/ure/share/java">
+		<fileset dir="${openoffice.root.dir}/basis-link/ure-link/share/java">
 			<include name="**/*.jar" />
 			<include name="**/*.zip" />
 		</fileset>
-		<fileset dir="${openoffice.root.dir}/basis3.0/program/classes">
+		<fileset dir="${openoffice.root.dir}/basis-link/program/classes">
 			<include name="**/*.jar" />
 			<include name="**/*.zip" />
 		</fileset>
