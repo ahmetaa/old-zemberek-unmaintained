@@ -42,7 +42,7 @@
 	<path id="classpath.build">
 		<fileset dir="lib/dagitim"/>
 		<fileset dir="lib/gelistirme"/>
-		<fileset dir="${build.cekirdek}"/>
+		<pathelement path="${build.cekirdek}"/>
 	</path>
 
 	<!--   dagitim kutuphaneleri (eger varsa) -->
@@ -386,6 +386,7 @@
                 windowtitle="Generated Documentation for Zemberek"
                 doctitle="Generated Documentation for Zemberek"
                 bottom="Copyright 2005-2009 Zemberek Development Team. All Rights Reserved.">
+                <!--<link href="http://java.sun.com/j2se/1.5.0/docs/api/"/>-->
 		</javadoc>
 		<zip destfile="${dist.dir}/zemberek-javadoc-${surum}.zip">
 			<zipfileset dir="${java.docs}/api" prefix="zemberek-javadoc-${surum}"/>
