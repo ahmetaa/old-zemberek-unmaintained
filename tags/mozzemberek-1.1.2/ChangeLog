@@ -1,0 +1,8 @@
+2008-12-28 Rail Aliev <rail@i-rs.ru>
+
+	* Fine tune of install.rdf.in
+	* Console logging added
+
+2008-12-27 Rail Aliev <rail@i-rs.ru>
+
+	* Initial version forked from mozvoikko 0.9.5
