@@ -7,6 +7,7 @@ package net.zemberek.yapi.ek;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.logging.Logger;
 
 import net.zemberek.araclar.Kayitci;
@@ -34,8 +35,9 @@ public class TemelEkYonetici implements EkYonetici {
         long start = System.currentTimeMillis();
         okuyucu.xmlOku();
         ekler = okuyucu.getEkler();
-        for (KelimeTipi tip : baslangicEkMap.keySet()) {
-            Ek ek = ekler.get(baslangicEkMap.get(tip));
+        for (Entry<KelimeTipi, String> entry : baslangicEkMap.entrySet()) {
+            KelimeTipi tip = entry.getKey();
+            Ek ek = ekler.get(entry.getValue());
             if (ek != null)
                 baslangicEkleri.put(tip, ek);
             else

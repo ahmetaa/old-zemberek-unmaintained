@@ -175,6 +175,7 @@ public class Kok {
         return icerik;
     }
 
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -182,12 +183,13 @@ public class Kok {
         final Kok kok = (Kok) o;
 
         if (icerik != null ? !icerik.equals(kok.icerik) : kok.icerik != null) return false;
-        if (ozelDurumlar != null ? !ozelDurumlar.equals(kok.ozelDurumlar) : kok.ozelDurumlar != null) return false;
+        if (ozelDurumlar != null ? !(ozelDurumlar == kok.ozelDurumlar) : kok.ozelDurumlar != null) return false;
         if (tip != null ? !tip.equals(kok.tip) : kok.tip != null) return false;
 
         return true;
     }
 
+    @Override
     public int hashCode() {
         int result;
         result = (icerik != null ? icerik.hashCode() : 0);

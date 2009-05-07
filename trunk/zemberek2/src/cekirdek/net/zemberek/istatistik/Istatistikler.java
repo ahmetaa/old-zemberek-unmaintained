@@ -29,7 +29,6 @@ public class Istatistikler {
     private IkiliIstatistikleri kokIkiliIstatistikleri = new IkiliIstatistikleri();
     private IkiliIstatistikleri heceIkiliIstatistikleri = new IkiliIstatistikleri();
     
-    private List<Istatistikler> altIstatistikler = null;
 	private int kelimeSayisi = 0;
 	private int hatalar = 0;
 	private int dogrular = 0;
@@ -71,18 +70,6 @@ public class Istatistikler {
 
     public void processChar(char ch) {
         karakterIstatistikleri.processChar(ch);
-    }
-
-    public List<Istatistikler> getAltIstatistikler() {
-        return altIstatistikler;
-    }
-
-    public void addAltIstatistik(Istatistikler istatistik) {
-        altIstatistikler.add(istatistik);
-    }
-
-    public void removeAltIstatistik(Istatistikler istatistik) {
-        altIstatistikler.remove(istatistik);
     }
 
     public HeceIstatistikleri getHeceIstatistikleri() {
