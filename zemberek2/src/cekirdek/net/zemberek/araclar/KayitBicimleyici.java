@@ -21,6 +21,7 @@ public class KayitBicimleyici extends Formatter {
     /**
      * Java logger icin tek satirlik cikti uretir.
      */
+    @Override
     public String format(LogRecord record) {
         String loggerName = record.getLoggerName();
         if (loggerName == null) {

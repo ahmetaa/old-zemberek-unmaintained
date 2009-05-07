@@ -67,7 +67,6 @@ public final class EkSiralayici {
         if (olusan.size() == tum) {
             if (!this.tumOlusumlar.contains(olusan))
                 this.tumOlusumlar.add(olusan);
-            olusan = new ArrayList<Ek>();
         } else {
             rasgeleEkler.add(incelenenEk);
             if (olusan.size() > 0)

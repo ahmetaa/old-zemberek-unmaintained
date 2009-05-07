@@ -68,8 +68,8 @@ public class TusTakimi {
      *  
      */
     public int mesafeHesapla(char c1, char c2){
-        KarakterKoordinati k1 = koordinatlar.get(new Character(c1));
-        KarakterKoordinati k2 = koordinatlar.get(new Character(c2));
+        KarakterKoordinati k1 = koordinatlar.get(Character.valueOf(c1));
+        KarakterKoordinati k2 = koordinatlar.get(Character.valueOf(c2));
         if(k1 == null || k2 == null){
             return -1;
         }
@@ -82,7 +82,7 @@ public class TusTakimi {
     	return koordinatlar.toString();
     }
     
-    public class KarakterKoordinati{
+    public static class KarakterKoordinati{
         char c;
         int x, y;
         

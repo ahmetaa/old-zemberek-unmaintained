@@ -24,6 +24,7 @@ public class Kelime implements Cloneable {
         return ekler.toArray(new Ek[ekler.size()]);
     }
 
+    @Override
     public Kelime clone() {
 		try {
 			Kelime kopya = (Kelime) super.clone();
@@ -110,6 +111,7 @@ public class Kelime implements Cloneable {
         return kok;
     }
 
+    @Override
     public String toString() {
         StringBuilder str = new StringBuilder(" [ Kok: " + kok.icerik() + ", " + kok.tip() + " ] ");
         if (ekler.size() > 1)

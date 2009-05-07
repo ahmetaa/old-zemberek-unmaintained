@@ -146,7 +146,7 @@ public class Ek {
         return null;
     }
 
-    public boolean OzelEkOlustur(Kelime ozelKelime) {
+    public boolean ozelEkOlustur(Kelime ozelKelime) {
         return false;
     }
 

@@ -73,7 +73,7 @@ public class MetinAraclari2 {
       return (duzeltmeMesafesi(source, target, dist) <= dist);
   }
 
-  public static boolean ParcasiDuzeltmeMesafesiIcinde(String s1, String s2, int distance)
+  public static boolean parcasiDuzeltmeMesafesiIcinde(String s1, String s2, int distance)
   {
       if (s2.length() < (s1.length() - distance))
           return false;

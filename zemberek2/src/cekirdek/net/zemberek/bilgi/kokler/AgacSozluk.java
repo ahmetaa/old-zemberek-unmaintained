@@ -39,8 +39,8 @@ public class AgacSozluk implements Sozluk {
     /**
      * constructor.
      *
-     * @param okuyucu: Sözlükler mutlaka bir sözlük okuyucu ile ilklendirilir.
-     * @param alfabe : Kullanılan Türk dili alfabesi
+     * @param okuyucu : Sözlükler mutlaka bir sözlük okuyucu ile ilklendirilir.
+     * @param alfabe  : Kullanılan Türk dili alfabesi
      * @param ozelDurumlar : Dile ait kök özel durumlarını taşıyan nesne
      */
     public AgacSozluk(KokOkuyucu okuyucu, Alfabe alfabe, KokOzelDurumBilgisi ozelDurumlar) throws IOException {
@@ -71,7 +71,7 @@ public class AgacSozluk implements Sozluk {
     /**
      * Verilen bir kökü sözlükte arar.
      *
-     * @param str: Aranan kök
+     * @param str Aranan kök
      * @return Eğer aranan kök varsa, eş seslileri ile beraber kök nesnesini de
      * taşıyan bir List<Kok>, aranan kök yoksa null;
      */
@@ -101,7 +101,7 @@ public class AgacSozluk implements Sozluk {
      * agaca eklenir. bu sekilde bozulmus kok formlarini iceren kelimeler icin kok bulma
      * islemi basari ile gerceklestirilebilir.
      *
-     * @param kok: Sözlüğe eklenecek olan kök nesnesi.
+     * @param kok Sözlüğe eklenecek olan kök nesnesi.
      */
     public void ekle(Kok kok) {
         kok.setIndeks(indeks++);
@@ -137,7 +137,7 @@ public class AgacSozluk implements Sozluk {
      *
      * @author MDA
      */
-    class AgacKokAdayiBulucuUretici implements KokAdayiBulucuUretici {
+    static class AgacKokAdayiBulucuUretici implements KokAdayiBulucuUretici {
 
         KokAgaci agac = null;
 

@@ -26,8 +26,6 @@ import net.zemberek.istatistik.Istatistikler;
 public class TurkishTokenStream {
     BufferedReader bis = null;
     Istatistikler statistics = null;
-    char[] buffer = new char[1000];
-    int index = 0;
 
     /**
      * Dosyadan kelime okuyan TurkishTokenStream oluşturur
