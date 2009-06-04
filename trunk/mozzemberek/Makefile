@@ -37,7 +37,7 @@ dist: mozzemberek-$(MOZZEMBEREK_VERSION).tar.gz
 
 mozzemberek-$(MOZZEMBEREK_VERSION).tar.gz: $(patsubst %,mozzemberek-$(MOZZEMBEREK_VERSION)/%, \
                                        $(sort $(SRCDIST)))
-	tar c --group 0 --owner 0 mozzemberek-$(MOZZEMBEREK_VERSION) | gzip -9 > $@
+	tar c --exclude=.svn --group 0 --owner 0 mozzemberek-$(MOZZEMBEREK_VERSION) | gzip -9 > $@
 
 $(patsubst %,mozzemberek-$(MOZZEMBEREK_VERSION)/%, $(sort $(SRCDIST))): \
            mozzemberek-$(MOZZEMBEREK_VERSION)/%: %
