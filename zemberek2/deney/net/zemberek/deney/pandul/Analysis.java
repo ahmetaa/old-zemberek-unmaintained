@@ -31,6 +31,7 @@ public class Analysis {
   static int[] strLengths = new int[40];
   static int leafNodes = 0;
   static int maxLevel = 0;
+  static int totalChars = 0;
 
   /**
    * Recursively walks the trie and updates statistics.
@@ -70,24 +71,45 @@ public class Analysis {
     maxLevel = 0;
   }
   
+  public void createFlatTrie(Node node, Node[] children) {
+    if (children == null) {
+      return;
+    }
+  }
+  
   public static void report(SimpleCompactStringTrie cst) {
     System.out.println("Total Nodes: " + totalNodes);
     System.out.println("Total Leaf Nodes: " + leafNodes);
-    System.out.println("Total interim Nodes: " + (totalNodes - leafNodes));
+    System.out.println("Total ratio: " + (leafNodes * 100.0 / totalNodes));
+    
+    int interimNodes = totalNodes - leafNodes;
+    System.out.println("Total interim Nodes: " + interimNodes);
     System.out.println("Max Depth: " + maxLevel);
-
+    
+    int totalChildLinks = 0;
     for (int i = 0; i < childCounts.length; i++) {
       if (childCounts[i] == 0) continue;
+      totalChildLinks += childCounts[i] * i;
       System.out.println("Nodes with " + i + " children: " + childCounts[i]);
     }
+    
+    System.out.println("Average fanout = " + ((double)totalChildLinks / interimNodes));
+    
     for (int i = 0; i < chainLengths.length; i++) {
       if (chainLengths[i] == 0) continue;
       System.out.println("Chains of length " + i + " : " + chainLengths[i]);
     }
+    
+    int totalStringLength = 0;
     for (int i = 0; i < strLengths.length; i++) {
       if (strLengths[i] == 0) continue;
+      totalStringLength += strLengths[i] * i;
       System.out.println("String fragment of length " + i + " : " + strLengths[i]);
     }
+    System.out.println("Total string length: " + totalStringLength);
+    System.out.println("Average compression: %" + (100 - (totalStringLength * 100 / totalChars)));
+    System.out.println("Average str fragment length = " + ((double) totalStringLength / totalNodes));
+    
   }
   
   private static List<Entry<String, Integer>> getSortedCopy(Set<Entry<String, Integer>> set) {
@@ -109,7 +131,6 @@ public class Analysis {
 //    BufferedReader reader = new KaynakYukleyici("utf-8").getReader("kelime-frekans-chrome.txt");    
     String line;
     int total = 0;
-    int totalchars = 0;
     while ((line = reader.readLine()) != null) {
       line = line.toLowerCase().trim();
       if (line.startsWith("#")) {
@@ -120,8 +141,8 @@ public class Analysis {
       if (parts.length == 0) {
         continue;
       }
-      line = parts[0].replaceAll("['.`qwx-]", "");
-      totalchars += line.length();
+      line = parts[0].replaceAll("['.`qwx-]", "").trim();
+      totalChars += line.length();
 //      System.out.println(line);
 //      String attributeGroup = "";
 //      for (int i = 1; i < parts.length ; i++) {
@@ -143,12 +164,12 @@ public class Analysis {
 //        }
 //      }
       total++;
-      if(total > 1000000) break;
+      if(total > 100000) break;
       cst.add(line);
     }
     System.out.println("Total entries in the dictionary: " + total);
-    System.out.println("Total chars in the dictionary: " + totalchars);
-    System.out.println("Average Length: " + ((double)totalchars / total));
+    System.out.println("Total chars in the dictionary: " + totalChars);
+    System.out.println("Average Length: " + ((double)totalChars / total));
 
     System.out.println("Unique Attributes Total:" + attributes.size());
     
