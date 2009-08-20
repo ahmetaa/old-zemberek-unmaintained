@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<!DOCTYPE prefwindow SYSTEM "chrome://mozzemberek/locale/mozzemberek.settings.dtd">
+
+<prefwindow id="mozzemberekSettings"
+            title="&mozzemberek.settings.title;"
+            xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+	<prefpane id="mozzemberekSettingsPane" label="&mozzemberek.settings.title;">
+		<preferences>
+			<preference id="port" name="extensions.mozzemberek.port" type="int" />
+			<preference id="host" name="extensions.mozzemberek.host" type="string" />
+		</preferences>
+
+		<hbox><label value="&mozzemberek.settings.host;"/><spacer flex="1"/><textbox size="15" id="hostText" preference="host" preference-editable="true" value="localhost"/></hbox>
+		<hbox><label value="&mozzemberek.settings.port;"/><spacer flex="1"/><textbox size="6" maxlength="5" id="portText" preference="port" preference-editable="true" value="10444"/></hbox>
+	</prefpane>
+
+</prefwindow>
