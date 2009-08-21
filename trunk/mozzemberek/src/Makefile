@@ -62,7 +62,7 @@ $(EXTENSION): platform/$(PLATFORM)/components/$(COMPONENT) install.rdf chrome.ma
 	zip -r $@ $^
 
 chrome/mozzemberek.jar:
-	cd chrome && zip mozzemberek.jar -r content locale skin
+	cd chrome && zip mozzemberek.jar -r content locale
 
 platform/$(PLATFORM)/components/$(COMPONENT): $(patsubst %,%.o,$(OBJECTS))
 	-mkdir -p platform/$(PLATFORM)/components
