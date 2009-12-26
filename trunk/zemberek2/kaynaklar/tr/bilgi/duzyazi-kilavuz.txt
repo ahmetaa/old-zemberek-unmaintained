@@ -1,4 +1,4 @@
-﻿aba IS
+aba IS
 abadî IS
 abajur IS
 abaküs IS
@@ -31,6 +31,7 @@ abıhayat IS
 abıru IS
 abide IS
 abidevî IS EK
+abi IS
 abis IS
 abiye IS
 abla IS
@@ -105,7 +106,7 @@ açık IS YUM
 açıkağız IS YUM
 açıkgöz IS
 açıklama IS
-açıkla FI
+açıklamak FI
 açıklıkölçer IS
 açım IS
 açımlamak FI
@@ -395,7 +396,7 @@ akar IS
 akarca IS EK
 akaret IS
 akarlar IS EK
-akarsu IS
+akarsu IS FARKLI_KAYNASTIRMA
 akaryakıt IS
 akasma IS
 akasya IS
@@ -535,8 +536,8 @@ akşamlamak FI
 akşamleyin IS
 #akşamsefası IS
 akşamsefa IS IS_TAM
-akşamüstü IS
-akşamüzeri IS
+akşamüstü IS IS_TAM
+akşamüzeri IS IS_TAM
 Akşehir OZ
 akşın IS
 aktar IS EK
@@ -681,9 +682,9 @@ aleyhtar IS
 aleykümselâm IS YAL
 alfa IS
 alfabe IS
-alfabetik IS YUM
+alfabetik SI YUM
 alfenit IS YUM
-alg IS
+alg IS TERS
 algarina IS
 algı IS
 algılamak FI
@@ -781,7 +782,7 @@ Altayca OZ
 alternatif IS
 alternatör IS
 altes IS
-altı IS
+altı SA
 altıgen IS
 altık IS YUM
 Altıkardeş OZ
@@ -938,6 +939,7 @@ analjezi IS
 analjezik IS YUM
 analoji IS
 analojik IS YUM
+analog IS
 anamal IS
 Anamur OZ
 ananas IS
@@ -1207,6 +1209,7 @@ anterit IS
 antet IS
 antialerjik IS YUM
 antiasit IS YUM
+antibakteriyel IS
 antibiyotik IS YUM
 antidemokratik IS YUM
 antidot IS YUM
@@ -1544,6 +1547,7 @@ asil IS
 asilzade IS
 asimetri IS
 asimetrik IS YUM
+asimile SI
 asimilâsyon IS
 asimptot IS
 asistan IS
@@ -1710,7 +1714,7 @@ atlambaç IS YUM
 atlangıç IS YUM
 atlas IS
 atlet IS
-atletik IS YUM
+atletik SI YUM
 atletizm IS
 atlıkarınca IS
 atmaca IS
@@ -1774,6 +1778,7 @@ avurt IS YUM
 avurtlamak FI
 avutmak FI
 ay IS
+ay ZAMAN
 aya IS
 ayak IS YUM
 ayakaltı IS
@@ -1804,8 +1809,8 @@ ayazma IS
 aybaşı IS
 aybeay IS
 ayça IS
-ayçiçeği IS
-ayçöreği IS
+ayçiçek IS YUM IS_TAM
+ayçörek IS YUM IS_TAM
 aydemir IS
 aydın IS
 aydınger IS
@@ -1985,7 +1990,7 @@ bağım IS
 bağıntı IS
 bağır IS DUS
 bağırdak IS YUM
-bağırmak FI
+bağırmak FI DUS_FI
 bağırsak IS YUM
 bağırtı IS
 bağırtkan IS
@@ -2640,6 +2645,7 @@ beniçinci IS
 #beniçincilik,-ği
 #benildeme
 benildemek FI
+benimki SI
 #benimseme
 benimsemek FI
 #benimsenme
@@ -2978,6 +2984,7 @@ beytülmal IS TERS
 Beytüşşebap OZ
 beyyine IS
 beyzade IS
+beyzbol IS
 beyzî IS
 bez IS
 #bezdirici
@@ -3157,6 +3164,7 @@ bid'at IS TERS OZEL_IC_KARAKTER
 bidayet IS
 bide IS
 bidon IS
+bienal ZA TERS
 biftek IS YUM
 Biga OZ
 Bigadiç OZ
@@ -3408,7 +3416,7 @@ biraz IS
 #birazdan IS
 #birazı
 #bir bakıma
-#birbiri ZA
+#birbirei ZA
 birbir ZA IS_TAM
 #birci
 #bircilik,-ği
@@ -3485,7 +3493,7 @@ birkaç IS
 birlemek FI
 birler IS
 #birleşen
-#birleşik,-ği
+birleşik SI YUM
 #birleşik cümle
 #birleşik fiil
 #birleşik isim,-smi
@@ -4165,7 +4173,7 @@ bölme IS
 bölmek FI GEN
 #bölmeli
 bölü IS
-bölücü IS
+bölücü SI
 #bölücülük,-ğü
 bölük IS YUM
 #bölük pörçük,-ğü
@@ -5660,7 +5668,7 @@ cumburdamak FI
 cumburlop IS YAL
 cumburtu IS
 cumhur IS
-cumhurbaşkanı IS
+cumhurbaşkan IS IS_TAM
 cumhurbaşkanlığı IS
 cumhuriyet IS
 #Cumhuriyet Bayramı
@@ -7264,6 +7272,7 @@ pıtır IS YAL
 #Çin leylâğı
 Çinli OZ
 çintiyan IS
+çip IS
 çipil IS
 #çipilleşme
 #çipilleşmek
@@ -7890,7 +7899,7 @@ dağlamak FI
 #dağ yemişi
 #dağ yolu
 #dağ zebrası
-daha IS
+daha ZAMAN
 #dahası
 dahdah IS YAL
 dahi IS YAL
@@ -8187,7 +8196,7 @@ daracık SI YUM
 #daraç,-cı
 #dar açı
 #dara dar
-darağacı IS
+darağaç IS IS_TAM
 #daralış
 #daralma
 daralmak FI
@@ -8234,9 +8243,9 @@ darılmak FI
 #darlaştırma
 #darlaştırmak
 #darlık,-ğı
-darmadağın IS
-darmadağınık IS YUM
-darmaduman IS
+darmadağın SI
+darmadağınık SI YUM
+darmaduman SI
 #darmaduman etmek
 #darmaduman olmak
 darp IS YUM
@@ -8355,6 +8364,7 @@ decrescendo IS
 dede IS
 dedektif IS
 #dedelik,-ği
+dedektör IS
 dedikodu IS
 #dedikoducu
 #dedikoduculuk,-ğu
@@ -8369,6 +8379,7 @@ dedüksiyon IS
 def IS
 defa IS
 defans IS
+defansif SI
 def'aten IS YAL OZEL_IC_KARAKTER
 #defetme
 defetmek FI GEN YUM
@@ -8377,7 +8388,7 @@ defin IS DUS
 define IS
 #defineci
 #definecilik,-ği
-#deflâsyon
+deflâsyon IS
 #defleme
 deflemek FI
 defne IS
@@ -8903,6 +8914,7 @@ derakap IS
 derbeder IS
 #derbederlik,-ği
 derbent IS YUM
+derbi IS
 Derbent OZ
 derç IS YUM
 #derç etmek
@@ -9329,6 +9341,7 @@ dızdız IS
 dızlak SI YUM
 dızman IS
 dialkol IS TERS
+diaspora IS
 diba IS
 dibace IS
 dibek IS YUM
@@ -10409,7 +10422,7 @@ dönel IS
 dönelemek FI
 #dönelme
 dönelmek FI
-dönem IS
+dönem ZAMAN
 dönemeç IS YUM
 dönence IS
 #dönencel
@@ -10434,7 +10447,7 @@ dönme IS
 #dönme dolap,-bı
 #dönme ekseni
 dönmek FI GEN
-dönük IS YUM
+dönük SI YUM
 #dönülme
 #dönülmek
 dönüm IS
@@ -11526,7 +11539,7 @@ ekmek IS YUM
 ekol IS TERS
 #ekolâli
 ekoloji IS
-ekolojik IS YUM
+ekolojik SI YUM
 ekolojist IS
 ekonometri IS
 ekonomi IS
@@ -11654,7 +11667,7 @@ elde IS
 Eldivan OZ
 eldiven IS
 #el duşu
-elebaşı IS
+elebaş IS IS_TAM
 #elebaşılık,-ğı
 eleğimsağma IS
 eleji IS
@@ -11699,7 +11712,7 @@ elektrokardiyografi IS
 elektrokardiyogram IS
 elektrolit IS
 elektroliz IS
-elektromanyetik IS YUM
+elektromanyetik SI YUM
 #elektromanyetik dalgalar
 #elektromanyetik güç,-cü
 elektromanyetizma IS
@@ -11951,6 +11964,7 @@ emniyet IS
 #emniyetsizlik,-ği
 #emniyet supabı
 emoroit IS YUM
+empati IS
 empermeabl IS
 emperyalist IS
 emperyalizm IS
@@ -12097,6 +12111,7 @@ enir IS
 enişte IS
 enjeksiyon IS
 #enjeksiyoncu
+enjekte SI
 #enjekte etmek
 enjektör IS
 enkaz IS
@@ -12170,6 +12185,7 @@ epigrafi IS
 epik IS YUM
 epikerem IS
 Epikürcü OZ KESMESIZ
+epilepsi IS
 #Epikürcülük,-ğü
 epilog IS YUM
 epistemoloji IS
@@ -12214,6 +12230,7 @@ erek IS YUM
 #er ekmeği
 #ereksel
 #ereksel neden
+ereksiyon IS
 eren IS
 Erendiz OZ
 Erfelek OZ
@@ -12247,6 +12264,7 @@ erginlemek FI
 #ergitme
 #ergitmek
 ergonomi IS
+ergonomik IS
 erguvan IS
 erguvangiller IS
 erguvanî IS
@@ -12557,7 +12575,7 @@ estampaj IS
 ester IS
 #esterleşme
 estet IS
-estetik IS YUM
+estetik SI YUM
 #estetikçi
 #estetikçilik,-ği
 #estetizm
@@ -12749,7 +12767,7 @@ etilen IS
 Etimesğut OZ
 etimolog IS
 etimoloji IS
-etimolojik IS YUM
+etimolojik SI YUM
 #etine dolgun
 etioloji IS
 Etiyopya OZ
@@ -12807,7 +12825,7 @@ etnograf IS
 etnografya IS
 etnolog IS YUM
 etnoloji IS
-etnolojik IS YUM
+etnolojik SI YUM
 etobur IS
 #et oburlar
 etokrasi IS
@@ -13195,6 +13213,7 @@ faril IS
 Farisî OZ
 fariza IS
 fark IS
+farkındalık IS YUM
 #fark etmek
 #farklı
 #farklılaşma
@@ -13813,7 +13832,7 @@ filojenez IS
 filoksera IS
 filolog IS YUM
 filoloji IS
-filolojik IS YUM
+filolojik SI YUM
 filotillâ IS
 filoz IS
 filozof IS
@@ -13958,7 +13977,7 @@ fizyokrat IS
 #fizyokratlık,-ğı
 fizyolog IS YUM
 fizyoloji IS
-fizyolojik IS YUM
+fizyolojik SI YUM
 fizyolojist IS
 fizyonomi IS
 fizyoterapi IS
@@ -14040,7 +14059,7 @@ fonda IS
 fondan IS
 fondöten IS
 fonem IS
-fonetik IS YUM
+fonetik SI YUM
 #fonetikçi
 fonksiyon IS
 fonksiyonalizm IS
@@ -14980,7 +14999,7 @@ genellikle IS YAL
 #genel zekâ
 general IS TERS
 #generallik,-ği
-genetik IS YUM
+genetik SI YUM
 geniş SI
 #geniş açı
 #genişçe
@@ -15336,6 +15355,7 @@ gıybet IS
 #gıy gıy
 gıy IS YAL
 gibi EDAT
+gibi ZA
 #gibilerden
 #gibisi
 #gibisinden
@@ -16448,6 +16468,7 @@ günberi IS
 günce IS
 güncek IS YUM
 güncel IS
+güncellemek FI
 #güncelik,-ği
 #güncelleşme
 #güncelleşmek
@@ -16754,6 +16775,7 @@ hacim IS DUS
 hacir IS DUS
 Hacivat OZ
 haciz IS DUS
+hacker IS
 #hacizli
 #haczetme
 haczetmek FI GEN YUM
@@ -18537,7 +18559,7 @@ hipopotamgiller IS
 hipostaz IS
 hipotansiyon IS
 hipotenüs IS
-hipotetik IS YUM
+hipotetik SI YUM
 hipotez IS
 hippi IS
 #hippilik,-ği
@@ -18690,6 +18712,7 @@ horlamak FI
 horlanmak FI
 #horlayış
 hormon IS
+hormonal SI TERS
 hornblent IS YUM
 horon IS
 horoz IS
@@ -19620,7 +19643,7 @@ idefiks IS
 identik IS YUM
 ideolog IS YUM
 ideoloji IS
-ideolojik IS YUM
+ideolojik SI YUM
 #idi IM
 idil IS
 İdil OZ
@@ -20015,7 +20038,7 @@ iktisat IS YUM
 iktiza IS YAL
 #iktiza etmek
 il IS
-#ilâ
+ilâ EDAT
 ilâç IS YUM
 #ilâçlama
 ilâçlamak FI
@@ -20697,6 +20720,7 @@ insiraf IS
 insirafî IS
 insiyak IS
 insiyakî IS
+insülin IS
 inşa IS
 inşaat IS
 #inşaatçı
@@ -20715,6 +20739,7 @@ intaniye IS
 integral IS
 #integral denklemi
 #integral hesapları
+interaktif SI
 interferometre IS
 interferometri IS
 interkinez IS
@@ -21789,7 +21814,7 @@ jeofizik IS YUM
 jeokimya IS
 jeolog IS YUM
 jeoloji IS
-jeolojik IS YUM
+jeolojik SI YUM
 jeomorfolog IS YUM
 jeomorfoloji IS
 jeopolitik IS YUM
@@ -22115,6 +22140,7 @@ kafakol IS
 #kafatasçılık,-ğı
 kafatas IS IS_TAM
 Kafdağı OZ KAYNASTIRMA_N
+kafe IS
 kafein IS
 kafes IS
 #kafesçi
@@ -22693,6 +22719,7 @@ kanal IS
 kanalet IS
 #kanalıyla
 kanalizasyon IS
+kanalize SI
 #kanama
 kanamak FI
 #kanamalı
@@ -24578,6 +24605,7 @@ kekeme IS
 kekik IS YUM
 #kekikli
 #kekik yağı
+keklemek FI
 keklik IS YUM
 kekre SI
 #kekrelik,-ği
@@ -25866,7 +25894,7 @@ kibar SI
 #kibarlık düşkünü
 #kibarlık etmek
 kibarzade IS
-kibernetik IS YUM
+kibernetik SI YUM
 kibir IS DUS
 #kibirleniş
 #kibirlenme
@@ -25981,7 +26009,7 @@ kindar SI
 #kindarlık,-ğı
 kinematik IS YUM
 kinestezi IS
-kinetik IS YUM
+kinetik SI YUM
 #kinetik enerji
 kinik IS YUM
 kinin IS
@@ -27109,7 +27137,7 @@ Kozan OZ
 #koz helvası
 Kozlu OZ
 Kozluk OZ
-kozmetik IS YUM
+kozmetik SI YUM
 kozmik IS YUM
 #kozmik ışınlar
 #kozmik madde
@@ -27117,7 +27145,7 @@ kozmogoni IS
 kozmogonik IS YUM
 kozmografya IS
 kozmoloji IS
-kozmolojik IS YUM
+kozmolojik SI YUM
 kozmonot IS
 kozmopolit IS
 kozmos IS
@@ -27571,7 +27599,7 @@ kronik IS YUM
 #kronikleşmek
 kronograf IS
 kronoloji IS
-kronolojik IS
+kronolojik SI
 kronometre IS
 kros IS
 kroşe IS
@@ -28793,6 +28821,7 @@ lângust IS
 lânolin IS
 lânoz IS
 lânse IS YAL
+lansman IS
 #lânse etmek
 lântan IS
 lântanit IS
@@ -29327,6 +29356,7 @@ maça IS
 #maça beyi
 Maçka OZ
 maçuna IS
+maço IS
 #maç yapmak
 Madagaskar OZ
 #Madagaskarlı
@@ -29643,6 +29673,7 @@ makinist IS
 #makinistlik,-ği
 makro SI
 makrosefal IS TERS
+makroekonomik SI
 maksat IS YUM
 #maksatlı
 #maksatsız
@@ -30357,6 +30388,7 @@ medeniyet IS
 medet IS YUM
 #medih,-thi
 #Medine kurdu
+medikal SI TERS
 mediyastin IS
 meditasyon IS
 medlûl IS TERS
@@ -30841,6 +30873,7 @@ meşru IS TIRE
 meşrubat IS
 #meşrubatçı
 meşruhat IS
+meşruiyet IS
 #meşrulaşma
 #meşrulaşmak
 #meşrulaştırma
@@ -30887,7 +30920,7 @@ meteor IS
 meteorit IS
 meteorolog IS YUM
 meteoroloji IS
-meteorolojik IS YUM
+meteorolojik SI YUM
 #meteor taşı
 metfen IS
 metfun IS
@@ -30928,7 +30961,7 @@ metrik IS YUM
 metris IS
 metro IS
 metronom IS
-metropol IS
+metropol IS TERS
 metropolit IS
 metropoliten IS
 metrûk IS TERS
@@ -31422,7 +31455,7 @@ misak IS
 misal IS TERS
 misel IS
 misil IS DUS
-#misilleme
+misilleme IS
 misina IS
 misis IS
 misk IS
@@ -31452,7 +31485,7 @@ miting IS
 #mitleştirme
 #mitleştirmek
 mitoloji IS
-mitolojik IS YUM
+mitolojik SI YUM
 mitos IS
 mitoz IS
 mitral IS TERS
@@ -31516,6 +31549,7 @@ moderato IS
 modern SI
 modernizasyon IS
 modernize IS
+modernist IS
 #modernize etmek
 #modernleşme
 #modernleşmek
@@ -31600,7 +31634,7 @@ morfin IS
 morfinlenmek FI
 morfinman IS
 morfoloji IS
-morfolojik IS YUM
+morfolojik SI YUM
 morg IS
 #morg raporu
 morina IS
@@ -33115,6 +33149,7 @@ natürist IS
 natürizm IS
 natürmort IS YUM
 navçağan IS
+navigasyon IS
 navlun IS
 naylon IS
 #naylon fatura
@@ -33765,6 +33800,7 @@ oba IS
 obabaşı IS
 obelisk IS
 oberj IS
+obez SI
 obezite IS
 obje IS
 objektif IS
@@ -33825,6 +33861,7 @@ odyometre IS
 odyovizüel IS
 of IS YAL
 Of OZ
+ofansif SI
 ofis IS
 #oflama
 oflamak FI
@@ -34288,7 +34325,7 @@ orgeneral IS TERS
 Orhaneli OZ KAYNASTIRMA_N
 Orhangazi OZ
 orijin IS
-orijinal IS
+orijinal IS TERS
 #orijinalite
 #orijinallik,-ği
 orkestra IS
@@ -34323,8 +34360,8 @@ orman IS
 #orman tavuğugiller
 #ornatma
 #ornatmak
-#ornitolog,-ğu
-#ornitoloji
+ornitolog IS YUM
+ornitoloji IS
 ornitorenk IS YUM_NK
 #orojeni
 orospu IS
@@ -34810,7 +34847,7 @@ ozuga IS
 #ödleklik,-ği
 ödül IS
 #ödüllendirme
-#ödüllendirmek
+ödüllendirmek FI
 ödün IS
 ödünç IS YUM
 #ödünçleme
@@ -36074,7 +36111,7 @@ paten IS
 #patenci
 patent IS
 #patent hakkı
-patetik IS YUM
+patetik SI YUM
 #patırdama
 #patırdamak
 #patırdatma
@@ -36117,7 +36154,7 @@ Patnos OZ
 patojen IS
 patolog IS YUM
 patoloji IS
-patolojik IS YUM
+patolojik SI YUM
 patpat IS
 #pat pat
 #patriarkal,-li
@@ -36227,7 +36264,7 @@ peçete IS
 peçiç IS
 pedagog IS
 pedagoji IS
-pedagojik IS YUM
+pedagojik SI YUM
 pedal IS
 pedavra IS
 peder IS
@@ -36462,7 +36499,7 @@ perişan SI
 periton IS
 peritonit IS
 periyodik IS YUM
-periyot IS
+periyot IS YUM
 perki IS
 perlit IS
 perlon IS
@@ -37046,6 +37083,7 @@ popülizm IS
 popülist IS
 porfir IS
 porfirit IS
+porno IS
 pornografi IS
 pornografik IS YUM
 porselen IS
@@ -37324,15 +37362,16 @@ psikanaliz IS
 psikasteni IS
 psikiyatr IS
 psikiyatri IS
-psikolog IS
+psikiyatrist IS
+psikolog IS YUM
 psikoloji IS
-psikolojik IS YUM
+psikolojik SI YUM
 psikolojizm IS
 psikometri IS
 psikopat IS
 psikopati IS
 psikopatoloji IS
-psikopatolojik IS YUM
+psikopatolojik SI YUM
 psikoterapi IS
 psikoz IS
 psişik IS YUM
@@ -37953,6 +37992,7 @@ reşme IS
 ret IS YUM CIFT
 retina IS
 retorik IS YUM
+retrospektif ZA
 reva IS
 revaç SI YUM
 revak IS
@@ -39765,6 +39805,7 @@ sekter IS
 sektirmek FI
 #sektirme pas
 sektör IS
+seküler SI
 sel IS
 selâm IS
 selâmet IS
@@ -39952,10 +39993,11 @@ senkronizasyon IS
 #senli benli olmak
 senozoik IS YUM
 sensen IS
+sensör IS
 sentagma IS
 sentaks IS
 sentaktik IS YUM
-sentetik IS YUM
+sentetik SI YUM
 sentez IS
 senyör IS
 #senyörlük,-ğü
@@ -40012,7 +40054,7 @@ serbest IS
 #serbest elektron
 #serbest enerji
 #serbest güreş
-#serbesti
+serbesti IS
 #serbest iş
 #serbestleme
 serbestlemek FI
@@ -40386,7 +40428,7 @@ sezinmek FI
 seziş IS
 #sezme
 sezmek FI GEN
-sezon IS
+sezon ZAMAN
 sezü IS
 sezyum IS
 sfagnum IS
@@ -41707,13 +41749,13 @@ sosyalizm IS
 #sosyal yardım
 #sosyal yaşam
 sosyete IS
-sosyetik IS YUM
+sosyetik SI YUM
 sosyoekonomik IS YUM
 sosyokültürel IS
 sosyolengüistik IS YUM
 sosyolog IS YUM
 sosyoloji IS
-sosyolojik IS
+sosyolojik SI
 sote IS
 sovhoz IS
 soy IS
@@ -42045,7 +42087,7 @@ stilistik IS YUM
 stilo IS
 #stoacı
 #stoacılık,-ğı
-stok IS
+stok IS YUM
 #stokçu
 #stokçuluk,-ğu
 #stok etmek
@@ -42169,7 +42211,7 @@ suibrik IS YUM IS_TAM
 suibriğigiller IS
 suistimal IS TERS
 #suistimal etmek
-suikast IS
+suikast IS TERS
 suiniyet IS
 suizan IS CIFT
 #su kabağı
@@ -42597,6 +42639,7 @@ süredurum IS
 süregelen IS
 #süregelme
 süregelmek FI
+süregitmek FI
 süreğen IS
 #süreğenleşme
 #süreğenleşmek
@@ -45552,7 +45595,7 @@ teknisyen IS
 teknokrasi IS
 teknokrat IS
 teknoloji IS
-teknolojik IS YUM
+teknolojik SI YUM
 #tek örnek,-ği
 #tek parmaklılar
 tekrar IS
@@ -45762,6 +45805,7 @@ temaruz IS
 temas IS
 #temas etmek
 temaşa IS
+tematik SI
 #temaşa etmek
 temayül IS
 temayüz IS
@@ -45967,7 +46011,7 @@ teokrasi IS
 teokratik IS YUM
 teolog IS YUM
 teoloji IS
-teolojik IS YUM
+teolojik SI YUM
 teorem IS
 teori IS
 teorik IS YUM
@@ -46389,6 +46433,7 @@ tetebbu IS TIRE
 #tetebbu etmek
 tetik IS YUM
 tetikçi IS
+tetiklemek FI
 #tetikçilik,-ği
 #tetikleşme
 #tetikleşmek
@@ -47140,7 +47185,7 @@ toplumdaş IS
 topoğraf IS
 topoğrafya IS
 topoloji IS
-topolojik IS YUM
+topolojik SI YUM
 #top patlıcan
 toprak IS YUM
 #toprak altı
@@ -47439,8 +47484,9 @@ trombon IS
 tromp IS YUM
 trompet IS
 #trompetçi
+tropik SI
 tropika IS
-tropikal IS TERS
+tropikal SI TERS
 #tropikal bitki
 #tropikal bölge
 #tropikal iklim
@@ -47457,6 +47503,7 @@ truakar IS
 trubadur IS
 trup IS
 trük IS
+tsunami IS
 tuba IS
 Tuba OZ
 tufan IS
@@ -48758,6 +48805,7 @@ uzviyet IS
 #üniformalı
 ünik IS YUM
 ünite IS
+üniter IS
 üniversal IS TERS
 üniversite IS
 #üniversiteler arası
@@ -50500,6 +50548,7 @@ yapık IS YUM
 #yapılabilirlik,-ği
 #yapılaşma
 #yapılaşmak
+yapılanmak FI
 #yapılı
 #yapılıkçı dil bilimi
 #yapılış
@@ -50978,7 +51027,7 @@ yatay IS
 #yatçı
 #yatçılık,-ğı
 yatı IS
-#yatık
+yatık SI
 #yatık doğru
 #yatık yazı
 yatılı SI
@@ -51107,6 +51156,7 @@ yayım IS
 #yayımcılık,-ğı
 #yayımlama
 yayımlamak FI
+yayınlamak FI
 #yayımlanma
 #yayımlanmak
 #yayımlatma
@@ -51716,7 +51766,7 @@ yeterlik IS YUM
 #yetersiz
 #yetersizlik,-ği
 yeti IS
-yetik IS YUM
+yetik SI YUM
 yetim IS
 yetimhane IS
 #yetimlik,-ği
@@ -53477,3 +53527,176 @@ zürriyet IS
 züyuf IS
 #züyuf akçe
 Washington OZ
+ağlak SI YUM
+ağlamaklı SI
+akabinde ZA
+akne IS
+akor IS
+akordiyon IS
+akrilik IS
+akupunktur IS
+alaca IS
+aldatmaca IS
+alık SI
+altıpas IS
+alzaymır IS
+amfibik IS
+andıç IS
+antrikot IS
+aparat IS
+asık SI
+asist IS
+astrolojik IS
+aşermek FI
+aşevi IS IS_TAM
+ayrıntılamak FI
+badminton IS
+barbun IS
+barkod IS
+başkaldırı IS
+başrol IS TERS
+başvurmak FI
+baypas IS
+beraat IS TERS
+bilişsel SI
+bis IS
+biseksüel IS
+bitik SI
+biyodizel IS
+biyoenerji IS
+biyogaz IS
+biyomedikal IS TERS
+bovling IS
+bölgelemek FI
+bursiyer IS
+büluğ IS
+bütüncül SI
+bütünleşik SI
+cem IS
+ciklet IS
+cillop SI
+cüzzam IS
+çalakalem ZA
+çalar IS
+çalıştay IS
+çerağ IS
+çıkık SI
+çıpa IS
+çizer IS
+çözünürlük IS
+çupra IS
+dane IS
+darbetmek FI GEN YUM
+darboğaz IS
+darüşşifa IS
+data IS
+davranış IS
+dayanıksız SI
+debimetre IS
+defaatle ZA
+değgin SI
+dejavu IS
+dejenerasyon IS
+dekoder IS
+delillemek FI
+demo IS
+demoralize SI
+denetmen IS
+denyo SI
+deodorant IS
+deplase SI
+depolitizasyon IS
+dereke IS
+dermatolojik SI YUM
+derogasyon IS
+detone SI
+devalüe SI
+dezenfeksiyon IS
+dezenformasyon IS
+difüzyon IS
+diyafon IS
+diyabetik SI
+doğumev IS IS_TAM
+donör IS
+dorse IS
+düzelti IS
+egale IS YAL
+ekarte SI
+ekosistem IS
+eliminasyon IS
+embesil SI
+emboli IS
+embriyo IS
+enaniyet IS
+ensest IS
+epilasyon IS
+eşantiyon IS
+etnografik IS
+evelallah ZA
+falez IS
+fetüs IS
+fırkateyn IS
+folyo IS
+format IS
+foseptik IS YUM
+fön IS
+frambuaz IS
+gibisi SI
+handiyse ZA
+bakıcı IS
+hibrit SI
+histeri IS
+histerik SI YUM
+hiyerarşik SI YUM
+ironik SI YUM
+jinekolojik SI
+karakterize SI
+kategorize SI
+klonlamak FI
+kodlamak FI
+konsept IS
+kopyalamak FI
+mezra IS
+modellemek FI
+modernizm IS
+muzdarip IS
+nüksetmek FI
+ofsayt IS
+onlarca SI
+raporlamak FI
+ribaund IS
+ruhsatlamak FI
+sardalya IS
+sever SI
+skorer SI
+sonlanmak FI
+sökük SI
+şınav IS
+şizofrenik IS
+taksitlemek FI
+tarihlemek FI
+tesbih IS
+tesbit IS
+tescillemek FI
+tıkanık SI YUM
+toksik IS
+turkuaz IS
+turlamak FI
+ücra SI
+ücretlemek FI
+vajina IS
+vajinal IS
+yerinde SI
+yetkilemek FI
+zulalamak FI
+elebaş IS IS_TAM
+sever SI
+zombi IS
+zodyak IS
+yaratı IS
+yuh UN
+viral IS
+veliaht IS YUM
+valör IS
+lenfoma IS
+karbondioksit IS YUM
