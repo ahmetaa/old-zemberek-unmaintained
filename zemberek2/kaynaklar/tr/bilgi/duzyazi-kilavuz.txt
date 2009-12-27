@@ -51211,7 +51211,7 @@ yayvan SI
 #yayvanlaşma
 #yayvanlaşmak
 #yayvanlık,-ğı
-yaz IS
+yaz ZAMAN
 #yazadurma
 #yazadurmak
 yazanak IS YUM
@@ -51754,7 +51754,7 @@ yetenek IS YUM
 #yeteneksizlik,-ği
 yeter SI
 yeterince IS
-#yeterli
+yeterli SI
 yeterlik IS YUM
 #yeterlik belgesi
 #yeterlik eğitimi
@@ -51763,7 +51763,7 @@ yeterlik IS YUM
 #yeterlik sınavı
 #yeterlilik,-ği
 #yeter sayı
-#yetersiz
+yetersiz SI
 #yetersizlik,-ği
 yeti IS
 yetik SI YUM
@@ -53541,7 +53541,7 @@ alık SI
 altıpas IS
 alzaymır IS
 amfibik IS
-andıç IS
+andıç IS YUM
 antrikot IS
 aparat IS
 asık SI
@@ -53632,7 +53632,7 @@ ensest IS
 epilasyon IS
 eşantiyon IS
 etnografik IS
-evelallah ZA
+evelallah UN
 falez IS
 fetüs IS
 fırkateyn IS
@@ -53700,3 +53700,28 @@ veliaht IS YUM
 valör IS
 lenfoma IS
 karbondioksit IS YUM
+lisanlamak FI
+trilyoner IS
+hipofiz IS
+sekreterya IS
+reenkarnasyon IS
+ötelemek FI
+psikanalist IS
+yoğuşmak FI
+santimetrekare IS
+milyonlarca SI
+kaynaklanmak FI GEN
+betonlamak FI
+beyazlamak FI
+bağışıklamak FI
+bağlantılamak FI
+baskılamak FI
+fonlamak FI
+açılamak FI
+detaylamak FI
+afişlemek FI
+değerlemek FI
+deneyimlemek FI
+filtrelemek FI
+gerekçelemek FI
+iklimlemek FI
