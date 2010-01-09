@@ -64,9 +64,9 @@ public class TurkiyeTurkcesi implements DilAyarlari {
     public String[] duzYaziKokDosyalari() {
         return new String[]{
                 "kaynaklar/tr/bilgi/duzyazi-kilavuz.txt",
-//                "kaynaklar/tr/bilgi/kisaltmalar.txt",
-                "kaynaklar/tr/bilgi/bilisim.txt"};
-//                "kaynaklar/tr/bilgi/kisi-adlari.txt"};
+                "kaynaklar/tr/bilgi/kisaltmalar.txt",
+                "kaynaklar/tr/bilgi/bilisim.txt",
+                "kaynaklar/tr/bilgi/kisi-adlari.txt"};
     }
 
     public EkKuralBilgisi ekKuralBilgisi() {
