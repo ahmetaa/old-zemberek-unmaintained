@@ -32,7 +32,6 @@ public enum TatarcaEkUretimKurali implements EkUretimKurali {
         return sesliUretimKurali;
     }
 
-
     public static class KarakterBilgisi implements EkKuralBilgisi {
 
         public Set<Character> sesliKuralKarakterleri() {

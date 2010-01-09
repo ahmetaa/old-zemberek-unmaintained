@@ -170,8 +170,7 @@ public class TurkceKokOzelDurumBilgisi extends TemelKokOzelDurumBilgisi implemen
         }
         // ara sesli dusmesi durumunda dusen sesi ile dustukten sonra olusan seslinin farkli olmasi durumunda
         // kok'e bir de ters sesli ek ozel durumu ekleniyor.,
-        if (kok.ozelDurumIceriyormu(ISIM_SESLI_DUSMESI)
-                || kok.ozelDurumIceriyormu(FIIL_ARA_SESLI_DUSMESI)) {
+        if (kok.ozelDurumIceriyormu(ISIM_SESLI_DUSMESI) || kok.ozelDurumIceriyormu(FIIL_ARA_SESLI_DUSMESI)) {
             if (!hdizi.sonSesli().inceSesliMi() && eskiSonsesliInce)
                 kok.ozelDurumEkle(ozelDurumlar.get(TERS_SESLI_EK));
         }
@@ -227,7 +226,10 @@ public class TurkceKokOzelDurumBilgisi extends TemelKokOzelDurumBilgisi implemen
                 } else {
                     char sonHarf = kok.icerik().charAt(kok.icerik().length() - 1);
                     if (!alfabe.harf(sonHarf).sesliMi()) {
-                        ((Kisaltma) kok).setKisaltmaSonSeslisi('e');
+                        if (alfabe.harf(sonHarf).charDeger() == 'k')
+                            ((Kisaltma) kok).setKisaltmaSonSeslisi('a');
+                        else
+                            ((Kisaltma) kok).setKisaltmaSonSeslisi('e');
                         kok.ozelDurumEkle(ozelDurumlar.get(KISALTMA_SON_SESLI));
                     }
                 }

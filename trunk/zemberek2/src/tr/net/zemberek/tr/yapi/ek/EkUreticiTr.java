@@ -18,12 +18,7 @@ import net.zemberek.yapi.ek.*;
 public class EkUreticiTr extends TemelEkUretici implements EkUretici {
 
     private TurkceSesliUretici sesliUretici;
-    public final TurkceHarf HARF_a;
-    public final TurkceHarf HARF_e;
-    public final TurkceHarf HARF_i;
-    public final TurkceHarf HARF_ii;
-    public final TurkceHarf HARF_u;
-    public final TurkceHarf HARF_uu;
+    private final TurkceHarf HARF_a, HARF_e, HARF_i, HARF_ii, HARF_u, HARF_uu;
 
     public EkUreticiTr(Alfabe alfabe) {
         this.sesliUretici = new TurkceSesliUretici(alfabe);

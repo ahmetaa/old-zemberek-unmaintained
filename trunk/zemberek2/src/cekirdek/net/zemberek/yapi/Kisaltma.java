@@ -4,7 +4,7 @@ package net.zemberek.yapi;
  * User: aakin
  * Date: Jun 19, 2008,3:37:26 PM
  */
-public class Kisaltma  extends Kok{
+public class Kisaltma extends Kok{
 
     // bazi kisaltmalara ek eklenebilmesi icin kisaltmanin asil halinin son seslisine ihtiyac duyulur.
     private char kisaltmaSonSeslisi;

@@ -49,11 +49,12 @@
             <ek>FIIL_GELECEKZAMAN_ECEK</ek>
             <ek>FIIL_GENISZAMAN_IR</ek>
             <ek>FIIL_SIMDIKIZAMAN_IYOR</ek>
+            <ek>FIIL_SIMDIKIZAMAN_MEKTE</ek>
         </ek-kumesi>
 
         <ek-kumesi ad="FIIL_DONUSUM">
             <ek>FIIL_DONUSUM_EN</ek>
-            <ek>FIIL_DONUSUM_IK</ek>
+            <!--<ek>FIIL_DONUSUM_IK</ek>-->
             <ek>FIIL_DONUSUM_IM</ek>
             <ek>FIIL_DONUSUM_INTI</ek>
             <ek>FIIL_DONUSUM_IS</ek>
@@ -101,6 +102,8 @@
             <ek>FIIL_DONUSUM_ESIYE</ek>
             <ek>FIIL_DONUSUM_ESI</ek>
             <ek>FIIL_OLUMSUZLUK_ME</ek>
+            <ek>FIIL_OLUMSUZLUK_MEDEN</ek>
+            <ek>FIIL_OLUMSUZLUK_MEKSIZIN</ek>
             <ek>FIIL_SART_SE</ek>
             <ek>FIIL_ZAMAN_INCE</ek>
             <ek>FIIL_ZORUNLULUK_MELI</ek>
@@ -146,6 +149,7 @@
       I:son seslinin durumuna gore i,I,u ya da U uretilir.
       +x: son harf sesli ise x harfi (ya da kural ise ilgili harfler) eklenir.
       >x: son harf sert ise gore x harfinin sert hali kullanilir.
+      ~x: sonrasinda gelen harf sesli ise yumusar.
       kucuk harfler: dogrudan uretime eklenir.
       buyuk harfler: turkceye ozel karakterlerin benzerleri. G yumusak g gibi. dogrudan eklenir.
     -->
@@ -171,7 +175,7 @@
                 <aek>ISIM_KUCULTME_CIK</aek>
                 <aek>ISIM_KUCULTME_CEGIZ</aek>
                 <aek>ISIM_TAMLAMA_I</aek>
-                <aek>ISIM_DONUSUM_LE</aek>
+                <!--<aek>ISIM_DONUSUM_LE</aek>-->
                 <aek>ISIM_DONUSUM_LES</aek>
                 <aek>ISIM_ILISKILI_SEL</aek>
                 <aek>ISIM_ANDIRMA_IMSI</aek>
@@ -285,8 +289,8 @@
             </oncelikli-ekler>
         </ek>
 
-        <!-- isim yonelme : "kedi_ye bak"  -->
-        <ek ad="ISIM_YONELME_E" uretim="+yA">
+        <!-- isim yonelme : "kedi_ye bak"  en: dative-->
+        <ek ad="ISIM_YONELME_E" uretim="+yA" k_en="dat">
             <ozellik>HAL</ozellik>
             <ozel-durum ad="ON_EK" uretim="nA">
                 <on-ek>ZAMAN_BELIRTME_KI</on-ek>
@@ -303,8 +307,8 @@
             </ardisil-ekler>
         </ek>
 
-        <!-- isim kalma : "ev_de yemek var."  -->
-        <ek ad="ISIM_KALMA_DE" uretim=">dA">
+        <!-- isim kalma : "ev_de yemek var."  en:locative -->
+        <ek ad="ISIM_KALMA_DE" uretim=">dA" k_en="loc">
             <ozellik>HAL</ozellik>
             <ozel-durum ad="ON_EK" uretim="ndA">
                 <on-ek>ZAMAN_BELIRTME_KI</on-ek>
@@ -321,8 +325,8 @@
             </ardisil-ekler>
         </ek>
 
-        <!-- isim yonlenme _den : "okul_dan geliyorum"  -->
-        <ek ad="ISIM_CIKMA_DEN" uretim=">dAn">
+        <!-- isim yonlenme _den : "okul_dan geliyorum"  en:ablative -->
+        <ek ad="ISIM_CIKMA_DEN" uretim=">dAn" k_en="abl">
             <ozellik>HAL</ozellik>
             <ozel-durum ad="ON_EK" uretim="ndAn">
                 <on-ek>ZAMAN_BELIRTME_KI</on-ek>
@@ -365,6 +369,7 @@
                 <aek>ISIM_TANIMLAMA_DIR</aek>
                 <aek>ISIM_COGUL_LER</aek>
                 <aek>ISIM_BIRLIKTELIK_LE</aek>
+                <aek>ISIM_ILGI_CI</aek>
             </ardisil-ekler>
         </ek>
 
@@ -544,7 +549,10 @@
             <ozellik>HAL</ozellik>
             <ardisil-ekler>
                 <kume>IMEK_ZAMAN</kume>
+                <kume>ISIM_KISI</kume>
+                <aek>ISIM_TANIMLAMA_DIR</aek>                
             </ardisil-ekler>
+
         </ek>
 
         <!-- isim sahiplik ben _im : "kedi_m margarita deli etti beni."  -->
@@ -882,9 +890,10 @@
             </oncelikli-ekler>
         </ek>
 
-        <ek ad="FIIL_DONUSUM_IK" uretim="+yI~k">
+        <!-- yatik, kalkik . genellestirmek dogru olmayabilir.-->
+<!--        <ek ad="FIIL_DONUSUM_IK" uretim="+yI~k">
             <ardisil-ekler kopya-ek="FIIL_DONUSUM_EN"/>
-        </ek>
+        </ek>-->
 
         <ek ad="FIIL_DONUSUM_IM" uretim="+nIm">
             <ardisil-ekler kopya-ek="FIIL_DONUSUM_EN">
@@ -1016,6 +1025,8 @@
                 <aek>FIIL_ZAMAN_INCE</aek>
                 <aek>FIIL_IMSI_IP</aek>
                 <aek>FIIL_MASTAR_MEK</aek>
+                <aek>FIIL_OLUMSUZLUK_MEKSIZIN</aek>
+                <aek>FIIL_OLUMSUZLUK_MEDEN</aek>
                 <aek>FIIL_DONUSUM_ESICE</aek>
                 <aek>FIIL_DONUSUM_ESI</aek>
                 <aek>FIIL_DONUSUM_ESIYE</aek>
@@ -1093,6 +1104,12 @@
             </ardisil-ekler>
         </ek>
 
+        <ek ad="FIIL_SIMDIKIZAMAN_MEKTE" uretim="mAktA">
+            <ardisil-ekler>
+                <kume>FIIL_ZAMAN_ARDISIL</kume>
+                <aek>ISIM_TANIMLAMA_DIR</aek>
+            </ardisil-ekler>
+        </ek>
 
         <ek ad="FIIL_ZAMAN_INCE" uretim="+yIncA">
             <ardisil-ekler>
@@ -1132,7 +1149,6 @@
                 <aek>ISIM_CIKMA_DEN</aek>
                 <aek>ISIM_KALMA_DE</aek>
                 <aek>ISIM_TANIMLAMA_DIR</aek>
-                <aek>FIIL_OLUMSUZLUK_SIZIN</aek>
                 <aek>ISIM_BIRLIKTELIK_LE</aek>
             </ardisil-ekler>
         </ek>
@@ -1142,7 +1158,7 @@
             <ardisil-ekler kopya-ek="FIIL_KOK"/>
         </ek>
 
-        <ek ad="FIIL_OLUMSUZLUK_DEN" uretim="dAn"/>
+        <ek ad="FIIL_OLUMSUZLUK_MEDEN" uretim="mAdAn"/>
 
         <ek ad="FIIL_OLUMSUZLUK_ME" uretim="mA">
             <ozel-durum ad="SIMDIKI_ZAMAN" uretim="m"/>
@@ -1154,6 +1170,7 @@
                 <kume>FIIL_EMIR_ISTEK</kume>
                 <aek>FIIL_MASTAR_CE</aek>
                 <aek>FIIL_MASTAR_MEK</aek>
+                <aek>FIIL_OLUMSUZLUK_MEKSIZIN</aek>
                 <aek>FIIL_IMSI_IP</aek>
                 <aek>FIIL_DONUSUM_ESICE</aek>
                 <aek>FIIL_DONUSUM_ESI</aek>
@@ -1165,7 +1182,6 @@
                 <aek>FIIL_EDILGEN_IL</aek>
                 <aek>FIIL_TANIMLAMA_ICI</aek>
                 <aek>FIIL_BELIRTME_DIK</aek>
-                <aek>FIIL_OLUMSUZLUK_DEN</aek>
                 <aek>FIIL_BERI_ELI</aek>
             </ardisil-ekler>
         </ek>
@@ -1173,6 +1189,7 @@
         <ek ad="FIIL_YETERSIZLIK_E" uretim="+yA">
             <ardisil-ekler>
                 <aek>FIIL_OLUMSUZLUK_ME</aek>
+                <aek>FIIL_OLUMSUZLUK_MEDEN</aek>
             </ardisil-ekler>
         </ek>
 
@@ -1253,7 +1270,7 @@
 
         <ek ad="FIIL_ISTEK_SENIZE" uretim="sAnIzA"/>
 
-        <ek ad="FIIL_OLUMSUZLUK_SIZIN" uretim="sIzIn"/>
+        <ek ad="FIIL_OLUMSUZLUK_MEKSIZIN" uretim="mAksIzIn"/>
 
         <ek ad="FIIL_SURERLIK_EDUR" uretim="+yAdur">
             <ardisil-ekler>
@@ -1302,6 +1319,7 @@
                 <kume>FIIL_ZAMAN</kume>
                 <kume>FIIL_EMIR_ISTEK</kume>
                 <aek>FIIL_MASTAR_MEK</aek>
+                <aek>FIIL_OLUMSUZLUK_MEKSIZIN</aek>
                 <aek>FIIL_IMSI_IP</aek>
                 <aek>FIIL_DONUSUM_ESICE</aek>
                 <aek>FIIL_DONUSUM_ESIYE</aek>
@@ -1380,7 +1398,7 @@
                 <aek>ISIM_KUCULTME_CIK</aek>
                 <aek>ISIM_KUCULTME_CEGIZ</aek>
                 <aek>ISIM_TAMLAMA_I</aek>
-                <aek>ISIM_DONUSUM_LE</aek>
+                <!--<aek>ISIM_DONUSUM_LE</aek>-->
                 <aek>ISIM_DONUSUM_LES</aek>
                 <aek>ISIM_ILISKILI_SEL</aek>
                 <aek>ISIM_ANDIRMA_IMSI</aek>
@@ -1440,7 +1458,7 @@
                 <aek>ISIM_BIRLIKTELIK_LE</aek>
                 <aek>ISIM_KUCULTME_CEGIZ</aek>
                 <aek>ISIM_TAMLAMA_I</aek>
-                <aek>ISIM_DONUSUM_LE</aek>
+                <!--<aek>ISIM_DONUSUM_LE</aek>-->
                 <aek>ISIM_TARAFINDAN_CE</aek>
                 <aek>ZAMIR_SAHIPLIK_IM</aek>
                 <aek>ZAMIR_SAHIPLIK_IM</aek>
@@ -1540,6 +1558,9 @@
             <ozel-durum ad="ON_EK" uretim="ken">
                 <on-ek>IMEK_KOK</on-ek>
             </ozel-durum>
+            <ardisil-ekler>
+                <aek>ZAMAN_BELIRTME_KI</aek> 
+            </ardisil-ekler>
         </ek>
 
         <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->

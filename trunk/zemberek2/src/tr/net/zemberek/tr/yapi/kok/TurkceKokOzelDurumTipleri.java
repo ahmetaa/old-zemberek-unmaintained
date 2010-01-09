@@ -4,44 +4,9 @@
 
 package net.zemberek.tr.yapi.kok;
 
-import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.FIIL_BERABERLIK_IS;
-import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.FIIL_DONUSUM_ECEK;
-import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.FIIL_DONUSUM_EN;
-import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.FIIL_DONUSUM_IS;
-import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.FIIL_EDILGEN_IL;
-import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.FIIL_EMIR_SIZRESMI_INIZ;
-import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.FIIL_EMIR_SIZ_IN;
-import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.FIIL_GELECEKZAMAN_ECEK;
-import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.FIIL_ISTEK_E;
-import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.FIIL_SIMDIKIZAMAN_IYOR;
-import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.FIIL_SUREKLILIK_EREK;
-import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.FIIL_SURERLIK_EDUR;
-import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.FIIL_SURERLIK_EGEL;
-import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.FIIL_SURERLIK_EKAL;
-import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.FIIL_YAKLASMA_AYAZ;
-import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.FIIL_YETENEK_EBIL;
-import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.ISIM_BELIRTME_I;
-import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.ISIM_BULUNMA_LI;
-import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.ISIM_BULUNMA_LIK;
-import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.ISIM_CIKMA_DEN;
-import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.ISIM_COGUL_LER;
-import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.ISIM_DURUM_LIK;
-import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.ISIM_ILGI_CI;
-import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.ISIM_KALMA_DE;
-import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.ISIM_KUCULTME_CEGIZ;
-import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.ISIM_KUCULTME_CIK;
-import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.ISIM_SAHIPLIK_BEN_IM;
-import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.ISIM_SAHIPLIK_BIZ_IMIZ;
-import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.ISIM_SAHIPLIK_ONLAR_LERI;
-import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.ISIM_SAHIPLIK_O_I;
-import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.ISIM_SAHIPLIK_SEN_IN;
-import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.ISIM_SAHIPLIK_SIZ_INIZ;
-import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.ISIM_TAMLAMA_I;
-import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.ISIM_TAMLAMA_IN;
-import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.ISIM_TARAFINDAN_CE;
-import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.ISIM_YOKLUK_SIZ;
-import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.ISIM_YONELME_E;
 import net.zemberek.yapi.kok.KokOzelDurumTipi;
+
+import static net.zemberek.tr.yapi.ek.TurkceEkAdlari.*;
 
 /**
  * User: ahmet
@@ -87,7 +52,12 @@ public enum TurkceKokOzelDurumTipleri implements KokOzelDurumTipi {
             FIIL_YETENEK_EBIL,
             FIIL_BERABERLIK_IS,
             FIIL_EMIR_SIZ_IN,
-            FIIL_EMIR_SIZRESMI_INIZ),
+            FIIL_ZAMAN_INCE,
+            FIIL_EMIR_SIZRESMI_INIZ,
+            FIIL_YETERSIZLIK_E,
+            FIIL_DONUSUM_ESI,
+            FIIL_IMSI_IP
+    ),
 
     TERS_SESLI_EK("TERS"),
 

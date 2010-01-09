@@ -49,7 +49,10 @@ public class KelimeUretici {
                 eks.add(0, ilkEk);
         }
         UretimNesnesi ure = uretimNesnesiUret(kok, eks);
-        return ure.olusum;
+        if (ure == null)
+            return "";
+        else
+            return ure.olusum;
     }
 
 
@@ -66,7 +69,7 @@ public class KelimeUretici {
      * @param kok   Kelime koku
      * @param ekler rasgele sirali ekler.
      * @return eger eklerin tamami uygun sekilde dizilebiliyorsa o dizilimle uretilen kelime stringi.
-     *         eger eklerin tamami dizilemezse ya da ekler listesi bos ise kok icerigi doner.
+     *         eger eklerin tamami dizilemezse ya da ekler listesi bos ise bos String doner
      */
     String sirasizEklerleUret(Kok kok, List<Ek> ekler) {
         //defensive copying.
@@ -78,9 +81,14 @@ public class KelimeUretici {
             eks.remove(ilkEk);
         List<List<Ek>> sonuclar = new EkSiralayici(eks, ilkEk).olasiEkDizilimleriniBul();
         if (sonuclar.isEmpty())
-            return kok.asil();
-        else
-            return uretimNesnesiUret(kok, sonuclar.get(0)).olusum;
+            return "";
+        else {
+            UretimNesnesi ure = uretimNesnesiUret(kok, sonuclar.get(0));
+            if (ure == null)
+                return "";
+            else
+                return ure.olusum;
+        }
     }
 
     /**
@@ -98,6 +106,8 @@ public class KelimeUretici {
      */
     public String[] ayristir(Kelime kelime) {
         UretimNesnesi ure = uretimNesnesiUret(kelime.kok(), kelime.ekler());
+        if (ure == null)
+            return new String[0];
         return ure.olusumlar.toArray(new String[ure.olusumlar.size()]);
     }
 
@@ -129,7 +139,7 @@ public class KelimeUretici {
             if (i > 0) {
                 Ek oncekiEk = ekler.get(i - 1);
                 if (!oncekiEk.ardindanGelebilirMi(ek)) {
-                    return ure;
+                    return null;
                 }
             }
 

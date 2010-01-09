@@ -377,7 +377,7 @@ ajitasyon IS
 ajitatör IS
 ajite IS
 ajur IS
-ak IS
+ak SI
 aka IS
 akabinde IS YAL
 akaç IS YUM
@@ -536,8 +536,8 @@ akşamlamak FI
 akşamleyin IS
 #akşamsefası IS
 akşamsefa IS IS_TAM
-akşamüstü IS IS_TAM
-akşamüzeri IS IS_TAM
+akşamüst ZAMAN IS_TAM
+akşamüzer ZAMAN IS_TAM
 Akşehir OZ
 akşın IS
 aktar IS EK
@@ -41823,7 +41823,7 @@ sökel IS
 sökmek FI GEN
 #söktürme
 #söktürmek
-#sökük,-ğü
+sökük SI YUM
 #sökülme
 sökülmek FI
 #sökülüş
@@ -44503,7 +44503,7 @@ tanımlamak FI
 #tanınmış
 #tanısızlık,-ğı
 tanış IS
-#tanışık,-ğı
+tanışık SI YUM
 #tanışıklık,-ğı
 #tanışış
 #tanışma
@@ -53660,7 +53660,7 @@ mezra IS
 modellemek FI
 modernizm IS
 muzdarip IS
-nüksetmek FI
+nüksetmek FI GEN YUM
 ofsayt IS
 onlarca SI
 raporlamak FI
@@ -53725,3 +53725,4 @@ deneyimlemek FI
 filtrelemek FI
 gerekçelemek FI
 iklimlemek FI
+testosteron IS

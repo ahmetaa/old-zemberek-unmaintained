@@ -13,6 +13,7 @@ import net.zemberek.erisim.Zemberek;
 import net.zemberek.tr.yapi.TurkiyeTurkcesi;
 import net.zemberek.yapi.Kelime;
 import net.zemberek.yapi.Kok;
+import net.zemberek.yapi.KelimeTipi;
 
 public class ZemberekDeneme {
 
@@ -47,7 +48,9 @@ public class ZemberekDeneme {
         //kedi'yi koyun ile degistirelim.. koyun kokunu Kok kok = new Kok("koyun", KelimeTipi.ISIM);
         //seklinde olusturabilirsik, ama sistemden almak daha dogru
         Kelime kelime = cozumler[0];
-        Kok kok = (Kok) zemberek.dilBilgisi().kokler().kokBul("koyun").get(0);
+        List<Kok> kokler = zemberek.dilBilgisi().kokler().kokBul("on");
+        System.out.println("kokler = " + kokler);
+        Kok kok = zemberek.dilBilgisi().kokler().kokBul("koyun", KelimeTipi.ISIM);
         String yeni = zemberek.kelimeUret(kok, kelime.ekler());
         out.println("\nkok degisimi sonrasi yeni kelime: " + yeni);
 

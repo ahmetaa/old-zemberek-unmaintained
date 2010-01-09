@@ -12,6 +12,7 @@ public enum KelimeTipi {
     SAYI,
     YANKI,
     ZAMIR,
+    ZARF,
     SORU,
     IMEK,
     ZAMAN,

@@ -215,6 +215,10 @@ public class TurkceDilBilgisi implements DilBilgisi {
         return cep;
     }
 
+    public DilAyarlari dilAyarlari() {
+        return dilAyarlari;
+    }
+
     public Heceleyici heceBulucu() {
     	//FIXME: Race condition?
         if (heceleyici != null) {

@@ -24,7 +24,7 @@ public class TestCozumle {
     private static char S = Alfabe.CHAR_ss;
 
     public static void cozumle(String str) {
-        if (zemberek.kelimeDenetle(str) == true) {
+        if (zemberek.kelimeDenetle(str)) {
             Kelime[] sonuc = zemberek.kelimeCozumle(str);
             System.out.println("Oluşan çözümleme sayısı: " + sonuc.length);
             for (Kelime kelime: sonuc) {
