@@ -14,7 +14,7 @@ import net.zemberek.yapi.HarfDizisi;
 import net.zemberek.yapi.Heceleyici;
 
 /**
- * User: ahmet
+ * Mert'in algoritmasi.
  * Date: Sep 10, 2005
  */
 public class DenemeTurkceHeceleyici implements Heceleyici {

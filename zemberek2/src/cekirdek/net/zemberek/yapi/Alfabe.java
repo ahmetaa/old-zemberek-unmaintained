@@ -5,11 +5,7 @@
 package net.zemberek.yapi;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Locale;
-import java.util.Map;
+import java.util.*;
 import java.util.logging.Logger;
 import java.util.regex.Pattern;
 
@@ -249,6 +245,7 @@ public class Alfabe {
             harf.setAlfabetikSira(i + 1);
             harfler.put(c, harf);
             buyukHarflerDizi[i] = harf;
+
             temizlemeDizisi[c] = kucukHarflerDizi[i].charDeger();
             turkceHarfDizisi[c] = harf;
         }
@@ -368,7 +365,7 @@ public class Alfabe {
         char[] cDizi = new char[charStrDizi.length];
         for (int i = 0; i < charStrDizi.length; i++) {
             if (charStrDizi[i].length() != 1)
-                logger.warning(tum + "ayristirilirken tek harf bekleniyordu. " + charStrDizi + " uygun degil");
+                logger.warning(tum + "ayristirilirken tek harf bekleniyordu. " + Arrays.toString(charStrDizi) + " uygun degil");
             cDizi[i] = charStrDizi[i].charAt(0);
         }
         return cDizi;
@@ -389,7 +386,7 @@ public class Alfabe {
             if (cift.length != 2)
                 logger.warning(tum + "ayristirilirken harf cifti  bekleniyordu. " + s + " uygun degil.");
             if (cift[0].length() != 1 || cift[1].length() != 1)
-                logger.warning(tum + "ayristirilirken tek harf bekleniyordu. " + charStrDizi + " uygun degil");
+                logger.warning(tum + "ayristirilirken tek harf bekleniyordu. " + Arrays.toString(charStrDizi) + " uygun degil");
             char h1 = cift[0].charAt(0);
             char h2 = cift[1].charAt(0);
             ciftler.add(new HarfCifti(h1, h2));

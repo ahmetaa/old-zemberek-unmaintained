@@ -15,7 +15,7 @@ import net.zemberek.yapi.Kok;
 
 /**
  * Kök düğümü sınıfı Kök ağacının yapıtaşıdır. Her düğüm, kökler, eşseli kökler,
- * değişmiş halleri ifade eden bir string ve uygun şekilde bellek kullanımı için 
+ * değişmiş halleri ifade eden bir string ve uygun şekilde bellek kullanımı için
  * hazırlanmış özel bir alt düğüm listesi nesnesi taşır.
  * <p/>
  * Çeşitli nedenlerle değişikliğe uğrayabilecek olan kökler ağaca eklenirken
@@ -24,8 +24,8 @@ import net.zemberek.yapi.Kok;
  * aynı kökü gösterirler. Böylece "kitabına" gibi kelimeler için kök adayları
  * aranırken "kitap" köküne erişilmiş olur.
  * <p/>
- * Eş sesli olan kökler aynı düğüme bağlanırlar. Ağacın oluşumu sırasında ilk 
- * gelen kök düğümdeki kök değişkenine, sonradan gelenler de esSesliler listesine 
+ * Eş sesli olan kökler aynı düğüme bağlanırlar. Ağacın oluşumu sırasında ilk
+ * gelen kök düğümdeki kök değişkenine, sonradan gelenler de esSesliler listesine
  * eklenirler. Arama sırasında bu kök te aday olarak döndürülür.
  *
  * @author MDA
@@ -60,7 +60,7 @@ public class KokDugumu {
      *
      * @param in
      * @return Eğer verilen karakteri taşıyan bir alt düğüm varsa
-     * o düğümü, yoksa null.
+     *         o düğümü, yoksa null.
      */
     public final KokDugumu altDugumBul(char in) {
         if (altDugumler == null)
@@ -94,11 +94,12 @@ public class KokDugumu {
         return altDugumler.altDugumlerDizisi();
     }
 
-    public final boolean altDugumVarMi(){
+    public final boolean altDugumVarMi() {
         return !(altDugumler == null || altDugumler.size() == 0);
     }
+
     /**
-     * Eğer Düğüme bağlı bir kök zaten varsa esSesli olarak ekle, 
+     * Eğer Düğüme bağlı bir kök zaten varsa esSesli olarak ekle,
      * yoksa sadece kok'e yaz.
      *
      * @param kok
@@ -131,12 +132,12 @@ public class KokDugumu {
     }
 
     /**
-     * @return düğüme bağlı kök ve eş seslilerin hepsini bir listeye 
-     * koyarak geri döndürür.
+     * @return düğüme bağlı kök ve eş seslilerin hepsini bir listeye
+     *         koyarak geri döndürür.
      */
     public List<Kok> tumKokler() {
         if (kok != null) {
-            ArrayList<Kok> kokler = new ArrayList<Kok>();
+            ArrayList<Kok> kokler = new ArrayList<Kok>(2);
             kokler.add(kok);
             if (esSesliler != null) {
                 kokler.addAll(esSesliler);
@@ -148,7 +149,7 @@ public class KokDugumu {
 
     /**
      * @return düğüme bağlı tum köklerin icerigi "icerik" ile ayni olanlairni dondurur
-     * koyarak geri döndürür.
+     *         koyarak geri döndürür.
      */
     public List<Kok> tumKokler(String icerik) {
         if (kok != null) {
@@ -168,18 +169,17 @@ public class KokDugumu {
     }
 
 
-
     /**
-     * Verilen collectiona düğüme bağlı tüm kökleri ekler. 
+     * Verilen collectiona düğüme bağlı tüm kökleri ekler.
      *
      * @param kokler
      */
     public final void tumKokleriEkle(List<Kok> kokler) {
         if (kok != null && !kokler.contains(kok)) {
             kokler.add(kok);
-            if (esSesliler != null) {
-                kokler.addAll(esSesliler);
-            }
+        }
+        if (esSesliler != null) {
+            kokler.addAll(esSesliler);
         }
     }
 
@@ -247,23 +247,23 @@ public class KokDugumu {
     public String toString() {
         StringBuilder buf = new StringBuilder();
         buf.append("harf:").append(harf);
-        if(altDugumler != null)
+        if (altDugumler != null)
             buf.append(" alt dugum sayisi:").append(altDugumler.size());
         return buf.toString();
     }
 
     /**
      * Kök agacindaki düğümlerin alt düğümleri için bu sinifi kullanirlar.
-     * Özellikle bellek kullaniminin önemli oldugu Zemberek-Pardus ve OOo 
-     * eklentisi gibi uygulamalarda bu yapinin kullanilmasi bellek kazanci 
-     * getirmektedir. 
+     * Özellikle bellek kullaniminin önemli oldugu Zemberek-Pardus ve OOo
+     * eklentisi gibi uygulamalarda bu yapinin kullanilmasi bellek kazanci
+     * getirmektedir.
      * Asagidaki sinifta alt dugum sayisi CEP_BUYUKLUGU degerinden
-     * az ise sadece CEP_BUYUKLUGU elemanli bir dizi acar. Bu dizi üzerinde 
-     * Arama yapmak biraz daha yavas olsa da ortalama CEP_BUYUKLUGU/2 aramada 
-     * sonuca erişildiği için verilen ceza minimumda kalir. 
-     *
+     * az ise sadece CEP_BUYUKLUGU elemanli bir dizi acar. Bu dizi üzerinde
+     * Arama yapmak biraz daha yavas olsa da ortalama CEP_BUYUKLUGU/2 aramada
+     * sonuca erişildiği için verilen ceza minimumda kalir.
      */
     private static final int CEP_BUYUKLUGU = 3;
+
     private final class AltDugumListesi {
         KokDugumu[] dugumler = new KokDugumu[CEP_BUYUKLUGU];
         int index = 0;
@@ -272,6 +272,7 @@ public class KokDugumu {
         /**
          * Verilen düğümü alt düğüm olarak ekler. eger alt düğümlerinin sayisi
          * CEP_BUYUKLUGU degerini asmissa bir HashMap oluşturur
+         *
          * @param dugum
          */
         public final void ekle(KokDugumu dugum) {
@@ -291,12 +292,13 @@ public class KokDugumu {
 
         /**
          * Verilen karaktere sahip alt düğümü döndürür.
+         *
          * @param giris
          * @return ilgili KokDugumu
          */
         public final KokDugumu altDugum(char giris) {
             if (dugumler != null) {
-                for (int i=0 ; i< index; i++) {
+                for (int i = 0; i < index; i++) {
                     if (dugumler[i].harf() == giris) {
                         return dugumler[i];
                     }
@@ -309,24 +311,24 @@ public class KokDugumu {
 
         /**
          * Alt düğümleri dizi olarak döndürür.
+         *
          * @return KokDugumu[] cinsinden alt düğümler dizisi
          */
         public final KokDugumu[] altDugumlerDizisi() {
-            if (dugumler != null){
+            if (dugumler != null) {
                 return dugumler;
-            }
-            else{
+            } else {
                 return tumDugumler.values().toArray(new KokDugumu[tumDugumler.values().size()]);
             }
         }
-        
-        public final int size(){
-            if (dugumler != null){
+
+        public final int size() {
+            if (dugumler != null) {
                 return index;
             } else {
                 return tumDugumler.size();
             }
         }
     }
-    
+
 }

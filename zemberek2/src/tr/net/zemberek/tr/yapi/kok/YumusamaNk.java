@@ -9,7 +9,7 @@ import net.zemberek.yapi.HarfDizisi;
 import net.zemberek.yapi.kok.HarfDizisiIslemi;
 
 /**
- * Turkcede 'nk' ile biten baki koklere sert sesli eklendiginde sonraki k yumusak g'ye degil g harfine donusur.
+ * Turkcede 'nk' ile biten bazi koklere sert sesli eklendiginde sonraki k yumusak g'ye degil g harfine donusur.
  * 'cenk-cenge' 'denk-dengi' 'Celenk-celenge' gibi.
  */
 public class YumusamaNk implements HarfDizisiIslemi {

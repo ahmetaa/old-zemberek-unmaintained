@@ -23,6 +23,7 @@ public class DemoYonetici {
     private Zemberek zemberek;
     private DilBilgisi dilBilgisi;
     private Map<TurkDiliTuru, Zemberek> zemberekler = new HashMap<TurkDiliTuru, Zemberek>();
+    private boolean htmlMode = false;
 
 
     public DemoYonetici() {
@@ -95,16 +96,22 @@ public class DemoYonetici {
         for (YaziBirimi birim : analizDizisi) {
             if (birim.tip == YaziBirimiTipi.KELIME) {
                 Kelime[] cozumler = zemberek.kelimeCozumle(birim.icerik);
-                sonuc.append(birim.icerik).append("<br>");
+                sonuc.append(birim.icerik).append(satirSonu());
                 if (cozumler.length == 0)
-                    sonuc.append(" :cozulemedi<br>");
+                    sonuc.append(" :cozulemedi").append(satirSonu());
                 else {
                     for (Kelime cozum : cozumler)
-                        sonuc.append(cozum).append("<br>");
+                        sonuc.append(cozum).append(satirSonu());
                 }
             }
         }
         return sonuc.toString();
+    }
+
+    private String satirSonu() {
+        if (htmlMode)
+            return "<br>";
+        else return "\n";
     }
 
 
@@ -131,7 +138,7 @@ public class DemoYonetici {
     }
 
     private String kelimeHariciBicimle(String str) {
-        if (str.equals("\n"))
+        if (str.equals("\n") && htmlMode)
             return "<br>";
         else
             return str;
@@ -232,6 +239,9 @@ public class DemoYonetici {
     }
 
     private String hataliKelimeBicimle(String kelime) {
-        return "<font color=\"#FF0033\">" + kelime + "</font>";
+        if (htmlMode)
+            return "<font color=\"#FF0033\">" + kelime + "</font>";
+        else
+            return "#" + kelime;
     }
 }

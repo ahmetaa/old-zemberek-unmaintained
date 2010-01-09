@@ -10,6 +10,7 @@ import static org.junit.Assert.assertEquals;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import net.zemberek.TemelTest;
@@ -25,7 +26,6 @@ import net.zemberek.yapi.KelimeTipi;
 import net.zemberek.yapi.Kok;
 import net.zemberek.yapi.ek.Ek;
 
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -45,6 +45,7 @@ public class TestKelimeUretici extends TemelTest {
         KokAdayiBulucu kokBulucu = dilBilgisi.kokler().kokBulucuFactory().kesinKokBulucu();
         cozumleyici = new StandartCozumleyici(kokBulucu, new KesinHDKiyaslayici(), alfabe, dilBilgisi.ekler(), dilBilgisi.cozumlemeYardimcisi());
         kokler = dilBilgisi.kokler();
+
     }
 
     private Ek ek(String ad) {
@@ -54,7 +55,7 @@ public class TestKelimeUretici extends TemelTest {
     private List<Ek> ekListesi(String... ekAdlari) {
         List<Ek> ekler = new ArrayList<Ek>();
         for (String s : ekAdlari)
-            ekler.add(ek(s));
+            ekler.add(dilBilgisi.ekler().ek(s));
         return ekler;
     }
 
@@ -66,7 +67,7 @@ public class TestKelimeUretici extends TemelTest {
         assertEquals("sabredebilece\u011fiz", kelimeUretici.kelimeUret(kok, ekler));
 
         kok = kokler.kokBul("armut", KelimeTipi.ISIM);
-        ekler = ekListesi( ISIM_SAHIPLIK_BIZ_IMIZ, ISIM_TANIMLAMA_DIR);
+        ekler = ekListesi(ISIM_SAHIPLIK_BIZ_IMIZ, ISIM_TANIMLAMA_DIR);
         assertEquals("armudumuzdur", kelimeUretici.kelimeUret(kok, ekler));
 
         Kelime almanyada = cozumleyici.cozumle("Almanya'da", CozumlemeSeviyesi.TEK_KOK)[0];
@@ -75,7 +76,16 @@ public class TestKelimeUretici extends TemelTest {
         kok = kokler.kokBul("sabret", KelimeTipi.FIIL);
         ekler = ekListesi(FIIL_YETENEK_EBIL, FIIL_GELECEKZAMAN_ECEK, FIIL_KISI_BIZ);
         assertEquals("sabredebilece\u011fiz", kelimeUretici.kelimeUret(kok, ekler));
+
+        kok = kokler.kokBul("et", KelimeTipi.FIIL);
+        ekler = ekListesi(FIIL_GELECEKZAMAN_ECEK);
+        assertEquals("edecek", kelimeUretici.kelimeUret(kok, ekler));
+
+        kok = kokler.kokBul("et", KelimeTipi.FIIL);
+        ekler = ekListesi(FIIL_KOK, FIIL_OLUMSUZLUK_ME);
+        assertEquals("etme", kelimeUretici.kelimeUret(kok, ekler));
     }
+
 
     private static String I = String.valueOf(Alfabe.CHAR_ii);
 
@@ -90,9 +100,6 @@ public class TestKelimeUretici extends TemelTest {
         ekler = ekListesi(FIIL_GELECEKZAMAN_ECEK, FIIL_YETENEK_EBIL, FIIL_KOK, FIIL_KISI_BIZ);
         assertEquals("sabredebilece\u011fiz", kelimeUretici.sirasizEklerleUret(kok, ekler));
 
-        kok = kokler.kokBul("sabret", KelimeTipi.FIIL);
-        ekler = ekListesi(FIIL_YETENEK_EBIL, FIIL_GELECEKZAMAN_ECEK, FIIL_KISI_BIZ, ISIM_DONUSUM_LES);
-        Assert.assertEquals("sabret", kelimeUretici.sirasizEklerleUret(kok, ekler));
     }
 
     /**
@@ -133,6 +140,15 @@ public class TestKelimeUretici extends TemelTest {
                 assertEquals(l1, kelimeUretici.ayristir(kel));
             else
                 assertEquals(l2, kelimeUretici.ayristir(kel));
+        }
+    }
+
+    @Test
+    public void testEkAyristir() {
+        Kelime[] cozumler = cozumleyici.cozumle("yedeklemeden", CozumlemeSeviyesi.TEK_KOK);
+        for (Kelime kel : cozumler) {
+            String[] ayrim = kelimeUretici.ayristir(kel);
+            System.out.println(Arrays.toString(ayrim));
         }
     }
 

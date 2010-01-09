@@ -19,7 +19,7 @@ import javax.swing.border.TitledBorder;
 
 /**
  */
-public class GirisAlani {
+class GirisAlani {
     private JPanel mainPanel;
     private JTextArea inputArea;
     private char[] ozelKarakterler;

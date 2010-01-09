@@ -61,4 +61,6 @@ public interface DilBilgisi {
      */
     DenetlemeCebi denetlemeCebi();
 
+    DilAyarlari dilAyarlari();
+
 }

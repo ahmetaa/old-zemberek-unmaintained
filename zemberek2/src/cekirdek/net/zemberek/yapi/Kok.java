@@ -8,6 +8,7 @@ import net.zemberek.yapi.ek.Ek;
 import net.zemberek.yapi.kok.KokOzelDurumTipi;
 import net.zemberek.yapi.kok.KokOzelDurumu;
 
+import java.util.Arrays;
 
 /**
  * Created by IntelliJ IDEA.
@@ -183,7 +184,7 @@ public class Kok {
         final Kok kok = (Kok) o;
 
         if (icerik != null ? !icerik.equals(kok.icerik) : kok.icerik != null) return false;
-        if (ozelDurumlar != null ? !(ozelDurumlar == kok.ozelDurumlar) : kok.ozelDurumlar != null) return false;
+        if (ozelDurumlar != null ? !Arrays.equals(ozelDurumlar, kok.ozelDurumlar) : kok.ozelDurumlar != null) return false;
         if (tip != null ? !tip.equals(kok.tip) : kok.tip != null) return false;
 
         return true;

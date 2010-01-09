@@ -21,7 +21,7 @@ public class YeniIcerikAta implements HarfDizisiIslemi {
     private Map<String, String> kokDonusum;
     private Alfabe alfabe;
 
-    public YeniIcerikAta( Alfabe alfabe, Map<String, String>kokDonusum) {
+    public YeniIcerikAta( Alfabe alfabe, Map<String, String> kokDonusum) {
         this.kokDonusum = kokDonusum;
         this.alfabe = alfabe;
     }

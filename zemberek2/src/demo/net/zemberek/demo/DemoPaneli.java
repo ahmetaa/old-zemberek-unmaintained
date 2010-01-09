@@ -12,10 +12,7 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JFileChooser;
-import javax.swing.JPanel;
+import javax.swing.*;
 
 import net.zemberek.araclar.turkce.YaziIsleyici;
 
@@ -54,7 +51,7 @@ public class DemoPaneli {
 
         //giris ve cikisin pencere buyudugunde ayni ende kalmasi icin onlari ayrica Grid Layout'a
         //sahip bir panele yerlestir. sonucta her ikisinide ana panelin merkezine koy.
-        JPanel ioPanel = new JPanel(new GridLayout(2,1));
+        JPanel ioPanel = new JPanel(new GridLayout(2, 1));
         girisAlani = new GirisAlani(dy.ozelKarakterDizisiGetir());
         ioPanel.add(girisAlani.getMainPanel());
         ioPanel.add(cikisAlani.getMainPanel());
@@ -79,7 +76,7 @@ public class DemoPaneli {
                     cikisAlani.setYazi("");
                     girisAlani.ozelKarakterDugmeAlaniOlustur(dy.ozelKarakterDizisiGetir());
                 } catch (ClassNotFoundException e1) {
-                    cikisAlani.setYazi("HATA: dile erisilemiyor:"+dilAdi);
+                    cikisAlani.setYazi("HATA: dile erisilemiyor:" + dilAdi);
                 }
             }
         });
@@ -120,6 +117,20 @@ public class DemoPaneli {
         });
         topPanel.add(btnClear);
 
+        final JCheckBox htmlBox = new JCheckBox("HTML", true);
+        htmlBox.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent actionEvent) {
+                AbstractButton abstractButton = (AbstractButton) actionEvent.getSource();
+                boolean selected = abstractButton.getModel().isSelected();
+                if (selected) {
+                    //cikisAlani.changeToHtml();
+                } else {
+                    //cikisAlani.changeToRegular();
+                   // abstractButton.setText(newLabel);
+                }
+            }
+        });
+        topPanel.add(htmlBox);
 
         pt.add(topPanel, BorderLayout.NORTH);
 
@@ -157,7 +168,7 @@ public class DemoPaneli {
                 cikisAlani.setYazi(dy.asciiToTurkceTahmin(girisAlani.getYazi()));
             }
         });
-        centerPanel.add(btnDeascii2);        
+        centerPanel.add(btnDeascii2);
 
         JButton btnascii;
         btnascii = SwingFactory.getRegularButton("Tr->Ascii");

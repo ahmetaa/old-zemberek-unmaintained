@@ -4,16 +4,11 @@
 
 package net.zemberek.araclar;
 
-import java.util.logging.ConsoleHandler;
-import java.util.logging.Handler;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.logging.*;
 
-/**
- * Java kayit tutma sisemi icin yardimci metodlar.
- * User: ahmet
- * Date: Jan 17, 2006
- */
 public class Kayitci {
 
     private static final ConsoleHandler ch = new ConsoleHandler();
@@ -28,6 +23,7 @@ public class Kayitci {
 
     /**
      * default Logger uretici. seviye:WARNING
+     *
      * @param ad logger adi.
      * @return Logger
      */
@@ -37,9 +33,10 @@ public class Kayitci {
 
     /**
      * handler seviyesinden farkli olarak istenilen seviyede kayitci uretilmesini saglar.
-     * @param ad : logger adi
+     *
+     * @param ad    : logger adi
      * @param level : log level
-     * @return  Logger
+     * @return Logger
      */
     public static Logger kayitciUret(String ad, Level level) {
         Logger logger = Logger.getLogger(ad);
@@ -59,14 +56,44 @@ public class Kayitci {
 
     //henuz kullanilmiyor.
     public static void genelKayitSeviyesiAyarla(String seviye) {
-        Level l=Level.WARNING;
-        if(seviye.equals("INFO"))
-          l=Level.INFO;
-        else if(seviye.equals("FINE"))
-          l=Level.FINE;
+        Level l = Level.WARNING;
+        if (seviye.equals("INFO"))
+            l = Level.INFO;
+        else if (seviye.equals("FINE"))
+            l = Level.FINE;
         Handler[] handlers = Logger.getLogger("").getHandlers();
         for (Handler handler : handlers) {
             handler.setLevel(l);
         }
+    }
+
+    private static class KayitBicimleyici extends Formatter {
+
+        private final DateFormat format = new SimpleDateFormat("h:mm:ss");
+        private final String lineSep = System.getProperty("line.separator");
+
+        /**
+         * Java logger icin tek satirlik cikti uretir.
+         */
+        @Override
+        public String format(LogRecord record) {
+            String loggerName = record.getLoggerName();
+            if (loggerName == null) {
+                loggerName = "root";
+            }
+            int pointLoc = loggerName.lastIndexOf('.');
+            if (pointLoc != -1)
+                loggerName = loggerName.substring(pointLoc + 1);
+            StringBuilder output = new StringBuilder()
+                    .append(record.getLevel()).append(' ').append(':')
+                    .append(record.getMessage()).append(' ')
+                    .append("[")
+                    .append(loggerName).append('|')
+                    .append(format.format(new Date(record.getMillis())))
+                    .append(']')
+                    .append(lineSep);
+            return output.toString();
+        }
+
     }
 }
