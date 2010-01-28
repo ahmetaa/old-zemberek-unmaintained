@@ -17,10 +17,10 @@
 
 XULRUNNER_SDK=$(shell pkg-config --variable=sdkdir libxul)
 XULRUNNER_INCDIR=$(shell pkg-config --variable=includedir libxul)
-XULRUNNER_LIBS=$(shell pkg-config libxul --libs)
+XULRUNNER_LIBS=$(shell pkg-config xulrunner-xpcom --libs)
 NSPR_INCLUDES=$(shell pkg-config --cflags-only-I nspr)
 MOZILLA_FIVE_HOME?=/usr/lib/firefox
-CC_LINK=$(CXX) -shared -Wl,--no-undefined
+CC_LINK=$(CXX) -shared -Wl,--no-undefined -fPIC
 include ../mozzemberek.config
 
 CPU_ARCH = $(shell uname -m | sed -e s/i.86/x86/ )
