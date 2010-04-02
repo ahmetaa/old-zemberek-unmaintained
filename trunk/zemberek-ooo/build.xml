@@ -26,44 +26,12 @@
 		<condition property="use.external.zemberek" value="${use.external.zemberek}" else="false">
 			<isset property="${use.external.zemberek}"/>
 		</condition>
-		<condition property="openoffice.version" value="${openoffice.version}" else="3">
-			<isset property="${openoffice.version}"/>
-		</condition>
 		<mkdir dir="${build.dir}" />
 		<mkdir dir="${build.classes.dir}" />
 		<mkdir dir="${dist.dir}" />
 		<mkdir dir="${dist.jar.dir}" />
 	</target>
 	
-	<path id="ooo2.classpath">
-		<fileset dir="${openoffice.root.dir}/program/classes">
-			<include name="**/*.jar" />
-			<include name="**/*.zip" />
-		</fileset>
-	</path>
-	
-	<path id="ooo3.classpath.unix">
-		<fileset dir="${openoffice.root.dir}/basis-link/ure-link/share/java">
-			<include name="**/*.jar" />
-			<include name="**/*.zip" />
-		</fileset>
-		<fileset dir="${openoffice.root.dir}/basis-link/program/classes">
-			<include name="**/*.jar" />
-			<include name="**/*.zip" />
-		</fileset>
-	</path>
-
-	<path id="ooo3.classpath.windows">
-		<fileset dir="${openoffice.root.dir}/ure/java">
-			<include name="**/*.jar" />
-			<include name="**/*.zip" />
-		</fileset>
-		<fileset dir="${openoffice.root.dir}/basis/program/classes">
-			<include name="**/*.jar" />
-			<include name="**/*.zip" />
-		</fileset>
-	</path>
-
 	<target name="compile-java" depends="init" description="compile all java files">
 		<javac srcdir="${src.dir}" destdir="${build.classes.dir}" source="1.5" target="1.5"
       deprecation="${compile.deprecation}" debug="${compile.debug}" optimize="${compile.optimize}">
@@ -72,7 +40,9 @@
 					<include name="**/*.jar" />
 					<include name="**/*.zip" />
 				</fileset>
-				<path refid="${openoffice.classpath}"/>
+				<fileset dir="${openoffice.root.dir}">
+					<include name="**/*.jar" />
+			</fileset>
 			</classpath>
 			<src path="${src.dir}"/>
 			<include name="**/*.java" />
@@ -173,21 +143,7 @@
 		<condition property="zemberek.jars" value="" else="*.jar">
 			<istrue value="${use.external.zemberek}"/>
 		</condition>
-		<condition property="openoffice.os" value="windows">
-			<os family="windows"/>
-		</condition>
-		<condition property="openoffice.os" value="unix">
-			<os family="unix"/>
-		</condition>
-		
-		<condition
-			property="openoffice.classpath"
-			value="ooo${openoffice.version}.classpath"
-			else="ooo${openoffice.version}.classpath.${openoffice.os}">
-
-			<equals arg1="${openoffice.version}" arg2="2"/>
-		</condition>
-		
+				
 		<antcall target="compile-java" />
 		
 		<jar jarfile="${build.dir}/${spellchecker.project.name}.uno.jar" basedir="${build.classes.dir}">
