@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1" ?>
-
+<?xml version="1.0" encoding="UTF-8"?>
 <project default="build-all">
 
 	<property file="compile.properties"/>
@@ -7,45 +6,44 @@
 
 	<property name="idl.file" value="zemberek_ooo.idl"/>
 	<property name="project.version" value="1.0_rc2"/>
-	<property name="project.name" value="zemberek-ooo-${project.version}" />
-	<property name="spellchecker.project.name" value="ZemberekSpellChecker" />	
-	<property name="hyphenator.project.name" value="ZemberekHyphenator" />
-	<property name="spellchecker.registration.classname" value="net.zemberek.ooo.spellchecker.TurkishSpellChecker" />
-	<property name="hyphenator.registration.classname" value="net.zemberek.ooo.hyphenator.TurkishHyphenator" />
-	<property name="run.classname" value="${registration.classname}" />
-	<property name="src.dir" value="${basedir}/src" />
-	<property name="dist.dir" value="${basedir}/dist" />
-	<property name="lib.dir" value="${basedir}/lib" />
-	<property name="res.dir" value="${basedir}/resources" />
-	<property name="idl.dir" value="${res.dir}/idl" />
-	<property name="build.dir" value="${basedir}/build" />
-	<property name="build.classes.dir" value="${build.dir}/classes" />
-	<property name="dist.jar.dir" value="${dist.dir}/libs" />
+	<property name="project.name" value="zemberek-ooo-${project.version}"/>
+	<property name="spellchecker.project.name" value="ZemberekSpellChecker"/>	
+	<property name="hyphenator.project.name" value="ZemberekHyphenator"/>
+	<property name="spellchecker.registration.classname" value="net.zemberek.ooo.spellchecker.TurkishSpellChecker"/>
+	<property name="hyphenator.registration.classname" value="net.zemberek.ooo.hyphenator.TurkishHyphenator"/>
+	<property name="run.classname" value="${registration.classname}"/>
+	<property name="src.dir" value="${basedir}/src"/>
+	<property name="dist.dir" value="${basedir}/dist"/>
+	<property name="lib.dir" value="${basedir}/lib"/>
+	<property name="res.dir" value="${basedir}/resources"/>
+	<property name="idl.dir" value="${res.dir}/idl"/>
+	<property name="build.dir" value="${basedir}/build"/>
+	<property name="build.classes.dir" value="${build.dir}/classes"/>
+	<property name="dist.jar.dir" value="${dist.dir}/libs"/>
 
 	<target name="init" description="initialization">
 		<condition property="use.external.zemberek" value="${use.external.zemberek}" else="false">
 			<isset property="${use.external.zemberek}"/>
 		</condition>
-		<mkdir dir="${build.dir}" />
-		<mkdir dir="${build.classes.dir}" />
-		<mkdir dir="${dist.dir}" />
-		<mkdir dir="${dist.jar.dir}" />
+		<mkdir dir="${build.dir}"/>
+		<mkdir dir="${build.classes.dir}"/>
+		<mkdir dir="${dist.dir}"/>
+		<mkdir dir="${dist.jar.dir}"/>
 	</target>
 	
 	<target name="compile-java" depends="init" description="compile all java files">
-		<javac srcdir="${src.dir}" destdir="${build.classes.dir}" source="1.5" target="1.5"
-      deprecation="${compile.deprecation}" debug="${compile.debug}" optimize="${compile.optimize}">
+		<javac srcdir="${src.dir}" destdir="${build.classes.dir}" source="1.5" target="1.5" deprecation="${compile.deprecation}" debug="${compile.debug}" optimize="${compile.optimize}">
 			<classpath>
 				<fileset dir="${lib.dir}">
-					<include name="**/*.jar" />
-					<include name="**/*.zip" />
+					<include name="**/*.jar"/>
+					<include name="**/*.zip"/>
 				</fileset>
 				<fileset dir="${openoffice.root.dir}">
-					<include name="**/*.jar" />
+					<include name="**/*.jar"/>
 			</fileset>
 			</classpath>
 			<src path="${src.dir}"/>
-			<include name="**/*.java" />
+			<include name="**/*.java"/>
 		</javac>
 	</target>
 
@@ -144,13 +142,13 @@
 			<istrue value="${use.external.zemberek}"/>
 		</condition>
 				
-		<antcall target="compile-java" />
+		<antcall target="compile-java"/>
 		
 		<jar jarfile="${build.dir}/${spellchecker.project.name}.uno.jar" basedir="${build.classes.dir}">
 			<include name="net/zemberek/ooo/**"/>
             <exclude name="net/zemberek/ooo/hyphenator/**"/>
 			<manifest>
-				<attribute name="RegistrationClassName" value="${spellchecker.registration.classname}" />
+				<attribute name="RegistrationClassName" value="${spellchecker.registration.classname}"/>
 				<attribute name="Class-Path" value="${manifest.classpath}"/>
 			</manifest>
 		</jar>
@@ -159,17 +157,17 @@
 			<include name="net/zemberek/ooo/**"/>
             <exclude name="net/zemberek/ooo/spellchecker/**"/>
 			<manifest>
-				<attribute name="RegistrationClassName" value="${hyphenator.registration.classname}" />
+				<attribute name="RegistrationClassName" value="${hyphenator.registration.classname}"/>
 				<attribute name="Class-Path" value="${manifest.classpath}"/>
 			</manifest>
 		</jar>
 		<zip destfile="${dist.dir}/${project.name}.oxt">
-       			<zipfileset file="${build.dir}/${spellchecker.project.name}.uno.jar" />
-       			<zipfileset file="${build.dir}/${hyphenator.project.name}.uno.jar" />
+       			<zipfileset file="${build.dir}/${spellchecker.project.name}.uno.jar"/>
+       			<zipfileset file="${build.dir}/${hyphenator.project.name}.uno.jar"/>
 <!--       		<zipfileset file="${basedir}/binary-sozluk.bin" />-->
 			<zipfileset dir="${res.dir}/xcu">
-				<include name="*.xcu" />
-				<include name="*.xcs" />
+				<include name="*.xcu"/>
+				<include name="*.xcs"/>
 			</zipfileset>
 			<zipfileset file="${res.dir}/xml/description.xml"/>
 			<zipfileset file="${res.dir}/xml/manifest.xml" prefix="META-INF"/>
@@ -193,10 +191,7 @@
 		<condition property="libs" value="lib/**" else="lib">
 			<isfalse value="${nolibs}"/>
 		</condition>
-		<tar
-			destfile="${dist.dir}/${project.name}${nolibssuff}.tar.gz"
-			compression="gzip"
-			longfile="gnu">
+		<tar destfile="${dist.dir}/${project.name}${nolibssuff}.tar.gz" compression="gzip" longfile="gnu">
 			<tarfileset prefix="${project.name}${nolibssuff}" dir=".">
 				<include name="resources/**"/>
 				<include name="src/**"/>
@@ -208,26 +203,26 @@
 	</target>
 
 	<target name="install" depends="build-all" description="install the project">
-		<copy file="${build.dir}/${project.name}.zip" todir="${openoffice.dir}/user/uno_packages" />
-		<echo message="packagecheck" />
-		<antcall target="pkgchk" />
+		<copy file="${build.dir}/${project.name}.zip" todir="${openoffice.dir}/user/uno_packages"/>
+		<echo message="packagecheck"/>
+		<antcall target="pkgchk"/>
 	</target>
 
 	<target name="reinstall" depends="build-all" description="install the project">
-		<copy file="${build.dir}/${project.name}.zip" todir="${openoffice.dir}/user/uno_packages" />
-		<echo message="packagecheck" />
-		<antcall target="pkgchk" />
+		<copy file="${build.dir}/${project.name}.zip" todir="${openoffice.dir}/user/uno_packages"/>
+		<echo message="packagecheck"/>
+		<antcall target="pkgchk"/>
 	</target>
 
 	<target name="ooo-listen" description="enable OpenOffice to receive connections">
 		<exec executable="${openoffice.program.dir}/soffice" spawn="true">
-			<arg value="-accept=socket,host=${openoffice.hostname},port=${openoffice.port};urp;" />
+			<arg value="-accept=socket,host=${openoffice.hostname},port=${openoffice.port};urp;"/>
 		</exec>
 	</target>
 
 	<target name="uninstall" description="uninstall the project">
-		<delete file="${openoffice.dir}/user/uno_packages/${project.name}.zip" />
-		<antcall target="pkgchk" /> 
+		<delete file="${openoffice.dir}/user/uno_packages/${project.name}.zip"/>
+		<antcall target="pkgchk"/> 
 	</target>
 
 	<!--
@@ -237,11 +232,11 @@
 	-->
 	
 	<target name="ooo2-run" description="run OpenOffice">
-		<exec executable="${openoffice.program.dir}/soffice" spawn="false" />
+		<exec executable="${openoffice.program.dir}/soffice" spawn="false"/>
 	</target>
 	
 	<target name="clean" depends="init" description="remove build-related items">
-		<delete dir="${build.dir}" includeEmptyDirs="true" />
+		<delete dir="${build.dir}" includeEmptyDirs="true"/>
 		<delete dir="${dist.jar.skipreg.dir}" includeEmptyDirs="true"/>
 		<delete dir="${dist.jar.dir}" includeEmptyDirs="true"/>
 		<delete dir="${dist.dir}" includeEmptyDirs="true"/>
