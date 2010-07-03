@@ -51,10 +51,10 @@ abstre IS
 absürt IS YUM
 abu IS
 abuhava IS
-abuk IS YAL
+abuk YA
 abuli IS
 abullabut IS
-abur IS YAL
+abur YA
 abus IS
 acaba IS
 acar IS
@@ -71,7 +71,7 @@ Acemce OZ
 acemi IS
 acemkürdî IS
 acente IS
-acep IS YAL
+acep ZARF
 aceze IS
 acı IS
 Acıgöl OZ
@@ -86,7 +86,7 @@ acırak IS YUM
 acırga IS
 acibe IS
 acil IS
-acilen IS YAL
+acilen ZARF
 âciz IS
 aciz IS DUS
 âcizane IS
@@ -164,7 +164,7 @@ adenit IS YUM
 adese IS
 âdet IS
 adet IS YUM
-âdeta IS YAL
+âdeta ZARF
 adetimürettep IS YUM
 adıl IS
 adım IS
@@ -186,7 +186,8 @@ af IS CIFT
 afacan IS
 afak IS
 afakî IS EK
-afal IS YAL
+afal SI
+afal YA
 afallamak FI
 afat IS
 afazi IS
@@ -194,12 +195,9 @@ aferin IS
 aferist IS
 afet IS
 afetzede IS
-affedersin IS YAL
-affedersiniz IS YAL
 affetmek FI GEN YUM
 affettuoso IS
 affeylemek FI
-affola IS YAL
 affolmak FI
 Afgan OZ
 Afganistan OZ
@@ -217,8 +215,7 @@ afoni IS
 aforizm IS
 aforoz IS
 aforozlamak FI
-afra IS YAL
-afralı IS YAL
+afra IS
 Afrika OZ
 Afrikalı OZ
 afsun IS
@@ -227,7 +224,7 @@ Afşar OZ
 Afşin OZ
 aft IS
 aftos IS
-afur IS YAL
+afur IS
 afyon IS
 Afyon OZ
 afyonkeş IS
@@ -282,7 +279,6 @@ ağınmak FI
 ağır SI
 ağırbaşlı IS EK
 ağırcanlı IS EK
-ağırdan IS YAL
 ağırkanlı IS EK
 ağırlamak FI
 ağırsamak FI
@@ -380,8 +376,7 @@ ajite IS
 ajur IS
 ak SI
 aka IS
-akabinde IS YAL
-akabinde ZA
+akabinde ZARF
 akaç IS YUM
 akaçlamak FI
 akademi IS
@@ -439,7 +434,7 @@ akı IS
 akıbet IS
 akıl IS DUS
 akıllanmak FI
-akıllarınca IS YAL
+akıllarınca IS
 akım IS
 akımölçer IS
 akımtoplar IS
@@ -473,9 +468,9 @@ aklan IS
 aklanmak FI
 aklen IS
 aklevrek IS YUM
-aklımca IS YAL
-aklımızca IS YAL
-aklınca IS YAL
+aklımca IS
+aklımızca IS
+aklınca IS
 aklıselim IS
 aklî IS EK
 akliyat IS
@@ -618,7 +613,6 @@ Alanya OZ
 Alaplı OZ
 alarga IS
 alârm IS
-alaşağı IS YAL
 Alaşehir OZ
 alaşım IS
 alaşımlamak FI
@@ -669,7 +663,7 @@ alem IS
 âlem IS
 alemdar IS
 âlemşümul IS TERS
-alenen IS YAL
+alenen ZARF
 alengirli SI EK
 alenî SI EK
 aleniyet IS
@@ -683,7 +677,7 @@ Alevî OZ
 alevlenmek FI
 aleyh IS
 aleyhtar IS
-aleykümselâm IS YAL
+aleykümselâm UNLEM
 alfa IS
 alfabe IS
 alfabetik SI YUM
@@ -723,7 +717,7 @@ Aliağa OZ
 alil IS
 alim IS
 âlim IS
-alimallah IS YAL
+alimallah UNLEM
 alinazik IS YUM
 aliterasyon IS
 alivre IS
@@ -746,6 +740,7 @@ alkolizm IS
 alkolölçer IS
 Allah OZ
 allahlık IS YUM
+Allahutaala OZ
 Allahüâlem OZ
 allak IS YUM
 allamak FI
@@ -1004,7 +999,7 @@ Angola OZ
 angström IS
 angudî IS EK
 angut IS YUM
-anha IS YAL
+anha YA
 anhidrit IS
 anı IS
 anık IS YUM
@@ -1139,7 +1134,7 @@ apandis IS
 apandisit IS
 apansız IS
 apansızın IS
-apar IS YAL
+apar YA
 aparat IS
 aparey IS
 aparkat IS
@@ -1182,7 +1177,7 @@ aptal IS
 aptalcasına IS
 apteriks IS
 apukurya IS
-apul IS YAL
+apul YA
 ar IS
 ara IS
 araba IS
@@ -1454,7 +1449,7 @@ askeriye IS
 askı IS
 askıntı IS
 askospor IS
-asla IS YAL
+asla ZARF
 aslan IS
 Aslan OZ
 aslanağzı IS
@@ -1790,7 +1785,7 @@ ayrışık IS YUM
 ayrışım IS
 ayrışmak FI
 ayrıt IS
-ayriyeten IS YAL
+ayrıyeten ZARF
 aysberg IS
 aysfilt IS YUM
 ayşekadın IS
@@ -2086,7 +2081,7 @@ balyemez IS
 balyos IS
 balyoz IS
 balyozlamak FI
-bam IS YAL
+bam YA
 bambaşka IS
 bambu IS
 bambul IS
@@ -2157,7 +2152,8 @@ barışçıl IS
 barışık IS YUM
 barışmak FI
 barışsever IS
-bari IS YAL
+bari ZARF
+bari UNLEM
 barikat IS
 barisfer IS
 barit IS YUM
@@ -2189,7 +2185,7 @@ bas IS
 basamak IS YUM
 basarî SI
 basarna IS
-basbayağı IS YAL
+basbayağı SI
 basen IS
 bası IS
 basık IS YUM
@@ -2474,7 +2470,7 @@ beğenmek FI
 behavyorizm IS
 behemehâl IS
 beher IS
-behey IS YAL
+behey UNLEM
 behimî SI
 behre IS
 beis IS
@@ -2535,8 +2531,8 @@ belirtken SI
 belirtmek FI
 belit IS
 belitlemek FI
-belki BAGLAC YAL
-bellâdonna IS YAL
+belki BAGLAC
+bellâdonna IS
 bellek IS YUM
 bellemek FI
 belletmen IS
@@ -2548,7 +2544,7 @@ ben IS
 ben ZA TEKIL_KISI_BOZULMASI ZAMIR_IM
 benbenci IS
 bencil SI
-bencileyin IS YAL
+bencileyin ZARF
 bendegân IS
 bendegî IS
 bendir IS
@@ -2564,7 +2560,7 @@ benimsemek FI
 beniz IS DUS
 benlenmek FI
 benlik IS YUM
-benmari IS YAL
+benmari IS
 benmerkezci IS
 bent IS YUM
 benzemek FI
@@ -2737,7 +2733,7 @@ bezirlemek FI
 bezmek FI GEN
 bezzaz IS
 bıcıl IS
-bıcır IS YAL
+bıcır YA
 bıçak IS YUM
 bıçakçı IS
 bıçaklamak FI
@@ -2753,7 +2749,7 @@ bıkmak FI GEN
 bıktırmak FI
 bıldır IS
 bıldırcın IS
-bıngıl IS YAL
+bıngıl YA
 bıngıldak IS YUM
 bıngıldamak FI
 bırakmak FI
@@ -2775,9 +2771,9 @@ bibliyografik IS YUM
 bibliyografya IS
 bibliyotek IS YUM
 biblo IS
-bici IS YAL
-bicili IS YAL
-bîçare IS
+bici YA
+bicili IS
+bîçare SI
 biçem IS
 biçerbağlar IS
 biçerdöver IS
@@ -2787,7 +2783,7 @@ biçimli SI
 biçki IS
 biçkici IS
 biçmek FI GEN
-bid'at IS TERS OZEL_IC_KARAKTER
+bidat IS TERS
 bidayet IS
 bide IS
 bidon IS
@@ -2807,8 +2803,8 @@ bikarbonat IS
 bîkes IS
 bikini IS
 bikir IS DUS
-bilâhare IS YAL
-bilâistisna IS
+bilâhare ZARF
+bilâistisna ZARF
 bilâkis IS
 bilânço IS
 bilâr IS
@@ -2842,8 +2838,8 @@ bilgiç IS
 bilgilenmek FI
 bilgin IS
 bilgisayar IS
-bilhassa IS YAL
-bili IS YAL
+bilhassa ZARF
+bili YA
 bililtizam IS
 bilim IS
 bilimsel IS
@@ -2872,8 +2868,8 @@ bilye IS
 bilyon IS
 bin SA
 bina IS
-binaen IS YAL
-binaenaleyh IS YAL
+binaen ZARF
+binaenaleyh ZARF
 bînamaz IS
 binbaşı IS
 bindallı IS
@@ -2895,16 +2891,16 @@ birahane IS
 biraz IS
 birbir ZA IS_TAM
 birçok IS YUM
-birdenbire IS YAL
+birdenbire ZARF
 birdirbir IS
 birebir IS
 Birecik OZ
-birer IS YAL
+birer SI
 birey IS
 bireysel IS
 bireyüstü IS
 biri IS
-biricik IS YAL YUM
+biricik SI YUM
 birikim IS
 birikinti IS
 birikmek FI
@@ -2922,14 +2918,15 @@ birlik IS YUM
 birlikte IS
 birliktelik IS YUM
 birsam IS
-birtakım IS YAL
+birtakım SI
 biryancı IS
 bis IS
 biseksüel IS
 bisiklet IS
 bisküvi IS
 Bismil OZ
-bismillâh IS YAL
+bismillâh IS
+bismillâh UNLEM
 bistro IS
 bisturi IS
 Bişkek OZ
@@ -2957,8 +2954,8 @@ Bitlis OZ
 bitmek FI GEN
 bitnik IS YUM
 bitpazar IS IS_TAM
-bittabi IS YAL
-bitter IS YAL
+bittabi ZARF
+bitter IS
 bitüm IS
 bitümlemek FI
 bîvefa IS
@@ -2986,7 +2983,7 @@ biz ZA ZAMIR_IM
 Bizans OZ
 bîzar IS
 bizatihi IS
-bizcileyin IS YAL
+bizcileyin ZARF
 bizimki IS
 bizlemek FI
 bizlengiç IS YUM
@@ -3012,7 +3009,7 @@ bocalamak FI
 boci IS
 bocuk IS YUM
 bocurgat IS
-bodoslama IS YAL
+bodoslama IS
 bodoslamak FI
 bodrum IS
 Bodrum OZ
@@ -3207,21 +3204,21 @@ börek IS YUM
 börk IS
 börkenek IS YUM
 börtmek FI GEN
-börtü IS YAL
+börtü YA
 börtük IS YUM
 börülce IS
 bösmek FI GEN
 böyle IS
-böylece IS YAL
+böylece ZARF
 böylecene IS
-böylemesine IS YAL
+#böylemesine IS
 Brahma OZ
 Brahman OZ
 Brahmanizm OZ
 branda IS
 branş IS
-bravo IS YAL
-bre IS YAL
+bravo UNLEM
+bre UNLEM
 breş IS
 brezil IS
 brezilya IS
@@ -3312,7 +3309,7 @@ Bulgaristanlı OZ
 bulgu IS
 bulgulamak FI
 bulgur IS
-bullak IS YAL
+bullak SI
 bulmaca IS
 bulmak FI
 bulûğ IS
@@ -3338,7 +3335,7 @@ bunama IS
 bunamak FI
 bungalov IS
 bungun IS
-bunlu IS YAL
+bunlu SI
 bura IS
 burç IS YUM
 burçak IS YUM
@@ -3399,7 +3396,7 @@ büğelek IS YUM
 büğemek FI
 büğet IS
 büğrü IS
-bühtan IS YAL
+bühtan IS
 bük IS
 büklüm IS
 bükmek FI GEN
@@ -3485,14 +3482,14 @@ cam IS
 camadan IS
 cambaz IS
 cambazhane IS
-cambul IS YAL
+cambul YA
 camekân IS
 camgöbeği IS
 camgöz IS
 camgüzeli IS
 camız IS
 cami IS
-cami IS TIRE
+cami IS
 camia IS
 camit IS
 camlamak FI
@@ -3504,7 +3501,7 @@ cancağız IS
 candan IS
 canfes IS
 canfeza IS
-cangıl IS YAL
+cangıl YA
 canhıraş SI
 cani IS
 canip IS YUM
@@ -3523,8 +3520,8 @@ cariye IS
 carlamak FI
 cart IS
 carta IS
-cartadak SI YAL
-cartadan SI YAL
+cartadak ZARF
+cartadan ZARF
 cascavlak SI YUM
 casino IS
 casus IS
@@ -3533,14 +3530,14 @@ cavlak SI YUM
 cavlamak FI
 caydırmak FI
 caygın SI
-cayır IS YAL
+cayır YA
 cayırdamak FI
 cayırtı IS
 caymak FI GEN
 caz IS
 cazbant IS YUM
 cazgır IS
-cazır IS YAL
+cazır YA
 cazırdamak FI
 cazırtı IS
 cazibe IS
@@ -3552,7 +3549,7 @@ Cebeci OZ
 cebel IS
 cebeli IS
 Cebelibereket OZ
-cebellezi IS YAL
+cebellezi IS
 ceberut IS
 cebin IS
 cebir IS DUS
@@ -3592,7 +3589,7 @@ celp IS YUM
 celpname IS
 celse IS
 cem IS
-cem'an IS OZEL_IC_KARAKTER
+ceman IS
 cemaat IS TERS
 cemadat IS
 cemal IS TERS
@@ -3620,7 +3617,7 @@ cenin  IS
 ceninisakıt IS
 cenk IS YUM_NK
 cennet IS
-cennetmekân IS YAL
+cennetmekân SI
 centilmen IS
 cenubî IS
 cenup IS YUM
@@ -3649,13 +3646,13 @@ cesaret IS
 cesaretlenmek FI
 ceset IS YUM
 cesim IS
-ceste IS YAL
+ceste YA
 cesur IS
 cesurane IS
 cet IS YUM CIFT
 cetbecet IS
 cetvel IS
-cevaben IS YAL
+cevaben ZARF
 cevabî SI
 cevahir IS
 cevap IS YUM
@@ -3691,7 +3688,7 @@ cıbıl IS
 cıcık IS YUM
 cıda IS
 cıdağı IS
-cık IS YAL
+cık UNLEM
 cılız IS
 cılk IS
 cılkava IS
@@ -3701,7 +3698,7 @@ cımbız IS
 cımbızlamak FI
 cıncık IS YUM
 cıngıl IS
-cır IS YAL
+cır YA
 cırboğa IS
 cırcır  IS
 cırdaval IS
@@ -3718,7 +3715,7 @@ cırnık IS YUM
 cırt IS
 cırtlak IS YUM
 cırtlamak FI
-cıs IS YAL
+cıs YA
 cıva IS
 cıvadra IS
 cıvata IS
@@ -3727,18 +3724,19 @@ cıvık IS YUM
 cıvıklanmak FI
 cıvıl YA
 cıvımak FI
-cıyak IS YAL
+cıyak YA
 cıyaklamak FI
 cıyırdamak FI
 cıyırtı IS
-cız IS YAL
+cız IS
+cız YA
 cızbız IS
 cızık IS YUM
 cızıktırmak FI
 cızılda IS
 cızıldama FI
 cızıltı IS
-cızır IS YAL
+cızır YA
 cızırdamak FI
 cızırtı IS
 cızlam IS
@@ -3749,11 +3747,11 @@ cibre IS
 Cibril OZ
 cici IS
 cicik IS
-cicoz IS YAL
+cicoz IS
 cicozlamak FI
 cidal IS TERS
 cidar IS
-cidden IS YAL
+cidden ZARF
 ciddî IS
 ciddiyet IS
 Cide OZ
@@ -3850,11 +3848,10 @@ cumba IS
 cumbadak IS
 cumbalak IS YUM
 cumbalamak FI
-cumbul IS YAL
-cumbul IS YAL
+cumbul YA
 cumbuldamak FI
 cumburdamak FI
-cumburlop IS YAL
+cumburlop IS
 cumburtu IS
 cumhur IS
 cumhurbaşkan IS IS_TAM
@@ -3862,14 +3859,14 @@ cumhurbaşkanlığı IS
 cumhuriyet IS
 cumhuriyetperver IS
 cunda IS
-cungul IS YAL
+cungul YA
 cunta IS
 cup IS
-cuppadak IS YAL
+cuppadak IS
 cura  IS
 curcuna IS
 curnata IS
-curt IS YAL
+curt YA
 cuşiş IS
 cübbe IS
 cüce IS
@@ -3879,7 +3876,7 @@ cüda IS
 cühelâ IS
 cülûs IS
 cülûsiye IS
-cümbür IS YAL
+cümbür YA
 cümbüş IS
 cümle IS
 cümleten IS
@@ -3887,15 +3884,15 @@ cümudiye IS
 cünha  IS
 cünun  IS
 cünup IS YUM
-cür'et  IS OZEL_IC_KARAKTER
-cür'etkâr IS OZEL_IC_KARAKTER
-cür'etlenmek FI OZEL_IC_KARAKTER
+cüret  IS
+cüretkâr IS
+cüretlenmek FI
 cürmümeşhut IS YUM
 cüruf  IS
 cürüm IS DUS
 cüsse IS
 cüz IS
-cüz'î IS OZEL_IC_KARAKTER
+cüzî IS
 cüzam IS
 cüzdan IS
 cüzzam IS
@@ -4038,7 +4035,7 @@ cüzzam IS
 çapullamak FI
 çaput IS
 çar IS
-çarçabuk SI YAL
+çarçabuk ZARF
 çarçur IS
 çardak IS YUM
 Çardak OZ
@@ -4089,7 +4086,7 @@ cüzzam IS
 çatı IS
 çatık IS YUM
 çatınmak FI
-çatır IS YAL
+çatır YA
 çatırdamak FI
 çatırtı IS
 çatışık IS YUM
@@ -4337,7 +4334,7 @@ cüzzam IS
 çıngar IS
 çıngı IS
 çıngıl IS
-çıngır IS YAL
+çıngır YA
 çıngırak IS YUM
 çıngırdak IS YUM
 çıngırdamak FI
@@ -4363,13 +4360,14 @@ cüzzam IS
 çırpıntı IS
 çırpma IS
 çırpmak FI GEN
-çıt IS YAL
+çıt IS
 çıta IS
 çıtak IS YUM
 çıtçıt IS
 çıtçıtlamak FI
-çıtı IS YAL
 çıtır YA
+çıtırtı IS
+çıtırdamak FI
 çıtkırıldım IS
 çıtlamak FI
 çıtlık IS YUM
@@ -4533,7 +4531,7 @@ cüzzam IS
 çorap IS YUM
 çorba IS
 Çorlu OZ
-çorman IS YAL
+çorman YA
 Çoruh OZ
 Çorum OZ
 çotanak IS YUM
@@ -4572,7 +4570,7 @@ cüzzam IS
 çöpçü IS
 çöplenmek FI
 çöplük IS YUM
-çör IS YAL
+çör YA
 çördek IS YUM
 çörek IS YUM
 çöreklenmek FI
@@ -4610,13 +4608,13 @@ cüzzam IS
 Çulpan OZ
 çultar IS
 Çumra OZ
-çungul IS YAL
-çungur IS YAL
+çungul YA
+çungur YA
 çupra IS
 çurçur IS
-çurpuk IS YUM YAL
+çurpuk YA
 çuşka IS
-çutur IS YAL
+çutur YA
 çuval IS
 çuvaldız IS
 çuvallamak FI
@@ -4629,7 +4627,7 @@ cüzzam IS
 çürük SI YUM
 çürükçül IS
 çürümek FI
-çüş IS YAL
+çüş UNLEM
 da BAGLAC
 Dadacı OZ
 Dadaist OZ
@@ -4651,7 +4649,6 @@ dağıtmak FI
 dağî IS
 dağlamak FI
 daha ZAMAN
-dahdah IS YAL
 dâhi IS
 dahi BAGLAC
 dâhice IS
@@ -4662,10 +4659,10 @@ dâhiliye IS
 dâhiyane IS
 dahletmek FI GEN YUM
 dahra IS
-daim IS YAL
-daima IS YAL
+daim SI
+daima ZARF
 daimî IS
-dair IS YAL
+dair SI
 daire IS
 dairevî IS
 dakik SI
@@ -4731,15 +4728,15 @@ damla IS
 damlamak FI
 damper IS
 damping IS
-dan IS YAL
+dan YA
 dana IS
 danaburnu IS
 Danca OZ
 dandik IS YUM
-dandini IS YAL
+dandini SI
 dane IS
-dang IS YAL
-dangadak IS YAL YUM
+dang IS
+dangadak ZARF YUM
 dangalak IS YUM
 dangıldamak FI
 danışık IS YUM
@@ -4775,7 +4772,7 @@ darı IS
 dârıdünya IS
 dârıfülfül IS
 darılgan SI
-darılmaca IS YAL
+darılmaca IS
 darılmak FI
 darmadağın SI
 darmadağınık SI YUM
@@ -4845,7 +4842,7 @@ dedikodu IS
 dedirmek FI
 dedüksiyon IS
 def IS
-def'aten IS YAL OZEL_IC_KARAKTER
+defaten ZARF
 defa IS
 defaatle ZA
 defans IS
@@ -4890,7 +4887,7 @@ değişmek FI
 değmek FI GEN
 değnek IS YUM
 değneklemek FI
-deh IS YAL
+deh UNLEM
 deha IS
 dehalet IS
 dehlemek FI
@@ -4920,7 +4917,7 @@ dekor IS
 dekorasyon IS
 dekoratif IS
 dekoratör IS
-dekore IS YAL
+dekore SI
 dekovil IS
 dekstrin IS
 dekstroz IS
@@ -5075,7 +5072,7 @@ dereotu IS
 Derepazarı OZ KAYNASTIRMA_N
 dergâh IS
 dergi IS
-derhâl IS YAL
+derhâl ZARF
 deri IS
 Derik OZ
 derin SI
@@ -5105,7 +5102,7 @@ dershane IS
 dersiam IS
 dert IS YUM
 dertlenmek FI
-dertop IS YAL
+dertop SI
 deruhte IS
 derun IS
 derunî IS
@@ -5139,7 +5136,7 @@ destroyer IS
 destur IS
 deşarj IS
 deşelemek FI
-deşifre IS YAL
+deşifre SI
 deşik IS YUM
 deşmek FI GEN
 detant IS
@@ -5196,7 +5193,7 @@ devriye IS
 devrolmak FI
 devşirme IS
 devşirmek FI
-deyi IS YAL
+deyi YA
 deyim IS
 deyiş IS
 deyyus IS
@@ -5211,7 +5208,7 @@ dılak IS YUM
 dımbırdatmak FI
 dımdızlak SI YUM
 Dımışk OZ
-dır IS YAL
+dır YA
 dırdır IS
 dırdırlanmak FI
 dırıltı IS
@@ -5238,7 +5235,7 @@ dibek IS YUM
 Dicle OZ
 didaktik IS YUM
 didar IS
-didik IS YAL
+didik YA
 didiklemek FI
 didinmek FI
 didişken IS
@@ -5265,13 +5262,13 @@ dikgen IS
 Dikili OZ
 dikili SI
 dikimhane IS
-dikine IS YAL
+dikine ZARF
 dikiş IS
 dikit IS
 dikiz IS
 dikizlemek FI
 dikkat IS TERS
-diklemesine IS YAL
+diklemesine ZARF
 diklenmek FI
 diklik IS YUM
 dikmek FI GEN
@@ -5306,7 +5303,7 @@ dilmek FI GEN
 dilsever IS
 dimağ IS
 dimdik SI YUM
-dimi IS YAL
+dimi IS
 diminuendo IS
 dimnit IS
 dimyat IS
@@ -5324,7 +5321,7 @@ dindar IS
 dindaş IS
 dindirmek FI
 dinelmek FI
-dinen IS YAL
+dinen ZARF
 dineri IS
 dingi IS
 dingil IS
@@ -5439,7 +5436,7 @@ diyapazon IS
 diyapozitif IS
 diyar IS
 Diyarbakır OZ
-diye IS YAL
+diye ZARF
 diyet IS
 diyetisyen IS
 diyez IS
@@ -5546,7 +5543,7 @@ domalmak FI
 Domaniç OZ
 domates IS
 dombay IS
-domdom IS YAL
+domdom IS
 dominant SI
 domino IS
 domur IS
@@ -5655,7 +5652,7 @@ draje IS
 dram IS
 drama IS
 dramatik IS YUM
-dramatize IS YAL
+dramatize SI
 dramaturg IS
 dren IS
 drenaj IS
@@ -5690,8 +5687,8 @@ dumanlamak FI
 dumdum IS
 Dumlupınar OZ
 dumur IS
-dun IS
-dun IS YAL
+dun SI
+dun YA
 duo IS
 dupduru SI
 duraç IS YUM
@@ -5764,14 +5761,14 @@ dümbelek IS YUM
 dümdar IS
 dümdüz SI
 dümen IS
-dümtek IS YAL
+dümtek IS
 dün ZAMAN
 dünit IS
 dünür IS
 dünya IS
 Dünya OZ
 dünyevî IS
-düpedüz IS YAL
+düpedüz ZARF
 dürbün IS
 dürmek FI GEN
 dürtmek FI GEN
@@ -5852,7 +5849,7 @@ ebonit IS
 ebru IS
 ebrulamak FI
 ebrulî IS
-ebucehil IS YAL
+Ebucehil OZ
 ebülyoskop IS YUM
 ecdat IS YUM
 ece IS
@@ -5860,7 +5857,7 @@ Eceabat OZ
 ecel IS
 ecinni IS
 ecir IS DUS
-eciş IS YAL
+eciş YA
 ecnebi IS
 ecza IS
 eczahane IS
@@ -5908,7 +5905,7 @@ efsanevî IS
 efsun IS
 efsunkâr IS
 efsunlamak FI
-egale IS YAL
+egale IS
 ege IS
 Ege OZ
 egemen IS
@@ -5957,7 +5954,7 @@ eğri IS
 eğrilmek FI
 eğritmek FI
 eğsi IS
-eh IS YAL
+eh UNLEM
 ehem IS CIFT
 ehemmiyet IS
 ehil IS DUS
@@ -5966,7 +5963,7 @@ ehlibeyt IS
 ehlidil IS
 ehlihibre IS
 ehlikeyf IS
-ehlisalip IS YAL YUM
+ehlisalip IS YUM
 ehlisünnet IS
 ehlivukuf IS
 ehliyet IS
@@ -6018,8 +6015,8 @@ eksantrik IS YUM
 ekselâns IS
 eksen IS
 ekser SI
-ekseri SI YAL
-ekseriya SI YAL
+ekseri ZARF
+ekseriya ZARF
 ekseriyet SI
 eksi IS
 eksibe IS
@@ -6055,8 +6052,8 @@ elan IS
 elâstik SI
 elâstikiyet IS
 Elazığ OZ
-elbet IS YAL
-elbette IS YAL
+elbet ZARF
+elbette ZARF
 Elbeyli OZ
 elbise IS
 Elbistan OZ
@@ -6119,7 +6116,7 @@ eleştirmen IS
 elezer IS
 elgin IS
 elhak IS
-elhamdülillâh IS YAL
+elhamdülillâh IS
 elhâsıl IS
 elif IS
 elifba IS
@@ -6190,7 +6187,7 @@ empati IS
 empermeabl IS
 emperyalist IS
 emperyalizm IS
-empoze IS YAL
+empoze SI
 empresyon IS
 empresyonist IS
 empresyonizm IS
@@ -6305,17 +6302,17 @@ entipüften IS
 entomoloji IS
 entomolojist IS
 entrika IS
-enva IS TIRE
+enva IS
 envaiçeşit IS YUM
-envaitürlü IS YAL
+envaitürlü SI
 envanter IS
 envestisman IS
 enzim IS
 eosen IS
-epe IS YAL
-epey IS YAL
-epeyce IS YAL
-epeyi IS YAL
+epe IS
+epey ZARF
+epeyce ZARF
+epeyi ZARF
 epidemi IS
 epidemioloji IS
 epiderm IS
@@ -6407,18 +6404,18 @@ erotizm IS
 erozyon IS
 erte IS
 ertelemek FI
-ertesi IS YAL
+ertesi SI
 Eruh OZ
 ervah IS
 erzak IS YUM
 Erzin OZ
 Erzincan OZ
 Erzurum OZ
-es IS YAL
+es IS
 esans IS
 esaret IS
 esas SI
-esasen IS YAL
+esasen ZARF
 esasî IS
 esaslanmak FI
 esatir IS
@@ -6590,7 +6587,7 @@ eviye IS
 evkaf IS
 evlâ IS
 evlâdiyelik IS YUM
-evlâdüıyal IS YAL
+evlâdüıyal IS
 evlât IS YUM
 evlek IS YUM
 evleklemek FI
@@ -6612,8 +6609,8 @@ evsemek FI
 evvel ZAMAN
 evvelâ SI
 evveliyat IS
-evvelsi IS YAL
-ey IS YAL
+evvelsi SI
+ey UNLEM
 eyalet IS
 eyer IS
 eyerlemek FI
@@ -6644,7 +6641,7 @@ ezinç IS YUM
 Ezine OZ
 ezinti IS
 eziyet IS
-ezkaza IS YAL
+ezkaza ZARF
 ezmek FI GEN
 fa IS
 faal SI TERS
@@ -6722,7 +6719,7 @@ fanus IS
 fanya IS
 far IS
 faraş IS
-faraza IS YAL
+faraza ZARF
 farazî SI
 faraziyat IS
 faraziye IS
@@ -6752,7 +6749,7 @@ Farsça OZ
 farz IS
 farzımuhal IS TERS
 Fas OZ
-fasa IS YAL
+fasa YA
 fasarya IS
 fasıl IS DUS
 fasıla IS
@@ -6854,7 +6851,7 @@ feodal IS TERS
 feodalite IS
 feodalizm IS
 fer IS
-fer'î IS OZEL_IC_KARAKTER
+ferî IS
 ferace IS
 feragat IS TERS
 ferağ IS
@@ -6927,19 +6924,19 @@ feza IS
 fezleke IS
 fıçı IS
 fıçılamak FI
-fıkı IS YAL
+fıkı YA
 fıkıh IS DUS
 fıkır YA
 fıkırdak SI YUM
 fıkra IS
-fıldır IS YAL
+fıldır YA
 fındık IS YUM
 fındıkî IS
 fındıkkıran IS
 Fındıklı OZ
 fındıkyuva IS IS_TAM
-fır IS YAL
-fır IS YAL
+fır ZARF
+fır IS
 Fırat OZ
 fırça IS
 fırçalamak FI
@@ -6956,10 +6953,10 @@ fırkateyn IS
 fırlak SI YUM
 fırlamak FI
 fırsat IS
-fırt IS YAL
+fırt IS
 fırtına IS
 fırttırmak FI
-fıs IS YAL
+fıs YA
 fısfıs IS
 fısfıslamak FI
 fısıl YA
@@ -6969,7 +6966,7 @@ fıskiye IS
 fıslamak FI
 fıstık IS YUM
 fıstıkî IS
-fış IS YAL
+fış YA
 fışıldamak FI
 fışır YA
 fışkı IS
@@ -7027,7 +7024,7 @@ filenk IS YUM_NK
 filet IS
 fileto IS
 filgiller IS
-filhakika IS YAL
+filhakika ZARF
 filigran IS
 filika IS
 filinta IS
@@ -7054,14 +7051,14 @@ filozof IS
 filtre IS
 filtrelemek FI
 filum IS
-filvaki IS TIRE
+filvaki IS
 Fin OZ
 final IS TERS
 finalist IS
 finalizm IS
 finans IS
-finansal IS YAL
-finanse IS YAL
+finansal SI
+finanse SI
 finansman IS
 fincan IS
 Fince OZ
@@ -7090,7 +7087,7 @@ fisebilillâh IS
 fiske IS
 fiskelemek FI
 fiskos IS
-fiso IS YAL
+fiso YA
 fistan IS
 fisto IS
 fistül IS
@@ -7190,7 +7187,8 @@ fonolog IS YUM
 fonoloji IS
 fonotelgraf IS
 font IS
-fora IS YAL
+fora UNLEM
+fora IS
 forint IS
 form IS
 forma IS
@@ -7228,7 +7226,7 @@ fosgen IS
 fosil IS
 foslamak FI
 fosseptik IS YUM
-fosur IS YAL
+fosur YA
 fosurdamak FI
 fosurtu IS
 foşa IS
@@ -7319,7 +7317,7 @@ fut IS
 futa IS
 futbol IS
 fuzulî IS
-fücceten IS YAL
+fücceten ZARF
 fücur IS
 füg IS
 fülfül IS
@@ -7328,7 +7326,7 @@ füme IS
 fümerol IS TERS
 fünye IS
 Fürs OZ
-füru IS TIRE
+füru IS
 fürumaye IS
 füsun IS
 füsunkâr IS
@@ -7372,7 +7370,7 @@ Gagavuzca OZ
 gaile IS
 gaip IS YUM
 gaita IS
-gak IS YAL
+gak YA
 gaklamak FI
 gala IS
 galâksi IS
@@ -7380,14 +7378,14 @@ galalit IS
 galat IS
 Galatasaray OZ
 galatıhis IS CIFT
-galatımeşhur IS YAL
-galebe IS YAL
+galatımeşhur IS
+galebe IS
 galenit IS
 galeri IS
 galeta IS
 galeyan IS
 gali IS
-galiba IS YAL
+galiba ZARF
 galibarda IS
 galibiyet IS
 galip IS YUM
@@ -7433,7 +7431,7 @@ garantör IS
 garaz IS
 garazkâr IS
 garbî IS
-garç IS YAL
+garç YA
 gard IS
 gardenparti IS
 gardenya IS
@@ -7441,13 +7439,13 @@ gardıfren IS
 gardırop IS YUM
 gardiyan IS
 garez IS
-gargar IS YAL
+gargar IS
 gargara IS
 gariban IS
 garibe IS
 garip IS YUM
 garipsemek FI
-gark IS YAL
+gark IS
 garnitür IS
 garnizon IS
 garoz IS
@@ -7479,11 +7477,12 @@ gaybubet IS
 gayda IS
 gaye IS
 gayet IS
-gayr IS TIRE TERS
+gayr IS TERS
 gayret IS
 gayretkeş IS
 gayretlenmek FI
-gayrı IS YAL
+gayrı SI
+gayrı ZARF
 gayri IS
 gayriahlâkî IS
 gayriaklî IS
@@ -7503,7 +7502,7 @@ gayrimakul IS TERS
 gayrimalûm IS
 gayrimemnun IS
 gayrimenkul IS TERS
-gayrimes'ul IS TERS OZEL_IC_KARAKTER
+gayrimesul IS TERS
 gayrimeskûn IS
 gayrimeşru IS
 gayrimezru IS
@@ -7636,13 +7635,13 @@ gencelmek FI
 genç IS YUM
 Genç OZ
 gençten SI
-gene IS YAL
+gene ZARF
 genel IS
 genelev IS
 genelge IS
 genelkurmay IS
 genellemek FI
-genellikle IS YAL
+genellikle ZARF
 general IS TERS
 genetik SI YUM
 geniş SI
@@ -7665,7 +7664,7 @@ Gercüş OZ
 gerçek IS YUM
 gerçeklemek FI
 gerçeküstü SI
-gerçi IS YAL
+gerçi ZARF
 gerdan IS
 gerdaniye IS
 gerdaniyebuselik IS YUM
@@ -7674,7 +7673,7 @@ gerdek IS YUM
 gerdel IS
 gereç IS YUM
 Gerede OZ
-gereğince IS YAL
+gereğince ZARF
 gerek IS YUM
 gerekçe IS
 gerekçelemek FI
@@ -7757,13 +7756,13 @@ gıdık IS YUM
 gıdıklamak FI
 gıgı IS
 gık IS
-gıldır IS YAL
+gıldır YA
 gıllıgış IS
 gıllügiş IS
 gına IS
 gıpta IS
 gır IS
-gırç IS YAL
+gırç YA
 gırgır IS
 gırgırlamak FI
 gırnata IS
@@ -7771,7 +7770,7 @@ gırt IS
 gırtlak IS YUM
 gırtlaklamak FI
 gırtlamak FI
-gıy IS YAL
+gıy YA
 gıyaben IS
 gıyabî IS
 gıyap IS YUM
@@ -7782,7 +7781,7 @@ gibisi SI
 gicişmek FI
 gideğen IS
 gider IS
-giderayak IS YAL
+giderayak ZARF
 gidermek FI
 gidi IS
 gidişat IS
@@ -7814,7 +7813,7 @@ girmek FI GEN
 gişe IS
 gitar IS
 gitarist IS
-gitgide IS YAL
+gitgide ZARF
 gitmek FI GEN YUM
 giyecek IS YUM
 giyim IS
@@ -7966,7 +7965,7 @@ görk IS
 görkem IS
 görmek FI
 görsel IS
-görsel-işitsel IS OZEL_IC_KARAKTER
+görsel-işitsel IS
 görü IS
 görücü IS
 görümce IS
@@ -7986,7 +7985,7 @@ gösteriş IS
 göstermek FI
 göstermelik IS YUM
 göt IS
-götün IS YAL
+götün YA
 götürmek FI
 götürü IS
 gövde IS
@@ -8001,7 +8000,6 @@ göynümek FI
 göyük IS YUM
 göz IS
 gözaltı IS
-gözardı IS YAL
 gözaydın IS
 gözcü IS
 gözdağı IS
@@ -8066,7 +8064,7 @@ guaş IS
 Guatemalâ OZ
 Guatemalâlı OZ
 guatr IS
-gucur IS YAL
+gucur YA
 gudde IS
 gudubet IS
 gufran IS
@@ -8075,11 +8073,11 @@ gugukgiller IS
 gulâş IS
 gulden IS
 gulet IS
-gulu IS YAL
+gulu YA
 gulyabanî IS
 gurbet IS
 gurbetzede IS
-gurç IS YAL
+gurç YA
 gurk IS
 gurklamak FI
 gurlamak FI
@@ -8123,7 +8121,7 @@ gülabdan IS
 Gülağaç OZ
 gülbeşeker IS
 güldeste IS
-güldür IS YAL
+güldür YA
 güldürmek FI
 güldürü IS
 güleç SI YUM
@@ -8147,12 +8145,12 @@ gülünç SI YUM
 gülüt IS
 Gülyalı OZ
 güm IS
-güm IS YAL
+güm YA
 gümbedek IS YUM
-gümbür IS YAL
+gümbür YA
 gümbürdemek FI
 gümbürtü IS
-güme IS YAL
+güme IS
 gümeç IS YUM
 gümele IS
 gümlemek FI
@@ -8169,9 +8167,9 @@ Gümüşova OZ
 gün ZAMAN
 günah IS
 günahkâr SI
-günaşırı IS
-günaydın IS
-günbegün IS YAL
+günaşırı ZARF
+günaydın UNLEM
+günbegün ZARF
 günberi IS
 günce IS
 güncek IS YUM
@@ -8184,7 +8182,7 @@ Gündoğmuş OZ
 gündöndü IS
 gündüz IS
 gündüzsefası IS
-gündüzün IS YAL
+gündüzün ZARF
 günebakan IS
 güneç IS YUM
 güneğik IS YUM
@@ -8205,7 +8203,7 @@ güngörmüş IS
 günindi IS
 günlük IS YUM
 günöte IS
-gün-tün IS YAL OZEL_IC_KARAKTER
+gün-tün IS
 günü IS
 günübirlik IS
 günülemek FI
@@ -8228,7 +8226,7 @@ Güroymak OZ
 Gürpınar OZ
 Gürsu OZ
 güruh IS
-gürül IS YAL
+gürül YA
 gürüldemek FI
 gürültü IS
 Gürün OZ
@@ -8253,11 +8251,11 @@ güverte IS
 güvey IS
 güveyfener IS IS_TAM
 güvez IS
-güya IS YAL
+güya ZARF
 güz IS
 güzaf IS
 güzel SI
-güzelavrat IS YAL
+güzelavrat IS
 Güzelbahçe OZ
 güzelleme IS
 Güzelyurt OZ
@@ -8266,7 +8264,7 @@ güzey IS
 güzide SI
 güzlek IS YUM
 güzlemek FI
-güzün IS YAL
+güzün ZARF
 ha BAGLAC
 ha UNLEM
 ha EDAT
@@ -8308,18 +8306,18 @@ had IS CIFT TERS
 hadde IS
 haddehane IS
 haddelemek FI
-haddizatında IS YAL
+haddizatında ZARF
 hademe IS
 hademeihayrat IS
 hadım IS
 Hadım OZ
-hadi IS YAL
+hadi UNLEM
 hadim IS
 hadis IS
 hâdis IS
 hâdisat IS
 hâdise IS
-hadisene IS YAL
+hadisene UNLEM
 haf IS
 hafakan IS
 hafazanallah IS
@@ -8337,13 +8335,13 @@ hafiye IS
 hafniyum IS
 hafriyat IS
 hafta IS
-hah IS YAL
+hah UNLEM
 haham IS
 hahambaşı IS
 hahamhane IS
-hahha IS YAL
-hahhah IS YAL
-hahnyum IS
+hahha IS
+hahhah IS
+hahniyum IS
 hail IS
 haile IS
 hain SI
@@ -8358,10 +8356,10 @@ hakaretamiz IS
 Hakas OZ
 Hakasça OZ
 hakem IS
-hakeza IS YAL
+hakeza ZARF
 hâkî SI
 hakikat IS TERS
-hakikaten IS YAL
+hakikaten ZARF
 hakikî IS
 hakim IS
 hakimane IS
@@ -8383,7 +8381,7 @@ hal IS CIFT
 hal IS KESME
 hal IS TERS
 hâl IS TERS
-hal'etmek FI GEN YUM OZEL_IC_KARAKTER
+haletmek FI GEN YUM
 hala IS
 hâlâ IS
 Halaç OZ
@@ -8396,7 +8394,7 @@ halâvet IS
 halay IS
 halayık IS YUM
 hâlbuki BAGLAC
-haldır IS YAL
+haldır YA
 hale IS
 halef IS
 halel IS
@@ -8408,7 +8406,7 @@ halet IS
 haletiruhiye IS
 halfa IS
 Halfeti OZ
-half-time IS OZEL_IC_KARAKTER
+half-time IS
 halhal IS
 halı IS
 haliç IS YUM
@@ -8437,7 +8435,7 @@ halojen IS
 halt IS
 halter IS
 halûk IS
-hâlükârda IS YAL
+hâlükârda IS
 halvet IS
 halvethane IS
 Halvetî OZ
@@ -8515,7 +8513,7 @@ Hanönü OZ KAYNASTIRMA_N
 hantal SI
 hanüman IS
 hap IS
-hapır IS YAL
+hapır YA
 hapis IS DUS
 hapishane IS
 haploloji IS
@@ -8523,7 +8521,7 @@ hapsetmek FI GEN YUM
 hapsolmak FI
 hapşırık IS YUM
 hapşırmak FI
-hapşu IS YAL
+hapşu IS
 haptetmek FI GEN YUM
 har IS
 hara  IS
@@ -8597,9 +8595,9 @@ harp IS YUM TERS
 Harran OZ
 harrangürra IS
 hars IS
-hart IS YAL
+hart ZARF
 harta IS
-hartadak IS YAL
+hartadak ZARF
 harttadak IS
 hartuç IS YUM
 has SI
@@ -8687,7 +8685,7 @@ hattat IS
 hattıhareket IS
 hatun IS
 hav IS
-hav IS YAL
+hav YA
 hava IS
 havacıva IS
 havadar IS
@@ -8740,7 +8738,7 @@ Haydarpaşa OZ
 haydi IS
 haydin IS
 haydindi IS
-haydisene IS YAL
+haydisene UNLEM
 haydut IS YUM
 hayhay IS
 hayhuy IS
@@ -8755,7 +8753,8 @@ hayırsever IS
 hayız IS DUS
 haykırmak FI
 haylaz SI
-hayli IS YAL
+hayli SI
+hayli ZARF
 haymana IS
 Haymana OZ
 haymatlos IS
@@ -8764,7 +8763,7 @@ hayran IS
 hayrat IS
 Hayrat OZ
 hayret IS
-hayrola IS YAL
+hayrola UNLEM
 hayrülhalef IS
 haysiyet IS
 hayta IS
@@ -8891,14 +8890,14 @@ hepçil IS
 hepsi IS
 hepten IS
 hepyek IS
-her IS YAL
+her SI
 hercaî IS
 hercümerç IS YUM
 herek IS YUM
 hereklemek FI
 hergele IS
-herhâlde IS YAL
-herhangi IS YAL
+herhâlde ZARF
+herhangi ZARF
 herif IS
 herifçioğul IS DUS IS_TAM
 herk IS
@@ -8915,15 +8914,15 @@ heterotrofi IS
 hevenk IS YUM_NK
 heves IS
 heveslenmek FI
-hey IS YAL
-heyamola IS YAL
+hey UNLEM
+heyamola IS
 heybe IS
 heybet IS
 heyecan IS
 heyecanlanmak FI
 heyelân IS
 heyet IS
-heyhat IS YAL
+heyhat UNLEM
 heyhey IS
 heykel IS
 heykeltıraş IS
@@ -8933,25 +8932,24 @@ hezel IS
 hezeyan IS
 hezimet IS
 hezliyat IS
-hı IS YAL
 hıçkırık IS YUM
 hıçkırmak FI
 hıdiv IS
 hıdrellez IS
 hıfz IS
 hıfzıssıhha IS
-hık IS YAL
+hık IS
 hıltan IS
 hıltar IS
 hımbıl IS
 hımhım IS
 hımış IS
-hıncahınç IS YAL
+hıncahınç ZARF
 hınç IS YUM
 Hınıs OZ
-hınk IS YAL
+hınk IS
 hınzır IS
-hır IS YAL
+hır IS
 hırbo IS
 hırçın IS
 hırdavat IS
@@ -8966,7 +8964,7 @@ hırsız IS
 hırslanmak FI
 hırt IS
 hırtapoz IS
-hırtı IS YAL
+hırtı YA
 Hırvat OZ
 Hırvatça OZ
 Hırvatistan OZ
@@ -9002,7 +9000,7 @@ hicrî SI
 hicvetmek FI GEN YUM
 hicviye IS
 hiç IS
-hiçbir IS YAL
+hiçbir SI
 hiçbiri ZA ZAMIR_IN
 hiçlemek FI
 hidatit IS YUM
@@ -9026,7 +9024,7 @@ hidrojeoloji IS
 hidrokarbon IS
 hidrokarbonat IS
 hidrokarbür IS
-hidroklorik IS YAL
+hidroklorik IS
 hidroksil IS
 hidroksit IS YUM
 hidrolik IS YUM
@@ -9053,7 +9051,7 @@ hijyenik SI YUM
 hikâye IS
 hikmet IS
 hikmetihuda IS
-hil'at IS TERS OZEL_IC_KARAKTER
+hilat IS TERS
 hilâf IS
 hilâfet IS
 hilâl IS TERS
@@ -9111,7 +9109,7 @@ hissedar IS
 hisseişayia IS
 hissetmek FI GEN YUM
 hissî IS
-hissikablelvuku IS TIRE
+hissikablelvuku IS
 hissiselim IS
 hissiyat IS
 histerezis IS
@@ -9119,7 +9117,7 @@ histeri IS
 histerik SI YUM
 histoloji IS
 hiş IS
-hişt IS YAL
+hişt UNLEM
 hitabe IS
 hitaben IS
 hitabet IS
@@ -9149,7 +9147,7 @@ hodbehot IS
 hodbin IS
 hodkâm IS
 hodpesent IS YUM
-hodri IS YAL
+hodri IS
 hohlamak FI
 hokey IS
 hokka IS
@@ -9176,7 +9174,8 @@ hoparlör IS
 hoplamak FI
 hoppa SI
 hoppadak IS
-hoppala IS YAL
+hoppala IS
+hoppala UNLEM
 hopurdatmak FI
 hor SI
 hora IS
@@ -9208,12 +9207,12 @@ hoş IS
 hoşaf IS
 hoşbeş IS
 hoşgörü IS
-hoşhoş IS YAL
+hoşhoş IS
 hoşlanmak FI
 hoşlaşmak FI
 hoşnut IS YUM
 hoşsohbet IS
-hoşt IS YAL
+hoşt IS
 hoşur IS
 Hotanto OZ
 hotoz IS
@@ -9227,20 +9226,21 @@ höl IS
 höllük IS YUM
 höpür YA
 hörgüç IS YUM
-höst IS YAL
+höst UNLEM
 höşmerim IS
-höt IS YAL
+höt UNLEM
 höykürmek FI
 höyük IS YUM
 Hristiyan OZ
-hu IS YAL
+Hu Oz
+hu UNLEM
 hububat IS
 Huda OZ
 hudayinabit IS
 hudut IS YUM
 huğ IS
 hukuk IS
-hukuken IS YAL
+hukuken ZARF
 hukukî IS
 hulâsa IS
 hulâsaten IS
@@ -9249,7 +9249,7 @@ hulûl IS TERS
 hulûs IS
 hulûskâr IS
 hulya IS
-hum IS YAL
+hum YA
 humar IS
 humbara IS
 humbarahane IS
@@ -9261,15 +9261,15 @@ hunhar SI
 huni IS
 hunnak IS
 hunriz IS
-hupur IS YAL
+hupur YA
 hurafe IS
 hurç IS YUM
 hurda IS
 hurdahaş IS
 huri IS
 hurma IS
-hurra IS YAL
-hurt IS YAL
+hurra UNLEM
+hurt YA
 huruç IS YUM
 hurufat IS
 Hurufî OZ
@@ -9344,13 +9344,13 @@ hüzün IS DUS
 hüzünlenmek FI
 hüzzam IS
 Iğdır OZ
-ıh IS YAL
+ıh UNLEM
 ıhlamak FI
 ıhlamur IS
 ıhlamurgiller IS
 ıhma IS
 ıhmak IS
-ıkına IS YAL
+ıkına YA
 ıkınmak FI
 ıkıntı IS
 ıklamak FI
@@ -9363,7 +9363,7 @@ Ilgın OZ
 ılgın SI
 ılgıncar IS
 ılgıngiller IS
-ılgıt IS YAL
+ılgıt YA
 ılıca IS
 Ilıca OZ
 ılıcak IS YUM
@@ -9372,7 +9372,7 @@ Ilıca OZ
 ılımak FI
 ılıman SI
 ıltar IS
-ıpıl IS YAL
+ıpıl YA
 ıpıslak SI YUM
 ıpıssız SI
 ıra IS
@@ -9463,8 +9463,8 @@ Isparta OZ
 ıtır IS
 ıtrî IS
 ıtriyat IS
-ıttıla IS TIRE
-ıvır IS YAL
+ıttıla IS
+ıvır YA
 ızbandut IS YUM
 ızgara IS
 ızgın IS
@@ -9480,7 +9480,7 @@ ibadullah IS
 ibare IS
 ibaret IS
 ibate IS
-ibda IS TIRE
+ibda IS
 ibdaî IS
 ibibik IS YUM
 ibik IS YUM
@@ -9538,7 +9538,7 @@ içlem IS
 içlenmek FI
 içmece IS
 içmek FI GEN
-içre IS YAL
+içre ZARF
 içrek IS YUM
 içten IS
 içtepi IS
@@ -9584,7 +9584,7 @@ ifrat IS
 ifraz IS
 ifrazat IS
 ifrit IS
-ifşa IS TIRE
+ifşa IS
 ifşaat IS
 iftar IS
 iftariye IS
@@ -9663,7 +9663,7 @@ ihvan IS
 ihya IS
 ihzar IS
 ihzarî IS
-ika IS TIRE
+ika IS
 ikame IS
 ikamet IS
 ikametgâh IS
@@ -9691,7 +9691,7 @@ iklim IS
 iklimlemek FI
 ikmal IS TERS
 ikna IS
-ikna IS TIRE
+ikna IS
 ikon IS
 ikona  IS
 ikonografi IS
@@ -9700,7 +9700,6 @@ ikram IS
 ikramiye IS
 ikrar IS
 ikraz IS
-iks IS YAL
 iksir IS
 iktibas IS
 iktidar IS
@@ -9709,7 +9708,7 @@ iktiran IS
 iktisadî IS
 iktisap IS YUM
 iktisat IS YUM
-iktiza IS YAL
+iktiza IS
 il IS
 ilâ EDAT
 ilâç IS YUM
@@ -9720,11 +9719,11 @@ ilâhî IS
 ilâhiyat IS
 ilâm IS
 ilân IS
-ilânen IS YAL
-ilânıaşk IS YAL
+ilânen ZARF
+ilânıaşk IS
 ilânihaye IS
 ilâve IS
-ilâveten IS YAL
+ilâveten ZARF
 ilca IS
 ilçe IS
 ilçebay IS
@@ -9767,10 +9766,10 @@ ilkokul IS
 ilköğrenim IS
 ilköğretim IS
 ilkyaz IS
-illâ IS YAL
-illâki IS YAL
-illâllah IS YAL
-ille IS YAL
+illâ ZARF
+illâki ZARF
+illâllah UNLEM
+ille ZARF
 illegal IS TERS
 illet IS
 illî IS
@@ -9819,7 +9818,7 @@ imarethane IS
 imbat IS
 imbik IS YUM
 imdat IS YUM
-imdi IS YAL
+imdi ZARF
 imece IS
 imge IS
 imgelem IS
@@ -9847,7 +9846,7 @@ imsak IS TERS
 imsakiye IS
 imtihan IS
 imtina IS
-imtina IS TIRE
+imtina IS
 imtisal IS TERS
 imtisas IS
 imtiyaz IS
@@ -9884,7 +9883,7 @@ indeterminist IS
 indeterminizm IS
 indî IS
 indifa IS
-indifa IS TIRE
+indifa IS
 indifaî IS
 indikatör IS
 indinde IS
@@ -9938,7 +9937,7 @@ inkıbaz IS
 inkılâp IS YUM
 inkıraz IS
 inkısam IS
-inkıta IS TIRE
+inkıta IS
 inkıyat IS YUM
 inkisar IS
 inkisarıhayal IS TERS
@@ -9980,7 +9979,7 @@ interferometri IS
 interkinez IS
 intermezzo IS
 İnternet OZ
-intiba IS TIRE
+intiba IS
 intibah IS
 intibak IS
 intifa IS
@@ -10031,7 +10030,7 @@ iradiye IS
 İran OZ
 irap IS YUM
 irat IS YUM
-irca IS TIRE
+irca IS
 irdelemek FI
 irfan IS
 iri SI
@@ -10060,18 +10059,18 @@ irsî IS
 irsiyet IS
 irşat IS YUM
 irtibat IS
-irtica IS TIRE
+irtica IS
 irticaî SI
 irtical IS TERS
 irticalen IS
-irtifa IS TIRE
+irtifa IS
 irtifak IS
 irtihal IS TERS
 irtikâp IS YUM
 irtisam IS
 irtişa IS
 is IS
-is'at IS OZEL_IC_KARAKTER
+isat IS
 İsa OZ
 isabet IS
 isaf IS
@@ -10228,7 +10227,7 @@ istimna IS
 istimrar IS
 istimzaç IS YUM
 istinabe IS
-istinaden IS YAL
+istinaden ZARF
 istinaf IS
 istinas IS
 istinat IS TERS
@@ -10259,13 +10258,13 @@ istrongilos IS
 isyan IS
 isyankâr SI
 iş IS
-iş'ar IS OZEL_IC_KARAKTER
-iş'arî IS OZEL_IC_KARAKTER
+işar IS
+işarî IS
 işaret IS
 işaretlemek FI
-işba IS TIRE
+işba IS
 işbaşı IS
-işbu IS YAL
+işbu SI
 işçi IS
 işemek FI
 işgal IS TERS
@@ -10380,8 +10379,8 @@ iyon IS
 iyonik IS YUM
 iyot IS YUM
 iz IS
-iz'aç IS YUM OZEL_IC_KARAKTER
-iz'an IS OZEL_IC_KARAKTER
+izaç IS YUM
+izan IS
 izabe IS
 izafe IS
 izafet IS
@@ -10391,7 +10390,7 @@ izafiyet IS
 izah IS
 izahat IS
 izale IS
-izaleişüyu IS TIRE
+izaleişüyu IS
 izam IS
 izaz IS
 izazüikram IS
@@ -10537,7 +10536,7 @@ kabine IS
 kabir IS DUS
 kabl IS
 kablelmilât IS YUM
-kablelvuku IS TIRE
+kablelvuku IS
 kablo IS
 kabotaj IS
 kabristan IS
@@ -10952,7 +10951,7 @@ kaplan IS
 kaplanboğan IS
 kaplıca IS
 kaplumbağa IS
-kapmaca IS YAL
+kapmaca IS
 kapmak FI GEN
 kaporta IS
 kapris IS
@@ -11191,7 +11190,7 @@ karmaç IS YUM
 karmak FI GEN
 karmakarış IS
 karmakarışık IS YUM
-karman IS YAL
+karman YA
 karmaşa IS
 karmaşık IS YUM
 karmaşmak FI
@@ -11317,9 +11316,9 @@ kaşmer IS
 kaşmir IS
 kat IS
 kat IS TERS KESME
-kat'î IS OZEL_IC_KARAKTER
-kat'iyen IS OZEL_IC_KARAKTER
-kat'iyet IS OZEL_IC_KARAKTER
+katî IS
+katiyen ZARF
+katiyet IS
 katabolizma IS
 katafalk IS
 katafot IS
@@ -11378,7 +11377,7 @@ katranköpük IS YUM IS_TAM
 katranlamak FI
 katre IS
 katrilyon SA
-katur IS YAL
+katur YA
 katyon IS
 kauçuk IS YUM
 kav IS
@@ -11653,7 +11652,7 @@ kendigelen IS
 kendince IS
 kendir IS
 kendirgiller IS
-kendisince IS YAL
+kendisince ZARF
 kene IS
 kenef IS
 kenet IS YUM
@@ -11808,7 +11807,7 @@ kıç IS
 kıçtankara IS
 kıçüstü IS
 kıdem IS
-kıdım IS YAL
+kıdım YA
 kığ IS
 kığı IS
 kığılamak FI
@@ -11885,7 +11884,7 @@ kırcı IS
 kırç IS YUM
 kırçıl IS
 kırçıllanmak FI
-kırdılı IS YAL
+kırdılı YA
 kırgın IS
 Kırgız OZ
 Kırgızca OZ
@@ -11898,7 +11897,7 @@ kırılgan SI
 kırım IS
 Kırım OZ
 Kırımlı OZ
-kırın IS YAL
+kırın YA
 kırınım IS
 kırıntı IS
 kırışık IS YUM
@@ -11938,10 +11937,10 @@ kırpıntı IS
 kırpışmak FI
 kırpmak FI GEN
 Kırşehir OZ
-kırt IS YAL
+kırt YA
 kırtasiye IS
 kırtıpil IS
-kıs IS YAL
+kıs YA
 kısa IS
 kısalmak FI
 kısarak SI YUM
@@ -11982,7 +11981,7 @@ kışla IS
 kışlak IS YUM
 kışlamak FI
 kıt IS
-kıt'a IS OZEL_IC_KARAKTER
+kıta IS
 kıtaat IS
 kıtal IS TERS
 kıtık IS YUM
@@ -11997,7 +11996,7 @@ kıvıl IS
 kıvıl YA
 kıvılcım IS
 kıvılcımlanmak FI
-kıvır IS YAL
+kıvır YA
 kıvırcık IS YUM
 kıvırmak FI DUS_FI
 kıvracık IS YUM
@@ -12029,7 +12028,7 @@ kıyıdaş IS
 kıyık IS YUM
 kıyılamak FI
 kıyım IS
-kıyın IS YAL
+kıyın IS
 kıyınmak FI
 kıyıntı IS
 kıyma IS
@@ -12085,7 +12084,6 @@ kibirlenmek FI
 kibrit IS
 kibutz IS
 kifaf IS
-kifafınefs IS YAL
 kifaflanmak FI
 kifayet IS
 Kiğı OZ
@@ -12331,7 +12329,7 @@ kolâj IS
 kolalamak FI
 kolan IS
 kolay IS
-kolaycacık IS YAL
+kolaycacık SI
 kolaylamak FI
 kolbastı IS
 kolbaşı IS
@@ -12366,7 +12364,7 @@ kolombiyum IS
 kolon IS
 koloni IS
 kolonya IS
-kolonyal IS
+kolonyal SI
 kolonyalamak FI
 kolonyalist IS
 kolordu IS
@@ -12879,7 +12877,7 @@ kucaklamak FI
 kuçukuçu IS
 kudas IS
 kudret IS
-kudretten IS YAL
+kudretten ZARF
 kudurgan SI
 kudurmak FI
 kuduruk IS YUM
@@ -12967,9 +12965,9 @@ kupkuru SI
 kupon IS
 kupür IS
 kur IS
-kur'a IS OZEL_IC_KARAKTER
-Kur'an OZ OZEL_IC_KARAKTER
-Kur'anıkerim OZ OZEL_IC_KARAKTER
+kura IS
+Kuran OZ
+Kuranıkerim OZ
 kurabiye IS
 kurak IS YUM
 kurakçıl IS
@@ -13076,7 +13074,7 @@ kutulamak FI
 kutup IS DUS YUM
 kutuplanmak FI
 kutur IS DUS
-kutur IS YAL
+kutur YA
 kuvars IS
 kuvarsit IS
 Kuveyt OZ
@@ -13097,7 +13095,7 @@ Kuyucak OZ
 kuyudat IS
 kuyum IS
 kuyumcu IS
-kuyut IS YAL
+kuyut YA
 kuz IS
 kuzen IS
 kuzey IS
@@ -13128,7 +13126,7 @@ küf IS
 küfe IS
 küffar IS
 küflenmek FI
-küfran IS YAL
+küfran IS
 küfretmek FI GEN YUM
 küfür IS DUS
 küfürbaz IS
@@ -13143,7 +13141,7 @@ külâh IS
 külbastı IS
 külçe IS
 küldöken IS
-küldür IS YAL
+küldür YA
 külek IS YUM
 külfet IS
 külhan IS
@@ -13235,7 +13233,7 @@ kütin IS
 kütle IS
 kütlemek FI
 kütletmek FI
-küttedek SI YAL
+küttedek ZARF
 kütük IS YUM
 kütüphane IS
 kütür YA
@@ -13300,7 +13298,7 @@ lâklâkıyat IS
 lâkonik IS YUM
 lâkrimal IS TERS
 lâktaz IS
-lâktik IS YAL
+lâktik SI
 lâktoz IS
 lâl IS TERS
 lala IS
@@ -13327,17 +13325,17 @@ lândo IS
 lândon IS
 lânet IS
 lânetlemek FI
-langır IS YAL
+langır YA
 lângırt IS
 lângur IS
 lângust IS
 lânolin IS
 lânoz IS
-lânse IS YAL
+lânse SI
 lansman IS
 lântan IS
 lântanit IS
-lâp IS YAL
+lâp YA
 lâpa IS
 lâpçın IS
 lâpina IS
@@ -13345,13 +13343,13 @@ lâpinagiller IS
 Lâpon OZ
 Lâponca OZ
 Lâponya OZ
-lâppadak IS YAL
+lâppadak ZARF
 Lâpseki OZ
 lârenjit IS
 larghetto IS
 largo IS
 lârp IS
-lârpadak IS YAL
+lârpadak ZARF
 lârva IS
 lâskine IS
 lâso IS
@@ -13386,7 +13384,7 @@ lâvtacı IS
 lâvuar IS
 lâyemut IS
 lâyık IS YUM
-lâyıkıyla IS YAL
+lâyıkıyla ZARF
 lâyiha IS
 laytmotif IS
 lâyuhti IS
@@ -13398,7 +13396,6 @@ lâzer IS
 lâzım IS
 lâzımlık IS YUM
 lâzut IS
-le IS YAL
 lebalep IS YUM
 lebiderya IS
 leblebi IS
@@ -13496,7 +13493,7 @@ lig IS
 lika IS
 liken IS
 likidasyon IS
-likide IS YAL
+likide SI
 likidite IS
 likit IS YUM
 likorinoz IS
@@ -13504,7 +13501,7 @@ likör IS
 liman IS
 limanlamak FI
 limbo IS
-lime IS YAL
+lime YA
 limit IS
 limited IS
 limnoloji IS
@@ -13586,7 +13583,7 @@ lonca IS
 longa IS
 longoz IS
 lop IS
-loppadak IS YAL
+loppadak ZARF
 lopur IS YUM
 lor IS
 lorentiyum IS
@@ -13604,12 +13601,12 @@ löklemek FI
 lökoplâst IS
 lökosit IS
 löp SI
-löpür IS YAL
+löpür YA
 lös IS
 lösemi IS
 lûmbago IS
 lûnapark IS
-lungur IS YAL
+lungur YA
 lûtî IS
 lûtr IS
 Lübnan OZ
@@ -13637,7 +13634,7 @@ maalmemnuniye IS
 maarif IS
 maaş IS
 maatteessüf IS
-maazallah IS YAL
+maazallah UNLEM
 mabat IS YUM
 mabet IS YUM
 mabeyin IS DUS
@@ -13662,7 +13659,7 @@ madalyon IS
 madam IS
 madara IS
 madde IS
-maddeten IS YAL
+maddeten ZARF
 maddî IS
 maddiyat IS
 madem BAGLAC
@@ -13791,7 +13788,7 @@ maiyet IS
 majeste IS
 majör IS
 majüskül IS
-maka IS YAL
+maka YA
 makabil IS DUS
 makadam IS
 makak IS YUM
@@ -13823,8 +13820,8 @@ maksimal SI TERS
 maksimum IS
 maksure IS
 maksut IS YUM
-makta IS TIRE
-maktu IS TIRE
+makta IS
+maktu IS
 maktul IS TERS
 makul SI TERS
 makule IS
@@ -13846,7 +13843,7 @@ malayani IS
 malaz IS
 Malazgirt OZ
 malca IS
-malen IS YAL
+malen ZARF
 Malezya OZ
 malgama IS
 malî IS
@@ -13870,7 +13867,7 @@ Maltız OZ
 maltlanmak FI
 maltoz IS
 malul IS TERS
-malulen IS YAL
+malulen ZARF
 maluliyet IS
 maluliyet IS
 malum IS
@@ -13879,7 +13876,7 @@ malumatfuruş IS
 malya IS
 malzeme IS
 mama IS
-mamafih IS YAL
+mamafih ZARF
 Mamak OZ
 mamaliga IS
 mambo IS
@@ -13911,7 +13908,7 @@ mandepsi IS
 mandıra IS
 mandolin IS
 manej IS
-manen IS YAL
+manen ZARF
 manevî SI
 maneviyat IS
 manevra IS
@@ -13955,7 +13952,7 @@ mantarhane IS
 mantarlamak FI
 mantı IS
 mantık IS YUM
-mantıken IS YAL
+mantıken ZARF
 mantıkî IS
 mantin IS
 mantinota IS
@@ -14117,7 +14114,7 @@ materyalizm IS
 matine IS
 matiz IS
 matkap IS YUM
-matla IS TIRE
+matla IS
 matlup IS YUM
 matmazel IS
 matrah IS
@@ -14150,7 +14147,7 @@ mayın IS
 mayınlamak FI
 mayıs IS
 mayışmak FI
-mayi IS TIRE
+mayi IS
 mayistra IS
 maymun IS
 mayna IS
@@ -14182,8 +14179,8 @@ mazur IS
 mazurka IS
 mazuryum IS
 meal IS TERS
-mealen IS YAL
-mebde IS TIRE
+mealen ZARF
+mebde IS
 mebiz IS
 meblâğ IS
 mebni IS
@@ -14207,7 +14204,7 @@ Mecidiyeköy OZ
 Mecitözü OZ KAYNASTIRMA_N
 meclis IS
 meclûp IS YUM
-mecmu IS TIRE
+mecmu IS
 mecmua IS
 mecnun IS
 mecnunane IS
@@ -14235,7 +14232,7 @@ medüz IS
 medya IS
 medyum IS
 medyun IS
-mef'ul IS TERS OZEL_IC_KARAKTER
+meful IS TERS
 mefahir IS
 mefharet IS
 mefhum IS
@@ -14282,9 +14279,9 @@ Meksika OZ
 mektep IS YUM
 mektup IS YUM
 mektupüst IS IS_TAM
-mel IS YAL
-mel'anet IS OZEL_IC_KARAKTER
-mel'un IS OZEL_IC_KARAKTER
+mel YA
+melanet IS
+melun IS
 melâike IS
 melâl IS TERS
 Melâmî OZ
@@ -14317,13 +14314,13 @@ meltem IS
 melül IS
 memalik IS YUM
 memat IS
-memba IS TIRE
+memba IS
 meme IS
 memişhane IS
 memleha IS
 memleket IS
 memlûk IS TERS
-memnu IS TIRE
+memnu IS
 memnun IS
 memnuniyet IS
 memorandum IS
@@ -14334,7 +14331,7 @@ memurin IS
 memuriyet IS
 men IS CIFT
 men IS KESME
-menafi IS TIRE
+menafi IS
 menafiiumumiye IS
 menajer IS
 menakıp IS YUM
@@ -14373,7 +14370,7 @@ mensubiyet IS
 mensucat IS
 mensup IS YUM
 mensur IS
-menşe IS TIRE
+menşe IS
 Menşevik OZ
 menşur IS
 menteşe IS
@@ -14382,9 +14379,9 @@ menus IS
 menü IS
 menüsküs IS
 menzil IS
-mepsuten IS YAL
-mer'i IS OZEL_IC_KARAKTER
-mer'iyet IS OZEL_IC_KARAKTER
+mepsuten ZARF
+meri IS
+meriyet IS
 mera IS
 merak IS
 meraklanmak FI
@@ -14395,7 +14392,7 @@ merasim IS
 mercan IS
 mercanköşk IS
 mercek IS YUM
-merci IS TIRE
+merci IS
 mercimek IS YUM
 merdane IS
 merdanelemek FI
@@ -14434,7 +14431,6 @@ merlânos IS
 mermer IS
 mermi IS
 merserize IS
-mersi IS YAL
 mersin IS
 Mersin OZ
 mersingiller IS
@@ -14445,9 +14441,9 @@ mertebe IS
 mertek IS YUM
 merzengûş IS
 Merzifon OZ
-mes'ul IS TERS OZEL_IC_KARAKTER
-mes'uliyet IS OZEL_IC_KARAKTER
-mes'ut IS YUM
+mesul IS TERS
+mesuliyet IS
+mesut IS YUM
 mesabe IS
 mesafe IS
 mesaha IS
@@ -14473,7 +14469,7 @@ meskût IS
 meslek IS YUM
 meslekî IS
 meslektaş IS
-mesmu IS TIRE
+mesmu IS
 mesnet IS YUM
 mesnevî IS
 mesrur IS
@@ -14482,10 +14478,10 @@ mestane IS
 mestur IS
 mesture IS
 Mesudiye OZ
-meş'ale IS OZEL_IC_KARAKTER
-meş'um IS OZEL_IC_KARAKTER
+meşale IS
+meşum IS
 meşakkat IS TERS
-meşbu IS TIRE
+meşbu IS
 meşe IS
 meşgale IS
 meşgul IS TERS
@@ -14500,7 +14496,7 @@ meşk IS
 meşkûk IS
 meşkûr IS
 meşrep IS YUM
-meşru IS TIRE
+meşru IS
 meşrubat IS
 meşruhat IS
 meşruiyet IS
@@ -14527,7 +14523,7 @@ metanet IS
 metastaz IS
 metatez IS
 metazori IS
-metbu IS TIRE
+metbu IS
 metelik IS YUM
 meteor IS
 meteorit IS
@@ -14569,7 +14565,7 @@ metrukiyet IS
 mevcudat IS
 mevcudiyet IS
 mevcut IS YUM
-mevdu IS TIRE
+mevdu IS
 mevduat IS
 mevhibe IS
 mevhibeiilâhiye IS
@@ -14602,7 +14598,7 @@ mevzun IS
 mevzuubahis IS DUS
 mevzuubahsetmek FI
 mey IS
-meyal IS YAL
+meyal YA
 meyan IS
 meyane IS
 meydan IS
@@ -14649,17 +14645,17 @@ mezzosoprano IS
 mı SO
 mıh IS
 mıhlamak FI
-mık IS YAL
+mık YA
 mıknatıs IS
 mıknatısî IS
 mıknatısiyet IS
 mıknatıslamak FI
 mıncıklamak FI
-mıngır IS YAL
+mıngır YA
 mıntıka IS
-mır IS YAL
+mır YA
 mırıl YA
-mırın IS YAL
+mırın YA
 mırlamak FI
 mırmırık IS YUM
 mırnav IS
@@ -14671,8 +14667,8 @@ mıskal IS
 mıskala IS
 mısmıl IS
 mısra IS
-mışıl IS YAL
-mışmış IS YAL
+mışıl YA
+mışmış YA
 mıymıntı IS
 mızıka IS
 mızıkçı SI
@@ -14926,7 +14922,7 @@ monoton IS
 monsenyör IS
 mont IS
 montaj IS
-monte IS YAL
+monte IS
 mor SI
 moral IS TERS
 moralizm IS
@@ -15158,7 +15154,7 @@ mukayese IS
 mukayyet IS
 mukayyit IS YUM
 mukim IS
-mukni IS TIRE
+mukni IS
 mukoza IS
 mukriz IS
 muktebes IS
@@ -15181,11 +15177,11 @@ munkabız IS
 munkalip IS YUM
 munsap IS YUM
 muntazam IS
-muntazaman IS YAL
+muntazaman ZARF
 muntazır IS
 munzam IS
 murabaha IS
-murabba IS TIRE
+murabba IS
 murabıt IS
 murabut IS
 Muradiye OZ
@@ -15194,7 +15190,7 @@ murahhas IS
 murakabe IS
 murakıp IS YUM
 murana IS
-murassa IS TIRE
+murassa IS
 murat IS YUM
 Muratlı OZ
 murç IS YUM
@@ -15212,7 +15208,7 @@ musalla IS
 musallat IS
 musalli IS
 musandıra IS
-musanna IS TIRE
+musanna IS
 musannif IS
 musap IS YUM
 musavver IS
@@ -15265,17 +15261,17 @@ mutena IS
 muteriz IS
 mutezile IS
 mutfak IS YUM
-muti IS TIRE
+muti IS
 Mutki OZ
 mutlak SI
-mutlaka IS YAL
+mutlaka ZARF
 mutlakıyet IS
 mutlanmak FI
 mutlu SI
 mutlulanmak FI
 mutmain IS
 mutsuz SI
-muttali IS TIRE
+muttali IS
 muttarit IS
 muttasıf IS
 muttasıl IS
@@ -15286,7 +15282,7 @@ muvaffakıyet IS
 muvafık IS YUM
 muvahhit IS YUM
 muvakkat IS YUM
-muvakkaten IS YAL
+muvakkaten ZARF
 muvakkit IS
 muvakkithane IS
 muvasala IS
@@ -15345,7 +15341,7 @@ mücver IS
 müçtehit IS YUM
 müdafaa IS
 müdafaaname IS
-müdafi IS TIRE
+müdafi IS
 müdahale IS
 müdahil IS
 müdana IS
@@ -15426,10 +15422,10 @@ mükedder IS
 mükellef IS
 mükellefiyet IS
 mükemmel SI
-mükemmelen IS YAL
+mükemmelen ZARF
 mükemmeliyet IS
 mükerrer SI
-mükerreren IS YAL
+mükerreren ZARF
 mükevvenat IS
 mükeyyifat IS
 mükrim IS
@@ -15443,14 +15439,14 @@ mülâki IS
 mülâyemet IS
 mülâyim SI
 mülâzım IS
-mülemma IS TIRE
-mülevves IS YAL
-müleyyin IS YAL
+mülemma IS
+mülevves SI
+müleyyin SI
 mülga IS
 mülhak IS
 mülhakat IS
-mülhem IS YAL
-mülhit IS YUM
+mülhem SI
+mülhit SI
 mülk IS
 mülkî IS
 mülkiye IS
@@ -15469,7 +15465,7 @@ mümeyyiz IS
 mümin IS
 mümkün SI
 mümtaz IS
-mümteni IS TIRE
+mümteni IS
 münacat IS
 münadi IS
 münafık IS YUM
@@ -15493,14 +15489,14 @@ münekkit IS YUM
 münevver IS
 münezzeh IS
 münfail IS
-münferiden IS YAL
+münferiden ZARF
 münferit IS YUM
 münfesih IS
 münhal IS TERS
 münhani IS
 münharif IS
 münhasır IS
-münhasıran IS YAL
+münhasıran ZARF
 münhat IS CIFT
 münhezim IS
 münkariz IS
@@ -15541,7 +15537,7 @@ mürit IS YUM
 mürşit IS YUM
 mürt IS
 mürteci IS
-mürtefi IS TIRE
+mürtefi IS
 mürtekip IS YUM
 mürtesem IS
 mürtet IS CIFT
@@ -15553,7 +15549,7 @@ mürver IS
 müsaade IS
 müsabaka IS
 müsabık SI
-müsademe IS YAL
+müsademe IS
 müsadere IS
 müsait IS
 müsakkafat IS
@@ -15647,16 +15643,16 @@ müştehi IS
 müşteki IS
 müştemilât IS
 müşterek IS YUM
-müştereken IS YAL
+müştereken ZARF
 müşteri IS
 Müşteri OZ
-müt'a IS OZEL_IC_KARAKTER
+müta IS
 mütalâa IS
 mütareke IS
 müteaddit IS YUM
 müteaffin IS
 müteahhit IS YUM
-müteakiben IS YAL
+müteakiben ZARF
 müteakip IS YUM
 mütealiye IS
 müteallik IS
@@ -15713,7 +15709,7 @@ mütenebbih IS
 müteneffir IS
 mütenekkir IS
 mütenekkiren IS
-mütenevvi IS TIRE
+mütenevvi IS
 müteradif IS
 müterakim IS
 müterakki IS
@@ -15724,18 +15720,18 @@ mütereddit IS YUM
 mütesanit IS YUM
 müteselli IS
 müteselsil IS
-müteselsilen IS YAL
+müteselsilen ZARF
 müteşebbis IS
 müteşekkil IS
 müteşekkir IS
-mütetebbi IS TIRE
+mütetebbi IS
 mütevakkıf IS
 mütevali IS
-mütevazı IS TIRE
+mütevazı IS
 mütevazi SI
 mütevazin IS
 müteveccih IS
-müteveccihen IS YAL
+müteveccihen ZARF
 müteveffa IS
 mütevehhim IS
 mütevekkil IS
@@ -15746,15 +15742,15 @@ müteyakkız IS
 mütezayit IS YUM
 müthiş IS
 müttefik IS
-müttefikan IS YAL
-müttehiden IS YAL
+müttefikan ZARF
+müttehiden ZARF
 müttehit IS YUM
 müvekkil IS
 müvellidülhumuza IS
 müvellidülma IS
 müverrih IS
 müvesvis IS
-müvezzi IS TIRE
+müvezzi IS
 müyesser IS
 müzaheret IS
 müzahir IS
@@ -15781,7 +15777,7 @@ müzikoloji IS
 müziksever SI
 müzisyen IS
 müzmin SI
-na IS YAL
+Na OZ
 naaş IS
 naat IS
 nabekâr IS
@@ -15789,18 +15785,18 @@ nabız IS DUS
 nacak IS YUM
 naçar IS
 naçiz SI
-naçizane IS YAL
+naçizane ZARF
 nadan IS
 nadas IS
 nadide SI
 nadim IS
 nadir SI
 nadirat IS
-nadiren IS YAL
+nadiren ZARF
 nafaka IS
 nafakalanmak FI
 nafıa IS
-nafi IS TIRE
+nafi IS
 nafile IS
 nafiz IS
 nafta IS
@@ -15808,7 +15804,7 @@ naftalin IS
 naftalinlemek FI
 nagehan IS
 nağme IS
-nah IS YAL
+nah EDAT
 nahak IS
 nahır IS
 nahif IS
@@ -15928,7 +15924,7 @@ navlun IS
 naylon IS
 naz IS
 nazar IS
-nazaran IS YAL
+nazaran ZARF
 nazarıdikkat IS YUM
 nazarıitibar IS
 nazarî IS
@@ -15959,7 +15955,7 @@ nebatî IS
 nebevî IS
 nebi IS
 nebülöz IS
-nebze IS YAL
+nebze IS
 necabet IS
 necaset IS
 necat IS
@@ -16048,7 +16044,7 @@ neşvünema IS
 net IS
 netice IS
 neticelenmek FI
-neticeten IS YAL
+neticeten ZARF
 neuzübillâh IS
 neva IS
 nevale IS
@@ -16076,7 +16072,7 @@ neyçe IS
 neyse BAGLAC
 neyse ZARF
 neyzen IS
-nez'etmek FI YUM GEN OZEL_IC_KARAKTER
+nezetmek FI YUM GEN
 nezafet IS
 nezahet IS
 nezaket IS
@@ -16139,7 +16135,7 @@ nisaiye IS
 nisan IS
 nisap IS YUM
 nispet IS
-nispeten IS YAL
+nispeten ZARF
 nispî IS
 nisyan IS
 niş IS
@@ -16151,7 +16147,7 @@ nişangeç IS YUM
 nişanlamak FI
 nişasta IS
 nişastalanmak FI
-nitekim IS YAL
+nitekim ZARF
 nitel IS
 nitelemek FI
 nitelik SI YUM
@@ -16167,7 +16163,7 @@ niye IS
 niyet IS
 niyetlenmek FI
 niyobyum IS
-niza IS TIRE
+niza IS
 nizam IS
 nizamî IS
 nizamiye IS
@@ -16277,7 +16273,7 @@ oditoryum IS
 odun IS
 odyometre IS
 odyovizüel IS
-of IS YAL
+of UNLEM
 Of OZ
 ofansif SI
 ofis IS
@@ -16300,8 +16296,8 @@ Oğuz OZ
 Oğuzca OZ
 Oğuzeli OZ KAYNASTIRMA_N
 Oğuzlar OZ
-oh IS YAL
-oha IS YAL
+oh UNLEM
+oha UNLEM
 ohm IS
 oje IS
 ojit IS
@@ -16334,7 +16330,7 @@ okunaksız IS
 okuntu IS
 okur IS
 okuryazar SI
-okus IS YAL
+okus YA
 okutman IS
 oküler IS
 okyanus IS
@@ -16350,7 +16346,7 @@ olay IS
 oldu EDAT
 oldubitti IS
 oldurgan IS
-ole IS YAL
+ole UNLEM
 olefin IS
 oleik IS YUM
 olein IS
@@ -16364,7 +16360,7 @@ olijist IS
 olimpik IS
 olimpiyat IS YUM
 olivin IS
-olmadık IS YAL
+olmadık SI
 olmak FI
 olta IS
 Oltu OZ
@@ -16400,13 +16396,12 @@ onay IS
 onaylamak FI
 onbaşı IS
 onbiraylık IS
-onca IS YAL
-onda IS
+onca SI
 Ondokuzmayıs OZ
 ondüle IS
 onejit IS
 ongun IS
-onikiparmak IS YAL
+onikiparmak IS YUM
 oniks IS
 onkoloji IS
 onlar ZA ZAMIR_IN
@@ -16668,7 +16663,7 @@ ozuga IS
 ödün IS
 ödünç IS YUM
 ödünlemek FI
-öf IS YAL
+öf UNLEM
 öfke IS
 öfkelenmek FI
 öge IS
@@ -16695,7 +16690,7 @@ ozuga IS
 öğütlemek FI
 öğütlü OZ
 öğütmek FI
-öhö IS YAL
+öhö UNLEM
 ökçe IS
 öke IS
 ökse IS
@@ -16722,7 +16717,7 @@ ozuga IS
 ölümcül SI
 ölümsek IS YUM
 Ömerli OZ
-ömrübillâh IS YAL
+ömrübillâh ZARF
 ömür IS DUS
 ön IS
 önayak IS YUM
@@ -16795,7 +16790,7 @@ ozuga IS
 ötmek FI GEN
 ötre IS
 ötürmek FI
-ötürü IS YAL
+ötürü ZARF
 ötürük IS YUM
 öveç IS YUM
 övgü IS
@@ -16807,14 +16802,14 @@ ozuga IS
 öykülemek FI
 öykünmek FI
 öyle IS
-öylelikle IS YAL
-öylemesine IS YAL
+öylelikle ZARF
+öylemesine ZARF
 öz IS
 Özalp OZ
 Özbek OZ
 Özbekçe OZ
 Özbekistan OZ
-özbeöz IS YAL
+özbeöz SI
 özdek IS YUM
 özdeş SI
 özdeşlemek FI
@@ -16890,7 +16885,7 @@ palavra IS
 palaz IS
 palazlamak FI
 paldım IS
-paldır IS YAL
+paldır YA
 paleograf IS
 paleografi IS
 paleontoloji IS
@@ -17054,7 +17049,7 @@ partisyon IS
 partizan IS
 partner IS
 partöner IS
-part-time IS OZEL_IC_KARAKTER
+part-time IS
 parya IS
 pas IS
 pasaj IS
@@ -17092,7 +17087,7 @@ paşaçadır IS IS_TAM
 paşazade IS
 paşmak IS
 pat IS
-pat IS YAL
+pat YA
 pata IS
 patak IS YUM
 pataklamak FI
@@ -17124,8 +17119,8 @@ patrik IS YUM
 patrikhane IS
 patron IS
 patronaj IS
-pattadak IS YAL
-pattadan IS YAL
+pattadak ZARF
+pattadan ZARF
 pavurya IS
 pavyon IS
 pay IS
@@ -17219,9 +17214,9 @@ pena IS
 penaltı IS
 pencere IS
 pencik IS YUM
-pencüdü IS YAL
-pencüse IS YAL
-pencüyek IS YAL
+pencüdü IS
+pencüse IS
+pencüyek IS
 pençe IS
 pençelemek FI
 pençgâh IS
@@ -17318,10 +17313,9 @@ pestenkerani IS
 pestil IS
 pesüs IS
 peş IS
-peş IS YAL
 peşin IS
 peşinat IS
-peşinen IS YAL
+peşinen ZARF
 peşkeş IS
 peşkir IS
 peşmelba IS
@@ -17338,7 +17332,7 @@ petroloji IS
 petunya IS
 pey IS
 peydahlamak FI
-peyderpey IS YAL
+peyderpey ZARF
 peygamber IS
 peygamberdeve IS IS_TAM
 peyk IS
@@ -17351,11 +17345,11 @@ pezevenk IS YUM_NK
 pezo IS
 pıhtı IS
 pıhtılanmak FI
-pılı IS YAL
+pılı YA
 pınar IS
 Pınarbaşı OZ KAYNASTIRMA_N
 Pınarhisar OZ
-pır IS YAL
+pır YA
 pırasa IS
 pırazvana IS
 pırıl YA
@@ -17370,18 +17364,18 @@ pırpırı IS
 pırpırlamak FI
 pırpıt IS
 pırtı IS
-pırtık IS YAL YUM
+pırtık YA YUM
 pırtlak IS YUM
 pırtlamak FI
 pısırık IS YUM
 pışpışlamak FI
 pıt IS
-pıtı IS YAL
-pıtır IS YAL
+pıtı YA
+pıtır YA
 pıtır YA
 pıtırdamak FI
 pıtrak IS YUM
-pıyrım IS YAL
+pıyrım YA
 pi IS
 piç IS
 piçuta IS
@@ -17438,7 +17432,6 @@ pisboğaz IS
 pisi IS
 pisik IS YUM
 pisipisi IS
-pisipisi IS YAL
 piskopos IS
 piskoposhane IS
 pislemek FI
@@ -17461,7 +17454,7 @@ pişmek FI GEN
 pişpirik IS YUM
 pişti IS
 piştov IS
-piti IS YAL
+piti YA
 piton IS
 pitoresk IS
 piyade IS
@@ -17534,7 +17527,7 @@ poğaça IS
 pohpoh IS
 pohpohlamak FI
 poker IS
-pokus IS YAL
+pokus YA
 polargı IS
 polarimetre IS
 polarimetri IS
@@ -17631,7 +17624,7 @@ poster IS
 postiş IS
 postnişin IS
 postrestant IS
-post-scriptum IS OZEL_IC_KARAKTER
+post-scriptum IS
 postulat IS
 poşet IS
 poşetlemek FI
@@ -17846,7 +17839,7 @@ pürtüklenmek FI
 pürüz IS
 pürüzalır IS
 pürüzlenmek FI
-püs IS YAL
+püs YA
 püskü IS
 püskül IS
 püskürmek FI
@@ -17863,7 +17856,7 @@ Rabbena OZ
 rabıt IS DUS YUM
 rabıta IS
 raca IS
-raci IS TIRE
+raci IS
 racon IS
 radansa IS
 radar IS
@@ -17912,7 +17905,7 @@ rafting IS
 rafya IS
 rağbet IS
 rağm IS
-rağmen IS YAL
+rağmen ZARF
 rahat SI
 rahatlamak FI
 rahatsızlanmak FI
@@ -17943,7 +17936,7 @@ rakkase IS
 rakor IS
 raks IS
 ralli IS
-ramak IS YAL
+ramak IS
 ramazan IS
 Ramazan OZ
 rami IS
@@ -17960,11 +17953,11 @@ rantabl IS
 rantiye IS
 ranza  IS
 rap IS
-rap IS YAL
+rap YA
 rapor IS
 raporlamak FI
 raportör IS
-rappadak IS YAL
+rappadak ZARF
 rapsodi IS
 raptetmek FI GEN YUM
 raptiye IS
@@ -18074,7 +18067,7 @@ remel IS
 remi IS
 remil IS DUS
 remiz IS DUS
-rencide IS YAL
+rencide SI
 rençper IS
 rende IS
 rendelemek FI
@@ -18131,7 +18124,7 @@ revani IS
 reverans IS
 revir IS
 reviş IS
-revize IS YAL
+revize SI
 revizyon IS
 revizyonist IS
 revizyonizm IS
@@ -18163,10 +18156,10 @@ rızk IS
 riayet IS
 riayetkâr IS
 ribaund IS
-ric'at IS OZEL_IC_KARAKTER
+ricat IS
 rica IS
 rical IS TERS
-rik'a IS OZEL_IC_KARAKTER
+rika IS
 rikkat IS TERS
 rimel IS
 rimellemek FI
@@ -18264,7 +18257,7 @@ ruhanî IS
 ruhaniyet IS
 ruhban IS
 ruhbaniyet IS
-ruhen IS YAL
+ruhen ZARF
 ruhî IS
 ruhiyat IS
 ruhsat IS
@@ -18297,7 +18290,7 @@ ruz IS
 ruzname IS
 rübap IS YUM
 rücu IS
-rücu IS TIRE
+rücu IS
 rüçhan IS
 rüesa IS
 rüfeka IS
@@ -18337,7 +18330,7 @@ sabit IS
 sabitlemek FI
 sabo IS
 sabotaj IS
-sabote IS YAL
+sabote IS
 sabretmek FI GEN YUM
 sabuklanmak FI
 sabun IS
@@ -18427,7 +18420,7 @@ sahavet IS
 sahi IS
 sahibe IS
 sahici SI
-sahiden IS YAL
+sahiden ZARF
 sahife IS
 sahih IS
 sahil IS
@@ -18522,7 +18515,7 @@ salep IS YUM
 salepgiller IS
 salgı IS
 salgılamak FI
-salgım IS YAL
+salgım YA
 salgın IS
 salhane IS
 salı IS
@@ -18538,7 +18531,7 @@ salim IS
 salimen SI
 salip IS YUM
 salise IS
-salisen IS YAL
+salisen ZARF
 salisilât IS
 salisilik IS YUM
 salkım IS
@@ -18588,7 +18581,7 @@ sanatkâr IS
 sanatkârane IS
 sanatoryum IS
 sanatsever IS
-sanayi IS TIRE
+sanayi IS
 sanayiinefise IS
 sancak IS YUM
 sancaktar IS
@@ -18611,7 +18604,7 @@ sanı IS
 sanık IS YUM
 sanidin IS
 saniye IS
-sanki IS YAL
+sanki ZARF
 sanmak FI
 sanrı IS
 sanrılamak FI
@@ -18651,7 +18644,7 @@ saparna IS
 saparta IS
 sapasağlam SI
 sapık IS YUM
-sapır IS YAL
+sapır YA
 sapıtmak FI
 sapkın IS
 saplamak FI
@@ -18755,7 +18748,7 @@ sarmaşıkgiller IS
 sarmaşmak FI
 sarnıç IS YUM
 sarp SI
-sarpa IS YAL
+sarpa IS
 sarraf IS
 sarrafiye IS
 sarsak IS YUM
@@ -18834,7 +18827,7 @@ sayfa IS
 sayfalandırmak FI
 sayfiye IS
 saygı IS
-saygıdeğer IS YAL
+saygıdeğer SI
 saygın IS
 sayha IS
 sayı IS
@@ -18890,7 +18883,7 @@ seçmen IS
 seda IS
 sedef IS
 sedefkâr IS
-sedimantasyon IS YAL
+sedimantasyon IS
 sedir IS
 sedye IS
 sefa IS
@@ -18954,8 +18947,7 @@ selâm IS
 selâmet IS
 selâmetlemek FI
 selâmlamak FI
-selâmünaleyküm IS YAL
-selâmünkavlen IS YAL
+selâmünaleyküm UNLEM
 selâset IS
 selâtin IS
 Selçuk OZ
@@ -18971,8 +18963,8 @@ selen IS
 Selendi OZ
 selentereler IS
 selenyum IS
-self-determinasyon IS OZEL_IC_KARAKTER
-self-servis IS OZEL_IC_KARAKTER
+self-determinasyon IS
+self-servis IS
 selika IS
 selim IS
 Selim OZ
@@ -18990,7 +18982,7 @@ selva IS
 selviçe IS
 sem IS CIFT
 sema IS
-sema IS TIRE
+sema IS
 semafor IS
 semah IS
 semahane IS
@@ -19113,7 +19105,7 @@ sergüzeşt IS
 serhat IS YUM CIFT
 seri IS
 seri IS
-serian IS YAL
+serian ZARF
 serigrafi IS
 Serik OZ
 serin SI
@@ -19175,7 +19167,6 @@ setriavret IS
 sevap IS YUM
 sevda IS
 sevdalanmak FI
-sevdiceğim IS YAL
 sevecen IS
 sever SI
 sever SI
@@ -19216,7 +19207,7 @@ seyreylemek FI
 seyrüsefer IS
 seyyah IS
 seyyal IS
-seyyanen IS YAL
+seyyanen ZARF
 seyyar IS
 seyyare IS
 seyyiat IS
@@ -19250,7 +19241,7 @@ sıçmak FI GEN
 sıçramak FI
 sıdk IS
 sıfat IS
-sıfat-fiil IS OZEL_IC_KARAKTER
+sıfat-fiil IS
 sıfır SA
 sıfırlamak FI
 sığ SI
@@ -19325,7 +19316,7 @@ sırat IS
 Sırbistan OZ
 sırça IS
 sırdaş IS
-sırf IS YAL
+sırf ZARF
 sırık IS YUM
 sırıklamak FI
 sırılsıklam IS
@@ -19619,7 +19610,7 @@ Slovence OZ
 Slovenya OZ
 smaç IS
 smokin IS
-snack-bar IS OZEL_IC_KARAKTER
+snack-bar IS
 snop IS YUM
 soba IS
 sobe IS
@@ -19984,7 +19975,7 @@ Sumeroloji OZ KESMESIZ
 sumo IS
 sumsuk IS YUM
 sumsuklamak FI
-sun'î IS OZEL_IC_KARAKTER
+sunî IS
 suna IS
 sunak IS YUM
 sundurma IS
@@ -20046,7 +20037,7 @@ sübjektivizm IS
 süblime IS
 süblimleşmek FI
 sübut IS
-sübvanse IS YAL
+sübvanse IS
 sübvansiyon IS
 sübyan IS
 sübye IS
@@ -20059,7 +20050,7 @@ sühulet IS
 sühunet IS
 süit IS
 süje IS
-süklüm IS YAL
+süklüm YA
 sükse IS
 sükûn IS
 sükûnet IS
@@ -20109,8 +20100,8 @@ süpermarket IS
 süprüntü IS
 süpürge IS
 süpürmek FI
-sür'at IS TERS OZEL_IC_KARAKTER
-sür'atlenmek FI
+sürat IS
+süratlenmek FI
 sürahi IS
 sürç IS
 sürçmek FI GEN
@@ -20181,7 +20172,6 @@ süt IS
 sütana IS
 sütanne IS
 sütbaba IS
-sütbesüt IS YAL
 Sütçüler OZ
 süthane IS
 sütkardeş IS
@@ -20234,7 +20224,7 @@ süzülmek FI
 şahmerdan IS
 şahne IS
 şahniş IS
-şahsen IS YAL
+şahsen ZARF
 şahsî IS
 şahsiyat IS
 şahsiyet IS
@@ -20245,7 +20235,7 @@ süzülmek FI
 şair IS
 şairane SI
 şak IS CIFT
-şak IS YAL
+şak YA
 şaka IS
 şakak IS YUM
 şakayık IS YUM
@@ -20254,7 +20244,7 @@ süzülmek FI
 şakıt IS
 şaki IS
 şakirt IS YUM
-şakkadak IS YAL
+şakkadak ZARF
 şakketmek FI GEN
 şaklaban IS
 şaklamak FI
@@ -20315,8 +20305,7 @@ süzülmek FI
 şapka IS
 şaplak IS YUM
 şaplamak FI
-şappadak IS YAL
-şaprak IS YAL
+şappadak ZARF
 şapşal SI
 şarabî IS
 şarampol IS TERS
@@ -20328,7 +20317,7 @@ süzülmek FI
 şarj IS
 şarjör IS
 şark IS
-şarkadak IS YAL
+şarkadak ZARF
 şarkı IS
 Şarkışla OZ
 şarkî IS
@@ -20368,7 +20357,7 @@ süzülmek FI
 şayak IS YUM
 şayan IS
 şayet BAGLAC
-şayi IS TIRE
+şayi IS
 şayia IS
 şayka IS
 şaz IS
@@ -20385,7 +20374,7 @@ süzülmek FI
 şecaat IS TERS
 şecere IS
 şecerename IS
-şeci IS TIRE
+şeci IS
 şedaraban IS
 şeddadî IS
 şedde IS
@@ -20446,15 +20435,15 @@ süzülmek FI
 şenaat IS TERS
 şendere IS
 şenelmek FI
-şeni IS TIRE
+şeni IS
 şeniyet IS
 Şenkaya OZ
 şenlenmek FI
 şenlik IS YUM
 Şenpazar OZ
 şer IS CIFT
-şer'an IS YAL OZEL_IC_KARAKTER
-şer'î SI OZEL_IC_KARAKTER
+şeran ZARF
+şerî SI
 şerait IS
 şerare IS
 şerbet IS
@@ -20477,7 +20466,7 @@ süzülmek FI
 şeritlemek FI
 şeş IS
 şeşbeş IS
-şeşcihar IS YAL
+şeşcihar IS
 şeşidü IS
 şeşper IS
 şeşüse IS
@@ -20508,7 +20497,7 @@ süzülmek FI
 şık IS
 şık IS CIFT
 şıkır YA
-şıldır IS YAL
+şıldır YA
 şıllık SI YUM
 şımarık SI YUM
 şımarmak FI
@@ -20518,12 +20507,12 @@ süzülmek FI
 şıpıdık IS YUM
 şıpır YA
 şıpka IS
-şıppadak IS YAL
+şıppadak ZARF
 şıpsevdi IS
 şıpşıp IS
 şıra IS
-şırak IS YAL
-şırakkadak  IS YAL
+şırak
+şırakkadak ZARF
 şırfıntı IS
 şırıl YA
 şırınga IS
@@ -20538,7 +20527,7 @@ süzülmek FI
 şif IS
 şifa IS
 şifahane IS
-şifahen IS YAL
+şifahen ZARF
 şifahî SI
 şiflemek FI
 şifon IS
@@ -20616,7 +20605,7 @@ süzülmek FI
 şofben IS
 şoför IS
 şok IS
-şoke IS YAL
+şoke SI
 şokola IS
 şolo IS
 şom SI
@@ -20642,21 +20631,20 @@ süzülmek FI
 şövale IS
 şövalye IS
 şöyle IS
-şöylemesine IS YAL
-şöylesine IS YAL
+şöylesine ZARF
 şu ZA ZAMIR_SESLI_OZEL ZAMIR_IN
 şua IS
 şuara IS
 şubara IS
 şubat IS
 şube IS
-şuf'a IS OZEL_IC_KARAKTER
+şufa IS
 şuh SI
 Şuhut OZ
-şukur IS YAL
+şukur YA
 şuncacık IS
-şungur IS YAL
-şupur IS YAL
+şungur YA
+şupur YA
 şura IS
 şûra IS
 Şûrayıdevlet OZ
@@ -20673,8 +20661,9 @@ süzülmek FI
 şüphe IS
 şüphelenmek FI
 şürekâ IS
-şüyu IS TIRE
-ta IS YAL
+şüyu IS
+Ta OZ
+ta ZARF
 taaccüp IS YUM
 taaddüt IS YUM
 taaffün IS
@@ -20708,10 +20697,11 @@ tabelâ IS
 tabetmek FI GEN YUM
 tabı IS KESME
 tabi IS
-tâbi IS TIRE
+tâbi IS
 tabiat IS
 tabiatüstü IS
-tabiî IS YAL
+tabiî SI
+tabiî ZARF
 tâbiiyet IS
 tabip IS YUM
 tabir IS
@@ -20807,7 +20797,7 @@ tahrip IS YUM
 tahripkâr IS
 tahrir IS
 tahrirat IS
-tahriren IS YAL
+tahriren ZARF
 tahrirî IS
 tahriş IS
 tahsil IS
@@ -20828,7 +20818,8 @@ tahtırevan IS
 tahvil IS
 tahvilât IS
 taife IS
-tak IS YAL
+tak YA
+tak IS
 taka IS
 takaddüm IS
 takallüs IS
@@ -20859,12 +20850,12 @@ takıntı IS
 takır YA
 takışmak FI
 takibat IS
-takiben SI YAL
+takiben ZARF
 takigraf IS
 takim IS
 takimetre IS
 takip IS YUM
-takkadak IS YAL
+takkadak ZARF
 takke IS
 takla IS
 taklak IS YUM
@@ -20892,7 +20883,7 @@ taksit IS
 taksitlemek FI
 taksonomi IS
 takt IS
-takti IS TIRE
+takti IS
 taktik IS YUM
 taktir IS
 takunya IS
@@ -20927,7 +20918,7 @@ talip IS YUM
 talk IS
 talkım IS
 talkın IS
-tallahi IS YAL
+tallahi UNLEM
 taltif IS
 talveg IS
 talyum IS
@@ -21016,7 +21007,7 @@ tar IS
 taraba IS
 taraça IS
 taraf IS
-tarafeyn IS YAL
+tarafeyn IS
 tarafgir IS
 taraftar IS
 tarak IS YUM
@@ -21073,7 +21064,7 @@ tasa IS
 tasalanmak FI
 tasallut IS
 tasallüp IS YUM
-tasannu IS TIRE
+tasannu IS
 tasarı IS
 tasarım IS
 tasarımlamak FI
@@ -21082,7 +21073,7 @@ tasarruf IS
 tasavvuf IS
 tasavvufî IS
 tasavvur IS
-tasdi IS TIRE
+tasdi IS
 tasdik IS
 tasdikname IS
 tasfiye IS
@@ -21095,7 +21086,7 @@ taslak IS YUM
 taslamak FI
 tasma IS
 tasmim IS
-tasni IS TIRE
+tasni IS
 tasnif IS
 tasrif IS
 tasrih IS
@@ -21183,6 +21174,7 @@ tavuskuyruk IS YUM IS_TAM
 tavzif IS
 tavzih IS
 tay IS
+tay YA
 taya IS
 taydaş IS
 tayf IS
@@ -21196,7 +21188,6 @@ tayin IS
 tayip IS YUM
 taylak IS YUM
 Taylorcu OZ KESMESIZ
-taytay IS YAL
 Tayvan OZ
 tayyar IS
 tayyare IS
@@ -21204,7 +21195,7 @@ tayyetmek FI
 tayyör IS
 tazallüm IS
 tazammun IS
-tazarru IS TIRE
+tazarru IS
 taze SI
 tazelemek FI
 tazı IS
@@ -21219,7 +21210,6 @@ tazminat IS
 tazyik IS
 teadül IS
 teakup IS YUM
-teala IS YAL
 teali IS
 teamül IS
 tearuz IS
@@ -21240,7 +21230,7 @@ tebellür IS
 teber IS
 teberru IS
 teberrük IS
-teberrüken IS YAL
+teberrüken ZARF
 teberrüz IS
 tebessüm IS
 tebeşir IS
@@ -21261,14 +21251,14 @@ tecdit IS YUM
 teceddüt IS YUM
 tecelli IS
 tecelliyat IS
-tecemmu IS TIRE
+tecemmu IS
 tecennün IS
 tecerrüt IS YUM
 tecessüm IS
 tecessüs IS
 tecezzi IS
 tecil IS
-tecim IS YAL
+tecim IS
 tecimen IS
 tecrit IS YUM
 tecrübe IS
@@ -21293,7 +21283,7 @@ tedhiş IS
 tedip IS YUM
 tedirgin SI
 tediye IS
-tedricen IS YAL
+tedricen ZARF
 tedricî IS
 tedriç IS YUM
 tedris IS
@@ -21424,7 +21414,7 @@ tekvando IS
 tekvin IS
 tekzip IS YUM
 tel IS
-tel'in IS OZEL_IC_KARAKTER
+telin IS
 telâ IS
 telâffuz IS
 telâfi IS
@@ -21512,9 +21502,9 @@ temenna IS
 temennah IS
 temenni IS
 temerküz IS
-temerrüt IS YAL
+temerrüt IS YUM
 temessül IS
-temettü IS TIRE
+temettü IS
 temevvüç IS YUM
 temeyyüz IS
 temhir IS
@@ -21532,7 +21522,7 @@ temrin IS
 temriye IS
 temsil EDAT
 temsil IS
-temsilen IS YAL
+temsilen ZARF
 temsilî IS
 temyiz IS
 ten IS
@@ -21549,7 +21539,7 @@ tendürüst IS
 teneffüs IS
 teneke IS
 teneşir IS
-tenevvü IS TIRE
+tenevvü IS
 tenevvür IS
 tenezzüh IS
 tenezzül IS
@@ -21572,7 +21562,7 @@ tentene IS
 tentür IS
 tentürdiyot IS YUM
 tenvir IS
-tenvirat IS YAL
+tenvirat IS
 tenya IS
 tenzih IS
 tenzil IS
@@ -21622,7 +21612,7 @@ teravih IS
 terazi IS
 Terazi OZ
 terazilemek FI
-terbi IS TIRE
+terbi IS
 terbiye IS
 terbiyevî IS
 terbiyum IS
@@ -21648,7 +21638,7 @@ teres IS
 teressüp IS YUM
 terettüp IS YUM
 tereyağ IS IS_TAM
-terfi IS TIRE
+terfi IS
 terfian IS
 terfih IS
 terfik IS
@@ -21703,9 +21693,9 @@ terviç IS YUM
 terzi IS
 terzihane IS
 terzil IS
-tes'it IS OZEL_IC_KARAKTER YUM
+tesit IS
 tesadüf IS
-tesadüfen IS YAL
+tesadüfen ZARF
 tesadüfî IS
 tesahup IS YUM
 tesalüp IS YUM
@@ -21734,7 +21724,7 @@ teslis IS
 tesmiye IS
 tespih IS
 tespit IS
-tesri IS TIRE
+tesri IS
 test IS
 testere IS
 testerelemek FI
@@ -21744,7 +21734,7 @@ testosteron IS
 tesvit IS YUM
 tesviye IS
 teşbih IS
-teşci IS TIRE
+teşci IS
 teşdit IS YUM
 teşebbüs IS
 teşehhüt IS YUM
@@ -21760,7 +21750,7 @@ Teşkilâtıesasiye OZ
 teşkilâtlanmak FI
 teşmil IS
 teşne IS
-teşri IS TIRE
+teşri IS
 teşrif IS
 teşrifat IS
 teşriî IS
@@ -21773,17 +21763,17 @@ teşt IS
 teşvik IS
 teşvikkâr IS
 teşviş IS
-teşyi IS TIRE
+teşyi IS
 tetabuk IS
 tetanos IS
-tetebbu IS TIRE
+tetebbu IS
 tetik IS YUM
 tetikçi IS
 tetiklemek FI
 tetir IS
 tetkik IS
 tetkikat IS
-tevabi IS TIRE
+tevabi IS
 tevafuk IS
 tevahhuş IS
 tevakki IS
@@ -21795,7 +21785,7 @@ tevazu IS
 tevazün IS
 tevbih IS
 tevcih IS
-tevdi IS TIRE
+tevdi IS
 tevdiat IS
 teveccüh IS
 tevehhüm IS
@@ -21805,13 +21795,13 @@ tevekkül IS
 teveklemek FI
 tevellüt IS YUM
 teverrüm IS
-tevessü IS TIRE
+tevessü IS
 tevessül IS
 tevettür IS
 tevfikan IS
 tevhit IS YUM
 tevil IS
-tevki IS TIRE
+tevki IS
 tevkif IS
 tevkifhane IS
 tevkil IS
@@ -21819,8 +21809,8 @@ tevlit IS YUM
 tevliyet IS
 Tevrat OZ KESMESIZ
 tevriye IS
-tevsi IS TIRE
-tevzi IS TIRE
+tevsi IS
+tevzi IS
 tevziat IS
 teyakkuz IS
 teyel IS
@@ -21871,7 +21861,7 @@ tıkır YA
 tıkış YA
 tıkız IS
 tıklamak FI
-tıklım IS YAL
+tıklım YA
 tıkmak FI GEN
 tıknaz IS
 tıknefes IS
@@ -21892,7 +21882,7 @@ tıpa IS
 tıpalamak FI
 tıpatıp IS
 tıpır YA
-tıpış IS YAL
+tıpış YA
 tıpışlamak FI
 tıpkı SI
 tıpkıbasım IS
@@ -21921,11 +21911,10 @@ tırtık IS YUM
 tırtıklamak FI
 tırtıl IS
 tırtır IS
-tıs IS YAL
+tıs IS
 tıslamak FI
 tıynet IS
 ti IS
-ti IS YAL
 Tibet OZ
 Tibetçe OZ
 Ticanî OZ KESMESIZ
@@ -21962,7 +21951,7 @@ tiplemek FI
 tipografi IS
 tipografya IS
 tipoloji IS
-tir IS YAL
+tir YA
 tiraj IS
 tiramola IS
 tiran IS
@@ -22024,7 +22013,7 @@ toksikomani IS
 toksin IS
 tokurdamak FI
 tokurtu IS
-tokuş IS YAL
+tokuş YA
 tokuşmak FI
 tokuz IS
 tokyo IS
@@ -22065,7 +22054,7 @@ topaklamak FI
 topal IS
 topalak IS YUM
 topallamak FI
-topar IS YAL
+topar YA
 toparlacık SI YUM
 toparlak SI YUM
 toparlamak FI
@@ -22283,10 +22272,10 @@ tuğyan IS
 tuh IS
 tuhaf SI
 tuhafiye IS
-tukur IS YAL
+tukur YA
 tul IS TERS
 tulânî IS
-tulû IS TIRE
+tulû IS
 tulûat IS
 tuluk IS YUM
 tulum IS
@@ -22299,13 +22288,13 @@ tumba IS
 tumbadız IS
 tumşuk IS YUM
 tumturak IS
-tun IS YAL
+tun YA
 Tunceli OZ
 tunç IS YUM
 tunçlamak FI
 tundra IS
 tungsten IS
-tungur IS YAL
+tungur YA
 Tunguz OZ
 Tunguzca OZ
 Tunus OZ
@@ -22446,7 +22435,7 @@ türkü IS
 türkülemek FI
 türlü SI
 türüm IS
-türüz IS YAL
+türüz IS
 tütmek FI GEN
 tütsü IS
 tütsülemek FI
@@ -22482,7 +22471,7 @@ uçurmak FI
 uçurum IS
 uçuşmak FI
 udî IS
-uf IS YAL
+uf UNLEM
 ufacık SI YUM
 ufak SI YUM KUCULTME
 ufaklık IS YUM
@@ -22528,7 +22517,7 @@ Ulahça OZ
 ulak IS YUM
 ulam IS
 ulamak FI
-ulan IS YAL
+ulan UNLEM
 Ulaş OZ
 ulaşmak FI
 ulema IS
@@ -22611,7 +22600,7 @@ usturpa IS
 usturuplu IS
 usul IS TERS
 usul SI
-usulcacık IS YAL
+usulcacık ZARF
 uşak IS YUM
 Uşak OZ
 uşakkapan IS
@@ -22631,7 +22620,7 @@ uyanık SI YUM
 uyanmak FI
 uyarı IS
 uyarım IS
-uyarınca IS YAL
+uyarınca ZARF
 uyarlaç IS YUM
 uyarlamak FI
 uyarmak FI
@@ -22660,7 +22649,7 @@ uyuşturmak FI
 uyuşuk SI YUM
 uyuz IS
 uz IS
-uzadıya IS YAL
+uzadıya ZARF
 uzak SI YUM
 uzaklanmak FI
 uzaksamak FI
@@ -22816,7 +22805,7 @@ uzviyet IS
 üzgün SI
 üzme IS
 üzmek FI GEN
-üzre IS YAL
+üzre EDAT
 üzülmek FI
 üzüm IS
 Üzümlü OZ
@@ -22853,8 +22842,8 @@ vahyolmak FI
 vaiz IS
 vajina IS
 vajinal IS
-vak'a IS OZEL_IC_KARAKTER
-vak'anüvis IS OZEL_IC_KARAKTER
+vaka IS
+vakanüvis IS
 vakar IS
 vakayiname IS
 vaketa IS
@@ -22870,7 +22859,7 @@ vaki IS
 vakit IS DUS
 vaklamak FI
 vaktaki IS
-vaktizamanında IS YAL
+vaktizamanında ZARF
 vakum IS
 vakumlamak FI
 vakur SI
@@ -22881,7 +22870,7 @@ valf IS
 vali IS
 valide IS
 valiz IS
-vallahi IS YAL
+vallahi UNLEM
 valör IS
 vals IS TERS
 vamp IS
@@ -22941,7 +22930,7 @@ vasıf IS DUS
 vasıflanmak FI
 vasıl IS
 vasıta IS
-vasi IS TIRE
+vasi IS
 vasistas IS
 vasiyet IS
 vasiyetname IS
@@ -22956,8 +22945,8 @@ vatka IS
 vatman IS
 vatoz IS
 vaveylâ IS
-vay IS YAL
-vaz'ıhamil IS DUS OZEL_IC_KARAKTER
+vay UNLEM
+vazıhamil IS DUS
 vazelin IS
 vazelinlemek FI
 vazetmek FI GEN YUM
@@ -22974,7 +22963,7 @@ vazo IS
 ve BAGLAC
 veba IS
 vebal IS TERS
-veca IS TIRE
+veca IS
 vecibe IS
 vecih IS DUS
 vecit IS DUS YUM
@@ -22982,7 +22971,7 @@ veciz SI
 vecize IS
 veçhe IS
 veçhişebeh IS
-veda IS TIRE
+veda IS
 vedia IS
 vefa IS
 vefakâr IS
@@ -23010,8 +22999,8 @@ velespit IS YUM
 velet IS YUM
 velev BAGLAC
 velfecri IS
-velhâsıl IS YAL
-velhâsılıkelâm IS YAL
+velhâsıl ZARF
+velhâsılıkelâm ZARF
 veli IS
 veliaht IS YUM
 veliaht IS YUM
@@ -23050,7 +23039,7 @@ vesait IS
 vesayet IS
 vesika IS
 vesile IS
-vesselâm IS YAL
+vesselâm ZARF
 vestiyer IS
 vesvese IS
 veteriner IS
@@ -23069,11 +23058,11 @@ veznedar IS
 vıcık IS YUM
 vıcıklamak FI
 vıcırdamak FI
-vık IS YAL
+vık YA
 vınlamak FI
-vır IS YAL
+vır YA
 vırlamak FI
-vırt IS YAL
+vırt YA
 vız IS
 vızıl YA
 vızır YA
@@ -23084,7 +23073,7 @@ vibriyon IS
 vicahen IS
 vicahî IS
 vicdan IS
-vicdanen IS YAL
+vicdanen ZARF
 vicdanî IS
 vida IS
 vidalamak FI
@@ -23136,7 +23125,7 @@ vitrin IS
 vitrinlemek FI
 viya IS
 viyadük IS YUM
-viyak IS YAL
+viyak IS
 viyaklamak FI
 viyola IS
 viyolonist IS
@@ -23170,12 +23159,12 @@ vombat IS
 vonoz IS
 votka IS
 voyvoda IS
-vuku IS TIRE
+vuku IS
 vukuat IS
 vukuf IS
 vulva IS
 vuraç IS YUM
-vurdulu IS YAL
+vurdulu YA
 vurdumduymaz SI
 vurgu IS
 vurgulamak FI
@@ -23191,7 +23180,7 @@ vücut IS YUM
 vükelâ IS
 vülgarize IS YUM
 vürut IS YUM
-vüs'at IS TERS OZEL_IC_KARAKTER
+vüsat IS TERS
 vüzera IS
 Washington OZ
 ya BAGLAC
@@ -23277,8 +23266,8 @@ yalaka IS
 yalamak FI
 yalan IS
 yalanlamak FI
-yalap IS YAL
-yalapşap IS
+yalap YA
+yalapşap ZARF
 yalaz IS
 yalazlamak FI
 yalçın SI
@@ -23300,7 +23289,7 @@ yalıtım IS
 yalıtkan IS
 yalıtmak FI
 yalız IS
-yallah IS YAL
+yallah UNLEM
 yalman IS
 yalnız BAGLAC
 yalnız SI
@@ -23747,7 +23736,7 @@ yıvışmak FI
 yiğit SI YUM
 yiğitbaş IS IS_TAM
 yiğitlenmek FI
-yine IS YAL
+yine ZARF
 yinelemek FI
 yirik IS YUM
 yirmi SA
@@ -23933,7 +23922,7 @@ yürütmek FI
 yüsrü IS
 yüz SA
 yüzbaşı IS
-yüzbeyüz IS YAL
+yüzbeyüz ZARF
 yüzde IS
 yüzergezer IS
 yüzey IS
@@ -23969,7 +23958,7 @@ zağara IS
 zağlamak FI
 zahir IS
 zahire IS
-zahiren IS YAL
+zahiren ZARF
 zahirî IS
 zahit IS YUM
 zahmet IS
@@ -23980,10 +23969,10 @@ zait IS YUM
 zakkum IS
 zakkumgiller IS
 zalim IS
-zalimane IS YAL
+zalimane ZARF
 zam IS CIFT
 zaman ZAMAN
-zamane IS YAL
+zamane IS
 zamanlamak FI
 zamazingo IS
 zambak IS YUM
@@ -24020,23 +24009,22 @@ zarf IS
 zarf-fiil IS
 zarflamak FI
 zargana IS
-zari IS YAL
 zarif SI
 zarp IS YUM
-zart IS YAL
+zart YA
 zarta IS
 zaruret IS
 zarurî SI
 zat IS
 zaten IS
-zatıâlileri IS YAL
-zatıâliniz IS YAL
-zatî IS
-zati IS YAL
+zatıâlileri IS
+zatıâliniz IS
+zatî SI
+zati ZARF
 zatülcenp IS YUM
 Zatülkürsî OZ
 zatürre IS
-zavallı IS
+zavallı SI
 zaviye IS
 zayıf SI
 zayıflamak FI
@@ -24054,7 +24042,7 @@ zebun IS
 zebunküş IS
 Zebur OZ
 zecir IS DUS
-zecren IS YAL
+zecren ZARF
 zecrî IS
 zede IS
 zedelemek FI
@@ -24096,7 +24084,7 @@ zerde IS
 zerdeçal IS
 zerdeva IS
 Zerdüşt OZ
-zerk IS YAL
+zerk IS
 zerre IS
 zerrin IS
 zerzevat IS
@@ -24137,7 +24125,7 @@ zımnî IS
 zımpara IS
 zımparalamak FI
 zındık IS YUM
-zıngadak IS YAL
+zıngadak ZARF
 zıngıl YA
 zıngır YA
 zınk IS
@@ -24147,7 +24135,7 @@ zıpır IS
 zıpkın IS
 zıpkınlamak FI
 zıplamak FI
-zıppadak IS YAL
+zıppadak ZARF
 zıpzıp IS
 zırcahil IS
 zırdeli IS
@@ -24158,8 +24146,7 @@ zırıltı IS
 zırlak IS YUM
 zırlamak FI
 zırnık IS YUM
-zırt IS YAL
-zırt IS YAL
+zırt YA
 zırtapoz IS
 zırtlak IS YUM
 zırva IS
@@ -24168,8 +24155,8 @@ zırzır IS
 zıt IS YUM CIFT
 zıtlanmak FI
 zıvana IS
-zıvır IS YAL
-zıya IS TIRE
+zıvır IS
+zıya IS
 zıypak IS YUM
 zibidi IS
 zifaf IS
@@ -24215,7 +24202,7 @@ zira BAGLAC
 ziraat IS
 ziraî IS
 zirkon IS
-zirkonyum IS YAL
+Zirkonyum IS
 zirve IS
 zirzop IS YUM
 zivircik IS YUM
@@ -24237,7 +24224,7 @@ zom IS
 zombi IS
 zona IS
 Zonguldak OZ
-zonk IS YAL
+zonk YA
 zonklamak FI
 zoolog IS YUM
 zooloji IS
@@ -24263,7 +24250,7 @@ zulüm IS DUS
 zum IS
 zurna IS
 zurnazen IS
-zurt IS YAL
+zurt YA
 zübde IS
 zücaciye IS
 züğürt IS YUM
@@ -24290,6 +24277,6 @@ zümrütlenmek FI
 züppe IS
 zürafa IS
 zürafagiller IS
-zürra IS TIRE
+zürra IS
 zürriyet IS
 züyuf IS
