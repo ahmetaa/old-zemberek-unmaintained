@@ -311,7 +311,8 @@ ağrımak FI
 ağustos IS
 ağyar IS
 ah IS
-aha IS
+aha EDAT
+ahacık EDAT
 ahali IS
 ahar IS
 aharlamak FI
@@ -2266,6 +2267,7 @@ başıbozuk IS YUM
 başıkabak IS YUM
 başimam IS
 başka SI
+başka EDAT
 başkafiye IS
 başkahraman IS
 başkalaşım IS
@@ -2515,7 +2517,8 @@ belgi IS
 belgilemek FI
 belgin SI
 belgit IS
-beliğ IS
+beli EDAT
+beliğ SI
 belik IS YUM
 beliklemek FI
 belinlemek FI
@@ -2598,7 +2601,9 @@ berhane IS
 berhava IS
 berhayat IS
 berhudar SI
+beri IS
 beri SI
+beri EDAT
 beriberi IS
 beriki IS
 beril IS
@@ -2829,7 +2834,7 @@ bileşmek FI
 bilet IS
 bileyici IS
 bilezik IS YUM
-bilfarz IS
+bilfarz EDAT
 bilfiil IS
 bilge IS
 bilgi IS
@@ -4870,7 +4875,7 @@ değerlemek FI
 değerlenmek FI
 değgin SI
 değil IS
-değin IS YAL
+değin EDAT
 değinmek FI
 değirmek FI
 değirmen IS
@@ -4895,7 +4900,7 @@ dehşetlenmek FI
 dejavu IS
 dejenerasyon IS
 dejenere IS
-dek IS YAL
+dek EDAT
 dekadan IS
 dekagram IS
 dekalitre IS
@@ -5027,7 +5032,7 @@ denk IS YUM_NK
 denklem IS
 denklemek FI
 denktaş IS
-denli IS YAL
+denli EDAT
 densiz IS
 densizlenmek FI
 denşirmek FI
@@ -5062,6 +5067,7 @@ dere IS
 derebeyi IS IS_TAM
 Derebucak OZ
 derece IS
+derece EDAT
 derecelemek FI
 dereke IS
 Dereli OZ
@@ -5481,6 +5487,8 @@ doğram IS
 doğrama IS
 doğramak FI
 doğru SI
+doğru IS
+doğru EDAT
 doğrulamak FI
 doğrulmak FI
 doğrultu IS
@@ -6568,7 +6576,7 @@ evdeş IS
 evecen IS
 evelallah UN
 evermek FI
-evet IS
+evet EDAT
 evgin IS
 evham IS
 evhamlanmak FI
@@ -7769,7 +7777,7 @@ gıyabî IS
 gıyap IS YUM
 gıybet IS
 gibi EDAT
-gibi ZA
+gibi ZARF
 gibisi SI
 gicişmek FI
 gideğen IS
@@ -8260,6 +8268,9 @@ güzlek IS YUM
 güzlemek FI
 güzün IS YAL
 ha BAGLAC
+ha UNLEM
+ha EDAT
+Ha OZ
 habanera IS
 habaset IS
 habbe IS
@@ -8736,6 +8747,7 @@ hayhuy IS
 hayıf IS DUS
 hayıflanmak FI
 hayır IS
+hayır EDAT
 hayır IS DUS
 hayırdua IS
 hayırperver IS
@@ -8787,7 +8799,8 @@ hazret IS
 Hazro OZ
 hazzetme IS
 hazzetmek FI GEN YUM
-he IS YUM
+he EDAT
+He OZ
 heba IS
 hebenneka IS
 heccav IS
@@ -9514,8 +9527,8 @@ içermek FI
 içgüdü IS
 içiiş IS
 içim IS
-için IS
-içinde IS
+için EDAT
+içinde ZARF
 içirik IS YUM
 içitim IS
 içitmek FI
@@ -10278,7 +10291,7 @@ işporta IS
 işret IS
 iştah IS
 iştahlanmak FI
-işte IS YAL
+işte EDAT
 işteş IS
 iştial IS TERS
 iştigal IS TERS
@@ -10551,7 +10564,7 @@ kaçırmak FI
 kaçkın IS
 kaçmak FI GEN
 kadana IS
-kadar ZAMAN
+kadar EDAT
 kadastro IS
 kadastrolamak FI
 kadavra IS
@@ -11604,6 +11617,7 @@ kelik IS YUM
 kelime IS
 Kelkit OZ
 kelle IS
+kelli EDAT
 keloğlan IS
 Keloğlan OZ
 kem IS
@@ -14444,7 +14458,7 @@ mesame IS
 mesane IS
 mescit IS YUM
 mesel IS
-meselâ IS YAL
+meselâ EDAT
 mesele IS
 mesen IS
 meserret IS
@@ -16333,6 +16347,7 @@ olanca IS
 olası IS
 olasılık IS YUM
 olay IS
+oldu EDAT
 oldubitti IS
 oldurgan IS
 ole IS YAL
@@ -16357,6 +16372,8 @@ oluk IS YUM
 olumlu IS
 olumsuz IS
 olupbitti IS
+olur IS
+olur EDAT
 Olur OZ
 oluşmak FI
 oluşum IS
@@ -16749,7 +16766,7 @@ ozuga IS
 örk IS
 örklemek FI
 örmek FI GEN
-örneğin IS
+örneğin EDAT
 örnek IS YUM
 örneklemek FI
 örneksemek FI
@@ -17171,9 +17188,11 @@ pehpeh IS
 pehpehlemek FI
 pejmürde SI
 pek SI
-pekâlâ IS YAL
+pekâlâ SIFAT
+pekâlâ EDAT
+pekâlâ ZARF
 pekent IS YUM
-peki IS YAL
+peki EDAT
 pekişmek FI
 pekitmek FI
 pekiyi SI
@@ -20916,7 +20935,9 @@ tam SI
 tamah IS
 tamahkâr SI
 tamam SI
-tamamen SI
+tamam EDAT
+tamam UNLEM
+tamamen ZARF
 tamamiyet IS
 tamamlamak FI
 tamanit IS
@@ -21509,6 +21530,7 @@ tempo IS
 temren IS
 temrin IS
 temriye IS
+temsil EDAT
 temsil IS
 temsilen IS YAL
 temsilî IS
@@ -22787,7 +22809,8 @@ uzviyet IS
 üye IS
 üzengi IS
 üzengilemek FI
-üzere IS
+üzere ZARF
+üzere EDAT
 üzeri IS
 üzgü IS
 üzgün SI
@@ -23172,6 +23195,7 @@ vüs'at IS TERS OZEL_IC_KARAKTER
 vüzera IS
 Washington OZ
 ya BAGLAC
+ya EDAT
 yaba IS
 yabalamak FI
 yaban IS
