@@ -12112,7 +12112,7 @@ kils IS
 kilüs IS
 kim ZA
 kim BAGLAC
-kimi SIFAT
+kimi SI
 kimi ZA
 kimisi ZA
 kimlik IS YUM
@@ -15937,7 +15937,7 @@ nazlanmak FI
 ne SI
 ne ZARF
 ne BAGLAC
-ne UNLEM
+ne UN
 ne ZA
 nebat IS
 nebatat IS
