@@ -890,7 +890,7 @@ amiral IS TERS
 amit IS YUM
 amitoz IS
 amiyane IS
-amma IS
+amma BAGLAC
 amme IS
 amnezi IS
 amnios IS
@@ -2532,7 +2532,7 @@ belirtken SI
 belirtmek FI
 belit IS
 belitlemek FI
-belki IS YAL
+belki BAGLAC YAL
 bellâdonna IS YAL
 bellek IS YUM
 bellemek FI
@@ -4620,12 +4620,12 @@ cüzzam IS
 çükündür IS
 çükür IS
 Çüngüş OZ
-çünkü IS YAL
+çünkü BAGLAC
 çürük SI YUM
 çürükçül IS
 çürümek FI
 çüş IS YAL
-da IS YAL
+da BAGLAC
 Dadacı OZ
 Dadaist OZ
 Dadaizm OZ
@@ -4648,7 +4648,7 @@ dağlamak FI
 daha ZAMAN
 dahdah IS YAL
 dâhi IS
-dahi IS YAL
+dahi BAGLAC
 dâhice IS
 dâhil IS
 dahil IS DUS
@@ -4820,7 +4820,7 @@ daz IS
 Dazkırı OZ
 dazlak IS YUM
 dazlamak FI
-de IS YAL
+de BAGLAC
 debagat IS
 debbe IS
 debboy IS
@@ -5919,7 +5919,7 @@ egzotizm IS
 egzoz IS
 eğe IS
 eğelemek FI
-eğer IS
+eğer BAGLAC
 eğiç IS YUM
 eğik SI YUM
 Eğil OZ
@@ -7600,7 +7600,7 @@ gelembe IS
 Gelendost OZ
 gelenek IS YUM
 gelgeç IS
-gelgel IS
+gelgelelim BAGLAC
 gelgit IS
 Gelibolu OZ
 gelin IS
@@ -8259,7 +8259,7 @@ güzide SI
 güzlek IS YUM
 güzlemek FI
 güzün IS YAL
-ha IS YAL
+ha BAGLAC
 habanera IS
 habaset IS
 habbe IS
@@ -8384,7 +8384,7 @@ halat IS
 halâvet IS
 halay IS
 halayık IS YUM
-hâlbuki IS
+hâlbuki BAGLAC
 haldır IS YAL
 hale IS
 halef IS
@@ -8671,7 +8671,7 @@ hatim IS DUS
 hatip IS YUM
 hatmetmek FI GEN YUM
 hatmi IS
-hatta IS
+hatta BAGLAC
 hattat IS
 hattıhareket IS
 hatun IS
@@ -8814,7 +8814,7 @@ helâk IS TERS
 helâl IS TERS
 helâlleşmek FI
 helâlzade IS
-hele IS YAL
+hele BAGLAC
 helecan IS
 helecanlanmak FI
 Helen OZ KESMESIZ
@@ -8839,7 +8839,7 @@ helyodor IS
 helyograf IS
 helyoterapi IS
 helyum IS
-hem IS
+hem BAGLAC
 hemati IS
 hematit IS
 hematolog IS YUM
@@ -9715,7 +9715,7 @@ ilâveten IS YAL
 ilca IS
 ilçe IS
 ilçebay IS
-ile EDAT
+ile BAGLAC
 ilelebet SI
 ilenç IS YUM
 ilenmek FI
@@ -10149,6 +10149,8 @@ isteklenmek FI
 istem IS
 istemek FI
 istenç IS YUM
+ister IS
+ister BAGLAC
 isteri IS
 isterik IS YUM
 istiane IS
@@ -12060,7 +12062,7 @@ kızkalbi IS
 kızmabirader IS
 kızmak FI GEN
 kızmeme IS IS_TAM
-ki IS YAL
+ki BAGLAC
 kibar SI
 kibarzade IS
 kibernetik SI YUM
@@ -12108,9 +12110,11 @@ kilovat IS
 kilovolt IS
 kils IS
 kilüs IS
-kim IS
-kimi IS
-kimisi IS
+kim ZA
+kim BAGLAC
+kimi SIFAT
+kimi ZA
+kimisi ZA
 kimlik IS YUM
 kimono IS
 kimse IS
@@ -13275,9 +13279,9 @@ lâkayt IS
 lâke IS
 lâkerda IS
 lâkırdı IS
-lâkin IS YAL
+lâkin BAGLAC
 lâklâk IS YUM
-lâklâka IS YAL
+lâklâka IS
 lâklâkıyat IS
 lâkonik IS YUM
 lâkrimal IS TERS
@@ -13647,8 +13651,8 @@ madde IS
 maddeten IS YAL
 maddî IS
 maddiyat IS
-madem IS YAL
-mademki IS YAL
+madem BAGLAC
+mademki BAGLAC
 maden IS
 Maden OZ
 madenî IS
@@ -14235,9 +14239,9 @@ megaloman IS
 megalomani IS
 megaton IS
 megavat IS
-meğer IS
-meğerki IS
-meğerse IS
+meğer BAGLAC
+meğerki BAGLAC
+meğerse BAGLAC
 mehabet IS
 mehaz IS
 mehdî IS
@@ -15930,7 +15934,11 @@ nazir IS
 nazire IS
 Nazizm OZ KESMESIZ
 nazlanmak FI
-ne IS
+ne SI
+ne ZARF
+ne BAGLAC
+ne UNLEM
+ne ZA
 nebat IS
 nebatat IS
 nebatî IS
@@ -16051,6 +16059,8 @@ nevyunanî IS
 nevzat IS
 ney IS
 neyçe IS
+neyse BAGLAC
+neyse ZARF
 neyzen IS
 nez'etmek FI YUM GEN OZEL_IC_KARAKTER
 nezafet IS
@@ -16596,8 +16606,8 @@ oynamak FI
 oynaş IS
 oynaşmak FI
 oynatım IS
-oysa IS YAL
-oysaki IS YAL
+oysa BAGLAC
+oysaki BAGLAC
 oyuk IS YUM
 oyulga IS
 oyulgalamak FI
@@ -20338,7 +20348,7 @@ süzülmek FI
 şavullamak FI
 şayak IS YUM
 şayan IS
-şayet IS YAL
+şayet BAGLAC
 şayi IS TIRE
 şayia IS
 şayka IS
@@ -22938,7 +22948,7 @@ vazife IS
 vazifeşinas IS
 vaziyet IS
 vazo IS
-ve IS YAL
+ve BAGLAC
 veba IS
 vebal IS TERS
 veca IS TIRE
@@ -22975,7 +22985,7 @@ veledizina IS
 velense IS
 velespit IS YUM
 velet IS YUM
-velev IS YAL
+velev BAGLAC
 velfecri IS
 velhâsıl IS YAL
 velhâsılıkelâm IS YAL
@@ -23023,8 +23033,8 @@ vesvese IS
 veteriner IS
 vetire IS
 veto IS
-veya IS
-veyahut IS
+veya BAGLAC
+veyahut BAGLAC
 vezaret IS
 vezin IS DUS
 vezir IS
@@ -23161,7 +23171,7 @@ vürut IS YUM
 vüs'at IS TERS OZEL_IC_KARAKTER
 vüzera IS
 Washington OZ
-ya IS YAL
+ya BAGLAC
 yaba IS
 yabalamak FI
 yaban IS
@@ -23205,7 +23215,7 @@ Yahşihan OZ
 yahu IS
 Yahudi OZ
 Yahudice OZ
-yahut IS
+yahut BAGLAC
 Yahyalı OZ
 yaka IS
 Yakacık OZ
@@ -23315,7 +23325,7 @@ yanılsama IS
 yanıltmaç IS YUM
 yanıt IS
 yanıtlamak FI
-yani IS YAL
+yani BAGLAC
 yankesici IS
 yankı IS
 yankılamak FI
@@ -23739,9 +23749,12 @@ yoğurthane IS
 yoğurtlamak FI
 yoğuşmak FI
 yok IS
+yok SI
+yok BAGLAC
+yok EDAT
 yok IS YUM
 yoklamak FI
-yoksa IS YAL
+yoksa BAGLAC
 yoksul SI
 yoksun IS
 yoksunmak FI
@@ -24174,7 +24187,7 @@ zindandelen IS
 zinde IS
 zinhar IS
 zir IS
-zira IS YAL
+zira BAGLAC
 ziraat IS
 ziraî IS
 zirkon IS
