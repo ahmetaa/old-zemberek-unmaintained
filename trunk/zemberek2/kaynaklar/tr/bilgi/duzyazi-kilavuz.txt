@@ -2430,7 +2430,7 @@ bazit IS
 bazlama IS
 bazlamaç IS YUM
 bazuka IS
-be UN
+be UNLEM
 bebe IS
 bebek IS YUM
 Beberuhi OZ
@@ -6571,7 +6571,7 @@ evç IS YUM
 evdemonizm IS
 evdeş IS
 evecen IS
-evelallah UN
+evelallah UNLEM
 evermek FI
 evet EDAT
 evgin IS
@@ -9232,7 +9232,7 @@ höt UNLEM
 höykürmek FI
 höyük IS YUM
 Hristiyan OZ
-Hu Oz
+Hu OZ
 hu UNLEM
 hububat IS
 Huda OZ
@@ -15947,7 +15947,7 @@ nazlanmak FI
 ne SI
 ne ZARF
 ne BAGLAC
-ne UN
+ne UNLEM
 ne ZA
 nebat IS
 nebatat IS
@@ -17183,7 +17183,7 @@ pehpeh IS
 pehpehlemek FI
 pejmürde SI
 pek SI
-pekâlâ SIFAT
+pekâlâ SI
 pekâlâ EDAT
 pekâlâ ZARF
 pekent IS YUM
@@ -23834,7 +23834,7 @@ yuf IS
 yufka IS
 Yugoslav OZ
 Yugoslavya OZ
-yuh UN
+yuh UNLEM
 yuha IS
 yuhalamak FI
 yukaç IS YUM

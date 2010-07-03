@@ -89,7 +89,7 @@ public class TurkiyeTurkcesi implements DilAyarlari {
         tipMap.put("EDAT", EDAT);
         tipMap.put("BAGLAC", BAGLAC);
         tipMap.put("OZ", OZEL);
-        tipMap.put("UN", UNLEM);
+        tipMap.put("UNLEM", UNLEM);
         tipMap.put("KI", KISALTMA);
         return tipMap;
     }
