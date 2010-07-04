@@ -420,11 +420,12 @@
             <ardisil-ekler>
                 <kume>IMEK_ZAMAN</kume>
                 <aek>ISIM_BULUNMA_KI</aek>
-                <aek>ISIM_BIRLIKTELIK_LE</aek>
-                <aek>ISIM_YONELME_E</aek>
-                <aek>ISIM_KALMA_DE</aek>
-                <aek>ISIM_CIKMA_DEN</aek>
-                <aek>ISIM_BELIRTME_I</aek>
+                <!-- TODO: saadeddin say buldu. -->
+                <!--<aek>ISIM_BIRLIKTELIK_LE</aek>-->
+                <!--<aek>ISIM_YONELME_E</aek>-->
+                <!--<aek>ISIM_KALMA_DE</aek>-->
+                <!--<aek>ISIM_CIKMA_DEN</aek>-->
+                <!--<aek>ISIM_BELIRTME_I</aek>-->
             </ardisil-ekler>
         </ek>
 
@@ -1363,22 +1364,10 @@
 
         <ek ad="YANKI_KOK" uretim="">
             <ardisil-ekler>
-                <aek>YANKI_DONUSUM_TI</aek>
-                <aek>YANKI_DONUSUM_DA</aek>
                 <kume>IMEK_ZAMAN</kume>
                 <kume>ISIM_KISI</kume>
             </ardisil-ekler>
         </ek>
-
-        <ek ad="YANKI_DONUSUM_TI" uretim="tI">
-            <ardisil-ekler kopya-ek="ISIM_KOK"/>
-        </ek>
-
-        <ek ad="YANKI_DONUSUM_DA" uretim="dA">
-            <ozel-durum ad="SIMDIKI_ZAMAN" uretim="d"/>
-            <ardisil-ekler kopya-ek="FIIL_KOK"/>
-        </ek>
-
         <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
         <!-- ~~~~~~~~~~~~~~~~~~~~~~ ZAMAN EKLERI  ~~~~~~~~~~~~~~~~~~~~~~ -->
         <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
