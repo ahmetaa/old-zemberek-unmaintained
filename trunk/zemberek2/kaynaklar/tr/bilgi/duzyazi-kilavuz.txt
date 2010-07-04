@@ -3723,6 +3723,8 @@ cıvatalamak FI
 cıvık IS YUM
 cıvıklanmak FI
 cıvıl YA
+cıvıltı IS
+cıvıldamak IS
 cıvımak FI
 cıyak YA
 cıyaklamak FI
@@ -6928,6 +6930,8 @@ fıkı YA
 fıkıh IS DUS
 fıkır YA
 fıkırdak SI YUM
+fıkırdamak FI
+fıkırtı IS
 fıkra IS
 fıldır YA
 fındık IS YUM
@@ -6960,8 +6964,12 @@ fıs YA
 fısfıs IS
 fısfıslamak FI
 fısıl YA
+fısıldamak FI
 fısıldaşmak FI
+fısıltı IS
 fısır YA
+fısırdamak FI
+fısırtı IS
 fıskiye IS
 fıslamak FI
 fıstık IS YUM
@@ -6969,6 +6977,8 @@ fıstıkî IS
 fış YA
 fışıldamak FI
 fışır YA
+fışırtı IS
+fışırdamak FI
 fışkı IS
 fışkılamak FI
 fışkın IS
@@ -7164,6 +7174,8 @@ fok IS
 fokgiller IS
 fokur YA
 fokurdak SI YUM
+fokurdamak FI
+fokurtu IS
 fol IS
 folk IS
 folklor IS
@@ -7350,6 +7362,8 @@ Gabonlu OZ
 gabro IS
 gabya IS
 gacır YA
+gacırdamak FI
+gacırtı IS
 gaco IS
 gaddar IS
 gadir IS DUS
@@ -8065,6 +8079,7 @@ Guatemalâ OZ
 Guatemalâlı OZ
 guatr IS
 gucur YA
+gucurdamak FI
 gudde IS
 gudubet IS
 gufran IS
@@ -8568,6 +8583,8 @@ harfiyen IS
 harharyas IS
 harharyasgiller IS
 harıl YA
+harıldamak FI
+harıltı IS
 harılanmak FI
 harım IS
 harın IS
@@ -8655,6 +8672,8 @@ haşhaşhane IS
 haşıl IS
 haşıllamak FI
 haşır YA
+haşırdamak FI
+haşırtı IS
 haşin IS
 haşir IS DUS
 haşiş IS
@@ -8955,6 +8974,8 @@ hırçın IS
 hırdavat IS
 hırgür IS
 hırıl YA
+hırıldamak FI
+hırıltı IS
 hırka IS
 hırlamak FI
 hırpalamak FI
@@ -8970,9 +8991,13 @@ Hırvatça OZ
 Hırvatistan OZ
 hısım IS
 hışıl YA
+hışıldamak FI
+hışıltı IS
 hışım IS DUS
 hışımlanmak FI
 hışır YA
+hışırdamak FI
+hışırtı IS
 hışlamak FI
 hıyaban IS
 hıyanet IS
@@ -9165,6 +9190,8 @@ homonim IS
 homoseksüel IS
 homoteti IS
 homur YA
+homurdamak FI
+homurtu IS
 hona IS
 Honaz OZ
 Honduras OZ
@@ -9202,6 +9229,8 @@ hortlak IS YUM
 hortlamak FI
 hortum IS
 horul YA
+horuldamak FI
+horultu IS
 hostes IS
 hoş IS
 hoşaf IS
@@ -9225,6 +9254,8 @@ hödük IS YUM
 höl IS
 höllük IS YUM
 höpür YA
+höpürdemek FI
+höpürtü IS
 hörgüç IS YUM
 höst UNLEM
 höşmerim IS
@@ -9311,6 +9342,8 @@ hümanizma IS
 hümayun IS
 hüner IS
 hüngür YA
+hüngürdemek FI
+hüngürtü IS
 hünkâr IS
 hünkârbeğendi IS
 hünnap IS YUM
@@ -9448,6 +9481,8 @@ Isparta OZ
 ışıkölçer IS
 ışıl IS
 ışıl YA
+ışıldamak FI
+ışıltı IS
 ışılamak FI
 ışıldak IS YUM
 ışımak FI
@@ -10670,6 +10705,8 @@ kakıç IS YUM
 kakımak FI
 kakınç IS YUM
 kakır YA
+kakırdamak FI
+kakırtı IS
 kakırdak IS YUM
 kakma IS
 kakmak FI GEN
@@ -11813,6 +11850,8 @@ kığı IS
 kığılamak FI
 kıh IS
 kıkır YA
+kıkırdamak FI
+kıkırtı IS
 kıkırdak IS YUM
 kıkırtı IS
 kıl IS
@@ -11864,6 +11903,7 @@ kıpık IS YUM
 kıpır YA
 kıpırdak IS YUM
 kıpırdamak FI
+kıpırtı IS
 kıpkıp IS
 kıpkırmızı SI
 kıpkızıl SI
@@ -11938,6 +11978,7 @@ kırpışmak FI
 kırpmak FI GEN
 Kırşehir OZ
 kırt YA
+kırtlamak FI
 kırtasiye IS
 kırtıpil IS
 kıs YA
@@ -11988,6 +12029,8 @@ kıtık IS YUM
 kıtıklamak FI
 kıtır IS
 kıtır YA
+kıtırdamak FI
+kıtırtı IS
 kıtlama IS
 kıtlık IS YUM
 kıvam IS
@@ -13237,6 +13280,8 @@ küttedek ZARF
 kütük IS YUM
 kütüphane IS
 kütür YA
+kütürdemek FI
+kütürtü IS
 küvet IS
 Küveyt OZ
 la IS
@@ -13475,6 +13520,8 @@ lezzetlenmek FI
 lığ IS
 lığlamak FI
 lıkır YA
+lıkırdamak FI
+lıkırtı IS
 libas IS
 liberal IS TERS
 liberalizm IS
@@ -14655,6 +14702,8 @@ mıngır YA
 mıntıka IS
 mır YA
 mırıl YA
+mırıldamak FI
+mırıltı IS
 mırın YA
 mırlamak FI
 mırmırık IS YUM
@@ -14668,6 +14717,7 @@ mıskala IS
 mısmıl IS
 mısra IS
 mışıl YA
+mışıldamak FI
 mışmış YA
 mıymıntı IS
 mızıka IS
@@ -16886,6 +16936,7 @@ palaz IS
 palazlamak FI
 paldım IS
 paldır YA
+paldırtı IS
 paleograf IS
 paleografi IS
 paleontoloji IS
@@ -17015,6 +17066,8 @@ pare IS
 parfüm IS
 parfümeri IS
 parıl YA
+parıldamak FI
+parıltı IS
 parite IS
 park IS
 parka IS
@@ -17097,6 +17150,8 @@ paten IS
 patent IS
 patetik SI YUM
 patır YA
+patırdamak FI
+patırtı IS
 pati IS
 patik IS YUM
 patika IS
@@ -17354,6 +17409,8 @@ pırasa IS
 pırazvana IS
 pırıl YA
 pırıldamak FI
+pırıltı IS
+pırıldamak FI
 pırlak IS YUM
 pırlamak FI
 pırlangıç IS YUM
@@ -17372,8 +17429,8 @@ pışpışlamak FI
 pıt IS
 pıtı YA
 pıtır YA
-pıtır YA
 pıtırdamak FI
+pıtırtı IS
 pıtrak IS YUM
 pıyrım YA
 pi IS
@@ -17523,6 +17580,7 @@ podösüet IS
 podyum IS
 pof IS
 pofur YA
+pofurdamak FI
 poğaça IS
 pohpoh IS
 pohpohlamak FI
@@ -17817,6 +17875,8 @@ püf IS
 püfkürmek FI
 püflemek FI
 püfür YA
+püfürdetmek FI
+püfürtü IS
 püklüm IS
 Pülümür OZ
 pülverizatör IS
@@ -18463,6 +18523,8 @@ sakıngan IS
 sakınmak FI
 sakıntı IS
 sakır YA
+sakırdamak FI
+sakırtı IS
 sakırga IS
 sakıt IS
 Sakıt OZ
@@ -20241,6 +20303,8 @@ süzülmek FI
 şakayık IS YUM
 şakımak FI
 şakır YA
+şakırdamak FI
+şakırtı IS
 şakıt IS
 şaki IS
 şakirt IS YUM
@@ -20286,6 +20350,8 @@ süzülmek FI
 şan IS
 şandel IS
 şangır YA
+şangırdamak FI
+şangırtı IS
 şanjan IS
 şanjman IS
 şano IS
@@ -20302,6 +20368,8 @@ süzülmek FI
 şaphane IS
 Şaphane OZ
 şapır YA
+şapırdamak FI
+şapırtı IS
 şapka IS
 şaplak IS YUM
 şaplamak FI
@@ -20314,6 +20382,8 @@ süzülmek FI
 şarapnel IS
 şarbon IS
 şarıl YA
+şarıldamak FI
+şarıltı IS
 şarj IS
 şarjör IS
 şark IS
@@ -20497,24 +20567,32 @@ süzülmek FI
 şık IS
 şık IS CIFT
 şıkır YA
+şıkırdamak FI
+şıkırtı IS
 şıldır YA
 şıllık SI YUM
 şımarık SI YUM
 şımarmak FI
 şınav IS
 şıngır YA
+şıngırdamak FI
+şınfırtı IS
 şıp IS
 şıpıdık IS YUM
 şıpır YA
+şıpırdamak FI
+şıpırtı IS
 şıpka IS
 şıppadak ZARF
 şıpsevdi IS
 şıpşıp IS
 şıra IS
-şırak
+şırak IS
 şırakkadak ZARF
 şırfıntı IS
 şırıl YA
+şırıldamak FI
+şırıltı IS
 şırınga IS
 şırlağan IS
 şırlamak FI
@@ -20848,6 +20926,8 @@ takınak IS YUM
 takınmak FI
 takıntı IS
 takır YA
+takırdamak FI
+takırtı IS
 takışmak FI
 takibat IS
 takiben ZARF
@@ -20953,6 +21033,8 @@ tandırname IS
 tane IS
 tanelemek FI
 tangır YA
+tangırdamak FI
+tangırtı IS
 tango IS
 tanı IS
 tanık IS YUM
@@ -20994,6 +21076,8 @@ tapıklamak FI
 tapınak IS YUM
 tapınmak FI
 tapır YA
+tapırdamak FI
+tapırtı IS
 tapışlamak FI
 tapir IS
 tapirgiller IS
@@ -21858,6 +21942,8 @@ tıkamak FI
 tıkanık SI YUM
 tıkınmak FI
 tıkır YA
+tıkırdamak FI
+tıkırtı IS
 tıkış YA
 tıkız IS
 tıklamak FI
@@ -21874,6 +21960,8 @@ tımarlamak FI
 tın IS
 tıngır IS
 tıngır YA
+tıngırdamak FI
+tıngırtı IS
 tını IS
 tınlamak FI
 tınmak FI GEN
@@ -21882,6 +21970,8 @@ tıpa IS
 tıpalamak FI
 tıpatıp IS
 tıpır YA
+tıpırdamak FI
+tıpırtı IS
 tıpış YA
 tıpışlamak FI
 tıpkı SI
@@ -22496,6 +22586,8 @@ uğratmak FI
 uğru IS
 uğrulamak FI
 uğul YA
+uğuldamak FI
+uğultu IS
 uğunmak FI
 uğur IS
 uğur IS DUS
@@ -23065,7 +23157,11 @@ vırlamak FI
 vırt YA
 vız IS
 vızıl YA
+vızıldamak FI
+vızıltı IS
 vızır YA
+vızırdamak FI
+vızıltı IS
 vızlamak FI
 vibrasyon IS
 vibratör IS
@@ -23990,6 +24086,8 @@ zan IS CIFT
 zanaat IS TERS
 zanaatkâr IS
 zangır YA
+zangırdamak FI
+zangırtı IS
 zangoç IS YUM
 zanka IS
 zanlı IS
@@ -24127,7 +24225,11 @@ zımparalamak FI
 zındık IS YUM
 zıngadak ZARF
 zıngıl YA
+zıngıldamak FI
+zıngıltı IS
 zıngır YA
+zıngırdamak FI
+zıngırtı IS
 zınk IS
 zıp IS
 zıpçıktı IS

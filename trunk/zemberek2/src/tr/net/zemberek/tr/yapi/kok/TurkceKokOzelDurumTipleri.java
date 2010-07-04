@@ -97,6 +97,7 @@ public enum TurkceKokOzelDurumTipleri implements KokOzelDurumTipi {
             ISIM_SAHIPLIK_SIZ_INIZ,
             ISIM_SAHIPLIK_ONLAR_LERI,
             ISIM_TAMLAMA_I,
+            ISIM_TAMLAMA_IN,
             ISIM_BULUNMA_LIK,
             ISIM_BULUNMA_LI,
             ISIM_COGUL_LER,

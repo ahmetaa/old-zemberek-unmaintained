@@ -130,9 +130,6 @@ public class TurkceEkAdlari {
     public static final String FIIL_YETENEK_EBIL = "FIIL_YETENEK_EBIL";
     public static final String FIIL_ZORUNLULUK_MELI = "FIIL_ZORUNLULUK_MELI";
 
-    public static final String YANKI_DONUSUM_TI = "YANKI_DONUSUM_TI";
-    public static final String YANKI_DONUSUM_DA = "YANKI_DONUSUM_DA";
-
     public static final String ZAMAN_BELIRTME_KI = "ZAMAN_BELIRTME_KI";
 
     public static final String ZAMIR_SAHIPLIK_IN = "ZAMIR_SAHIPLIK_IN";
