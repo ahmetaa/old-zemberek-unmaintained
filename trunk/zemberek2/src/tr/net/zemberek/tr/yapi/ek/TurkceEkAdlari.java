@@ -73,7 +73,6 @@ public class TurkceEkAdlari {
     public static final String FIIL_DEVAMLILIK_DIKCE = "FIIL_DEVAMLILIK_DIKCE";
     public static final String FIIL_DONUSUM_EN = "FIIL_DONUSUM_EN";
     public static final String FIIL_DONUSUM_IS = "FIIL_DONUSUM_IS";
-    public static final String FIIL_DONUSUM_IK = "FIIL_DONUSUM_IK";
     public static final String FIIL_DONUSUM_IM = "FIIL_DONUSUM_IM";
     public static final String FIIL_DONUSUM_ILI = "FIIL_DONUSUM_ILI";
     public static final String FIIL_DONUSUM_INTI = "FIIL_DONUSUM_INTI";
@@ -81,7 +80,6 @@ public class TurkceEkAdlari {
     public static final String FIIL_DONUSUM_ESI = "FIIL_DONUSUM_ESI";
     public static final String FIIL_DONUSUM_ESIYE = "FIIL_DONUSUM_ESIYE";
     public static final String FIIL_DONUSUM_ME = "FIIL_DONUSUM_ME";
-    public static final String FIIL_DONUSUM_MEZ = "FIIL_DONUSUM_MEZ";
     public static final String FIIL_DONUSUM_ECEK = "FIIL_DONUSUM_ECEK";
     public static final String FIIL_DONUSUM_MIS = "FIIL_DONUSUM_MIS";
     public static final String FIIL_TANIMLAMA_ICI = "FIIL_TANIMLAMA_ICI";
@@ -94,7 +92,7 @@ public class TurkceEkAdlari {
     public static final String FIIL_EMIR_SIZRESMI_INIZ = "FIIL_EMIR_SIZRESMI_INIZ";
     public static final String FIIL_SUREKLILIK_EREK = "FIIL_SUREKLILIK_EREK";
     public static final String FIIL_ETTIRGEN_TIR = "FIIL_ETTIRGEN_TIR";
-    public static final String FIIL_ETTIRGEN_TEKRAR_T = "FIIL_ETTIRGEN_TEKRAR_T";
+    public static final String FIILE_ETTIRGEN_T = "FIILE_ETTIRGEN_T";
     public static final String FIIL_GELECEKZAMAN_ECEK = "FIIL_GELECEKZAMAN_ECEK";
     public static final String FIIL_GECMISZAMAN_DI = "FIIL_GECMISZAMAN_DI";
     public static final String FIIL_GECMISZAMAN_MIS = "FIIL_GECMISZAMAN_MIS";
@@ -106,7 +104,6 @@ public class TurkceEkAdlari {
     public static final String FIIL_BERABERLIK_IS = "FIIL_BERABERLIK_IS";
     public static final String FIIL_ISTEK_E = "FIIL_ISTEK_E";
     public static final String FIIL_MASTAR_MEK = "FIIL_MASTAR_MEK";
-    public static final String FIIL_OLDURGAN_T = "FIIL_OLDURGAN_T";
     public static final String FIIL_OLUMSUZLUK_MEDEN = "FIIL_OLUMSUZLUK_MEDEN";
     public static final String FIIL_OLUMSUZLUK_ME = "FIIL_OLUMSUZLUK_ME";
     public static final String FIIL_YETERSIZLIK_E = "FIIL_YETERSIZLIK_E";
