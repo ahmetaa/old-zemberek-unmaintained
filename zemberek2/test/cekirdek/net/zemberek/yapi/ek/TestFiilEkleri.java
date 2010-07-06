@@ -115,7 +115,7 @@ public class TestFiilEkleri extends BaseTestEkler {
 
     @Test
     public void testFiilEttirgenTekrar() {
-        Ek ek = ek(TurkceEkAdlari.FIIL_ETTIRGEN_TEKRAR_T);
+        Ek ek = ek(TurkceEkAdlari.FIILE_ETTIRGEN_T);
         String[] strs = {"gerdir", "bakt\u0131r", "erittir"};
         String[] gercekEkler = {"t", "t", "t"};
         olusanEkKontrol(strs, gercekEkler, ek);

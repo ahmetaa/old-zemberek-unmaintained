@@ -111,7 +111,7 @@
             <ek>FIIL_YETERSIZLIK_E</ek>
             <ek>FIIL_EDILGEN_IL</ek>
             <ek>FIIL_ETTIRGEN_TIR</ek>
-            <ek>FIIL_OLDURGAN_T</ek>
+            <ek>FIILE_ETTIRGEN_T</ek>
             <ek>FIIL_TANIMLAMA_ICI</ek>
             <ek>FIIL_BERI_ELI</ek>
             <ek>FIIL_TEZLIK_IVER</ek>
@@ -1002,9 +1002,7 @@
         </ek>
 
         <ek ad="FIIL_ETTIRGEN_TIR" uretim=">dIr">
-            <ardisil-ekler kopya-ek="FIIL_KOK">
-                <aek>FIIL_ETTIRGEN_TEKRAR_T</aek>
-            </ardisil-ekler>
+            <ardisil-ekler kopya-ek="FIIL_KOK"/>
         </ek>
 
         <!-- TODO: bu ek henuz kullanilmiyor ama alsinda gelecek zaman eki gibi eklerin ardindan gelmesi gerekiyor. -->
@@ -1012,7 +1010,8 @@
         <ek ad="FIIL_UMMA_DIR" uretim=">dIr">
         </ek>
 
-        <ek ad="FIIL_ETTIRGEN_TEKRAR_T" uretim="t">
+        <ek ad="FIILE_ETTIRGEN_T" uretim="">
+            <ozel-durum ad="OLDURGAN" uretim="t"/>
             <ardisil-ekler>
                 <kume>FIIL_ZAMAN</kume>
                 <kume>FIIL_DONUSUM</kume>
@@ -1152,11 +1151,6 @@
                 <aek>ISIM_TANIMLAMA_DIR</aek>
                 <aek>ISIM_BIRLIKTELIK_LE</aek>
             </ardisil-ekler>
-        </ek>
-
-        <ek ad="FIIL_OLDURGAN_T" uretim="">
-            <ozel-durum ad="OLDURGAN" uretim="t"/>
-            <ardisil-ekler kopya-ek="FIIL_KOK"/>
         </ek>
 
         <ek ad="FIIL_OLUMSUZLUK_MEDEN" uretim="mAdAn"/>
